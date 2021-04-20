@@ -1,4 +1,4 @@
-# takekapp1990 Privacy Policies and Terms and Conditions
+# takekapp1990 Apps, Privacy Policies and Terms & Conditions
 
 
 
