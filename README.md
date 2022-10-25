@@ -1,6 +1,6 @@
 # takekapp1990 Apps, Privacy Policies and Terms & Conditions
 
-#日本語のアプリ
+# 日本語のアプリ
 
 ## 楽しい話題
 
@@ -25,7 +25,14 @@
 * お問い合わせ等の連絡先: 
   * takekapp1990@gmail.com
 
-#Apps of English or Other Language
+## 楽しい話題
+
+* [利用規約](https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ja/terms_and_conditions_ja.html)
+* [プライバシーポリシー](https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ja/privacy_policy_ja.html)
+* お問い合わせ等の連絡先: 
+  * takekapp1990@gmail.com
+
+# Apps of English or Other Language
 
 ## Fun Topics
 
