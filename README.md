@@ -48,7 +48,7 @@ An application that randomly comes up with fun topics for conversation.
 
 ## Shared Dice
 <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/icon_512512_app_store.png" width="100" alt="app icon">
-Dice application that allows communication and data to be viewed later in a graph.
+Dice application that allows communication and data to be viewed in a graph.
 
 * [App Store (android/iOS)](https://takekapp1990.page.link/SharedDice)
 * [Terms and Conditions](https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/en/terms_and_conditions_en.html)
