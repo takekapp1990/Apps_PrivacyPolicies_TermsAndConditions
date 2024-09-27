@@ -1,4 +1,4 @@
-# takekapp1990 Apps, Privacy Policies and Terms & Conditions
+# takekapp1990 Apps
 
 # 日本語のアプリ
 
