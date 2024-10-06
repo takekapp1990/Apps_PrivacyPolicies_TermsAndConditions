@@ -14,7 +14,7 @@
 
 ## 絶対幸せ占い
 <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png" width="100" alt="アプリアイコン">
-<img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/GoodLuckMaker.png" width="200" style="margin-right: 50px;" alt="アプリ紹介"><br>
+<img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/GoodLuckMaker.png" width="200" style="margin-left: 50px;" alt="アプリ紹介"><br>
 <p>毎日、絶対に幸せな占い・おみくじを引けるアプリ。</p>
 * [アプリストアページ(android)](https://goodluckmaker.page.link/goodluck)
 * [利用規約](https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/ja/terms_and_conditions_ja.html)
