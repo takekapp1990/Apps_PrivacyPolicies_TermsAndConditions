@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/sitemap.xml 
