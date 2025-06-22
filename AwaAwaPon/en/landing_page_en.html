@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awa Pop - Memory Party Game | Remember Hilarious Nicknames!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #FF6B9D;
+            --secondary-color: #4ECDC4;
+            --accent-color: #FFE66D;
+            --dark-color: #2C3E50;
+            --light-color: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .app-icon-large {
+            width: 120px;
+            height: 120px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .video-section {
+            background: var(--light-color);
+            padding: 4rem 0;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 315px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            aspect-ratio: 9 / 16;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .character-gallery {
+            display: flex;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            gap: 1.5rem;
+        }
+        
+        .character-gallery::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .character-gallery::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .character-gallery::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+        
+        .character-gallery::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
+        }
+
+        .character-gallery img {
+            height: 250px;
+            width: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .character-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .store-badge {
+            height: 50px;
+            margin: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .store-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .navbar-icon {
+            height: 30px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png" alt="Awa Pop Icon" class="navbar-icon me-2">
+                Awa Pop
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download">Download</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png" 
+                         class="app-icon-large mb-4" alt="Awa Pop">
+                    <h1 class="display-4 fw-bold mb-3">Awa Pop</h1>
+                    <h2 class="h3 mb-4">Memory Party Game</h2>
+                    <p class="lead mb-4">Remember hilarious nicknames! Memory party game with crazy character names.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" 
+                           target="_blank" class="store-badge">
+                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
+                                 alt="Get it on Google Play" height="50">
+                        </a>
+                        <a href="https://apps.apple.com/us/app/awa-pop-memory-party-game/id6746962336" 
+                           target="_blank" class="store-badge">
+                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" 
+                                 alt="Download on the App Store" height="50">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/5fjEHM-qEYA?autoplay=1&mute=1" 
+                                title="Awa Pop Gameplay" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特徴セクション -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Game Features</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-brain"></i>
+                        </div>
+                        <h4>Simple Yet Engaging</h4>
+                        <p>A character appears with an auto-generated nickname. Memorize it for future rounds. Choose your difficulty: 1, 3, or 5 lives.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h4>Solo & Multiplayer</h4>
+                        <p>Single Player: Train your memory at your own pace. Multiplayer: Compete or cooperate with friends. Create private rooms with shareable passcodes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <h4>Competitive Rankings</h4>
+                        <p>Monthly online leaderboards to compete with players nationwide. Track your personal best scores and see your progress over time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cute Characters! -->
+    <section id="characters" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Meet the Cute Characters!</h2>
+            <div class="character-gallery">
+                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/standard_2.png" alt="Character 1">
+                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/robot_7_firefly_flying_robot_with_jetpack,_colorful,_pop_and_cute,_minimal_background_in_1tone_203040-photoroom.png" alt="Robot Character">
+                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/animal_2_firefly__213968-photoroom.png" alt="Animal Character">
+                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/idol_1_firefly_a_cheerful_anime-style_beautiful_girl_with_blonde_twin_tails_and_a_big_ribbon,_white__539627-photoroom.png" alt="Idol Character">
+                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/ojisan_18_firefly_photorealistic_upper_body_image_of_a_middle-aged_man_with_a_fake_royal_pose,_wearing__331229-photoroom.png" alt="Old Man Character">
+            </div>
+        </div>
+    </section>
+
+    <!-- Perfect For -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Perfect For</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <i class="bi bi-emoji-heart-eyes display-4 text-primary mb-3"></i>
+                        <h5>Fun Social Gaming</h5>
+                        <p>With friends and family</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <i class="bi bi-lightbulb display-4 text-secondary mb-3"></i>
+                        <h5>Memory Training</h5>
+                        <p>With entertainment value</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <i class="bi bi-star display-4 text-warning mb-3"></i>
+                        <h5>Safe Content</h5>
+                        <p>Suitable for all ages</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <i class="bi bi-clock display-4 text-info mb-3"></i>
+                        <h5>Quick Brain Workouts</h5>
+                        <p>During breaks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- プレミアム機能 -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Premium Features</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <i class="bi bi-eye-slash text-primary display-4 mb-3"></i>
+                        <h4>Ad-free Gameplay</h4>
+                        <p>Uninterrupted focus for the best performance</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <i class="bi bi-palette text-secondary display-4 mb-3"></i>
+                        <h4>Exclusive Characters</h4>
+                        <p>Access to rare character designs</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <i class="bi bi-chat-heart text-warning display-4 mb-3"></i>
+                        <h4>Premium Nicknames</h4>
+                        <p>Additional hilarious nickname collections</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ダウンロードセクション -->
+    <section id="download" class="cta-section">
+        <div class="container text-center">
+            <h2 class="mb-4">Download Awa Pop today and dive into the most entertaining memory challenge!</h2>
+            <p class="lead mb-4">Experience unexpected character names and endless laughs as you test your memory skills solo or with friends.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" 
+                   target="_blank" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
+                         alt="Get it on Google Play" height="60">
+                </a>
+                <a href="https://apps.apple.com/us/app/awa-pop-memory-party-game/id6746962336" 
+                   target="_blank" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" 
+                         alt="Download on the App Store" height="60">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 takekapp1990. All rights reserved.</p>
+            <div class="mt-3">
+                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/en/terms_and_conditions_en.html" 
+                   class="text-white me-3">Terms and Conditions</a>
+                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/en/privacy_policy_en.html" 
+                   class="text-white">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
