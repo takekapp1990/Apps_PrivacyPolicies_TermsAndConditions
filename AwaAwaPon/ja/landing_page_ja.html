@@ -27,6 +27,7 @@
             padding: 4rem 0;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         .hero-section::before {
@@ -38,6 +39,8 @@
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
             animation: float 6s ease-in-out infinite;
+            z-index: 0;
+            pointer-events: none;
         }
 
         @keyframes float {
