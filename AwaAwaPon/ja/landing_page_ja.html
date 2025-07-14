@@ -100,12 +100,24 @@
         .video-container {
             position: relative;
             width: 100%;
-            max-width: 315px;
+            max-width: 400px;
             margin: 0 auto;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             aspect-ratio: 9 / 16;
+        }
+
+        @media (max-width: 768px) {
+            .video-container {
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .video-container {
+                max-width: 300px;
+            }
         }
 
         .video-container iframe {
