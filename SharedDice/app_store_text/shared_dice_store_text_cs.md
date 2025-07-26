@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Chytrá Kostka - Lehká a Silná
 
+# Keyword
+Kostky, Hra s kostkami, Stolní hra, Catan, Monopoly, Náhodný výběr, TRPG
+
+# Short Description (up to 30 characters)
+Kostky pro hry s přáteli
+
 # Simple Description (up to 80 characters)
 Praktická a jednoduchá aplikace kostek s minimem reklam a bohatými funkcemi.
 

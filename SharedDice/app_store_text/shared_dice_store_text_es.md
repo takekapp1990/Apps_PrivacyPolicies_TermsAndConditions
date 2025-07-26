@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Dados Smart - Simple y Potente
 
+# Keyword
+Dados, Dados, Juego de mesa, Catán, Monopolio, Aleatorizador
+
+# Short Description (up to 30 characters)
+Dados para juegos con amigos
+
 # Simple Description (up to 80 characters)
 App de dados rica en funciones, con pocos anuncios. Práctica, simple y perfecta para cualquier juego de dados.
 

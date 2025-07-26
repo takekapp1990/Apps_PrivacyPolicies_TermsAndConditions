@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Smarter Würfel – Stark & Klar
 
+# Keyword
+Würfel, Würfel, Brettspiel, Catan, Monopoly, Randomizer, Würfel
+
+# Short Description (up to 30 characters)
+Würfel für Spiele mit Freunden
+
 # Simple Description (up to 80 characters)
 Praktische, einfache Würfel-App mit vielen Funktionen und wenigen Werbeanzeigen.
 

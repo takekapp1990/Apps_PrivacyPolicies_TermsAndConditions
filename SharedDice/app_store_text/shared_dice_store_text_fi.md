@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Älykäs Noppa–Helppo ja Tehokas
 
+# Keyword
+Noppa, Lautapeli, Catan, Monopoli, Pelinoppa, Satunnaislukugeneraattori, TRPG
+
+# Short Description (up to 30 characters)
+Noppa peleihin ystävien kanssa
+
 # Simple Description (up to 80 characters)
 Monipuolinen noppa-app, vähän mainoksia, käytännöllinen ja helppo käyttää.
 

@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Smart Terning -Enkel & Kraftig
 
+# Keyword
+Terning, Brettspill, Catan, Monopol, Spillterning, Tilfeldig, TRPG
+
+# Short Description (up to 30 characters)
+Terninger for spill med venner
+
 # Simple Description (up to 80 characters)
 Terning-app med mange funksjoner, lite reklame, enkel og praktisk i bruk.
 

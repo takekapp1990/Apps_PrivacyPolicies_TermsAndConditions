@@ -1,7 +1,1 @@
 theme: jekyll-theme-slate
-
-# GitHub Pagesで公開しないファイル・ディレクトリ
-exclude:
-  - app_store_text/
-  - README.md
-  - _private_docs/

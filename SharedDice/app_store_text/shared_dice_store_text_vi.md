@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Xúc Xắc Thông Minh – Dễ Dùng
 
+# Keyword
+Xúc xắc, Trò chơi xúc xắc, Board Game, Catan, Monopoly, Ngẫu nhiên, TRPG
+
+# Short Description (up to 30 characters)
+Xúc xắc cho chơi với bạn bè
+
 # Simple Description (up to 80 characters)
 Ứng dụng xúc xắc giàu tính năng, ít quảng cáo. Tiện lợi, đơn giản và hoàn hảo cho mọi trò chơi xúc xắc.
 

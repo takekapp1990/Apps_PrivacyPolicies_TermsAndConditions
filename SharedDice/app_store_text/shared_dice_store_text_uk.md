@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Розумна Кістка
 
+# Keyword
+Кістки, Настільна гра, Катани, Монополія, Кості, Рандомайзер, TRPG
+
+# Short Description (up to 30 characters)
+Кістки для ігор з друзями
+
 # Simple Description (up to 80 characters)
 Функціональний додаток кісток з мінімумом реклами. Простий, зручний і ідеальний.
 

@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 스마트 주사위 - 간단하고 강력한
 
+# Keyword
+주사위, 보드게임, 카탄, 모노폴리, 게임 주사위, 랜덤, TRPG
+
+# Short Description (up to 30 characters)
+친구와 함께하는 주사위 게임
+
 # Simple Description (up to 80 characters)
 기능이 풍부하고 광고가 적은 주사위 앱. 편리하고 간단하며 모든 주사위 게임에 완벽합니다.
 

@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 ลูกเต๋าอัจฉริยะ – ง่าย ทรงพลัง
 
+# Keyword
+ลูกเต๋า, เกมลูกเต๋า, เกมกระดาน, คาทาน, โมโนโพลี, สุ่มตัวเลข, TRPG
+
+# Short Description (up to 30 characters)
+ลูกเต๋าสำหรับเล่นกับเพื่อน
+
 # Simple Description (up to 80 characters)
 แอปลูกเต๋าฟีเจอร์ครบครัน โฆษณาน้อย ใช้งานง่าย เหมาะกับเกมลูกเต๋าทุกประเภท
 

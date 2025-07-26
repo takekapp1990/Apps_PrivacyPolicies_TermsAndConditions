@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Smart Dice - Simple & Powerful
 
+# Keyword
+Dice, Dice Game, Board Game, Catan, Monopoly, Randomizer, Game Dice, TRPG
+
+# Short Description (up to 30 characters)
+Real-time dice roller for any game
+
 # Simple Description (up to 80 characters)
 Feature-rich, ad-light dice app. Handy, simple, and perfect for any dice game.
 

@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Dado Inteligente
 
+# Keyword
+Dados, Dados, Jogo de tabuleiro, Catan, Monopólio, Randomizer, Jogo de dados
+
+# Short Description (up to 30 characters)
+Dados para jogos com amigos
+
 # Simple Description (up to 80 characters)
 App de dados rica em funções, com poucos anúncios, simples e perfeita para jogar
 

@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 多機能サイコロ - シンプルでパワフル
 
+# Keyword
+サイコロ, ダイス, ボドゲ, ボドゲサイコロ, 通信サイコロ, 共有サイコロ, カタンサイコロ, カタン, すごろく, 丁半, 乱数, 人生ゲーム, モノポリー
+
+# Short Description (up to 30 characters)
+友達と通信して使えるサイコロ
+
 # Simple Description (up to 80 characters)
 機能豊富で広告が少ないサイコロアプリ。便利でシンプル、あらゆるサイコロゲームに最適。
 

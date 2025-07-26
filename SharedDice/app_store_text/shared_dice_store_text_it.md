@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Dado Smart -Semplice e Potente
 
+# Keyword
+Dadi, Giochi da tavolo, Catan, Monopoly, Dadi da gioco, Randomizer, TRPG
+
+# Short Description (up to 30 characters)
+Dadi per giochi con amici
+
 # Simple Description (up to 80 characters)
 App dadi completa, con poche pubblicità. Pratica e ideale per ogni gioco di dadi
 

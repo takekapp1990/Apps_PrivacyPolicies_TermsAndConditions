@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Slimme Dobbelsteen
 
+# Keyword
+Dobbelsteen, Spel, Bordspel, Catan, Monopoly, Dobbelstenen, Randomizer, TRPG
+
+# Short Description (up to 30 characters)
+Dobbelstenen voor spellen met vrienden
+
 # Simple Description (up to 80 characters)
 Veelzijdige dobbelsteen-app, praktisch, eenvoudig en met minimale reclame.
 

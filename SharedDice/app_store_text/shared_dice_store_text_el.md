@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Έξυπνο Ζάρι - Απλό και Ισχυρό
 
+# Keyword
+Ζάρια, Επιτραπέζιο, Catan, Monopoly, Παιχνίδι Ζαριών, Τυχαίος αριθμός, TRPG
+
+# Short Description (up to 30 characters)
+Ζάρια για παιχνίδια με φίλους
+
 # Simple Description (up to 80 characters)
 Πρακτική και απλή εφαρμογή ζαριών με πολλές λειτουργίες και λίγες διαφημίσεις.
 

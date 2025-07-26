@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Smart Tärning – Enkel & Stark
 
+# Keyword
+Tärning, Tärningsspel, Brädspel, Catan, Monopol, Slumpgenerator, TRPG
+
+# Short Description (up to 30 characters)
+Tärningar för spel med vänner
+
 # Simple Description (up to 80 characters)
 Tärningsapp med många funktioner, lite reklam, enkel och praktisk för alla spel.
 

@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Inteligentne Kości
 
+# Keyword
+Kości, Gra planszowa, Catan, Monopoly, Losowanie, Gra z kośćmi, TRPG
+
+# Short Description (up to 30 characters)
+Kości do gier z przyjaciółmi
+
 # Simple Description (up to 80 characters)
 Funkcjonalna aplikacja kości, mało reklam, prosta i idealna do każdej gry.
 

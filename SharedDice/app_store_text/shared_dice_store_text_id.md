@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Dadu Pintar - Sederhana & Kuat
 
+# Keyword
+Dadu, Game Dadu, Permainan Papan, Catan, Monopoli, Acak, TRPG
+
+# Short Description (up to 30 characters)
+Dadu untuk bermain dengan teman
+
 # Simple Description (up to 80 characters)
 Praktis dan kaya fitur, aplikasi dadu dengan iklan minim untuk semua permainan.
 

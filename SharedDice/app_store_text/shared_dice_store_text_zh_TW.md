@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 智慧骰子 - 簡單而強大
 
+# Keyword
+骰子, 骰子遊戲, 桌遊, 卡坦島, 大富翁, 隨機器, 遊戲骰子, TRPG
+
+# Short Description (up to 30 characters)
+與朋友一起玩的骰子
+
 # Simple Description (up to 80 characters)
 功能豐富、廣告少的骰子應用。方便、簡單，完美適用於任何骰子遊戲。
 

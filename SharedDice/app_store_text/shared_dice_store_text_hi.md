@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 स्मार्ट पासा −सरल और शक्तिशाली
 
+# Keyword
+पासा, पासा, बोर्ड गेम, कैटन, एकाधिकार, रैंडमाइज़र, गेम पासा
+
+# Short Description (up to 30 characters)
+दोस्तों संग खेलने के पासे
+
 # Simple Description (up to 80 characters)
 कम विज्ञापन वाला, फीचर-समृद्ध पासा ऐप। सरल, उपयोगी और हर खेल के लिए उपयुक्त।
 

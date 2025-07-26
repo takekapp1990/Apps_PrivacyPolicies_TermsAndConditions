@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 النرد الذكي - بسيط وقوي
 
+# Keyword
+النرد ، النردات ، لعبة الطاولة ، كاتان ، الاحتكار ، الموزع العشوائي ، لعبة النرد
+
+# Short Description (up to 30 characters)
+نرد تفاعلي مع الأصدقاء
+
 # Simple Description (up to 80 characters)
 تطبيق نرد غني بالميزات مع إعلانات قليلة. مفيد وبسيط ومثالي لأي لعبة نرد.
 

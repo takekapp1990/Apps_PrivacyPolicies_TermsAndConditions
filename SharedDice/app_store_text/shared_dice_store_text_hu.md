@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Okos Kocka - Egyszerű és Erős
 
+# Keyword
+Kocka, Társasjáték, Catan, Monopoly, Véletlenszám, Játék kocka, TRPG
+
+# Short Description (up to 30 characters)
+Kocka játékokhoz barátokkal
+
 # Simple Description (up to 80 characters)
 Kockaalkalmazás sok funkcióval, kevés hirdetéssel, egyszerű és használható.
 

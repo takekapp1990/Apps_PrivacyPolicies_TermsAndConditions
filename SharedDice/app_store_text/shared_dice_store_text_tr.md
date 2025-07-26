@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Akıllı Zar - Basit ve Güçlü
 
+# Keyword
+Zar, Zar Oyunu, Masa Oyunu, Catan, Monopoly, Rastgele Seçici, TRPG
+
+# Short Description (up to 30 characters)
+Arkadaşlarla oyun için zar
+
 # Simple Description (up to 80 characters)
 Özellikli, az reklamsız zar uygulaması. Basit, kullanışlı ve her oyun için ideal
 

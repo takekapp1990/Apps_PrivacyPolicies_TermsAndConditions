@@ -1,6 +1,12 @@
 # App Name (up to 30 characters)
 Dé Malin - Simple et Puissant
 
+# Keyword
+Dés, dés, jeu de société, catan, monopole, randomiseur, dés
+
+# Short Description (up to 30 characters)
+Dés pour jeux avec amis
+
 # Simple Description (up to 80 characters)
 App de dés riche en fonctionnalités, peu de publicités. Pratique, simple et parfaite pour tout jeu de dés.
 
