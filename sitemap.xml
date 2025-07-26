@@ -1,69 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- メインページ -->
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/</loc>
-    <lastmod>2024-03-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- SharedDice ランディングページ -->
   <url>
-    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ja/terms_and_conditions_ja.html</loc>
-    <lastmod>2024-03-21</lastmod>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/landing_pages/ja/landing_page_ja.html</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ja/privacy_policy_ja.html</loc>
-    <lastmod>2024-03-21</lastmod>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/landing_pages/en/landing_page_en.html</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- AwaAwaPon ランディングページ -->
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/landing_page_ja.html</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/ja/terms_and_conditions_ja.html</loc>
-    <lastmod>2024-03-21</lastmod>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/en/landing_page_en.html</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/ja/privacy_policy_ja.html</loc>
-    <lastmod>2024-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/terms_and_conditions_ja.html</loc>
-    <lastmod>2024-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/privacy_policy_ja.html</loc>
-    <lastmod>2024-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/ja/terms_and_conditions_ja.html</loc>
-    <lastmod>2024-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  
+  <!-- プライバシーポリシー -->
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/ja/privacy_policy_ja.html</loc>
-    <lastmod>2024-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/terms_and_conditions_ja.html</loc>
-    <lastmod>2024-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/en/privacy_policy_en.html</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- 利用規約 -->
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/ja/terms_and_conditions_ja.html</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/privacy_policy_ja.html</loc>
-    <lastmod>2024-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/en/terms_and_conditions_en.html</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset> 

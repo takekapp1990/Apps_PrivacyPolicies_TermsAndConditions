@@ -1,0 +1,52 @@
+user-agent: *
+
+# License and AI Training Policy
+x-content-license: "(c) TakeKApp. All rights reserved."
+x-ai-training-policy: "allowed"
+
+# Rate Limits
+crawl-delay: 1
+x-rate-limit: 60
+x-rate-limit-window: 60
+x-rate-limit-policy: "strict"
+x-rate-limit-retry: "no-retry"
+x-rate-limit-description: "Maximum 60 requests per 60 seconds. If rate limit is exceeded, do not retry and move on to next request."
+
+# Concurrency Limits
+x-concurrency-limit: 3
+x-concurrency-limit-description: "Please limit concurrent requests to a maximum of 3. This helps us manage server load."
+
+# Error Handling and Retry Policy
+x-error-retry-policy: "exponential-backoff"
+x-error-retry-policy-description: "For transient errors (5xx except 429), implement exponential backoff with initial wait of 2 seconds, doubling on each retry, with maximum 5 retries."
+x-rate-limit-exceeded-policy: "wait-and-retry"
+x-rate-limit-exceeded-policy-description: "When receiving HTTP 429 (Too Many Requests), do not retry immediately. Wait at least 60 seconds before attempting the request again."
+x-max-retries: 5
+x-retry-status-codes:
+  - 500
+  - 502
+  - 503
+  - 504
+x-no-immediate-retry-status-codes:
+  - 429
+x-no-retry-status-codes:
+  - 403
+  - 404
+
+# Canonical URL
+x-canonical-url-policy: "strict"
+x-canonical-url: "https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/"
+x-canonical-url-description: "Access via other FQDNs or IP addresses is invalid. Use only the specified URL as the base URL."
+
+# Site Structure
+x-site-type: "app-collection"
+x-site-description: "TakeKApp official website featuring mobile applications that make daily life more enjoyable"
+x-app-pattern: "/SharedDice/landing_pages/*/landing_page_*.html"
+x-app-type: "mobile-application"
+x-app-description: "Mobile applications for Android and iOS platforms"
+
+# Content Structure
+x-main-page: "/index.html"
+x-app-pages: "/SharedDice/landing_pages/*/landing_page_*.html"
+x-policy-pages: "*/privacy_policy_*.html, */terms_and_conditions_*.html"
+x-language-support: "ja, en, zh_CN, ko, es, fr, de, pt, ru, ar, hi, th, it, id, nl, pl, tr, cs, hu, no, sv, da, fi, el, uk, vi, zh_TW" 

@@ -4,3 +4,4 @@ theme: jekyll-theme-slate
 exclude:
   - app_store_text/
   - README.md
+  - _private_docs/

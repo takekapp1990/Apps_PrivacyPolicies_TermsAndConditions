@@ -1,3 +1,12 @@
 User-agent: *
 Allow: /
-Sitemap: https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/sitemap.xml 
+
+# Sitemap
+Sitemap: https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/sitemap.xml
+
+# Disallow
+Disallow: /app_store_text/
+Disallow: /SEO_LLM対策実行計画書.md
+
+# Crawl-delay
+Crawl-delay: 1 
