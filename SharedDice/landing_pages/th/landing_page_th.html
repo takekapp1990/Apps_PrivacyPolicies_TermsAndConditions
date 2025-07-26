@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลูกเต๋าอัจฉริยะ - แอปลูกเต๋าเสมือนที่เรียบง่ายและทรงพลัง</title>
+    <!-- OGP & Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ลูกเต๋าอัจฉริยะ - แอปลูกเต๋าเสมือนที่เรียบง่ายและทรงพลัง">
+    <meta property="og:description" content="แอปลูกเต๋าที่มีฟีเจอร์ครบครันและโฆษณาน้อย มาพร้อมกับผู้เล่นหลายคนแบบเรียลไทม์ การตั้งค่าที่ปรับแต่งได้ และการวิเคราะห์ที่ละเอียด ดาวน์โหลดเลย!">
+    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/launcher_icon_10240124_7_android.png">
+    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/landing_pages/th/landing_page_th.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ลูกเต๋าอัจฉริยะ - แอปลูกเต๋าเสมือนที่เรียบง่ายและทรงพลัง">
+    <meta name="twitter:description" content="แอปลูกเต๋าที่มีฟีเจอร์ครบครันและโฆษณาน้อย มาพร้อมกับผู้เล่นหลายคนแบบเรียลไทม์ การตั้งค่าที่ปรับแต่งได้ และการวิเคราะห์ที่ละเอียด ดาวน์โหลดเลย!">
+    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/launcher_icon_10240124_7_android.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #1E3A8A;
+            --secondary-color: #F59E0B;
+            --accent-color: #3B82F6;
+            --dark-color: #1F2937;
+            --light-color: #F8FAFC;
+            --success-color: #10B981;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+        }
+
+        /* ลูกเต๋าแบบพื้นหลัง */
+        .dice-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(30, 58, 138, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(245, 158, 11, 0.1) 2px, transparent 2px);
+            background-size: 50px 50px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="20" y="20" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/><rect x="70" y="40" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/><rect x="40" y="70" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/></svg>');
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .app-icon-large {
+            width: 120px;
+            height: 120px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 3px solid var(--secondary-color);
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .screenshot-section {
+            background: var(--light-color);
+            padding: 4rem 0;
+        }
+
+        .screenshot-container {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .download-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .store-badge {
+            transition: transform 0.3s ease;
+        }
+
+        .store-badge:hover {
+            transform: scale(1.05);
+        }
+
+        /* 言語切り替えドロップダウン */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-switcher .dropdown-toggle {
+            background-color: rgba(30, 58, 138, 0.9);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            min-width: 120px;
+        }
+
+        .language-switcher .dropdown-toggle:hover,
+        .language-switcher .dropdown-toggle:focus {
+            background-color: rgba(245, 158, 11, 0.9);
+            color: white;
+            border: none;
+            box-shadow: none;
+        }
+
+        .language-switcher .dropdown-menu {
+            background-color: rgba(30, 58, 138, 0.95);
+            border: none;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .language-switcher .dropdown-item {
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .language-switcher .dropdown-item:hover {
+            background-color: rgba(245, 158, 11, 0.8);
+            color: white;
+        }
+
+        .language-switcher .dropdown-item.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .stats-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 1rem 0;
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .stats-label {
+            color: var(--dark-color);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 2rem 0;
+            }
+            
+            .app-icon-large {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .language-switcher .btn {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 言語切り替えドロップダウン -->
+    <div class="language-switcher">
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                🇹🇭 ไทย
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ja')">🇯🇵 日本語</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('en')">🇺🇸 English</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('zh_CN')">🇨🇳 中文（简体）</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ko')">🇰🇷 한국어</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('es')">🇪🇸 Español</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('fr')">🇫🇷 Français</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('de')">🇩🇪 Deutsch</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('pt')">🇵🇹 Português</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ru')">🇷🇺 Русский</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ar')">🇸🇦 العربية</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('hi')">🇮🇳 हिन्दी</a></li>
+                <li><a class="dropdown-item active" href="#" onclick="switchLanguage('th')">🇹🇭 ไทย</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('it')">🇮🇹 Italiano</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('id')">🇮🇩 Bahasa Indonesia</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('nl')">🇳🇱 Nederlands</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('pl')">🇵🇱 Polski</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('tr')">🇹🇷 Türkçe</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('cs')">🇨🇿 Čeština</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('hu')">🇭🇺 Magyar</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('no')">🇳🇴 Norsk</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('sv')">🇸🇪 Svenska</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('da')">🇩🇰 Dansk</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('fi')">🇫🇮 Suomi</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('el')">🇬🇷 Ελληνικά</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('uk')">🇺🇦 Українська</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('vi')">🇻🇳 Tiếng Việt</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('zh_TW')">🇹🇼 中文（繁體）</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('zh')">🇨🇳 中文（基本）</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ส่วนฮีโร่ -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/launcher_icon_10240124_7_android.png" 
+                         alt="ลูกเต๋าอัจฉริยะ" class="app-icon-large mb-4">
+                    <h1 class="display-4 fw-bold mb-3">ลูกเต๋าอัจฉริยะ</h1>
+                    <p class="lead mb-4">แอปลูกเต๋าเสมือนที่เรียบง่ายและทรงพลัง<br>
+                    มาพร้อมกับผู้เล่นหลายคนแบบเรียลไทม์ การตั้งค่าที่ปรับแต่งได้ การวิเคราะห์ที่ละเอียด</p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                        <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod" 
+                           target="_blank" class="store-badge">
+                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
+                                 alt="Get it on Google Play" height="60">
+                        </a>
+                        <a href="https://apps.apple.com/app/id1583535228" 
+                           target="_blank" class="store-badge">
+                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" 
+                                 alt="Download on the App Store" height="60">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/th/nexus_5X/Screenshot_1753418012.png" 
+                         alt="หน้าจอหลักของลูกเต๋าอัจฉริยะ" class="img-fluid rounded-3 shadow-lg" style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ส่วนคุณสมบัติ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-primary">ทำไมลูกเต๋าอัจฉริยะถึงดี?</h2>
+                <p class="lead text-muted">มาพร้อมกับฟีเจอร์ที่เหมาะสำหรับเกมกระดาน RPG และการทดลองความน่าจะเป็น</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h4>ผู้เล่นหลายคนแบบเรียลไทม์</h4>
+                        <p>สร้างหรือเข้าร่วมห้องส่วนตัวเพื่อโยนลูกเต๋าร่วมกัน ดูผลลัพธ์ของทุกคนทันที</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-gear-fill"></i>
+                        </div>
+                        <h4>การตั้งค่าลูกเต๋าที่ปรับแต่งได้</h4>
+                        <p>โยนลูกเต๋าได้สูงสุด 100 ลูกพร้อมกัน เลือกประเภทลูกเต๋า รีเซ็ตด้วยการแตะครั้งเดียว</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h4>การวิเคราะห์ลูกเต๋าที่ละเอียด</h4>
+                        <p>ติดตามผลลัพธ์ลูกเต๋าตลอดเวลา แสดงกราฟแท่งและบันทึกเพื่อวิเคราะห์รูปแบบ</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-wifi-off"></i>
+                        </div>
+                        <h4>ใช้งานได้แบบออฟไลน์</h4>
+                        <p>โยนลูกเต๋าได้แม้ไม่มีอินเทอร์เน็ต ทำงานได้อย่างราบรื่นบนทุกอุปกรณ์</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-controller"></i>
+                        </div>
+                        <h4>เหมาะสำหรับเกม</h4>
+                        <p>จากเกมกระดานไปจนถึงการวิจัยความน่าจะเป็น ลูกเต๋าอัจฉริยะเป็นโซลูชันครบวงจร</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-layout-text-window"></i>
+                        </div>
+                        <h4>อินเทอร์เฟซที่ใช้งานง่าย</h4>
+                        <p>ไม่ยุ่งเหยิง ไม่มีเส้นโค้งการเรียนรู้ แค่แตะเพื่อโยนและสนุก ดีไซน์ที่สะอาดและใช้งานง่าย</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ส่วนภาพหน้าจอ -->
+    <section class="screenshot-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-primary">ดูแอปในขณะใช้งาน</h2>
+                <p class="lead text-muted">ดูหน้าจอการใช้งานจริง</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="screenshot-container">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/th/nexus_5X/Screenshot_1753418012.png" 
+                             alt="หน้าจอหลัก" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="screenshot-container">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/th/nexus_5X/Screenshot_1753418015.png" 
+                             alt="หน้าจอการตั้งค่า" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="screenshot-container">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/th/nexus_5X/Screenshot_1753418018.png" 
+                             alt="หน้าจอการวิเคราะห์" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="screenshot-container">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/th/nexus_5X/Screenshot_1753418022.png" 
+                             alt="หน้าจอผู้เล่นหลายคน" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ส่วนสถิติ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">100</div>
+                        <div class="stats-label">ลูกเต๋าสูงสุด</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">∞</div>
+                        <div class="stats-label">จำนวนผู้เล่น</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">24/7</div>
+                        <div class="stats-label">เวลาที่ใช้งานได้</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">0</div>
+                        <div class="stats-label">ค่าใช้จ่ายในการเรียนรู้</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ส่วนดาวน์โหลด -->
+    <section class="download-section">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold mb-4">ดาวน์โหลดเลย</h2>
+            <p class="lead mb-5">ลูกเต๋าอัจฉริยะไม่ใช่แค่แอปลูกเต๋า — มันเป็นเครื่องมือที่จำเป็นสำหรับความสนุก การโฟกัส และความยืดหยุ่น</p>
+            
+            <div class="d-flex flex-column flex-sm-row justify-content-center gap-4 mb-4">
+                <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod" 
+                   target="_blank" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
+                         alt="Get it on Google Play" height="80">
+                </a>
+                <a href="https://apps.apple.com/app/id1583535228" 
+                   target="_blank" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" 
+                         alt="Download on the App Store" height="80">
+                </a>
+            </div>
+            
+            <div class="mt-4">
+                <a href="../th/terms_and_conditions_th.html" class="text-light me-4">ข้อกำหนดการใช้งาน</a>
+                <a href="../th/privacy_policy_th.html" class="text-light">นโยบายความเป็นส่วนตัว</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ส่วนท้าย -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 takekapp1990. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Language switcher function
+        function switchLanguage(lang) {
+            // ドロップダウンの表示テキストを更新
+            const dropdownToggle = document.getElementById('languageDropdown');
+            const selectedItem = event.target;
+            
+            // アクティブ状態を更新
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            selectedItem.classList.add('active');
+            
+            // ドロップダウンの表示テキストを更新
+            dropdownToggle.innerHTML = selectedItem.innerHTML;
+            
+            // 言語に応じたページにリダイレクト
+            const languageUrls = {
+                'ja': '../ja/landing_page_ja.html',
+                'en': '../en/landing_page_en.html',
+                'zh_CN': '../zh_CN/landing_page_zh_CN.html',
+                'ko': '../ko/landing_page_ko.html',
+                'es': '../es/landing_page_es.html',
+                'fr': '../fr/landing_page_fr.html',
+                'de': '../de/landing_page_de.html',
+                'pt': '../pt/landing_page_pt.html',
+                'ru': '../ru/landing_page_ru.html',
+                'ar': '../ar/landing_page_ar.html',
+                'hi': '../hi/landing_page_hi.html',
+                'th': 'landing_page_th.html',
+                'it': '../it/landing_page_it.html',
+                'id': '../id/landing_page_id.html',
+                'nl': '../nl/landing_page_nl.html',
+                'pl': '../pl/landing_page_pl.html',
+                'tr': '../tr/landing_page_tr.html',
+                'cs': '../cs/landing_page_cs.html',
+                'hu': '../hu/landing_page_hu.html',
+                'no': '../no/landing_page_no.html',
+                'sv': '../sv/landing_page_sv.html',
+                'da': '../da/landing_page_da.html',
+                'fi': '../fi/landing_page_fi.html',
+                'el': '../el/landing_page_el.html',
+                'uk': '../uk/landing_page_uk.html',
+                'vi': '../vi/landing_page_vi.html',
+                'zh_TW': '../zh_TW/landing_page_zh_TW.html',
+                'zh': '../zh/landing_page_zh.html'
+            };
+            
+            if (languageUrls[lang]) {
+                window.location.href = languageUrls[lang];
+            }
+        }
+    </script>
+</body>
+</html> 

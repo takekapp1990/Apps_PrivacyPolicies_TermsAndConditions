@@ -1,0 +1,129 @@
+<en-US>
+• Renamed the app to the new name  
+• Added support for more languages
+</en-US>
+<ar>
+• تم تغيير اسم التطبيق  
+• أضفنا دعمًا لعدد أكبر من اللغات
+</ar>
+<cs-CZ>
+• Změnili jsme název aplikace  
+• Přidána podpora dalších jazyků
+</cs-CZ>
+<da-DK>
+• App-navnet er ændret  
+• Flere sprog tilføjet
+</da-DK>
+<de-DE>
+• App‑Name geändert  
+• Unterstützung für mehr Sprachen hinzugefügt
+</de-DE>
+<el-GR>
+• Αλλάξαμε το όνομα της εφαρμογής  
+• Προσθέσαμε περισσότερες γλώσσες
+</el-GR>
+<es-419>
+• Se cambió el nombre de la aplicación  
+• Se agregaron más idiomas
+</es-419>
+<es-ES>
+• Cambiado el nombre de la app  
+• Añadido soporte para más idiomas
+</es-ES>
+<es-US>
+• App name updated  
+• More languages supported
+</es-US>
+<fi-FI>
+• Sovelluksen nimi muutettu  
+• Lisää kieliä lisätty
+</fi-FI>
+</fi-Fi>
+<fr-CA>
+• Changement du nom de l’application  
+• Support de nouvelles langues ajouté
+</fr-CA>
+<fr-FR>
+• Nom de l’appli modifié  
+• Prise en charge de plus de langues ajoutée
+</fr-FR>
+<gl-ES>
+• Cambiou o nome da aplicación  
+• Engadidos máis idiomas
+</gl-ES>
+<hi-IN>
+• ऐप का नाम बदल दिया गया  
+• और भाषाएँ जोड़ी गईं
+</hi-IN>
+<hu-HU>
+• Megváltoztattuk az alkalmazás nevét  
+• Több nyelvi támogatás került be
+</hu-HU>
+<id>
+• Nama aplikasi diubah  
+• Menambahkan dukungan lebih banyak bahasa
+</id>
+<it-IT>
+• Nome dell’app modificato  
+• Aggiunto supporto a più lingue
+</it-IT>
+<ja-JP>
+• アプリ名を変更しました  
+• 対応言語をさらに追加しました
+</ja-JP>
+<ko-KR>
+• 앱 이름이 변경되었습니다  
+• 더 많은 언어가 추가되었습니다
+</ko-KR>
+<nl-NL>
+• App-naam gewijzigd  
+• Ondersteuning voor meer talen toegevoegd
+</nl-NL>
+<no-NO>
+• App-navnet er endret  
+• Flere språk støtte lagt til
+</no-NO>
+<pl-PL>
+• Zmieniono nazwę aplikacji  
+• Dodano obsługę nowych języków
+</pl-PL>
+<pt-BR>
+• Nome do app alterado  
+• Adicionado suporte a mais idiomas
+</pt-BR>
+<pt-PT>
+• Nome da app alterado  
+• Adicionado suporte para mais idiomas
+</pt-PT>
+<ru-RU>
+• Изменено название приложения  
+• Добавлена поддержка новых языков
+</ru-RU>
+<sv-SE>
+• Appnamnet har ändrats  
+• Fler språk har lagts till
+</sv-SE>
+<th>
+• เปลี่ยนชื่อแอปแล้ว  
+• รองรับภาษามากขึ้นแล้ว
+</th>
+<tr-TR>
+• Uygulama adı değiştirildi  
+• Daha fazla dil desteği eklendi
+</tr-TR>
+<uk>
+• Змінено назву програми  
+• Додано підтримку нових мов
+</uk>
+<vi>
+• Đã đổi tên ứng dụng  
+• Hỗ trợ thêm nhiều ngôn ngữ
+</vi>
+<zh-CN>
+• 应用名称已更改  
+• 新增更多语言支持
+</zh-CN>
+<zh-TW>
+• 已更改應用名稱  
+• 新增多種語言支援
+</zh-TW>

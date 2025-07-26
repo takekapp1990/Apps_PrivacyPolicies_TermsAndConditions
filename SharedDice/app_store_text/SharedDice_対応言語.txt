@@ -1,0 +1,32 @@
+## 🌍 対応言語 (27言語)
+
+| 言語 | 言語コード | アプリ名 | ファイル名 |
+|------|------------|----------|------------|
+| 英語 | en | Smart Dice | app_en.arb |
+| 日本語 | ja | 多機能サイコロ | app_ja.arb |
+| 中国語（簡体字） | zh_CN | 智能骰子 | app_zh_CN.arb |
+| 中国語（繁体字） | zh_TW | 智慧骰子 | app_zh_TW.arb |
+| 中国語（基本） | zh | 智能骰子 | app_zh.arb |
+| 韓国語 | ko | 스마트 주사위 | app_ko.arb |
+| スペイン語 | es | Dados Smart | app_es.arb |
+| フランス語 | fr | Dé Malin | app_fr.arb |
+| ドイツ語 | de | Smarter Würfel | app_de.arb |
+| ポルトガル語 | pt | Dado Inteligente | app_pt.arb |
+| ロシア語 | ru | Умные Кости | app_ru.arb |
+| アラビア語 | ar | النرد الذكي | app_ar.arb |
+| ヒンディー語 | hi | स्मार्ट पासा | app_hi.arb |
+| タイ語 | th | ลูกเต๋าอัจฉริยะ | app_th.arb |
+| イタリア語 | it | Dado Smart | app_it.arb |
+| インドネシア語 | id | Dadu Pintar | app_id.arb |
+| オランダ語 | nl | Slimme Dobbelsteen | app_nl.arb |
+| ポーランド語 | pl | Inteligentne Kości | app_pl.arb |
+| トルコ語 | tr | Akıllı Zar | app_tr.arb |
+| チェコ語 | cs | Chytrá Kostka | app_cs.arb |
+| ハンガリー語 | hu | Okos Kocka | app_hu.arb |
+| ノルウェー語 | no | Smart Terning | app_no.arb |
+| スウェーデン語 | sv | Smart Tärning | app_sv.arb |
+| デンマーク語 | da | Smart Terning | app_da.arb |
+| フィンランド語 | fi | Älykäs Noppa | app_fi.arb |
+| ギリシャ語 | el | Έξυπνο Ζάρι | app_el.arb |
+| ウクライナ語 | uk | Розумна Кістка | app_uk.arb |
+| ベトナム語 | vi | Xúc Xắc Thông Minh | app_vi.arb |

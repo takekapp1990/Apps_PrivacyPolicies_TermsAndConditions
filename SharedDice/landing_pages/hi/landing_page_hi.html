@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>स्मार्ट पासा - सरल और शक्तिशाली वर्चुअल पासा ऐप</title>
+    <!-- OGP & Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="स्मार्ट पासा - सरल और शक्तिशाली वर्चुअल पासा ऐप">
+    <meta property="og:description" content="फीचर-रिच, कम विज्ञापन वाला पासा ऐप। रीयल-टाइम मल्टीप्लेयर, कस्टम सेटिंग्स और विस्तृत विश्लेषण। अभी डाउनलोड करें!">
+    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/launcher_icon_10240124_7_android.png">
+    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/landing_pages/hi/landing_page_hi.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="स्मार्ट पासा - सरल और शक्तिशाली वर्चुअल पासा ऐप">
+    <meta name="twitter:description" content="फीचर-रिच, कम विज्ञापन वाला पासा ऐप। रीयल-टाइम मल्टीप्लेयर, कस्टम सेटिंग्स और विस्तृत विश्लेषण। अभी डाउनलोड करें!">
+    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/launcher_icon_10240124_7_android.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #1E3A8A;
+            --secondary-color: #F59E0B;
+            --accent-color: #3B82F6;
+            --dark-color: #1F2937;
+            --light-color: #F8FAFC;
+            --success-color: #10B981;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+        }
+
+        /* पासा जैसा बैकग्राउंड पैटर्न */
+        .dice-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(30, 58, 138, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(245, 158, 11, 0.1) 2px, transparent 2px);
+            background-size: 50px 50px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="20" y="20" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/><rect x="70" y="40" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/><rect x="40" y="70" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/></svg>');
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .app-icon-large {
+            width: 120px;
+            height: 120px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 3px solid var(--secondary-color);
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .feature-icon::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            border-radius: 14px;
+            z-index: -1;
+        }
+
+        .screenshot-section {
+            background: var(--light-color);
+            padding: 4rem 0;
+        }
+
+        .screenshot-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            margin: 1rem 0;
+        }
+
+        .screenshot-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .download-section {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .store-badge {
+            transition: transform 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .store-badge:hover {
+            transform: translateY(-3px);
+        }
+
+        /* भाषा स्विचर बटन */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-switcher .btn {
+            background-color: rgba(30, 58, 138, 0.9);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            margin: 0.2rem;
+        }
+
+        .language-switcher .btn:hover {
+            background-color: rgba(245, 158, 11, 0.9);
+            color: white;
+        }
+
+        .language-switcher .btn.active {
+            background-color: var(--secondary-color);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--secondary-color), #F97316);
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+            color: white;
+        }
+
+        .stats-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 1rem 0;
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .stats-label {
+            color: var(--dark-color);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 2rem 0;
+            }
+            
+            .app-icon-large {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .language-switcher .btn {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- भाषा चयन ड्रॉपडाउन -->
+    <div class="language-switcher">
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                🇮🇳 हिंदी
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ja')">🇯🇵 日本語</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('en')">🇺🇸 English</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('zh_CN')">🇨🇳 中文（简体）</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ko')">🇰🇷 한국어</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('es')">🇪🇸 Español</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('fr')">🇫🇷 Français</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('de')">🇩🇪 Deutsch</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('pt')">🇵🇹 Português</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ru')">🇷🇺 Русский</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ar')">🇸🇦 العربية</a></li>
+                <li><a class="dropdown-item active" href="#" onclick="switchLanguage('hi')">🇮🇳 हिंदी</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('th')">🇹🇭 ไทย</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('it')">🇮🇹 Italiano</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('id')">🇮🇩 Bahasa Indonesia</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('nl')">🇳🇱 Nederlands</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('pl')">🇵🇱 Polski</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('tr')">🇹🇷 Türkçe</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('cs')">🇨🇿 Čeština</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('hu')">🇭🇺 Magyar</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('no')">🇳🇴 Norsk</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('sv')">🇸🇪 Svenska</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('da')">🇩🇰 Dansk</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('fi')">🇫🇮 Suomi</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('el')">🇬🇷 Ελληνικά</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('uk')">🇺🇦 Українська</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('vi')">🇻🇳 Tiếng Việt</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('zh_TW')">🇹🇼 中文（繁體）</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('zh')">🇨🇳 中文（基本）</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- हीरो सेक्शन -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/launcher_icon_10240124_7_android.png" 
+                         alt="स्मार्ट पासा" class="app-icon-large mb-4">
+                    <h1 class="display-4 fw-bold mb-3">स्मार्ट पासा</h1>
+                    <p class="lead mb-4">सरल और शक्तिशाली वर्चुअल पासा ऐप<br>
+                    रीयल-टाइम मल्टीप्लेयर, कस्टम सेटिंग्स, विस्तृत विश्लेषण</p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                        <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod" 
+                           target="_blank" class="store-badge">
+                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
+                                 alt="Google Play पर उपलब्ध" height="60">
+                        </a>
+                        <a href="https://apps.apple.com/app/id1583535228" 
+                           target="_blank" class="store-badge">
+                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" 
+                                 alt="App Store से डाउनलोड करें" height="60">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/hi/nexus_5X/Screenshot_1753418012.png" 
+                         alt="स्मार्ट पासा मुख्य स्क्रीन" class="img-fluid rounded-3 shadow-lg" style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- फीचर्स सेक्शन -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-primary">स्मार्ट पासा क्यों?</h2>
+                <p class="lead text-muted">बोर्ड गेम्स, RPG और प्रायिकता प्रयोगों के लिए परफेक्ट फीचर्स</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h4>रीयल-टाइम मल्टीप्लेयर</h4>
+                        <p>प्राइवेट रूम बनाएं या जॉइन करें और साथ में पासा फेंकें। सभी के रिजल्ट तुरंत देखें।</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-gear-fill"></i>
+                        </div>
+                        <h4>कस्टम पासा सेटिंग्स</h4>
+                        <p>एक बार में 100 तक पासा फेंकें। पासा के प्रकार चुनें, एक टैप से रीसेट करें।</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h4>विस्तृत पासा विश्लेषण</h4>
+                        <p>समय के साथ अपने पासा फेंकने को ट्रैक करें। पैटर्न का विश्लेषण करने के लिए बार चार्ट और लॉग देखें।</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-wifi-off"></i>
+                        </div>
+                        <h4>ऑफलाइन सपोर्ट</h4>
+                        <p>इंटरनेट के बिना भी पासा फेंकें। सभी डिवाइस पर स्मूथली काम करता है।</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-controller"></i>
+                        </div>
+                        <h4>गेम्स के लिए ऑप्टिमाइज्ड</h4>
+                        <p>पार्टी गेम्स से प्रायिकता अध्ययन तक, स्मार्ट पासा ऑल-इन-वन समाधान है।</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-layout-text-window"></i>
+                        </div>
+                        <h4>इंटुइटिव इंटरफेस</h4>
+                        <p>कोई अव्यवस्था नहीं। कोई लर्निंग कर्व नहीं। बस फेंकने के लिए टैप करें। क्लीन और यूजर-फ्रेंडली डिज़ाइन।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- स्क्रीनशॉट सेक्शन -->
+    <section class="screenshot-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-primary">ऐप स्क्रीनशॉट्स</h2>
+                <p class="lead text-muted">ऐप को एक्शन में देखें</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="screenshot-container">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/hi/nexus_5X/Screenshot_1753418012.png" 
+                             alt="मुख्य स्क्रीन" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="screenshot-container">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/hi/nexus_5X/Screenshot_1753418015.png" 
+                             alt="सेटिंग्स स्क्रीन" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="screenshot-container">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/hi/nexus_5X/Screenshot_1753418018.png" 
+                             alt="विश्लेषण स्क्रीन" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="screenshot-container">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/hi/nexus_5X/Screenshot_1753418022.png" 
+                             alt="मल्टीप्लेयर स्क्रीन" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- आंकड़े सेक्शन -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">100</div>
+                        <div class="stats-label">अधिकतम पासा</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">∞</div>
+                        <div class="stats-label">खिलाड़ी</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">24/7</div>
+                        <div class="stats-label">उपलब्ध</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">0</div>
+                        <div class="stats-label">सीखने की लागत</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- डाउनलोड सेक्शन -->
+    <section class="download-section">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold mb-4">अभी डाउनलोड करें</h2>
+            <p class="lead mb-5">स्मार्ट पासा सिर्फ एक पासा ऐप नहीं है — यह मज़ा, फोकस और लचीलापन के लिए आपका आवश्यक टूल है।</p>
+            
+            <div class="d-flex flex-column flex-sm-row justify-content-center gap-4 mb-4">
+                <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod" 
+                   target="_blank" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
+                         alt="Google Play पर उपलब्ध" height="80">
+                </a>
+                <a href="https://apps.apple.com/app/id1583535228" 
+                   target="_blank" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" 
+                         alt="App Store से डाउनलोड करें" height="80">
+                </a>
+            </div>
+            
+            <div class="mt-4">
+                <a href="../hi/terms_and_conditions_hi.html" class="text-light me-4">उपयोग की शर्तें</a>
+                <a href="../hi/privacy_policy_hi.html" class="text-light">गोपनीयता नीति</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- फुटर -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 takekapp1990. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // भाषा स्विचिंग फंक्शन
+        function switchLanguage(lang) {
+            // बटन का एक्टिव स्टेट अपडेट करें
+            document.querySelectorAll('.language-switcher .btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // भाषा-विशिष्ट पेज पर रीडायरेक्ट करें
+            if (lang === 'ja') {
+                window.location.href = '../ja/landing_page_ja.html';
+            } else if (lang === 'en') {
+                window.location.href = '../en/landing_page_en.html';
+            } else if (lang === 'zh_CN') {
+                window.location.href = '../zh_CN/landing_page_zh_CN.html';
+            } else if (lang === 'ko') {
+                window.location.href = '../ko/landing_page_ko.html';
+            } else if (lang === 'es') {
+                window.location.href = '../es/landing_page_es.html';
+            } else if (lang === 'fr') {
+                window.location.href = '../fr/landing_page_fr.html';
+            } else if (lang === 'de') {
+                window.location.href = '../de/landing_page_de.html';
+            } else if (lang === 'pt') {
+                window.location.href = '../pt/landing_page_pt.html';
+            } else if (lang === 'ru') {
+                window.location.href = '../ru/landing_page_ru.html';
+            } else if (lang === 'ar') {
+                window.location.href = '../ar/landing_page_ar.html';
+            } else if (lang === 'hi') {
+                window.location.href = 'landing_page_hi.html';
+            }
+        }
+    </script>
+</body>
+</html> 

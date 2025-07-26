@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Smart - Aplicación de dados virtuales simple y potente</title>
+    <!-- OGP & Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dados Smart - Aplicación de dados virtuales simple y potente">
+    <meta property="og:description" content="Aplicación de dados rica en funciones y con pocos anuncios. Multijugador en tiempo real, configuraciones personalizadas y análisis detallado. ¡Descarga ahora!">
+    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/launcher_icon_10240124_7_android.png">
+    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/landing_pages/es/landing_page_es.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dados Smart - Aplicación de dados virtuales simple y potente">
+    <meta name="twitter:description" content="Aplicación de dados rica en funciones y con pocos anuncios. Multijugador en tiempo real, configuraciones personalizadas y análisis detallado. ¡Descarga ahora!">
+    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/launcher_icon_10240124_7_android.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #1E3A8A;
+            --secondary-color: #F59E0B;
+            --accent-color: #3B82F6;
+            --dark-color: #1F2937;
+            --light-color: #F8FAFC;
+            --success-color: #10B981;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+        }
+
+        /* Patrón de fondo estilo dados */
+        .dice-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(30, 58, 138, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(245, 158, 11, 0.1) 2px, transparent 2px);
+            background-size: 50px 50px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="20" y="20" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/><rect x="70" y="40" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/><rect x="40" y="70" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/></svg>');
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .app-icon-large {
+            width: 120px;
+            height: 120px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 3px solid var(--secondary-color);
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .feature-icon::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            border-radius: 14px;
+            z-index: -1;
+        }
+
+        .screenshot-section {
+            background: var(--light-color);
+            padding: 4rem 0;
+        }
+
+        .screenshot-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            margin: 1rem 0;
+        }
+
+        .screenshot-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .download-section {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .store-badge {
+            transition: transform 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .store-badge:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Botones de cambio de idioma */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-switcher .btn {
+            background-color: rgba(30, 58, 138, 0.9);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            margin: 0.2rem;
+        }
+
+        .language-switcher .btn:hover {
+            background-color: rgba(245, 158, 11, 0.9);
+            color: white;
+        }
+
+        .language-switcher .btn.active {
+            background-color: var(--secondary-color);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--secondary-color), #F97316);
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+            color: white;
+        }
+
+        .stats-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 1rem 0;
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .stats-label {
+            color: var(--dark-color);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 2rem 0;
+            }
+            
+            .app-icon-large {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .language-switcher .btn {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Selector de idioma desplegable -->
+    <div class="language-switcher">
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                🇪🇸 Español
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ja')">🇯🇵 日本語</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('en')">🇺🇸 English</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('zh_CN')">🇨🇳 中文（简体）</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ko')">🇰🇷 한국어</a></li>
+                <li><a class="dropdown-item active" href="#" onclick="switchLanguage('es')">🇪🇸 Español</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('fr')">🇫🇷 Français</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('de')">🇩🇪 Deutsch</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('pt')">🇵🇹 Português</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ru')">🇷🇺 Русский</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ar')">🇸🇦 العربية</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('hi')">🇮🇳 हिन्दी</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('th')">🇹🇭 ไทย</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('it')">🇮🇹 Italiano</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('id')">🇮🇩 Bahasa Indonesia</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('nl')">🇳🇱 Nederlands</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('pl')">🇵🇱 Polski</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('tr')">🇹🇷 Türkçe</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('cs')">🇨🇿 Čeština</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('hu')">🇭🇺 Magyar</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('no')">🇳🇴 Norsk</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('sv')">🇸🇪 Svenska</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('da')">🇩🇰 Dansk</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('fi')">🇫🇮 Suomi</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('el')">🇬🇷 Ελληνικά</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('uk')">🇺🇦 Українська</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('vi')">🇻🇳 Tiếng Việt</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('zh_TW')">🇹🇼 中文（繁體）</a></li>
+                <li><a class="dropdown-item" href="#" onclick="switchLanguage('zh')">🇨🇳 中文（基本）</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Sección hero -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/launcher_icon_10240124_7_android.png" 
+                         alt="Dados Smart" class="app-icon-large mb-4">
+                    <h1 class="display-4 fw-bold mb-3">Dados Smart</h1>
+                    <p class="lead mb-4">Aplicación de dados virtuales simple y potente<br>
+                    Multijugador en tiempo real, configuraciones personalizadas, análisis detallado</p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                        <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod" 
+                           target="_blank" class="store-badge">
+                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
+                                 alt="Disponible en Google Play" height="60">
+                        </a>
+                        <a href="https://apps.apple.com/app/id1583535228" 
+                           target="_blank" class="store-badge">
+                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" 
+                                 alt="Descargar en App Store" height="60">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/es/nexus_5X/Screenshot_1753418012.png" 
+                         alt="Dados Smart Pantalla Principal" class="img-fluid rounded-3 shadow-lg" style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de características -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-primary">¿Por qué Dados Smart?</h2>
+                <p class="lead text-muted">Funciones perfectas para juegos de mesa, RPG y experimentos de probabilidad</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h4>Multijugador en Tiempo Real</h4>
+                        <p>Crea o únete a salas privadas y tira dados juntos. Ve los resultados de todos al instante.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-gear-fill"></i>
+                        </div>
+                        <h4>Configuraciones Personalizadas</h4>
+                        <p>Tira hasta 100 dados a la vez. Elige tipos de dados, reinicia con un toque.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h4>Análisis Detallado</h4>
+                        <p>Rastrea tus tiradas de dados a lo largo del tiempo. Ve gráficos de barras y registros para analizar patrones.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-wifi-off"></i>
+                        </div>
+                        <h4>Soporte Sin Conexión</h4>
+                        <p>Tira dados incluso sin internet. Funciona sin problemas en todos los dispositivos.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-controller"></i>
+                        </div>
+                        <h4>Optimizado para Juegos</h4>
+                        <p>Desde juegos de fiesta hasta estudios de probabilidad, Dados Smart es la solución todo en uno.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-layout-text-window"></i>
+                        </div>
+                        <h4>Interfaz Intuitiva</h4>
+                        <p>Sin desorden. Sin curva de aprendizaje. Solo toca para tirar. Diseño limpio y fácil de usar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de capturas de pantalla -->
+    <section class="screenshot-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-primary">Capturas de Pantalla</h2>
+                <p class="lead text-muted">Ve la aplicación en acción</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="screenshot-container">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/es/nexus_5X/Screenshot_1753418012.png" 
+                             alt="Pantalla Principal" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="screenshot-container">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/es/nexus_5X/Screenshot_1753418015.png" 
+                             alt="Pantalla de Configuración" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="screenshot-container">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/es/nexus_5X/Screenshot_1753418018.png" 
+                             alt="Pantalla de Análisis" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="screenshot-container">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/es/nexus_5X/Screenshot_1753418022.png" 
+                             alt="Pantalla Multijugador" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de estadísticas -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">100</div>
+                        <div class="stats-label">Máximo de Dados</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">∞</div>
+                        <div class="stats-label">Jugadores</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">24/7</div>
+                        <div class="stats-label">Disponible</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">0</div>
+                        <div class="stats-label">Costo de Aprendizaje</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de descarga -->
+    <section class="download-section">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold mb-4">Descarga Ahora</h2>
+            <p class="lead mb-5">Dados Smart es más que una aplicación de dados — es tu herramienta esencial para diversión, enfoque y flexibilidad.</p>
+            
+            <div class="d-flex flex-column flex-sm-row justify-content-center gap-4 mb-4">
+                <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod" 
+                   target="_blank" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
+                         alt="Disponible en Google Play" height="80">
+                </a>
+                <a href="https://apps.apple.com/app/id1583535228" 
+                   target="_blank" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" 
+                         alt="Descargar en App Store" height="80">
+                </a>
+            </div>
+            
+            <div class="mt-4">
+                <a href="../es/terms_and_conditions_es.html" class="text-light me-4">Términos de Uso</a>
+                <a href="../es/privacy_policy_es.html" class="text-light">Política de Privacidad</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 takekapp1990. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Función de cambio de idioma
+        function switchLanguage(lang) {
+            // Actualizar estado activo del botón
+            document.querySelectorAll('.language-switcher .btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Redirigir a página específica del idioma
+            if (lang === 'ja') {
+                window.location.href = '../ja/landing_page_ja.html';
+            } else if (lang === 'en') {
+                window.location.href = '../en/landing_page_en.html';
+            } else if (lang === 'zh_CN') {
+                window.location.href = '../zh_CN/landing_page_zh_CN.html';
+            } else if (lang === 'ko') {
+                window.location.href = '../ko/landing_page_ko.html';
+            } else if (lang === 'es') {
+                window.location.href = 'landing_page_es.html';
+            }
+        }
+    </script>
+</body>
+</html> 

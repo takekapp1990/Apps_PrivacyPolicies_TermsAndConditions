@@ -196,9 +196,47 @@
             outline: none;
             border: none;
         }
+
+        /* 言語切り替えボタン */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-switcher .btn {
+            background-color: rgba(70, 130, 180, 0.9);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .language-switcher .btn:hover {
+            background-color: rgba(47, 79, 79, 0.9);
+            color: white;
+        }
+
+        /* 言語別コンテンツの表示制御 */
+        .content-ja, .content-en {
+            display: none;
+        }
+
+        .content-ja.active, .content-en.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
+    <!-- 言語切り替えボタン -->
+    <div class="language-switcher">
+        <button class="btn" onclick="switchLanguage('ja')" id="btn-ja">日本語</button>
+        <button class="btn" onclick="switchLanguage('en')" id="btn-en">English</button>
+    </div>
+
     <!-- ナビゲーションバー -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
@@ -209,10 +247,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#japanese-apps">日本語アプリ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#english-apps">English Apps</a>
+                        <a class="nav-link" href="#apps">Apps</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -225,125 +260,133 @@
     <!-- ヒーローセクション -->
     <section class="hero">
         <div class="container text-center">
-            <h1 class="display-4">Welcome to takekapp1990 Apps</h1>
-            <p class="lead">Discover our collection of innovative mobile applications</p>
-        </div>
-    </section>
-
-    <!-- 日本語アプリセクション -->
-    <section id="japanese-apps" class="container">
-        <h2 class="section-title">日本語のアプリ</h2>
-        
-        <!-- 楽しい話題 -->
-        <div class="card app-card">
-            <div class="card-body">
-                <div class="d-flex align-items-center">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/images/512.png" class="app-icon" alt="楽しい話題">
-                    <div class="ms-3">
-                        <h3 class="card-title">楽しい話題</h3>
-                        <p class="card-text">ランダムに楽しい話題・会話ネタを出してくれるアプリ</p>
-                        <div class="mt-3">
-                            <a href="https://funtopics.page.link/funtopics" class="btn btn-primary me-2">
-                                <i class="bi bi-phone"></i> アプリをダウンロード
-                            </a>
-                            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ja/terms_and_conditions_ja.html" class="btn btn-outline-primary me-2">利用規約</a>
-                            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ja/privacy_policy_ja.html" class="btn btn-outline-primary">プライバシーポリシー</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="content-ja" id="hero-ja">
+                <h1 class="display-4">takekapp1990 Apps へようこそ</h1>
+                <p class="lead">革新的なモバイルアプリケーションのコレクションをご覧ください</p>
             </div>
-        </div>
-
-        <!-- 絶対幸せ占い -->
-        <div class="card app-card">
-            <div class="card-body">
-                <div class="d-flex align-items-center">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png" class="app-icon" alt="絶対幸せ占い">
-                    <div class="ms-3">
-                        <h3 class="card-title">絶対幸せ占い</h3>
-                        <p class="card-text">毎日、絶対に幸せな占い・おみくじを引けるアプリ。</p>
-                        <div class="mt-3">
-                            <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod" class="btn btn-primary me-2">
-                                <i class="bi bi-phone"></i> アプリをダウンロード
-                            </a>
-                            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/ja/terms_and_conditions_ja.html" class="btn btn-outline-primary me-2">利用規約</a>
-                            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/ja/privacy_policy_ja.html" class="btn btn-outline-primary">プライバシーポリシー</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 楽しい統計学 -->
-        <div class="card app-card">
-            <div class="card-body">
-                <div class="d-flex align-items-center">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/images/512.png" class="app-icon" alt="楽しい統計学">
-                    <div class="ms-3">
-                        <h3 class="card-title">楽しい統計学</h3>
-                        <p class="card-text">無料で統計学が楽しく学べるアプリ</p>
-                        <div class="mt-3">
-                            <a href="https://funlearningstatistics.page.link/85Up" class="btn btn-primary me-2">
-                                <i class="bi bi-phone"></i> アプリをダウンロード
-                            </a>
-                            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/app_introduction.html" class="btn btn-outline-primary me-2">アプリ説明</a>
-                            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/terms_and_conditions_ja.html" class="btn btn-outline-primary me-2">利用規約</a>
-                            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/privacy_policy_ja.html" class="btn btn-outline-primary">プライバシーポリシー</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 共有サイコロ -->
-        <div class="card app-card">
-            <div class="card-body">
-                <div class="d-flex align-items-center">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/icon_512512_app_store.png" class="app-icon" alt="共有サイコロ">
-                    <div class="ms-3">
-                        <h3 class="card-title">共有サイコロ</h3>
-                        <p class="card-text">通信したりデータを後からグラフで確認できるサイコロアプリ</p>
-                        <div class="mt-3">
-                            <a href="https://takekapp1990.page.link/SharedDice" class="btn btn-primary me-2">
-                                <i class="bi bi-phone"></i> アプリをダウンロード
-                            </a>
-                            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/ja/terms_and_conditions_ja.html" class="btn btn-outline-primary me-2">利用規約</a>
-                            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/ja/privacy_policy_ja.html" class="btn btn-outline-primary">プライバシーポリシー</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- あわあわポン -->
-        <div class="card app-card">
-            <div class="card-body">
-                <div class="d-flex align-items-center">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png" class="app-icon" alt="あわあわポン">
-                    <div class="ms-3">
-                        <h3 class="card-title">あわあわポン</h3>
-                        <p class="card-text">次々と出てくるキャラクターの名前を覚えて答える、記憶力が試されるゲームです。面白い名前やジャンルを選んで友達と遊ぶことができます。笑いながら脳トレしよう！</p>
-                        <div class="mt-3">
-                            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/landing_page_ja.html" class="btn btn-primary me-2">詳細を見る</a>
-                            <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" target="_blank" class="me-2 app-store-badge">
-                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで手に入れよう" height="40">
-                            </a>
-                            <a href="https://apps.apple.com/jp/app/%E3%81%82%E3%82%8F%E3%81%82%E3%82%8F%E3%83%9D%E3%83%B3-%E7%AC%91%E3%81%84%E3%81%AA%E3%81%8C%E3%82%89%E8%84%B3%E3%83%88%E3%83%AC-%E8%A8%98%E6%86%B6%E5%8A%9B%E3%83%90%E3%83%88%E3%83%AB%E3%82%B2%E3%83%BC%E3%83%A0/id6746962336" target="_blank" class="me-2 app-store-badge">
-                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" height="40">
-                            </a>
-                            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/terms_and_conditions_ja.html" class="btn btn-outline-primary me-2">利用規約</a>
-                            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/privacy_policy_ja.html" class="btn btn-outline-primary">プライバシーポリシー</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="content-en" id="hero-en">
+                <h1 class="display-4">Welcome to takekapp1990 Apps</h1>
+                <p class="lead">Discover our collection of innovative mobile applications</p>
             </div>
         </div>
     </section>
 
-    <!-- 英語アプリセクション -->
-    <section id="english-apps" class="language-section">
-        <div class="container">
-            <h2 class="section-title">Apps of English or Other Language</h2>
+    <!-- アプリセクション -->
+    <section id="apps" class="container">
+        <div class="content-ja" id="apps-ja">
+            <h2 class="section-title">アプリ一覧</h2>
+            
+            <!-- 楽しい話題 -->
+            <div class="card app-card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/images/512.png" class="app-icon" alt="楽しい話題">
+                        <div class="ms-3">
+                            <h3 class="card-title">楽しい話題</h3>
+                            <p class="card-text">ランダムに楽しい話題・会話ネタを出してくれるアプリ</p>
+                            <div class="mt-3">
+                                <a href="https://funtopics.page.link/funtopics" class="btn btn-primary me-2">
+                                    <i class="bi bi-phone"></i> アプリをダウンロード
+                                </a>
+                                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ja/terms_and_conditions_ja.html" class="btn btn-outline-primary me-2">利用規約</a>
+                                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ja/privacy_policy_ja.html" class="btn btn-outline-primary">プライバシーポリシー</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 絶対幸せ占い -->
+            <div class="card app-card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png" class="app-icon" alt="絶対幸せ占い">
+                        <div class="ms-3">
+                            <h3 class="card-title">絶対幸せ占い</h3>
+                            <p class="card-text">毎日、絶対に幸せな占い・おみくじを引けるアプリ。</p>
+                            <div class="mt-3">
+                                <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod" class="btn btn-primary me-2">
+                                    <i class="bi bi-phone"></i> アプリをダウンロード
+                                </a>
+                                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/ja/terms_and_conditions_ja.html" class="btn btn-outline-primary me-2">利用規約</a>
+                                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/ja/privacy_policy_ja.html" class="btn btn-outline-primary">プライバシーポリシー</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 楽しい統計学 -->
+            <div class="card app-card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/images/512.png" class="app-icon" alt="楽しい統計学">
+                        <div class="ms-3">
+                            <h3 class="card-title">楽しい統計学</h3>
+                            <p class="card-text">無料で統計学が楽しく学べるアプリ</p>
+                            <div class="mt-3">
+                                <a href="https://funlearningstatistics.page.link/85Up" class="btn btn-primary me-2">
+                                    <i class="bi bi-phone"></i> アプリをダウンロード
+                                </a>
+                                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/app_introduction.html" class="btn btn-outline-primary me-2">アプリ説明</a>
+                                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/terms_and_conditions_ja.html" class="btn btn-outline-primary me-2">利用規約</a>
+                                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/privacy_policy_ja.html" class="btn btn-outline-primary">プライバシーポリシー</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 共有サイコロ -->
+            <div class="card app-card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/icon_512512_app_store.png" class="app-icon" alt="多機能サイコロ">
+                        <div class="ms-3">
+                            <h3 class="card-title">多機能サイコロ</h3>
+                            <p class="card-text">通信したりデータを後からグラフで確認できるサイコロアプリ</p>
+                            <div class="mt-3">
+                                <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod" target="_blank" class="me-2 app-store-badge">
+                                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで手に入れよう" height="40">
+                                </a>
+                                <a href="https://apps.apple.com/app/id1583535228" target="_blank" class="me-2 app-store-badge">
+                                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" height="40">
+                                </a>
+                                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/ja/terms_and_conditions_ja.html" class="btn btn-outline-primary me-2">利用規約</a>
+                                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/ja/privacy_policy_ja.html" class="btn btn-outline-primary">プライバシーポリシー</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- あわあわポン -->
+            <div class="card app-card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png" class="app-icon" alt="あわあわポン">
+                        <div class="ms-3">
+                            <h3 class="card-title">あわあわポン</h3>
+                            <p class="card-text">次々と出てくるキャラクターの名前を覚えて答える、記憶力が試されるゲームです。面白い名前やジャンルを選んで友達と遊ぶことができます。笑いながら脳トレしよう！</p>
+                            <div class="mt-3">
+                                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/landing_page_ja.html" class="btn btn-primary me-2">詳細を見る</a>
+                                <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" target="_blank" class="me-2 app-store-badge">
+                                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで手に入れよう" height="40">
+                                </a>
+                                <a href="https://apps.apple.com/jp/app/%E3%81%82%E3%82%8F%E3%81%82%E3%82%8F%E3%83%9D%E3%83%B3-%E7%AC%91%E3%81%84%E3%81%AA%E3%81%8C%E3%82%89%E8%84%B3%E3%83%88%E3%83%AC-%E8%A8%98%E6%86%B6%E5%8A%9B%E3%83%90%E3%83%88%E3%83%AB%E3%82%B2%E3%83%BC%E3%83%A0/id6746962336" target="_blank" class="me-2 app-store-badge">
+                                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" height="40">
+                                </a>
+                                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/terms_and_conditions_ja.html" class="btn btn-outline-primary me-2">利用規約</a>
+                                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/privacy_policy_ja.html" class="btn btn-outline-primary">プライバシーポリシー</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-en" id="apps-en">
+            <h2 class="section-title">Apps</h2>
             
             <!-- Fun Topics -->
             <div class="card app-card">
@@ -369,13 +412,16 @@
             <div class="card app-card">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
-                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/icon_512512_app_store.png" class="app-icon" alt="Shared Dice">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/icon_512512_app_store.png" class="app-icon" alt="Smart Dice">
                         <div class="ms-3">
-                            <h3 class="card-title">Shared Dice</h3>
+                            <h3 class="card-title">Smart Dice</h3>
                             <p class="card-text">Dice application that allows communication and data to be viewed in a graph.</p>
                             <div class="mt-3">
-                                <a href="https://takekapp1990.page.link/SharedDice" class="btn btn-primary me-2">
-                                    <i class="bi bi-phone"></i> Download App
+                                <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod" target="_blank" class="me-2 app-store-badge">
+                                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" height="40">
+                                </a>
+                                <a href="https://apps.apple.com/app/id1583535228" target="_blank" class="me-2 app-store-badge">
+                                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="40">
                                 </a>
                                 <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/en/terms_and_conditions_en.html" class="btn btn-outline-primary me-2">Terms and Conditions</a>
                                 <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/en/privacy_policy_en.html" class="btn btn-outline-primary">Privacy Policy</a>
@@ -389,7 +435,7 @@
             <div class="card app-card">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
-                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png" class="app-icon" alt="あわあわポン">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png" class="app-icon" alt="Awa Pop">
                         <div class="ms-3">
                             <h3 class="card-title">Awa Pop</h3>
                             <p class="card-text">Remember hilarious nicknames! Memory party game with crazy character names.</p>
@@ -416,8 +462,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h4>Contact Us</h4>
-                    <p>For any inquiries, please contact us at:</p>
+                    <div class="content-ja" id="contact-ja">
+                        <h4>お問い合わせ</h4>
+                        <p>ご質問がございましたら、以下までお気軽にお問い合わせください：</p>
+                    </div>
+                    <div class="content-en" id="contact-en">
+                        <h4>Contact Us</h4>
+                        <p>For any inquiries, please contact us at:</p>
+                    </div>
                     <a href="mailto:takekapp1990@gmail.com" class="btn btn-outline-primary me-2">
                         <i class="bi bi-envelope"></i> takekapp1990@gmail.com
                     </a>
@@ -427,7 +479,12 @@
                     </a>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <h4>Follow Us</h4>
+                    <div class="content-ja" id="follow-ja">
+                        <h4>フォローする</h4>
+                    </div>
+                    <div class="content-en" id="follow-en">
+                        <h4>Follow Us</h4>
+                    </div>
                     <div class="social-links">
                         <a href="#" class="btn btn-outline-primary me-2">
                             <i class="bi bi-github"></i> GitHub
@@ -446,5 +503,53 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 言語自動切り替えスクリプト -->
+    <script>
+        // 言語設定を取得
+        function getPreferredLanguage() {
+            const savedLang = localStorage.getItem('preferred-language');
+            if (savedLang) {
+                return savedLang;
+            }
+            
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('ja')) {
+                return 'ja';
+            } else {
+                return 'en';
+            }
+        }
+
+        // 言語を切り替える
+        function switchLanguage(lang) {
+            // すべての言語コンテンツを非表示
+            document.querySelectorAll('.content-ja, .content-en').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // 選択された言語のコンテンツを表示
+            document.querySelectorAll(`.content-${lang}`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // ボタンのスタイルを更新
+            document.getElementById('btn-ja').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById(`btn-${lang}`).classList.add('active');
+            
+            // 言語設定を保存
+            localStorage.setItem('preferred-language', lang);
+            
+            // HTMLのlang属性を更新
+            document.documentElement.lang = lang;
+        }
+
+        // ページ読み込み時に言語を設定
+        document.addEventListener('DOMContentLoaded', function() {
+            const preferredLang = getPreferredLanguage();
+            switchLanguage(preferredLang);
+        });
+    </script>
 </body>
 </html> 
