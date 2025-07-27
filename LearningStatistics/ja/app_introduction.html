@@ -1,96 +1,411 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="ja">
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width'>
-    <title>「楽しい統計学」アプリ紹介</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楽しい統計学 - 無料で統計学が楽しく学べるアプリ | TakeKApp</title>
+    <!-- OGP & Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="楽しい統計学 - 無料で統計学が楽しく学べるアプリ">
+    <meta property="og:description" content="無料で統計学が楽しく学べるアプリ。基礎から応用まで、わかりやすく統計学を学習できます。">
+    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/images/512.png">
+    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/app_introduction.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="楽しい統計学 - 無料で統計学が楽しく学べるアプリ">
+    <meta name="twitter:description" content="無料で統計学が楽しく学べるアプリ。基礎から応用まで、わかりやすく統計学を学習できます。">
+    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/images/512.png">
+    
+    <!-- 構造化データ（JSON-LD） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "楽しい統計学",
+      "alternateName": "Fun Learning Statistics",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Android, iOS",
+      "description": "無料で統計学が楽しく学べるアプリ。基礎から応用まで、わかりやすく統計学を学習できます。",
+      "url": "https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/app_introduction.html",
+      "downloadUrl": "https://funlearningstatistics.page.link/85Up",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TakeKApp"
+      }
+    }
+    </script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0VCS46ZTHC');
+    </script>
     <style>
+        :root {
+            --primary-color: #4682B4;
+            --primary-dark: #2F4F4F;
+            --primary-light: #5F9EA0;
+            --secondary-color: #F5F5F5;
+            --text-color: #2C3E50;
+            --accent-color: #708090;
+        }
+
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            padding: 1em;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--secondary-color);
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), #2F4F4F);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .feature-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            background: white;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+            color: white;
+        }
+
+        .footer .btn-outline-primary {
+            color: white;
+            border-color: white;
+        }
+
+        .footer .btn-outline-primary:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .app-store-badge {
+            text-decoration: none;
+            outline: none;
+        }
+
+        .app-store-badge img {
+            outline: none;
+            border: none;
+        }
+
+        .stats-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stats-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
     </style>
 </head>
-
 <body>
-    <h1>「楽しい統計学」</h1>
-    <p>
-        初心者でもわかりやすく統計学を学ぶことができる完全無料のandroid/iosアプリです。<br>
-        統計学の考え方や話の流れを中心にして、なるべく統計学に対する誤解をなくすように丁寧な説明を心がけています。<br>
-        中学2年生くらいの数学の知識でも理解ができるようにしています。<br>
-        追加で必要となる数学の知識はアプリの中で説明しています。<br>
-        アプリでは広告が出ますが、内部課金はありません。<br><br>
-        <a href='https://funlearningstatistics.page.link/nYJz'>ストアページ(iphoneやスマートフォンから開いてください.PCの場合はtakekapp1990のウェブページに飛びます)</a>
-    </p>
-    <h3>【アプリの主な構成】</h3>
-    <p>
-        アプリには「学習」のページと「問題」のページ、また他の関連するページがあります。
-    </p>
-    <ul>
-        <li> 「学習」のページ<br>
-            「学習」のページでは、記述統計と推測統計などの分野別に、それぞれの項目の説明をしています。<br>
-            理解したページにはチェックをつけることができます。
-        </li>
-        <li> 「問題」のページ<br>
-            「問題」のページでは、確認問題を解くことができます。正解した問題にはチェックがつきます。<br>
-            「問題」のページでは、以下の2種類から選んで問題を解くことができます。<br>
-            <ul>
-                <li>分野別の一覧から問題を解く</li>
-                <li>総合テストのページで、ランダムに問題を解く</li>
-            </ul>
-        </li>
-        <li>
-            その他の関連するページ<br>
-            ・「マイデータ」のページで学習の進捗や到達度を確認することができます。<br>
-            ・「参考図書」でおすすめの参考図書を紹介しています。<br>
-            ・「設定」のページでは、音の設定をしたり、アプリの情報を確認することができます。<br>
-            　また、一定の間、広告を消すこともできます。
-        </li>
-    </ul>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/">TakeKApp Apps</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/#apps">Apps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <h3>【広告の消し方】</h3>
-    <p>
-        「設定」ページから動画広告を見ると、一定時間の間、それぞれのページの中の広告を消すことができます。<br>
-        ぜひお試しください。
-    </p>
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/images/512.png" class="app-icon me-3" alt="楽しい統計学アプリアイコン">
+                        <h1 class="display-4 fw-bold mb-0">楽しい統計学</h1>
+                    </div>
+                    <p class="lead mb-4">無料で統計学が楽しく学べるアプリ</p>
+                    <p class="mb-4">統計学って興味はあるけど数学ばかりでよくわからない...<br>数学のテクニックよりも、どういう考え方をしているのかを知りたい！<br><br>そんな方のために、統計検定1級保有者が統計学の「考え方」に焦点を当ててやさしく解説します。データ分析のスキルを身につけて、ビジネスや研究に活かしましょう。</p>
+                    <div class="d-flex justify-content-center justify-content-lg-start">
+                        <a href="https://funlearningstatistics.page.link/85Up" class="btn btn-primary btn-lg">
+                            <i class="bi bi-phone"></i> アプリをダウンロード
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/images/advertisement_flyer_1024_512.png" class="img-fluid rounded" alt="楽しい統計学アプリのスクリーンショット">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h3>【アプリの想定ユーザ】</h3>
-    <p>
-        「統計学に興味があるけれど数学の本が難しそう」という人や「統計学をざっくりで良いから雰囲気を知りたい」<br>
-        という人や「統計学を学び始めたけれど数式ばかりで理解できない」という人に使っていただけると嬉しいです。
 
-    </p>
-    <h3> 【アプリで扱う内容】</h3>
-    <p>
-        このアプリでは、「記述統計」と「推測統計」の内容をメインとして扱います。<br>
-    <ul>
-        <li> 記述統計<br>
-            「記述統計」では、散布図、ヒストグラム、棒グラフ、円グラフ、箱ひげ図などのグラフや、<br>
-            平均、分散、尖度、歪度、五数要約などの指標、クロス集計表などの表について説明します。
-        </li>
-        <li> 推測統計<br>
-            「推測統計」では、主に頻度論について、全体的な話の流れや考え方を中心にして<br>
-            確率、確率変数、統計モデル、点推定、区間推定、統計的仮説検定、モデル評価について説明します。<br>
-            ベイズ統計についてはほとんど扱わないことと、個別の確率分布・統計手法の紹介や<br>
-            確率の厳密な定義や定理の証明等は行っていません。<br>
-            また、シミュレーションを用いた方法についても解説していません。
-        </li>
-    </ul>
-    </p>
-    <h3>【不具合や誤植、間違いについて】</h3>
-    <p>
-        アプリの不具合や、内容の間違い等がありましたら、ご連絡いただけると幸いです。<br>
-        可能な限り早く対応します。
 
-    </p>
-    <h3>【アプリの評価とご意見】</h3>
-    <p>
-        もし使ってみて、よかったなと思っていただけたら、ストアでの評価をいただけるととても嬉しいです。<br>
-        ご意見や要望等についても、参考にさせていただきますので気軽にいただけると幸いです。
-    </p>
-    <h3>【お問い合わせ】</h3>
-    <p>お問い合わせに関しては以下のメールアドレスへのご連絡をお願いします。<br>
-        takekapp1990@gmail.com
-    </p>
+    <!-- 主な機能 -->
+    <section class="container my-5">
+        <h2 class="section-title text-center">主な機能</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+                        <h4 class="card-title">統計検定1級保有者が解説</h4>
+                        <p class="card-text">統計検定1級保有者が、難しい統計学をやさしく解説します。専門知識を分かりやすく伝えます。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-book"></i>
+                        </div>
+                        <h4 class="card-title">基礎から応用まで</h4>
+                        <p class="card-text">統計学の基礎概念から実践的なデータ分析まで、段階的に学習できます。初心者から上級者まで対応。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h4 class="card-title">実践的な例題</h4>
+                        <p class="card-text">実際のビジネスシーンや研究で使える統計手法を、わかりやすい例題で学習できます。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-phone"></i>
+                        </div>
+                        <h4 class="card-title">いつでもどこでも</h4>
+                        <p class="card-text">スマートフォンやタブレットで、通勤時間や空き時間に気軽に学習できます。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-check-circle"></i>
+                        </div>
+                        <h4 class="card-title">理解度チェック</h4>
+                        <p class="card-text">クイズや演習問題で学習内容の理解度を確認できます。弱点を把握して効率的に学習。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h4 class="card-title">進捗管理</h4>
+                        <p class="card-text">学習の進捗を可視化し、達成感を得ながら継続的に学習を続けられます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学習コンテンツ内容 -->
+    <section class="container my-5">
+        <h2 class="section-title text-center">学習コンテンツの内容</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <h4 class="mb-3">基礎統計学</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>記述統計（平均、分散、標準偏差）</li>
+                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>確率分布（正規分布、二項分布）</li>
+                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>相関分析</li>
+                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>回帰分析の基礎</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <h4 class="mb-3">応用統計学</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>仮説検定</li>
+                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>信頼区間</li>
+                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>多変量解析</li>
+                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>時系列分析</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ダウンロードセクション -->
+    <section class="container my-5 text-center">
+        <h2 class="section-title">今すぐ始めよう</h2>
+        <p class="lead mb-4">数学のテクニックではなく、統計学の「考え方」を学んで、データ分析のスキルを身につけましょう</p>
+        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <a href="https://funlearningstatistics.page.link/85Up" class="btn btn-primary btn-lg">
+                <i class="bi bi-phone"></i> アプリをダウンロード
+            </a>
+        </div>
+    </section>
+
+    <!-- 利用規約・プライバシーポリシーセクション -->
+    <section class="container my-5 text-center">
+        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/terms_and_conditions_ja.html" class="btn btn-outline-primary">利用規約</a>
+            <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/privacy_policy_ja.html" class="btn btn-outline-primary">プライバシーポリシー</a>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>お問い合わせ</h4>
+                    <p>ご質問がございましたら、以下までお気軽にお問い合わせください：</p>
+                    <a href="mailto:takekapp1990@gmail.com" class="btn btn-outline-primary me-2">
+                        <i class="bi bi-envelope"></i> takekapp1990@gmail.com
+                    </a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h4>フォローする</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/takekapp1990" class="btn btn-outline-primary me-2">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                        <a href="https://x.com/takekapp" class="btn btn-outline-primary" target="_blank">
+                            <i class="bi bi-twitter-x"></i> X (Twitter)
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 TakeKApp（旧: takekapp1990）. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
