@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Dreams 100 - あなたの夢を、現実に。</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* 基本スタイル */
         body {
@@ -127,11 +128,20 @@
             padding: 30px;
             border-radius: 10px;
             border-left: 5px solid #3498db;
+            text-align: center;
+        }
+        .value-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         .value-item h3 {
             color: #2c3e50;
             margin-bottom: 15px;
-            text-align: left;
+            text-align: center;
+            font-size: 1.4em;
         }
         .value-item p {
             text-align: left;
@@ -139,33 +149,70 @@
             margin-bottom: 0;
         }
 
-        /* 課題セクション */
+        /* 課題セクション（リニューアル） */
         .problem-section {
-            background-color: #fff;
-            padding: 50px 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            padding: 60px 20px 40px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+            margin-bottom: 48px;
         }
-        .problem-list {
-            list-style: none;
-            padding: 0;
+        .problem-section h2 {
+            color: #e67e22;
+            font-size: 2em;
+            margin-bottom: 36px;
+            border-bottom: none;
             text-align: center;
+        }
+        .problem-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
             max-width: 700px;
             margin: 0 auto;
         }
-        .problem-list li {
-            background-color: #fbecec;
-            border-left: 5px solid #e74c3c;
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            font-size: 1.1em;
-            color: #c0392b;
-            text-align: left;
+        .problem-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(52,73,94,0.07);
+            padding: 28px 24px 20px 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
         }
-        .problem-list li strong {
-            color: #a02c1f;
+        .problem-card .icon {
+            font-size: 2.2em;
+            flex-shrink: 0;
+            margin-top: 2px;
+            color: #3498db;
+        }
+        .problem-card-content {
+            flex: 1;
+        }
+        .problem-card-title {
+            font-weight: bold;
+            font-size: 1.15em;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .problem-card-desc {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+        @media (max-width: 600px) {
+            .problem-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px 12px 16px 12px;
+            }
+            .problem-card .icon {
+                margin-bottom: 8px;
+            }
         }
 
         /* 解決策セクション */
@@ -203,9 +250,28 @@
             text-align: left;
             color: #555;
         }
-        .feature-item img {
-            max-width: 80px;
+        .feature-item i {
+            font-size: 3em;
             margin-bottom: 15px;
+            display: block;
+        }
+        .feature-item .fa-pen {
+            color: #3498db;
+        }
+        .feature-item .fa-chart-line {
+            color: #2ecc71;
+        }
+        .feature-item .fa-tags {
+            color: #f1c40f;
+        }
+        .feature-item .fa-bell {
+            color: #9b59b6;
+        }
+        .feature-item .fa-trophy {
+            color: #e74c3c;
+        }
+        .feature-item .fa-crown {
+            color: #34495e;
         }
 
         /* 事前登録セクション */
@@ -226,6 +292,17 @@
         .pre-register-section p {
             font-size: 1.2em;
             margin-bottom: 40px;
+        }
+        .development-message {
+            background-color: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .development-message p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
         }
 
         /* フッター */
@@ -258,16 +335,19 @@
             .value-grid {
                 grid-template-columns: 1fr;
             }
+            .value-item img {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <header class="hero">
         <div class="container">
-            <div class="development-badge">🚀 開発中！2025年春リリース予定</div>
+            <div class="development-badge">🚀 開発中！2025年8月リリース予定</div>
             <h1>My Dreams 100</h1>
             <p><strong>あなたの「やりたい」を、夢のままで終わらせない。</strong><br>
-            見つけて、書き出して、そして、叶える。一生の財産になる100の夢リストを、手のひらから創造しよう。</p>
+            見つけて、書き出して、そして、叶える。<br>一生の財産になる100の夢のリストを、<br>あなたの手のひらから創造しよう。</p>
             <a href="#pre-register" class="btn-primary">事前登録して早期アクセス権をゲット</a>
             <a href="#twitter" class="btn-secondary">Xでいいねして応援する</a>
         </div>
@@ -280,40 +360,60 @@
             
             <div class="value-grid">
                 <div class="value-item">
+                    <img src="../images/lp/Google_AI_Studio_2025-07-30_方向性が明確になる.png" alt="人生の方向性が明確になる">
                     <h3>🎯 人生の方向性が明確になる</h3>
                     <p>日々をぼんやり過ごしてしまう課題を解決し、100個のやりたいことを書くことで、毎日がワクワクして人生が好転するきっかけが掴めます。</p>
                 </div>
                 <div class="value-item">
+                    <img src="../images/lp/Google_AI_Studio_2025-07-30_本当の自分が見えてくる.png" alt="本当の自分が見えてくる">
                     <h3>🔍 本当の自分が見えてくる</h3>
                     <p>自分が何をしたいのかよくわからない課題を解決し、やりたいことを100個書くことで自分が本当に何をしたいのかが見えてきます。</p>
                 </div>
                 <div class="value-item">
+                    <img src="../images/lp/Google_AI_Studio_2025-07-30_行動力が自然と湧いてくる.png" alt="行動力が自然と湧いてくる">
                     <h3>💪 行動力が自然と湧いてくる</h3>
                     <p>具体的な目標を持つことで、日々の小さな選択が変わり、自然と行動力が高まります。</p>
                 </div>
                 <div class="value-item">
+                    <img src="../images/lp/Google_AI_Studio_2025-07-30_人生の満足度が向上する.png" alt="人生の満足度が向上する">
                     <h3>🌟 人生の満足度が向上する</h3>
                     <p>目標を持つことで、達成感を味わう機会が増え、全体的な人生の満足度が向上します。</p>
-                </div>
-                <div class="value-item">
-                    <h3>🧠 創造性と発想力が鍛えられる</h3>
-                    <p>100個という大きな数を目指すことで、固定観念を打破し、新しい可能性を発見できます。</p>
-                </div>
-                <div class="value-item">
-                    <h3>📈 継続的な成長の原動力になる</h3>
-                    <p>達成した夢を振り返ることで、自分の成長を実感し、次の目標へのモチベーションが維持されます。</p>
                 </div>
             </div>
         </section>
 
         <section class="problem-section">
-            <h2>でも、100個のやりたいことを書くのは簡単じゃない</h2>
-            <ul class="problem-list">
-                <li><strong>そもそも何を書けば良いかわからない</strong> - 最初の10個くらいで止まってしまう</li>
-                <li><strong>ジャンルがバラバラで思考が散らかる</strong> - 書いても整理できず、行動に移せない</li>
-                <li><strong>書きっぱなしで管理・振り返りができない</strong> - 書いただけで終わってしまう</li>
-                <li><strong>継続するモチベーションが続かない</strong> - 最初はやる気があっても、すぐに忘れてしまう</li>
-            </ul>
+            <h2>でも、100個のやりたいことを書くのは簡単じゃない･･･</h2>
+            <div class="problem-cards">
+                <div class="problem-card">
+                    <span class="icon">🤔</span>
+                    <div class="problem-card-content">
+                        <div class="problem-card-title">そもそも何を書けば良いかわからない</div>
+                        <div class="problem-card-desc">最初の10個くらいで止まってしまい、なかなか100個まで到達できない。</div>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <span class="icon">📝</span>
+                    <div class="problem-card-content">
+                        <div class="problem-card-title">ジャンルがバラバラで思考が散らかる</div>
+                        <div class="problem-card-desc">書き出しても整理できず、行動に移すイメージが持てない。</div>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <span class="icon">📋</span>
+                    <div class="problem-card-content">
+                        <div class="problem-card-title">書きっぱなしで管理・振り返りができない</div>
+                        <div class="problem-card-desc">書いただけで満足してしまい、後から見返すことや達成管理ができない。</div>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <span class="icon">💤</span>
+                    <div class="problem-card-content">
+                        <div class="problem-card-title">継続するモチベーションが続かない</div>
+                        <div class="problem-card-desc">最初はやる気があっても、日々の忙しさで忘れてしまいがち。</div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="solution-section">
@@ -322,32 +422,32 @@
 
             <div class="feature-grid">
                 <div class="feature-item">
-                    <img src="https://via.placeholder.com/80/3498db/ffffff?text=Pen" alt="Write Icon">
+                    <i class="fas fa-pen"></i>
                     <h3>100の夢を楽しく洗い出す</h3>
                     <p>効果的な質問やチュートリアルに従うことで、誰でも100個のやりたいことを書き出せます。</p>
                 </div>
                 <div class="feature-item">
-                    <img src="https://via.placeholder.com/80/2ecc71/ffffff?text=Chart" alt="Progress Icon">
+                    <i class="fas fa-chart-line"></i>
                     <h3>達成度をリアルタイムで可視化</h3>
                     <p>美しいグラフで進捗を一目瞭然にし、達成感とモチベーションを維持します。</p>
                 </div>
                 <div class="feature-item">
-                    <img src="https://via.placeholder.com/80/f1c40f/ffffff?text=Tag" alt="Tag Icon">
+                    <i class="fas fa-tags"></i>
                     <h3>夢を整理して行動へ繋げる</h3>
                     <p>自由にカテゴリ分けや並び替えができるので、自分の考えがすっきり整理できます。</p>
                 </div>
                 <div class="feature-item">
-                    <img src="https://via.placeholder.com/80/9b59b6/ffffff?text=Bell" alt="Notification Icon">
+                    <i class="fas fa-bell"></i>
                     <h3>定期的なリマインドで継続をサポート</h3>
                     <p>あなたに合わせたタイミングで通知し、忘れかけていた夢に再び火をつけます。</p>
                 </div>
                 <div class="feature-item">
-                    <img src="https://via.placeholder.com/80/e74c3c/ffffff?text=Trophy" alt="Trophy Icon">
+                    <i class="fas fa-trophy"></i>
                     <h3>夢を叶える感動を何度でも</h3>
                     <p>達成した夢は「完了リスト」として残り、あなたの「できた！」を積み重ねます。</p>
                 </div>
                 <div class="feature-item">
-                    <img src="https://via.placeholder.com/80/34495e/ffffff?text=Lock" alt="Premium Icon">
+                    <i class="fas fa-crown"></i>
                     <h3>プレミアム機能でさらに加速</h3>
                     <p>高度な分析レポートや専門家コンテンツで、夢の実現をさらに加速させます。</p>
                 </div>
@@ -359,13 +459,20 @@
             <p>My Dreams 100で、漠然とした願望を具体的な目標に変え、毎日をワクワクする冒険にしませんか？</p>
             <a href="https://forms.gle/your-form-link" class="btn-primary" target="_blank">Googleフォームで事前登録</a>
             <a href="https://twitter.com/your-account/status/your-tweet" class="btn-secondary" target="_blank" id="twitter">Xの投稿にいいねして応援</a>
-            <p style="font-size:0.9em; margin-top:20px;">※事前登録者には早期アクセス権と特別特典をプレゼント！</p>
+            
+            <div class="development-message">
+                <p><strong>🚀 現在絶賛開発中です！</strong></p>
+                <p>事前登録していただけると開発者の励みになります！</p>
+                <p>あなたの事前登録をお待ちしています</p>
+            </div>
+            
+            <p style="font-size:0.9em; margin-top:20px;">※事前登録者には早期アクセス権と、もしかしたら特別特典をプレゼント！</p>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 My Dreams 100. All rights reserved.</p>
+            <p>&copy; TakeKApp. All rights reserved.</p>
         </div>
     </footer>
 </body>
