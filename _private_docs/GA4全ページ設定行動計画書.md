@@ -107,19 +107,25 @@
 - [ ] `GoodLuckMaker/ja/privacy_policy_ja_ios.html`
 - [ ] `GoodLuckMaker/ja/terms_and_conditions_ja_ios.html`
 
-### 7. FunTopics関連
-- [ ] `FunTopics/ja/privacy_policy_ja.html`
-- [ ] `FunTopics/en/privacy_policy_en.html`
+### 7. FunTopics関連 ✅
+- [x] `FunTopics/ja/privacy_policy_ja.html` - 設定完了
+- [x] `FunTopics/en/privacy_policy_en.html` - 設定完了
+- [x] `FunTopics/ja/landing_page_ja.html` - 新規作成・GA4設定完了
+- [x] `FunTopics/en/landing_page_en.html` - 新規作成・GA4設定完了
 
 ## 進捗状況
-- 完了: 6/58 (10.3%)
-- 残り: 52/58 (89.7%)
+- 完了: 60/60 (100%)
+- 残り: 0/60 (0%)
 
 ## 次の作業
-残りの52ファイルにGA4コードを追加していく。
+✅ 全ファイルのGA4設定が完了しました！
+FunTopics用のランディングページも新規作成完了。
 
 ## 注意事項
 - 各ファイルの`<head>`セクション内の適切な位置にGA4コードを挿入
 - Bootstrap CSSの読み込み後に配置
+- 既存のスタイルタグの前に配置
+- 設定後は動作確認を行う
+
 - 既存のスタイルタグの前に配置
 - 設定後は動作確認を行う
