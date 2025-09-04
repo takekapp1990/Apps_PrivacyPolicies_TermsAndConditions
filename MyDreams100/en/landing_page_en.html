@@ -156,6 +156,33 @@
             background-color: #0d8bd9;
         }
 
+        /* Store badges styling */
+        .store-badge {
+            text-decoration: none;
+            outline: none;
+        }
+
+        .store-badge img {
+            outline: none;
+            border: none;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+        .gap-3 {
+            gap: 1rem;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
         /* Value proposition section */
         .value-section {
             background-color: #fff;
@@ -430,15 +457,20 @@
 <body>
     <header class="hero">
         <div class="container">
-            <div class="development-badge">🚀 In Development! Expected Release August 2025</div>
             <div class="hero-title">
                 <h1>My Dreams 100</h1>
                 <img src="../images/app_icon/my_dreams_100_app_icon_1024_1024_2.png" alt="My Dreams 100 App Icon" class="app-icon">
             </div>
             <p><strong>Discover what you truly want to do.</strong><br><br>
             Reflect on yourself, write it down, and make it happen.<br>Create a list of 100 things you want to do<br>that will become your lifetime treasure.</p>
-            <a href="https://forms.gle/Mh6n7upj8ndj4QA16" class="btn-primary" target="_blank">Pre-register for Early Access. Support Comments Welcome</a>
-            <a href="https://x.com/takekapp/status/1945998421799899137" class="btn-secondary" target="_blank">Like and Support on X</a>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="https://play.google.com/store/apps/details?id=com.mydreams100.takekapp1990.prod" target="_blank" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" height="60">
+                </a>
+                <a href="https://apps.apple.com/us/app/my-dreams-100/id6751042472" target="_blank" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="60">
+                </a>
+            </div>
         </div>
     </header>
 
@@ -543,28 +575,22 @@
             </div>
         </section>
 
-        <section class="pre-register-section" id="pre-register">
+        <section class="pre-register-section" id="download">
             <h2>Now, discover your life's "wants"<br>immediately!</h2>
             <p>With "My Dreams 100," transform vague desires into concrete goals and make every day an exciting adventure!</p>
-            <a href="https://forms.gle/Mh6n7upj8ndj4QA16" class="btn-primary" target="_blank">Pre-register with Google Form</a>
-            <a href="https://x.com/takekapp/status/1945998421799899137" class="btn-secondary" target="_blank" id="twitter">Like X Post to Support</a>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="https://play.google.com/store/apps/details?id=com.mydreams100.takekapp1990.prod" target="_blank" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" height="60">
+                </a>
+                <a href="https://apps.apple.com/us/app/my-dreams-100/id6751042472" target="_blank" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="60">
+                </a>
+            </div>
             
             <div style="margin-top: 20px; text-align: center;">
                 <a href="terms_and_conditions_en.html" class="btn-secondary" style="margin: 5px;">Terms and Conditions</a>
                 <a href="privacy_policy_en.html" class="btn-secondary" style="margin: 5px;">Privacy Policy</a>
             </div>
-            
-            <div class="development-message">
-                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
-                    <h3 style="color: white; margin: 0; font-size: 1.3em; margin-right: 15px;">My Dreams 100</h3>
-                    <img src="../images/app_icon/my_dreams_100_app_icon_1024_1024_2.png" alt="My Dreams 100 App Icon" class="pre-register-icon">
-                </div>
-                <p><strong>🚀 Currently in active development!</strong></p>
-                <p>Pre-registration and support comments are welcome! Your support motivates the developer!</p>
-                <p>We look forward to your pre-registration</p>
-            </div>
-            
-            <p style="font-size:0.9em; margin-top:20px;">*Pre-registrants will receive early access rights and maybe special bonuses!</p>
         </section>
     </main>
 
