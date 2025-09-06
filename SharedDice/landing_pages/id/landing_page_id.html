@@ -241,40 +241,11 @@
 </head>
 <body>
     <!-- 言語切り替えドロップダウン -->
-    <div class="language-switcher">
+    <div class="language-switcher" data-current-lang="id">
         <div class="dropdown">
             <button class="btn dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 🇮🇩 Bahasa Indonesia
             </button>
-            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ja')">🇯🇵 日本語</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('en')">🇺🇸 English</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('zh_CN')">🇨🇳 中文（简体）</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ko')">🇰🇷 한국어</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('es')">🇪🇸 Español</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('fr')">🇫🇷 Français</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('de')">🇩🇪 Deutsch</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('pt')">🇵🇹 Português</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ru')">🇷🇺 Русский</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('ar')">🇸🇦 العربية</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('hi')">🇮🇳 हिन्दी</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('th')">🇹🇭 ไทย</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('it')">🇮🇹 Italiano</a></li>
-                <li><a class="dropdown-item active" href="#" onclick="switchLanguage('id')">🇮🇩 Bahasa Indonesia</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('nl')">🇳🇱 Nederlands</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('pl')">🇵🇱 Polski</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('tr')">🇹🇷 Türkçe</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('cs')">🇨🇿 Čeština</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('hu')">🇭🇺 Magyar</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('no')">🇳🇴 Norsk</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('sv')">🇸🇪 Svenska</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('da')">🇩🇰 Dansk</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('fi')">🇫🇮 Suomi</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('el')">🇬🇷 Ελληνικά</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('uk')">🇺🇦 Українська</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('vi')">🇻🇳 Tiếng Việt</a></li>
-                <li><a class="dropdown-item" href="#" onclick="switchLanguage('zh_TW')">🇹🇼 中文（繁體）</a></li>
-            </ul>
         </div>
     </div>
 
@@ -484,57 +455,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Language switcher function
-        function switchLanguage(lang) {
-            // ドロップダウンの表示テキストを更新
-            const dropdownToggle = document.getElementById('languageDropdown');
-            const selectedItem = event.target;
-            
-            // アクティブ状態を更新
-            document.querySelectorAll('.dropdown-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            selectedItem.classList.add('active');
-            
-            // ドロップダウンの表示テキストを更新
-            dropdownToggle.innerHTML = selectedItem.innerHTML;
-            
-            // 言語に応じたページにリダイレクト
-            const languageUrls = {
-                'ja': '../ja/landing_page_ja.html',
-                'en': '../en/landing_page_en.html',
-                'zh_CN': '../zh_CN/landing_page_zh_CN.html',
-                'ko': '../ko/landing_page_ko.html',
-                'es': '../es/landing_page_es.html',
-                'fr': '../fr/landing_page_fr.html',
-                'de': '../de/landing_page_de.html',
-                'pt': '../pt/landing_page_pt.html',
-                'ru': '../ru/landing_page_ru.html',
-                'ar': '../ar/landing_page_ar.html',
-                'hi': '../hi/landing_page_hi.html',
-                'th': '../th/landing_page_th.html',
-                'it': '../it/landing_page_it.html',
-                'id': 'landing_page_id.html',
-                'nl': '../nl/landing_page_nl.html',
-                'pl': '../pl/landing_page_pl.html',
-                'tr': '../tr/landing_page_tr.html',
-                'cs': '../cs/landing_page_cs.html',
-                'hu': '../hu/landing_page_hu.html',
-                'no': '../no/landing_page_no.html',
-                'sv': '../sv/landing_page_sv.html',
-                'da': '../da/landing_page_da.html',
-                'fi': '../fi/landing_page_fi.html',
-                'el': '../el/landing_page_el.html',
-                'uk': '../uk/landing_page_uk.html',
-                'vi': '../vi/landing_page_vi.html',
-                'zh_TW': '../zh_TW/landing_page_zh_TW.html',
-            };
-            
-            if (languageUrls[lang]) {
-                window.location.href = languageUrls[lang];
-            }
-        }
-    </script>
+    <script src="../../js/sharedDiceLanguageSwitcher.js"></script>
 </body>
 </html> 
