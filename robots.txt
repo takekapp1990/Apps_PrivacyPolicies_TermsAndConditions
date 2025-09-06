@@ -10,7 +10,6 @@ Crawl-delay: 1
 # Block access to private documents and development files
 Disallow: /_private_docs/
 Disallow: /.DS_Store
-Disallow: /llms.txt
 
 # Allow all app landing pages and policy pages
 Allow: /*/landing_page_*.html
