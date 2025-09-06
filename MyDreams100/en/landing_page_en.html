@@ -183,6 +183,38 @@
             flex-wrap: wrap;
         }
 
+        /* スクリーンショットセクション */
+        .screenshot-section {
+            background: #f8f9fa;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .screenshot-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            margin: 1rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-container:hover img {
+            transform: scale(1.02);
+        }
+
         /* Value proposition section */
         .value-section {
             background-color: #fff;
@@ -571,6 +603,30 @@
                     <i class="fas fa-crown"></i>
                     <h3>Accelerate further with premium features</h3>
                     <p>Advanced content creation support to further accelerate dream realization.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- スクリーンショットセクション -->
+        <section class="screenshot-section">
+            <h2>App Screenshots</h2>
+            <p>See the app in action</p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
+                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
+                    <img src="../images/screen_shots/en/6.png" alt="My Dreams 100 Screenshot 1" style="width: 100%; height: auto;">
+                </div>
+                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
+                    <img src="../images/screen_shots/en/7.png" alt="My Dreams 100 Screenshot 2" style="width: 100%; height: auto;">
+                </div>
+                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
+                    <img src="../images/screen_shots/en/8.png" alt="My Dreams 100 Screenshot 3" style="width: 100%; height: auto;">
+                </div>
+                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
+                    <img src="../images/screen_shots/en/9.png" alt="My Dreams 100 Screenshot 4" style="width: 100%; height: auto;">
+                </div>
+                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
+                    <img src="../images/screen_shots/en/10.png" alt="My Dreams 100 Screenshot 5" style="width: 100%; height: auto;">
                 </div>
             </div>
         </section>
