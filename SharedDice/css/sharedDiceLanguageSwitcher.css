@@ -1,0 +1,86 @@
+/* SharedDice Language Switcher Common CSS */
+/* 共通の言語切り替えスタイル - 全言語で使用 */
+
+/* メインの言語切り替えコンテナ */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* ドロップダウントグルボタン */
+.language-switcher .dropdown-toggle {
+    background-color: rgba(30, 58, 138, 0.9);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    min-width: 120px;
+}
+
+/* ドロップダウントグルボタンのホバー・フォーカス状態 */
+.language-switcher .dropdown-toggle:hover,
+.language-switcher .dropdown-toggle:focus {
+    background-color: rgba(245, 158, 11, 0.9);
+    color: white;
+    border: none;
+    box-shadow: none;
+}
+
+/* ドロップダウンメニュー */
+.language-switcher .dropdown-menu {
+    background-color: rgba(30, 58, 138, 0.95);
+    border: none;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* ドロップダウンメニューアイテム */
+.language-switcher .dropdown-item {
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* ドロップダウンメニューアイテムのホバー状態 */
+.language-switcher .dropdown-item:hover {
+    background-color: rgba(245, 158, 11, 0.8);
+    color: white;
+}
+
+/* アクティブなドロップダウンメニューアイテム */
+.language-switcher .dropdown-item.active {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* レスポンシブデザイン - モバイル・タブレット対応 */
+@media (max-width: 768px) {
+    .language-switcher {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .language-switcher .btn {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* アラビア語（RTL）対応 - 左側配置 */
+.language-switcher.rtl {
+    left: 20px;
+    right: auto;
+}
+
+@media (max-width: 768px) {
+    .language-switcher.rtl {
+        left: 10px;
+        right: auto;
+    }
+}

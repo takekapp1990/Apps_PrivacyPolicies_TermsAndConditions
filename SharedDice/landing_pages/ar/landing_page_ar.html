@@ -165,33 +165,7 @@
             transform: translateY(-3px);
         }
 
-        /* أزرار تبديل اللغة */
-        .language-switcher {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-        }
-
-        .language-switcher .btn {
-            background-color: rgba(30, 58, 138, 0.9);
-            border: none;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            backdrop-filter: blur(10px);
-            margin: 0.2rem;
-        }
-
-        .language-switcher .btn:hover {
-            background-color: rgba(245, 158, 11, 0.9);
-            color: white;
-        }
-
-        .language-switcher .btn.active {
-            background-color: var(--secondary-color);
-        }
+        /* أزرار تبديل اللغة - 共通CSSに移行済み */
 
         .cta-button {
             background: linear-gradient(135deg, var(--secondary-color), #F97316);
@@ -243,21 +217,14 @@
                 height: 100px;
             }
             
-            .language-switcher {
-                top: 10px;
-                left: 10px;
-            }
-            
-            .language-switcher .btn {
-                padding: 0.3rem 0.8rem;
-                font-size: 0.8rem;
-            }
+            /* 言語切り替えレスポンシブ - 共通CSSに移行済み */
         }
     </style>
+    <link rel="stylesheet" href="../../css/sharedDiceLanguageSwitcher.css">
 </head>
 <body>
     <!-- قائمة منسدلة لاختيار اللغة -->
-    <div class="language-switcher" data-current-lang="ar">
+    <div class="language-switcher rtl" data-current-lang="ar">
         <div class="dropdown">
             <button class="btn dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 🇸🇦 العربية

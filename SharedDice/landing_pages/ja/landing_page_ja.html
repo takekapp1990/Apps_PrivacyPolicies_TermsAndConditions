@@ -163,57 +163,7 @@
             transform: translateY(-3px);
         }
 
-        /* 言語切り替えドロップダウン */
-        .language-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .language-switcher .dropdown-toggle {
-            background-color: rgba(30, 58, 138, 0.9);
-            border: none;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            backdrop-filter: blur(10px);
-            min-width: 120px;
-        }
-
-        .language-switcher .dropdown-toggle:hover,
-        .language-switcher .dropdown-toggle:focus {
-            background-color: rgba(245, 158, 11, 0.9);
-            color: white;
-            border: none;
-            box-shadow: none;
-        }
-
-        .language-switcher .dropdown-menu {
-            background-color: rgba(30, 58, 138, 0.95);
-            border: none;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .language-switcher .dropdown-item {
-            color: white;
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem;
-        }
-
-        .language-switcher .dropdown-item:hover {
-            background-color: rgba(245, 158, 11, 0.8);
-            color: white;
-        }
-
-        .language-switcher .dropdown-item.active {
-            background-color: var(--secondary-color);
-            color: white;
-        }
+        /* 言語切り替えドロップダウン - 共通CSSに移行済み */
 
         .cta-button {
             background: linear-gradient(135deg, var(--secondary-color), #F97316);
@@ -265,17 +215,10 @@
                 height: 100px;
             }
             
-            .language-switcher {
-                top: 10px;
-                right: 10px;
-            }
-            
-            .language-switcher .btn {
-                padding: 0.3rem 0.8rem;
-                font-size: 0.8rem;
-            }
+            /* 言語切り替えレスポンシブ - 共通CSSに移行済み */
         }
     </style>
+    <link rel="stylesheet" href="../../css/sharedDiceLanguageSwitcher.css">
 </head>
 <body>
     <!-- 言語切り替えドロップダウン -->
@@ -296,7 +239,7 @@
                     <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/launcher_icon_10240124_7_android.png" 
                          alt="多機能サイコロ" class="app-icon-large mb-4">
                     <h1 class="display-4 fw-bold mb-3">多機能サイコロ</h1>
-                    <p class="lead mb-4">シンプルでパワフルな仮想サイコロアプリ<br>
+                    <p class="lead mb-4">シンプルでパワフルなサイコロアプリ<br>
                     リアルタイムマルチプレイヤー、カスタム設定、詳細分析</p>
                     <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
                         <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod" 
