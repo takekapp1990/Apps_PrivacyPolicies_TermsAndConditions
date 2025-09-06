@@ -41,12 +41,37 @@ x-canonical-url-description: "Access via other FQDNs or IP addresses is invalid.
 # Site Structure
 x-site-type: "app-collection"
 x-site-description: "TakeKApp official website featuring mobile applications that make daily life more enjoyable"
-x-app-pattern: "/SharedDice/landing_pages/*/landing_page_*.html"
+x-app-pattern: "*/landing_page_*.html, */app_introduction.html"
 x-app-type: "mobile-application"
 x-app-description: "Mobile applications for Android and iOS platforms"
 
+# Available Applications
+x-apps:
+  - name: "SharedDice"
+    description: "Multi-functional dice app with various dice types and features"
+    pattern: "/SharedDice/landing_pages/*/landing_page_*.html"
+  - name: "AwaAwaPon"
+    description: "Memory training battle game with cute characters"
+    pattern: "/AwaAwaPon/*/landing_page_*.html"
+  - name: "MyDreams100"
+    description: "Bucket list app to help you achieve 100 dreams"
+    pattern: "/MyDreams100/*/landing_page_*.html"
+  - name: "FunTopics"
+    description: "Conversation topics and discussion app"
+    pattern: "/FunTopics/*/landing_page_*.html"
+  - name: "GoodLuckMaker"
+    description: "Daily fortune telling and omikuji app"
+    pattern: "/GoodLuckMaker/*/landing_page_*.html"
+  - name: "LearningStatistics"
+    description: "Fun statistics learning app"
+    pattern: "/LearningStatistics/*/app_introduction.html"
+
 # Content Structure
 x-main-page: "/index.html"
-x-app-pages: "/SharedDice/landing_pages/*/landing_page_*.html"
+x-app-pages: "*/landing_page_*.html, */app_introduction.html"
 x-policy-pages: "*/privacy_policy_*.html, */terms_and_conditions_*.html"
-x-language-support: "ja, en, zh_CN, ko, es, fr, de, pt, ru, ar, hi, th, it, id, nl, pl, tr, cs, hu, no, sv, da, fi, el, uk, vi, zh_TW" 
+x-language-support: "ja, en, zh_CN, ko, es, fr, de, pt, ru, ar, hi, th, it, id, nl, pl, tr, cs, hu, no, sv, da, fi, el, uk, vi, zh_TW"
+
+# SEO Keywords
+x-primary-keywords: "mobile app, android app, ios app, productivity, entertainment, games, statistics, conversation, dreams, dice, fortune telling"
+x-secondary-keywords: "app development, takekapp, japanese app, english app, multilingual app, free app, premium app" 

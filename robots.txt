@@ -1,12 +1,26 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap location
 Sitemap: https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/sitemap.xml
 
-# Disallow
-Disallow: /app_store_text/
-Disallow: /SEO_LLM対策実行計画書.md
+# Crawl delay for better server performance
+Crawl-delay: 1
 
-# Crawl-delay
-Crawl-delay: 1 
+# Block access to private documents and development files
+Disallow: /_private_docs/
+Disallow: /.DS_Store
+Disallow: /llms.txt
+
+# Allow all app landing pages and policy pages
+Allow: /*/landing_page_*.html
+Allow: /*/app_introduction.html
+Allow: /*/privacy_policy_*.html
+Allow: /*/terms_and_conditions_*.html
+
+# Block access to image directories (they're referenced directly)
+Disallow: /images/
+Disallow: /*/images/
+
+# Allow common app store badges and icons
+Allow: /commonImages/

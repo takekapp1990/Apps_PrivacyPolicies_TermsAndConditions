@@ -3,7 +3,7 @@
   <!-- メインページ -->
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,13 +11,13 @@
   <!-- SharedDice ランディングページ -->
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/landing_pages/ja/landing_page_ja.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/landing_pages/en/landing_page_en.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -25,13 +25,117 @@
   <!-- AwaAwaPon ランディングページ -->
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/landing_page_ja.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/en/landing_page_en.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- MyDreams100 ランディングページ -->
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/MyDreams100/ja/landing_page_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/MyDreams100/en/landing_page_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- FunTopics ランディングページ -->
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ja/landing_page_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/en/landing_page_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/zh_CN/landing_page_zh_CN.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ko/landing_page_ko.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/es/landing_page_es.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/fr/landing_page_fr.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/de/landing_page_de.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/pt/landing_page_pt.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ru/landing_page_ru.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ar/landing_page_ar.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/hi/landing_page_hi.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- GoodLuckMaker ランディングページ -->
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/ja/landing_page_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/en/landing_page_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- LearningStatistics アプリ紹介ページ -->
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/app_introduction.html</loc>
+    <lastmod>2025-01-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -39,13 +143,67 @@
   <!-- プライバシーポリシー -->
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/ja/privacy_policy_ja.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/en/privacy_policy_en.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/privacy_policy_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/en/privacy_policy_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/MyDreams100/ja/privacy_policy_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/MyDreams100/en/privacy_policy_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ja/privacy_policy_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/en/privacy_policy_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/ja/privacy_policy_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/en/privacy_policy_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/privacy_policy_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -53,13 +211,67 @@
   <!-- 利用規約 -->
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/ja/terms_and_conditions_ja.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/en/terms_and_conditions_en.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/terms_and_conditions_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/en/terms_and_conditions_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/MyDreams100/ja/terms_and_conditions_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/MyDreams100/en/terms_and_conditions_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/ja/terms_and_conditions_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FunTopics/en/terms_and_conditions_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/ja/terms_and_conditions_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/en/terms_and_conditions_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/terms_and_conditions_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
