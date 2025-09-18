@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Drafts - Make SNS posting easier and more effective</title>
+    <!-- OGP & Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Post Drafts - Make SNS posting easier and more effective">
+    <meta property="og:description" content="Streamline your SNS draft management. Character counting, hashtag management, OGP preview, and translation features for perfect posts. Coming September 2025!">
+    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/images/app_icon/post_drafts_app_icon_1024_1024_ios.png">
+    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/en/landing_page_en.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Post Drafts - Make SNS posting easier and more effective">
+    <meta name="twitter:description" content="Streamline your SNS draft management. Character counting, hashtag management, OGP preview, and translation features for perfect posts. Coming September 2025!">
+    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/images/app_icon/post_drafts_app_icon_1024_1024_ios.png">
+    <meta name="twitter:site" content="@takekapp">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0VCS46ZTHC');
+    </script>
+    <style>
+        /* Basic styles */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: #5d4e37;
+            background-color: #faf8f5;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #8b4513;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2.4em;
+            margin-top: 30px;
+        }
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #d2b48c;
+            padding-bottom: 10px;
+            margin-top: 15px;
+        }
+        h3 {
+            font-size: 1.8em;
+            color: #a0522d;
+            margin-bottom: 15px;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #d2b48c, #bc9a6a);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 20px;
+        }
+        .hero-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .hero-title h1 {
+            margin: 0;
+        }
+        .hero h1 {
+            color: white;
+            font-size: 2.6em;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.4em;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        .release-badge {
+            background-color: #8b4513;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .btn-primary {
+            display: inline-block;
+            background-color: #8b4513;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+        .btn-primary:hover {
+            background-color: #a0522d;
+        }
+        .btn-secondary {
+            display: inline-block;
+            background-color: #cd853f;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+        .btn-secondary:hover {
+            background-color: #daa520;
+        }
+
+        /* Store badges styling */
+        .store-badge {
+            text-decoration: none;
+            outline: none;
+        }
+
+        .store-badge img {
+            outline: none;
+            border: none;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+        .gap-3 {
+            gap: 1rem;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        /* Screenshot section */
+        .screenshot-section {
+            background: #f5f5dc;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .screenshot-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            margin: 1rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-container:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Value proposition section */
+        .value-section {
+            background-color: #fff;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .value-item {
+            background-color: #faf8f5;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #d2b48c;
+            text-align: center;
+        }
+        .value-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .value-item h3 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .value-item p {
+            text-align: left;
+            color: #5d4e37;
+            margin-bottom: 0;
+        }
+
+        /* Problem section */
+        .problem-section {
+            background: linear-gradient(135deg, #f5f5dc 0%, #e6ddd4 100%);
+            color: #5d4e37;
+            padding: 40px 20px 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(139,69,19,0.08);
+            margin-bottom: 30px;
+        }
+        .problem-section h2 {
+            color: #8b4513;
+            font-size: 1.6em;
+            margin-bottom: 25px;
+            border-bottom: none;
+            text-align: center;
+        }
+        .problem-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .problem-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(139,69,19,0.07);
+            padding: 28px 24px 20px 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .problem-card .icon {
+            font-size: 1.8em;
+            flex-shrink: 0;
+            margin-top: 2px;
+            color: #d2b48c;
+        }
+        .problem-card-content {
+            flex: 1;
+        }
+        .problem-card-title {
+            font-weight: bold;
+            font-size: 1.15em;
+            margin-bottom: 8px;
+            color: #8b4513;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .problem-card-desc {
+            color: #5d4e37;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+        @media (max-width: 600px) {
+            .problem-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px 12px 16px 12px;
+            }
+            .problem-card .icon {
+                margin-bottom: 8px;
+            }
+        }
+
+        /* Solution section */
+        .solution-section {
+            background-color: #f5f5dc;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .feature-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: calc(33% - 20px);
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .feature-item h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #8b4513;
+        }
+        .feature-item p {
+            font-size: 0.95em;
+            text-align: left;
+            color: #5d4e37;
+        }
+        .feature-item i {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .feature-item .fa-edit {
+            color: #d2b48c;
+        }
+        .feature-item .fa-hashtag {
+            color: #cd853f;
+        }
+        .feature-item .fa-image {
+            color: #daa520;
+        }
+        .feature-item .fa-language {
+            color: #8b4513;
+        }
+        .feature-item .fa-copy {
+            color: #a0522d;
+        }
+        .feature-item .fa-search {
+            color: #bc9a6a;
+        }
+
+        /* Release section */
+        .release-section {
+            background: linear-gradient(135deg, #8b4513, #cd853f);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        .release-section h2 {
+            color: white;
+            font-size: 1.8em;
+            border-bottom: none;
+        }
+        .release-section p {
+            font-size: 1.2em;
+            margin-bottom: 25px;
+        }
+        .release-message {
+            background-color: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .release-message p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #8b7355;
+            border-top: 1px solid #d2b48c;
+            margin-top: 30px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            .hero h1 {
+                font-size: 1.9em;
+            }
+            .hero p {
+                font-size: 1.1em;
+            }
+            .hero p br {
+                display: none;
+            }
+            .value-section h2 {
+                margin-top: 5px;
+            }
+            .problem-section h2 {
+                margin-top: 10px;
+            }
+            .problem-card {
+                flex-direction: row;
+                align-items: center;
+                padding: 15px 12px;
+            }
+            .problem-card .icon {
+                font-size: 1.2em;
+                margin-bottom: 0;
+                margin-right: 5px;
+            }
+            .problem-card-content {
+                flex: 1;
+            }
+            .problem-card-title {
+                font-size: 1em;
+                margin-bottom: 5px;
+            }
+            .problem-card-desc {
+                font-size: 0.9em;
+            }
+            .app-icon {
+                width: 60px;
+                height: 60px;
+                margin-left: 15px;
+            }
+            .feature-item {
+                width: calc(100% - 20px);
+            }
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+            .value-item img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-title">
+                <h1>Post Drafts</h1>
+                <img src="../images/app_icon/post_drafts_app_icon_1024_1024_ios.png" alt="Post Drafts App Icon" class="app-icon">
+            </div>
+            <p><strong>Make SNS posting easier and more effective.</strong><br><br>
+            Character counting, hashtag management, OGP preview, and translation features<br>for perfect SNS posts.</p>
+            <div class="release-badge">Coming September 2025!</div>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" height="60">
+                </a>
+                <a href="#" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="60">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="problem-section">
+            <h2>Do you have these SNS posting problems?</h2>
+            <div class="problem-cards">
+                <div class="problem-card">
+                    <span class="icon">😰</span>
+                    <div class="problem-card-content">
+                        <div class="problem-card-title">Worried about character limits</div>
+                        <div class="problem-card-desc">Stressed about X's character limits while writing posts. Sometimes getting "character limit exceeded" errors after posting.</div>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <span class="icon">😤</span>
+                    <div class="problem-card-content">
+                        <div class="problem-card-title">Tired of manually typing hashtags every time</div>
+                        <div class="problem-card-desc">It's annoying to manually input frequently used hashtags every time. Many typos and inefficient workflow.</div>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <span class="icon">🤔</span>
+                    <div class="problem-card-content">
+                        <div class="problem-card-title">Uncertain if OGP images are loading properly</div>
+                        <div class="problem-card-desc">Worried about whether OGP images display correctly when posting URLs. Often need to check and fix after posting.</div>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <span class="icon">😓</span>
+                    <div class="problem-card-content">
+                        <div class="problem-card-title">Want to make X drafts more efficient</div>
+                        <div class="problem-card-desc">X's built-in draft feature isn't enough. Want to manage multiple drafts and edit more efficiently.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="solution-section">
+            <h2>Post Drafts powerfully supports<br>your SNS posting</h2>
+            <p>Everything you need to solve SNS posting problems and achieve effective communication is packed into this app.</p>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-edit"></i>
+                    <h3>Adjust while viewing character count in drafts</h3>
+                    <p>Real-time character counting. Calculate according to X's character limits for worry-free posting.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-hashtag"></i>
+                    <h3>Select hashtags with a tap</h3>
+                    <p>Register frequently used hashtags and insert them with one tap. No typos and efficient posting.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-image"></i>
+                    <h3>Preview OGP images</h3>
+                    <p>Simply input a URL to preview OGP images. Check before posting for peace of mind.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-language"></i>
+                    <h3>Built-in translation feature</h3>
+                    <p>Translation functionality using Google Translate API. Create effective posts in both Japanese and English.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-copy"></i>
+                    <h3>UI designed for continuous posting</h3>
+                    <p>Efficiently manage multiple drafts. Copy feature makes it easy to create similar posts.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-search"></i>
+                    <h3>Search and filtering features</h3>
+                    <p>Search drafts by tags or content. Make it easier to review past posts and maintain consistent messaging.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screenshot section -->
+        <section class="screenshot-section">
+            <h2>App Screenshots</h2>
+            <p>See the app in action</p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
+                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px; background: #f0f0f0; height: 300px; display: flex; align-items: center; justify-content: center; color: #999;">
+                    <p>Screenshots<br>Coming Soon</p>
+                </div>
+                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px; background: #f0f0f0; height: 300px; display: flex; align-items: center; justify-content: center; color: #999;">
+                    <p>Screenshots<br>Coming Soon</p>
+                </div>
+                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px; background: #f0f0f0; height: 300px; display: flex; align-items: center; justify-content: center; color: #999;">
+                    <p>Screenshots<br>Coming Soon</p>
+                </div>
+                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px; background: #f0f0f0; height: 300px; display: flex; align-items: center; justify-content: center; color: #999;">
+                    <p>Screenshots<br>Coming Soon</p>
+                </div>
+                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px; background: #f0f0f0; height: 300px; display: flex; align-items: center; justify-content: center; color: #999;">
+                    <p>Screenshots<br>Coming Soon</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="release-section" id="download">
+            <h2>Now, streamline your SNS posting<br>immediately!</h2>
+            <p>With Post Drafts, solve your SNS posting problems and start effective communication!</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" height="60">
+                </a>
+                <a href="#" class="store-badge">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="60">
+                </a>
+            </div>
+            
+            <div class="release-message">
+                <p><strong>Coming September 2025!</strong></p>
+                <p>Currently in development. Release information will be updated regularly.</p>
+            </div>
+            
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="terms_and_conditions_en.html" class="btn-secondary" style="margin: 5px;">Terms and Conditions</a>
+                <a href="privacy_policy_en.html" class="btn-secondary" style="margin: 5px;">Privacy Policy</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; TakeKApp. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
