@@ -65,6 +65,9 @@ x-apps:
   - name: "LearningStatistics"
     description: "Fun statistics learning app"
     pattern: "/LearningStatistics/*/app_introduction.html"
+  - name: "PostDrafts"
+    description: "Draft writing and content creation app"
+    pattern: "/PostDrafts/*/landing_page_*.html"
 
 # Content Structure
 x-main-page: "/index.html"

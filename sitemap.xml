@@ -140,6 +140,20 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- PostDrafts ランディングページ -->
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/ja/landing_page_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/en/landing_page_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- プライバシーポリシー -->
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/ja/privacy_policy_ja.html</loc>
@@ -203,6 +217,18 @@
   </url>
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/privacy_policy_en.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/ja/privacy_policy_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/en/privacy_policy_en.html</loc>
     <lastmod>2025-01-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -271,6 +297,18 @@
   </url>
   <url>
     <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/LearningStatistics/ja/terms_and_conditions_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/ja/terms_and_conditions_ja.html</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/en/terms_and_conditions_en.html</loc>
     <lastmod>2025-01-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
