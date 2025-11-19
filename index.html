@@ -430,6 +430,39 @@
         .content-ja.active, .content-en.active {
             display: block;
         }
+
+        /* 11月大会ボタンのカスタムスタイル */
+        .tournament-btn {
+            background: linear-gradient(135deg, #f7b731, #ff6b9d, #4ecdc4);
+            background-size: 200% 200%;
+            animation: gradient-shift 3s ease infinite;
+            color: #ffffff !important;
+            font-weight: bold !important;
+            border: none;
+            box-shadow: 0 4px 15px rgba(247, 183, 49, 0.4);
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .tournament-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(247, 183, 49, 0.6);
+            color: #ffffff !important;
+            background: linear-gradient(135deg, #ffc048, #ff8fb3, #5eddd6);
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -652,6 +685,9 @@
                             </div>
                             <div class="d-flex flex-column gap-2">
                                 <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/landing_page_ja.html" class="btn btn-primary">詳細を見る</a>
+                                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/tournament_202511_ja.html" class="btn tournament-btn">
+                                    <i class="bi bi-trophy"></i> 11月大会（抽選で総額2000円・2名に1000円ずつ）
+                                </a>
                                 <div class="d-flex gap-2 justify-content-center">
                                     <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" target="_blank" class="app-store-badge">
                                         <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで手に入れよう" height="40">

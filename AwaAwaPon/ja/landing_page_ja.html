@@ -240,6 +240,39 @@
                 gap: 0.5rem !important;
             }
         }
+
+        /* 11月大会ボタンのカスタムスタイル */
+        .tournament-btn {
+            background: linear-gradient(135deg, #f7b731, #ff6b9d, #4ecdc4);
+            background-size: 200% 200%;
+            animation: gradient-shift 3s ease infinite;
+            color: #ffffff !important;
+            font-weight: bold !important;
+            border: none;
+            box-shadow: 0 4px 15px rgba(247, 183, 49, 0.4);
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .tournament-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(247, 183, 49, 0.6);
+            color: #ffffff !important;
+            background: linear-gradient(135deg, #ffc048, #ff8fb3, #5eddd6);
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -261,6 +294,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#download">ダウンロード</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/tournament_202511_ja.html" style="color: #f7b731; font-weight: bold;">
+                            <i class="bi bi-trophy"></i> 11月大会
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -276,7 +314,7 @@
                     <h1 class="display-4 fw-bold mb-3">あわあわポン</h1>
                     <h2 class="h3 mb-4">笑いながら脳トレ！記憶力バトルゲーム</h2>
                     <p class="lead mb-4">次々と出てくるキャラクターの名前を覚えて答える、新感覚の記憶力バトルパーティゲーム！</p>
-                    <div class="d-flex justify-content-center gap-3 flex-wrap store-links-container">
+                    <div class="d-flex justify-content-center gap-3 flex-wrap store-links-container mb-3">
                         <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" 
                            target="_blank" class="store-badge">
                             <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" 
@@ -286,6 +324,12 @@
                            target="_blank" class="store-badge">
                             <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" 
                                  alt="App Storeからダウンロード" height="50">
+                        </a>
+                    </div>
+                    <div class="mt-3">
+                        <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/tournament_202511_ja.html" 
+                           class="btn tournament-btn btn-lg">
+                            <i class="bi bi-trophy"></i> 11月大会開催中！抽選で総額2000円（2名に1000円ずつ）
                         </a>
                     </div>
                 </div>
