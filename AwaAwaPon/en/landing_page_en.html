@@ -233,6 +233,93 @@
             height: 30px;
             border-radius: 6px;
         }
+
+        /* ルール説明セクション */
+        .rules-section {
+            background: var(--light-color);
+            padding: 4rem 0;
+        }
+
+        .rules-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 2rem auto;
+            display: block;
+        }
+
+        /* おすすめカード */
+        .recommend-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            text-align: center;
+        }
+
+        .recommend-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .recommend-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* 利用シーンカード */
+        .scene-card {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(78, 205, 196, 0.1));
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            height: 100%;
+            border: 2px solid transparent;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .scene-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Q&A セクション */
+        .faq-section {
+            background: var(--light-color);
+            padding: 4rem 0;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: var(--dark-color);
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -250,6 +337,9 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recommend">Perfect For</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#download">Download</a>
@@ -294,7 +384,104 @@
         </div>
     </section>
 
-    <!-- 特徴セクション -->
+    <!-- Rules Section -->
+    <section class="rules-section">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="display-5 fw-bold mb-3">Simple Rules!</h2>
+                <p class="lead fs-4">Remember characters with hilarious nicknames and answer correctly!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/store_screen_shots_3images_en.png" 
+                         alt="Awa Pop Rules" 
+                         class="rules-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cute Characters! -->
+    <section id="characters" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Meet the Cute Characters!</h2>
+            <div class="character-gallery">
+                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/standard_2.png" alt="Character 1">
+                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/robot_7_firefly_flying_robot_with_jetpack,_colorful,_pop_and_cute,_minimal_background_in_1tone_203040-photoroom.png" alt="Robot Character">
+                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/animal_2_firefly__213968-photoroom.png" alt="Animal Character">
+                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/idol_1_firefly_a_cheerful_anime-style_beautiful_girl_with_blonde_twin_tails_and_a_big_ribbon,_white__539627-photoroom.png" alt="Idol Character">
+                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/ojisan_18_firefly_photorealistic_upper_body_image_of_a_middle-aged_man_with_a_fake_royal_pose,_wearing__331229-photoroom.png" alt="Old Man Character">
+            </div>
+        </div>
+    </section>
+
+    <!-- Perfect For -->
+    <section id="recommend" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Perfect For</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="recommend-card">
+                        <div class="recommend-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">People looking for fun party games with friends</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="recommend-card">
+                        <div class="recommend-icon">
+                            <i class="bi bi-emoji-laughing-fill"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Fans of unique brain training with hilarious names</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="recommend-card">
+                        <div class="recommend-icon">
+                            <i class="bi bi-mortarboard-fill me-1"></i><i class="bi bi-briefcase-fill"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Students and professionals who want to train memory in a fun way</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="recommend-card">
+                        <div class="recommend-icon">
+                            <i class="bi bi-clock-fill"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">People who want quick entertainment during breaks</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="recommend-card">
+                        <div class="recommend-icon">
+                            <i class="bi bi-house-heart-fill"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Families looking for safe games to play with children</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="recommend-card">
+                        <div class="recommend-icon">
+                            <i class="bi bi-camera-video-fill"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Content creators looking for entertaining games for streams</h5>
+                        <p class="small text-muted mb-0">(Feel free to use!)</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="recommend-card">
+                        <div class="recommend-icon">
+                            <i class="bi bi-heart-pulse-fill"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Seniors who want to prevent memory decline</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Features -->
     <section id="features" class="py-5">
         <div class="container">
             <h2 class="text-center mb-5">Game Features</h2>
@@ -330,88 +517,109 @@
         </div>
     </section>
 
-    <!-- Cute Characters! -->
-    <section id="characters" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Meet the Cute Characters!</h2>
-            <div class="character-gallery">
-                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/standard_2.png" alt="Character 1">
-                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/robot_7_firefly_flying_robot_with_jetpack,_colorful,_pop_and_cute,_minimal_background_in_1tone_203040-photoroom.png" alt="Robot Character">
-                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/animal_2_firefly__213968-photoroom.png" alt="Animal Character">
-                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/idol_1_firefly_a_cheerful_anime-style_beautiful_girl_with_blonde_twin_tails_and_a_big_ribbon,_white__539627-photoroom.png" alt="Idol Character">
-                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/ojisan_18_firefly_photorealistic_upper_body_image_of_a_middle-aged_man_with_a_fake_royal_pose,_wearing__331229-photoroom.png" alt="Old Man Character">
-            </div>
-        </div>
-    </section>
-
-    <!-- Perfect For -->
+    <!-- Usage Scenarios -->
     <section class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Perfect For</h2>
-            <div class="row">
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="text-center">
-                        <i class="bi bi-emoji-heart-eyes display-4 text-primary mb-3"></i>
-                        <h5>Fun Social Gaming</h5>
-                        <p>With friends and family</p>
+            <h2 class="text-center mb-5">How Will You Play?</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="scene-card">
+                        <div class="scene-icon">📱</div>
+                        <h4 class="fw-bold mb-3">During your 3-minute commute</h4>
+                        <p class="mb-0">Quick memory battles on trains or buses. Perfect for brain training during short breaks.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="text-center">
-                        <i class="bi bi-lightbulb display-4 text-secondary mb-3"></i>
-                        <h5>Memory Training</h5>
-                        <p>With entertainment value</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="scene-card">
+                        <div class="scene-icon">🏠</div>
+                        <h4 class="fw-bold mb-3">Family time together</h4>
+                        <p class="mb-0">Compete with family or play cooperatively. A communication tool that brings generations together.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="text-center">
-                        <i class="bi bi-star display-4 text-warning mb-3"></i>
-                        <h5>Safe Content</h5>
-                        <p>Suitable for all ages</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="scene-card">
+                        <div class="scene-icon">👥</div>
+                        <h4 class="fw-bold mb-3">At parties with friends</h4>
+                        <p class="mb-0">Multiplayer battles and cooperative play. Enjoy memory battles with hilarious names!</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="text-center">
-                        <i class="bi bi-clock display-4 text-info mb-3"></i>
-                        <h5>Quick Brain Workouts</h5>
-                        <p>During breaks</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="scene-card">
+                        <div class="scene-icon">🎥</div>
+                        <h4 class="fw-bold mb-3">As streaming content</h4>
+                        <p class="mb-0">Unexpected AI-generated names are perfect for reaction content. Great for viewer participation.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="scene-card">
+                        <div class="scene-icon">🧠</div>
+                        <h4 class="fw-bold mb-3">Before bed brain training</h4>
+                        <p class="mb-0">A 5-minute daily habit to maintain memory. Effective for preventing cognitive decline.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="scene-card">
+                        <div class="scene-icon">💼</div>
+                        <h4 class="fw-bold mb-3">Between meetings</h4>
+                        <p class="mb-0">Refresh during work breaks. Reset your focus and boost mental agility.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- プレミアム機能 -->
-    <section class="py-5 bg-light">
+    <!-- Q&A Section -->
+    <section class="faq-section">
         <div class="container">
-            <h2 class="text-center mb-5">Premium Features</h2>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="feature-card">
-                        <i class="bi bi-eye-slash text-primary display-4 mb-3"></i>
-                        <h4>Ad-free Gameplay</h4>
-                        <p>Uninterrupted focus for the best performance</p>
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="bi bi-question-circle-fill me-2"></i>Is it free to play?
+                        </div>
+                        <div class="faq-answer">
+                            Yes, all basic features are completely free. Ad display and premium features are optional.
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="feature-card">
-                        <i class="bi bi-palette text-secondary display-4 mb-3"></i>
-                        <h4>Exclusive Characters</h4>
-                        <p>Access to rare character designs</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="bi bi-question-circle-fill me-2"></i>Can I play offline?
+                        </div>
+                        <div class="faq-answer">
+                            Single player mode can be played offline. Multiplayer and ranking features require an internet connection.
+                        </div>
                     </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="bi bi-question-circle-fill me-2"></i>What age is this suitable for?
+                        </div>
+                        <div class="faq-answer">
+                            The simple rules make it enjoyable for all ages, from young children to seniors. Perfect for family play.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="bi bi-question-circle-fill me-2"></i>How are character names generated?
+                        </div>
+                        <div class="faq-answer">
+                            AI automatically generates unique nicknames based on each character's appearance. Unexpected and hilarious names appear one after another.
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="feature-card">
-                        <i class="bi bi-chat-heart text-warning display-4 mb-3"></i>
-                        <h4>Premium Nicknames</h4>
-                        <p>Additional hilarious nickname collections</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="bi bi-question-circle-fill me-2"></i>How many people can play multiplayer?
+                        </div>
+                        <div class="faq-answer">
+                            Create a room and share the passcode to play with friends. Supports both competitive and cooperative modes.
+                </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ダウンロードセクション -->
+    <!-- Download Section (CTA) -->
     <section id="download" class="cta-section">
         <div class="container text-center">
             <h2 class="mb-4">Download Awa Pop today and dive into the most entertaining memory challenge!</h2>
