@@ -915,12 +915,12 @@
             <p class="lead mb-4">「ぽよよんパニック」や「ずぼっとずぼら」など、予想不可能なネーミングがあなたを待っています。</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
                 <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" 
-                   target="_blank" class="store-badge">
+                   target="_blank" class="store-badge" id="android-badge-cta">
                     <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" 
                          alt="Google Playで手に入れよう" height="60">
                 </a>
                 <a href="https://apps.apple.com/jp/app/%E3%81%82%E3%82%8F%E3%81%82%E3%82%8F%E3%83%9D%E3%83%B3-%E7%AC%91%E3%81%84%E3%81%AA%E3%81%8C%E3%82%89%E8%84%B3%E3%83%88%E3%83%AC-%E8%A8%98%E6%86%B6%E5%8A%9B%E3%83%90%E3%83%88%E3%83%AB%E3%82%B2%E3%83%BC%E3%83%A0/id6746962336" 
-                   target="_blank" class="store-badge">
+                   target="_blank" class="store-badge" id="ios-badge-cta">
                     <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" 
                          alt="App Storeからダウンロード" height="60">
                 </a>
@@ -976,6 +976,8 @@
             const os = detectOS();
             const androidBadge = document.getElementById('android-badge');
             const iosBadge = document.getElementById('ios-badge');
+            const androidBadgeCta = document.getElementById('android-badge-cta');
+            const iosBadgeCta = document.getElementById('ios-badge-cta');
             
             // スマホの場合のみOSに応じて表示を切り替え
             if (window.innerWidth <= 768) {
@@ -983,10 +985,14 @@
                     // iOSの場合はApp Storeのみ表示
                     if (androidBadge) androidBadge.style.display = 'none';
                     if (iosBadge) iosBadge.style.display = 'block';
+                    if (androidBadgeCta) androidBadgeCta.style.display = 'none';
+                    if (iosBadgeCta) iosBadgeCta.style.display = 'block';
                 } else if (os === 'android') {
                     // Androidの場合はGoogle Playのみ表示
                     if (androidBadge) androidBadge.style.display = 'block';
                     if (iosBadge) iosBadge.style.display = 'none';
+                    if (androidBadgeCta) androidBadgeCta.style.display = 'block';
+                    if (iosBadgeCta) iosBadgeCta.style.display = 'none';
                 }
                 // その他の場合は両方表示（デフォルト）
             }

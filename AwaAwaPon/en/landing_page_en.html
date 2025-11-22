@@ -817,12 +817,12 @@
             <p class="lead mb-4">Experience unexpected character names and endless laughs as you test your memory skills solo or with friends.</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
                 <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" 
-                   target="_blank" class="store-badge">
+                   target="_blank" class="store-badge" id="android-badge-cta">
                     <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
                          alt="Get it on Google Play" height="60">
                 </a>
                 <a href="https://apps.apple.com/us/app/awa-pop-memory-party-game/id6746962336" 
-                   target="_blank" class="store-badge">
+                   target="_blank" class="store-badge" id="ios-badge-cta">
                     <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" 
                          alt="Download on the App Store" height="60">
                 </a>
@@ -870,6 +870,8 @@
             const os = detectOS();
             const androidBadge = document.getElementById('android-badge');
             const iosBadge = document.getElementById('ios-badge');
+            const androidBadgeCta = document.getElementById('android-badge-cta');
+            const iosBadgeCta = document.getElementById('ios-badge-cta');
             
             // スマホの場合のみOSに応じて表示を切り替え
             if (window.innerWidth <= 768) {
@@ -877,10 +879,14 @@
                     // iOSの場合はApp Storeのみ表示
                     if (androidBadge) androidBadge.style.display = 'none';
                     if (iosBadge) iosBadge.style.display = 'block';
+                    if (androidBadgeCta) androidBadgeCta.style.display = 'none';
+                    if (iosBadgeCta) iosBadgeCta.style.display = 'block';
                 } else if (os === 'android') {
                     // Androidの場合はGoogle Playのみ表示
                     if (androidBadge) androidBadge.style.display = 'block';
                     if (iosBadge) iosBadge.style.display = 'none';
+                    if (androidBadgeCta) androidBadgeCta.style.display = 'block';
+                    if (iosBadgeCta) iosBadgeCta.style.display = 'none';
                 }
                 // その他の場合は両方表示（デフォルト）
             }
