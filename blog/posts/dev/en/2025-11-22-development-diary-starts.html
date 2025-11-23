@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starting the Development Diary - TakeKApp Development Diary</title>
+    <!-- OGP & Twitter Card -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Starting the Development Diary - TakeKApp Development Diary">
+    <meta property="og:description" content="Since starting TakeKApp, I have released various apps. I decided to start this development diary to share the development process, technical learnings, and daily insights.">
+    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/images/ogp_img.png">
+    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/blog/posts/dev/en/2025-11-22-development-diary-starts.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Starting the Development Diary - TakeKApp Development Diary">
+    <meta name="twitter:description" content="Since starting TakeKApp, I have released various apps. I decided to start this development diary to share the development process, technical learnings, and daily insights.">
+    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/images/ogp_img.png">
+    <link rel="alternate" hreflang="ja" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/blog/posts/dev/ja/2025-11-22-development-diary-starts.html" />
+    <link rel="alternate" hreflang="en" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/blog/posts/dev/en/2025-11-22-development-diary-starts.html" />
+    <link rel="alternate" hreflang="x-default" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/blog/posts/dev/ja/2025-11-22-development-diary-starts.html" />
+    
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Starting the Development Diary",
+      "datePublished": "2025-11-22",
+      "dateModified": "2025-11-22",
+      "author": {
+        "@type": "Person",
+        "name": "takekapp1990"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TakeKApp",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/icon_512512_app_store.png"
+        }
+      },
+      "articleSection": "Development Diary",
+      "keywords": ["Development Diary", "App Development", "TakeKApp", "Flutter", "Statistics"]
+    }
+    </script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VCS46ZTHC');
+    </script>
+    <style>
+        :root {
+            --primary-color: #4682B4;
+            --primary-dark: #2F4F4F;
+            --primary-light: #5F9EA0;
+            --secondary-color: #F5F5F5;
+            --text-color: #2C3E50;
+            --accent-color: #708090;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.8;
+            background-color: var(--secondary-color);
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .article-content {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-meta {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .article-content h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-content h3 {
+            color: var(--primary-dark);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            color: var(--accent-color);
+            font-style: italic;
+        }
+
+        .article-navigation {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .article-navigation a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .article-navigation a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* 言語切り替えボタン */
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .language-switcher .btn {
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .language-switcher .btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.8);
+            color: white;
+        }
+
+        .language-switcher .btn.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../../../index.html">TakeKApp Apps</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../../index.html#apps">Apps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../../index.html">Development Diary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+                <!-- 言語切り替えボタン -->
+                <div class="language-switcher">
+                    <a href="../ja/2025-11-22-development-diary-starts.html" class="btn">日本語</a>
+                    <a href="2025-11-22-development-diary-starts.html" class="btn active">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 記事ヘッダー -->
+    <section class="article-header">
+        <div class="container text-center">
+            <h1 class="display-4 mb-3">Starting the Development Diary</h1>
+            <div class="article-meta text-white" style="opacity: 0.9;">
+                <i class="bi bi-calendar3"></i> November 22, 2025
+                <span class="ms-3"><i class="bi bi-folder"></i> Development Diary</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 記事本文 -->
+    <section class="container">
+        <article class="article-content">
+            <h2>Introduction</h2>
+            <p>
+                Since starting TakeKApp, I have released various apps. I have developed apps that make users' daily lives a little more enjoyable, including Fun Topics, Absolute Happiness Fortune Telling, Fun Statistics, Multi-functional Dice, My Dreams 100, and AwaAwaPon.
+            </p>
+            <p>
+                I decided to start this development diary to share the development process, technical learnings, and daily insights. I will update it irregularly about initiatives leveraging my expertise in statistics × app development × AI/DX.
+            </p>
+
+            <h2>About TakeKApp</h2>
+            <p>
+                I work as a freelance AI/DX consultant and IT engineer, specializing in data analysis and app development. I hold a Statistical Certification Level 1 and develop mobile apps primarily using Flutter.
+            </p>
+            <p>
+                Currently, I work 3-4 days a week while working on personal development in my spare time. I became independent as a freelancer in August 2025. I will fully launch my freelance activities leveraging my expertise in statistics × app development × AI/DX.
+            </p>
+
+            <h2>What I'll Share in This Development Diary</h2>
+            <p>In this development diary, I will share the following content:</p>
+            <ul>
+                <li><strong>App Development Process</strong>: The development process of new apps and improvements to existing apps</li>
+                <li><strong>Technical Learnings</strong>: Technical insights and tips about Flutter, statistics, and AI/DX</li>
+                <li><strong>Daily Insights</strong>: Insights gained through development, and thoughts on marketing and monetization</li>
+                <li><strong>Freelance Experience</strong>: Preparation for independence and working as a freelancer</li>
+            </ul>
+
+            <h2>Future Outlook</h2>
+            <p>
+                I aim to update about once a month to improve the transparency of the development process and strengthen communication with users. I also hope to deepen exchanges with others working on app development through sharing technical learnings.
+            </p>
+            <p>
+                Thank you for your continued support.
+            </p>
+
+            <div class="article-navigation">
+                <div class="d-flex justify-content-between">
+                    <a href="../../index.html"><i class="bi bi-arrow-left me-2"></i>Back to Article List</a>
+                    <a href="2025-11-23-casual-game-failure.html">Next: The Story of a Casual Game Failure <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 takekapp1990. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
