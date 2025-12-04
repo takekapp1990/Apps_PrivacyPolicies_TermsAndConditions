@@ -998,5 +998,106 @@
             }
         })();
     </script>
+    
+    <!-- Google Analytics イベント追跡 -->
+    <script>
+        // 初回訪問を追跡
+        (function() {
+            const hasVisited = localStorage.getItem('ga_has_visited');
+            if (!hasVisited) {
+                gtag('event', 'first_visit', {
+                    'event_category': 'engagement',
+                    'event_label': 'first_visit'
+                });
+                localStorage.setItem('ga_has_visited', 'true');
+            }
+        })();
+
+        // スクロール深度を追跡（25%、50%、75%、100%）
+        (function() {
+            const scrollThresholds = [25, 50, 75, 100];
+            const trackedThresholds = new Set();
+            
+            function trackScrollDepth() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollPercent = Math.round((scrollTop / (documentHeight - windowHeight)) * 100);
+                
+                scrollThresholds.forEach(threshold => {
+                    if (scrollPercent >= threshold && !trackedThresholds.has(threshold)) {
+                        trackedThresholds.add(threshold);
+                        gtag('event', 'scroll', {
+                            'event_category': 'engagement',
+                            'event_label': 'scroll_depth_' + threshold + 'percent',
+                            'value': threshold
+                        });
+                    }
+                });
+            }
+            
+            // スクロールイベントをthrottle（100ms間隔）
+            let scrollTimeout;
+            window.addEventListener('scroll', function() {
+                if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                }
+                scrollTimeout = setTimeout(trackScrollDepth, 100);
+            }, { passive: true });
+        })();
+
+        // 外部リンクとアプリストアリンクのクリックを追跡
+        (function() {
+            function isExternalLink(url) {
+                if (!url) return false;
+                try {
+                    const linkUrl = new URL(url, window.location.origin);
+                    return linkUrl.hostname !== window.location.hostname;
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            function isAppStoreLink(url) {
+                if (!url) return false;
+                return url.includes('apps.apple.com') || 
+                       url.includes('play.google.com') ||
+                       url.includes('app-store') ||
+                       url.includes('google-play');
+            }
+
+            function trackLinkClick(event) {
+                const link = event.currentTarget;
+                const url = link.href;
+                
+                if (isAppStoreLink(url)) {
+                    gtag('event', 'click', {
+                        'event_category': 'outbound',
+                        'event_label': 'app_store_link',
+                        'link_url': url,
+                        'link_text': link.textContent.trim() || link.title || 'App Store Link'
+                    });
+                } else if (isExternalLink(url)) {
+                    gtag('event', 'click', {
+                        'event_category': 'outbound',
+                        'event_label': 'external_link',
+                        'link_url': url,
+                        'link_text': link.textContent.trim() || link.title || 'External Link'
+                    });
+                }
+            }
+
+            // ページ読み込み後にリンクにイベントリスナーを追加
+            document.addEventListener('DOMContentLoaded', function() {
+                const links = document.querySelectorAll('a[href]');
+                links.forEach(link => {
+                    const url = link.getAttribute('href');
+                    if (isExternalLink(url) || isAppStoreLink(url)) {
+                        link.addEventListener('click', trackLinkClick);
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
 </html> 
