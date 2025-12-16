@@ -65,8 +65,85 @@
         }
         @media (max-width: 768px) {
             .hero-details {
-                padding: 2rem 1rem;
+                padding: 1rem 1rem;
             }
+            .hero-mobile-text {
+                font-size: 1.1rem;
+                line-height: 1.4;
+                margin-bottom: 0.75rem !important;
+            }
+            /* スマホ版で縦の余白を全体的に小さく */
+            .lp-section {
+                padding: 1.5rem 1rem;
+                margin-top: 1.5rem;
+            }
+            section.py-5 {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+            .list-card {
+                padding: 1.25rem;
+                margin-bottom: 1.5rem;
+            }
+            .section-title {
+                margin-bottom: 1rem;
+            }
+            .hero-details .h5 {
+                margin-bottom: 0.75rem !important;
+            }
+            .hero-details .h6 {
+                margin-bottom: 0.75rem !important;
+            }
+            /* あわあわポンってどんなゲーム？セクションの文章を短く */
+            .game-description {
+                display: none !important;
+            }
+            .game-description-mobile {
+                display: block !important;
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            /* スマホ版で「このキャラの名前、なんだっけ！？」を非表示 */
+            .game-title-mobile-hide {
+                display: none !important;
+            }
+            /* ヒーローセクションのボタン上の余白を小さく */
+            .hero-details .lead {
+                margin-bottom: 0.75rem !important;
+            }
+            .hero-details .d-flex {
+                margin-top: 0.25rem;
+                margin-bottom: 0.5rem !important;
+            }
+            .x-btn, .email-btn {
+                margin-top: 0 !important;
+            }
+            .hero-details .fw-bold {
+                margin-bottom: 0.5rem !important;
+            }
+            /* Bootstrapの余白クラスをスマホで小さく */
+            .mb-5 {
+                margin-bottom: 1.5rem !important;
+            }
+            .mb-4 {
+                margin-bottom: 1rem !important;
+            }
+            .mb-3 {
+                margin-bottom: 0.75rem !important;
+            }
+            .mt-5 {
+                margin-top: 1.5rem !important;
+            }
+            .mt-4 {
+                margin-top: 1rem !important;
+            }
+            .info-card {
+                padding: 1.25rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+        .game-description-mobile {
+            display: none;
         }
         .tournament-badge {
             background: rgba(255,255,255,0.2); /* 透明感を持たせる */
@@ -257,10 +334,10 @@
         </div>
         <div class="hero-details text-center">
             <div class="container">
-                <p class="h4 mb-3">✨ 賞金総額 <span class="prize-amount">20,000円</span>！最大12名にプレゼント！ ✨</p>
-                <p class="h5 mb-3">1位：<span class="prize-amount" style="font-size: 2.2rem;">8,000円</span> | 2位：<span class="prize-amount" style="font-size: 2.2rem;">4,000円</span></p>
-                <p class="h6 mb-3">3位以下：抽選で6名に1,000円 | 毎週金曜日に500円抽選も実施！</p>
-                <p class="lead mb-4">参加費無料！参加者15名以上で開催決定！</p>
+                <p class="h4 mb-3 hero-mobile-text">✨ 賞金総額 <span class="prize-amount">2万円</span>！<br class="d-md-none">最大12名にプレゼント！ ✨</p>
+                <p class="h5 mb-3 d-none d-md-block">1位：<span class="prize-amount" style="font-size: 2.2rem;">8,000円</span> | 2位：<span class="prize-amount" style="font-size: 2.2rem;">4,000円</span></p>
+                <p class="h6 mb-3 d-none d-md-block">3位以下：抽選で6名に1,000円 | 毎週金曜日に500円抽選も実施！</p>
+                <p class="h5 mb-2 fw-bold">今すぐ参加登録！</p>
                 <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
                     <a href="https://x.com/AwaAwaPon" target="_blank" class="x-btn mb-2">
                         <i class="bi bi-twitter-x"></i> Xで参加登録
@@ -282,13 +359,16 @@
                     <img src="../images/awaawapon_app_icon_10241024_ios_big.png" class="app-icon-large" alt="あわあわポン アイコン">
                 </div>
                 <div class="col-md-9 text-md-start">
-                    <p class="lead fw-bold mb-3">
+                    <p class="lead fw-bold mb-3 game-title-mobile-hide">
                         「このキャラの名前、なんだっけ！？」<br>
                         思わず笑っちゃうネーミングで記憶力に挑戦！
                     </p>
-                    <p class="mb-4">
+                    <p class="mb-4 game-description">
                         次々と出てくるキャラクターのニックネームを"覚えて当てる"新感覚の記憶力バトルパーティゲーム！<br>
                         友達とワイワイ笑いながら遊んだり、ひとりでじっくり脳トレしたり、いつでもどこでもみんなで楽しめるアプリです。
+                    </p>
+                    <p class="mb-4 game-description-mobile">
+                        次々にキャラが現れるから、名前を覚えていこう。あとはキャラの名前を4択で答えていくだけ！
                     </p>
                     <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3">
                         <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" target="_blank" class="store-badge">
@@ -299,9 +379,6 @@
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="mt-4">
-                <a href="./landing_page_ja.html" class="btn btn-outline-dark btn-lg" target="_blank">▶ あわあわポンの詳しい内容はこちら</a>
             </div>
         </div>
     </section>
@@ -314,7 +391,6 @@
                 <li><strong>3位以下</strong>の方には、大会に参加表明をしてくれて、かつ<strong>7,000点以上</strong>を取った方の中から抽選で、<strong style="color:var(--danger-color);">6名様に1,000円</strong>をプレゼント！</li>
                 <li><strong>毎週金曜日</strong>に、大会参加者で<strong>1回以上遊んでくれた人</strong>の中から抽選で<strong style="color:var(--danger-color);">500円</strong>が当たる抽選を実施！複数当選ありなので早く申し込んだほうが当たりやすい！</li>
                 <li>抽選日は<strong>12月12日(金)、12月19日(金)、12月26日(金)、1月1日(水)</strong>の4回！</li>
-                <li><span class="attention-text"><strong>参加者15名を超えたら大会開催決定！</strong></span></li>
                 <li><strong>参加は無料！</strong> どなたでも気軽にご参加いただけます！</li>
                 <li>賞金は<strong>Amazonギフト券</strong>、<strong>PayPay</strong>、または<strong>デジタル スターバックス カード ギフト</strong>でお渡しします。</li>
             </ul>
@@ -440,9 +516,12 @@
                         「このキャラの名前、なんだっけ！？」<br>
                         思わず笑っちゃうネーミングで記憶力に挑戦！
                     </p>
-                    <p class="mb-4">
+                    <p class="mb-4 game-description">
                         次々と出てくるキャラクターのニックネームを"覚えて当てる"新感覚の記憶力バトルパーティゲーム！<br>
                         友達とワイワイ笑いながら遊んだり、ひとりでじっくり脳トレしたり、いつでもどこでもみんなで楽しめるアプリです。
+                    </p>
+                    <p class="mb-4 game-description-mobile">
+                        次々と出てくるキャラクターのニックネームを"覚えて当てる"記憶力バトルゲーム！
                     </p>
                     <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3">
                         <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" target="_blank" class="store-badge">
