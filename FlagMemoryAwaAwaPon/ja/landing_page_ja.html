@@ -305,7 +305,10 @@
                 padding: 2rem 0 !important;
             }
             .hero-section {
-                padding: 4rem 0 2rem 0 !important;
+                padding: 5rem 0 2rem 0 !important;
+            }
+            .store-badge {
+                display: block !important;
             }
             .display-5 {
                 font-size: 1.8rem !important;
@@ -398,7 +401,7 @@
             <h2 class="h3 mb-4">楽しく学ぶ！<br>国旗クイズゲーム</h2>
             <p class="lead mb-4">世界の国旗を楽しく覚えよう！記憶力バトルゲームで国旗の知識を身につけよう！</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap store-links-container mb-3">
-                <a href="#" target="_blank" class="store-badge" id="android-badge">
+                <a href="https://play.google.com/store/apps/details?id=com.NationalFlagsAwaPop.takekapp1990.prod" target="_blank" class="store-badge" id="android-badge">
                     <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" 
                          alt="Google Playで手に入れよう" height="50">
                 </a>
@@ -637,7 +640,7 @@
             <h2 class="mb-4">今すぐダウンロードして、国旗の知識を身につけよう！</h2>
             <p class="lead mb-4">楽しく学んで、世界の国旗マスターになろう！</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="#" target="_blank" class="store-badge" id="android-badge-cta">
+                <a href="https://play.google.com/store/apps/details?id=com.NationalFlagsAwaPop.takekapp1990.prod" target="_blank" class="store-badge" id="android-badge-cta">
                     <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" 
                          alt="Google Playで手に入れよう" height="60">
                 </a>
@@ -684,19 +687,8 @@
             const androidBadgeCta = document.getElementById('android-badge-cta');
             const iosBadgeCta = document.getElementById('ios-badge-cta');
             
-            if (window.innerWidth <= 768) {
-                if (os === 'ios') {
-                    if (androidBadge) androidBadge.style.display = 'none';
-                    if (iosBadge) iosBadge.style.display = 'block';
-                    if (androidBadgeCta) androidBadgeCta.style.display = 'none';
-                    if (iosBadgeCta) iosBadgeCta.style.display = 'block';
-                } else if (os === 'android') {
-                    if (androidBadge) androidBadge.style.display = 'block';
-                    if (iosBadge) iosBadge.style.display = 'none';
-                    if (androidBadgeCta) androidBadgeCta.style.display = 'block';
-                    if (iosBadgeCta) iosBadgeCta.style.display = 'none';
-                }
-            }
+            // モバイル表示では両方のバッジを表示（OS検出による非表示は行わない）
+            // デスクトップ表示では両方のバッジを表示
         })();
     </script>
     

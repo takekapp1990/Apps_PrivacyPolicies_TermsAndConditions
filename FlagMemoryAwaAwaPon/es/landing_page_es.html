@@ -269,7 +269,10 @@
                 padding: 2rem 0 !important;
             }
             .hero-section {
-                padding: 4rem 0 2rem 0 !important;
+                padding: 5rem 0 2rem 0 !important;
+            }
+            .store-badge {
+                display: block !important;
             }
             .display-5 {
                 font-size: 1.8rem !important;
@@ -360,7 +363,7 @@
             <h2 class="h3 mb-4">Lerne Weltflaggen!<br>Unterhaltsames Quiz-Spiel</h2>
             <p class="lead mb-4">Lerne Weltflaggen auf unterhaltsame Weise! Gedächtnisspiel, um Flaggenkenntnisse zu meistern.</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap store-links-container mb-3">
-                <a href="#" target="_blank" class="store-badge" id="android-badge">
+                <a href="https://play.google.com/store/apps/details?id=com.NationalFlagsAwaPop.takekapp1990.prod" target="_blank" class="store-badge" id="android-badge">
                     <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
                          alt="Bei Google Play herunterladen" height="50">
                 </a>
@@ -593,7 +596,7 @@
             <h2 class="mb-4">Lade Flaggen merken Awa Pop heute herunter und meistere Weltflaggen!</h2>
             <p class="lead mb-4">Lerne auf unterhaltsame Weise und werde ein Weltflaggen-Meister!</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="#" target="_blank" class="store-badge" id="android-badge-cta">
+                <a href="https://play.google.com/store/apps/details?id=com.NationalFlagsAwaPop.takekapp1990.prod" target="_blank" class="store-badge" id="android-badge-cta">
                     <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
                          alt="Bei Google Play herunterladen" height="60">
                 </a>
@@ -635,19 +638,8 @@
             const iosBadge = document.getElementById('ios-badge');
             const androidBadgeCta = document.getElementById('android-badge-cta');
             const iosBadgeCta = document.getElementById('ios-badge-cta');
-            if (window.innerWidth <= 768) {
-                if (os === 'ios') {
-                    if (androidBadge) androidBadge.style.display = 'none';
-                    if (iosBadge) iosBadge.style.display = 'block';
-                    if (androidBadgeCta) androidBadgeCta.style.display = 'none';
-                    if (iosBadgeCta) iosBadgeCta.style.display = 'block';
-                } else if (os === 'android') {
-                    if (androidBadge) androidBadge.style.display = 'block';
-                    if (iosBadge) iosBadge.style.display = 'none';
-                    if (androidBadgeCta) androidBadgeCta.style.display = 'block';
-                    if (iosBadgeCta) iosBadgeCta.style.display = 'none';
-                }
-            }
+            // モバイル表示では両方のバッジを表示（OS検出による非表示は行わない）
+            // デスクトップ表示では両方のバッジを表示
         })();
     </script>
     <script>
