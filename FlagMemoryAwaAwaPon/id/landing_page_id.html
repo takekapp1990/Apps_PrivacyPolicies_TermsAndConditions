@@ -159,6 +159,60 @@
             display: block;
         }
 
+        .screenshots-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 1rem 0;
+            margin: 2rem 0;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0,0,0,0.3) transparent;
+        }
+
+        .screenshots-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .screenshots-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .screenshots-container::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 4px;
+        }
+
+        .screenshots-wrapper {
+            display: flex;
+            gap: 1rem;
+            padding: 0.5rem;
+        }
+
+        .screenshot-item {
+            flex: 0 0 auto;
+            width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-item:hover {
+            transform: scale(1.05);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .screenshot-item {
+                width: 250px;
+            }
+        }
+
         .recommend-card {
             background: white;
             border-radius: 15px;
@@ -364,10 +418,39 @@
                 <p class="lead fs-4">Ingat bendera yang muncul saat itu juga dan jawab nama negaranya!</p>
             </div>
             <div class="row justify-content-center mb-4">
-                <div class="col-lg-10">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/store_screen_shots_3images_en.png" 
-                         alt="Aturan Hafalan Bendera Awa Pop" 
-                         class="rules-image">
+                <div class="col-lg-12">
+                    <div class="screenshots-container">
+                        <div class="screenshots-wrapper">
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/id/Screenshot_1767095173.png" 
+                                     alt="Hafalan Bendera Awa Pop Screenshot 1">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/id/Screenshot_1767095180.png" 
+                                     alt="Hafalan Bendera Awa Pop Screenshot 2">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/id/Screenshot_1767095185.png" 
+                                     alt="Hafalan Bendera Awa Pop Screenshot 3">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/id/Screenshot_1767095188.png" 
+                                     alt="Hafalan Bendera Awa Pop Screenshot 4">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/id/Screenshot_1767095198.png" 
+                                     alt="Hafalan Bendera Awa Pop Screenshot 5">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/id/Screenshot_1767095205.png" 
+                                     alt="Hafalan Bendera Awa Pop Screenshot 6">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/id/Screenshot_1767095224.png" 
+                                     alt="Hafalan Bendera Awa Pop Screenshot 7">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

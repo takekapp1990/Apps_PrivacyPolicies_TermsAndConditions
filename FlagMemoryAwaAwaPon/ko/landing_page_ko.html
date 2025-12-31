@@ -159,6 +159,60 @@
             display: block;
         }
 
+        .screenshots-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 1rem 0;
+            margin: 2rem 0;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0,0,0,0.3) transparent;
+        }
+
+        .screenshots-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .screenshots-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .screenshots-container::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 4px;
+        }
+
+        .screenshots-wrapper {
+            display: flex;
+            gap: 1rem;
+            padding: 0.5rem;
+        }
+
+        .screenshot-item {
+            flex: 0 0 auto;
+            width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-item:hover {
+            transform: scale(1.05);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .screenshot-item {
+                width: 250px;
+            }
+        }
+
         .recommend-card {
             background: white;
             border-radius: 15px;
@@ -364,10 +418,39 @@
                 <p class="lead fs-4">나오는 국기를 그 자리에서 기억하고 국가 이름을 답하세요!</p>
             </div>
             <div class="row justify-content-center mb-4">
-                <div class="col-lg-10">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/store_screen_shots_3images_en.png" 
-                         alt="국기 암기 Awa Pop 규칙" 
-                         class="rules-image">
+                <div class="col-lg-12">
+                    <div class="screenshots-container">
+                        <div class="screenshots-wrapper">
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/ko/Screenshot_1767094326.png" 
+                                     alt="국기 암기 Awa Pop 스크린샷 1">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/ko/Screenshot_1767094498.png" 
+                                     alt="국기 암기 Awa Pop 스크린샷 2">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/ko/Screenshot_1767094504.png" 
+                                     alt="국기 암기 Awa Pop 스크린샷 3">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/ko/Screenshot_1767094508.png" 
+                                     alt="국기 암기 Awa Pop 스크린샷 4">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/ko/Screenshot_1767094513.png" 
+                                     alt="국기 암기 Awa Pop 스크린샷 5">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/ko/Screenshot_1767094541.png" 
+                                     alt="국기 암기 Awa Pop 스크린샷 6">
+                            </div>
+                            <div class="screenshot-item">
+                                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/FlagMemoryAwaAwaPon/images/screen_shots/ko/Screenshot_1767094551.png" 
+                                     alt="국기 암기 Awa Pop 스크린샷 7">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
