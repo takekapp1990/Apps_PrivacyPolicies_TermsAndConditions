@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あわあわポンの大会を終えての所感と今後の方針 - TakeKApp 開発日記</title>
+    <!-- OGP & Twitter Card -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="あわあわポンの大会を終えての所感と今後の方針 - TakeKApp 開発日記">
+    <meta property="og:description" content="2025年12月に開催した記憶力ゲーム「あわあわポン」の大会を通じて、このアプリの面白さと限界を改めて感じることができました。今回は、その所感と今後の方針についてまとめたいと思います。">
+    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/images/ogp_img.png">
+    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/blog/posts/dev/ja/2026-01-03-awaawapon-tournament-reflection.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="あわあわポンの大会を終えての所感と今後の方針 - TakeKApp 開発日記">
+    <meta name="twitter:description" content="2025年12月に開催した記憶力ゲーム「あわあわポン」の大会を通じて、このアプリの面白さと限界を改めて感じることができました。今回は、その所感と今後の方針についてまとめたいと思います。">
+    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/images/ogp_img.png">
+    <link rel="alternate" hreflang="ja" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/blog/posts/dev/ja/2026-01-03-awaawapon-tournament-reflection.html" />
+    <link rel="alternate" hreflang="en" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/blog/posts/dev/en/2026-01-03-awaawapon-tournament-reflection.html" />
+    <link rel="alternate" hreflang="x-default" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/blog/posts/dev/ja/2026-01-03-awaawapon-tournament-reflection.html" />
+    
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "あわあわポンの大会を終えての所感と今後の方針",
+      "datePublished": "2026-01-03",
+      "dateModified": "2026-01-03",
+      "author": {
+        "@type": "Person",
+        "name": "takekapp1990"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TakeKApp",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/icon_512512_app_store.png"
+        }
+      },
+      "articleSection": "開発日記",
+      "keywords": ["開発日記", "アプリ開発", "TakeKApp", "ゲーム開発", "大会", "マーケティング", "あわあわポン"]
+    }
+    </script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VCS46ZTHC');
+    </script>
+    <style>
+        :root {
+            --primary-color: #4682B4;
+            --primary-dark: #2F4F4F;
+            --primary-light: #5F9EA0;
+            --secondary-color: #F5F5F5;
+            --text-color: #2C3E50;
+            --accent-color: #708090;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.8;
+            background-color: var(--secondary-color);
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .article-content {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-meta {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .article-content h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-content h3 {
+            color: var(--primary-dark);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-content h4 {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            color: var(--accent-color);
+            font-style: italic;
+        }
+
+        .article-navigation {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .article-navigation a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .article-navigation a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* 言語切り替えボタン */
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .language-switcher .btn {
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .language-switcher .btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.8);
+            color: white;
+        }
+
+        .language-switcher .btn.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../../../index.html">TakeKApp Apps</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../../index.html#apps">Apps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../../index.html">開発日記</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+                <!-- 言語切り替えボタン -->
+                <div class="language-switcher">
+                    <a href="2026-01-03-awaawapon-tournament-reflection.html" class="btn active">日本語</a>
+                    <a href="../en/2026-01-03-awaawapon-tournament-reflection.html" class="btn">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 記事ヘッダー -->
+    <section class="article-header">
+        <div class="container text-center">
+            <h1 class="display-4 mb-3">あわあわポンの大会を終えての所感と今後の方針</h1>
+            <div class="article-meta text-white" style="opacity: 0.9;">
+                <i class="bi bi-calendar3"></i> 2026年1月3日
+                <span class="ms-3"><i class="bi bi-folder"></i> 開発日記</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 記事本文 -->
+    <section class="container">
+        <article class="article-content">
+            <h2>新年のご挨拶</h2>
+            <p>
+                新年あけましておめでとうございます。2026年もどうぞよろしくお願いいたします。
+            </p>
+
+            <h2>はじめに</h2>
+            <p>
+                2025年12月に開催した記憶力ゲーム「あわあわポン」の大会を通じて、このアプリの面白さと限界を改めて感じることができました。今回は、その所感と今後の方針についてまとめたいと思います。
+            </p>
+
+            <h2>あわあわポンとは</h2>
+            <p>
+                「あわあわポン」は、短期記憶を鍛えることを目的とした記憶力ゲームです。次々と表示される問題を覚えて、正しく答えることでスコアを獲得していきます。シンプルなルールながら、記憶力の向上を実感できるゲームとして設計されています。
+            </p>
+
+            <h2>2025年12月大会の概要</h2>
+            <p>
+                2025年12月5日から31日まで、「あわあわポン」の記憶力大会を開催しました。詳細は以下のページでご確認いただけます。
+            </p>
+            <p>
+                <strong>URL</strong>: <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/tournament_202512_ja.html" target="_blank">12月大会の詳細ページ</a>
+            </p>
+
+            <h3>結果発表</h3>
+            <p>
+                大会には19名の方にご参加いただきました。最高得点は11万点を超える素晴らしい記録でした。参加者の皆様、ありがとうございました。
+            </p>
+
+            <h2>大会を開催して良かったこと</h2>
+
+            <h3>参加者に楽しんでもらうことができた</h3>
+            <p>
+                大会を通じて、多くの参加者に楽しんでいただけたことが何よりの成果でした。ゲームを通じて記憶力を競い合う楽しさを共有できたと感じています。
+            </p>
+
+            <h3>抽選の発表は毎回工夫していて楽しかった</h3>
+            <p>
+                大会期間中、抽選結果の発表方法を毎回工夫しました。このプロセス自体が楽しく、参加者の皆様にも喜んでいただけたのではないかと思います。
+            </p>
+
+            <h3>新しく参加してくださった方もいた</h3>
+            <p>
+                既存ユーザーだけでなく、新しく参加してくださった方もいらっしゃいました。これにより、アプリの認知度向上にもつながったと感じています。
+            </p>
+
+            <h2>大会を通じての反省点</h2>
+
+            <h3>毎日の投稿での盛り上げができていなかった</h3>
+            <p>
+                大会期間中、毎日の投稿で盛り上げを行う予定でしたが、別の仕事に追われてしまい、十分にできませんでした。SNSでの継続的な発信の重要性を改めて感じました。
+            </p>
+
+            <h3>集客がうまくできなかった</h3>
+
+            <h4>既存ユーザー中心の参加</h4>
+            <p>
+                参加者のほとんどは、すでに「あわあわポン」を知っている方でした。新規ユーザーの獲得には至りませんでした。
+            </p>
+
+            <h4>Xでの広告の効果が低かった</h4>
+            <p>
+                X（旧Twitter）で広告を打ちましたが、反応が悪く集客できませんでした。動画広告を作る体力がなかったことも要因の一つです。
+            </p>
+
+            <h4>Google広告からの導線が機能しなかった</h4>
+            <p>
+                Google広告によるアプリ流入者からの導線を作りましたが、効果が出ませんでした。賞金2万円という内容でも、結局「自分と関係ない」と思われたら参加はしてくれない。顧客接点の作り方の難しさを痛感しました。
+            </p>
+
+            <h3>高得点者の点数が高くなりすぎた</h3>
+            <p>
+                高得点者の点数が高くなりすぎて、ライトユーザーが賞金獲得を狙って頑張るというインセンティブを感じづらくなってしまいました。スコアの差が大きすぎると、参加意欲が削がれてしまうという課題を認識しました。
+            </p>
+
+            <h3>広告費を使いすぎた</h3>
+            <p>
+                想定より結果が出ない中で、広告費を合計5万円超使ってしまいました。アプリとしての限界を感じる結果となりました。
+            </p>
+
+            <h2>現時点でのアプリの自己評価と課題</h2>
+
+            <h3>継続利用が課題</h3>
+            <p>
+                アプリへの課金をしてくださった方もいたので、2025年後半はこのアプリに時間を使って継続利用を促すために以下の機能を追加しました：
+            </p>
+            <ul>
+                <li>アバター追加</li>
+                <li>コインによるアバターガチャの追加</li>
+                <li>デイリーミッション</li>
+                <li>通知機能</li>
+                <li>ジャンルの追加</li>
+            </ul>
+            <p>
+                しかし、実際の利用状況を確認すると、そこまで効果がなさそうでした。このため、このアプリはあまり継続するほどの魅力が弱いかもしれないと考えています。
+            </p>
+
+            <h3>ゲーム性の根本課題</h3>
+            <p>
+                アプリを使って短期記憶を鍛えるゲームとしては良いですが、ユーザーから見た時にどうしても2回目を遊ぼうとならない。なぜなら名前がリセットされるから。この辺りはゲーム性自体の根本課題なので改善が難しい可能性があります。
+            </p>
+
+            <h3>ランキング機能の是非について</h3>
+            <p>
+                スコア系ゲームだとランキングをつけるのが一般的かなと思って、このアプリにも全国ランキングを作って出してみましたが、1人プレイのランキングでは、高得点者が多く出てしまうとライトユーザーを駆逐し、逆にモチベーションを下げてしまう可能性があるのではないかと感じました。
+            </p>
+            <p>
+                これを防ぐためには、時期や場所などでの局地戦としてのランキングにしたり、なるべく同質の人の中でのランキングにするなど、「自分が少し頑張れば良い成績を出せそう」と思えるようにしないといけません。この辺りの設計はまだ自分でも正解がないのですが、安易にランキング機能をつけることはよくないと感じました。
+            </p>
+
+            <h2>今後の方針</h2>
+
+            <h3>ジャンル追加の方向性</h3>
+            <p>
+                上記の課題を解決する1つの方向性として、「国旗」「漢字」などのジャンルを追加していました。この方向性は「国旗を覚えたい」などのニーズに直接応えられるので、自然と内的インセンティブが生まれることになります。
+            </p>
+
+            <h3>別アプリとしてのリリース</h3>
+            <p>
+                一方で、「国旗を覚えたい」という人がこのアプリを見つけるのは難しい。ということで、「国旗の暗記」「漢字の暗記」でヒットするようなアプリにして、別アプリとしてリリースすることを考え、それに向けて行動中です。早ければ1月中にリリース予定です。
+            </p>
+
+            <h2>おわりに</h2>
+            <p>
+                2025年12月の大会を通じて、多くの学びと課題を認識することができました。これらの経験を活かし、2026年はより良いアプリ開発に取り組んでいきたいと思います。引き続きよろしくお願いいたします。
+            </p>
+
+            <div class="article-navigation">
+                <div class="d-flex justify-content-between">
+                    <a href="../../index.html"><i class="bi bi-arrow-left me-2"></i>記事一覧に戻る</a>
+                    <a href="2025-11-23-casual-game-failure.html">前の記事: カジュアルゲームが爆死した話 <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2026 takekapp1990. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
