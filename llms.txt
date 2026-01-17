@@ -68,13 +68,24 @@ x-apps:
   - name: "PostDrafts"
     description: "Draft writing and content creation app"
     pattern: "/PostDrafts/*/landing_page_*.html"
+  - name: "KanjiAwaAwaPon"
+    description: "Kanji quiz game to learn difficult kanji characters"
+    pattern: "/KanjiAwaAwaPon/*/landing_page_*.html"
+  - name: "FlagMemoryAwaAwaPon"
+    description: "Flag quiz game to learn world flags"
+    pattern: "/FlagMemoryAwaAwaPon/*/landing_page_*.html"
+  - name: "TimesTablesMemoryAwaAwaPon"
+    description: "Times tables memory game to learn multiplication"
+    pattern: "/TimesTablesMemoryAwaAwaPon/*/landing_page_*.html"
 
 # Content Structure
 x-main-page: "/index.html"
+x-blog-index: "/blog/index.html"
 x-app-pages: "*/landing_page_*.html, */app_introduction.html"
 x-policy-pages: "*/privacy_policy_*.html, */terms_and_conditions_*.html"
+x-blog-pages: "/blog/posts/dev/*/*.html"
 x-language-support: "ja, en, zh_CN, ko, es, fr, de, pt, ru, ar, hi, th, it, id, nl, pl, tr, cs, hu, no, sv, da, fi, el, uk, vi, zh_TW"
 
 # SEO Keywords
-x-primary-keywords: "mobile app, android app, ios app, productivity, entertainment, games, statistics, conversation, dreams, dice, fortune telling"
-x-secondary-keywords: "app development, takekapp, japanese app, english app, multilingual app, free app, premium app" 
+x-primary-keywords: "mobile app, android app, ios app, productivity, entertainment, games, statistics, conversation, dreams, dice, fortune telling, kanji, flag quiz, times tables, memory game"
+x-secondary-keywords: "app development, takekapp, japanese app, english app, multilingual app, free app, premium app, educational app, quiz app"
