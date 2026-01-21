@@ -1,1 +1,4 @@
 .DS_Store
+
+# Private documents - not for public repository
+_private_docs/
