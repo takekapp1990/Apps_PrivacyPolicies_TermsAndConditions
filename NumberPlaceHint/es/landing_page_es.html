@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sudoku Hint - Number Place Solver & Logic Teacher</title>
+        <!-- OGP & Twitter Card -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Pistas Sudoku - Number Place Solver & Logic Teacher">
+        <meta property="og:description"
+            content="Escanea con tu cámara y obtén pistas lógicas. Una app de Sudoku para aprender y mejorar.">
+        <!-- Image paths are placeholders -->
+        <!-- <meta property="og:image" content="images/icon.png"> -->
+        <meta property="og:image" content="../images/app_icon/number_place_hint_app_icon_10241024_ios.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Pistas Sudoku - Number Place Solver & Logic Teacher">
+        <meta name="twitter:description"
+            content="Escanea con tu cámara y obtén pistas lógicas. Una app de Sudoku para aprender y mejorar.">
+        <!-- <meta name="twitter:image" content="images/icon.png"> -->
+        <meta name="twitter:image" content="../images/app_icon/number_place_hint_app_icon_10241024_ios.png">
+        <meta name="twitter:site" content="@takekapp">
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <style>
+            /* Basic Styles */
+            body {
+                font-family: 'Open Sans', sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                line-height: 1.6;
+                color: #333;
+                background-color: #f9f9f9;
+            }
+
+            .container {
+                max-width: 960px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            h1,
+            h2,
+            h3 {
+                font-family: 'Montserrat', sans-serif;
+                color: #2c3e50;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            h1 {
+                font-size: 2.4em;
+                margin-top: 30px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+                border-bottom: 2px solid #ddd;
+                padding-bottom: 10px;
+                margin-top: 15px;
+            }
+
+            h3 {
+                font-size: 1.8em;
+                color: #3498db;
+                margin-bottom: 15px;
+            }
+
+            p {
+                text-align: center;
+                margin-bottom: 20px;
+                font-size: 1.1em;
+                line-height: 1.8;
+            }
+
+            .hero {
+                background: linear-gradient(135deg, #3498db, #2c3e50);
+                color: white;
+                padding: 40px 20px;
+                text-align: center;
+                border-radius: 10px;
+                margin-bottom: 30px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .app-icon {
+                width: 80px;
+                height: 80px;
+                border-radius: 16px;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 20px;
+            }
+
+            .hero-title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+
+            .hero-title h1 {
+                margin: 0;
+                color: white;
+                font-size: 2.6em;
+            }
+
+            .hero p {
+                font-size: 1.4em;
+                max-width: 700px;
+                margin: 0 auto 20px;
+            }
+
+            .btn-secondary {
+                display: inline-block;
+                background-color: #1da1f2;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1em;
+                transition: background-color 0.3s ease;
+                margin: 5px;
+            }
+
+            .btn-secondary:hover {
+                background-color: #0d8bd9;
+            }
+
+            /* Store badges styling */
+            .store-badge {
+                text-decoration: none;
+                outline: none;
+            }
+
+            .store-badge img {
+                outline: none;
+                border: none;
+            }
+
+            .d-flex {
+                display: flex;
+            }
+
+            .justify-content-center {
+                justify-content: center;
+            }
+
+            .gap-3 {
+                gap: 1rem;
+            }
+
+            .flex-wrap {
+                flex-wrap: wrap;
+            }
+
+            /* Value Section */
+            .value-section {
+                background-color: #fff;
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                margin-bottom: 30px;
+            }
+
+            .value-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+
+            .value-item {
+                background-color: #f8f9fa;
+                padding: 30px;
+                border-radius: 10px;
+                border-left: 5px solid #3498db;
+                text-align: center;
+            }
+
+            .value-item h3 {
+                color: #2c3e50;
+                margin-bottom: 15px;
+                text-align: center;
+                font-size: 1.2em;
+            }
+
+            .value-item p {
+                text-align: left;
+                color: #555;
+                margin-bottom: 0;
+            }
+
+            .value-item i {
+                display: block;
+                font-size: 3em;
+                margin-bottom: 20px;
+                color: #3498db;
+            }
+
+            /* Problem Section */
+            .problem-section {
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                color: #2c3e50;
+                padding: 40px 20px 30px 20px;
+                border-radius: 16px;
+                box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
+                margin-bottom: 30px;
+            }
+
+            .problem-section h2 {
+                color: #e67e22;
+            }
+
+            .problem-cards {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+            .problem-card {
+                background: #fff;
+                border-radius: 12px;
+                box-shadow: 0 2px 12px rgba(52, 73, 94, 0.07);
+                padding: 28px 24px 20px 24px;
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .problem-card .icon {
+                font-size: 1.8em;
+                flex-shrink: 0;
+                margin-top: 2px;
+                color: #3498db;
+            }
+
+            .problem-card-content {
+                flex: 1;
+            }
+
+            .problem-card-title {
+                font-weight: bold;
+                font-size: 1.15em;
+                margin-bottom: 8px;
+                color: #2c3e50;
+            }
+
+            .problem-card-desc {
+                color: #555;
+                font-size: 1em;
+                line-height: 1.7;
+            }
+
+            /* Solution Section */
+            .solution-section {
+                background-color: #ecf0f1;
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                margin-bottom: 30px;
+            }
+
+            .feature-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 30px;
+            }
+
+            .feature-item {
+                background-color: white;
+                padding: 25px;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                width: calc(33% - 20px);
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            .feature-item h3 {
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-size: 1.2em;
+                color: #2c3e50;
+            }
+
+            .feature-item i {
+                font-size: 3em;
+                margin-bottom: 15px;
+                display: block;
+            }
+
+            .feature-item .fa-camera {
+                color: #3498db;
+            }
+
+            .feature-item .fa-lightbulb {
+                color: #f1c40f;
+            }
+
+            .feature-item .fa-book {
+                color: #2ecc71;
+            }
+
+            .feature-item .fa-check-circle {
+                color: #e74c3c;
+            }
+
+            .feature-item .fa-pencil-alt {
+                color: #9b59b6;
+            }
+
+            .feature-item .fa-crown {
+                color: #34495e;
+            }
+
+            /* Download Section */
+            .download-section {
+                background: linear-gradient(135deg, #2c3e50, #3498db);
+                color: white;
+                padding: 40px 20px;
+                text-align: center;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                margin-bottom: 30px;
+            }
+
+            .download-section h2 {
+                color: white;
+                border-bottom: none;
+            }
+
+            .download-section p {
+                font-size: 1.2em;
+                margin-bottom: 25px;
+            }
+
+
+            /* Recommended Section */
+            .recommended-section {
+                background-color: #fff;
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                margin-bottom: 30px;
+                text-align: center;
+            }
+
+            .recommended-list {
+                display: inline-block;
+                text-align: left;
+                max-width: 600px;
+                width: 100%;
+            }
+
+            .recommended-list ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .recommended-list li {
+                padding: 12px 15px;
+                border-bottom: 1px solid #eee;
+                font-size: 1.1em;
+            }
+
+            .recommended-list li:last-child {
+                border-bottom: none;
+            }
+
+            .recommended-list li i {
+                color: #27ae60;
+                margin-right: 12px;
+                width: 20px;
+                text-align: center;
+            }
+
+            /* Footer */
+            footer {
+                text-align: center;
+                padding: 20px;
+                font-size: 0.9em;
+                color: #777;
+                border-top: 1px solid #eee;
+                margin-top: 30px;
+            }
+
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 2em;
+                    margin-top: 20px;
+                }
+
+                .section,
+                .value-section,
+                .problem-section,
+                .solution-section,
+                .download-section,
+                .recommended-section {
+                    padding: 30px 15px;
+                }
+
+                .problem-card {
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 15px 12px;
+                }
+
+                /* 2 columns for features on mobile */
+                .feature-item {
+                    width: calc(50% - 10px);
+                    padding: 15px 10px;
+                }
+
+                .feature-item i {
+                    font-size: 2em;
+                    margin-bottom: 10px;
+                }
+
+                .feature-item h3 {
+                    font-size: 1em;
+                    margin-bottom: 0;
+                }
+
+                /* 2 columns for values on mobile */
+                .value-grid {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 15px;
+                    margin-top: 25px;
+                }
+
+                .value-item {
+                    padding: 15px 10px;
+                }
+
+                .value-item i {
+                    font-size: 2em;
+                    margin-bottom: 10px;
+                }
+
+                .value-item h3 {
+                    font-size: 1em;
+                    margin-bottom: 10px;
+                }
+
+                .value-item p {
+                    font-size: 0.85em;
+                    line-height: 1.4;
+                }
+
+                .recommended-list li {
+                    font-size: 1em;
+                    padding: 10px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="hero">
+            <div class="container">
+                <div class="hero-title">
+                    <h1>Pistas Sudoku</h1>
+                    <!-- Image src can be added here -->
+                    <img src="../images/app_icon/number_place_hint_app_icon_10241024_ios.png" alt="App Icon"
+                        class="app-icon">
+                </div>
+                <p><strong>Un asistente que te explica el 'POR QUÉ'.</strong><br><br>
+                    Escanea puzles imposibles al instante con tu cámara.<br>
+                    Desde principiantes hasta expertos, lleva tus habilidades de Sudoku al siguiente nivel.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <!-- Links to be set later -->
+                    <a href="#" class="store-badge">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/en_badge_web_generic.png"
+                            alt="Get it on Google Play" height="60">
+                    </a>
+                    <a href="#" class="store-badge">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                            alt="Download on the App Store" height="60">
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+
+            <section class="problem-section">
+                <h2>¿Tienes estos problemas con Sudoku?</h2>
+                <div class="problem-cards">
+                    <div class="problem-card">
+                        <span class="icon">🤔</span>
+                        <div class="problem-card-content">
+                            <div class="problem-card-title">Stuck on a puzzle</div>
+                            <div class="problem-card-desc">You're almost there, but can't figure out where you missed
+                                something.</div>
+                        </div>
+                    </div>
+                    <div class="problem-card">
+                        <span class="icon">🤯</span>
+                        <div class="problem-card-content">
+                            <div class="problem-card-title">Check the answer but don't know "Why?"</div>
+                            <div class="problem-card-desc">You see the number in the solution, but don't understand the
+                                logic behind it.</div>
+                        </div>
+                    </div>
+                    <div class="problem-card">
+                        <span class="icon">😩</span>
+                        <div class="problem-card-content">
+                            <div class="problem-card-title">Don't want tedious manual entry</div>
+                            <div class="problem-card-desc">Typing in every single number to transfer a puzzle to an app
+                                is a hassle.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="value-section">
+                <h2>Lo que puedes hacer con "Pistas Sudoku"</h2>
+                <div class="value-grid">
+                    <div class="value-item">
+                        <i class="fas fa-camera"></i>
+                        <h3>📷 Escaneo OCR Instantáneo</h3>
+                        <p>Simplemente toma una foto del puzle. Empieza al instante sin entrada manual.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>💡 Pistas Lógicas</h3>
+                        <p>Explica lógicamente 'POR QUÉ' un número encaja. No solo te da la respuesta.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>🎓 Aprende Técnicas</h3>
+                        <p>Domina desde lo básico hasta técnicas avanzadas naturalmente jugando.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-magic"></i>
+                        <h3>✨ Asistencia Cómoda</h3>
+                        <p>Relleno automático de candidatos y advertencias de errores te ayudan a resolver fluidamente.
+                        </p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-undo-alt"></i>
+                        <h3>↩️ Entrada Provisional</h3>
+                        <p>Prueba y error fácil. "Si pongo un 1 aquí..." - revierte fácilmente en cualquier momento.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-palette"></i>
+                        <h3>🎨 Personaliza tu Estilo</h3>
+                        <p>Modo oscuro amigable a la vista y varios temas de color para adaptarse a ti.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="solution-section">
+                <h2>Full Support Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-pencil-alt"></i>
+                        <h3>Candidate Notes</h3>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Answer Check</h3>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-highlighter"></i>
+                        <h3>Highlight Function</h3>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-crown"></i>
+                        <h3>Premium Plan</h3>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="recommended-section">
+                <h2>Recommended For</h2>
+                <div class="recommended-list">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Sudoku Beginners</li>
+                        <li><i class="fas fa-check"></i> Sudoku Lovers</li>
+                        <li><i class="fas fa-check"></i> Those who love solving paper puzzles</li>
+                        <li><i class="fas fa-check"></i> Those who want to learn solving techniques</li>
+                        <li><i class="fas fa-check"></i> Those who want to solve carefully</li>
+                        <li><i class="fas fa-check"></i> Those who want just the right amount of hints</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="download-section" id="download">
+                <h2>Make your Sudoku life more comfortable.</h2>
+                <p>Download now and clear that puzzle you couldn't solve!</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="#" class="store-badge">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/en_badge_web_generic.png"
+                            alt="Get it on Google Play" height="60">
+                    </a>
+                    <a href="#" class="store-badge">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                            alt="Download on the App Store" height="60">
+                    </a>
+                </div>
+
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="../en/terms_and_conditions_en.html" class="btn-secondary" style="margin: 5px;">Terms and
+                        Conditions (EN)</a>
+                    <a href="../en/privacy_policy_en.html" class="btn-secondary" style="margin: 5px;">Privacy Policy
+                        (EN)</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; TakeKApp. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+
+</html>
