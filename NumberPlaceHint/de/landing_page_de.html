@@ -466,6 +466,63 @@
                     padding: 10px;
                 }
             }
+        
+            /* Screenshots Section */
+            .screenshots-container {
+                overflow-x: auto;
+                overflow-y: hidden;
+                padding: 10px 0 30px 0;
+                margin-bottom: 10px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+            }
+
+            .screenshots-container::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            .screenshots-container::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            .screenshots-container::-webkit-scrollbar-thumb {
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 4px;
+            }
+
+            .screenshots-wrapper {
+                display: flex;
+                gap: 20px;
+                padding: 10px 20px; /* Horizontal padding for first/last item visibility */
+            }
+
+            .screenshot-item {
+                flex: 0 0 auto;
+                width: 280px;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                transition: transform 0.3s ease;
+                background-color: #fff;
+            }
+
+            .screenshot-item:hover {
+                transform: translateY(-5px);
+            }
+
+            .screenshot-item img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            @media (max-width: 768px) {
+                .screenshot-item {
+                    width: 220px;
+                }
+            }
+
         </style>
     </head>
 
@@ -494,6 +551,31 @@
                 </div>
             </div>
         </header>
+
+        <!-- Screenshots Section -->
+        <section class="container" style="margin-top: -20px; margin-bottom: 20px; position: relative; z-index: 10;">
+            <div class="screenshots-container">
+                <div class="screenshots-wrapper">
+
+                        <div class="screenshot-item">
+                            <img src="../images/screen_shots/de/resized_slide_001.png" alt="Screenshot 1">
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="../images/screen_shots/de/resized_slide_002.png" alt="Screenshot 2">
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="../images/screen_shots/de/resized_slide_003.png" alt="Screenshot 3">
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="../images/screen_shots/de/resized_slide_004.png" alt="Screenshot 4">
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="../images/screen_shots/de/resized_slide_005.png" alt="Screenshot 5">
+                        </div>
+                </div>
+            </div>
+        </section>
+
 
         <main class="container">
 
