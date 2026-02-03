@@ -1,663 +1,771 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Dreams 100 - Turn Your Dreams into Reality</title>
-    <link rel="icon" href="../favicon.ico">
-    <!-- OGP & Twitter Card -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="My Dreams 100 - Turn Your Dreams into Reality">
-    <meta property="og:description" content="Discover what you truly want to do. Create a list of 100 things you want to do that will become your lifetime treasure. Expected release August 2025!">
-    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/MyDreams100/images/app_icon/my_dreams_100_app_icon_1024_1024_2.png">
-    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/MyDreams100/en/landing_page_en.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="My Dreams 100 - Turn Your Dreams into Reality">
-    <meta name="twitter:description" content="Discover what you truly want to do. Create a list of 100 things you want to do that will become your lifetime treasure. Expected release August 2025!">
-    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/MyDreams100/images/app_icon/my_dreams_100_app_icon_1024_1024_2.png">
-    <meta name="twitter:site" content="@takekapp">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/MyDreams100/images/app_icon/my_dreams_100_app_icon_1024_1024_2.png">
-    <link rel="apple-touch-icon" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/MyDreams100/images/app_icon/my_dreams_100_app_icon_1024_1024_2.png">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-0VCS46ZTHC');
-    </script>
-    <style>
-        /* Basic styles */
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        h1 {
-            font-size: 2.4em;
-            margin-top: 30px;
-        }
-        h2 {
-            font-size: 1.8em;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-            margin-top: 25px;
-        }
-        h3 {
-            font-size: 1.8em;
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-        p {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            line-height: 1.8;
-        }
-        .hero {
-            background: linear-gradient(135deg, #3498db, #8e44ad);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        .app-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 16px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 20px;
-        }
-        .hero-title {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
-        .hero-title h1 {
-            margin: 0;
-        }
-        .pre-register-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 15px;
-        }
-        .hero h1 {
-            color: white;
-            font-size: 2.6em;
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 1.4em;
-            max-width: 700px;
-            margin: 0 auto 20px;
-        }
-        .development-badge {
-            background-color: #f39c12;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        .btn-primary {
-            display: inline-block;
-            background-color: #f39c12;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-            margin: 10px;
-        }
-        .btn-primary:hover {
-            background-color: #e67e22;
-        }
-        .btn-secondary {
-            display: inline-block;
-            background-color: #1da1f2;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-            margin: 10px;
-        }
-        .btn-secondary:hover {
-            background-color: #0d8bd9;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Dreams 100 - Turn Your Dreams into Reality</title>
+        <link rel="icon" href="../favicon.ico">
+        <!-- OGP & Twitter Card -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="My Dreams 100 - Turn Your Dreams into Reality">
+        <meta property="og:description"
+            content="Discover what you truly want to do. Create a list of 100 things you want to do that will become your lifetime treasure. Expected release August 2025!">
+        <meta property="og:image"
+            content="http://takekapp.com/MyDreams100/images/app_icon/my_dreams_100_app_icon_1024_1024_2.png">
+        <meta property="og:url" content="http://takekapp.com/MyDreams100/en/landing_page_en.html">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="My Dreams 100 - Turn Your Dreams into Reality">
+        <meta name="twitter:description"
+            content="Discover what you truly want to do. Create a list of 100 things you want to do that will become your lifetime treasure. Expected release August 2025!">
+        <meta name="twitter:image"
+            content="http://takekapp.com/MyDreams100/images/app_icon/my_dreams_100_app_icon_1024_1024_2.png">
+        <meta name="twitter:site" content="@takekapp">
+        <!-- Favicon -->
+        <link rel="icon" type="image/png"
+            href="http://takekapp.com/MyDreams100/images/app_icon/my_dreams_100_app_icon_1024_1024_2.png">
+        <link rel="apple-touch-icon"
+            href="http://takekapp.com/MyDreams100/images/app_icon/my_dreams_100_app_icon_1024_1024_2.png">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
 
-        /* Store badges styling */
-        .store-badge {
-            text-decoration: none;
-            outline: none;
-        }
-
-        .store-badge img {
-            outline: none;
-            border: none;
-        }
-
-        .d-flex {
-            display: flex;
-        }
-
-        .justify-content-center {
-            justify-content: center;
-        }
-
-        .gap-3 {
-            gap: 1rem;
-        }
-
-        .flex-wrap {
-            flex-wrap: wrap;
-        }
-
-        /* スクリーンショットセクション */
-        .screenshot-section {
-            background: #f8f9fa;
-            padding: 40px 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-
-        .screenshot-container {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            margin: 1rem 0;
-            transition: transform 0.3s ease;
-        }
-
-        .screenshot-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .screenshot-container img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .screenshot-container:hover img {
-            transform: scale(1.02);
-        }
-
-        /* Value proposition section */
-        .value-section {
-            background-color: #fff;
-            padding: 40px 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        .value-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .value-item {
-            background-color: #f8f9fa;
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 5px solid #3498db;
-            text-align: center;
-        }
-        .value-item img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .value-item h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            text-align: center;
-            font-size: 1.2em;
-        }
-        .value-item p {
-            text-align: left;
-            color: #555;
-            margin-bottom: 0;
-        }
-
-        /* Problem section (renewal) */
-        .problem-section {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #2c3e50;
-            padding: 40px 20px 30px 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(44,62,80,0.08);
-            margin-bottom: 30px;
-        }
-        .problem-section h2 {
-            color: #e67e22;
-            font-size: 1.6em;
-            margin-bottom: 25px;
-            border-bottom: none;
-            text-align: center;
-        }
-        .problem-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .problem-card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(52,73,94,0.07);
-            padding: 28px 24px 20px 24px;
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-        }
-        .problem-card .icon {
-            font-size: 1.8em;
-            flex-shrink: 0;
-            margin-top: 2px;
-            color: #3498db;
-        }
-        .problem-card-content {
-            flex: 1;
-        }
-        .problem-card-title {
-            font-weight: bold;
-            font-size: 1.15em;
-            margin-bottom: 8px;
-            color: #2c3e50;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .problem-card-desc {
-            color: #555;
-            font-size: 1em;
-            line-height: 1.7;
-        }
-        @media (max-width: 600px) {
-            .problem-card {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 20px 12px 16px 12px;
+            gtag('config', 'G-0VCS46ZTHC');
+        </script>
+        <style>
+            /* Basic styles */
+            body {
+                font-family: 'Noto Sans JP', sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                line-height: 1.6;
+                color: #333;
+                background-color: #f9f9f9;
             }
-            .problem-card .icon {
-                margin-bottom: 8px;
+
+            .container {
+                max-width: 960px;
+                margin: 0 auto;
+                padding: 20px;
             }
-        }
 
-        /* Solution section */
-        .solution-section {
-            background-color: #ecf0f1;
-            padding: 40px 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        .feature-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        .feature-item {
-            background-color: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            width: calc(33% - 20px);
-            box-sizing: border-box;
-            text-align: center;
-        }
-        .feature-item h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-            color: #2c3e50;
-        }
-        .feature-item p {
-            font-size: 0.95em;
-            text-align: left;
-            color: #555;
-        }
-        .feature-item i {
-            font-size: 3em;
-            margin-bottom: 15px;
-            display: block;
-        }
-        .feature-item .fa-pen {
-            color: #3498db;
-        }
-        .feature-item .fa-chart-line {
-            color: #2ecc71;
-        }
-        .feature-item .fa-tags {
-            color: #f1c40f;
-        }
-        .feature-item .fa-bell {
-            color: #9b59b6;
-        }
-        .feature-item .fa-trophy {
-            color: #e74c3c;
-        }
-        .feature-item .fa-crown {
-            color: #34495e;
-        }
+            h1,
+            h2,
+            h3 {
+                font-family: 'Montserrat', sans-serif;
+                color: #2c3e50;
+                text-align: center;
+                margin-bottom: 30px;
+            }
 
-        /* Pre-registration section */
-        .pre-register-section {
-            background: linear-gradient(135deg, #8e44ad, #3498db);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            margin-bottom: 30px;
-        }
-        .pre-register-section h2 {
-            color: white;
-            font-size: 1.8em;
-            border-bottom: none;
-        }
-        .pre-register-section p {
-            font-size: 1.2em;
-            margin-bottom: 25px;
-        }
-        .development-message {
-            background-color: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        .development-message p {
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            color: #777;
-            border-top: 1px solid #eee;
-            margin-top: 30px;
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
             h1 {
-                font-size: 1.8em;
+                font-size: 2.4em;
+                margin-top: 30px;
             }
+
             h2 {
-                font-size: 1.4em;
+                font-size: 1.8em;
+                border-bottom: 2px solid #ddd;
+                padding-bottom: 10px;
+                margin-top: 25px;
             }
-            .hero h1 {
-                font-size: 1.9em;
+
+            h3 {
+                font-size: 1.8em;
+                color: #3498db;
+                margin-bottom: 15px;
             }
-            .hero p {
+
+            p {
+                text-align: center;
+                margin-bottom: 20px;
                 font-size: 1.1em;
+                line-height: 1.8;
             }
-            .hero p br {
-                display: none;
+
+            .hero {
+                background: linear-gradient(135deg, #3498db, #8e44ad);
+                color: white;
+                padding: 40px 20px;
+                text-align: center;
+                border-radius: 10px;
+                margin-bottom: 30px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             }
-            .value-section h2 {
-                margin-top: 5px;
+
+            .app-icon {
+                width: 80px;
+                height: 80px;
+                border-radius: 16px;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 20px;
             }
-            .problem-section h2 {
-                margin-top: 10px;
-            }
-            .problem-card {
-                flex-direction: row;
+
+            .hero-title {
+                display: flex;
                 align-items: center;
-                padding: 15px 12px;
+                justify-content: center;
+                margin-bottom: 10px;
             }
-            .problem-card .icon {
+
+            .hero-title h1 {
+                margin: 0;
+            }
+
+            .pre-register-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 15px;
+            }
+
+            .hero h1 {
+                color: white;
+                font-size: 2.6em;
+                margin-bottom: 10px;
+            }
+
+            .hero p {
+                font-size: 1.4em;
+                max-width: 700px;
+                margin: 0 auto 20px;
+            }
+
+            .development-badge {
+                background-color: #f39c12;
+                color: white;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 0.9em;
+                font-weight: bold;
+                display: inline-block;
+                margin-bottom: 15px;
+            }
+
+            .btn-primary {
+                display: inline-block;
+                background-color: #f39c12;
+                color: white;
+                padding: 15px 30px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1.1em;
+                transition: background-color 0.3s ease;
+                margin: 10px;
+            }
+
+            .btn-primary:hover {
+                background-color: #e67e22;
+            }
+
+            .btn-secondary {
+                display: inline-block;
+                background-color: #1da1f2;
+                color: white;
+                padding: 15px 30px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1.1em;
+                transition: background-color 0.3s ease;
+                margin: 10px;
+            }
+
+            .btn-secondary:hover {
+                background-color: #0d8bd9;
+            }
+
+            /* Store badges styling */
+            .store-badge {
+                text-decoration: none;
+                outline: none;
+            }
+
+            .store-badge img {
+                outline: none;
+                border: none;
+            }
+
+            .d-flex {
+                display: flex;
+            }
+
+            .justify-content-center {
+                justify-content: center;
+            }
+
+            .gap-3 {
+                gap: 1rem;
+            }
+
+            .flex-wrap {
+                flex-wrap: wrap;
+            }
+
+            /* スクリーンショットセクション */
+            .screenshot-section {
+                background: #f8f9fa;
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                margin-bottom: 30px;
+            }
+
+            .screenshot-container {
+                position: relative;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                margin: 1rem 0;
+                transition: transform 0.3s ease;
+            }
+
+            .screenshot-container:hover {
+                transform: translateY(-5px);
+            }
+
+            .screenshot-container img {
+                width: 100%;
+                height: auto;
+                transition: transform 0.3s ease;
+            }
+
+            .screenshot-container:hover img {
+                transform: scale(1.02);
+            }
+
+            /* Value proposition section */
+            .value-section {
+                background-color: #fff;
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                margin-bottom: 30px;
+            }
+
+            .value-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+
+            .value-item {
+                background-color: #f8f9fa;
+                padding: 30px;
+                border-radius: 10px;
+                border-left: 5px solid #3498db;
+                text-align: center;
+            }
+
+            .value-item img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .value-item h3 {
+                color: #2c3e50;
+                margin-bottom: 15px;
+                text-align: center;
                 font-size: 1.2em;
-                margin-bottom: 0;
-                margin-right: 5px;
             }
+
+            .value-item p {
+                text-align: left;
+                color: #555;
+                margin-bottom: 0;
+            }
+
+            /* Problem section (renewal) */
+            .problem-section {
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                color: #2c3e50;
+                padding: 40px 20px 30px 20px;
+                border-radius: 16px;
+                box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
+                margin-bottom: 30px;
+            }
+
+            .problem-section h2 {
+                color: #e67e22;
+                font-size: 1.6em;
+                margin-bottom: 25px;
+                border-bottom: none;
+                text-align: center;
+            }
+
+            .problem-cards {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+            .problem-card {
+                background: #fff;
+                border-radius: 12px;
+                box-shadow: 0 2px 12px rgba(52, 73, 94, 0.07);
+                padding: 28px 24px 20px 24px;
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .problem-card .icon {
+                font-size: 1.8em;
+                flex-shrink: 0;
+                margin-top: 2px;
+                color: #3498db;
+            }
+
             .problem-card-content {
                 flex: 1;
             }
+
             .problem-card-title {
-                font-size: 1em;
-                margin-bottom: 5px;
+                font-weight: bold;
+                font-size: 1.15em;
+                margin-bottom: 8px;
+                color: #2c3e50;
+                display: flex;
+                align-items: center;
+                gap: 8px;
             }
+
             .problem-card-desc {
-                font-size: 0.9em;
+                color: #555;
+                font-size: 1em;
+                line-height: 1.7;
             }
-            .app-icon {
-                width: 60px;
-                height: 60px;
-                margin-left: 15px;
+
+            @media (max-width: 600px) {
+                .problem-card {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 20px 12px 16px 12px;
+                }
+
+                .problem-card .icon {
+                    margin-bottom: 8px;
+                }
             }
-            .pre-register-icon {
-                width: 50px;
-                height: 50px;
-                margin-right: 10px;
+
+            /* Solution section */
+            .solution-section {
+                background-color: #ecf0f1;
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                margin-bottom: 30px;
             }
+
+            .feature-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 30px;
+            }
+
             .feature-item {
-                width: calc(100% - 20px);
+                background-color: white;
+                padding: 25px;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                width: calc(33% - 20px);
+                box-sizing: border-box;
+                text-align: center;
             }
-            .value-grid {
-                grid-template-columns: 1fr;
+
+            .feature-item h3 {
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-size: 1.2em;
+                color: #2c3e50;
             }
-            .value-item img {
-                width: 100%;
+
+            .feature-item p {
+                font-size: 0.95em;
+                text-align: left;
+                color: #555;
             }
-        }
-    </style>
-</head>
-<body>
-    <header class="hero">
-        <div class="container">
-            <div class="hero-title">
-                <h1>My Dreams 100</h1>
-                <img src="../images/app_icon/my_dreams_100_app_icon_1024_1024_2.png" alt="My Dreams 100 App Icon" class="app-icon">
-            </div>
-            <p><strong>Discover what you truly want to do.</strong><br><br>
-            Reflect on yourself, write it down, and make it happen.<br>Create a list of 100 things you want to do<br>that will become your lifetime treasure.</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="https://play.google.com/store/apps/details?id=com.mydreams100.takekapp1990.prod" target="_blank" class="store-badge">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" height="60">
-                </a>
-                <a href="https://apps.apple.com/us/app/my-dreams-100/id6751042472" target="_blank" class="store-badge">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="60">
-                </a>
-            </div>
-        </div>
-    </header>
 
-    <main class="container">
-        <section class="value-section">
-            <h2>Why Writing 100 Things You Want to Do is Beneficial</h2>
-            <p>Many people experience significant life changes by working on the "Write 100 Things You Want to Do" exercise.</p>
-            
-            <div class="value-grid">
-                <div class="value-item">
-                    <img src="../images/lp/Google_AI_Studio_2025-07-30_方向性が明確になる.png" alt="Life direction becomes clear">
-                    <h3>🎯 Life Direction Becomes Clear</h3>
-                    <p>Solve the challenge of spending days vaguely and find excitement in daily life by writing 100 things you want to do, creating opportunities for life improvement.</p>
+            .feature-item i {
+                font-size: 3em;
+                margin-bottom: 15px;
+                display: block;
+            }
+
+            .feature-item .fa-pen {
+                color: #3498db;
+            }
+
+            .feature-item .fa-chart-line {
+                color: #2ecc71;
+            }
+
+            .feature-item .fa-tags {
+                color: #f1c40f;
+            }
+
+            .feature-item .fa-bell {
+                color: #9b59b6;
+            }
+
+            .feature-item .fa-trophy {
+                color: #e74c3c;
+            }
+
+            .feature-item .fa-crown {
+                color: #34495e;
+            }
+
+            /* Pre-registration section */
+            .pre-register-section {
+                background: linear-gradient(135deg, #8e44ad, #3498db);
+                color: white;
+                padding: 40px 20px;
+                text-align: center;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                margin-bottom: 30px;
+            }
+
+            .pre-register-section h2 {
+                color: white;
+                font-size: 1.8em;
+                border-bottom: none;
+            }
+
+            .pre-register-section p {
+                font-size: 1.2em;
+                margin-bottom: 25px;
+            }
+
+            .development-message {
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 20px;
+                border-radius: 8px;
+                margin-top: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .development-message p {
+                margin-bottom: 10px;
+                font-size: 1.1em;
+            }
+
+            /* Footer */
+            footer {
+                text-align: center;
+                padding: 20px;
+                font-size: 0.9em;
+                color: #777;
+                border-top: 1px solid #eee;
+                margin-top: 30px;
+            }
+
+            /* Responsive design */
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 1.8em;
+                }
+
+                h2 {
+                    font-size: 1.4em;
+                }
+
+                .hero h1 {
+                    font-size: 1.9em;
+                }
+
+                .hero p {
+                    font-size: 1.1em;
+                }
+
+                .hero p br {
+                    display: none;
+                }
+
+                .value-section h2 {
+                    margin-top: 5px;
+                }
+
+                .problem-section h2 {
+                    margin-top: 10px;
+                }
+
+                .problem-card {
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 15px 12px;
+                }
+
+                .problem-card .icon {
+                    font-size: 1.2em;
+                    margin-bottom: 0;
+                    margin-right: 5px;
+                }
+
+                .problem-card-content {
+                    flex: 1;
+                }
+
+                .problem-card-title {
+                    font-size: 1em;
+                    margin-bottom: 5px;
+                }
+
+                .problem-card-desc {
+                    font-size: 0.9em;
+                }
+
+                .app-icon {
+                    width: 60px;
+                    height: 60px;
+                    margin-left: 15px;
+                }
+
+                .pre-register-icon {
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 10px;
+                }
+
+                .feature-item {
+                    width: calc(100% - 20px);
+                }
+
+                .value-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .value-item img {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="hero">
+            <div class="container">
+                <div class="hero-title">
+                    <h1>My Dreams 100</h1>
+                    <img src="../images/app_icon/my_dreams_100_app_icon_1024_1024_2.png" alt="My Dreams 100 App Icon"
+                        class="app-icon">
                 </div>
-                <div class="value-item">
-                    <img src="../images/lp/Google_AI_Studio_2025-07-30_本当の自分が見えてくる.png" alt="True self becomes visible">
-                    <h3>🔍 Your True Self Becomes Visible</h3>
-                    <p>Solve the challenge of not knowing what you want to do and discover what you truly want by writing 100 things you want to do.</p>
-                </div>
-                <div class="value-item">
-                    <img src="../images/lp/Google_AI_Studio_2025-07-30_行動力が自然と湧いてくる.png" alt="Motivation naturally arises">
-                    <h3>💪 Motivation Naturally Arises</h3>
-                    <p>Having specific goals changes your daily choices and naturally increases your motivation to take action.</p>
-                </div>
-                <div class="value-item">
-                    <img src="../images/lp/Google_AI_Studio_2025-07-30_人生の満足度が向上する.png" alt="Life satisfaction improves">
-                    <h3>🌟 Life Satisfaction Improves</h3>
-                    <p>Having goals increases opportunities to experience achievement and improves overall life satisfaction.</p>
+                <p><strong>Discover what you truly want to do.</strong><br><br>
+                    Reflect on yourself, write it down, and make it happen.<br>Create a list of 100 things you want to
+                    do<br>that will become your lifetime treasure.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="https://play.google.com/store/apps/details?id=com.mydreams100.takekapp1990.prod"
+                        target="_blank" class="store-badge">
+                        <img src="http://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
+                            alt="Get it on Google Play" height="60">
+                    </a>
+                    <a href="https://apps.apple.com/us/app/my-dreams-100/id6751042472" target="_blank"
+                        class="store-badge">
+                        <img src="http://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                            alt="Download on the App Store" height="60">
+                    </a>
                 </div>
             </div>
-        </section>
+        </header>
 
-        <section class="problem-section">
-            <h2>But writing 100 things you want to do isn't easy...</h2>
-            <div class="problem-cards">
-                <div class="problem-card">
-                    <span class="icon">🤔</span>
-                    <div class="problem-card-content">
-                        <div class="problem-card-title">Don't know what to write</div>
-                        <div class="problem-card-desc">Get stuck around the first 10 items and struggle to reach 100.</div>
+        <main class="container">
+            <section class="value-section">
+                <h2>Why Writing 100 Things You Want to Do is Beneficial</h2>
+                <p>Many people experience significant life changes by working on the "Write 100 Things You Want to Do"
+                    exercise.</p>
+
+                <div class="value-grid">
+                    <div class="value-item">
+                        <img src="../images/lp/Google_AI_Studio_2025-07-30_方向性が明確になる.png"
+                            alt="Life direction becomes clear">
+                        <h3>🎯 Life Direction Becomes Clear</h3>
+                        <p>Solve the challenge of spending days vaguely and find excitement in daily life by writing 100
+                            things you want to do, creating opportunities for life improvement.</p>
+                    </div>
+                    <div class="value-item">
+                        <img src="../images/lp/Google_AI_Studio_2025-07-30_本当の自分が見えてくる.png"
+                            alt="True self becomes visible">
+                        <h3>🔍 Your True Self Becomes Visible</h3>
+                        <p>Solve the challenge of not knowing what you want to do and discover what you truly want by
+                            writing 100 things you want to do.</p>
+                    </div>
+                    <div class="value-item">
+                        <img src="../images/lp/Google_AI_Studio_2025-07-30_行動力が自然と湧いてくる.png"
+                            alt="Motivation naturally arises">
+                        <h3>💪 Motivation Naturally Arises</h3>
+                        <p>Having specific goals changes your daily choices and naturally increases your motivation to
+                            take action.</p>
+                    </div>
+                    <div class="value-item">
+                        <img src="../images/lp/Google_AI_Studio_2025-07-30_人生の満足度が向上する.png"
+                            alt="Life satisfaction improves">
+                        <h3>🌟 Life Satisfaction Improves</h3>
+                        <p>Having goals increases opportunities to experience achievement and improves overall life
+                            satisfaction.</p>
                     </div>
                 </div>
-                <div class="problem-card">
-                    <span class="icon">📝</span>
-                    <div class="problem-card-content">
-                        <div class="problem-card-title">Thoughts are scattered across different categories</div>
-                        <div class="problem-card-desc">Even if you write them down, you can't organize them and can't imagine taking action.</div>
+            </section>
+
+            <section class="problem-section">
+                <h2>But writing 100 things you want to do isn't easy...</h2>
+                <div class="problem-cards">
+                    <div class="problem-card">
+                        <span class="icon">🤔</span>
+                        <div class="problem-card-content">
+                            <div class="problem-card-title">Don't know what to write</div>
+                            <div class="problem-card-desc">Get stuck around the first 10 items and struggle to reach
+                                100.</div>
+                        </div>
+                    </div>
+                    <div class="problem-card">
+                        <span class="icon">📝</span>
+                        <div class="problem-card-content">
+                            <div class="problem-card-title">Thoughts are scattered across different categories</div>
+                            <div class="problem-card-desc">Even if you write them down, you can't organize them and
+                                can't imagine taking action.</div>
+                        </div>
+                    </div>
+                    <div class="problem-card">
+                        <span class="icon">📋</span>
+                        <div class="problem-card-content">
+                            <div class="problem-card-title">No management or review after writing</div>
+                            <div class="problem-card-desc">Satisfied with just writing and can't review or manage
+                                achievements later.</div>
+                        </div>
+                    </div>
+                    <div class="problem-card">
+                        <span class="icon">💤</span>
+                        <div class="problem-card-content">
+                            <div class="problem-card-title">Motivation to continue doesn't last</div>
+                            <div class="problem-card-desc">Even if you're motivated at first, you tend to forget due to
+                                daily busyness.</div>
+                        </div>
                     </div>
                 </div>
-                <div class="problem-card">
-                    <span class="icon">📋</span>
-                    <div class="problem-card-content">
-                        <div class="problem-card-title">No management or review after writing</div>
-                        <div class="problem-card-desc">Satisfied with just writing and can't review or manage achievements later.</div>
+            </section>
+
+            <section class="solution-section">
+                <h2>"My Dreams 100" powerfully supports<br>your dream realization</h2>
+                <p>Everything you need to find, concretize, and achieve "100 dreams" is packed into this app.</p>
+
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-pen"></i>
+                        <h3>Enjoyably discover 100 things you want to do</h3>
+                        <p>Anyone can write 100 things they want to do by following effective questions and tutorials.
+                        </p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Check progress with graphs</h3>
+                        <p>View progress at a glance with tables and graphs, maintaining a sense of achievement and
+                            motivation.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-tags"></i>
+                        <h3>Organize dreams and connect to action</h3>
+                        <p>Freely categorize and reorder so you can clearly organize your thoughts.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-bell"></i>
+                        <h3>Support continuation with regular reminders</h3>
+                        <p>Notify you at the right time and rekindle dreams you were starting to forget.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Experience the joy of achieving dreams repeatedly</h3>
+                        <p>Achieved dreams remain as a "completed list," building up your "I did it!" moments.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-crown"></i>
+                        <h3>Accelerate further with premium features</h3>
+                        <p>Advanced content creation support to further accelerate dream realization.</p>
                     </div>
                 </div>
-                <div class="problem-card">
-                    <span class="icon">💤</span>
-                    <div class="problem-card-content">
-                        <div class="problem-card-title">Motivation to continue doesn't last</div>
-                        <div class="problem-card-desc">Even if you're motivated at first, you tend to forget due to daily busyness.</div>
+            </section>
+
+            <!-- スクリーンショットセクション -->
+            <section class="screenshot-section">
+                <h2>App Screenshots</h2>
+                <p>See the app in action</p>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
+                    <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
+                        <img src="../images/screen_shots/en/resized_slide_6.png" alt="My Dreams 100 Screenshot 1"
+                            style="width: 100%; height: auto;">
+                    </div>
+                    <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
+                        <img src="../images/screen_shots/en/resized_slide_7.png" alt="My Dreams 100 Screenshot 2"
+                            style="width: 100%; height: auto;">
+                    </div>
+                    <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
+                        <img src="../images/screen_shots/en/resized_slide_8.png" alt="My Dreams 100 Screenshot 3"
+                            style="width: 100%; height: auto;">
+                    </div>
+                    <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
+                        <img src="../images/screen_shots/en/resized_slide_9.png" alt="My Dreams 100 Screenshot 4"
+                            style="width: 100%; height: auto;">
+                    </div>
+                    <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
+                        <img src="../images/screen_shots/en/resized_slide_10.png" alt="My Dreams 100 Screenshot 5"
+                            style="width: 100%; height: auto;">
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="solution-section">
-            <h2>"My Dreams 100" powerfully supports<br>your dream realization</h2>
-            <p>Everything you need to find, concretize, and achieve "100 dreams" is packed into this app.</p>
+            <section class="pre-register-section" id="download">
+                <h2>Now, discover your life's "wants"<br>immediately!</h2>
+                <p>With "My Dreams 100," transform vague desires into concrete goals and make every day an exciting
+                    adventure!</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="https://play.google.com/store/apps/details?id=com.mydreams100.takekapp1990.prod"
+                        target="_blank" class="store-badge">
+                        <img src="http://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
+                            alt="Get it on Google Play" height="60">
+                    </a>
+                    <a href="https://apps.apple.com/us/app/my-dreams-100/id6751042472" target="_blank"
+                        class="store-badge">
+                        <img src="http://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                            alt="Download on the App Store" height="60">
+                    </a>
+                </div>
 
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <i class="fas fa-pen"></i>
-                    <h3>Enjoyably discover 100 things you want to do</h3>
-                    <p>Anyone can write 100 things they want to do by following effective questions and tutorials.</p>
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="terms_and_conditions_en.html" class="btn-secondary" style="margin: 5px;">Terms and
+                        Conditions</a>
+                    <a href="privacy_policy_en.html" class="btn-secondary" style="margin: 5px;">Privacy Policy</a>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Check progress with graphs</h3>
-                    <p>View progress at a glance with tables and graphs, maintaining a sense of achievement and motivation.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-tags"></i>
-                    <h3>Organize dreams and connect to action</h3>
-                    <p>Freely categorize and reorder so you can clearly organize your thoughts.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-bell"></i>
-                    <h3>Support continuation with regular reminders</h3>
-                    <p>Notify you at the right time and rekindle dreams you were starting to forget.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-trophy"></i>
-                    <h3>Experience the joy of achieving dreams repeatedly</h3>
-                    <p>Achieved dreams remain as a "completed list," building up your "I did it!" moments.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-crown"></i>
-                    <h3>Accelerate further with premium features</h3>
-                    <p>Advanced content creation support to further accelerate dream realization.</p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
-        <!-- スクリーンショットセクション -->
-        <section class="screenshot-section">
-            <h2>App Screenshots</h2>
-            <p>See the app in action</p>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
-                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
-                    <img src="../images/screen_shots/en/resized_slide_6.png" alt="My Dreams 100 Screenshot 1" style="width: 100%; height: auto;">
-                </div>
-                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
-                    <img src="../images/screen_shots/en/resized_slide_7.png" alt="My Dreams 100 Screenshot 2" style="width: 100%; height: auto;">
-                </div>
-                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
-                    <img src="../images/screen_shots/en/resized_slide_8.png" alt="My Dreams 100 Screenshot 3" style="width: 100%; height: auto;">
-                </div>
-                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
-                    <img src="../images/screen_shots/en/resized_slide_9.png" alt="My Dreams 100 Screenshot 4" style="width: 100%; height: auto;">
-                </div>
-                <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
-                    <img src="../images/screen_shots/en/resized_slide_10.png" alt="My Dreams 100 Screenshot 5" style="width: 100%; height: auto;">
-                </div>
+        <footer>
+            <div class="container">
+                <p>&copy; TakeKApp. All rights reserved.</p>
             </div>
-        </section>
+        </footer>
+    </body>
 
-        <section class="pre-register-section" id="download">
-            <h2>Now, discover your life's "wants"<br>immediately!</h2>
-            <p>With "My Dreams 100," transform vague desires into concrete goals and make every day an exciting adventure!</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="https://play.google.com/store/apps/details?id=com.mydreams100.takekapp1990.prod" target="_blank" class="store-badge">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" height="60">
-                </a>
-                <a href="https://apps.apple.com/us/app/my-dreams-100/id6751042472" target="_blank" class="store-badge">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="60">
-                </a>
-            </div>
-            
-            <div style="margin-top: 20px; text-align: center;">
-                <a href="terms_and_conditions_en.html" class="btn-secondary" style="margin: 5px;">Terms and Conditions</a>
-                <a href="privacy_policy_en.html" class="btn-secondary" style="margin: 5px;">Privacy Policy</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; TakeKApp. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html> 
+</html>

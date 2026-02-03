@@ -1,617 +1,697 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post Drafts - SNS投稿をもっと楽に、もっと効果的に</title>
-    <link rel="icon" href="../favicon.ico">
-    <!-- OGP & Twitter Card -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Post Drafts - SNS投稿をもっと楽に、もっと効果的に">
-    <meta property="og:description" content="SNS投稿の下書き管理を効率化。文字数カウント、ハッシュタグ管理、OGP確認、翻訳機能で完璧な投稿を。2025年9月リリース！">
-    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/images/app_icon/post_drafts_app_icon_1024_1024_ios.png">
-    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/ja/landing_page_ja.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Post Drafts - SNS投稿をもっと楽に、もっと効果的に">
-    <meta name="twitter:description" content="SNS投稿の下書き管理を効率化。文字数カウント、ハッシュタグ管理、OGP確認、翻訳機能で完璧な投稿を。2025年9月リリース！">
-    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/images/app_icon/post_drafts_app_icon_1024_1024_ios.png">
-    <meta name="twitter:site" content="@takekapp">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/images/app_icon/post_drafts_app_icon_1024_1024_ios.png">
-    <link rel="apple-touch-icon" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/PostDrafts/images/app_icon/post_drafts_app_icon_1024_1024_ios.png">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-0VCS46ZTHC');
-    </script>
-    <style>
-        /* 基本スタイル */
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            line-height: 1.6;
-            color: #5d4e37;
-            background-color: #faf8f5;
-        }
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: #8b4513;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        h1 {
-            font-size: 2.4em;
-            margin-top: 30px;
-        }
-        h2 {
-            font-size: 1.8em;
-            border-bottom: 2px solid #d2b48c;
-            padding-bottom: 10px;
-            margin-top: 15px;
-        }
-        h3 {
-            font-size: 1.8em;
-            color: #a0522d;
-            margin-bottom: 15px;
-        }
-        p {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            line-height: 1.8;
-        }
-        .hero {
-            background: linear-gradient(135deg, #d2b48c, #bc9a6a);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        .app-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 16px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 20px;
-        }
-        .hero-title {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
-        .hero-title h1 {
-            margin: 0;
-        }
-        .hero h1 {
-            color: white;
-            font-size: 2.6em;
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 1.4em;
-            max-width: 700px;
-            margin: 0 auto 20px;
-        }
-        .release-badge {
-            background-color: #8b4513;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        .btn-primary {
-            display: inline-block;
-            background-color: #8b4513;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-            margin: 10px;
-        }
-        .btn-primary:hover {
-            background-color: #a0522d;
-        }
-        .btn-secondary {
-            display: inline-block;
-            background-color: #cd853f;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-            margin: 10px;
-        }
-        .btn-secondary:hover {
-            background-color: #daa520;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Post Drafts - SNS投稿をもっと楽に、もっと効果的に</title>
+        <link rel="icon" href="../favicon.ico">
+        <!-- OGP & Twitter Card -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Post Drafts - SNS投稿をもっと楽に、もっと効果的に">
+        <meta property="og:description" content="SNS投稿の下書き管理を効率化。文字数カウント、ハッシュタグ管理、OGP確認、翻訳機能で完璧な投稿を。2025年9月リリース！">
+        <meta property="og:image"
+            content="http://takekapp.com/PostDrafts/images/app_icon/post_drafts_app_icon_1024_1024_ios.png">
+        <meta property="og:url" content="http://takekapp.com/PostDrafts/ja/landing_page_ja.html">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Post Drafts - SNS投稿をもっと楽に、もっと効果的に">
+        <meta name="twitter:description" content="SNS投稿の下書き管理を効率化。文字数カウント、ハッシュタグ管理、OGP確認、翻訳機能で完璧な投稿を。2025年9月リリース！">
+        <meta name="twitter:image"
+            content="http://takekapp.com/PostDrafts/images/app_icon/post_drafts_app_icon_1024_1024_ios.png">
+        <meta name="twitter:site" content="@takekapp">
+        <!-- Favicon -->
+        <link rel="icon" type="image/png"
+            href="http://takekapp.com/PostDrafts/images/app_icon/post_drafts_app_icon_1024_1024_ios.png">
+        <link rel="apple-touch-icon"
+            href="http://takekapp.com/PostDrafts/images/app_icon/post_drafts_app_icon_1024_1024_ios.png">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
 
-        /* Store badges styling */
-        .store-badge {
-            text-decoration: none;
-            outline: none;
-        }
-
-        .store-badge img {
-            outline: none;
-            border: none;
-        }
-
-        .d-flex {
-            display: flex;
-        }
-
-        .justify-content-center {
-            justify-content: center;
-        }
-
-        .gap-3 {
-            gap: 1rem;
-        }
-
-        .flex-wrap {
-            flex-wrap: wrap;
-        }
-
-        /* スクリーンショットセクション */
-        .screenshot-section {
-            background: #f5f5dc;
-            padding: 40px 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-
-        .screenshot-container {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            margin: 1rem 0;
-            transition: transform 0.3s ease;
-        }
-
-        .screenshot-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .screenshot-container img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .screenshot-container:hover img {
-            transform: scale(1.02);
-        }
-
-        /* 価値提案セクション */
-        .value-section {
-            background-color: #fff;
-            padding: 40px 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        .value-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .value-item {
-            background-color: #faf8f5;
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 5px solid #d2b48c;
-            text-align: center;
-        }
-        .value-item img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .value-item h3 {
-            color: #8b4513;
-            margin-bottom: 15px;
-            text-align: center;
-            font-size: 1.2em;
-        }
-        .value-item p {
-            text-align: left;
-            color: #5d4e37;
-            margin-bottom: 0;
-        }
-
-        /* 課題セクション */
-        .problem-section {
-            background: linear-gradient(135deg, #f5f5dc 0%, #e6ddd4 100%);
-            color: #5d4e37;
-            padding: 40px 20px 30px 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(139,69,19,0.08);
-            margin-bottom: 30px;
-        }
-        .problem-section h2 {
-            color: #8b4513;
-            font-size: 1.6em;
-            margin-bottom: 25px;
-            border-bottom: none;
-            text-align: center;
-        }
-        .problem-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .problem-card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(139,69,19,0.07);
-            padding: 28px 24px 20px 24px;
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-        }
-        .problem-card .icon {
-            font-size: 1.8em;
-            flex-shrink: 0;
-            margin-top: 2px;
-            color: #d2b48c;
-        }
-        .problem-card-content {
-            flex: 1;
-        }
-        .problem-card-title {
-            font-weight: bold;
-            font-size: 1.15em;
-            margin-bottom: 8px;
-            color: #8b4513;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .problem-card-desc {
-            color: #5d4e37;
-            font-size: 1em;
-            line-height: 1.7;
-        }
-        @media (max-width: 600px) {
-            .problem-card {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 20px 12px 16px 12px;
+            gtag('config', 'G-0VCS46ZTHC');
+        </script>
+        <style>
+            /* 基本スタイル */
+            body {
+                font-family: 'Noto Sans JP', sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                line-height: 1.6;
+                color: #5d4e37;
+                background-color: #faf8f5;
             }
-            .problem-card .icon {
-                margin-bottom: 8px;
+
+            .container {
+                max-width: 960px;
+                margin: 0 auto;
+                padding: 20px;
             }
-        }
 
-        /* 解決策セクション */
-        .solution-section {
-            background-color: #f5f5dc;
-            padding: 40px 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        .feature-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        .feature-item {
-            background-color: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            width: calc(33% - 20px);
-            box-sizing: border-box;
-            text-align: center;
-        }
-        .feature-item h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-            color: #8b4513;
-        }
-        .feature-item p {
-            font-size: 0.95em;
-            text-align: left;
-            color: #5d4e37;
-        }
-        .feature-item i {
-            font-size: 3em;
-            margin-bottom: 15px;
-            display: block;
-        }
-        .feature-item .fa-edit {
-            color: #d2b48c;
-        }
-        .feature-item .fa-hashtag {
-            color: #cd853f;
-        }
-        .feature-item .fa-image {
-            color: #daa520;
-        }
-        .feature-item .fa-language {
-            color: #8b4513;
-        }
-        .feature-item .fa-copy {
-            color: #a0522d;
-        }
-        .feature-item .fa-search {
-            color: #bc9a6a;
-        }
+            h1,
+            h2,
+            h3 {
+                font-family: 'Montserrat', sans-serif;
+                color: #8b4513;
+                text-align: center;
+                margin-bottom: 30px;
+            }
 
-        /* リリースセクション */
-        .release-section {
-            background: linear-gradient(135deg, #8b4513, #cd853f);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            margin-bottom: 30px;
-        }
-        .release-section h2 {
-            color: white;
-            font-size: 1.8em;
-            border-bottom: none;
-        }
-        .release-section p {
-            font-size: 1.2em;
-            margin-bottom: 25px;
-        }
-        .release-message {
-            background-color: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        .release-message p {
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        /* フッター */
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            color: #8b7355;
-            border-top: 1px solid #d2b48c;
-            margin-top: 30px;
-        }
-
-        /* レスポンシブ対応 */
-        @media (max-width: 768px) {
             h1 {
-                font-size: 1.8em;
+                font-size: 2.4em;
+                margin-top: 30px;
             }
+
             h2 {
-                font-size: 1.4em;
+                font-size: 1.8em;
+                border-bottom: 2px solid #d2b48c;
+                padding-bottom: 10px;
+                margin-top: 15px;
             }
-            .hero h1 {
-                font-size: 1.9em;
+
+            h3 {
+                font-size: 1.8em;
+                color: #a0522d;
+                margin-bottom: 15px;
             }
-            .hero p {
+
+            p {
+                text-align: center;
+                margin-bottom: 20px;
                 font-size: 1.1em;
+                line-height: 1.8;
             }
-            .hero p br {
-                display: none;
+
+            .hero {
+                background: linear-gradient(135deg, #d2b48c, #bc9a6a);
+                color: white;
+                padding: 40px 20px;
+                text-align: center;
+                border-radius: 10px;
+                margin-bottom: 30px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             }
-            .value-section h2 {
-                margin-top: 5px;
+
+            .app-icon {
+                width: 80px;
+                height: 80px;
+                border-radius: 16px;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 20px;
             }
-            .problem-section h2 {
-                margin-top: 10px;
-            }
-            .problem-card {
-                flex-direction: row;
+
+            .hero-title {
+                display: flex;
                 align-items: center;
-                padding: 15px 12px;
+                justify-content: center;
+                margin-bottom: 10px;
             }
-            .problem-card .icon {
+
+            .hero-title h1 {
+                margin: 0;
+            }
+
+            .hero h1 {
+                color: white;
+                font-size: 2.6em;
+                margin-bottom: 10px;
+            }
+
+            .hero p {
+                font-size: 1.4em;
+                max-width: 700px;
+                margin: 0 auto 20px;
+            }
+
+            .release-badge {
+                background-color: #8b4513;
+                color: white;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 0.9em;
+                font-weight: bold;
+                display: inline-block;
+                margin-bottom: 15px;
+            }
+
+            .btn-primary {
+                display: inline-block;
+                background-color: #8b4513;
+                color: white;
+                padding: 15px 30px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1.1em;
+                transition: background-color 0.3s ease;
+                margin: 10px;
+            }
+
+            .btn-primary:hover {
+                background-color: #a0522d;
+            }
+
+            .btn-secondary {
+                display: inline-block;
+                background-color: #cd853f;
+                color: white;
+                padding: 15px 30px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1.1em;
+                transition: background-color 0.3s ease;
+                margin: 10px;
+            }
+
+            .btn-secondary:hover {
+                background-color: #daa520;
+            }
+
+            /* Store badges styling */
+            .store-badge {
+                text-decoration: none;
+                outline: none;
+            }
+
+            .store-badge img {
+                outline: none;
+                border: none;
+            }
+
+            .d-flex {
+                display: flex;
+            }
+
+            .justify-content-center {
+                justify-content: center;
+            }
+
+            .gap-3 {
+                gap: 1rem;
+            }
+
+            .flex-wrap {
+                flex-wrap: wrap;
+            }
+
+            /* スクリーンショットセクション */
+            .screenshot-section {
+                background: #f5f5dc;
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                margin-bottom: 30px;
+            }
+
+            .screenshot-container {
+                position: relative;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                margin: 1rem 0;
+                transition: transform 0.3s ease;
+            }
+
+            .screenshot-container:hover {
+                transform: translateY(-5px);
+            }
+
+            .screenshot-container img {
+                width: 100%;
+                height: auto;
+                transition: transform 0.3s ease;
+            }
+
+            .screenshot-container:hover img {
+                transform: scale(1.02);
+            }
+
+            /* 価値提案セクション */
+            .value-section {
+                background-color: #fff;
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                margin-bottom: 30px;
+            }
+
+            .value-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+
+            .value-item {
+                background-color: #faf8f5;
+                padding: 30px;
+                border-radius: 10px;
+                border-left: 5px solid #d2b48c;
+                text-align: center;
+            }
+
+            .value-item img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .value-item h3 {
+                color: #8b4513;
+                margin-bottom: 15px;
+                text-align: center;
                 font-size: 1.2em;
-                margin-bottom: 0;
-                margin-right: 5px;
             }
+
+            .value-item p {
+                text-align: left;
+                color: #5d4e37;
+                margin-bottom: 0;
+            }
+
+            /* 課題セクション */
+            .problem-section {
+                background: linear-gradient(135deg, #f5f5dc 0%, #e6ddd4 100%);
+                color: #5d4e37;
+                padding: 40px 20px 30px 20px;
+                border-radius: 16px;
+                box-shadow: 0 4px 24px rgba(139, 69, 19, 0.08);
+                margin-bottom: 30px;
+            }
+
+            .problem-section h2 {
+                color: #8b4513;
+                font-size: 1.6em;
+                margin-bottom: 25px;
+                border-bottom: none;
+                text-align: center;
+            }
+
+            .problem-cards {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+            .problem-card {
+                background: #fff;
+                border-radius: 12px;
+                box-shadow: 0 2px 12px rgba(139, 69, 19, 0.07);
+                padding: 28px 24px 20px 24px;
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .problem-card .icon {
+                font-size: 1.8em;
+                flex-shrink: 0;
+                margin-top: 2px;
+                color: #d2b48c;
+            }
+
             .problem-card-content {
                 flex: 1;
             }
+
             .problem-card-title {
-                font-size: 1em;
-                margin-bottom: 5px;
+                font-weight: bold;
+                font-size: 1.15em;
+                margin-bottom: 8px;
+                color: #8b4513;
+                display: flex;
+                align-items: center;
+                gap: 8px;
             }
+
             .problem-card-desc {
-                font-size: 0.9em;
+                color: #5d4e37;
+                font-size: 1em;
+                line-height: 1.7;
             }
-            .app-icon {
-                width: 60px;
-                height: 60px;
-                margin-left: 15px;
+
+            @media (max-width: 600px) {
+                .problem-card {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 20px 12px 16px 12px;
+                }
+
+                .problem-card .icon {
+                    margin-bottom: 8px;
+                }
             }
+
+            /* 解決策セクション */
+            .solution-section {
+                background-color: #f5f5dc;
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                margin-bottom: 30px;
+            }
+
+            .feature-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 30px;
+            }
+
             .feature-item {
-                width: calc(100% - 20px);
+                background-color: white;
+                padding: 25px;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                width: calc(33% - 20px);
+                box-sizing: border-box;
+                text-align: center;
             }
-            .value-grid {
-                grid-template-columns: 1fr;
+
+            .feature-item h3 {
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-size: 1.2em;
+                color: #8b4513;
             }
-            .value-item img {
-                width: 100%;
+
+            .feature-item p {
+                font-size: 0.95em;
+                text-align: left;
+                color: #5d4e37;
             }
-        }
-    </style>
-</head>
-<body>
-    <header class="hero">
-        <div class="container">
-            <div class="hero-title">
-                <h1>Post Drafts</h1>
-                <img src="../images/app_icon/post_drafts_app_icon_1024_1024_ios.png" alt="Post Drafts アプリアイコン" class="app-icon">
-            </div>
-            <p><strong>SNS投稿をもっと楽に、もっと効果的に。</strong><br><br>
-            文字数カウント、ハッシュタグ管理、OGP確認、翻訳機能で<br>完璧なSNS投稿を実現しよう。</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="https://play.google.com/store/apps/details?id=com.postdrafts.takekapp1990.prod" class="store-badge">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで手に入れよう" height="60">
-                </a>
-                <a href="https://apps.apple.com/jp/app/post-drafts-sns-%E3%83%9D%E3%82%B9%E3%83%88%E5%90%91%E3%81%91%E3%83%A1%E3%83%A2/id6752572268" class="store-badge">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" height="60">
-                </a>
-            </div>
-        </div>
-    </header>
 
-    <main class="container">
+            .feature-item i {
+                font-size: 3em;
+                margin-bottom: 15px;
+                display: block;
+            }
 
-        <section class="problem-section">
-            <h2>こんなSNS投稿の悩み、ありませんか？</h2>
-            <div class="problem-cards">
-                <div class="problem-card">
-                    <span class="icon">😰</span>
-                    <div class="problem-card-content">
-                        <div class="problem-card-title">文字数制限を超えないか心配</div>
-                        <div class="problem-card-desc">Xの文字数制限を気にしながら投稿を書くのがストレス。投稿後に「文字数オーバー」でエラーが出ることも。</div>
+            .feature-item .fa-edit {
+                color: #d2b48c;
+            }
+
+            .feature-item .fa-hashtag {
+                color: #cd853f;
+            }
+
+            .feature-item .fa-image {
+                color: #daa520;
+            }
+
+            .feature-item .fa-language {
+                color: #8b4513;
+            }
+
+            .feature-item .fa-copy {
+                color: #a0522d;
+            }
+
+            .feature-item .fa-search {
+                color: #bc9a6a;
+            }
+
+            /* リリースセクション */
+            .release-section {
+                background: linear-gradient(135deg, #8b4513, #cd853f);
+                color: white;
+                padding: 40px 20px;
+                text-align: center;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                margin-bottom: 30px;
+            }
+
+            .release-section h2 {
+                color: white;
+                font-size: 1.8em;
+                border-bottom: none;
+            }
+
+            .release-section p {
+                font-size: 1.2em;
+                margin-bottom: 25px;
+            }
+
+            .release-message {
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 20px;
+                border-radius: 8px;
+                margin-top: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .release-message p {
+                margin-bottom: 10px;
+                font-size: 1.1em;
+            }
+
+            /* フッター */
+            footer {
+                text-align: center;
+                padding: 20px;
+                font-size: 0.9em;
+                color: #8b7355;
+                border-top: 1px solid #d2b48c;
+                margin-top: 30px;
+            }
+
+            /* レスポンシブ対応 */
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 1.8em;
+                }
+
+                h2 {
+                    font-size: 1.4em;
+                }
+
+                .hero h1 {
+                    font-size: 1.9em;
+                }
+
+                .hero p {
+                    font-size: 1.1em;
+                }
+
+                .hero p br {
+                    display: none;
+                }
+
+                .value-section h2 {
+                    margin-top: 5px;
+                }
+
+                .problem-section h2 {
+                    margin-top: 10px;
+                }
+
+                .problem-card {
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 15px 12px;
+                }
+
+                .problem-card .icon {
+                    font-size: 1.2em;
+                    margin-bottom: 0;
+                    margin-right: 5px;
+                }
+
+                .problem-card-content {
+                    flex: 1;
+                }
+
+                .problem-card-title {
+                    font-size: 1em;
+                    margin-bottom: 5px;
+                }
+
+                .problem-card-desc {
+                    font-size: 0.9em;
+                }
+
+                .app-icon {
+                    width: 60px;
+                    height: 60px;
+                    margin-left: 15px;
+                }
+
+                .feature-item {
+                    width: calc(100% - 20px);
+                }
+
+                .value-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .value-item img {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="hero">
+            <div class="container">
+                <div class="hero-title">
+                    <h1>Post Drafts</h1>
+                    <img src="../images/app_icon/post_drafts_app_icon_1024_1024_ios.png" alt="Post Drafts アプリアイコン"
+                        class="app-icon">
+                </div>
+                <p><strong>SNS投稿をもっと楽に、もっと効果的に。</strong><br><br>
+                    文字数カウント、ハッシュタグ管理、OGP確認、翻訳機能で<br>完璧なSNS投稿を実現しよう。</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="https://play.google.com/store/apps/details?id=com.postdrafts.takekapp1990.prod"
+                        class="store-badge">
+                        <img src="http://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
+                            alt="Google Playで手に入れよう" height="60">
+                    </a>
+                    <a href="https://apps.apple.com/jp/app/post-drafts-sns-%E3%83%9D%E3%82%B9%E3%83%88%E5%90%91%E3%81%91%E3%83%A1%E3%83%A2/id6752572268"
+                        class="store-badge">
+                        <img src="http://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
+                            alt="App Storeからダウンロード" height="60">
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+
+            <section class="problem-section">
+                <h2>こんなSNS投稿の悩み、ありませんか？</h2>
+                <div class="problem-cards">
+                    <div class="problem-card">
+                        <span class="icon">😰</span>
+                        <div class="problem-card-content">
+                            <div class="problem-card-title">文字数制限を超えないか心配</div>
+                            <div class="problem-card-desc">Xの文字数制限を気にしながら投稿を書くのがストレス。投稿後に「文字数オーバー」でエラーが出ることも。</div>
+                        </div>
+                    </div>
+                    <div class="problem-card">
+                        <span class="icon">😤</span>
+                        <div class="problem-card-content">
+                            <div class="problem-card-title">ハッシュタグを毎回手で打っていて面倒</div>
+                            <div class="problem-card-desc">よく使うハッシュタグを毎回手入力するのが面倒。タイプミスも多く、効率が悪い。</div>
+                        </div>
+                    </div>
+                    <div class="problem-card">
+                        <span class="icon">🤔</span>
+                        <div class="problem-card-content">
+                            <div class="problem-card-title">OGP画像がうまく取得できているか不安</div>
+                            <div class="problem-card-desc">URLを貼った時にOGP画像が正しく表示されるか不安。投稿後に確認して修正することが多い。</div>
+                        </div>
+                    </div>
+                    <div class="problem-card">
+                        <span class="icon">😓</span>
+                        <div class="problem-card-content">
+                            <div class="problem-card-title">Xの下書きをもっと効率的に行いたい</div>
+                            <div class="problem-card-desc">Xの下書き機能だけでは物足りない。複数の下書きを管理したり、効率的に編集したい。</div>
+                        </div>
                     </div>
                 </div>
-                <div class="problem-card">
-                    <span class="icon">😤</span>
-                    <div class="problem-card-content">
-                        <div class="problem-card-title">ハッシュタグを毎回手で打っていて面倒</div>
-                        <div class="problem-card-desc">よく使うハッシュタグを毎回手入力するのが面倒。タイプミスも多く、効率が悪い。</div>
+            </section>
+
+            <section class="solution-section">
+                <h2>Post Draftsが、<br>あなたのSNS投稿を強力にサポート</h2>
+                <p>SNS投稿の悩みを解決し、効果的な発信を実現するための全てが、このアプリに詰まっています。</p>
+
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-edit"></i>
+                        <h3>投稿の下書きで文字数を見ながら調整</h3>
+                        <p>リアルタイムで文字数をカウント。Xの文字数制限に合わせた計算で、安心して投稿できます。</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-hashtag"></i>
+                        <h3>ハッシュタグをタップして選択</h3>
+                        <p>よく使うハッシュタグを登録して、ワンタップで挿入。タイプミスもなく、効率的に投稿できます。</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-image"></i>
+                        <h3>OGP画像を確認できる</h3>
+                        <p>URLを入力するだけでOGP画像をプレビュー。投稿前に確認できるので安心です。</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-language"></i>
+                        <h3>翻訳機能つき</h3>
+                        <p>Google翻訳APIを使用した翻訳機能。日本語と英語の両方で効果的な投稿ができます。</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-copy"></i>
+                        <h3>連続投稿を想定したUI</h3>
+                        <p>複数の下書きを効率的に管理。コピー機能で似たような投稿も簡単に作成できます。</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-search"></i>
+                        <h3>検索・フィルタリング機能</h3>
+                        <p>タグや内容で下書きを検索。過去の投稿を振り返りやすく、一貫性のある発信が可能です。</p>
                     </div>
                 </div>
-                <div class="problem-card">
-                    <span class="icon">🤔</span>
-                    <div class="problem-card-content">
-                        <div class="problem-card-title">OGP画像がうまく取得できているか不安</div>
-                        <div class="problem-card-desc">URLを貼った時にOGP画像が正しく表示されるか不安。投稿後に確認して修正することが多い。</div>
+            </section>
+
+            <!-- スクリーンショットセクション -->
+            <section class="screenshot-section">
+                <h2>アプリストア掲載中のスクリーンショット</h2>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
+                    <div class="screenshot-container" style="width: calc(30% - 16px); min-width: 200px;">
+                        <img src="../images/screen_shots/ja/resized_slide_2.png" alt="Post Drafts スクリーンショット 2">
+                    </div>
+                    <div class="screenshot-container" style="width: calc(30% - 16px); min-width: 200px;">
+                        <img src="../images/screen_shots/ja/resized_slide_3.png" alt="Post Drafts スクリーンショット 3">
+                    </div>
+                    <div class="screenshot-container" style="width: calc(30% - 16px); min-width: 200px;">
+                        <img src="../images/screen_shots/ja/resized_slide_4.png" alt="Post Drafts スクリーンショット 4">
                     </div>
                 </div>
-                <div class="problem-card">
-                    <span class="icon">😓</span>
-                    <div class="problem-card-content">
-                        <div class="problem-card-title">Xの下書きをもっと効率的に行いたい</div>
-                        <div class="problem-card-desc">Xの下書き機能だけでは物足りない。複数の下書きを管理したり、効率的に編集したい。</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="solution-section">
-            <h2>Post Draftsが、<br>あなたのSNS投稿を強力にサポート</h2>
-            <p>SNS投稿の悩みを解決し、効果的な発信を実現するための全てが、このアプリに詰まっています。</p>
+            <section class="release-section" id="download">
+                <h2>さあ、あなたのSNS投稿を、<br>今すぐ効率化しよう！</h2>
+                <p>Post Draftsで、SNS投稿の悩みを解決し、効果的な発信を始めませんか？</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="https://play.google.com/store/apps/details?id=com.postdrafts.takekapp1990.prod"
+                        class="store-badge">
+                        <img src="http://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
+                            alt="Google Playで手に入れよう" height="60">
+                    </a>
+                    <a href="https://apps.apple.com/jp/app/post-drafts-sns-%E3%83%9D%E3%82%B9%E3%83%88%E5%90%91%E3%81%91%E3%83%A1%E3%83%A2/id6752572268"
+                        class="store-badge">
+                        <img src="http://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
+                            alt="App Storeからダウンロード" height="60">
+                    </a>
+                </div>
 
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <i class="fas fa-edit"></i>
-                    <h3>投稿の下書きで文字数を見ながら調整</h3>
-                    <p>リアルタイムで文字数をカウント。Xの文字数制限に合わせた計算で、安心して投稿できます。</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-hashtag"></i>
-                    <h3>ハッシュタグをタップして選択</h3>
-                    <p>よく使うハッシュタグを登録して、ワンタップで挿入。タイプミスもなく、効率的に投稿できます。</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-image"></i>
-                    <h3>OGP画像を確認できる</h3>
-                    <p>URLを入力するだけでOGP画像をプレビュー。投稿前に確認できるので安心です。</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-language"></i>
-                    <h3>翻訳機能つき</h3>
-                    <p>Google翻訳APIを使用した翻訳機能。日本語と英語の両方で効果的な投稿ができます。</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-copy"></i>
-                    <h3>連続投稿を想定したUI</h3>
-                    <p>複数の下書きを効率的に管理。コピー機能で似たような投稿も簡単に作成できます。</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-search"></i>
-                    <h3>検索・フィルタリング機能</h3>
-                    <p>タグや内容で下書きを検索。過去の投稿を振り返りやすく、一貫性のある発信が可能です。</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- スクリーンショットセクション -->
-        <section class="screenshot-section">
-            <h2>アプリストア掲載中のスクリーンショット</h2>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
-                <div class="screenshot-container" style="width: calc(30% - 16px); min-width: 200px;">
-                    <img src="../images/screen_shots/ja/resized_slide_2.png" alt="Post Drafts スクリーンショット 2">
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="terms_and_conditions_ja.html" class="btn-secondary" style="margin: 5px;">利用規約</a>
+                    <a href="privacy_policy_ja.html" class="btn-secondary" style="margin: 5px;">プライバシーポリシー</a>
                 </div>
-                <div class="screenshot-container" style="width: calc(30% - 16px); min-width: 200px;">
-                    <img src="../images/screen_shots/ja/resized_slide_3.png" alt="Post Drafts スクリーンショット 3">
-                </div>
-                <div class="screenshot-container" style="width: calc(30% - 16px); min-width: 200px;">
-                    <img src="../images/screen_shots/ja/resized_slide_4.png" alt="Post Drafts スクリーンショット 4">
-                </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
-        <section class="release-section" id="download">
-            <h2>さあ、あなたのSNS投稿を、<br>今すぐ効率化しよう！</h2>
-            <p>Post Draftsで、SNS投稿の悩みを解決し、効果的な発信を始めませんか？</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="https://play.google.com/store/apps/details?id=com.postdrafts.takekapp1990.prod" class="store-badge">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで手に入れよう" height="60">
-                </a>
-                <a href="https://apps.apple.com/jp/app/post-drafts-sns-%E3%83%9D%E3%82%B9%E3%83%88%E5%90%91%E3%81%91%E3%83%A1%E3%83%A2/id6752572268" class="store-badge">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" height="60">
-                </a>
+        <footer>
+            <div class="container">
+                <p>&copy; TakeKApp. All rights reserved.</p>
             </div>
-            
-            
-            <div style="margin-top: 20px; text-align: center;">
-                <a href="terms_and_conditions_ja.html" class="btn-secondary" style="margin: 5px;">利用規約</a>
-                <a href="privacy_policy_ja.html" class="btn-secondary" style="margin: 5px;">プライバシーポリシー</a>
-            </div>
-        </section>
-    </main>
+        </footer>
+    </body>
 
-    <footer>
-        <div class="container">
-            <p>&copy; TakeKApp. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
 </html>
-

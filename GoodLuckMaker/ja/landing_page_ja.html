@@ -1,790 +1,814 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>絶対幸せ占い - 毎日がちょっとだけハッピーになる占いアプリ</title>
-    <link rel="icon" href="../favicon.ico">
-    
-    <!-- OGP & Twitter Card -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="絶対幸せ占い - 毎日がちょっとだけハッピーになる占いアプリ">
-    <meta property="og:description" content="毎日がちょっとだけハッピーになる、特別な占い・おみくじアプリ。出てくる占い結果は、全て幸せなものばかり！">
-    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png">
-    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/ja/landing_page_ja.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="絶対幸せ占い - 毎日がちょっとだけハッピーになる占いアプリ">
-    <meta name="twitter:description" content="毎日がちょっとだけハッピーになる、特別な占い・おみくじアプリ。出てくる占い結果は、全て幸せなものばかり！">
-    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png">
-    <meta name="twitter:site" content="@takekapp">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png">
-    <link rel="apple-touch-icon" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-0VCS46ZTHC');
-    </script>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    
-    <style>
-        :root {
-            --primary-color: #FF69B4;
-            --secondary-color: #FFB6C1;
-            --accent-color: #FF1493;
-            --text-color: #2C3E50;
-            --light-bg: #FFF0F5;
-        }
 
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-            background-color: var(--light-bg);
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>絶対幸せ占い - 毎日がちょっとだけハッピーになる占いアプリ</title>
+        <link rel="icon" href="../favicon.ico">
 
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: white;
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
+        <!-- OGP & Twitter Card -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="絶対幸せ占い - 毎日がちょっとだけハッピーになる占いアプリ">
+        <meta property="og:description" content="毎日がちょっとだけハッピーになる、特別な占い・おみくじアプリ。出てくる占い結果は、全て幸せなものばかり！">
+        <meta property="og:image"
+            content="http://takekapp.com/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png">
+        <meta property="og:url" content="http://takekapp.com/GoodLuckMaker/ja/landing_page_ja.html">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="絶対幸せ占い - 毎日がちょっとだけハッピーになる占いアプリ">
+        <meta name="twitter:description" content="毎日がちょっとだけハッピーになる、特別な占い・おみくじアプリ。出てくる占い結果は、全て幸せなものばかり！">
+        <meta name="twitter:image"
+            content="http://takekapp.com/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png">
+        <meta name="twitter:site" content="@takekapp">
+        <!-- Favicon -->
+        <link rel="icon" type="image/png"
+            href="http://takekapp.com/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png">
+        <link rel="apple-touch-icon"
+            href="http://takekapp.com/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png">
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-            z-index: 1;
-        }
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-0VCS46ZTHC');
+        </script>
 
-        .hero-section .container {
-            position: relative;
-            z-index: 2;
-        }
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 
-        /* キラキラアニメーション */
-        .sparkle {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.9);
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            animation: sparkle 3s infinite;
-            z-index: 1;
-        }
-
-        .sparkle:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .sparkle:nth-child(2) {
-            top: 30%;
-            right: 15%;
-            animation-delay: 0.5s;
-        }
-
-        .sparkle:nth-child(3) {
-            top: 60%;
-            left: 20%;
-            animation-delay: 1s;
-        }
-
-        .sparkle:nth-child(4) {
-            top: 70%;
-            right: 25%;
-            animation-delay: 1.5s;
-        }
-
-        .sparkle:nth-child(5) {
-            top: 40%;
-            left: 50%;
-            animation-delay: 2s;
-        }
-
-        .sparkle:nth-child(6) {
-            top: 80%;
-            left: 60%;
-            animation-delay: 2.5s;
-        }
-
-        .sparkle:nth-child(7) {
-            top: 25%;
-            left: 30%;
-            animation-delay: 0.3s;
-        }
-
-        .sparkle:nth-child(8) {
-            top: 45%;
-            right: 40%;
-            animation-delay: 0.7s;
-        }
-
-        .sparkle:nth-child(9) {
-            top: 75%;
-            left: 70%;
-            animation-delay: 1.2s;
-        }
-
-        .sparkle:nth-child(10) {
-            top: 35%;
-            right: 60%;
-            animation-delay: 1.8s;
-        }
-
-        .sparkle:nth-child(11) {
-            top: 55%;
-            left: 80%;
-            animation-delay: 2.2s;
-        }
-
-        .sparkle:nth-child(12) {
-            top: 90%;
-            left: 50%;
-            animation-delay: 2.7s;
-        }
-
-        @keyframes sparkle {
-            0%, 100% {
-                opacity: 0;
-                transform: scale(0) rotate(0deg);
+        <style>
+            :root {
+                --primary-color: #FF69B4;
+                --secondary-color: #FFB6C1;
+                --accent-color: #FF1493;
+                --text-color: #2C3E50;
+                --light-bg: #FFF0F5;
             }
-            50% {
-                opacity: 1;
-                transform: scale(1) rotate(180deg);
+
+            body {
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+                color: var(--text-color);
+                line-height: 1.6;
+                background-color: var(--light-bg);
             }
-        }
 
-        /* 追加のキラキラ効果 */
-        .sparkle-large {
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            animation: sparkleLarge 4s infinite;
-            z-index: 1;
-        }
-
-        .sparkle-large:nth-child(13) {
-            top: 15%;
-            right: 30%;
-            animation-delay: 0.3s;
-        }
-
-        .sparkle-large:nth-child(14) {
-            top: 85%;
-            left: 40%;
-            animation-delay: 0.8s;
-        }
-
-        .sparkle-large:nth-child(15) {
-            top: 10%;
-            left: 70%;
-            animation-delay: 1.3s;
-        }
-
-        .sparkle-large:nth-child(16) {
-            top: 95%;
-            right: 20%;
-            animation-delay: 1.9s;
-        }
-
-        @keyframes sparkleLarge {
-            0%, 100% {
-                opacity: 0;
-                transform: scale(0) rotate(0deg);
-            }
-            25% {
-                opacity: 1;
-                transform: scale(1.2) rotate(90deg);
-            }
-            75% {
-                opacity: 0.8;
-                transform: scale(0.8) rotate(270deg);
-            }
-        }
-
-        /* さらに小さなキラキラ */
-        .sparkle-tiny {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.7);
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            animation: sparkleTiny 2.5s infinite;
-            z-index: 1;
-        }
-
-        .sparkle-tiny:nth-child(17) {
-            top: 5%;
-            left: 25%;
-            animation-delay: 0.2s;
-        }
-
-        .sparkle-tiny:nth-child(18) {
-            top: 50%;
-            right: 10%;
-            animation-delay: 0.6s;
-        }
-
-        .sparkle-tiny:nth-child(19) {
-            top: 65%;
-            left: 90%;
-            animation-delay: 1.1s;
-        }
-
-        .sparkle-tiny:nth-child(20) {
-            top: 15%;
-            right: 70%;
-            animation-delay: 1.6s;
-        }
-
-        .sparkle-tiny:nth-child(21) {
-            top: 80%;
-            left: 15%;
-            animation-delay: 2.1s;
-        }
-
-        @keyframes sparkleTiny {
-            0%, 100% {
-                opacity: 0;
-                transform: scale(0);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.5);
-            }
-        }
-
-        .app-icon-large {
-            width: 120px;
-            height: 120px;
-            border-radius: 25px;
-            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .app-icon-large:hover {
-            transform: scale(1.05);
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .store-button {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .store-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
-        }
-
-        .store-button img {
-            height: 60px;
-            width: auto;
-        }
-
-        .problem-section {
-            background: white;
-            padding: 4rem 0;
-        }
-
-        .problem-card {
-            background: linear-gradient(135deg, #FFF0F5, #FFE4E1);
-            border: none;
-            border-radius: 20px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .problem-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .problem-card h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        .solution-section {
-            background: var(--light-bg);
-            padding: 4rem 0;
-        }
-
-        .solution-card {
-            background: white;
-            border: none;
-            border-radius: 20px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .solution-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .solution-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .screenshot-gallery {
-            background: white;
-            padding: 4rem 0;
-        }
-
-        .screenshot-item {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .screenshot-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .screenshot-item img:hover {
-            transform: scale(1.02);
-        }
-
-        .screenshot-item p {
-            margin-top: 1rem;
-            color: var(--text-color);
-            font-size: 0.9rem;
-        }
-
-        .store-links {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: white;
-            padding: 4rem 0;
-        }
-
-        .store-links h2 {
-            margin-bottom: 2rem;
-        }
-
-        .store-links .store-button {
-            margin: 0.5rem;
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .cta-button {
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            background: #FF0080;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 0, 128, 0.4);
-        }
-
-        @media (max-width: 768px) {
             .hero-section {
-                padding: 2rem 0;
+                background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+                color: white;
+                padding: 4rem 0;
+                position: relative;
+                overflow: hidden;
             }
-            
+
+            .hero-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background:
+                    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+                z-index: 1;
+            }
+
+            .hero-section .container {
+                position: relative;
+                z-index: 2;
+            }
+
+            /* キラキラアニメーション */
+            .sparkle {
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                background: rgba(255, 255, 255, 0.9);
+                clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+                animation: sparkle 3s infinite;
+                z-index: 1;
+            }
+
+            .sparkle:nth-child(1) {
+                top: 20%;
+                left: 10%;
+                animation-delay: 0s;
+            }
+
+            .sparkle:nth-child(2) {
+                top: 30%;
+                right: 15%;
+                animation-delay: 0.5s;
+            }
+
+            .sparkle:nth-child(3) {
+                top: 60%;
+                left: 20%;
+                animation-delay: 1s;
+            }
+
+            .sparkle:nth-child(4) {
+                top: 70%;
+                right: 25%;
+                animation-delay: 1.5s;
+            }
+
+            .sparkle:nth-child(5) {
+                top: 40%;
+                left: 50%;
+                animation-delay: 2s;
+            }
+
+            .sparkle:nth-child(6) {
+                top: 80%;
+                left: 60%;
+                animation-delay: 2.5s;
+            }
+
+            .sparkle:nth-child(7) {
+                top: 25%;
+                left: 30%;
+                animation-delay: 0.3s;
+            }
+
+            .sparkle:nth-child(8) {
+                top: 45%;
+                right: 40%;
+                animation-delay: 0.7s;
+            }
+
+            .sparkle:nth-child(9) {
+                top: 75%;
+                left: 70%;
+                animation-delay: 1.2s;
+            }
+
+            .sparkle:nth-child(10) {
+                top: 35%;
+                right: 60%;
+                animation-delay: 1.8s;
+            }
+
+            .sparkle:nth-child(11) {
+                top: 55%;
+                left: 80%;
+                animation-delay: 2.2s;
+            }
+
+            .sparkle:nth-child(12) {
+                top: 90%;
+                left: 50%;
+                animation-delay: 2.7s;
+            }
+
+            @keyframes sparkle {
+
+                0%,
+                100% {
+                    opacity: 0;
+                    transform: scale(0) rotate(0deg);
+                }
+
+                50% {
+                    opacity: 1;
+                    transform: scale(1) rotate(180deg);
+                }
+            }
+
+            /* 追加のキラキラ効果 */
+            .sparkle-large {
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                background: linear-gradient(45deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+                clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+                animation: sparkleLarge 4s infinite;
+                z-index: 1;
+            }
+
+            .sparkle-large:nth-child(13) {
+                top: 15%;
+                right: 30%;
+                animation-delay: 0.3s;
+            }
+
+            .sparkle-large:nth-child(14) {
+                top: 85%;
+                left: 40%;
+                animation-delay: 0.8s;
+            }
+
+            .sparkle-large:nth-child(15) {
+                top: 10%;
+                left: 70%;
+                animation-delay: 1.3s;
+            }
+
+            .sparkle-large:nth-child(16) {
+                top: 95%;
+                right: 20%;
+                animation-delay: 1.9s;
+            }
+
+            @keyframes sparkleLarge {
+
+                0%,
+                100% {
+                    opacity: 0;
+                    transform: scale(0) rotate(0deg);
+                }
+
+                25% {
+                    opacity: 1;
+                    transform: scale(1.2) rotate(90deg);
+                }
+
+                75% {
+                    opacity: 0.8;
+                    transform: scale(0.8) rotate(270deg);
+                }
+            }
+
+            /* さらに小さなキラキラ */
+            .sparkle-tiny {
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                background: rgba(255, 255, 255, 0.7);
+                clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+                animation: sparkleTiny 2.5s infinite;
+                z-index: 1;
+            }
+
+            .sparkle-tiny:nth-child(17) {
+                top: 5%;
+                left: 25%;
+                animation-delay: 0.2s;
+            }
+
+            .sparkle-tiny:nth-child(18) {
+                top: 50%;
+                right: 10%;
+                animation-delay: 0.6s;
+            }
+
+            .sparkle-tiny:nth-child(19) {
+                top: 65%;
+                left: 90%;
+                animation-delay: 1.1s;
+            }
+
+            .sparkle-tiny:nth-child(20) {
+                top: 15%;
+                right: 70%;
+                animation-delay: 1.6s;
+            }
+
+            .sparkle-tiny:nth-child(21) {
+                top: 80%;
+                left: 15%;
+                animation-delay: 2.1s;
+            }
+
+            @keyframes sparkleTiny {
+
+                0%,
+                100% {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+
+                50% {
+                    opacity: 1;
+                    transform: scale(1.5);
+                }
+            }
+
             .app-icon-large {
-                width: 100px;
-                height: 100px;
+                width: 120px;
+                height: 120px;
+                border-radius: 25px;
+                box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+                transition: transform 0.3s ease;
             }
-            
+
+            .app-icon-large:hover {
+                transform: scale(1.05);
+            }
+
             .hero-title {
-                font-size: 2rem;
+                font-size: 3rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             }
-            
+
             .hero-subtitle {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+                opacity: 0.95;
             }
-            
-            .problem-section,
-            .solution-section,
-            .screenshot-gallery,
-            .store-links {
-                padding: 2rem 0;
+
+            .store-button {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border-radius: 15px;
+                overflow: hidden;
             }
-            
-            .problem-section h2,
-            .solution-section h2,
-            .screenshot-gallery h2,
-            .store-links h2 {
-                margin-bottom: 1.5rem !important;
+
+            .store-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
             }
-            
-            .problem-section .mb-5,
-            .solution-section .mb-5,
-            .screenshot-gallery .mb-5,
-            .store-links .mb-5 {
-                margin-bottom: 1.5rem !important;
+
+            .store-button img {
+                height: 60px;
+                width: auto;
             }
-            
-            .problem-card,
+
+            .problem-section {
+                background: white;
+                padding: 4rem 0;
+            }
+
+            .problem-card {
+                background: linear-gradient(135deg, #FFF0F5, #FFE4E1);
+                border: none;
+                border-radius: 20px;
+                padding: 2rem;
+                margin-bottom: 2rem;
+                box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .problem-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .problem-card h3 {
+                color: var(--accent-color);
+                margin-bottom: 1rem;
+            }
+
+            .solution-section {
+                background: var(--light-bg);
+                padding: 4rem 0;
+            }
+
             .solution-card {
-                padding: 1.5rem;
-                margin-bottom: 1.5rem;
+                background: white;
+                border: none;
+                border-radius: 20px;
+                padding: 2rem;
+                margin-bottom: 2rem;
+                box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
+                transition: transform 0.3s ease;
             }
-            
+
+            .solution-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .solution-card h3 {
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+            }
+
+            .screenshot-gallery {
+                background: white;
+                padding: 4rem 0;
+            }
+
             .screenshot-item {
-                margin-bottom: 1.5rem;
+                text-align: center;
+                margin-bottom: 2rem;
             }
-            
+
+            .screenshot-item img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .screenshot-item img:hover {
+                transform: scale(1.02);
+            }
+
             .screenshot-item p {
-                margin-top: 1rem !important;
+                margin-top: 1rem;
+                color: var(--text-color);
+                font-size: 0.9rem;
             }
-            
-            .store-links .mb-4 {
-                margin-bottom: 1rem !important;
+
+            .store-links {
+                background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+                color: white;
+                padding: 4rem 0;
             }
-            
-            .store-links .mb-5 {
-                margin-bottom: 1.5rem !important;
-            }
-            
-            .store-links .gap-4 {
-                gap: 0.25rem !important;
-            }
-            
-            .store-links .mb-4 {
-                margin-bottom: 1rem !important;
-            }
-            
-            /* ストアボタン間の余白を強制的に調整 */
-            .store-links .d-flex.gap-4 {
-                gap: 0.25rem !important;
-            }
-            
-            .store-links .store-button {
-                margin: 0.25rem !important;
-            }
-            
-            .store-links .store-button:first-child {
-                margin-left: 0.25rem !important;
-            }
-            
-            .store-links .store-button:last-child {
-                margin-right: 0.25rem !important;
-            }
-            
-            /* Bootstrapのgap-4クラスを完全に上書き */
-            .store-links .d-flex.gap-4.flex-wrap {
-                gap: 0.25rem !important;
-            }
-            
-            /* より具体的なセレクターでgapを制御 */
-            .store-links .d-flex.justify-content-center.gap-4.flex-wrap {
-                gap: 0.25rem !important;
-            }
-            
-            /* ヒーローセクションのストアボタン間の余白調整 */
-            .hero-section .d-flex.gap-3 {
-                gap: 0.25rem !important;
-            }
-            
-            .hero-section .store-button {
-                margin: 0.25rem !important;
-            }
-            
-            .hero-section .store-button:first-child {
-                margin-left: 0.25rem !important;
-            }
-            
-            .hero-section .store-button:last-child {
-                margin-right: 0.25rem !important;
-            }
-            
-            /* Bootstrapのgap-3クラスを完全に上書き */
-            .hero-section .d-flex.gap-3.flex-wrap {
-                gap: 0.25rem !important;
-            }
-            
-            .hero-section .d-flex.justify-content-center.justify-content-lg-start.gap-3.flex-wrap {
-                gap: 0.25rem !important;
-            }
-            
-            /* スマホ版でのフォントサイズ調整 */
-            .problem-section h2,
-            .solution-section h2,
-            .screenshot-gallery h2,
+
             .store-links h2 {
-                font-size: 1.5rem !important;
+                margin-bottom: 2rem;
             }
-            
-            .problem-section h3,
-            .solution-section h3 {
-                font-size: 1.1rem !important;
-            }
-            
-            .problem-section p,
-            .solution-section p,
-            .screenshot-gallery p,
-            .store-links p {
-                font-size: 0.95rem !important;
-            }
-            
-            .problem-card p,
-            .solution-card p {
-                font-size: 0.9rem !important;
-            }
-            
-            .screenshot-item p {
-                font-size: 0.9rem !important;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- ヒーローセクション -->
-    <section class="hero-section">
-        <!-- キラキラアニメーション要素 -->
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle-large"></div>
-        <div class="sparkle-large"></div>
-        <div class="sparkle-large"></div>
-        <div class="sparkle-large"></div>
-        <div class="sparkle-tiny"></div>
-        <div class="sparkle-tiny"></div>
-        <div class="sparkle-tiny"></div>
-        <div class="sparkle-tiny"></div>
-        <div class="sparkle-tiny"></div>
-        
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 text-center text-lg-start">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png" 
-                         alt="絶対幸せ占いアプリアイコン" 
-                         class="app-icon-large mb-4">
-                    <h1 class="hero-title">絶対幸せ占い</h1>
-                    <p class="hero-subtitle">毎日がちょっとだけハッピーになる、特別な占い・おみくじアプリ</p>
-                    <p class="mb-4">出てくる占い結果は、全て幸せなものばかり！どんな日でも、ポジティブでハッピーに一日をスタートさせましょう！</p>
-                    
-                    <div class="d-flex justify-content-center justify-content-lg-start gap-3 flex-wrap">
-                        <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod" class="store-button" target="_blank" rel="noopener">
-                            <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Playで手に入れよう" style="height: 60px; width: auto;">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/GoodLuckMaker.png" 
-                         alt="絶対幸せ占いアプリの特徴" 
-                         class="img-fluid" 
-                         style="max-height: 400px; border-radius: 20px;">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 課題提起セクション -->
-    <section class="problem-section" id="problem">
-        <div class="container">
-            <h2 class="text-center mb-5">毎日の生活で感じる課題</h2>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="problem-card text-center">
-                        <div class="feature-icon">
-                            <i class="bi bi-emoji-frown"></i>
+            .store-links .store-button {
+                margin: 0.5rem;
+            }
+
+            .feature-icon {
+                font-size: 2.5rem;
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+            }
+
+            .cta-button {
+                background: var(--accent-color);
+                color: white;
+                border: none;
+                padding: 1rem 2rem;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: bold;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .cta-button:hover {
+                background: #FF0080;
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(255, 0, 128, 0.4);
+            }
+
+            @media (max-width: 768px) {
+                .hero-section {
+                    padding: 2rem 0;
+                }
+
+                .app-icon-large {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                .hero-title {
+                    font-size: 2rem;
+                }
+
+                .hero-subtitle {
+                    font-size: 1.1rem;
+                }
+
+                .problem-section,
+                .solution-section,
+                .screenshot-gallery,
+                .store-links {
+                    padding: 2rem 0;
+                }
+
+                .problem-section h2,
+                .solution-section h2,
+                .screenshot-gallery h2,
+                .store-links h2 {
+                    margin-bottom: 1.5rem !important;
+                }
+
+                .problem-section .mb-5,
+                .solution-section .mb-5,
+                .screenshot-gallery .mb-5,
+                .store-links .mb-5 {
+                    margin-bottom: 1.5rem !important;
+                }
+
+                .problem-card,
+                .solution-card {
+                    padding: 1.5rem;
+                    margin-bottom: 1.5rem;
+                }
+
+                .screenshot-item {
+                    margin-bottom: 1.5rem;
+                }
+
+                .screenshot-item p {
+                    margin-top: 1rem !important;
+                }
+
+                .store-links .mb-4 {
+                    margin-bottom: 1rem !important;
+                }
+
+                .store-links .mb-5 {
+                    margin-bottom: 1.5rem !important;
+                }
+
+                .store-links .gap-4 {
+                    gap: 0.25rem !important;
+                }
+
+                .store-links .mb-4 {
+                    margin-bottom: 1rem !important;
+                }
+
+                /* ストアボタン間の余白を強制的に調整 */
+                .store-links .d-flex.gap-4 {
+                    gap: 0.25rem !important;
+                }
+
+                .store-links .store-button {
+                    margin: 0.25rem !important;
+                }
+
+                .store-links .store-button:first-child {
+                    margin-left: 0.25rem !important;
+                }
+
+                .store-links .store-button:last-child {
+                    margin-right: 0.25rem !important;
+                }
+
+                /* Bootstrapのgap-4クラスを完全に上書き */
+                .store-links .d-flex.gap-4.flex-wrap {
+                    gap: 0.25rem !important;
+                }
+
+                /* より具体的なセレクターでgapを制御 */
+                .store-links .d-flex.justify-content-center.gap-4.flex-wrap {
+                    gap: 0.25rem !important;
+                }
+
+                /* ヒーローセクションのストアボタン間の余白調整 */
+                .hero-section .d-flex.gap-3 {
+                    gap: 0.25rem !important;
+                }
+
+                .hero-section .store-button {
+                    margin: 0.25rem !important;
+                }
+
+                .hero-section .store-button:first-child {
+                    margin-left: 0.25rem !important;
+                }
+
+                .hero-section .store-button:last-child {
+                    margin-right: 0.25rem !important;
+                }
+
+                /* Bootstrapのgap-3クラスを完全に上書き */
+                .hero-section .d-flex.gap-3.flex-wrap {
+                    gap: 0.25rem !important;
+                }
+
+                .hero-section .d-flex.justify-content-center.justify-content-lg-start.gap-3.flex-wrap {
+                    gap: 0.25rem !important;
+                }
+
+                /* スマホ版でのフォントサイズ調整 */
+                .problem-section h2,
+                .solution-section h2,
+                .screenshot-gallery h2,
+                .store-links h2 {
+                    font-size: 1.5rem !important;
+                }
+
+                .problem-section h3,
+                .solution-section h3 {
+                    font-size: 1.1rem !important;
+                }
+
+                .problem-section p,
+                .solution-section p,
+                .screenshot-gallery p,
+                .store-links p {
+                    font-size: 0.95rem !important;
+                }
+
+                .problem-card p,
+                .solution-card p {
+                    font-size: 0.9rem !important;
+                }
+
+                .screenshot-item p {
+                    font-size: 0.9rem !important;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- ヒーローセクション -->
+        <section class="hero-section">
+            <!-- キラキラアニメーション要素 -->
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle-large"></div>
+            <div class="sparkle-large"></div>
+            <div class="sparkle-large"></div>
+            <div class="sparkle-large"></div>
+            <div class="sparkle-tiny"></div>
+            <div class="sparkle-tiny"></div>
+            <div class="sparkle-tiny"></div>
+            <div class="sparkle-tiny"></div>
+            <div class="sparkle-tiny"></div>
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img src="http://takekapp.com/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png"
+                            alt="絶対幸せ占いアプリアイコン" class="app-icon-large mb-4">
+                        <h1 class="hero-title">絶対幸せ占い</h1>
+                        <p class="hero-subtitle">毎日がちょっとだけハッピーになる、特別な占い・おみくじアプリ</p>
+                        <p class="mb-4">出てくる占い結果は、全て幸せなものばかり！どんな日でも、ポジティブでハッピーに一日をスタートさせましょう！</p>
+
+                        <div class="d-flex justify-content-center justify-content-lg-start gap-3 flex-wrap">
+                            <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod"
+                                class="store-button" target="_blank" rel="noopener">
+                                <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png"
+                                    alt="Google Playで手に入れよう" style="height: 60px; width: auto;">
+                            </a>
                         </div>
-                        <h3>ネガティブな気分</h3>
-                        <p>朝起きて占いをしたら、悪い結果が出てしまい、一日の気分が下がってしまうことがありませんか？</p>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img src="http://takekapp.com/GoodLuckMaker/images/GoodLuckMaker.png" alt="絶対幸せ占いアプリの特徴"
+                            class="img-fluid" style="max-height: 400px; border-radius: 20px;">
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="problem-card text-center">
-                        <div class="feature-icon">
-                            <i class="bi bi-calendar-x"></i>
+            </div>
+        </section>
+
+        <!-- 課題提起セクション -->
+        <section class="problem-section" id="problem">
+            <div class="container">
+                <h2 class="text-center mb-5">毎日の生活で感じる課題</h2>
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="problem-card text-center">
+                            <div class="feature-icon">
+                                <i class="bi bi-emoji-frown"></i>
+                            </div>
+                            <h3>ネガティブな気分</h3>
+                            <p>朝起きて占いをしたら、悪い結果が出てしまい、一日の気分が下がってしまうことがありませんか？</p>
                         </div>
-                        <h3>不安な一日のスタート</h3>
-                        <p>今日は何か悪いことが起こるのではないかと、不安な気持ちで一日を始めてしまうことがあります。</p>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="problem-card text-center">
-                        <div class="feature-icon">
-                            <i class="bi bi-lightning-charge"></i>
+                    <div class="col-lg-4 mb-4">
+                        <div class="problem-card text-center">
+                            <div class="feature-icon">
+                                <i class="bi bi-calendar-x"></i>
+                            </div>
+                            <h3>不安な一日のスタート</h3>
+                            <p>今日は何か悪いことが起こるのではないかと、不安な気持ちで一日を始めてしまうことがあります。</p>
                         </div>
-                        <h3>モチベーション不足</h3>
-                        <p>占いの結果が良くないと、やる気がなくなってしまい、せっかくの一日を無駄にしてしまうことも。</p>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="problem-card text-center">
+                            <div class="feature-icon">
+                                <i class="bi bi-lightning-charge"></i>
+                            </div>
+                            <h3>モチベーション不足</h3>
+                            <p>占いの結果が良くないと、やる気がなくなってしまい、せっかくの一日を無駄にしてしまうことも。</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ソリューションとしてのアプリ紹介セクション -->
-    <section class="solution-section" id="solution">
-        <div class="container">
-            <h2 class="text-center mb-5">絶対幸せ占いが解決する課題</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="solution-card">
-                        <h3><i class="bi bi-heart-fill text-danger me-2"></i>幸せ100%の占い結果！</h3>
-                        <p>毎朝、絶対にポジティブで幸せな占い結果が届きます。悪い結果は一切ありません！</p>
+        <!-- ソリューションとしてのアプリ紹介セクション -->
+        <section class="solution-section" id="solution">
+            <div class="container">
+                <h2 class="text-center mb-5">絶対幸せ占いが解決する課題</h2>
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="solution-card">
+                            <h3><i class="bi bi-heart-fill text-danger me-2"></i>幸せ100%の占い結果！</h3>
+                            <p>毎朝、絶対にポジティブで幸せな占い結果が届きます。悪い結果は一切ありません！</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="solution-card">
-                        <h3><i class="bi bi-palette-fill text-primary me-2"></i>カスタマイズ機能</h3>
-                        <p>キャラクターや壁紙をお好みに合わせて変更し、あなただけの占い体験を楽しめます。</p>
+                    <div class="col-lg-6 mb-4">
+                        <div class="solution-card">
+                            <h3><i class="bi bi-palette-fill text-primary me-2"></i>カスタマイズ機能</h3>
+                            <p>キャラクターや壁紙をお好みに合わせて変更し、あなただけの占い体験を楽しめます。</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="solution-card">
-                        <h3><i class="bi bi-journal-text text-success me-2"></i>簡単な日記機能</h3>
-                        <p>その日の気分や、達成したことを一言で記録。毎日の進歩やポジティブな気持ちを記録できます。</p>
+                    <div class="col-lg-6 mb-4">
+                        <div class="solution-card">
+                            <h3><i class="bi bi-journal-text text-success me-2"></i>簡単な日記機能</h3>
+                            <p>その日の気分や、達成したことを一言で記録。毎日の進歩やポジティブな気持ちを記録できます。</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="solution-card">
-                        <h3><i class="bi bi-trophy-fill text-warning me-2"></i>かわいいバッジシステム</h3>
-                        <p>アプリを使い続けると、かわいいバッジをゲット！継続のモチベーションになります。</p>
+                    <div class="col-lg-6 mb-4">
+                        <div class="solution-card">
+                            <h3><i class="bi bi-trophy-fill text-warning me-2"></i>かわいいバッジシステム</h3>
+                            <p>アプリを使い続けると、かわいいバッジをゲット！継続のモチベーションになります。</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="solution-card">
-                        <h3><i class="bi bi-music-note-beamed text-info me-2"></i>楽しいサウンドエフェクト</h3>
-                        <p>サウンド機能をオンにすれば、かわいい音で一層楽しい占い体験に。</p>
+                    <div class="col-lg-6 mb-4">
+                        <div class="solution-card">
+                            <h3><i class="bi bi-music-note-beamed text-info me-2"></i>楽しいサウンドエフェクト</h3>
+                            <p>サウンド機能をオンにすれば、かわいい音で一層楽しい占い体験に。</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="solution-card">
-                        <h3><i class="bi bi-bell-fill text-secondary me-2"></i>通知機能付き</h3>
-                        <p>毎日の占い結果を見逃さないように、便利な通知機能も搭載！</p>
+                    <div class="col-lg-6 mb-4">
+                        <div class="solution-card">
+                            <h3><i class="bi bi-bell-fill text-secondary me-2"></i>通知機能付き</h3>
+                            <p>毎日の占い結果を見逃さないように、便利な通知機能も搭載！</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- スクリーンショットギャラリー -->
-    <section class="screenshot-gallery" id="screenshots">
-        <div class="container">
-            <h2 class="text-center mb-5">アプリのスクリーンショット</h2>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="screenshot-item">
-                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/screen_shots/ja/Slice 1.png" alt="絶対幸せ占い スクリーンショット1">
-                        <p>メイン画面 - 今日の運勢を占う</p>
+        <!-- スクリーンショットギャラリー -->
+        <section class="screenshot-gallery" id="screenshots">
+            <div class="container">
+                <h2 class="text-center mb-5">アプリのスクリーンショット</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="screenshot-item">
+                            <img src="http://takekapp.com/GoodLuckMaker/images/screen_shots/ja/Slice 1.png"
+                                alt="絶対幸せ占い スクリーンショット1">
+                            <p>メイン画面 - 今日の運勢を占う</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="screenshot-item">
-                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/screen_shots/ja/Slice 2.png" alt="絶対幸せ占い スクリーンショット2">
-                        <p>占い結果 - ウルトラハッピーディ</p>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="screenshot-item">
+                            <img src="http://takekapp.com/GoodLuckMaker/images/screen_shots/ja/Slice 2.png"
+                                alt="絶対幸せ占い スクリーンショット2">
+                            <p>占い結果 - ウルトラハッピーディ</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="screenshot-item">
-                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/screen_shots/ja/Slice 3.png" alt="絶対幸せ占い スクリーンショット3">
-                        <p>恋愛・結婚運の詳細</p>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="screenshot-item">
+                            <img src="http://takekapp.com/GoodLuckMaker/images/screen_shots/ja/Slice 3.png"
+                                alt="絶対幸せ占い スクリーンショット3">
+                            <p>恋愛・結婚運の詳細</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="screenshot-item">
-                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/screen_shots/ja/Slice 4.png" alt="絶対幸せ占い スクリーンショット4">
-                        <p>仕事・勉強運の詳細</p>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="screenshot-item">
+                            <img src="http://takekapp.com/GoodLuckMaker/images/screen_shots/ja/Slice 4.png"
+                                alt="絶対幸せ占い スクリーンショット4">
+                            <p>仕事・勉強運の詳細</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="screenshot-item">
-                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/screen_shots/ja/Slice 5.png" alt="絶対幸せ占い スクリーンショット5">
-                        <p>カスタマイズ機能</p>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="screenshot-item">
+                            <img src="http://takekapp.com/GoodLuckMaker/images/screen_shots/ja/Slice 5.png"
+                                alt="絶対幸せ占い スクリーンショット5">
+                            <p>カスタマイズ機能</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="screenshot-item">
-                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/GoodLuckMaker/images/screen_shots/ja/Slice 6.png" alt="絶対幸せ占い スクリーンショット6">
-                        <p>日記機能とバッジシステム</p>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="screenshot-item">
+                            <img src="http://takekapp.com/GoodLuckMaker/images/screen_shots/ja/Slice 6.png"
+                                alt="絶対幸せ占い スクリーンショット6">
+                            <p>日記機能とバッジシステム</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ダウンロードセクション -->
-    <section class="store-links" id="download">
-        <div class="container text-center">
-            <h2 class="display-5 fw-bold mb-4">毎日少しの幸せを手に入れよう</h2>
-            <p class="lead mb-5">絶対幸せ占いで、あなたの日常がもっと楽しく、もっとハッピーに。毎朝少しの幸せを手に入れて、より良い一日を始めましょう！</p>
-            
-            <div class="d-flex justify-content-center gap-4 flex-wrap mb-4">
-                <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod" class="store-button" target="_blank" rel="noopener">
-                    <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play で手に入れよう">
-                </a>
+        <!-- ダウンロードセクション -->
+        <section class="store-links" id="download">
+            <div class="container text-center">
+                <h2 class="display-5 fw-bold mb-4">毎日少しの幸せを手に入れよう</h2>
+                <p class="lead mb-5">絶対幸せ占いで、あなたの日常がもっと楽しく、もっとハッピーに。毎朝少しの幸せを手に入れて、より良い一日を始めましょう！</p>
+
+                <div class="d-flex justify-content-center gap-4 flex-wrap mb-4">
+                    <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod"
+                        class="store-button" target="_blank" rel="noopener">
+                        <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png"
+                            alt="Google Play で手に入れよう">
+                    </a>
+                </div>
+
+                <div class="text-center">
+                    <a href="privacy_policy_ja.html" class="text-light text-decoration-none me-4">
+                        <i class="bi bi-shield-check me-1"></i>プライバシーポリシー
+                    </a>
+                    <a href="terms_and_conditions_ja.html" class="text-light text-decoration-none">
+                        <i class="bi bi-file-text me-1"></i>利用規約
+                    </a>
+                </div>
             </div>
-            
-            <div class="text-center">
-                <a href="privacy_policy_ja.html" class="text-light text-decoration-none me-4">
-                    <i class="bi bi-shield-check me-1"></i>プライバシーポリシー
-                </a>
-                <a href="terms_and_conditions_ja.html" class="text-light text-decoration-none">
-                    <i class="bi bi-file-text me-1"></i>利用規約
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
 </html>

@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/sitemap.xml
+Sitemap: http://takekapp.com/sitemap.xml
 
 # Crawl delay for better server performance
 Crawl-delay: 1

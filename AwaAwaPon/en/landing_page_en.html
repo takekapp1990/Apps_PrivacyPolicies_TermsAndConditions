@@ -1,1002 +1,1050 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awa Pop - Memory Party Game | Remember Hilarious Nicknames!</title>
-    <link rel="icon" href="../favicon.ico">
-    <!-- OGP & Twitter Card -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Awa Pop - Memory Party Game | Remember Hilarious Nicknames!">
-    <meta property="og:description" content="Remember hilarious nicknames! Memory party game with crazy character names. Download now and challenge your memory!">
-    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png">
-    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/en/landing_page_en.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Awa Pop - Memory Party Game | Remember Hilarious Nicknames!">
-    <meta name="twitter:description" content="Remember hilarious nicknames! Memory party game with crazy character names. Download now and challenge your memory!">
-    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png">
-    <meta name="twitter:site" content="@AwaAwaPon">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png">
-    <link rel="apple-touch-icon" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-0VCS46ZTHC');
-    </script>
-    <style>
-        :root {
-            --primary-color: #FF6B9D;
-            --secondary-color: #4ECDC4;
-            --accent-color: #FFE66D;
-            --dark-color: #2C3E50;
-            --light-color: #F8F9FA;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Awa Pop - Memory Party Game | Remember Hilarious Nicknames!</title>
+        <link rel="icon" href="../favicon.ico">
+        <!-- OGP & Twitter Card -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Awa Pop - Memory Party Game | Remember Hilarious Nicknames!">
+        <meta property="og:description"
+            content="Remember hilarious nicknames! Memory party game with crazy character names. Download now and challenge your memory!">
+        <meta property="og:image"
+            content="http://takekapp.com/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png">
+        <meta property="og:url" content="http://takekapp.com/AwaAwaPon/en/landing_page_en.html">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Awa Pop - Memory Party Game | Remember Hilarious Nicknames!">
+        <meta name="twitter:description"
+            content="Remember hilarious nicknames! Memory party game with crazy character names. Download now and challenge your memory!">
+        <meta name="twitter:image"
+            content="http://takekapp.com/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png">
+        <meta name="twitter:site" content="@AwaAwaPon">
+        <!-- Favicon -->
+        <link rel="icon" type="image/png"
+            href="http://takekapp.com/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png">
+        <link rel="apple-touch-icon"
+            href="http://takekapp.com/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
 
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 5rem 0 4rem 0;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 6s ease-in-out infinite;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .app-icon-large {
-            width: 120px;
-            height: 120px;
-            border-radius: 25px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
-
-        .feature-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            margin-bottom: 2rem;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .video-section {
-            background: var(--light-color);
-            padding: 4rem 0;
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            aspect-ratio: 9 / 16;
-        }
-
-        @media (max-width: 768px) {
-            .video-container {
-                max-width: 350px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .video-container {
-                max-width: 300px;
-            }
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .character-gallery {
-            display: flex;
-            overflow-x: auto;
-            padding-bottom: 1rem;
-            gap: 1.5rem;
-        }
-        
-        .character-gallery::-webkit-scrollbar {
-            height: 8px;
-        }
-        
-        .character-gallery::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-        
-        .character-gallery::-webkit-scrollbar-thumb {
-            background: #ccc;
-            border-radius: 10px;
-        }
-        
-        .character-gallery::-webkit-scrollbar-thumb:hover {
-            background: #aaa;
-        }
-
-        .character-gallery img {
-            height: 250px;
-            width: auto;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
-        }
-
-        .character-gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-            padding: 4rem 0;
-            color: white;
-        }
-
-        .store-badge {
-            height: 50px;
-            margin: 0.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .store-badge:hover {
-            transform: scale(1.05);
-        }
-
-        .testimonial-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: transform 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .navbar-icon {
-            height: 30px;
-            border-radius: 6px;
-        }
-
-        /* スマホでのアプリストアリンク間の余白調整 */
-        @media (max-width: 768px) {
-            .store-links-container {
-                gap: 0.5rem !important;
-            }
-        }
-
-        /* ルール説明セクション */
-        .rules-section {
-            background: var(--light-color);
-            padding: 4rem 0;
-        }
-
-        .rules-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 2rem auto;
-            display: block;
-        }
-
-        /* おすすめカード */
-        .recommend-card {
-            background: white;
-            border-radius: 15px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            text-align: center;
-        }
-
-        .recommend-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .recommend-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* 利用シーンカード */
-        .scene-card {
-            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(78, 205, 196, 0.1));
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s ease;
-            height: 100%;
-            border: 2px solid transparent;
-        }
-
-        .scene-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-        }
-
-        .scene-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Q&A セクション */
-        .faq-section {
-            background: var(--light-color);
-            padding: 4rem 0;
-        }
-
-        .faq-item {
-            background: white;
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-        }
-
-        .faq-question {
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .faq-answer {
-            color: var(--dark-color);
-            margin: 0;
-        }
-
-        /* スマホでのセクション間隔を縮小 */
-        @media (max-width: 768px) {
-            .py-5 {
-                padding-top: 2rem !important;
-                padding-bottom: 2rem !important;
+            gtag('config', 'G-0VCS46ZTHC');
+        </script>
+        <style>
+            :root {
+                --primary-color: #FF6B9D;
+                --secondary-color: #4ECDC4;
+                --accent-color: #FFE66D;
+                --dark-color: #2C3E50;
+                --light-color: #F8F9FA;
             }
 
-            .rules-section {
-                padding: 2rem 0 !important;
+            body {
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+                line-height: 1.6;
+                color: var(--dark-color);
             }
 
-            /* ルール説明セクションのテキストと画像の間のパディングを狭める */
-            .rules-section .text-center.mb-4 {
-                margin-bottom: 1rem !important;
-            }
-
-            .rules-section .row.justify-content-center.mb-4 {
-                margin-bottom: 1rem !important;
-            }
-
-            .faq-section {
-                padding: 2rem 0 !important;
-            }
-
-            .cta-section {
-                padding: 2rem 0 !important;
-            }
-
-            /* ヒーローセクションのパディングを減らす */
             .hero-section {
-                padding: 4rem 0 2rem 0 !important;
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                color: white;
+                padding: 5rem 0 4rem 0;
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
             }
 
-            /* 見出しサイズを調整 */
-            .display-5 {
-                font-size: 1.8rem !important;
+            .hero-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+                animation: float 6s ease-in-out infinite;
+                z-index: 0;
+                pointer-events: none;
             }
 
-            .lead {
-                font-size: 1rem !important;
+            @keyframes float {
+
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                }
             }
 
-            /* おすすめカードのパディングを減らす */
-            .recommend-card {
-                padding: 1rem !important;
+            .app-icon-large {
+                width: 120px;
+                height: 120px;
+                border-radius: 25px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
             }
 
-            .recommend-icon {
-                font-size: 2rem !important;
+            .feature-card {
+                background: white;
+                border-radius: 20px;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+                margin-bottom: 2rem;
             }
 
-            /* おすすめセクションをスマホでは2列（50%）に */
-            #recommend .col-md-6.col-lg-4 {
-                width: 50% !important;
-                flex: 0 0 50% !important;
+            .feature-card:hover {
+                transform: translateY(-5px);
             }
 
-            /* キャラクターギャラリーの画像を小さく */
-            .character-gallery img {
-                height: 150px !important;
-            }
-
-            /* ゲームの特徴セクションを非表示 */
-            #features {
-                display: none !important;
-            }
-
-            /* おすすめカードの文字サイズを小さく */
-            .recommend-card h5 {
-                font-size: 0.9rem !important;
-            }
-
-            /* スマホ版でおすすめカードの2つを非表示（4つに厳選） */
-            .recommend-card-mobile-hide {
-                display: none !important;
-            }
-
-            /* 利用シーンを3つに厳選（4つ目以降のcolを非表示） */
-            #usage-scenes .row.g-4 > .col-md-6.col-lg-4:nth-child(n+4) {
-                display: none !important;
-            }
-
-            /* 利用シーンカードのパディングを減らし、アイコンを見出しの左横に配置 */
-            .scene-card {
-                padding: 1rem !important;
-            }
-
-            /* スマホ版でアイコンを見出しテキスト内に埋め込む */
-            .scene-header-mobile {
-                margin-bottom: 0.3rem !important;
-            }
-
-            .scene-header-mobile h4 {
-                margin-bottom: 0 !important;
-                font-size: 1rem !important;
-                line-height: 1.4;
-            }
-
-            .scene-icon-inline {
-                font-size: 1.5rem !important;
-                margin-right: 0.3rem !important;
-                vertical-align: middle;
-                display: inline-block;
-            }
-
-            .scene-card p {
-                font-size: 0.9rem !important;
-                margin-bottom: 0 !important;
-                margin-top: 0 !important;
-                padding-top: 0.3rem !important;
-            }
-
-            /* 「あなたはどう遊ぶ？」の見出しとカードの間のパディングを狭める */
-            #usage-scenes h2.mb-5 {
-                margin-bottom: 2rem !important;
-            }
-
-            /* Q&Aをアコーディオン化（デフォルトで閉じる） */
-            .faq-item {
-                padding: 1rem !important;
-                margin-bottom: 0.75rem !important;
-            }
-        }
-
-        /* アコーディオンスタイル */
-        .accordion-item {
-            border: none;
-            margin-bottom: 1rem;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-        }
-
-        .accordion-button {
-            background: white;
-            color: var(--primary-color);
-            font-weight: 600;
-            border: none;
-            box-shadow: none;
-        }
-
-        .accordion-button:not(.collapsed) {
-            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(78, 205, 196, 0.1));
-            color: var(--primary-color);
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-            border-color: transparent;
-        }
-
-        /* PC版でもアイコンを見出しテキスト内に埋め込む */
-        @media (min-width: 769px) {
-            .scene-header-mobile {
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.5rem;
                 margin-bottom: 1rem;
             }
 
-            .scene-header-mobile h4 {
-                margin-bottom: 0;
+            .video-section {
+                background: var(--light-color);
+                padding: 4rem 0;
             }
 
-            .scene-icon-inline {
-                font-size: 2rem;
-                margin-right: 0.5rem;
-                vertical-align: middle;
+            .video-container {
+                position: relative;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+                aspect-ratio: 9 / 16;
             }
-        }
-    </style>
-</head>
-<body>
-    <!-- ナビゲーションバー -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
-                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png" alt="Awa Pop Icon" class="navbar-icon me-2">
-                Awa Pop
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#recommend">Perfect For</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#download">Download</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- ヒーローセクション -->
-    <section class="hero-section">
-        <div class="container text-center">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png" 
-                         class="app-icon-large mb-4" alt="Awa Pop">
-                    <h1 class="display-4 fw-bold mb-3">Awa Pop</h1>
-                    <h2 class="h3 mb-4">Memory Party Game<br>Remember Hilarious Nicknames!</h2>
-                    <p class="lead mb-4">Remember hilarious nicknames! Memory party game with crazy character names.</p>
-                    <div class="d-flex justify-content-center gap-3 flex-wrap store-links-container mb-3">
-                        <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" 
-                           target="_blank" class="store-badge" id="android-badge">
-                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
-                                 alt="Get it on Google Play" height="50">
-                        </a>
-                        <a href="https://apps.apple.com/us/app/awa-pop-memory-party-game/id6746962336" 
-                           target="_blank" class="store-badge" id="ios-badge">
-                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" 
-                                 alt="Download on the App Store" height="50">
-                        </a>
-                    </div>
+            @media (max-width: 768px) {
+                .video-container {
+                    max-width: 350px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .video-container {
+                    max-width: 300px;
+                }
+            }
+
+            .video-container iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+
+            .character-gallery {
+                display: flex;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+                gap: 1.5rem;
+            }
+
+            .character-gallery::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            .character-gallery::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 10px;
+            }
+
+            .character-gallery::-webkit-scrollbar-thumb {
+                background: #ccc;
+                border-radius: 10px;
+            }
+
+            .character-gallery::-webkit-scrollbar-thumb:hover {
+                background: #aaa;
+            }
+
+            .character-gallery img {
+                height: 250px;
+                width: auto;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                flex-shrink: 0;
+                transition: transform 0.3s ease;
+            }
+
+            .character-gallery img:hover {
+                transform: scale(1.05);
+            }
+
+            .cta-section {
+                background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+                padding: 4rem 0;
+                color: white;
+            }
+
+            .store-badge {
+                height: 50px;
+                margin: 0.5rem;
+                transition: transform 0.3s ease;
+            }
+
+            .store-badge:hover {
+                transform: scale(1.05);
+            }
+
+            .testimonial-card {
+                background: white;
+                border-radius: 15px;
+                padding: 2rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                margin-bottom: 2rem;
+            }
+
+            .testimonial-avatar {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+
+            .navbar {
+                background-color: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+            }
+
+            .btn-primary {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                border: none;
+                padding: 0.75rem 2rem;
+                border-radius: 25px;
+                font-weight: 600;
+                transition: transform 0.3s ease;
+            }
+
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .navbar-icon {
+                height: 30px;
+                border-radius: 6px;
+            }
+
+            /* スマホでのアプリストアリンク間の余白調整 */
+            @media (max-width: 768px) {
+                .store-links-container {
+                    gap: 0.5rem !important;
+                }
+            }
+
+            /* ルール説明セクション */
+            .rules-section {
+                background: var(--light-color);
+                padding: 4rem 0;
+            }
+
+            .rules-image {
+                max-width: 100%;
+                height: auto;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                margin: 2rem auto;
+                display: block;
+            }
+
+            /* おすすめカード */
+            .recommend-card {
+                background: white;
+                border-radius: 15px;
+                padding: 1.5rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                height: 100%;
+                text-align: center;
+            }
+
+            .recommend-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            }
+
+            .recommend-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                color: var(--primary-color);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            /* 利用シーンカード */
+            .scene-card {
+                background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(78, 205, 196, 0.1));
+                border-radius: 20px;
+                padding: 2rem;
+                text-align: center;
+                transition: transform 0.3s ease;
+                height: 100%;
+                border: 2px solid transparent;
+            }
+
+            .scene-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--primary-color);
+            }
+
+            .scene-icon {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Q&A セクション */
+            .faq-section {
+                background: var(--light-color);
+                padding: 4rem 0;
+            }
+
+            .faq-item {
+                background: white;
+                border-radius: 15px;
+                padding: 1.5rem;
+                margin-bottom: 1rem;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            .faq-question {
+                font-weight: 600;
+                color: var(--primary-color);
+                margin-bottom: 0.5rem;
+            }
+
+            .faq-answer {
+                color: var(--dark-color);
+                margin: 0;
+            }
+
+            /* スマホでのセクション間隔を縮小 */
+            @media (max-width: 768px) {
+                .py-5 {
+                    padding-top: 2rem !important;
+                    padding-bottom: 2rem !important;
+                }
+
+                .rules-section {
+                    padding: 2rem 0 !important;
+                }
+
+                /* ルール説明セクションのテキストと画像の間のパディングを狭める */
+                .rules-section .text-center.mb-4 {
+                    margin-bottom: 1rem !important;
+                }
+
+                .rules-section .row.justify-content-center.mb-4 {
+                    margin-bottom: 1rem !important;
+                }
+
+                .faq-section {
+                    padding: 2rem 0 !important;
+                }
+
+                .cta-section {
+                    padding: 2rem 0 !important;
+                }
+
+                /* ヒーローセクションのパディングを減らす */
+                .hero-section {
+                    padding: 4rem 0 2rem 0 !important;
+                }
+
+                /* 見出しサイズを調整 */
+                .display-5 {
+                    font-size: 1.8rem !important;
+                }
+
+                .lead {
+                    font-size: 1rem !important;
+                }
+
+                /* おすすめカードのパディングを減らす */
+                .recommend-card {
+                    padding: 1rem !important;
+                }
+
+                .recommend-icon {
+                    font-size: 2rem !important;
+                }
+
+                /* おすすめセクションをスマホでは2列（50%）に */
+                #recommend .col-md-6.col-lg-4 {
+                    width: 50% !important;
+                    flex: 0 0 50% !important;
+                }
+
+                /* キャラクターギャラリーの画像を小さく */
+                .character-gallery img {
+                    height: 150px !important;
+                }
+
+                /* ゲームの特徴セクションを非表示 */
+                #features {
+                    display: none !important;
+                }
+
+                /* おすすめカードの文字サイズを小さく */
+                .recommend-card h5 {
+                    font-size: 0.9rem !important;
+                }
+
+                /* スマホ版でおすすめカードの2つを非表示（4つに厳選） */
+                .recommend-card-mobile-hide {
+                    display: none !important;
+                }
+
+                /* 利用シーンを3つに厳選（4つ目以降のcolを非表示） */
+                #usage-scenes .row.g-4>.col-md-6.col-lg-4:nth-child(n+4) {
+                    display: none !important;
+                }
+
+                /* 利用シーンカードのパディングを減らし、アイコンを見出しの左横に配置 */
+                .scene-card {
+                    padding: 1rem !important;
+                }
+
+                /* スマホ版でアイコンを見出しテキスト内に埋め込む */
+                .scene-header-mobile {
+                    margin-bottom: 0.3rem !important;
+                }
+
+                .scene-header-mobile h4 {
+                    margin-bottom: 0 !important;
+                    font-size: 1rem !important;
+                    line-height: 1.4;
+                }
+
+                .scene-icon-inline {
+                    font-size: 1.5rem !important;
+                    margin-right: 0.3rem !important;
+                    vertical-align: middle;
+                    display: inline-block;
+                }
+
+                .scene-card p {
+                    font-size: 0.9rem !important;
+                    margin-bottom: 0 !important;
+                    margin-top: 0 !important;
+                    padding-top: 0.3rem !important;
+                }
+
+                /* 「あなたはどう遊ぶ？」の見出しとカードの間のパディングを狭める */
+                #usage-scenes h2.mb-5 {
+                    margin-bottom: 2rem !important;
+                }
+
+                /* Q&Aをアコーディオン化（デフォルトで閉じる） */
+                .faq-item {
+                    padding: 1rem !important;
+                    margin-bottom: 0.75rem !important;
+                }
+            }
+
+            /* アコーディオンスタイル */
+            .accordion-item {
+                border: none;
+                margin-bottom: 1rem;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            .accordion-button {
+                background: white;
+                color: var(--primary-color);
+                font-weight: 600;
+                border: none;
+                box-shadow: none;
+            }
+
+            .accordion-button:not(.collapsed) {
+                background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(78, 205, 196, 0.1));
+                color: var(--primary-color);
+            }
+
+            .accordion-button:focus {
+                box-shadow: none;
+                border-color: transparent;
+            }
+
+            /* PC版でもアイコンを見出しテキスト内に埋め込む */
+            @media (min-width: 769px) {
+                .scene-header-mobile {
+                    margin-bottom: 1rem;
+                }
+
+                .scene-header-mobile h4 {
+                    margin-bottom: 0;
+                }
+
+                .scene-icon-inline {
+                    font-size: 2rem;
+                    margin-right: 0.5rem;
+                    vertical-align: middle;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- ナビゲーションバー -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+                    <img src="http://takekapp.com/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png"
+                        alt="Awa Pop Icon" class="navbar-icon me-2">
+                    Awa Pop
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#recommend">Perfect For</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#download">Download</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-lg-6">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/5fjEHM-qEYA?autoplay=1&mute=1" 
-                                title="Awa Pop Gameplay" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            </div>
+        </nav>
+
+        <!-- ヒーローセクション -->
+        <section class="hero-section">
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <img src="http://takekapp.com/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png"
+                            class="app-icon-large mb-4" alt="Awa Pop">
+                        <h1 class="display-4 fw-bold mb-3">Awa Pop</h1>
+                        <h2 class="h3 mb-4">Memory Party Game<br>Remember Hilarious Nicknames!</h2>
+                        <p class="lead mb-4">Remember hilarious nicknames! Memory party game with crazy character names.
+                        </p>
+                        <div class="d-flex justify-content-center gap-3 flex-wrap store-links-container mb-3">
+                            <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod"
+                                target="_blank" class="store-badge" id="android-badge">
+                                <img src="http://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
+                                    alt="Get it on Google Play" height="50">
+                            </a>
+                            <a href="https://apps.apple.com/us/app/awa-pop-memory-party-game/id6746962336"
+                                target="_blank" class="store-badge" id="ios-badge">
+                                <img src="http://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                                    alt="Download on the App Store" height="50">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/5fjEHM-qEYA?autoplay=1&mute=1"
+                                title="Awa Pop Gameplay"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Rules Section -->
-    <section class="rules-section">
-        <div class="container">
-            <div class="text-center mb-4">
-                <h2 class="display-5 fw-bold mb-3">Simple Rules!</h2>
-                <p class="lead fs-4">Remember characters with hilarious nicknames and answer correctly!</p>
-            </div>
-            <div class="row justify-content-center mb-4">
-                <div class="col-lg-10">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/store_screen_shots_3images_en.png" 
-                         alt="Awa Pop Rules" 
-                         class="rules-image">
+        <!-- Rules Section -->
+        <section class="rules-section">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2 class="display-5 fw-bold mb-3">Simple Rules!</h2>
+                    <p class="lead fs-4">Remember characters with hilarious nicknames and answer correctly!</p>
+                </div>
+                <div class="row justify-content-center mb-4">
+                    <div class="col-lg-10">
+                        <img src="http://takekapp.com/AwaAwaPon/images/store_screen_shots_3images_en.png"
+                            alt="Awa Pop Rules" class="rules-image">
+                    </div>
+                </div>
+                <div class="text-center mb-3">
+                    <h3 class="h4 fw-bold">Meet the Cute Characters!</h3>
+                </div>
+                <div class="character-gallery">
+                    <img src="http://takekapp.com/AwaAwaPon/images/characters/standard_2.png" alt="Character 1">
+                    <img src="http://takekapp.com/AwaAwaPon/images/characters/robot_7_firefly_flying_robot_with_jetpack,_colorful,_pop_and_cute,_minimal_background_in_1tone_203040-photoroom.png"
+                        alt="Robot Character">
+                    <img src="http://takekapp.com/AwaAwaPon/images/characters/animal_2_firefly__213968-photoroom.png"
+                        alt="Animal Character">
+                    <img src="http://takekapp.com/AwaAwaPon/images/characters/idol_1_firefly_a_cheerful_anime-style_beautiful_girl_with_blonde_twin_tails_and_a_big_ribbon,_white__539627-photoroom.png"
+                        alt="Idol Character">
+                    <img src="http://takekapp.com/AwaAwaPon/images/characters/ojisan_18_firefly_photorealistic_upper_body_image_of_a_middle-aged_man_with_a_fake_royal_pose,_wearing__331229-photoroom.png"
+                        alt="Old Man Character">
                 </div>
             </div>
-            <div class="text-center mb-3">
-                <h3 class="h4 fw-bold">Meet the Cute Characters!</h3>
-            </div>
-            <div class="character-gallery">
-                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/standard_2.png" alt="Character 1">
-                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/robot_7_firefly_flying_robot_with_jetpack,_colorful,_pop_and_cute,_minimal_background_in_1tone_203040-photoroom.png" alt="Robot Character">
-                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/animal_2_firefly__213968-photoroom.png" alt="Animal Character">
-                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/idol_1_firefly_a_cheerful_anime-style_beautiful_girl_with_blonde_twin_tails_and_a_big_ribbon,_white__539627-photoroom.png" alt="Idol Character">
-                <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/characters/ojisan_18_firefly_photorealistic_upper_body_image_of_a_middle-aged_man_with_a_fake_royal_pose,_wearing__331229-photoroom.png" alt="Old Man Character">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Perfect For -->
-    <section id="recommend" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Perfect For</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="recommend-card">
-                        <div class="recommend-icon">
-                            <i class="bi bi-people-fill"></i>
+        <!-- Perfect For -->
+        <section id="recommend" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Perfect For</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="recommend-card">
+                            <div class="recommend-icon">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">People looking for fun party games with friends</h5>
                         </div>
-                        <h5 class="fw-bold mb-2">People looking for fun party games with friends</h5>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 recommend-card-mobile-hide">
-                    <div class="recommend-card">
-                        <div class="recommend-icon">
-                            <i class="bi bi-emoji-laughing-fill"></i>
+                    <div class="col-md-6 col-lg-4 recommend-card-mobile-hide">
+                        <div class="recommend-card">
+                            <div class="recommend-icon">
+                                <i class="bi bi-emoji-laughing-fill"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Fans of unique brain training with hilarious names</h5>
                         </div>
-                        <h5 class="fw-bold mb-2">Fans of unique brain training with hilarious names</h5>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="recommend-card">
-                        <div class="recommend-icon">
-                            <i class="bi bi-mortarboard-fill me-1"></i><i class="bi bi-briefcase-fill"></i>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="recommend-card">
+                            <div class="recommend-icon">
+                                <i class="bi bi-mortarboard-fill me-1"></i><i class="bi bi-briefcase-fill"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Students and professionals who want to train memory in a fun way
+                            </h5>
                         </div>
-                        <h5 class="fw-bold mb-2">Students and professionals who want to train memory in a fun way</h5>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="recommend-card">
-                        <div class="recommend-icon">
-                            <i class="bi bi-house-heart-fill"></i>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="recommend-card">
+                            <div class="recommend-icon">
+                                <i class="bi bi-house-heart-fill"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Families looking for safe games to play with children</h5>
                         </div>
-                        <h5 class="fw-bold mb-2">Families looking for safe games to play with children</h5>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 recommend-card-mobile-hide">
-                    <div class="recommend-card">
-                        <div class="recommend-icon">
-                            <i class="bi bi-camera-video-fill"></i>
+                    <div class="col-md-6 col-lg-4 recommend-card-mobile-hide">
+                        <div class="recommend-card">
+                            <div class="recommend-icon">
+                                <i class="bi bi-camera-video-fill"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Content creators looking for entertaining games for streams</h5>
+                            <p class="small text-muted mb-0">(Feel free to use!)</p>
                         </div>
-                        <h5 class="fw-bold mb-2">Content creators looking for entertaining games for streams</h5>
-                        <p class="small text-muted mb-0">(Feel free to use!)</p>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="recommend-card">
-                        <div class="recommend-icon">
-                            <i class="bi bi-heart-pulse-fill"></i>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="recommend-card">
+                            <div class="recommend-icon">
+                                <i class="bi bi-heart-pulse-fill"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Seniors who want to prevent memory decline</h5>
                         </div>
-                        <h5 class="fw-bold mb-2">Seniors who want to prevent memory decline</h5>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Game Features -->
-    <section id="features" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Game Features</h2>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="feature-card text-center">
-                        <div class="feature-icon mx-auto">
-                            <i class="bi bi-brain"></i>
+        <!-- Game Features -->
+        <section id="features" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Game Features</h2>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="bi bi-brain"></i>
+                            </div>
+                            <h4>Simple Yet Engaging</h4>
+                            <p>A character appears with an auto-generated nickname. Memorize it for future rounds.
+                                Choose your difficulty: 1, 3, or 5 lives.</p>
                         </div>
-                        <h4>Simple Yet Engaging</h4>
-                        <p>A character appears with an auto-generated nickname. Memorize it for future rounds. Choose your difficulty: 1, 3, or 5 lives.</p>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="feature-card text-center">
-                        <div class="feature-icon mx-auto">
-                            <i class="bi bi-people"></i>
+                    <div class="col-lg-4">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h4>Solo & Multiplayer</h4>
+                            <p>Single Player: Train your memory at your own pace. Multiplayer: Compete or cooperate with
+                                friends. Create private rooms with shareable passcodes.</p>
                         </div>
-                        <h4>Solo & Multiplayer</h4>
-                        <p>Single Player: Train your memory at your own pace. Multiplayer: Compete or cooperate with friends. Create private rooms with shareable passcodes.</p>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="feature-card text-center">
-                        <div class="feature-icon mx-auto">
-                            <i class="bi bi-trophy"></i>
+                    <div class="col-lg-4">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="bi bi-trophy"></i>
+                            </div>
+                            <h4>Competitive Rankings</h4>
+                            <p>Monthly online leaderboards to compete with players nationwide. Track your personal best
+                                scores and see your progress over time.</p>
                         </div>
-                        <h4>Competitive Rankings</h4>
-                        <p>Monthly online leaderboards to compete with players nationwide. Track your personal best scores and see your progress over time.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Usage Scenarios -->
-    <section id="usage-scenes" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">How Will You Play?</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="scene-card">
-                        <div class="scene-header-mobile">
-                            <h4 class="fw-bold mb-3"><span class="scene-icon-inline">📱</span>During your 3-minute commute</h4>
+        <!-- Usage Scenarios -->
+        <section id="usage-scenes" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">How Will You Play?</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="scene-card">
+                            <div class="scene-header-mobile">
+                                <h4 class="fw-bold mb-3"><span class="scene-icon-inline">📱</span>During your 3-minute
+                                    commute</h4>
+                            </div>
+                            <p class="mb-0">Quick memory battles on trains or buses. Perfect for brain training during
+                                short breaks.</p>
                         </div>
-                        <p class="mb-0">Quick memory battles on trains or buses. Perfect for brain training during short breaks.</p>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="scene-card">
+                            <div class="scene-header-mobile">
+                                <h4 class="fw-bold mb-3"><span class="scene-icon-inline">🏠</span>Family time together
+                                </h4>
+                            </div>
+                            <p class="mb-0">Compete with family or play cooperatively. A communication tool that brings
+                                generations together.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="scene-card">
+                            <div class="scene-header-mobile">
+                                <h4 class="fw-bold mb-3"><span class="scene-icon-inline">👥</span>At parties with
+                                    friends</h4>
+                            </div>
+                            <p class="mb-0">Multiplayer battles and cooperative play. Enjoy memory battles with
+                                hilarious names!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="scene-card">
+                            <div class="scene-header-mobile">
+                                <h4 class="fw-bold mb-3"><span class="scene-icon-inline">🎥</span>As streaming content
+                                </h4>
+                            </div>
+                            <p class="mb-0">Unexpected AI-generated names are perfect for reaction content. Great for
+                                viewer participation.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="scene-card">
+                            <div class="scene-header-mobile">
+                                <h4 class="fw-bold mb-3"><span class="scene-icon-inline">🧠</span>Before bed brain
+                                    training</h4>
+                            </div>
+                            <p class="mb-0">A 5-minute daily habit to maintain memory. Effective for preventing
+                                cognitive decline.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="scene-card">
+                            <div class="scene-header-mobile">
+                                <h4 class="fw-bold mb-3"><span class="scene-icon-inline">💼</span>Between meetings</h4>
+                            </div>
+                            <p class="mb-0">Refresh during work breaks. Reset your focus and boost mental agility.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="scene-card">
-                        <div class="scene-header-mobile">
-                            <h4 class="fw-bold mb-3"><span class="scene-icon-inline">🏠</span>Family time together</h4>
-                        </div>
-                        <p class="mb-0">Compete with family or play cooperatively. A communication tool that brings generations together.</p>
             </div>
-        </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="scene-card">
-                        <div class="scene-header-mobile">
-                            <h4 class="fw-bold mb-3"><span class="scene-icon-inline">👥</span>At parties with friends</h4>
-                        </div>
-                        <p class="mb-0">Multiplayer battles and cooperative play. Enjoy memory battles with hilarious names!</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="scene-card">
-                        <div class="scene-header-mobile">
-                            <h4 class="fw-bold mb-3"><span class="scene-icon-inline">🎥</span>As streaming content</h4>
-                        </div>
-                        <p class="mb-0">Unexpected AI-generated names are perfect for reaction content. Great for viewer participation.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="scene-card">
-                        <div class="scene-header-mobile">
-                            <h4 class="fw-bold mb-3"><span class="scene-icon-inline">🧠</span>Before bed brain training</h4>
-                        </div>
-                        <p class="mb-0">A 5-minute daily habit to maintain memory. Effective for preventing cognitive decline.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="scene-card">
-                        <div class="scene-header-mobile">
-                            <h4 class="fw-bold mb-3"><span class="scene-icon-inline">💼</span>Between meetings</h4>
-                        </div>
-                        <p class="mb-0">Refresh during work breaks. Reset your focus and boost mental agility.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Q&A Section -->
-    <section class="faq-section">
-        <div class="container">
-            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                    <i class="bi bi-question-circle-fill me-2"></i>Is it free to play?
-                                </button>
-                            </h3>
-                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Yes, all basic features are completely free. Ad display and premium features are optional.
+        <!-- Q&A Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq1">
+                                        <i class="bi bi-question-circle-fill me-2"></i>Is it free to play?
+                                    </button>
+                                </h3>
+                                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Yes, all basic features are completely free. Ad display and premium features are
+                                        optional.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq2">
+                                        <i class="bi bi-question-circle-fill me-2"></i>Can I play offline?
+                                    </button>
+                                </h3>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Images may not load when offline. We recommend playing in areas with good
+                                        network connectivity.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq3">
+                                        <i class="bi bi-question-circle-fill me-2"></i>What age is this suitable for?
+                                    </button>
+                                </h3>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        The simple rules make it enjoyable for all ages, from young children to seniors.
+                                        Perfect for family play.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq4">
+                                        <i class="bi bi-question-circle-fill me-2"></i>How are character names
+                                        generated?
+                                    </button>
+                                </h3>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        AI automatically generates unique nicknames based on each character's
+                                        appearance. Unexpected and hilarious names appear one after another.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq5">
+                                        <i class="bi bi-question-circle-fill me-2"></i>How do I play multiplayer?
+                                    </button>
+                                </h3>
+                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Create a room and share the passcode to play with friends. Supports both
+                                        competitive and cooperative modes.
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                    <i class="bi bi-question-circle-fill me-2"></i>Can I play offline?
-                                </button>
-                            </h3>
-                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Images may not load when offline. We recommend playing in areas with good network connectivity.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                    <i class="bi bi-question-circle-fill me-2"></i>What age is this suitable for?
-                                </button>
-                            </h3>
-                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    The simple rules make it enjoyable for all ages, from young children to seniors. Perfect for family play.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                                    <i class="bi bi-question-circle-fill me-2"></i>How are character names generated?
-                                </button>
-                            </h3>
-                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    AI automatically generates unique nicknames based on each character's appearance. Unexpected and hilarious names appear one after another.
-                                </div>
-                    </div>
-                </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
-                                    <i class="bi bi-question-circle-fill me-2"></i>How do I play multiplayer?
-                                </button>
-                            </h3>
-                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Create a room and share the passcode to play with friends. Supports both competitive and cooperative modes.
-                                </div>
-                    </div>
-                </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Download Section (CTA) -->
-    <section id="download" class="cta-section">
-        <div class="container text-center">
-            <h2 class="mb-4">Download Awa Pop today and dive into the most entertaining memory challenge!</h2>
-            <p class="lead mb-4">Experience unexpected character names and endless laughs as you test your memory skills solo or with friends.</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" 
-                   target="_blank" class="store-badge" id="android-badge-cta">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
-                         alt="Get it on Google Play" height="60">
-                </a>
-                <a href="https://apps.apple.com/us/app/awa-pop-memory-party-game/id6746962336" 
-                   target="_blank" class="store-badge" id="ios-badge-cta">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" 
-                         alt="Download on the App Store" height="60">
-                </a>
+        <!-- Download Section (CTA) -->
+        <section id="download" class="cta-section">
+            <div class="container text-center">
+                <h2 class="mb-4">Download Awa Pop today and dive into the most entertaining memory challenge!</h2>
+                <p class="lead mb-4">Experience unexpected character names and endless laughs as you test your memory
+                    skills solo or with friends.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod"
+                        target="_blank" class="store-badge" id="android-badge-cta">
+                        <img src="http://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
+                            alt="Get it on Google Play" height="60">
+                    </a>
+                    <a href="https://apps.apple.com/us/app/awa-pop-memory-party-game/id6746962336" target="_blank"
+                        class="store-badge" id="ios-badge-cta">
+                        <img src="http://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                            alt="Download on the App Store" height="60">
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- フッター -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <p>&copy; 2025 takekapp1990. All rights reserved.</p>
-            <div class="mt-3">
-                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/en/terms_and_conditions_en.html" 
-                   class="text-white me-3">Terms and Conditions</a>
-                <a href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/en/privacy_policy_en.html" 
-                   class="text-white">Privacy Policy</a>
+        <!-- フッター -->
+        <footer class="bg-dark text-white py-4">
+            <div class="container text-center">
+                <p>&copy; 2025 takekapp1990. All rights reserved.</p>
+                <div class="mt-3">
+                    <a href="http://takekapp.com/AwaAwaPon/en/terms_and_conditions_en.html"
+                        class="text-white me-3">Terms and Conditions</a>
+                    <a href="http://takekapp.com/AwaAwaPon/en/privacy_policy_en.html" class="text-white">Privacy
+                        Policy</a>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- OS Detection Script -->
-    <script>
-        (function() {
-            // User-AgentからOSを判定
-            function detectOS() {
-                const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-                
-                // iOS判定
-                if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                    return 'ios';
-                }
-                
-                // Android判定
-                if (/android/i.test(userAgent)) {
-                    return 'android';
-                }
-                
-                // その他（PCなど）は両方表示
-                return 'other';
-            }
-            
-            // OS判定を実行
-            const os = detectOS();
-            const androidBadge = document.getElementById('android-badge');
-            const iosBadge = document.getElementById('ios-badge');
-            const androidBadgeCta = document.getElementById('android-badge-cta');
-            const iosBadgeCta = document.getElementById('ios-badge-cta');
-            
-            // スマホの場合のみOSに応じて表示を切り替え
-            if (window.innerWidth <= 768) {
-                if (os === 'ios') {
-                    // iOSの場合はApp Storeのみ表示
-                    if (androidBadge) androidBadge.style.display = 'none';
-                    if (iosBadge) iosBadge.style.display = 'block';
-                    if (androidBadgeCta) androidBadgeCta.style.display = 'none';
-                    if (iosBadgeCta) iosBadgeCta.style.display = 'block';
-                } else if (os === 'android') {
-                    // Androidの場合はGoogle Playのみ表示
-                    if (androidBadge) androidBadge.style.display = 'block';
-                    if (iosBadge) iosBadge.style.display = 'none';
-                    if (androidBadgeCta) androidBadgeCta.style.display = 'block';
-                    if (iosBadgeCta) iosBadgeCta.style.display = 'none';
-                }
-                // その他の場合は両方表示（デフォルト）
-            }
-        })();
-    </script>
-    
-    <!-- Google Analytics イベント追跡 -->
-    <script>
-        // 初回訪問を追跡
-        (function() {
-            const hasVisited = localStorage.getItem('ga_has_visited');
-            if (!hasVisited) {
-                gtag('event', 'first_visit', {
-                    'event_category': 'engagement',
-                    'event_label': 'first_visit'
-                });
-                localStorage.setItem('ga_has_visited', 'true');
-            }
-        })();
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-        // スクロール深度を追跡（25%、50%、75%、100%）
-        (function() {
-            const scrollThresholds = [25, 50, 75, 100];
-            const trackedThresholds = new Set();
-            
-            function trackScrollDepth() {
-                const windowHeight = window.innerHeight;
-                const documentHeight = document.documentElement.scrollHeight;
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const scrollPercent = Math.round((scrollTop / (documentHeight - windowHeight)) * 100);
-                
-                scrollThresholds.forEach(threshold => {
-                    if (scrollPercent >= threshold && !trackedThresholds.has(threshold)) {
-                        trackedThresholds.add(threshold);
-                        gtag('event', 'scroll', {
-                            'event_category': 'engagement',
-                            'event_label': 'scroll_depth_' + threshold + 'percent',
-                            'value': threshold
+        <!-- OS Detection Script -->
+        <script>
+            (function () {
+                // User-AgentからOSを判定
+                function detectOS() {
+                    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+                    // iOS判定
+                    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                        return 'ios';
+                    }
+
+                    // Android判定
+                    if (/android/i.test(userAgent)) {
+                        return 'android';
+                    }
+
+                    // その他（PCなど）は両方表示
+                    return 'other';
+                }
+
+                // OS判定を実行
+                const os = detectOS();
+                const androidBadge = document.getElementById('android-badge');
+                const iosBadge = document.getElementById('ios-badge');
+                const androidBadgeCta = document.getElementById('android-badge-cta');
+                const iosBadgeCta = document.getElementById('ios-badge-cta');
+
+                // スマホの場合のみOSに応じて表示を切り替え
+                if (window.innerWidth <= 768) {
+                    if (os === 'ios') {
+                        // iOSの場合はApp Storeのみ表示
+                        if (androidBadge) androidBadge.style.display = 'none';
+                        if (iosBadge) iosBadge.style.display = 'block';
+                        if (androidBadgeCta) androidBadgeCta.style.display = 'none';
+                        if (iosBadgeCta) iosBadgeCta.style.display = 'block';
+                    } else if (os === 'android') {
+                        // Androidの場合はGoogle Playのみ表示
+                        if (androidBadge) androidBadge.style.display = 'block';
+                        if (iosBadge) iosBadge.style.display = 'none';
+                        if (androidBadgeCta) androidBadgeCta.style.display = 'block';
+                        if (iosBadgeCta) iosBadgeCta.style.display = 'none';
+                    }
+                    // その他の場合は両方表示（デフォルト）
+                }
+            })();
+        </script>
+
+        <!-- Google Analytics イベント追跡 -->
+        <script>
+            // 初回訪問を追跡
+            (function () {
+                const hasVisited = localStorage.getItem('ga_has_visited');
+                if (!hasVisited) {
+                    gtag('event', 'first_visit', {
+                        'event_category': 'engagement',
+                        'event_label': 'first_visit'
+                    });
+                    localStorage.setItem('ga_has_visited', 'true');
+                }
+            })();
+
+            // スクロール深度を追跡（25%、50%、75%、100%）
+            (function () {
+                const scrollThresholds = [25, 50, 75, 100];
+                const trackedThresholds = new Set();
+
+                function trackScrollDepth() {
+                    const windowHeight = window.innerHeight;
+                    const documentHeight = document.documentElement.scrollHeight;
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const scrollPercent = Math.round((scrollTop / (documentHeight - windowHeight)) * 100);
+
+                    scrollThresholds.forEach(threshold => {
+                        if (scrollPercent >= threshold && !trackedThresholds.has(threshold)) {
+                            trackedThresholds.add(threshold);
+                            gtag('event', 'scroll', {
+                                'event_category': 'engagement',
+                                'event_label': 'scroll_depth_' + threshold + 'percent',
+                                'value': threshold
+                            });
+                        }
+                    });
+                }
+
+                // スクロールイベントをthrottle（100ms間隔）
+                let scrollTimeout;
+                window.addEventListener('scroll', function () {
+                    if (scrollTimeout) {
+                        clearTimeout(scrollTimeout);
+                    }
+                    scrollTimeout = setTimeout(trackScrollDepth, 100);
+                }, { passive: true });
+            })();
+
+            // 外部リンクとアプリストアリンクのクリックを追跡
+            (function () {
+                function isExternalLink(url) {
+                    if (!url) return false;
+                    try {
+                        const linkUrl = new URL(url, window.location.origin);
+                        return linkUrl.hostname !== window.location.hostname;
+                    } catch (e) {
+                        return false;
+                    }
+                }
+
+                function isAppStoreLink(url) {
+                    if (!url) return false;
+                    return url.includes('apps.apple.com') ||
+                        url.includes('play.google.com') ||
+                        url.includes('app-store') ||
+                        url.includes('google-play');
+                }
+
+                function trackLinkClick(event) {
+                    const link = event.currentTarget;
+                    const url = link.href;
+
+                    if (isAppStoreLink(url)) {
+                        gtag('event', 'click', {
+                            'event_category': 'outbound',
+                            'event_label': 'app_store_link',
+                            'link_url': url,
+                            'link_text': link.textContent.trim() || link.title || 'App Store Link'
+                        });
+                    } else if (isExternalLink(url)) {
+                        gtag('event', 'click', {
+                            'event_category': 'outbound',
+                            'event_label': 'external_link',
+                            'link_url': url,
+                            'link_text': link.textContent.trim() || link.title || 'External Link'
                         });
                     }
-                });
-            }
-            
-            // スクロールイベントをthrottle（100ms間隔）
-            let scrollTimeout;
-            window.addEventListener('scroll', function() {
-                if (scrollTimeout) {
-                    clearTimeout(scrollTimeout);
                 }
-                scrollTimeout = setTimeout(trackScrollDepth, 100);
-            }, { passive: true });
-        })();
 
-        // 外部リンクとアプリストアリンクのクリックを追跡
-        (function() {
-            function isExternalLink(url) {
-                if (!url) return false;
-                try {
-                    const linkUrl = new URL(url, window.location.origin);
-                    return linkUrl.hostname !== window.location.hostname;
-                } catch (e) {
-                    return false;
-                }
-            }
-
-            function isAppStoreLink(url) {
-                if (!url) return false;
-                return url.includes('apps.apple.com') || 
-                       url.includes('play.google.com') ||
-                       url.includes('app-store') ||
-                       url.includes('google-play');
-            }
-
-            function trackLinkClick(event) {
-                const link = event.currentTarget;
-                const url = link.href;
-                
-                if (isAppStoreLink(url)) {
-                    gtag('event', 'click', {
-                        'event_category': 'outbound',
-                        'event_label': 'app_store_link',
-                        'link_url': url,
-                        'link_text': link.textContent.trim() || link.title || 'App Store Link'
+                // ページ読み込み後にリンクにイベントリスナーを追加
+                document.addEventListener('DOMContentLoaded', function () {
+                    const links = document.querySelectorAll('a[href]');
+                    links.forEach(link => {
+                        const url = link.getAttribute('href');
+                        if (isExternalLink(url) || isAppStoreLink(url)) {
+                            link.addEventListener('click', trackLinkClick);
+                        }
                     });
-                } else if (isExternalLink(url)) {
-                    gtag('event', 'click', {
-                        'event_category': 'outbound',
-                        'event_label': 'external_link',
-                        'link_url': url,
-                        'link_text': link.textContent.trim() || link.title || 'External Link'
-                    });
-                }
-            }
-
-            // ページ読み込み後にリンクにイベントリスナーを追加
-            document.addEventListener('DOMContentLoaded', function() {
-                const links = document.querySelectorAll('a[href]');
-                links.forEach(link => {
-                    const url = link.getAttribute('href');
-                    if (isExternalLink(url) || isAppStoreLink(url)) {
-                        link.addEventListener('click', trackLinkClick);
-                    }
                 });
-            });
-        })();
-    </script>
-</body>
-</html> 
-</html> 
+            })();
+        </script>
+    </body>
+
+</html>
+
+</html>

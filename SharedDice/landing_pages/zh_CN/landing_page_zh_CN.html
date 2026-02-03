@@ -1,444 +1,455 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>智能骰子 - 简单而强大的虚拟骰子应用</title>
-    <link rel="icon" href="../../favicon.ico">
-    <!-- OGP & Twitter Card -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="智能骰子 - 简单而强大的虚拟骰子应用">
-    <meta property="og:description" content="功能丰富、广告较少的骰子应用。实时多人游戏、自定义设置、详细分析功能。立即下载！">
-    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/launcher_icon_10240124_7_android.png">
-    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/landing_pages/zh_CN/landing_page_zh_CN.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="智能骰子 - 简单而强大的虚拟骰子应用">
-    <meta name="twitter:description" content="功能丰富、广告较少的骰子应用。实时多人游戏、自定义设置、详细分析功能。立即下载！">
-    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/launcher_icon_10240124_7_android.png">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/icon_512512_app_store.png">
-    <link rel="apple-touch-icon" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/icon_512512_app_store.png">    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-0VCS46ZTHC');
-    </script>
-    <style>
-        :root {
-            --primary-color: #1E3A8A;
-            --secondary-color: #F59E0B;
-            --accent-color: #3B82F6;
-            --dark-color: #1F2937;
-            --light-color: #F8FAFC;
-            --success-color: #10B981;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>智能骰子 - 简单而强大的虚拟骰子应用</title>
+        <link rel="icon" href="../../favicon.ico">
+        <!-- OGP & Twitter Card -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="智能骰子 - 简单而强大的虚拟骰子应用">
+        <meta property="og:description" content="功能丰富、广告较少的骰子应用。实时多人游戏、自定义设置、详细分析功能。立即下载！">
+        <meta property="og:image" content="http://takekapp.com/SharedDice/images/launcher_icon_10240124_7_android.png">
+        <meta property="og:url" content="http://takekapp.com/SharedDice/landing_pages/zh_CN/landing_page_zh_CN.html">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="智能骰子 - 简单而强大的虚拟骰子应用">
+        <meta name="twitter:description" content="功能丰富、广告较少的骰子应用。实时多人游戏、自定义设置、详细分析功能。立即下载！">
+        <meta name="twitter:image" content="http://takekapp.com/SharedDice/images/launcher_icon_10240124_7_android.png">
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="http://takekapp.com/SharedDice/images/icon_512512_app_store.png">
+        <link rel="apple-touch-icon" href="http://takekapp.com/SharedDice/images/icon_512512_app_store.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
 
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-        }
+            gtag('config', 'G-0VCS46ZTHC');
+        </script>
+        <style>
+            :root {
+                --primary-color: #1E3A8A;
+                --secondary-color: #F59E0B;
+                --accent-color: #3B82F6;
+                --dark-color: #1F2937;
+                --light-color: #F8FAFC;
+                --success-color: #10B981;
+            }
 
-        /* 骰子风格的背景图案 */
-        .dice-pattern {
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(30, 58, 138, 0.1) 2px, transparent 2px),
-                radial-gradient(circle at 75% 75%, rgba(245, 158, 11, 0.1) 2px, transparent 2px);
-            background-size: 50px 50px;
-        }
+            body {
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+                line-height: 1.6;
+                color: var(--dark-color);
+            }
 
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: white;
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
+            /* 骰子风格的背景图案 */
+            .dice-pattern {
+                background-image:
+                    radial-gradient(circle at 25% 25%, rgba(30, 58, 138, 0.1) 2px, transparent 2px),
+                    radial-gradient(circle at 75% 75%, rgba(245, 158, 11, 0.1) 2px, transparent 2px);
+                background-size: 50px 50px;
+            }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="20" y="20" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/><rect x="70" y="40" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/><rect x="40" y="70" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/></svg>');
-            animation: float 6s ease-in-out infinite;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        .app-icon-large {
-            width: 120px;
-            height: 120px;
-            border-radius: 25px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            border: 3px solid var(--secondary-color);
-        }
-
-        .feature-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .feature-icon::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-            border-radius: 14px;
-            z-index: -1;
-        }
-
-        .screenshot-section {
-            background: var(--light-color);
-            padding: 4rem 0;
-        }
-
-        .screenshot-container {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            margin: 1rem 0;
-        }
-
-        .screenshot-container img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .screenshot-container:hover img {
-            transform: scale(1.05);
-        }
-
-        .download-section {
-            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
-            color: white;
-            padding: 4rem 0;
-        }
-
-        .store-badge {
-            transition: transform 0.3s ease;
-            margin: 0.5rem;
-        }
-
-        .store-badge:hover {
-            transform: translateY(-3px);
-        }
-
-        /* 语言切换下拉菜单 - 共通CSSに移行済み */
-
-        .cta-button {
-            background: linear-gradient(135deg, var(--secondary-color), #F97316);
-            border: none;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
-            color: white;
-        }
-
-        .stats-card {
-            background: white;
-            border-radius: 15px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin: 1rem 0;
-        }
-
-        .stats-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .stats-label {
-            color: var(--dark-color);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        @media (max-width: 768px) {
             .hero-section {
-                padding: 2rem 0;
+                background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+                color: white;
+                padding: 4rem 0;
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
             }
-            
+
+            .hero-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="20" y="20" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/><rect x="70" y="40" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/><rect x="40" y="70" width="10" height="10" fill="rgba(255,255,255,0.1)" rx="2"/></svg>');
+                animation: float 6s ease-in-out infinite;
+                z-index: 0;
+                pointer-events: none;
+            }
+
+            @keyframes float {
+
+                0%,
+                100% {
+                    transform: translateY(0px) rotate(0deg);
+                }
+
+                50% {
+                    transform: translateY(-20px) rotate(180deg);
+                }
+            }
+
             .app-icon-large {
-                width: 100px;
-                height: 100px;
+                width: 120px;
+                height: 120px;
+                border-radius: 25px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+                border: 3px solid var(--secondary-color);
             }
-            
-            /* 言語切り替えレスポンシブ - 共通CSSに移行済み */
-        }
-    </style>
-    <link rel="stylesheet" href="../../css/sharedDiceLanguageSwitcher.css">
-</head>
-<body>
-    <!-- 语言切换下拉菜单 -->
-    <div class="language-switcher" data-current-lang="zh_CN">
-        <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                🇨🇳 中文（简体）
-            </button>
-        </div>
-    </div>
 
-    <!-- 英雄区域 -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 text-center text-lg-start">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/launcher_icon_10240124_7_android.png" 
-                         alt="智能骰子" class="app-icon-large mb-4">
-                    <h1 class="display-4 fw-bold mb-3">智能骰子</h1>
-                    <p class="lead mb-4">简单而强大的虚拟骰子应用<br>
-                    实时多人游戏、自定义设置、详细分析</p>
-                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
-                        <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod" 
-                           target="_blank" class="store-badge">
-                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
-                                 alt="在Google Play上获取" height="60">
-                        </a>
-                        <a href="https://apps.apple.com/app/id1583535228" 
-                           target="_blank" class="store-badge">
-                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" 
-                                 alt="从App Store下载" height="60">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/zh_cn/nexus_5X/Screenshot_1753418668.png" 
-                         alt="智能骰子 主屏幕" class="img-fluid rounded-3 shadow-lg" style="max-width: 300px;">
-                </div>
+            .feature-card {
+                background: white;
+                border-radius: 20px;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                margin-bottom: 2rem;
+                border-left: 4px solid var(--secondary-color);
+            }
+
+            .feature-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            }
+
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                position: relative;
+            }
+
+            .feature-icon::after {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                right: -2px;
+                bottom: -2px;
+                background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+                border-radius: 14px;
+                z-index: -1;
+            }
+
+            .screenshot-section {
+                background: var(--light-color);
+                padding: 4rem 0;
+            }
+
+            .screenshot-container {
+                position: relative;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+                margin: 1rem 0;
+            }
+
+            .screenshot-container img {
+                width: 100%;
+                height: auto;
+                transition: transform 0.3s ease;
+            }
+
+            .screenshot-container:hover img {
+                transform: scale(1.05);
+            }
+
+            .download-section {
+                background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+                color: white;
+                padding: 4rem 0;
+            }
+
+            .store-badge {
+                transition: transform 0.3s ease;
+                margin: 0.5rem;
+            }
+
+            .store-badge:hover {
+                transform: translateY(-3px);
+            }
+
+            /* 语言切换下拉菜单 - 共通CSSに移行済み */
+
+            .cta-button {
+                background: linear-gradient(135deg, var(--secondary-color), #F97316);
+                border: none;
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: bold;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .cta-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+                color: white;
+            }
+
+            .stats-card {
+                background: white;
+                border-radius: 15px;
+                padding: 1.5rem;
+                text-align: center;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                margin: 1rem 0;
+            }
+
+            .stats-number {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+
+            .stats-label {
+                color: var(--dark-color);
+                font-size: 0.9rem;
+                margin-top: 0.5rem;
+            }
+
+            @media (max-width: 768px) {
+                .hero-section {
+                    padding: 2rem 0;
+                }
+
+                .app-icon-large {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                /* 言語切り替えレスポンシブ - 共通CSSに移行済み */
+            }
+        </style>
+        <link rel="stylesheet" href="../../css/sharedDiceLanguageSwitcher.css">
+    </head>
+
+    <body>
+        <!-- 语言切换下拉菜单 -->
+        <div class="language-switcher" data-current-lang="zh_CN">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    🇨🇳 中文（简体）
+                </button>
             </div>
         </div>
-    </section>
 
-    <!-- 特色区域 -->
-    <section class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold text-primary">为什么选择智能骰子？</h2>
-                <p class="lead text-muted">专为桌面游戏、RPG和概率实验设计的完美功能</p>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-people-fill"></i>
+        <!-- 英雄区域 -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img src="http://takekapp.com/SharedDice/images/launcher_icon_10240124_7_android.png" alt="智能骰子"
+                            class="app-icon-large mb-4">
+                        <h1 class="display-4 fw-bold mb-3">智能骰子</h1>
+                        <p class="lead mb-4">简单而强大的虚拟骰子应用<br>
+                            实时多人游戏、自定义设置、详细分析</p>
+                        <div
+                            class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                            <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod"
+                                target="_blank" class="store-badge">
+                                <img src="http://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
+                                    alt="在Google Play上获取" height="60">
+                            </a>
+                            <a href="https://apps.apple.com/app/id1583535228" target="_blank" class="store-badge">
+                                <img src="http://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                                    alt="从App Store下载" height="60">
+                            </a>
                         </div>
-                        <h4>实时多人游戏</h4>
-                        <p>创建或加入私人房间，一起掷骰子。实时查看所有人的结果。</p>
                     </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-gear-fill"></i>
-                        </div>
-                        <h4>自定义骰子设置</h4>
-                        <p>一次最多可以掷100个骰子。选择骰子类型，一键重置。</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-graph-up"></i>
-                        </div>
-                        <h4>详细的骰子分析</h4>
-                        <p>追踪时间推移中的骰子结果。查看柱状图和日志来分析模式。</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-wifi-off"></i>
-                        </div>
-                        <h4>离线支持</h4>
-                        <p>即使没有互联网也可以掷骰子。在所有设备上流畅运行。</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-controller"></i>
-                        </div>
-                        <h4>游戏优化</h4>
-                        <p>从派对游戏到概率研究，智能骰子是万能解决方案。</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-layout-text-window"></i>
-                        </div>
-                        <h4>直观的界面</h4>
-                        <p>没有杂乱。没有学习曲线。只需点击即可掷骰子。简洁易用的设计。</p>
+                    <div class="col-lg-6 text-center">
+                        <img src="http://takekapp.com/SharedDice/images/screen_shots/zh_cn/nexus_5X/Screenshot_1753418668.png"
+                            alt="智能骰子 主屏幕" class="img-fluid rounded-3 shadow-lg" style="max-width: 300px;">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 截图区域 -->
-    <section class="screenshot-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold text-primary">应用截图</h2>
-                <p class="lead text-muted">查看实际使用界面</p>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="screenshot-container">
-                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/zh_cn/nexus_5X/Screenshot_1753418668.png" 
-                             alt="主屏幕" class="img-fluid">
-                    </div>
+        <!-- 特色区域 -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold text-primary">为什么选择智能骰子？</h2>
+                    <p class="lead text-muted">专为桌面游戏、RPG和概率实验设计的完美功能</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="screenshot-container">
-                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/zh_cn/nexus_5X/Screenshot_1753418673.png" 
-                             alt="设置屏幕" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="screenshot-container">
-                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/zh_cn/nexus_5X/Screenshot_1753418676.png" 
-                             alt="分析屏幕" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="screenshot-container">
-                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/screen_shots/zh_cn/nexus_5X/Screenshot_1753418681.png" 
-                             alt="多人游戏屏幕" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 统计区域 -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-3">
-                    <div class="stats-card">
-                        <div class="stats-number">100</div>
-                        <div class="stats-label">最大骰子数</div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                            <h4>实时多人游戏</h4>
+                            <p>创建或加入私人房间，一起掷骰子。实时查看所有人的结果。</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stats-card">
-                        <div class="stats-number">∞</div>
-                        <div class="stats-label">玩家数量</div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-gear-fill"></i>
+                            </div>
+                            <h4>自定义骰子设置</h4>
+                            <p>一次最多可以掷100个骰子。选择骰子类型，一键重置。</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stats-card">
-                        <div class="stats-number">24/7</div>
-                        <div class="stats-label">可用时间</div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
+                            <h4>详细的骰子分析</h4>
+                            <p>追踪时间推移中的骰子结果。查看柱状图和日志来分析模式。</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stats-card">
-                        <div class="stats-number">0</div>
-                        <div class="stats-label">学习成本</div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-wifi-off"></i>
+                            </div>
+                            <h4>离线支持</h4>
+                            <p>即使没有互联网也可以掷骰子。在所有设备上流畅运行。</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-controller"></i>
+                            </div>
+                            <h4>游戏优化</h4>
+                            <p>从派对游戏到概率研究，智能骰子是万能解决方案。</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-layout-text-window"></i>
+                            </div>
+                            <h4>直观的界面</h4>
+                            <p>没有杂乱。没有学习曲线。只需点击即可掷骰子。简洁易用的设计。</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 下载区域 -->
-    <section class="download-section">
-        <div class="container text-center">
-            <h2 class="display-4 fw-bold mb-4">立即下载</h2>
-            <p class="lead mb-5">智能骰子不仅仅是一个骰子应用 — 它是您娱乐、专注和灵活性的必备工具。</p>
-            
-            <div class="d-flex flex-column flex-sm-row justify-content-center gap-4 mb-4">
-                <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod" 
-                   target="_blank" class="store-badge">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" 
-                         alt="在Google Play上获取" height="80">
-                </a>
-                <a href="https://apps.apple.com/app/id1583535228" 
-                   target="_blank" class="store-badge">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" 
-                         alt="从App Store下载" height="80">
-                </a>
+        <!-- 截图区域 -->
+        <section class="screenshot-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold text-primary">应用截图</h2>
+                    <p class="lead text-muted">查看实际使用界面</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="screenshot-container">
+                            <img src="http://takekapp.com/SharedDice/images/screen_shots/zh_cn/nexus_5X/Screenshot_1753418668.png"
+                                alt="主屏幕" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="screenshot-container">
+                            <img src="http://takekapp.com/SharedDice/images/screen_shots/zh_cn/nexus_5X/Screenshot_1753418673.png"
+                                alt="设置屏幕" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="screenshot-container">
+                            <img src="http://takekapp.com/SharedDice/images/screen_shots/zh_cn/nexus_5X/Screenshot_1753418676.png"
+                                alt="分析屏幕" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="screenshot-container">
+                            <img src="http://takekapp.com/SharedDice/images/screen_shots/zh_cn/nexus_5X/Screenshot_1753418681.png"
+                                alt="多人游戏屏幕" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="mt-4">
-                <a href="../zh_CN/terms_and_conditions_zh_CN.html" class="text-light me-4">使用条款</a>
-                <a href="../zh_CN/privacy_policy_zh_CN.html" class="text-light">隐私政策</a>
+        </section>
+
+        <!-- 统计区域 -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <div class="stats-number">100</div>
+                            <div class="stats-label">最大骰子数</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <div class="stats-number">∞</div>
+                            <div class="stats-label">玩家数量</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <div class="stats-number">24/7</div>
+                            <div class="stats-label">可用时间</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <div class="stats-number">0</div>
+                            <div class="stats-label">学习成本</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 页脚 -->
-    <footer class="bg-dark text-light py-4">
-        <div class="container text-center">
-            <p>&copy; 2024 takekapp1990. All rights reserved.</p>
-        </div>
-    </footer>
+        <!-- 下载区域 -->
+        <section class="download-section">
+            <div class="container text-center">
+                <h2 class="display-4 fw-bold mb-4">立即下载</h2>
+                <p class="lead mb-5">智能骰子不仅仅是一个骰子应用 — 它是您娱乐、专注和灵活性的必备工具。</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../js/sharedDiceLanguageSwitcher.js"></script>
-</body>
-</html> 
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-4 mb-4">
+                    <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod"
+                        target="_blank" class="store-badge">
+                        <img src="http://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
+                            alt="在Google Play上获取" height="80">
+                    </a>
+                    <a href="https://apps.apple.com/app/id1583535228" target="_blank" class="store-badge">
+                        <img src="http://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                            alt="从App Store下载" height="80">
+                    </a>
+                </div>
+
+                <div class="mt-4">
+                    <a href="../zh_CN/terms_and_conditions_zh_CN.html" class="text-light me-4">使用条款</a>
+                    <a href="../zh_CN/privacy_policy_zh_CN.html" class="text-light">隐私政策</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="bg-dark text-light py-4">
+            <div class="container text-center">
+                <p>&copy; 2024 takekapp1990. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/sharedDiceLanguageSwitcher.js"></script>
+    </body>
+
+</html>

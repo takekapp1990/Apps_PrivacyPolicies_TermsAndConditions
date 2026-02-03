@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Story of a Casual Game Failure - TakeKApp Development Diary</title>
-    <!-- OGP & Twitter Card -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="The Story of a Casual Game Failure - TakeKApp Development Diary">
-    <meta property="og:description" content="I decided to quit my job to seriously pursue personal development. However, my first game app I recently created completely failed, so I want to reflect on it myself.">
-    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/images/ogp_img.png">
-    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/blog/posts/dev/en/2025-11-23-casual-game-failure.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Story of a Casual Game Failure - TakeKApp Development Diary">
-    <meta name="twitter:description" content="I decided to quit my job to seriously pursue personal development. However, my first game app I recently created completely failed, so I want to reflect on it myself.">
-    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/images/ogp_img.png">
-    <meta name="twitter:site" content="@takekapp">
-    <link rel="alternate" hreflang="ja" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/blog/posts/dev/ja/2025-11-23-casual-game-failure.html" />
-    <link rel="alternate" hreflang="en" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/blog/posts/dev/en/2025-11-23-casual-game-failure.html" />
-    <link rel="alternate" hreflang="x-default" href="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/blog/posts/dev/ja/2025-11-23-casual-game-failure.html" />
-    
-    <!-- 構造化データ -->
-    <script type="application/ld+json">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Story of a Casual Game Failure - TakeKApp Development Diary</title>
+        <!-- OGP & Twitter Card -->
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="The Story of a Casual Game Failure - TakeKApp Development Diary">
+        <meta property="og:description"
+            content="I decided to quit my job to seriously pursue personal development. However, my first game app I recently created completely failed, so I want to reflect on it myself.">
+        <meta property="og:image" content="http://takekapp.com/images/ogp_img.png">
+        <meta property="og:url" content="http://takekapp.com/blog/posts/dev/en/2025-11-23-casual-game-failure.html">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="The Story of a Casual Game Failure - TakeKApp Development Diary">
+        <meta name="twitter:description"
+            content="I decided to quit my job to seriously pursue personal development. However, my first game app I recently created completely failed, so I want to reflect on it myself.">
+        <meta name="twitter:image" content="http://takekapp.com/images/ogp_img.png">
+        <meta name="twitter:site" content="@takekapp">
+        <link rel="alternate" hreflang="ja"
+            href="http://takekapp.com/blog/posts/dev/ja/2025-11-23-casual-game-failure.html" />
+        <link rel="alternate" hreflang="en"
+            href="http://takekapp.com/blog/posts/dev/en/2025-11-23-casual-game-failure.html" />
+        <link rel="alternate" hreflang="x-default"
+            href="http://takekapp.com/blog/posts/dev/ja/2025-11-23-casual-game-failure.html" />
+
+        <!-- 構造化データ -->
+        <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -36,554 +42,599 @@
         "name": "TakeKApp",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/SharedDice/images/icon_512512_app_store.png"
+          "url": "http://takekapp.com/SharedDice/images/icon_512512_app_store.png"
         }
       },
       "articleSection": "Development Diary",
       "keywords": ["Development Diary", "App Development", "TakeKApp", "Game Development", "Failure Story", "Marketing"]
     }
     </script>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-0VCS46ZTHC');
-    </script>
-    <style>
-        :root {
-            --primary-color: #4682B4;
-            --primary-dark: #2F4F4F;
-            --primary-light: #5F9EA0;
-            --secondary-color: #F5F5F5;
-            --text-color: #2C3E50;
-            --accent-color: #708090;
-        }
 
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            color: var(--text-color);
-            line-height: 1.8;
-            background-color: var(--secondary-color);
-        }
-
-        .navbar {
-            background-color: var(--primary-color);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .navbar-brand {
-            color: white !important;
-            font-weight: bold;
-        }
-
-        .nav-link {
-            color: rgba(255,255,255,0.9) !important;
-        }
-
-        .article-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: white;
-            padding: 3rem 0;
-            margin-bottom: 3rem;
-        }
-
-        .article-content {
-            background: white;
-            border-radius: 15px;
-            padding: 3rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .article-sidebar {
-            position: sticky;
-            top: 80px;
-        }
-
-        .sidebar-card {
-            background: white;
-            border-radius: 15px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 1.5rem;
-        }
-
-        .sidebar-card h4 {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--primary-color);
-        }
-
-        .sidebar-article-item {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .sidebar-article-item:last-child {
-            border-bottom: none;
-        }
-
-        .sidebar-article-item a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            display: block;
-            transition: color 0.3s ease;
-        }
-
-        .sidebar-article-item a:hover {
-            color: var(--primary-color);
-        }
-
-        .sidebar-article-date {
-            color: var(--accent-color);
-            font-size: 0.85rem;
-            margin-top: 0.25rem;
-        }
-
-        @media (max-width: 991px) {
-            .article-sidebar {
-                position: static;
-                margin-top: 2rem;
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-0VCS46ZTHC');
+        </script>
+        <style>
+            :root {
+                --primary-color: #4682B4;
+                --primary-dark: #2F4F4F;
+                --primary-light: #5F9EA0;
+                --secondary-color: #F5F5F5;
+                --text-color: #2C3E50;
+                --accent-color: #708090;
             }
-        }
 
-        .article-meta {
-            color: var(--accent-color);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #e0e0e0;
-        }
+            body {
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+                color: var(--text-color);
+                line-height: 1.8;
+                background-color: var(--secondary-color);
+            }
 
-        .article-content h2 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
+            .navbar {
+                background-color: var(--primary-color);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
 
-        .article-content h3 {
-            color: var(--primary-dark);
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
+            .navbar-brand {
+                color: white !important;
+                font-weight: bold;
+            }
 
-        .article-content p {
-            margin-bottom: 1.5rem;
-        }
+            .nav-link {
+                color: rgba(255, 255, 255, 0.9) !important;
+            }
 
-        .article-content ul, .article-content ol {
-            margin-bottom: 1.5rem;
-            padding-left: 2rem;
-        }
+            .article-header {
+                background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+                color: white;
+                padding: 3rem 0;
+                margin-bottom: 3rem;
+            }
 
-        .article-content li {
-            margin-bottom: 0.5rem;
-        }
+            .article-content {
+                background: white;
+                border-radius: 15px;
+                padding: 3rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
 
-        .article-content blockquote {
-            border-left: 4px solid var(--primary-color);
-            padding-left: 1.5rem;
-            margin: 1.5rem 0;
-            color: var(--accent-color);
-            font-style: italic;
-        }
+            .article-sidebar {
+                position: sticky;
+                top: 80px;
+            }
 
-        .article-navigation {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e0e0e0;
-        }
+            .sidebar-card {
+                background: white;
+                border-radius: 15px;
+                padding: 1.5rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 1.5rem;
+            }
 
-        .article-navigation a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
+            .sidebar-card h4 {
+                color: var(--primary-color);
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                padding-bottom: 0.75rem;
+                border-bottom: 2px solid var(--primary-color);
+            }
 
-        .article-navigation a:hover {
-            color: var(--primary-dark);
-            text-decoration: underline;
-        }
+            .sidebar-article-item {
+                padding: 0.75rem 0;
+                border-bottom: 1px solid #e0e0e0;
+            }
 
-        /* 言語切り替えボタン */
-        .language-switcher {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
+            .sidebar-article-item:last-child {
+                border-bottom: none;
+            }
 
-        .language-switcher .btn {
-            background-color: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
+            .sidebar-article-item a {
+                color: var(--text-color);
+                text-decoration: none;
+                font-weight: 500;
+                display: block;
+                transition: color 0.3s ease;
+            }
 
-        .language-switcher .btn:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.8);
-            color: white;
-        }
+            .sidebar-article-item a:hover {
+                color: var(--primary-color);
+            }
 
-        .language-switcher .btn.active {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-color: white;
-        }
-    </style>
-</head>
-<body>
-    <!-- ナビゲーションバー -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="../../../index.html">TakeKApp Apps</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../index.html#apps">Apps</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="../../index.html">Development Diary</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../index.html#contact">Contact</a>
-                    </li>
-                </ul>
-                <!-- 言語切り替えボタン -->
-                <div class="language-switcher">
-                    <a href="../ja/2025-11-23-casual-game-failure.html" class="btn">日本語</a>
-                    <a href="2025-11-23-casual-game-failure.html" class="btn active">English</a>
+            .sidebar-article-date {
+                color: var(--accent-color);
+                font-size: 0.85rem;
+                margin-top: 0.25rem;
+            }
+
+            @media (max-width: 991px) {
+                .article-sidebar {
+                    position: static;
+                    margin-top: 2rem;
+                }
+            }
+
+            .article-meta {
+                color: var(--accent-color);
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .article-content h2 {
+                color: var(--primary-color);
+                font-size: 1.8rem;
+                font-weight: 600;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .article-content h3 {
+                color: var(--primary-dark);
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin-top: 1.5rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .article-content p {
+                margin-bottom: 1.5rem;
+            }
+
+            .article-content ul,
+            .article-content ol {
+                margin-bottom: 1.5rem;
+                padding-left: 2rem;
+            }
+
+            .article-content li {
+                margin-bottom: 0.5rem;
+            }
+
+            .article-content blockquote {
+                border-left: 4px solid var(--primary-color);
+                padding-left: 1.5rem;
+                margin: 1.5rem 0;
+                color: var(--accent-color);
+                font-style: italic;
+            }
+
+            .article-navigation {
+                margin-top: 3rem;
+                padding-top: 2rem;
+                border-top: 1px solid #e0e0e0;
+            }
+
+            .article-navigation a {
+                color: var(--primary-color);
+                text-decoration: none;
+            }
+
+            .article-navigation a:hover {
+                color: var(--primary-dark);
+                text-decoration: underline;
+            }
+
+            /* 言語切り替えボタン */
+            .language-switcher {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+            }
+
+            .language-switcher .btn {
+                background-color: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                color: white;
+                padding: 0.3rem 0.8rem;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+
+            .language-switcher .btn:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-color: rgba(255, 255, 255, 0.8);
+                color: white;
+            }
+
+            .language-switcher .btn.active {
+                background-color: rgba(255, 255, 255, 0.2);
+                border-color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- ナビゲーションバー -->
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="../../../index.html">TakeKApp Apps</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../index.html#apps">Apps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../../index.html">Development Diary</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../index.html#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- 言語切り替えボタン -->
+                    <div class="language-switcher">
+                        <a href="../ja/2025-11-23-casual-game-failure.html" class="btn">日本語</a>
+                        <a href="2025-11-23-casual-game-failure.html" class="btn active">English</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- 記事ヘッダー -->
-    <section class="article-header">
-        <div class="container text-center">
-            <h1 class="display-4 mb-3">The Story of a Casual Game Failure</h1>
-            <div class="article-meta text-white" style="opacity: 0.9;">
-                <i class="bi bi-calendar3"></i> November 23, 2025
-                <span class="ms-3"><i class="bi bi-folder"></i> Development Diary</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- 記事本文 -->
-    <section class="container">
-        <div class="row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-7">
-        <article class="article-content">
-            <p>
-                Hello. I'm <strong>TakeKApp</strong>, who recently became a freelancer and is working hard on personal development.
-            </p>
-            <p>
-                I decided to quit my job to seriously pursue personal development. However, my first game app I recently created completely failed (hardly used and not selling), so I want to reflect on it myself.
-            </p>
-            <p>
-                In this article, I want to organize important points in app development through my failure experience and share lessons to avoid similar failures.
-            </p>
-
-            <h2>App Overview</h2>
-            <p>
-                I created and released a game app called "AwaAwaPon" in June, which is like a memory game where you can laugh while testing your memory, similar to Nanja Monja.
-            </p>
-
-            <h3>App Features</h3>
-            <ul>
-                <li>You can choose from various character genres</li>
-                <li>The app generates character names for you</li>
-                <li>Multiplayer support with communication features</li>
-            </ul>
-            <p>
-                <strong>URL</strong>: <a href="https://takekapp.com/AwaAwaPon/en/landing_page_en.html" target="_blank">https://takekapp.com/AwaAwaPon/en/landing_page_en.html</a>
-            </p>
-
-            <h3>Development Motivation</h3>
-            <ul>
-                <li>I originally liked board games and casual games</li>
-                <li>I thought it would be interesting to do Nanja Monja with various AI images</li>
-                <li>I'm not good at coming up with nicknames for Nanja Monja, so I thought it would be good if the app generated them</li>
-            </ul>
-
-            <h3>The Failure Situation</h3>
-            <p>
-                I quit my job thinking this app would sell, but the results were devastating.
-            </p>
-            <ul>
-                <li><strong>User Acquisition</strong>: Almost zero organic traffic. I spent about 50,000 yen on ads but only got about 150 installs</li>
-                <li><strong>Retention Rate</strong>: Very poor. Now only family members use it occasionally</li>
-                <li><strong>Monetization</strong>: I added monetization features, but the conversion rate is zero</li>
-            </ul>
-            <p>
-                I want to reflect and analyze why this happened. I think there are four main reasons:
-            </p>
-            <ol>
-                <li>Insufficient concept consideration</li>
-                <li>Failure in advertising and promotion strategy</li>
-                <li>Lack of motivation for continued use</li>
-                <li>Poor monetization funnel</li>
-            </ol>
-
-            <h2>❌ Failure Factor ①: Insufficient Concept Consideration</h2>
-
-            <h3>Concept Confusion</h3>
-            <p>
-                Originally, I had a strong image of high school students playing during break time and laughing. That's why I added communication features.
-            </p>
-            <p>
-                However, when I released it, most people played solo, so the communication features weren't very meaningful.
-            </p>
-            <p>
-                So now I'm positioning it as "a memory game where you can do brain training while laughing."
-            </p>
-            <p>
-                Because I didn't have a strong concept, I struggled with how to sell and promote it.
-            </p>
-            <ul>
-                <li>I tried targeting people who want to do brain training or improve their memory</li>
-                <li>I thought it would be good for people who are bored to use it as a time-killer</li>
-                <li>Since there are many cute characters, I thought people who like cute characters might use it...</li>
-            </ul>
-
-            <h3>The Core Problem: Lack of Concept from the Start</h3>
-            <p>
-                The concept has become quite blurred after releasing the app.
-            </p>
-            <p>
-                When creating an app, the concept is most important, and from there, the catchphrase, user acquisition, app content, UI, design, etc. should be determined.
-            </p>
-            <p>
-                More importantly, everything should be tied to this concept, including technical decisions like whether it should be a smartphone app and what technology to use. Competitors also change based on the concept, so <strong>the concept is the foundation of everything in the app</strong>.
-            </p>
-            <p>
-                For example, even if I were to pivot this app now, I think the strategy would change depending on these four directions:
-            </p>
-            <ul>
-                <li>A fun brain training game to improve memory</li>
-                <li>A character memory game where cute characters keep increasing</li>
-                <li>A Nanja Monja-inspired app game where you can laugh with friends</li>
-                <li>A time-killer game that also serves as brain training</li>
-            </ul>
-            <p>
-                I'll consider what I'll do specifically going forward.
-            </p>
-
-            <h3>Reflection Points & Lessons</h3>
-            <ul>
-                <li>Don't build an app directly from an idea; think about the concept first</li>
-                <li>User assumptions, core features to build, and catchphrases naturally emerge from the concept</li>
-            </ul>
-
-            <h2>❌ Failure Factor ②: Failure in Advertising and Promotion Strategy</h2>
-
-            <h3>User Acquisition Strategy Challenges</h3>
-            <p>
-                Since I gave it an original game name, I can't expect much organic search, so I'm relying on ads or X (Twitter) for user acquisition.
-            </p>
-            <p>
-                I tried posting on TikTok but got little response and gave up.
-            </p>
-            <p>
-                Since it's a game app, I thought if I held a tournament with prize money, everyone would participate, but only 4-5 people participated.
-            </p>
-
-            <h3>Strategic Problems</h3>
-            <p>
-                Regarding the tournament, I forgot that <strong>the game being fun is a prerequisite</strong>.
-            </p>
-            <p>
-                I reflected that trying to lure customers with money from the start is ultimately suspicious and shows a lack of confidence in the game itself.
-            </p>
-            <p>
-                Also, I stopped posting on TikTok after just 3 posts, and I gave up too quickly without doing enough promotion on X. I'm starting to think that <strong>marketing needs to be done consistently regardless of results</strong>.
-            </p>
-
-            <h3>Direction for Improvement</h3>
-            <p>
-                I'm going to try <strong>thinking about my user acquisition methods from the perspective of "Would I click, install, or participate?"</strong>.
-            </p>
-            <p>
-                If I don't genuinely want to "click," then others probably feel the same. I'll remember to keep this perspective.
-            </p>
-            <p>
-                On top of that, I'll steadily practice continuing consistently.
-            </p>
-
-            <h3>Reflection Points & Lessons</h3>
-            <ul>
-                <li>Don't underestimate users and put out half-hearted ads or user acquisition</li>
-                <li>Create ads and announcements that I genuinely want to click</li>
-                <li>Use my action volume as a KPI and continue promoting consistently</li>
-            </ul>
-
-            <h2>❌ Failure Factor ③: Motivation for Continued Use</h2>
-
-            <h3>Retention Rate Challenges</h3>
-            <p>
-                People who gave me feedback said "it was fun," but users who installed it don't continue using it at all.
-            </p>
-
-            <h3>The Lightness of Casual Games for Users</h3>
-            <p>
-                This might be the fate of casual games, but they tend to end with "oh, that was fun." They don't make you want to "play again tomorrow," and you might even forget they exist. This app especially has this tendency since the score resets every time.
-            </p>
-            <p>
-                However, I think this is a risk that any app could face.
-            </p>
-
-            <h3>Countermeasures</h3>
-            <p>
-                As a countermeasure, I think I need to better design how to provide incentives to encourage continued use of the game.
-            </p>
-            <p>
-                Right now, it's just rankings and score display, but for example:
-            </p>
-            <ul>
-                <li>Login bonuses</li>
-                <li>Your character grows each time you achieve a high score</li>
-                <li>You can see your score progression</li>
-            </ul>
-            <p>
-                It might also be good to add notification features to remind users.
-            </p>
-
-            <h3>Reflection Points & Lessons</h3>
-            <ul>
-                <li>Create mechanisms and incentives for continued use</li>
-            </ul>
-
-            <h2>❌ Failure Factor ④: Monetization Funnel</h2>
-
-            <h3>Zero Conversion Rate Situation</h3>
-            <p>
-                The monetization items are ad removal and character purchases, but conversions are zero. Users aren't even seeing the paywall screen.
-            </p>
-
-            <h3>Funnel Problems</h3>
-            <p>
-                First, if monetization is the goal, I need to create a clear funnel within the user's normal usage flow. Right now, there's just a link to the monetization page in the menu, but no one clicks that.
-            </p>
-            <p>
-                Most first-time users play with default settings, so they end up not even noticing the monetization items.
-            </p>
-            <p>
-                I've reflected that <strong>monetization items need to be placed in a clearly visible location within the user's usage flow</strong>.
-            </p>
-
-            <h3>Monetization Item Value Design</h3>
-            <p>
-                Also, I easily made "ad removal" a monetization target, but if the game isn't attractive enough for people to want to remove ads, it won't sell. Rather than the naive thinking of "maybe it will sell if I just put it on the shelf," it's better to <strong>design monetization after thinking about "what can I deliver to users?"</strong>.
-            </p>
-
-            <h3>Reflection Points & Lessons</h3>
-            <ul>
-                <li>Create a clear funnel to monetization</li>
-                <li>Design to sell things that truly have value for users</li>
-            </ul>
-
-            <h2>Reflection Summary</h2>
-            <p>
-                Below is a summary of the reflection points I've raised so far.
-            </p>
-            <ul>
-                <li><strong>Problems Before App Development</strong>
-                    <ul>
-                        <li>Don't build an app directly from an idea; think about the concept first</li>
-                        <li>Consider user assumptions, competitors, core features to build, and catchphrases from the concept</li>
-                    </ul>
-                </li>
-                <li><strong>User Acquisition & Promotion</strong>
-                    <ul>
-                        <li>Don't put out half-hearted ads</li>
-                        <li>Create ads and announcements that I genuinely want to click</li>
-                        <li>Use action volume as a KPI and continue promoting consistently</li>
-                    </ul>
-                </li>
-                <li><strong>Continued Use & Product Appeal</strong>
-                    <ul>
-                        <li>Create mechanisms and incentives for continued use</li>
-                    </ul>
-                </li>
-                <li><strong>Monetization</strong>
-                    <ul>
-                        <li>Create a clear funnel to monetization</li>
-                        <li>Design to sell things that truly have value for users</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <h2>Future App Improvement Direction</h2>
-            <p>
-                Going forward, I'll use these reflections to start by <strong>reviewing the concept and target users</strong>.
-            </p>
-            <p>
-                From there, I plan to consider pivoting or rebuilding the app.
-            </p>
-
-            <h2>Conclusion</h2>
-            <p>
-                I hope this serves as a reference for everyone who wants more people to use their apps. Let's work hard on personal development.
-            </p>
-
-            <div class="article-navigation">
-                <div class="d-flex justify-content-between">
-                    <a href="../../index.html"><i class="bi bi-arrow-left me-2"></i>Back to Article List</a>
-                    <a href="2025-11-22-development-diary-starts.html">Previous: Starting the Development Diary <i class="bi bi-arrow-right ms-2"></i></a>
+        <!-- 記事ヘッダー -->
+        <section class="article-header">
+            <div class="container text-center">
+                <h1 class="display-4 mb-3">The Story of a Casual Game Failure</h1>
+                <div class="article-meta text-white" style="opacity: 0.9;">
+                    <i class="bi bi-calendar3"></i> November 23, 2025
+                    <span class="ms-3"><i class="bi bi-folder"></i> Development Diary</span>
                 </div>
             </div>
-        </article>
-            </div>
-            <!-- サイドバー -->
-            <div class="col-lg-3">
-                <div class="article-sidebar">
-                    <div class="sidebar-card">
-                        <h4>Recent Articles</h4>
-                        <div class="sidebar-article-item">
-                            <a href="2026-01-03-awaawapon-tournament-reflection.html">Reflections on the AwaAwaPon Tournament and Future Direction</a>
-                            <div class="sidebar-article-date">January 3, 2026</div>
+        </section>
+
+        <!-- 記事本文 -->
+        <section class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-7">
+                    <article class="article-content">
+                        <p>
+                            Hello. I'm <strong>TakeKApp</strong>, who recently became a freelancer and is working hard
+                            on personal development.
+                        </p>
+                        <p>
+                            I decided to quit my job to seriously pursue personal development. However, my first game
+                            app I recently created completely failed (hardly used and not selling), so I want to reflect
+                            on it myself.
+                        </p>
+                        <p>
+                            In this article, I want to organize important points in app development through my failure
+                            experience and share lessons to avoid similar failures.
+                        </p>
+
+                        <h2>App Overview</h2>
+                        <p>
+                            I created and released a game app called "AwaAwaPon" in June, which is like a memory game
+                            where you can laugh while testing your memory, similar to Nanja Monja.
+                        </p>
+
+                        <h3>App Features</h3>
+                        <ul>
+                            <li>You can choose from various character genres</li>
+                            <li>The app generates character names for you</li>
+                            <li>Multiplayer support with communication features</li>
+                        </ul>
+                        <p>
+                            <strong>URL</strong>: <a href="https://takekapp.com/AwaAwaPon/en/landing_page_en.html"
+                                target="_blank">https://takekapp.com/AwaAwaPon/en/landing_page_en.html</a>
+                        </p>
+
+                        <h3>Development Motivation</h3>
+                        <ul>
+                            <li>I originally liked board games and casual games</li>
+                            <li>I thought it would be interesting to do Nanja Monja with various AI images</li>
+                            <li>I'm not good at coming up with nicknames for Nanja Monja, so I thought it would be good
+                                if the app generated them</li>
+                        </ul>
+
+                        <h3>The Failure Situation</h3>
+                        <p>
+                            I quit my job thinking this app would sell, but the results were devastating.
+                        </p>
+                        <ul>
+                            <li><strong>User Acquisition</strong>: Almost zero organic traffic. I spent about 50,000 yen
+                                on ads but only got about 150 installs</li>
+                            <li><strong>Retention Rate</strong>: Very poor. Now only family members use it occasionally
+                            </li>
+                            <li><strong>Monetization</strong>: I added monetization features, but the conversion rate is
+                                zero</li>
+                        </ul>
+                        <p>
+                            I want to reflect and analyze why this happened. I think there are four main reasons:
+                        </p>
+                        <ol>
+                            <li>Insufficient concept consideration</li>
+                            <li>Failure in advertising and promotion strategy</li>
+                            <li>Lack of motivation for continued use</li>
+                            <li>Poor monetization funnel</li>
+                        </ol>
+
+                        <h2>❌ Failure Factor ①: Insufficient Concept Consideration</h2>
+
+                        <h3>Concept Confusion</h3>
+                        <p>
+                            Originally, I had a strong image of high school students playing during break time and
+                            laughing. That's why I added communication features.
+                        </p>
+                        <p>
+                            However, when I released it, most people played solo, so the communication features weren't
+                            very meaningful.
+                        </p>
+                        <p>
+                            So now I'm positioning it as "a memory game where you can do brain training while laughing."
+                        </p>
+                        <p>
+                            Because I didn't have a strong concept, I struggled with how to sell and promote it.
+                        </p>
+                        <ul>
+                            <li>I tried targeting people who want to do brain training or improve their memory</li>
+                            <li>I thought it would be good for people who are bored to use it as a time-killer</li>
+                            <li>Since there are many cute characters, I thought people who like cute characters might
+                                use it...</li>
+                        </ul>
+
+                        <h3>The Core Problem: Lack of Concept from the Start</h3>
+                        <p>
+                            The concept has become quite blurred after releasing the app.
+                        </p>
+                        <p>
+                            When creating an app, the concept is most important, and from there, the catchphrase, user
+                            acquisition, app content, UI, design, etc. should be determined.
+                        </p>
+                        <p>
+                            More importantly, everything should be tied to this concept, including technical decisions
+                            like whether it should be a smartphone app and what technology to use. Competitors also
+                            change based on the concept, so <strong>the concept is the foundation of everything in the
+                                app</strong>.
+                        </p>
+                        <p>
+                            For example, even if I were to pivot this app now, I think the strategy would change
+                            depending on these four directions:
+                        </p>
+                        <ul>
+                            <li>A fun brain training game to improve memory</li>
+                            <li>A character memory game where cute characters keep increasing</li>
+                            <li>A Nanja Monja-inspired app game where you can laugh with friends</li>
+                            <li>A time-killer game that also serves as brain training</li>
+                        </ul>
+                        <p>
+                            I'll consider what I'll do specifically going forward.
+                        </p>
+
+                        <h3>Reflection Points & Lessons</h3>
+                        <ul>
+                            <li>Don't build an app directly from an idea; think about the concept first</li>
+                            <li>User assumptions, core features to build, and catchphrases naturally emerge from the
+                                concept</li>
+                        </ul>
+
+                        <h2>❌ Failure Factor ②: Failure in Advertising and Promotion Strategy</h2>
+
+                        <h3>User Acquisition Strategy Challenges</h3>
+                        <p>
+                            Since I gave it an original game name, I can't expect much organic search, so I'm relying on
+                            ads or X (Twitter) for user acquisition.
+                        </p>
+                        <p>
+                            I tried posting on TikTok but got little response and gave up.
+                        </p>
+                        <p>
+                            Since it's a game app, I thought if I held a tournament with prize money, everyone would
+                            participate, but only 4-5 people participated.
+                        </p>
+
+                        <h3>Strategic Problems</h3>
+                        <p>
+                            Regarding the tournament, I forgot that <strong>the game being fun is a
+                                prerequisite</strong>.
+                        </p>
+                        <p>
+                            I reflected that trying to lure customers with money from the start is ultimately suspicious
+                            and shows a lack of confidence in the game itself.
+                        </p>
+                        <p>
+                            Also, I stopped posting on TikTok after just 3 posts, and I gave up too quickly without
+                            doing enough promotion on X. I'm starting to think that <strong>marketing needs to be done
+                                consistently regardless of results</strong>.
+                        </p>
+
+                        <h3>Direction for Improvement</h3>
+                        <p>
+                            I'm going to try <strong>thinking about my user acquisition methods from the perspective of
+                                "Would I click, install, or participate?"</strong>.
+                        </p>
+                        <p>
+                            If I don't genuinely want to "click," then others probably feel the same. I'll remember to
+                            keep this perspective.
+                        </p>
+                        <p>
+                            On top of that, I'll steadily practice continuing consistently.
+                        </p>
+
+                        <h3>Reflection Points & Lessons</h3>
+                        <ul>
+                            <li>Don't underestimate users and put out half-hearted ads or user acquisition</li>
+                            <li>Create ads and announcements that I genuinely want to click</li>
+                            <li>Use my action volume as a KPI and continue promoting consistently</li>
+                        </ul>
+
+                        <h2>❌ Failure Factor ③: Motivation for Continued Use</h2>
+
+                        <h3>Retention Rate Challenges</h3>
+                        <p>
+                            People who gave me feedback said "it was fun," but users who installed it don't continue
+                            using it at all.
+                        </p>
+
+                        <h3>The Lightness of Casual Games for Users</h3>
+                        <p>
+                            This might be the fate of casual games, but they tend to end with "oh, that was fun." They
+                            don't make you want to "play again tomorrow," and you might even forget they exist. This app
+                            especially has this tendency since the score resets every time.
+                        </p>
+                        <p>
+                            However, I think this is a risk that any app could face.
+                        </p>
+
+                        <h3>Countermeasures</h3>
+                        <p>
+                            As a countermeasure, I think I need to better design how to provide incentives to encourage
+                            continued use of the game.
+                        </p>
+                        <p>
+                            Right now, it's just rankings and score display, but for example:
+                        </p>
+                        <ul>
+                            <li>Login bonuses</li>
+                            <li>Your character grows each time you achieve a high score</li>
+                            <li>You can see your score progression</li>
+                        </ul>
+                        <p>
+                            It might also be good to add notification features to remind users.
+                        </p>
+
+                        <h3>Reflection Points & Lessons</h3>
+                        <ul>
+                            <li>Create mechanisms and incentives for continued use</li>
+                        </ul>
+
+                        <h2>❌ Failure Factor ④: Monetization Funnel</h2>
+
+                        <h3>Zero Conversion Rate Situation</h3>
+                        <p>
+                            The monetization items are ad removal and character purchases, but conversions are zero.
+                            Users aren't even seeing the paywall screen.
+                        </p>
+
+                        <h3>Funnel Problems</h3>
+                        <p>
+                            First, if monetization is the goal, I need to create a clear funnel within the user's normal
+                            usage flow. Right now, there's just a link to the monetization page in the menu, but no one
+                            clicks that.
+                        </p>
+                        <p>
+                            Most first-time users play with default settings, so they end up not even noticing the
+                            monetization items.
+                        </p>
+                        <p>
+                            I've reflected that <strong>monetization items need to be placed in a clearly visible
+                                location within the user's usage flow</strong>.
+                        </p>
+
+                        <h3>Monetization Item Value Design</h3>
+                        <p>
+                            Also, I easily made "ad removal" a monetization target, but if the game isn't attractive
+                            enough for people to want to remove ads, it won't sell. Rather than the naive thinking of
+                            "maybe it will sell if I just put it on the shelf," it's better to <strong>design
+                                monetization after thinking about "what can I deliver to users?"</strong>.
+                        </p>
+
+                        <h3>Reflection Points & Lessons</h3>
+                        <ul>
+                            <li>Create a clear funnel to monetization</li>
+                            <li>Design to sell things that truly have value for users</li>
+                        </ul>
+
+                        <h2>Reflection Summary</h2>
+                        <p>
+                            Below is a summary of the reflection points I've raised so far.
+                        </p>
+                        <ul>
+                            <li><strong>Problems Before App Development</strong>
+                                <ul>
+                                    <li>Don't build an app directly from an idea; think about the concept first</li>
+                                    <li>Consider user assumptions, competitors, core features to build, and catchphrases
+                                        from the concept</li>
+                                </ul>
+                            </li>
+                            <li><strong>User Acquisition & Promotion</strong>
+                                <ul>
+                                    <li>Don't put out half-hearted ads</li>
+                                    <li>Create ads and announcements that I genuinely want to click</li>
+                                    <li>Use action volume as a KPI and continue promoting consistently</li>
+                                </ul>
+                            </li>
+                            <li><strong>Continued Use & Product Appeal</strong>
+                                <ul>
+                                    <li>Create mechanisms and incentives for continued use</li>
+                                </ul>
+                            </li>
+                            <li><strong>Monetization</strong>
+                                <ul>
+                                    <li>Create a clear funnel to monetization</li>
+                                    <li>Design to sell things that truly have value for users</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h2>Future App Improvement Direction</h2>
+                        <p>
+                            Going forward, I'll use these reflections to start by <strong>reviewing the concept and
+                                target users</strong>.
+                        </p>
+                        <p>
+                            From there, I plan to consider pivoting or rebuilding the app.
+                        </p>
+
+                        <h2>Conclusion</h2>
+                        <p>
+                            I hope this serves as a reference for everyone who wants more people to use their apps.
+                            Let's work hard on personal development.
+                        </p>
+
+                        <div class="article-navigation">
+                            <div class="d-flex justify-content-between">
+                                <a href="../../index.html"><i class="bi bi-arrow-left me-2"></i>Back to Article List</a>
+                                <a href="2025-11-22-development-diary-starts.html">Previous: Starting the Development
+                                    Diary <i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
                         </div>
-                        <div class="sidebar-article-item">
-                            <a href="2025-11-22-development-diary-starts.html">Starting the Development Diary</a>
-                            <div class="sidebar-article-date">November 22, 2025</div>
-                        </div>
-                        <div class="sidebar-article-item">
-                            <a href="2025-02-15-casual-game-failure.html">The Story of a Casual Game Failure</a>
-                            <div class="sidebar-article-date">February 15, 2025</div>
+                    </article>
+                </div>
+                <!-- サイドバー -->
+                <div class="col-lg-3">
+                    <div class="article-sidebar">
+                        <div class="sidebar-card">
+                            <h4>Recent Articles</h4>
+                            <div class="sidebar-article-item">
+                                <a href="2026-01-03-awaawapon-tournament-reflection.html">Reflections on the AwaAwaPon
+                                    Tournament and Future Direction</a>
+                                <div class="sidebar-article-date">January 3, 2026</div>
+                            </div>
+                            <div class="sidebar-article-item">
+                                <a href="2025-11-22-development-diary-starts.html">Starting the Development Diary</a>
+                                <div class="sidebar-article-date">November 22, 2025</div>
+                            </div>
+                            <div class="sidebar-article-item">
+                                <a href="2025-02-15-casual-game-failure.html">The Story of a Casual Game Failure</a>
+                                <div class="sidebar-article-date">February 15, 2025</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- フッター -->
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p>&copy; 2025 takekapp1990. All rights reserved.</p>
-        </div>
-    </footer>
+        <!-- フッター -->
+        <footer class="bg-dark text-white py-4 mt-5">
+            <div class="container text-center">
+                <p>&copy; 2025 takekapp1990. All rights reserved.</p>
+            </div>
+        </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
 </html>
-
-

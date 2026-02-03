@@ -1,400 +1,523 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>あわあわポン 2025年8月オンライン大会 | 賞金5000円！</title>
-    <link rel="icon" href="../favicon.ico">
-    <!-- OGP & Twitter Card -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="あわあわポン 2025年8月オンライン大会 | 賞金5000円！">
-    <meta property="og:description" content="参加費無料！優勝者に賞金5000円。誰でも参加OKの記憶力バトル大会！">
-    <meta property="og:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/ogp/ogp_202507_tournament.png">
-    <meta property="og:url" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/ja/tournament_202508_ja.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="あわあわポン 2025年8月オンライン大会 | 賞金5000円！">
-    <meta name="twitter:description" content="参加費無料！優勝者に賞金5000円。誰でも参加OKの記憶力バトル大会！">
-    <meta name="twitter:image" content="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/AwaAwaPon/images/ogp/ogp_202507_tournament.png">
-    <meta name="twitter:site" content="@AwaAwaPon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-0VCS46ZTHC');
-    </script>
-    <style>
-        :root {
-            --primary-color: #FF6B9D; /* ピンク系 */
-            --secondary-color: #4ECDC4; /* ティール系 */
-            --accent-color: #f7b731; /* ゴールド系に変更し、賞金を強調 */
-            --dark-color: #2C3E50;
-            --light-color: #F8F9FA;
-            --danger-color: #E74C3C; /* 強調したい警告色 */
-        }
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: #F0F2F5; /* 全体の背景色を少し薄く */
-        }
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 5rem 0 3rem 0; /* 上下の余白を広げる */
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            /* SVGのドットパターンを増やすか、より複雑なパターンに変更も検討 */
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="50" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="90" r="1.8" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: 50px 50px; /* パターンサイズを調整 */
-            animation: float 6s ease-in-out infinite;
-            z-index: 0;
-            pointer-events: none;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); } /* 動きを少し小さく */
-        }
-        .app-icon-main { /* ヒーローセクションのアイコン用クラス名変更 */
-            width: 120px; /* 少し大きく */
-            height: 120px;
-            border-radius: 25px; /* より丸みを帯びる */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* 影を強調 */
-        }
-        .tournament-badge {
-            background: rgba(255,255,255,0.2); /* 透明感を持たせる */
-            color: white; /* 文字色を白に変更 */
-            font-weight: bold;
-            border-radius: 20px;
-            padding: 0.5rem 1.5rem;
-            display: inline-block;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        .prize-amount {
-            color: var(--accent-color); /* 賞金の色をゴールド系に */
-            font-size: 2.8rem; /* 大きく */
-            font-weight: 900; /* さらに太く */
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-        }
-        .x-btn {
-            background: #000;
-            color: #fff;
-            border-radius: 30px; /* より丸く */
-            padding: 0.7rem 2rem; /* パディングを増やす */
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.7rem;
-            transition: background 0.2s, transform 0.2s;
-            font-size: 1.1rem; /* 少し大きく */
-            margin-top: 1.5rem; /* 上に余白 */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .x-btn:hover {
-            background: #333; /* ホバー時の色を少し明るく */
-            color: #fff;
-            transform: translateY(-2px); /* 軽く浮き上がるアニメーション */
-        }
-        .section-title {
-            color: var(--dark-color); /* タイトル色をメインカラーに統一 */
-            font-weight: bold;
-            margin-bottom: 2rem;
-            text-align: center;
-            font-size: 2.2rem; /* サイズ調整 */
-        }
-        
-        /* スマホでの文字サイズ調整 */
-        @media (max-width: 576px) {
-            .section-title {
-                font-size: 1.8rem;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>あわあわポン 2025年8月オンライン大会 | 賞金5000円！</title>
+        <link rel="icon" href="../favicon.ico">
+        <!-- OGP & Twitter Card -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="あわあわポン 2025年8月オンライン大会 | 賞金5000円！">
+        <meta property="og:description" content="参加費無料！優勝者に賞金5000円。誰でも参加OKの記憶力バトル大会！">
+        <meta property="og:image" content="http://takekapp.com/AwaAwaPon/images/ogp/ogp_202507_tournament.png">
+        <meta property="og:url" content="http://takekapp.com/AwaAwaPon/ja/tournament_202508_ja.html">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="あわあわポン 2025年8月オンライン大会 | 賞金5000円！">
+        <meta name="twitter:description" content="参加費無料！優勝者に賞金5000円。誰でも参加OKの記憶力バトル大会！">
+        <meta name="twitter:image" content="http://takekapp.com/AwaAwaPon/images/ogp/ogp_202507_tournament.png">
+        <meta name="twitter:site" content="@AwaAwaPon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-0VCS46ZTHC');
+        </script>
+        <style>
+            :root {
+                --primary-color: #FF6B9D;
+                /* ピンク系 */
+                --secondary-color: #4ECDC4;
+                /* ティール系 */
+                --accent-color: #f7b731;
+                /* ゴールド系に変更し、賞金を強調 */
+                --dark-color: #2C3E50;
+                --light-color: #F8F9FA;
+                --danger-color: #E74C3C;
+                /* 強調したい警告色 */
             }
-            .list-card li {
-                font-size: 0.95rem;
+
+            body {
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+                line-height: 1.6;
+                color: var(--dark-color);
+                background-color: #F0F2F5;
+                /* 全体の背景色を少し薄く */
             }
-            .prize-amount {
-                font-size: 2.4rem;
+
+            .hero-section {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                color: white;
+                padding: 5rem 0 3rem 0;
+                /* 上下の余白を広げる */
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
             }
+
+            .hero-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                /* SVGのドットパターンを増やすか、より複雑なパターンに変更も検討 */
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="50" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="90" r="1.8" fill="rgba(255,255,255,0.1)"/></svg>');
+                background-size: 50px 50px;
+                /* パターンサイズを調整 */
+                animation: float 6s ease-in-out infinite;
+                z-index: 0;
+                pointer-events: none;
+            }
+
+            @keyframes float {
+
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-15px);
+                }
+
+                /* 動きを少し小さく */
+            }
+
+            .app-icon-main {
+                /* ヒーローセクションのアイコン用クラス名変更 */
+                width: 120px;
+                /* 少し大きく */
+                height: 120px;
+                border-radius: 25px;
+                /* より丸みを帯びる */
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                /* 影を強調 */
+            }
+
             .tournament-badge {
-                font-size: 1rem;
+                background: rgba(255, 255, 255, 0.2);
+                /* 透明感を持たせる */
+                color: white;
+                /* 文字色を白に変更 */
+                font-weight: bold;
+                border-radius: 20px;
+                padding: 0.5rem 1.5rem;
+                display: inline-block;
+                margin-bottom: 1rem;
+                font-size: 1.2rem;
             }
+
+            .prize-amount {
+                color: var(--accent-color);
+                /* 賞金の色をゴールド系に */
+                font-size: 2.8rem;
+                /* 大きく */
+                font-weight: 900;
+                /* さらに太く */
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
             .x-btn {
-                font-size: 1rem;
+                background: #000;
+                color: #fff;
+                border-radius: 30px;
+                /* より丸く */
+                padding: 0.7rem 2rem;
+                /* パディングを増やす */
+                font-weight: bold;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.7rem;
+                transition: background 0.2s, transform 0.2s;
+                font-size: 1.1rem;
+                /* 少し大きく */
+                margin-top: 1.5rem;
+                /* 上に余白 */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             }
-        }
-        .section-title::after { /* 下線を追加 */
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--primary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-        .list-card { /* rule-list, note-listを共通化 */
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* 影を少し強く */
-            padding: 2rem; /* パディングを増やす */
-            margin-bottom: 3rem; /* 余白を増やす */
-        }
-        .list-card li {
-            margin-bottom: 1rem; /* リスト項目の間隔を広げる */
-            font-size: 1.05rem;
-        }
-        .list-card li strong {
-            color: var(--primary-color); /* 強調テキストの色 */
-        }
-        .attention-text { /* 注意書きの強調 */
-            color: var(--danger-color);
-            font-weight: bold;
-        }
-        .lp-section {
-            background: white; /* 白い背景に統一 */
-            border-radius: 20px;
-            padding: 3rem 1.5rem; /* パディングを広げる */
-            margin-top: 4rem; /* 上余白 */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .app-icon-large {
-            width: 120px; /* サイズ調整 */
-            height: 120px;
-            border-radius: 25px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
-        .store-badge img { /* store-badgeクラスからimgに直接適用 */
-            height: 48px; /* ストアバッジを少し大きく */
-            margin: 0 0.5rem;
-            transition: transform 0.2s;
-        }
-        .store-badge img:hover {
-            transform: translateY(-2px);
-        }
-        .character-gallery {
-            display: flex;
-            overflow-x: auto; /* 横スクロールを可能に */
-            -webkit-overflow-scrolling: touch; /* スムーズなスクロール */
-            padding-bottom: 1.5rem; /* スクロールバーのための余白 */
-            gap: 1.5rem;
-            justify-content: flex-start; /* 左寄せ */
-        }
-        .character-gallery img {
-            height: 130px; /* キャラ画像を少し大きく */
-            width: auto;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* 影を強調 */
-            flex-shrink: 0;
-        }
-        .info-card {
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            padding: 1.8rem; /* パディングを調整 */
-            margin-bottom: 2rem;
-            border-left: 5px solid var(--secondary-color); /* 左にアクセントライン */
-        }
-        .info-card h3 {
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9のアスペクト比 */
-            height: 0;
-            overflow: hidden;
-            margin: 0 auto; /* 中央寄せ */
-            max-width: 560px; /* 最大幅を設定 */
-            border-radius: 15px; /* 角を丸く */
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        footer {
-            background: var(--dark-color);
-        }
-    </style>
-</head>
-<body>
-    <section class="hero-section text-center">
-        <div class="container">
-            <img src="../images/awaawapon_app_icon_10241024_ios_big.png" alt="あわあわポン アイコン" class="app-icon-main mb-3">
-            <div class="tournament-badge" style="background: rgba(255,0,0,0.8); color: white; font-size: 1.4rem; padding: 0.8rem 2rem;">＼ この大会は終了しました ／</div>
-            <h1 class="display-4 fw-bold mb-2">あわあわポン</h1>
-            <h2 class="h3 fw-bold mb-4">🏆 オンライン大会 🏆</h2>
-            <p class="h4 mb-4">✨ 優勝者に <span class="prize-amount">5,000円</span> 進呈！ ✨</p>
-            <p class="lead mb-4">参加費無料！誰でも参加OK！記憶力で賞金ゲットのチャンス！</p>
-            <a href="https://x.com/AwaAwaPon" target="_blank" class="x-btn mb-2">
-                <i class="bi bi-twitter-x"></i> 公式Xアカウントにリプライ/リポストして参加登録！
-            </a>
-            <p class="mt-4 fw-bold">開催期間：2025年8月1日(金) 〜 8月31日(日)</p>
-        </div>
-    </section>
 
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-title">大会概要</h2>
-            <ul class="list-card">
-                <li>2025年8月の<strong>オンラインランキングで1位</strong>になった方に、<strong style="color:var(--danger-color);">賞金5,000円</strong>をプレゼント！</li>
-                <li><strong>参加は無料！</strong> どなたでも気軽にご参加いただけます！</li>
-                <li>賞金は<strong>Amazonギフト券</strong>、<strong>PayPay</strong>、または<strong>PayPal</strong>でお渡しします。</li>
-            </ul>
+            .x-btn:hover {
+                background: #333;
+                /* ホバー時の色を少し明るく */
+                color: #fff;
+                transform: translateY(-2px);
+                /* 軽く浮き上がるアニメーション */
+            }
 
-            <h2 class="section-title mt-5">参加登録方法</h2>
-            <ol class="list-card">
-                <li>
-                    まだ「あわあわポン」を持っていない方は、いますぐインストール！
-                    <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-                        <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" target="_blank" class="store-badge">
-                            <img src="../../commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで手に入れよう">
-                        </a>
-                        <a href="https://apps.apple.com/jp/app/%E3%81%82%E3%82%8F%E3%81%82%E3%81%8F%E3%83%B3-%E7%AC%91%E3%81%84%E3%81%AA%E3%81%8C%E3%82%89%E8%84%B3%E3%83%88%E3%83%AC-%E8%A8%98%E6%86%B6%E5%8A%9B%E3%83%90%E3%83%88%E3%83%AB%E3%82%B2%E3%83%BC%E3%83%A0/id6746962336" target="_blank" class="store-badge">
-                            <img src="../../commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード">
-                        </a>
-                    </div>
-                </li>
-                <li>ゲーム内で使うユーザー名を決めてください。
-                    <br><span class="attention-text">※ユーザー名は、他の参加者と被りにくい固有の名前（例：ニックネーム+数字）をご利用ください。</span>
-                </li>
-                <li>
-                    X（旧Twitter）の公式アカウントの大会参加用の投稿<a href="https://x.com/AwaAwaPon/status/1953726900159099046" target="_blank" rel="noopener" class="text-decoration-none fw-bold" style="color: var(--primary-color);">（リンクはこちら）</a>にリプライ、または引用リツイートでゲーム内ユーザー名とともに、<br>「XXXという名前で参戦します！」と記載して参加表明してください。
-                </li>
-                <li>
-                    これで参加登録は完了です！さっそく「あわあわポン」をプレイして高スコアを目指しましょう！
-                </li>
-            </ol>
-        </div>
-    </section>
+            .section-title {
+                color: var(--dark-color);
+                /* タイトル色をメインカラーに統一 */
+                font-weight: bold;
+                margin-bottom: 2rem;
+                text-align: center;
+                font-size: 2.2rem;
+                /* サイズ調整 */
+            }
 
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title">ルール詳細</h2>
-            <ul class="list-card">
-                <li>ランキングの集計対象は、<strong>「ライフ3のシングルプレイ」</strong>モードのみです。</li>
-                <li>キャラクターやニックネームのジャンルは問いません。自由に選んでお楽しみください。</li>
-                <li>大会対象期間は、<strong>2025年8月1日(金) 〜 8月31日(日)</strong>にオンラインランキングに反映されたスコアです。</li>
-                <li><span class="attention-text">※大会期間中にユーザー名を変更した場合は、変更後のユーザー名で改めて参加表明をお願いします。</span> </li>
-                <li>スコアは、<strong>参加登録したユーザー名ごとに、参加登録日時以降のものが集計対象</strong>となります。</li>
-                <li>
-                    見事1位になった方は、<strong>2025年9月1日(月)〜9月10日(水)の期間内</strong>に、ご自身の<strong>ランキング順位のスクリーンショット</strong>を添えて、XのDMで公式アカウントへご連絡ください。
-                </li>
-                <li>
-                    ご連絡いただいた後、公式アカウントがゲーム内ランキングデータとXでの参加登録履歴を確認し、優勝者を確定いたします。
-                </li>
-                <li>
-                    同点で1位が複数人いる場合は、賞金を人数で割った金額を賞金としてプレゼントします。
-                </li>
-                <li>賞金はAmazonギフト券、PayPay、またはPayPalのいずれかをお選びいただけます。</li>
-            </ul>
-        </div>
-    </section>
+            /* スマホでの文字サイズ調整 */
+            @media (max-width: 576px) {
+                .section-title {
+                    font-size: 1.8rem;
+                }
 
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-title">注意事項・よくある質問</h2>
-            <ul class="list-card">
-                <li><span class="attention-text">不正行為（チート、なりすましなど）が発覚した場合は、賞金プレゼント対象から除外され、今後の大会参加もお断りする場合があります。</span></li>
-                <li><span class="attention-text">ユーザー名が重複した場合、事実に関わらずより早く参加登録を完了された方が本物であると判定します。</span>なるべく他の人と被らないユーザー名でご登録ください。</li>
-                <li>不明な点があれば、お気軽に公式アカウント（<a href="https://x.com/AwaAwaPon" target="_blank" class="text-decoration-none fw-bold" style="color: var(--primary-color);">@AwaAwaPon</a>）までDMまたはリプライでご連絡ください。</li>
-                <li><span class="attention-text">大会期間中に参加登録を完了していない方は、たとえ1位になっても賞金プレゼントの対象外となります。</span></li>
-                <li><span class="attention-text">参加者が10名未満の月は大会中止とします。ご理解の程よろしくお願いします。</span></li>
-            </ul>
+                .list-card li {
+                    font-size: 0.95rem;
+                }
 
-            <div class="info-card">
-                <h3 class="h5 mb-3">参加資格</h3>
-                <p>特に制限はありません。どなたでもご参加いただけます。<br>※ただし、賞金はPayPay、Amazonギフト券、またはPayPalでのお渡しとなりますので、いずれかを受け取れる方が対象です。</p>
+                .prize-amount {
+                    font-size: 2.4rem;
+                }
+
+                .tournament-badge {
+                    font-size: 1rem;
+                }
+
+                .x-btn {
+                    font-size: 1rem;
+                }
+            }
+
+            .section-title::after {
+                /* 下線を追加 */
+                content: '';
+                display: block;
+                width: 60px;
+                height: 4px;
+                background: var(--primary-color);
+                margin: 10px auto 0;
+                border-radius: 2px;
+            }
+
+            .list-card {
+                /* rule-list, note-listを共通化 */
+                background: #fff;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                /* 影を少し強く */
+                padding: 2rem;
+                /* パディングを増やす */
+                margin-bottom: 3rem;
+                /* 余白を増やす */
+            }
+
+            .list-card li {
+                margin-bottom: 1rem;
+                /* リスト項目の間隔を広げる */
+                font-size: 1.05rem;
+            }
+
+            .list-card li strong {
+                color: var(--primary-color);
+                /* 強調テキストの色 */
+            }
+
+            .attention-text {
+                /* 注意書きの強調 */
+                color: var(--danger-color);
+                font-weight: bold;
+            }
+
+            .lp-section {
+                background: white;
+                /* 白い背景に統一 */
+                border-radius: 20px;
+                padding: 3rem 1.5rem;
+                /* パディングを広げる */
+                margin-top: 4rem;
+                /* 上余白 */
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .app-icon-large {
+                width: 120px;
+                /* サイズ調整 */
+                height: 120px;
+                border-radius: 25px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            }
+
+            .store-badge img {
+                /* store-badgeクラスからimgに直接適用 */
+                height: 48px;
+                /* ストアバッジを少し大きく */
+                margin: 0 0.5rem;
+                transition: transform 0.2s;
+            }
+
+            .store-badge img:hover {
+                transform: translateY(-2px);
+            }
+
+            .character-gallery {
+                display: flex;
+                overflow-x: auto;
+                /* 横スクロールを可能に */
+                -webkit-overflow-scrolling: touch;
+                /* スムーズなスクロール */
+                padding-bottom: 1.5rem;
+                /* スクロールバーのための余白 */
+                gap: 1.5rem;
+                justify-content: flex-start;
+                /* 左寄せ */
+            }
+
+            .character-gallery img {
+                height: 130px;
+                /* キャラ画像を少し大きく */
+                width: auto;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+                /* 影を強調 */
+                flex-shrink: 0;
+            }
+
+            .info-card {
+                background: #fff;
+                border-radius: 15px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+                padding: 1.8rem;
+                /* パディングを調整 */
+                margin-bottom: 2rem;
+                border-left: 5px solid var(--secondary-color);
+                /* 左にアクセントライン */
+            }
+
+            .info-card h3 {
+                color: var(--primary-color);
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+
+            .video-container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 56.25%;
+                /* 16:9のアスペクト比 */
+                height: 0;
+                overflow: hidden;
+                margin: 0 auto;
+                /* 中央寄せ */
+                max-width: 560px;
+                /* 最大幅を設定 */
+                border-radius: 15px;
+                /* 角を丸く */
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            }
+
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+
+            footer {
+                background: var(--dark-color);
+            }
+        </style>
+    </head>
+
+    <body>
+        <section class="hero-section text-center">
+            <div class="container">
+                <img src="../images/awaawapon_app_icon_10241024_ios_big.png" alt="あわあわポン アイコン"
+                    class="app-icon-main mb-3">
+                <div class="tournament-badge"
+                    style="background: rgba(255,0,0,0.8); color: white; font-size: 1.4rem; padding: 0.8rem 2rem;">＼
+                    この大会は終了しました ／</div>
+                <h1 class="display-4 fw-bold mb-2">あわあわポン</h1>
+                <h2 class="h3 fw-bold mb-4">🏆 オンライン大会 🏆</h2>
+                <p class="h4 mb-4">✨ 優勝者に <span class="prize-amount">5,000円</span> 進呈！ ✨</p>
+                <p class="lead mb-4">参加費無料！誰でも参加OK！記憶力で賞金ゲットのチャンス！</p>
+                <a href="https://x.com/AwaAwaPon" target="_blank" class="x-btn mb-2">
+                    <i class="bi bi-twitter-x"></i> 公式Xアカウントにリプライ/リポストして参加登録！
+                </a>
+                <p class="mt-4 fw-bold">開催期間：2025年8月1日(金) 〜 8月31日(日)</p>
             </div>
-            <div class="info-card">
-                <h3 class="h5 mb-3">個人情報の取り扱い</h3>
-                <p>DMでのやりとりの際、万が一個人情報をお預かりした場合は、賞金送付などの目的が達成され次第、速やかに破棄いたします。</p>
-            </div>
-            <div class="info-card">
-                <h3 class="h5 mb-3">主催者情報・お問い合わせ</h3>
-                <p>主催者：takekapp1990<br>
-                お問い合わせ：<a href="mailto:takekapp1990@gmail.com" class="text-decoration-none fw-bold" style="color: var(--primary-color);">takekapp1990@gmail.com</a> または <a href="https://x.com/AwaAwaPon" target="_blank" class="text-decoration-none fw-bold" style="color: var(--primary-color);">公式Xアカウント</a> までお気軽にご連絡ください。</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="lp-section text-center">
-        <div class="container">
-            <h2 class="section-title mb-5">あわあわポンってどんなゲーム？</h2>
-            <div class="row align-items-center mb-5">
-                <div class="col-md-3 text-center mb-4 mb-md-0">
-                    <img src="../images/awaawapon_app_icon_10241024_ios_big.png" class="app-icon-large" alt="あわあわポン アイコン">
-                </div>
-                <div class="col-md-9 text-md-start">
-                    <p class="lead fw-bold mb-3">
-                        「このキャラの名前、なんだっけ！？」<br>
-                        思わず笑っちゃうネーミングで記憶力に挑戦！
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title">大会概要</h2>
+                <ul class="list-card">
+                    <li>2025年8月の<strong>オンラインランキングで1位</strong>になった方に、<strong
+                            style="color:var(--danger-color);">賞金5,000円</strong>をプレゼント！</li>
+                    <li><strong>参加は無料！</strong> どなたでも気軽にご参加いただけます！</li>
+                    <li>賞金は<strong>Amazonギフト券</strong>、<strong>PayPay</strong>、または<strong>PayPal</strong>でお渡しします。</li>
+                </ul>
+
+                <h2 class="section-title mt-5">参加登録方法</h2>
+                <ol class="list-card">
+                    <li>
+                        まだ「あわあわポン」を持っていない方は、いますぐインストール！
+                        <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                            <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod"
+                                target="_blank" class="store-badge">
+                                <img src="../../commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
+                                    alt="Google Playで手に入れよう">
+                            </a>
+                            <a href="https://apps.apple.com/jp/app/%E3%81%82%E3%82%8F%E3%81%82%E3%81%8F%E3%83%B3-%E7%AC%91%E3%81%84%E3%81%AA%E3%81%8C%E3%82%89%E8%84%B3%E3%83%88%E3%83%AC-%E8%A8%98%E6%86%B6%E5%8A%9B%E3%83%90%E3%83%88%E3%83%AB%E3%82%B2%E3%83%BC%E3%83%A0/id6746962336"
+                                target="_blank" class="store-badge">
+                                <img src="../../commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
+                                    alt="App Storeからダウンロード">
+                            </a>
+                        </div>
+                    </li>
+                    <li>ゲーム内で使うユーザー名を決めてください。
+                        <br><span class="attention-text">※ユーザー名は、他の参加者と被りにくい固有の名前（例：ニックネーム+数字）をご利用ください。</span>
+                    </li>
+                    <li>
+                        X（旧Twitter）の公式アカウントの大会参加用の投稿<a href="https://x.com/AwaAwaPon/status/1953726900159099046"
+                            target="_blank" rel="noopener" class="text-decoration-none fw-bold"
+                            style="color: var(--primary-color);">（リンクはこちら）</a>にリプライ、または引用リツイートでゲーム内ユーザー名とともに、<br>「XXXという名前で参戦します！」と記載して参加表明してください。
+                    </li>
+                    <li>
+                        これで参加登録は完了です！さっそく「あわあわポン」をプレイして高スコアを目指しましょう！
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title">ルール詳細</h2>
+                <ul class="list-card">
+                    <li>ランキングの集計対象は、<strong>「ライフ3のシングルプレイ」</strong>モードのみです。</li>
+                    <li>キャラクターやニックネームのジャンルは問いません。自由に選んでお楽しみください。</li>
+                    <li>大会対象期間は、<strong>2025年8月1日(金) 〜 8月31日(日)</strong>にオンラインランキングに反映されたスコアです。</li>
+                    <li><span class="attention-text">※大会期間中にユーザー名を変更した場合は、変更後のユーザー名で改めて参加表明をお願いします。</span> </li>
+                    <li>スコアは、<strong>参加登録したユーザー名ごとに、参加登録日時以降のものが集計対象</strong>となります。</li>
+                    <li>
+                        見事1位になった方は、<strong>2025年9月1日(月)〜9月10日(水)の期間内</strong>に、ご自身の<strong>ランキング順位のスクリーンショット</strong>を添えて、XのDMで公式アカウントへご連絡ください。
+                    </li>
+                    <li>
+                        ご連絡いただいた後、公式アカウントがゲーム内ランキングデータとXでの参加登録履歴を確認し、優勝者を確定いたします。
+                    </li>
+                    <li>
+                        同点で1位が複数人いる場合は、賞金を人数で割った金額を賞金としてプレゼントします。
+                    </li>
+                    <li>賞金はAmazonギフト券、PayPay、またはPayPalのいずれかをお選びいただけます。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title">注意事項・よくある質問</h2>
+                <ul class="list-card">
+                    <li><span
+                            class="attention-text">不正行為（チート、なりすましなど）が発覚した場合は、賞金プレゼント対象から除外され、今後の大会参加もお断りする場合があります。</span>
+                    </li>
+                    <li><span
+                            class="attention-text">ユーザー名が重複した場合、事実に関わらずより早く参加登録を完了された方が本物であると判定します。</span>なるべく他の人と被らないユーザー名でご登録ください。
+                    </li>
+                    <li>不明な点があれば、お気軽に公式アカウント（<a href="https://x.com/AwaAwaPon" target="_blank"
+                            class="text-decoration-none fw-bold"
+                            style="color: var(--primary-color);">@AwaAwaPon</a>）までDMまたはリプライでご連絡ください。</li>
+                    <li><span class="attention-text">大会期間中に参加登録を完了していない方は、たとえ1位になっても賞金プレゼントの対象外となります。</span></li>
+                    <li><span class="attention-text">参加者が10名未満の月は大会中止とします。ご理解の程よろしくお願いします。</span></li>
+                </ul>
+
+                <div class="info-card">
+                    <h3 class="h5 mb-3">参加資格</h3>
+                    <p>特に制限はありません。どなたでもご参加いただけます。<br>※ただし、賞金はPayPay、Amazonギフト券、またはPayPalでのお渡しとなりますので、いずれかを受け取れる方が対象です。
                     </p>
-                    <p class="mb-4">
-                        次々と出てくるキャラクターのニックネームを"覚えて当てる"新感覚の記憶力バトルパーティゲーム！<br>
-                        友達とワイワイ笑いながら遊んだり、ひとりでじっくり脳トレしたり、いつでもどこでもみんなで楽しめるアプリです。
-                    </p>
-                    <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3">
-                        <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod" target="_blank" class="store-badge">
-                            <img src="../../commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで手に入れよう">
-                        </a>
-                        <a href="https://apps.apple.com/jp/app/%E3%81%82%E3%82%8F%E3%81%82%E3%82%8F%E3%83%9D%E3%83%B3-%E7%AC%91%E3%81%84%E3%81%AA%E3%81%8C%E3%82%89%E8%84%B3%E3%83%88%E3%83%AC-%E8%A8%98%E6%86%B6%E5%8A%9B%E3%83%90%E3%83%88%E3%83%AB%E3%82%B2%E3%83%BC%E3%83%A0/id6746962336" target="_blank" class="store-badge">
-                            <img src="../../commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード">
-                        </a>
+                </div>
+                <div class="info-card">
+                    <h3 class="h5 mb-3">個人情報の取り扱い</h3>
+                    <p>DMでのやりとりの際、万が一個人情報をお預かりした場合は、賞金送付などの目的が達成され次第、速やかに破棄いたします。</p>
+                </div>
+                <div class="info-card">
+                    <h3 class="h5 mb-3">主催者情報・お問い合わせ</h3>
+                    <p>主催者：takekapp1990<br>
+                        お問い合わせ：<a href="mailto:takekapp1990@gmail.com" class="text-decoration-none fw-bold"
+                            style="color: var(--primary-color);">takekapp1990@gmail.com</a> または <a
+                            href="https://x.com/AwaAwaPon" target="_blank" class="text-decoration-none fw-bold"
+                            style="color: var(--primary-color);">公式Xアカウント</a> までお気軽にご連絡ください。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lp-section text-center">
+            <div class="container">
+                <h2 class="section-title mb-5">あわあわポンってどんなゲーム？</h2>
+                <div class="row align-items-center mb-5">
+                    <div class="col-md-3 text-center mb-4 mb-md-0">
+                        <img src="../images/awaawapon_app_icon_10241024_ios_big.png" class="app-icon-large"
+                            alt="あわあわポン アイコン">
+                    </div>
+                    <div class="col-md-9 text-md-start">
+                        <p class="lead fw-bold mb-3">
+                            「このキャラの名前、なんだっけ！？」<br>
+                            思わず笑っちゃうネーミングで記憶力に挑戦！
+                        </p>
+                        <p class="mb-4">
+                            次々と出てくるキャラクターのニックネームを"覚えて当てる"新感覚の記憶力バトルパーティゲーム！<br>
+                            友達とワイワイ笑いながら遊んだり、ひとりでじっくり脳トレしたり、いつでもどこでもみんなで楽しめるアプリです。
+                        </p>
+                        <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3">
+                            <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod"
+                                target="_blank" class="store-badge">
+                                <img src="../../commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
+                                    alt="Google Playで手に入れよう">
+                            </a>
+                            <a href="https://apps.apple.com/jp/app/%E3%81%82%E3%82%8F%E3%81%82%E3%82%8F%E3%83%9D%E3%83%B3-%E7%AC%91%E3%81%84%E3%81%AA%E3%81%8C%E3%82%89%E8%84%B3%E3%83%88%E3%83%AC-%E8%A8%98%E6%86%B6%E5%8A%9B%E3%83%90%E3%83%88%E3%83%AB%E3%82%B2%E3%83%BC%E3%83%A0/id6746962336"
+                                target="_blank" class="store-badge">
+                                <img src="../../commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
+                                    alt="App Storeからダウンロード">
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="mb-5">
-                <h3 class="h5 fw-bold mb-3">個性豊かなキャラクターたちを一部紹介！</h3>
-                <div class="character-gallery">
-                    <img src="../images/characters/standard_2.png" alt="キャラクター1">
-                    <img src="../images/characters/robot_7_firefly_flying_robot_with_jetpack,_colorful,_pop_and_cute,_minimal_background_in_1tone_203040-photoroom.png" alt="ロボットのキャラクター">
-                    <img src="../images/characters/animal_2_firefly__213968-photoroom.png" alt="動物のキャラクター">
-                    <img src="../images/characters/idol_1_firefly_a_cheerful_anime-style_beautiful_girl_with_blonde_twin_tails_and_a_big_ribbon,_white__539627-photoroom.png" alt="アイドルのキャラクター">
-                    <img src="../images/characters/ojisan_18_firefly_photorealistic_upper_body_image_of_a_middle-aged_man_with_a_fake_royal_pose,_wearing__331229-photoroom.png" alt="おじさんのキャラクター">
+                <div class="mb-5">
+                    <h3 class="h5 fw-bold mb-3">個性豊かなキャラクターたちを一部紹介！</h3>
+                    <div class="character-gallery">
+                        <img src="../images/characters/standard_2.png" alt="キャラクター1">
+                        <img src="../images/characters/robot_7_firefly_flying_robot_with_jetpack,_colorful,_pop_and_cute,_minimal_background_in_1tone_203040-photoroom.png"
+                            alt="ロボットのキャラクター">
+                        <img src="../images/characters/animal_2_firefly__213968-photoroom.png" alt="動物のキャラクター">
+                        <img src="../images/characters/idol_1_firefly_a_cheerful_anime-style_beautiful_girl_with_blonde_twin_tails_and_a_big_ribbon,_white__539627-photoroom.png"
+                            alt="アイドルのキャラクター">
+                        <img src="../images/characters/ojisan_18_firefly_photorealistic_upper_body_image_of_a_middle-aged_man_with_a_fake_royal_pose,_wearing__331229-photoroom.png"
+                            alt="おじさんのキャラクター">
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <h3 class="h5 fw-bold mb-3">まずはプレイ動画をチェック！</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/Uh68cdXDh1A?autoplay=1&mute=1" title="あわあわポン ゲームプレイ"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <p class="text-muted mt-2">※動画はイメージです</p>
+                </div>
+                <div class="mt-4">
+                    <a href="./landing_page_ja.html" class="btn btn-outline-dark btn-lg" target="_blank">▶
+                        あわあわポン公式サイトはこちら</a>
                 </div>
             </div>
-            <div class="mb-5">
-                <h3 class="h5 fw-bold mb-3">まずはプレイ動画をチェック！</h3>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/Uh68cdXDh1A?autoplay=1&mute=1" 
-                                title="あわあわポン ゲームプレイ" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen></iframe>
-                </div>
-                <p class="text-muted mt-2">※動画はイメージです</p>
-            </div>
-            <div class="mt-4">
-                <a href="./landing_page_ja.html" class="btn btn-outline-dark btn-lg" target="_blank">▶ あわあわポン公式サイトはこちら</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-2">&copy; 2025 takekapp1990. All rights reserved.</p>
-            <div class="mt-3">
-                <a href="../ja/terms_and_conditions_ja.html" class="text-white text-decoration-none me-3">利用規約</a>
-                <a href="../ja/privacy_policy_ja.html" class="text-white text-decoration-none">プライバシーポリシー</a>
+        <footer class="bg-dark text-white py-4 mt-5">
+            <div class="container text-center">
+                <p class="mb-2">&copy; 2025 takekapp1990. All rights reserved.</p>
+                <div class="mt-3">
+                    <a href="../ja/terms_and_conditions_ja.html" class="text-white text-decoration-none me-3">利用規約</a>
+                    <a href="../ja/privacy_policy_ja.html" class="text-white text-decoration-none">プライバシーポリシー</a>
+                </div>
             </div>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html> 
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

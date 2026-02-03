@@ -35,7 +35,7 @@ x-no-retry-status-codes:
 
 # Canonical URL
 x-canonical-url-policy: "strict"
-x-canonical-url: "https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/"
+x-canonical-url: "http://takekapp.com/"
 x-canonical-url-description: "Access via other FQDNs or IP addresses is invalid. Use only the specified URL as the base URL."
 
 # Site Structure
