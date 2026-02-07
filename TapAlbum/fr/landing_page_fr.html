@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Magique | La magie opère à chaque touche, une appli sûre</title>
+    <link rel="icon" href="../images/app_icon/pop_photo_gallery_app_icon_ios.png">
+    <link rel="apple-touch-icon" href="../images/app_icon/pop_photo_gallery_app_icon_ios.png">
+    <meta name="description"
+      content="La magie opère à chaque touche. Une appli photo sûre pour les enfants. Regardez vos photos et renforcez les liens familiaux.">
+
+    <!-- OGP -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Album Magique">
+    <meta property="og:description" content="La magie opère à chaque touche. Une appli photo sûre pour les enfants.">
+    <meta property="og:image" content="https://placehold.co/1200x630/4fc3f7/ffffff?text=Album+Magique">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Outfit:wght@500;700&display=swap"
+      rel="stylesheet">
+
+    <style>
+      :root {
+        --primary: #4fc3f7;
+        --primary-dark: #039be5;
+        --secondary: #ff8a65;
+        --accent: #ffd54f;
+        --text-main: #2c3e50;
+        --text-sub: #546e7a;
+        --bg-body: #f0f8ff;
+        --bg-glass: rgba(255, 255, 255, 0.85);
+        --shadow-soft: 0 10px 40px -10px rgba(0, 64, 128, 0.1);
+        --shadow-hover: 0 20px 50px -10px rgba(0, 64, 128, 0.2);
+        --radius-card: 24px;
+        --radius-btn: 50px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Outfit', 'M PLUS Rounded 1c', sans-serif;
+        color: var(--text-main);
+        background-color: var(--bg-body);
+        background-image:
+          radial-gradient(circle at 10% 20%, rgba(79, 195, 247, 0.1) 0%, transparent 20%),
+          radial-gradient(circle at 90% 80%, rgba(255, 213, 79, 0.1) 0%, transparent 20%);
+        line-height: 1.8;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.4;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 24px;
+        position: relative;
+      }
+
+      /* --- Animations --- */
+      @keyframes float {
+
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(79, 195, 247, 0.7);
+        }
+
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 15px rgba(79, 195, 247, 0);
+        }
+
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(79, 195, 247, 0);
+        }
+      }
+
+      .fade-in-up {
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+
+      /* --- Hero Section --- */
+      .hero {
+        position: relative;
+        padding: 120px 0 100px;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(120deg, #e0f7fa 0%, #fff 50%, #fff9c4 100%);
+        z-index: -1;
+        transform: rotate(-5deg);
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #29b6f6, #0288d1);
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 700;
+        padding: 6px 16px;
+        border-radius: 20px;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 12px rgba(2, 136, 209, 0.3);
+      }
+
+      .app-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .app-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .app-name {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--text-main);
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        margin-bottom: 16px;
+        background: linear-gradient(135deg, #0277bd, #00acc1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero p {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: var(--text-sub);
+        margin-bottom: 40px;
+        font-weight: 500;
+      }
+
+      .hero-img-container {
+        margin: 40px auto 0;
+        position: relative;
+        max-width: 800px;
+      }
+
+      .hero-mockup {
+        width: 100%;
+        max-width: 320px;
+        border-radius: 40px;
+        border: 8px solid white;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .decoration {
+        position: absolute;
+        font-size: 3rem;
+        z-index: -1;
+      }
+
+      .dec-1 {
+        top: 10%;
+        left: 10%;
+        animation: float 5s ease-in-out infinite reverse;
+      }
+
+      .dec-2 {
+        top: 20%;
+        right: 15%;
+        animation: float 7s ease-in-out infinite 1s;
+      }
+
+      .dec-3 {
+        bottom: 10%;
+        left: 20%;
+        animation: float 6s ease-in-out infinite 0.5s;
+      }
+
+      /* --- CTA Buttons --- */
+      .cta-group {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .btn-store {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #1a1a1a;
+        color: white;
+        padding: 12px 24px;
+        border-radius: var(--radius-btn);
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-store:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      .btn-store.android {
+        background: #fff;
+        color: #1a1a1a;
+        border: 2px solid #ddd;
+      }
+
+      .btn-icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      /* --- Problems --- */
+      .section-problems {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 40px;
+        color: var(--text-main);
+      }
+
+      .problem-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+      }
+
+      .problem-card {
+        background: white;
+        padding: 32px;
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-soft);
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .problem-card::before {
+        content: "☁️";
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        font-size: 5rem;
+        opacity: 0.1;
+      }
+
+      .problem-text {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      /* --- Solution / Features --- */
+      .section-solution {
+        padding: 100px 0;
+        background: linear-gradient(180deg, #f0f8ff 0%, #e1f5fe 100%);
+        position: relative;
+      }
+
+      .solution-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 32px;
+        margin-top: 60px;
+      }
+
+      .feature-card {
+        background: var(--bg-glass);
+        backdrop-filter: blur(10px);
+        padding: 40px 32px;
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-soft);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: var(--primary-dark);
+      }
+
+      .feature-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      /* --- Scenes --- */
+      .section-scenes {
+        padding: 80px 0;
+      }
+
+      .scene-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .scene-badge {
+        background: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        font-weight: 700;
+        color: var(--text-sub);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* --- Pricing --- */
+      .section-pricing {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .pricing-box {
+        background: linear-gradient(135deg, #263238 0%, #37474f 100%);
+        color: white;
+        border-radius: var(--radius-card);
+        padding: 60px 40px;
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+
+      .pricing-box::after {
+        content: "Premium";
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--accent);
+        color: #333;
+        font-weight: 800;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+      }
+
+      .pricing-title {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 24px;
+      }
+
+      .pricing-list {
+        text-align: left;
+        margin: 0 auto 40px;
+        max-width: 400px;
+        list-style: none;
+      }
+
+      .pricing-list li {
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1.1rem;
+      }
+
+      .pricing-list li::before {
+        content: "✨";
+      }
+
+      /* --- Footer --- */
+      footer {
+        padding: 60px 24px;
+        text-align: center;
+        background: #fff;
+        border-top: 1px solid #eee;
+      }
+
+      .footer-message {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        margin-bottom: 40px;
+      }
+
+      .copyright {
+        color: var(--text-sub);
+        font-size: 0.9rem;
+      }
+
+      /* --- Responsive --- */
+      @media (max-width: 768px) {
+        .hero {
+          padding: 80px 0 60px;
+        }
+
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .feature-card {
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge fade-in-up">Lecture seule & Sécurisé</div>
+        <h1 class="fade-in-up delay-100">La magie opère à chaque touche.<br>Une appli sûre pour les enfants.</h1>
+        <p class="fade-in-up delay-200">Regardez vos photos et renforcez<br class="mobile-only">les liens familiaux.</p>
+
+        <div class="cta-group fade-in-up delay-300">
+          <a href="#" style="display: inline-block; transition: transform 0.2s;">
+            <img src="../../commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+              alt="Download on the App Store" style="height: 40px; width: auto;">
+          </a>
+          <a href="#" style="display: inline-block; transition: transform 0.2s;">
+            <img src="../../commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
+              alt="Get it on Google Play" style="height: 40px; width: auto;">
+          </a>
+        </div>
+
+        <div class="hero-img-container">
+          <span class="decoration dec-1">✨</span>
+          <span class="decoration dec-2">🎵</span>
+          <span class="decoration dec-3">❤️</span>
+          <img src="https://placehold.co/1080x1920/4fc3f7/ffffff?text=App+Screen" alt="App Screenshot"
+            class="hero-mockup">
+        </div>
+      </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="section-problems">
+      <div class="container">
+        <h2 class="section-title">Rencontrez-vous ces<br>défis parentaux ?</h2>
+        <div class="problem-cards">
+          <div class="problem-card">
+            <div class="problem-text">Vous prenez beaucoup de photos et vidéos mais les regardez rarement...</div>
+          </div>
+          <div class="problem-card">
+            <div class="problem-text">Les enfants appuient accidentellement sur le mauvais écran quand vous leur montrez
+              des photos...</div>
+          </div>
+          <div class="problem-card">
+            <div class="problem-text">Les enfants s'ennuient vite en regardant simplement des photos...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section-solution">
+      <div class="container">
+        <h2 class="section-title" style="text-align: center;">Album Magique résout<br>cela avec "Magie" !</h2>
+
+        <div class="solution-grid">
+          <div class="feature-card">
+            <div class="feature-icon">👆</div>
+            <div class="feature-title">Lecture seule & Plein écran</div>
+            <p>Photos et vidéos s'affichent une par une. Pas de boutons parasites, les enfants restent concentrés.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <div class="feature-title">Effets Magiques</div>
+            <p>Touchez l'écran pour voir des paillettes, des cœurs et plus. Regarder les souvenirs devient un jeu.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <div class="feature-title">Porte Parentale</div>
+            <p>Les réglages sont protégés. Pas d'inquiétude que les enfants changent quelque chose par erreur.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <div class="feature-title">Hors ligne & Sûr</div>
+            <p>Tout reste sur votre appareil. Aucune transmission de données, aucun risque de suppression.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scenes Section -->
+    <section class="section-scenes">
+      <div class="container">
+        <h2 class="section-title" style="text-align: center; font-size: 1.8rem;">Idéal pour</h2>
+        <div class="scene-list">
+          <div class="scene-badge">🏠 Regarder des photos en famille</div>
+          <div class="scene-badge">🚌 Occuper les enfants en attendant</div>
+          <div class="scene-badge">🎁 Prêter le téléphone en toute tranquillité</div>
+          <div class="scene-badge">👴 Montrer des photos aux grands-parents</div>
+          <div class="scene-badge">😭 Quand l'enfant est agité</div>
+          <div class="scene-badge">☕️ Pour votre propre pause</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section-pricing">
+      <div class="container">
+        <div class="pricing-box">
+          <h2 class="pricing-title">Fonctions de base gratuites<br>Pas de pub</h2>
+          <p style="margin-bottom: 32px; font-weight: 500;">
+            Pas de pub signifie pas de clics accidentels.<br>Sûr pour les enfants.
+          </p>
+
+          <div
+            style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 24px; margin-bottom: 32px; border: 1px solid rgba(255,255,255,0.2);">
+            <h3 style="font-size: 1.4rem; margin-bottom: 16px;">✨ Plus de fun avec Premium</h3>
+            <ul class="pricing-list" style="margin-bottom: 16px;">
+              <li>Voir tous les albums</li>
+              <li>Personnaliser les effets</li>
+              <li>Vitesse de lecture auto</li>
+            </ul>
+            <div
+              style="background: var(--accent); color: #333; display: inline-block; padding: 4px 12px; border-radius: 12px; font-weight: 800; font-size: 0.9rem;">
+              Achat unique
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 8px; opacity: 0.9;">
+              Pas d'abonnement.<br>Payez une fois, profitez pour toujours.
+            </p>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="cta-group" style="margin-bottom: 40px;">
+          <a href="#" style="display: inline-block; transition: transform 0.2s;">
+            <img src="../../commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+              alt="Download on the App Store" style="height: 40px; width: auto;">
+          </a>
+          <a href="#" style="display: inline-block; transition: transform 0.2s;">
+            <img src="../../commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
+              alt="Get it on Google Play" style="height: 40px; width: auto;">
+          </a>
+        </div>
+        <p class="footer-message">Rendons le visionnage des souvenirs de famille<br>amusant avec Album Magique !</p>
+        <p class="copyright">&copy; TakeKApp. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Simple Intersection Observer for scroll animations
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('fade-in-up');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+
+        document.querySelectorAll('.problem-card, .feature-card, .scene-badge').forEach((el, index) => {
+          el.style.opacity = '0';
+          el.style.animationDelay = `${index * 0.1}s`;
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+
+</html>
