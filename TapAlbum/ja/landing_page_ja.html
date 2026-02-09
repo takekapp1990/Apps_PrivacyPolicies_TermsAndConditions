@@ -73,6 +73,10 @@
         color: inherit;
       }
 
+      .mobile-only {
+        display: none;
+      }
+
       .container {
         max-width: 1000px;
         margin: 0 auto;
@@ -489,6 +493,10 @@
         .feature-card {
           padding: 24px;
         }
+
+        .mobile-only {
+          display: inline;
+        }
       }
     </style>
   </head>
@@ -503,7 +511,8 @@
           <span class="app-name">まほうアルバム</span>
         </div>
         <div class="hero-badge fade-in-up">閲覧専用・安心設計</div>
-        <h1 class="fade-in-up delay-100">触れるたびに魔法がかかる。<br>子どもも安心の写真アプリ。</h1>
+        <h1 class="fade-in-up delay-100">触れるたびに<br class="mobile-only">魔法がかかる。<br>子どもも安心の<br class="mobile-only">写真アプリ。
+        </h1>
         <p class="fade-in-up delay-200">撮った写真を振り返って、<br class="mobile-only">家族とのふれあいをもっと増やそう</p>
 
         <div class="cta-group fade-in-up delay-300">
