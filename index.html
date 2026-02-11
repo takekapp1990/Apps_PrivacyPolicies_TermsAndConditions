@@ -451,14 +451,12 @@
                 border-color: white;
             }
 
-            /* 言語別コンテンツの表示制御 */
-            .content-ja,
-            .content-en {
+            /* 言語別コンテンツの表示制御 - Multilingual Content Visibility */
+            [class*="content-"] {
                 display: none;
             }
 
-            .content-ja.active,
-            .content-en.active {
+            [class*="content-"].active {
                 display: block;
             }
 
@@ -520,9 +518,41 @@
                         </li>
                     </ul>
                     <!-- 言語切り替えボタン -->
-                    <div class="language-switcher">
-                        <button class="btn" onclick="switchLanguage('ja')" id="btn-ja">日本語</button>
-                        <button class="btn" onclick="switchLanguage('en')" id="btn-en">English</button>
+                    <div class="language-switcher dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="languageDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Language
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><button class="dropdown-item" type="button" onclick="switchLanguage('ja')">日本語</button>
+                            </li>
+                            <li><button class="dropdown-item" type="button"
+                                    onclick="switchLanguage('en')">English</button></li>
+                            <li><button class="dropdown-item" type="button"
+                                    onclick="switchLanguage('es')">Español</button></li>
+                            <li><button class="dropdown-item" type="button" onclick="switchLanguage('ko')">한국어</button>
+                            </li>
+                            <li><button class="dropdown-item" type="button"
+                                    onclick="switchLanguage('zh_CN')">简体中文</button></li>
+                            <li><button class="dropdown-item" type="button"
+                                    onclick="switchLanguage('zh_TW')">繁體中文</button></li>
+                            <li><button class="dropdown-item" type="button"
+                                    onclick="switchLanguage('de')">Deutsch</button></li>
+                            <li><button class="dropdown-item" type="button"
+                                    onclick="switchLanguage('fr')">Français</button></li>
+                            <li><button class="dropdown-item" type="button" onclick="switchLanguage('id')">Bahasa
+                                    Indonesia</button></li>
+                            <li><button class="dropdown-item" type="button"
+                                    onclick="switchLanguage('th')">ภาษาไทย</button></li>
+                            <li><button class="dropdown-item" type="button"
+                                    onclick="switchLanguage('pt')">Português</button></li>
+                            <li><button class="dropdown-item" type="button"
+                                    onclick="switchLanguage('ru')">Русский</button></li>
+                            <li><button class="dropdown-item" type="button"
+                                    onclick="switchLanguage('hi')">हिन्दी</button></li>
+                            <li><button class="dropdown-item" type="button"
+                                    onclick="switchLanguage('it')">Italiano</button></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1385,6 +1415,9 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Dynamic Container for other languages -->
+            <div id="dynamic-app-container" class="container" style="display:none;"></div>
         </section>
 
         <!-- Webツールセクション -->
@@ -1677,7 +1710,7 @@
             </div>
         </footer>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
         <!-- 言語自動切り替えスクリプト -->
         <script>
@@ -1698,20 +1731,91 @@
 
             // 言語を切り替える
             function switchLanguage(lang) {
-                // すべての言語コンテンツを非表示
-                document.querySelectorAll('.content-ja, .content-en').forEach(el => {
+                // Determine if static (ja/en) or dynamic (others)
+                const isStatic = (lang === 'ja' || lang === 'en');
+
+                // 1. Hide everything first
+                document.querySelectorAll('[class*="content-"]').forEach(el => {
                     el.classList.remove('active');
                 });
+                const dynamicContainer = document.getElementById('dynamic-app-container');
+                if (dynamicContainer) dynamicContainer.style.display = 'none';
 
-                // 選択された言語のコンテンツを表示
-                document.querySelectorAll(`.content-${lang}`).forEach(el => {
-                    el.classList.add('active');
-                });
+                // 2. Show appropriate content
+                if (isStatic) {
+                    document.querySelectorAll(`.content-${lang}`).forEach(el => {
+                        el.classList.add('active');
+                    });
+                } else {
+                    // For dynamic languages, we might want to show English static content for HERO/WebTools as fallback, 
+                    // OR we just hide them? 
+                    // Current implementation of 'content-ja/en' hides them. 
+                    // If we want a Hero, we need a dynamic one or fallback.
+                    // Let's fallback to English for text-based sections (Hero, WebTools) if we don't translate them.
+                    // For now, let's just SHOW English Hero/WebTools when using dynamic languages, 
+                    // OR we accept they are hidden.
+                    // User request: "create new content sections... displaying relevant apps".
+                    // It implies the Apps section is the main thing.
+                    // Let's use English as base for Hero/WebTools for now (add 'active' to content-en for those).
 
-                // ボタンのスタイルを更新
-                document.getElementById('btn-ja').classList.remove('active');
-                document.getElementById('btn-en').classList.remove('active');
-                document.getElementById(`btn-${lang}`).classList.add('active');
+                    // Actually, simpler: 
+                    // Show content-en for Hero and WebTools? 
+                    // No, `content-en` is a class used on multiple elements (Hero, Apps, WebTools).
+                    // If I add `active` to `.content-en`, it shows the English Apps list too!
+                    // I need to target specific IDs if I want to mix.
+
+                    // Allow modification:
+                    // Let's just HIDE static app lists, and SHOW dynamic app container.
+                    // But for Hero/WebTools, maybe show English?
+
+                    // Let's stick to the prompt's scope: "Create separate pages...". 
+                    // If I use `content-en` for Hero, it also shows `apps-en`.
+                    // I should probably separate the classes or IDs.
+                    // But avoiding huge refactor of CSS.
+
+                    // Hack: Hide `apps-en` specifically after showing `content-en`?
+                    // Better: `switchLanguage` handles `apps` section specifically.
+
+                    // Let's try to show English content generally, then hide specific English apps section if dynamic.
+                    document.querySelectorAll('.content-en').forEach(el => {
+                        el.classList.add('active');
+                    });
+
+                    // Hide static apps containers
+                    const appsEn = document.getElementById('apps-en');
+                    if (appsEn) appsEn.classList.remove('active'); // Force hide
+                    // apps-ja is already hidden because we didn't add active to content-ja
+
+                    // Show dynamic container
+                    if (dynamicContainer) {
+                        dynamicContainer.style.display = 'block';
+                        if (typeof renderApps === 'function') {
+                            renderApps(lang);
+                        }
+                    }
+                }
+
+                // 更新ドロップダウンテキスト (Optional: Update dropdown button text to selected language)
+                const langNames = {
+                    'ja': '日本語',
+                    'en': 'English',
+                    'es': 'Español',
+                    'ko': '한국어',
+                    'zh_CN': '简体中文',
+                    'zh_TW': '繁體中文',
+                    'de': 'Deutsch',
+                    'fr': 'Français',
+                    'id': 'Bahasa Indonesia',
+                    'th': 'ภาษาไทย',
+                    'pt': 'Português',
+                    'ru': 'Русский',
+                    'hi': 'हिन्दी',
+                    'it': 'Italiano'
+                };
+                const dropdownBtn = document.getElementById('languageDropdown');
+                if (dropdownBtn && langNames[lang]) {
+                    dropdownBtn.textContent = langNames[lang];
+                }
 
                 // 言語設定を保存
                 localStorage.setItem('preferred-language', lang);
@@ -1726,6 +1830,11 @@
                 switchLanguage(preferredLang);
             });
         </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Data and Renderer for Multilingual Support -->
+        <script src="js/apps_data.js"></script>
+        <script src="js/app_renderer.js"></script>
 
         <!-- Google Analytics イベント追跡 -->
         <script>
