@@ -379,7 +379,7 @@
       /* --- Safety --- */
       .section-safety {
         padding: 80px 0;
-        background: #fff;
+        background: linear-gradient(180deg, #e1f5fe 0%, #f0f8ff 100%);
       }
 
       /* --- Scenes --- */
@@ -493,11 +493,47 @@
         }
 
         .feature-card {
-          padding: 24px;
+          display: grid;
+          grid-template-areas:
+            "icon title"
+            "desc desc";
+          grid-template-columns: auto 1fr;
+          align-items: center;
+          column-gap: 12px;
+          padding: 20px;
+        }
+
+        .feature-icon {
+          grid-area: icon;
+          margin-bottom: 0;
+          width: 36px;
+          height: 36px;
+          font-size: 1.2rem;
+          border-radius: 10px;
+        }
+
+        .feature-title {
+          grid-area: title;
+          margin-bottom: 0;
+          font-size: 1.1rem;
+        }
+
+        .feature-card p {
+          grid-area: desc;
+          margin-top: 8px;
+        }
+
+        .section-solution {
+          padding: 40px 0;
+        }
+
+        .solution-grid {
+          margin-top: 24px;
+          gap: 16px;
         }
 
         .section-safety {
-          padding: 32px 0;
+          padding: 40px 0;
         }
       }
     </style>
