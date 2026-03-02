@@ -174,7 +174,7 @@ const appsData = [
         id: 'TimesTablesMemoryAwaAwaPon',
         icon: 'https://takekapp.com/TimesTablesMemoryAwaAwaPon/images/awaawapon_times_tables_app_icon_10241024_ios.png',
         android: 'https://play.google.com/store/apps/details?id=com.TimesTablesAwaPop.takekapp1990.prod',
-        ios: 'https://apps.apple.com/jp/app/%E3%81%8B%E3%81%91%E7%AE%97%E6%9A%97%E8%A8%98-%E3%81%82%E3%82%8F%E3%81%82%E3%82%8F%E3%83%9D%E3%83%B3/id6757520572',
+        ios: 'https://apps.apple.com/jp/app/%E3%81%82%E3%81%9B%E7%AE%97%E6%9A%97%E8%A8%98-%E3%81%82%E3%82%8F%E3%81%82%E3%82%8F%E3%83%9D%E3%83%B3/id6757520572',
         locales: {
             ja: {
                 title: 'かけ算暗記 あわあわポン',
@@ -185,6 +185,24 @@ const appsData = [
                 title: 'Times Tables Memory Awa Pop',
                 description: 'Learn times tables in a fun way! Memory battle game to master multiplication.',
                 lp: 'https://takekapp.com/TimesTablesMemoryAwaAwaPon/en/landing_page_en.html'
+            }
+        }
+    },
+    {
+        id: 'TapAlbum',
+        icon: 'https://takekapp.com/TapAlbum/images/app_icon/pop_photo_gallery_app_icon_ios.png',
+        android: 'https://play.google.com/store/apps/details?id=com.tap.album.takekapp1990.prod',
+        ios: 'https://apple.co/4aPIR5q',
+        locales: {
+            ja: {
+                title: 'まほうアルバム',
+                description: '触れるたびに魔法がかかる。子どもも安心の写真アプリ。撮った写真を振り返って、家族とのふれあいをもっと増やそう。',
+                lp: 'https://takekapp.com/TapAlbum/ja/landing_page_ja.html'
+            },
+            en: {
+                title: 'Tap Album',
+                description: 'Magic happens with every touch. A photo app safe for kids. Look back on your photos and increase family bonding time.',
+                lp: 'https://takekapp.com/TapAlbum/en/landing_page_en.html'
             }
         }
     }
@@ -415,6 +433,38 @@ const extraLocales = {
             title: 'ท่องจำสูตรคูณ Awa Pop - เกมจำสูตรคูณสนุก',
             description: null,
             lp: 'https://takekapp.com/TimesTablesMemoryAwaAwaPon/th/landing_page_th.html'
+        }
+    },
+    'TapAlbum': {
+        'es': {
+            title: 'Álbum Mágico',
+            description: 'La magia ocurre con cada toque. Una app de fotos segura para niños. Repasa tus fotos y aumenta los momentos de unión familiar.',
+            lp: 'https://takekapp.com/TapAlbum/es/landing_page_es.html'
+        },
+        'ko': {
+            title: '마법앨범',
+            description: '터치할 때마다 마법이 걸립니다. 아이도 안심할 수 있는 사진 앱. 찍은 사진을 돌아보며 가족과의 소통을 늘려보세요.',
+            lp: 'https://takekapp.com/TapAlbum/ko/landing_page_ko.html'
+        },
+        'de': {
+            title: 'Zauber Album',
+            description: 'Magie bei jeder Berührung. Eine sichere Foto-App für Kinder. Schauen Sie sich Ihre Fotos an und stärken Sie die familiäre Bindung.',
+            lp: 'https://takekapp.com/TapAlbum/de/landing_page_de.html'
+        },
+        'fr': {
+            title: 'Album Magique',
+            description: 'La magie opère à chaque touche. Une appli photo sûre pour les enfants. Regardez vos photos et renforcez les liens familiaux.',
+            lp: 'https://takekapp.com/TapAlbum/fr/landing_page_fr.html'
+        },
+        'zh_CN': {
+            title: '魔法相册',
+            description: '每次触碰都有魔法。一款让孩子安心的照片 App。回顾拍摄的照片，增进与家人的互动。',
+            lp: 'https://takekapp.com/TapAlbum/zh_Hans/landing_page_zh_Hans.html'
+        },
+        'zh_TW': {
+            title: '魔法相冊',
+            description: '每一次觸碰都有魔法。一款讓孩子安心的相片 App。回顧拍攝的相片，增進與家人的互動。',
+            lp: 'https://takekapp.com/TapAlbum/zh_Hant/landing_page_zh_Hant.html'
         }
     }
 };
