@@ -1,0 +1,122 @@
+/* TapAlbum Language Switcher Custom Components */
+.language-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-family: 'Outfit', 'M PLUS Rounded 1c', sans-serif;
+}
+
+.ls-toggle {
+    background-color: rgba(3, 155, 229, 0.9); /* TapAlbum primary-dark */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    min-width: 130px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.ls-toggle::after {
+    content: '▼';
+    font-size: 0.7rem;
+    margin-left: 8px;
+    transition: transform 0.2s;
+}
+
+.ls-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+.ls-toggle:hover, .ls-toggle:focus {
+    background-color: rgba(3, 155, 229, 1);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.ls-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background-color: rgba(3, 155, 229, 0.95);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    max-height: 350px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 8px 0;
+    margin-bottom: 0;
+    min-width: 160px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: none;
+    animation: fadeInDropdown 0.2s ease-out;
+}
+
+.ls-menu.show {
+    display: block;
+}
+
+@keyframes fadeInDropdown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ls-item {
+    display: block;
+    color: white;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.ls-item:hover, .ls-item:focus {
+    background-color: rgba(255, 138, 101, 0.9); /* TapAlbum secondary */
+    color: white;
+    outline: none;
+}
+
+.ls-item.active {
+    background-color: #ff8a65;
+    font-weight: bold;
+}
+
+/* Custom scrollbar for menu */
+.ls-menu::-webkit-scrollbar {
+    width: 6px;
+}
+.ls-menu::-webkit-scrollbar-track {
+    background: transparent;
+}
+.ls-menu::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .language-switcher {
+        top: 10px;
+        right: 10px;
+        position: fixed; /* Keep it fixed on mobile so it's always accessible */
+    }
+    
+    .ls-toggle {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        min-width: 110px;
+    }
+    
+    .ls-item {
+        padding: 12px 16px; /* Larger tap targets on mobile */
+    }
+}

@@ -557,9 +557,21 @@
                 }
             }
         </style>
-    </head>
+        <link rel="stylesheet" href="../css/tapAlbumLanguageSwitcher.css">
+  </head>
 
     <body>
+
+    <!-- Language switcher dropdown -->
+    <div class="language-switcher" id="languageSwitcher" data-current-lang="zh_Hans">
+        <button class="ls-toggle" id="lsToggle" aria-expanded="false" aria-haspopup="true">
+            🌐
+        </button>
+        <ul class="ls-menu" id="lsMenu" role="menu">
+            <!-- populated by js -->
+        </ul>
+    </div>
+
 
         <!-- Hero Section -->
         <section class="hero">
@@ -737,6 +749,7 @@
                 });
             });
         </script>
-    </body>
+        <script src="../js/tapAlbumLanguageSwitcher.js"></script>
+  </body>
 
 </html>
