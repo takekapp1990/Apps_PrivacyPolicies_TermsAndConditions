@@ -1,6 +1,7 @@
 
-import re
 import datetime
+import re
+from pathlib import Path
 
 def generate_sitemap():
     js_file_path = 'js/apps_data.js'
@@ -13,21 +14,27 @@ def generate_sitemap():
     urls.add(f'{base_url}/index.html')
     urls.add(f'{base_url}/')
     
-    # 2. Extract URLs from apps_data.js
+    # 2. Collect all public HTML pages from repository
+    for html_path in Path('.').rglob('*.html'):
+        parts = html_path.parts
+        if any(part.startswith('.') for part in parts):
+            continue
+        rel_path = html_path.as_posix().lstrip('./')
+        urls.add(f'{base_url}/{rel_path}')
+
+    # 3. Extract URLs from apps_data.js (kept as safety net for LP links)
     try:
         with open(js_file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-            # Regex to find lp: 'https://...'
-            # Matches lp: '...' or lp: "..."
             matches = re.findall(r"lp:\s*['\"](https://takekapp\.com/[^'\"]+)['\"]", content)
             for url in matches:
                 urls.add(url)
                 
     except FileNotFoundError:
         print(f"Error: {js_file_path} not found.")
-        return
+        # Continue with file system URLs only
 
-    # 3. Generate XML
+    # 4. Generate XML
     xml_content = ['<?xml version="1.0" encoding="UTF-8"?>']
     xml_content.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
     
@@ -38,7 +45,7 @@ def generate_sitemap():
         xml_content.append('  <url>')
         xml_content.append(f'    <loc>{url}</loc>')
         xml_content.append(f'    <lastmod>{today}</lastmod>')
-        # Priority logic: index is 1.0, others 0.8?
+        # Priority logic: top pages 1.0, others 0.8
         if url.endswith('index.html') or url == f'{base_url}/':
              xml_content.append('    <priority>1.0</priority>')
         else:

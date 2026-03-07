@@ -77,6 +77,9 @@ x-apps:
   - name: "TimesTablesMemoryAwaAwaPon"
     description: "Times tables memory game to learn multiplication"
     pattern: "/TimesTablesMemoryAwaAwaPon/*/landing_page_*.html"
+  - name: "TapAlbum"
+    description: "Kid-safe photo album app with touch interaction and family-friendly design"
+    pattern: "/TapAlbum/*/landing_page_*.html"
 
 # Content Structure
 x-main-page: "/index.html"
