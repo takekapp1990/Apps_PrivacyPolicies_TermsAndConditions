@@ -436,6 +436,21 @@ const extraLocales = {
         }
     },
     'TapAlbum': {
+        'ar': {
+            title: 'Tap Album',
+            description: 'السحر يحدث مع كل لمسة. تطبيق صور آمن للأطفال. استعرض صورك وزِد من أوقات الترابط العائلي.',
+            lp: 'https://takekapp.com/TapAlbum/ar/landing_page_ar.html'
+        },
+        'bn': {
+            title: 'Tap Album',
+            description: 'প্রতিটি স্পর্শে জাদু ঘটে। শিশুদের জন্য নিরাপদ একটি ফটো অ্যাপ। আপনার ছবিগুলো দেখে পরিবারের সাথে বন্ধনের সময় বাড়ান।',
+            lp: 'https://takekapp.com/TapAlbum/bn/landing_page_bn.html'
+        },
+        'da': {
+            title: 'Tap Album',
+            description: 'Magien sker ved hvert tryk. En fotos-app, der er sikker for børn. Se dine billeder igen og styrk familiebåndet.',
+            lp: 'https://takekapp.com/TapAlbum/da/landing_page_da.html'
+        },
         'es': {
             title: 'Álbum Mágico',
             description: 'La magia ocurre con cada toque. Una app de fotos segura para niños. Repasa tus fotos y aumenta los momentos de unión familiar.',
@@ -455,6 +470,71 @@ const extraLocales = {
             title: 'Album Magique',
             description: 'La magie opère à chaque touche. Une appli photo sûre pour les enfants. Regardez vos photos et renforcez les liens familiaux.',
             lp: 'https://takekapp.com/TapAlbum/fr/landing_page_fr.html'
+        },
+        'hi': {
+            title: 'Tap Album',
+            description: 'हर स्पर्श के साथ जादू होता है। बच्चों के लिए सुरक्षित एक फोटो ऐप। अपनी यादों को देखें और परिवार के साथ बिताए गए समय को और खास बनाएं।',
+            lp: 'https://takekapp.com/TapAlbum/hi/landing_page_hi.html'
+        },
+        'id': {
+            title: 'Tap Album',
+            description: 'Keajaiban di setiap sentuhan. Aplikasi foto yang aman untuk anak-anak. Lihat kembali foto-foto Anda dan tingkatkan waktu berkualitas bersama keluarga.',
+            lp: 'https://takekapp.com/TapAlbum/id/landing_page_id.html'
+        },
+        'it': {
+            title: 'Tap Album',
+            description: "La magia accade con ogni tocco. Un'app sicura per i bambini. Riguarda le tue foto e aumenta il tempo di legame familiare.",
+            lp: 'https://takekapp.com/TapAlbum/it/landing_page_it.html'
+        },
+        'nl': {
+            title: 'Tap Album',
+            description: 'Magie gebeurt bij elke aanraking. Een kindveilige foto-app. Kijk je foto’s terug en versterk de band met je familie.',
+            lp: 'https://takekapp.com/TapAlbum/nl/landing_page_nl.html'
+        },
+        'no': {
+            title: 'Tap Album',
+            description: 'Magi skjer ved hver berøring. En barnesikker fotoapp. Se tilbake på bildene dine og styrk familiebåndene.',
+            lp: 'https://takekapp.com/TapAlbum/no/landing_page_no.html'
+        },
+        'pl': {
+            title: 'Tap Album',
+            description: 'Magia dzieje się przy każdym dotknięciu. Bezpieczna aplikacja fotograficzna dla dzieci. Oglądaj zdjęcia i wzmacniaj rodzinne więzi.',
+            lp: 'https://takekapp.com/TapAlbum/pl/landing_page_pl.html'
+        },
+        'pt': {
+            title: 'Tap Album',
+            description: 'A magia acontece em cada toque. Um app de fotos seguro para crianças. Relembre suas fotos e aumente o tempo de união familiar.',
+            lp: 'https://takekapp.com/TapAlbum/pt/landing_page_pt.html'
+        },
+        'ru': {
+            title: 'Tap Album',
+            description: 'Магия случается в каждом касании. Безопасное приложение для детей. Вспоминайте лучшие моменты и укрепляйте семейные связи.',
+            lp: 'https://takekapp.com/TapAlbum/ru/landing_page_ru.html'
+        },
+        'sw': {
+            title: 'Tap Album',
+            description: 'Uchawi hutokea kwa kila mguso. Programu ya picha salama kwa watoto. Tazama tena picha zako na ongeza muda wa ukaribu wa familia.',
+            lp: 'https://takekapp.com/TapAlbum/sw/landing_page_sw.html'
+        },
+        'th': {
+            title: 'Tap Album',
+            description: 'ความมหัศจรรย์เกิดขึ้นในทุกสัมผัส แอปรูปภาพที่ปลอดภัยสำหรับเด็ก ย้อนดูความทรงจำและเพิ่มเวลาความผูกพันในครอบครัว',
+            lp: 'https://takekapp.com/TapAlbum/th/landing_page_th.html'
+        },
+        'tr': {
+            title: 'Tap Album',
+            description: 'Her dokunuşta sihir gerçekleşir. Çocuklar için güvenli bir fotoğraf uygulaması. Fotoğraflarınıza yeniden bakın ve aile bağlarını güçlendirin.',
+            lp: 'https://takekapp.com/TapAlbum/tr/landing_page_tr.html'
+        },
+        'uk': {
+            title: 'Tap Album',
+            description: "Магія відбувається в кожному дотику. Безпечний фотододаток для дітей. Переглядайте свої фото та зміцнюйте сімейний зв'язок.",
+            lp: 'https://takekapp.com/TapAlbum/uk/landing_page_uk.html'
+        },
+        'vi': {
+            title: 'Tap Album',
+            description: 'Phép thuật diễn ra trong từng lần chạm. Ứng dụng ảnh an toàn cho trẻ em. Xem lại ảnh và tăng thêm thời gian gắn kết gia đình.',
+            lp: 'https://takekapp.com/TapAlbum/vi/landing_page_vi.html'
         },
         'zh_CN': {
             title: '魔法相册',
