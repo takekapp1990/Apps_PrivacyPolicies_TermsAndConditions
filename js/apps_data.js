@@ -1,6 +1,24 @@
 
 const appsData = [
     {
+        id: 'Tificat',
+        icon: 'https://takekapp.com/Tificat/images/app_icon.png',
+        android: '#',
+        ios: '#',
+        locales: {
+            ja: {
+                title: 'Tificat',
+                description: 'AIが生成する励まし・応援メッセージで、毎日のタスクを楽しく。自分専用のスマートリマインダー。',
+                lp: 'https://takekapp.com/Tificat/ja/landing_page_ja.html'
+            },
+            en: {
+                title: 'Tificat',
+                description: 'Smart AI reminders that cheer you on. Get personalized, encouraging messages for every notification.',
+                lp: 'https://takekapp.com/Tificat/en/landing_page_en.html'
+            }
+        }
+    },
+    {
         id: 'NumberPlaceHint',
         icon: 'https://takekapp.com/NumberPlaceHint/images/app_icon/number_place_hint_app_icon_10241024_ios.png',
         android: 'https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod',
