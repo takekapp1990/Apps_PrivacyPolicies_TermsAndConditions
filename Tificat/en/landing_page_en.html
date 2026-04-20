@@ -16,315 +16,205 @@
     <meta name="twitter:image" content="../images/app_icon.png">
     <meta name="twitter:site" content="@takekapp">
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@400;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --primary-color: #FF7F50; /* Coral */
-            --primary-gradient: linear-gradient(135deg, #FF7F50, #FF6B6B);
-            --secondary-color: #4A90E2;
-            --bg-color: #fcfcfc;
-            --text-color: #333;
-            --card-bg: #ffffff;
-        }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: var(--primary-gradient);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            border-radius: 0 0 40px 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 50px;
-        }
-
-        .hero-icon {
-            width: 120px;
-            height: 120px;
-            border-radius: 28px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-            background: white;
-            padding: 10px;
-        }
-
-        .hero h1 {
-            font-size: 3.5em;
-            margin: 0;
-            letter-spacing: -1px;
-        }
-
-        .hero p {
-            font-size: 1.4em;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 20px auto 40px;
-            font-weight: 500;
-        }
-
-        .store-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .store-badge {
-            height: 54px;
-            transition: transform 0.2s;
-        }
-
-        .store-badge:hover {
-            transform: scale(1.05);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 40px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.2em;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            padding: 40px 30px;
-            border-radius: 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: translateY 0.3s;
-            border: 1px solid #f0f0f0;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-card i {
-            font-size: 3em;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-
-        .feature-card p {
-            font-size: 1.05em;
-            color: #666;
-            margin: 0;
-            text-align: left;
-        }
-
-        /* AI Message Preview */
-        .ai-preview {
-            background: #fff;
-            padding: 40px;
-            border-radius: 30px;
-            margin: 60px 0;
-            border: 2px dashed var(--primary-color);
-            text-align: center;
-        }
-
-        .ai-preview h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-
-        .message-bubble {
-            background: #f8f9fa;
-            padding: 20px 30px;
-            border-radius: 20px;
-            display: inline-block;
-            margin: 20px 0;
-            font-size: 1.25em;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            position: relative;
-        }
-
-        .message-bubble::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            margin-left: -10px;
-            border-width: 10px 10px 0;
-            border-style: solid;
-            border-color: #f8f9fa transparent transparent;
-        }
-
-        /* Premium Section */
-        .premium {
-            background-color: #fff;
-            padding: 60px 40px;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            text-align: center;
-            margin-bottom: 100px;
-        }
-
-        .premium-list {
-            list-style: none;
-            padding: 0;
-            max-width: 500px;
-            margin: 30px auto;
-            text-align: left;
-        }
-
-        .premium-list li {
-            padding: 12px 0;
-            font-size: 1.2em;
-            display: flex;
-            align-items: center;
-        }
-
-        .premium-list li i {
-            color: #FFD700;
-            margin-right: 15px;
-            font-size: 1.2em;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            background: #f8f9fa;
-        }
-
-        .footer-links {
-            margin-bottom: 20px;
-        }
-
-        .footer-links a {
-            color: #666;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .copyright {
-            color: #999;
-            font-size: 0.9em;
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2.5em; }
-            .hero p { font-size: 1.1em; }
-            .feature-card { padding: 30px 20px; }
-        }
-    </style>
+    
+    <!-- 共通スタイルシート -->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <header class="hero">
-        <div class="container">
-            <img src="../images/app_icon.png" alt="Tificat Icon" class="hero-icon">
-            <h1>Tificat</h1>
-            <p>AI-powered reminders that think of and send messages for you</p>
-            <div class="store-buttons">
-                <a href="#" class="store-badge-link">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-                        alt="Download on the App Store" class="store-badge">
-                </a>
-                <a href="#" class="store-badge-link">
-                    <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
-                        alt="Get it on Google Play" class="store-badge">
-                </a>
+    <!-- Navbar with Language Switcher -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <img src="../images/app_icon.png" alt="Tificat Icon">
+                Tificat
+            </a>
+            <div class="lang-switch">
+                <select onchange="if (this.value) window.location.href=this.value;">
+                    <option value="../ja/landing_page_ja.html">日本語 (JA)</option>
+                    <option value="landing_page_en.html" selected>English (EN)</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero fade-in-up">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <div class="hero-header-top">
+                    <img src="../images/app_icon.png" alt="Tificat Icon" class="hero-app-icon">
+                    <span class="hero-label">🌟 A New Reminder Experience</span>
+                </div>
+                <h1>Reminders That <br><span>Think of Messages</span> For You</h1>
+                <p>Experience notifications you'll look forward to. AI crafts unique, personalized messages tailored to your tasks to keep you on track.</p>
+                <div class="store-buttons">
+                    <a href="#" class="store-badge-link">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                            alt="Download on the App Store" class="store-badge">
+                    </a>
+                    <a href="#" class="store-badge-link">
+                        <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
+                            alt="Get it on Google Play" class="store-badge">
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-carousel" id="heroCarousel" data-lang="en">
+                    <img src="../images/screen_shots/en/0_APP_IPHONE_67_0.png" alt="Tificat App Screen" class="active">
+                    <img src="../images/screen_shots/en/1_APP_IPHONE_67_1.png" alt="Tificat App Screen">
+                    <img src="../images/screen_shots/en/2_APP_IPHONE_67_2.png" alt="Tificat App Screen">
+                    <img src="../images/screen_shots/en/3_APP_IPHONE_67_3.png" alt="Tificat App Screen">
+                    <img src="../images/screen_shots/en/4_APP_IPHONE_67_4.png" alt="Tificat App Screen">
+                    <img src="../images/screen_shots/en/5_APP_IPHONE_67_5.png" alt="Tificat App Screen">
+                    <img src="../images/screen_shots/en/6_APP_IPHONE_67_6.png" alt="Tificat App Screen">
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="container">
+    <main>
+        <!-- Features Section -->
         <section class="features">
-            <div class="section-title">
-                <h2>Notifications You’ll Look Forward To</h2>
-            </div>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <i class="fas fa-magic"></i>
-                    <h3>AI-Crafted Messages</h3>
-                    <p>AI generates unique messages for each task. Your notifications aren’t just alerts; they’re personalized messages thought up by AI.</p>
+            <div class="container">
+                <div class="section-title fade-in-up">
+                    <h2>Notifications You’ll Look Forward To</h2>
+                    <p>Designed to break the cycle of ignored alarms. Tificat turns boring reminders into engaging actions.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-microphone"></i>
-                    <h3>Smart Voice Creation</h3>
-                    <p>Simply say "Take medicine at 3 PM". AI understands your intent and sets the schedule for you in seconds.</p>
+
+                <div class="features-wrapper">
+
+                <div class="feature-row fade-in-up">
+                    <div class="feature-text">
+                        <div class="feature-icon-wrapper"><i class="fas fa-magic"></i></div>
+                        <h3>AI-Crafted Messages</h3>
+                        <p class="feature-desc-pc">AI generates unique messages based on what you need to do, making mundane tasks feel like a conversation with a supportive friend.</p>
+                        <p class="feature-desc-sp">AI crafts unique, supportive messages specifically generated for your scheduled tasks.</p>
+                    </div>
+                    <div class="feature-visual">
+                        <img src="../images/screen_shots/en/2_APP_IPHONE_67_2.png" alt="AI Message Feature">
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-theater-masks"></i>
-                    <h3>Multiple Personalities</h3>
-                    <p>Choose from "Encouraging", "Humorous", "Butler", "Sergeant", and more. Customize the AI's personality to fit your vibe.</p>
+
+                <div class="feature-row fade-in-up">
+                    <div class="feature-text">
+                        <div class="feature-icon-wrapper"><i class="fas fa-microphone"></i></div>
+                        <h3>Smart Voice Creation</h3>
+                        <p class="feature-desc-pc">Simply say "Take medicine at 3 PM". AI understands your intent and sets the exact schedule for you in seconds—no typing needed.</p>
+                        <p class="feature-desc-sp">Just speak your task aloud. AI instantly understands and sets the exact schedule for you.</p>
+                    </div>
+                    <div class="feature-visual">
+                        <img src="../images/screen_shots/en/1_APP_IPHONE_67_1.png" alt="Voice Input Feature">
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-bell"></i>
-                    <h3>Reliable Reminding</h3>
-                    <p>Combine pre-reminders, post-reminders, and smart snoozing to ensure you never miss what matters.</p>
+
+                <div class="feature-row fade-in-up">
+                    <div class="feature-text">
+                        <div class="feature-icon-wrapper"><i class="fas fa-theater-masks"></i></div>
+                        <h3>Multiple Personalities</h3>
+                        <p class="feature-desc-pc">Choose your AI's vibe—from "Encouraging" and "Humorous" to "Butler" or "Sergeant". Match your reminders to your mood to build lasting habits.</p>
+                        <p class="feature-desc-sp">Choose from various fun AI personas, like Butler or Sergeant, to match your current mood.</p>
+                    </div>
+                    <div class="feature-visual tone-emojis">
+                        <span>👮‍♂️</span>
+                        <span>🤖</span>
+                        <span>☕️</span>
+                        <span>🎉</span>
+                    </div>
                 </div>
+
+                <div class="feature-row fade-in-up">
+                    <div class="feature-text">
+                        <div class="feature-icon-wrapper"><i class="fas fa-bell"></i></div>
+                        <h3>Reliable Reminding</h3>
+                        <p class="feature-desc-pc">Never miss what matters again. Combine pre-reminders, post-reminders, and smart snoozing to ensure you actually follow through.</p>
+                        <p class="feature-desc-sp">Smart snoozing and flexible pre/post-reminders guarantee you'll never miss what matters.</p>
+                    </div>
+                    <div class="feature-visual">
+                        <img src="../images/screen_shots/en/3_APP_IPHONE_67_3.png" alt="Reminder Accuracy Feature">
+                    </div>
+                </div>
+                </div>
+                <div class="carousel-dots hidden-pc" id="featureDots"></div>
             </div>
         </section>
 
+        <!-- AI Message Preview -->
         <section class="ai-preview">
-            <h3>Example AI Message</h3>
-            <div class="message-bubble">
-                💊 Health is your greatest wealth!<br>Take your medicine now, and your future self will thank you!
+            <div class="container fade-in-up">
+                <div class="ai-card glass">
+                    <div class="ai-card-header">
+                        <i class="fas fa-robot"></i>
+                        <h3>Example AI Message</h3>
+                    </div>
+                    <div class="message-bubble">
+                        💊 Health is your greatest wealth!<br>Take your medicine now, and your future self will thank you!
+                    </div>
+                    <div class="message-meta">
+                        <span>📝 Task: Take medicine</span>
+                        <span>🎭 Tone: Encouraging</span>
+                    </div>
+                </div>
             </div>
-            <p style="color: #888;">Task: "Take medicine" / Tone: "Encouraging"</p>
         </section>
 
+        <!-- Premium Section -->
         <section class="premium">
-            <div class="section-title">
-                <h2>Premium</h2>
+            <div class="container fade-in-up">
+                <div class="premium-box">
+                    <h2>Premium</h2>
+                    <p>Unlock the full power of positivity. Tificat Premium removes all limits.</p>
+                    <div class="premium-grid">
+                        <div class="premium-item">
+                            <i class="fas fa-check-circle"></i>
+                            No more advertisements
+                        </div>
+                        <div class="premium-item">
+                            <i class="fas fa-infinity"></i>
+                            Create unlimited scheduled tasks
+                        </div>
+                        <div class="premium-item">
+                            <i class="fas fa-unlock-alt"></i>
+                            All AI tones unlocked
+                        </div>
+                        <div class="premium-item">
+                            <i class="fas fa-sliders-h"></i>
+                            Flexible pre & post-reminder settings
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p>Unlock the full power of positivity. Tificat Premium.</p>
-            <ul class="premium-list">
-                <li><i class="fas fa-check-circle"></i> No more advertisements</li>
-                <li><i class="fas fa-check-circle"></i> Create unlimited scheduled tasks</li>
-                <li><i class="fas fa-check-circle"></i> All AI tones unlocked</li>
-                <li><i class="fas fa-check-circle"></i> Flexible pre & post-reminder settings</li>
-            </ul>
+        </section>
+
+        <!-- Bottom CTA Section -->
+        <section class="bottom-cta fade-in-up">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready for a New Reminder Experience?</h2>
+                    <p>Experience notifications you'll actually look forward to receiving.</p>
+                    <div class="store-buttons cta-store-buttons">
+                        <a href="#" class="store-badge-link">
+                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                                alt="Download on the App Store" class="store-badge">
+                        </a>
+                        <a href="#" class="store-badge-link">
+                            <img src="https://takekapp1990.github.io/Apps_PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
+                                alt="Get it on Google Play" class="store-badge">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
+            <div class="footer-logo">
+                <img src="../images/app_icon.png" alt="Icon">
+                Tificat
+            </div>
             <div class="footer-links">
                 <a href="terms_and_conditions_en.html">Terms of Service</a>
                 <a href="privacy_policy_en.html">Privacy Policy</a>
@@ -332,6 +222,9 @@
             <p class="copyright">&copy; 2026 TakeKApp. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- 共通JavaScript -->
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
