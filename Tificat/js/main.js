@@ -81,13 +81,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const dots = featureDots.querySelectorAll('.carousel-dot');
+        let currentFeatureIndex = 0;
+        let isUserInteracting = false;
+        let interactionTimeout;
+
+        const updateDots = (index) => {
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        };
+
+        const autoScrollFeatures = () => {
+            if (isUserInteracting || window.innerWidth > 900) return;
+            
+            currentFeatureIndex = (currentFeatureIndex + 1) % featureCards.length;
+            const targetCard = featureCards[currentFeatureIndex];
+            
+            featureWrapper.scrollTo({
+                left: targetCard.offsetLeft - (featureWrapper.offsetWidth - targetCard.offsetWidth) / 2,
+                behavior: 'smooth'
+            });
+            updateDots(currentFeatureIndex);
+        };
+
+        // Auto-scroll every 4 seconds
+        let scrollInterval = setInterval(autoScrollFeatures, 4000);
 
         featureWrapper.addEventListener('scroll', () => {
             const wrapperRect = featureWrapper.getBoundingClientRect();
             const wrapperCenter = wrapperRect.left + wrapperRect.width / 2;
 
-            let currentIndex = 0;
             let minDistance = Infinity;
+            let detectedIndex = 0;
 
             featureCards.forEach((card, index) => {
                 const cardRect = card.getBoundingClientRect();
@@ -96,17 +121,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (distance < minDistance) {
                     minDistance = distance;
-                    currentIndex = index;
+                    detectedIndex = index;
                 }
             });
 
-            dots.forEach((dot, index) => {
-                if (index === currentIndex) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
+            currentFeatureIndex = detectedIndex;
+            updateDots(currentFeatureIndex);
         });
+
+        // Pause auto-scroll on interaction
+        featureWrapper.addEventListener('touchstart', () => {
+            isUserInteracting = true;
+            clearTimeout(interactionTimeout);
+        }, {passive: true});
+
+        featureWrapper.addEventListener('touchend', () => {
+            interactionTimeout = setTimeout(() => {
+                isUserInteracting = false;
+            }, 5000); // Resume auto-scroll after 5s of inactivity
+        }, {passive: true});
     }
 });
