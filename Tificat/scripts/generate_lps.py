@@ -4,7 +4,7 @@ translations = {
     'de': {
         'title': 'Tificat - KI-gestützte Erinnerungen, die Nachrichten für Sie verfassen',
         'og_desc': 'Erleben Sie Erinnerungen, bei denen KI personalisierte Nachrichten für Ihre Aufgaben erstellt und sendet. Ein neuer Weg, um organisiert zu bleiben.',
-        'hero_label': 'Tificat - Ein neues Erinnerungserlebnis',
+        'hero_label': 'Tificat',
         'hero_h1': 'Erinnerungen, die <br><span>Nachrichten für Sie</span> erfinden',
         'hero_p': 'Erleben Sie Benachrichtigungen, auf die Sie sich freuen werden. KI erstellt einzigartige, personalisierte Nachrichten.',
         'sec_title': 'Benachrichtigungen, auf die Sie sich freuen',
@@ -38,7 +38,7 @@ translations = {
     'es': {
         'title': 'Tificat - Recordatorios impulsados por IA que redactan mensajes para ti',
         'og_desc': 'Experimenta recordatorios donde la IA crea y envía mensajes personalizados para tus tareas. Una nueva forma de mantenerte organizado.',
-        'hero_label': 'Tificat - Una nueva experiencia en recordatorios',
+        'hero_label': 'Tificat',
         'hero_h1': 'Recordatorios que <br><span>piensan en mensajes</span> para ti',
         'hero_p': 'Experimenta notificaciones que esperarás con ansias. La IA crea mensajes únicos y personalizados adaptados a tus tareas.',
         'sec_title': 'Notificaciones que te alegrará recibir',
@@ -72,7 +72,7 @@ translations = {
     'fr': {
         'title': 'Tificat - Des rappels basés sur l\'IA qui composent des messages pour vous',
         'og_desc': 'Découvrez des rappels où l\'IA crée et envoie des messages personnalisés pour vos tâches. Une nouvelle façon de rester sur la bonne voie.',
-        'hero_label': 'Tificat - Une nouvelle expérience de rappel',
+        'hero_label': 'Tificat',
         'hero_h1': 'Des rappels qui <br><span>imaginent des messages</span> pour vous',
         'hero_p': 'Découvrez des notifications que vous aurez hâte de recevoir. L\'IA crée des messages uniques et personnalisés adaptés à vos tâches.',
         'sec_title': 'Des notifications agréables à recevoir',
@@ -106,7 +106,7 @@ translations = {
     'id': {
         'title': 'Tificat - Pengingat Berbasis AI yang Menulis Pesan untuk Anda',
         'og_desc': 'Rasakan pengalaman pengingat di mana AI menyusun dan mengirimkan pesan untuk setiap tugas Anda. Cara baru agar tidak pernah lupa.',
-        'hero_label': 'Tificat - Pengalaman Pengingat Baru',
+        'hero_label': 'Tificat',
         'hero_h1': 'Pengingat yang <br><span>Memikirkan Pesan</span> Untuk Anda',
         'hero_p': 'Nikmati notifikasi yang Anda nantikan. AI akan menyusun pesan unik yang disesuaikan khusus untuk Anda.',
         'sec_title': 'Notifikasi yang Akan Anda Tunggu-tunggu',
@@ -140,7 +140,7 @@ translations = {
     'ko': {
         'title': 'Tificat - AI가 메시지를 대신 작성해주는 스마트 리마인더',
         'og_desc': 'AI가 당신의 작업을 위해 기발한 메시지를 생각하고 보내주는 리마인더를 경험해보세요. 즐거운 할 일 관리의 새로운 방법입니다.',
-        'hero_label': 'Tificat - 새로운 리마인더 경험',
+        'hero_label': 'Tificat',
         'hero_h1': 'AI가 메시지를 <br><span>직접 생각해서</span> 보내줍니다',
         'hero_p': '알림이 올 때마다 조금은 설레는 기분. 할 일에 맞춰 AI가 최적의 메시지를 더해 리마인드하는 차세대 앱입니다.',
         'sec_title': '알림이 기다려지는 경험',
@@ -174,7 +174,7 @@ translations = {
     'pt-BR': {
         'title': 'Tificat - Lembretes com IA que criam mensagens para você',
         'og_desc': 'Experimente lembretes nos quais a IA elabora e envia mensagens personalizadas para suas tarefas. Uma nova forma de se manter focado.',
-        'hero_label': 'Tificat - Uma Nova Experiência de Lembrete',
+        'hero_label': 'Tificat',
         'hero_h1': 'Lembretes que <br><span>pensam em mensagens</span> para você',
         'hero_p': 'Experimente notificações pelas quais você realmente espera. A IA cria mensagens únicas e personalizadas, feitas apenas para você.',
         'sec_title': 'Notificações Que Você Aguarda com Expectativa',
@@ -208,7 +208,7 @@ translations = {
     'pt-PT': {
         'title': 'Tificat - Lembretes Mágicos com IA',
         'og_desc': 'Experimente lembretes onde a IA redige e envia mensagens adaptadas a si. A melhor forma de manter o ritmo.',
-        'hero_label': 'Tificat - A Revolução dos Lembretes',
+        'hero_label': 'Tificat',
         'hero_h1': 'Lembretes que <br><span>criam textos incríveis</span> para si',
         'hero_p': 'Encare as notificações com um sorriso. A IA compõe abordagens incrivelmente personalizadas.',
         'sec_title': 'Notificações Que Adorará Receber',
@@ -242,7 +242,7 @@ translations = {
     'zh-Hans': {
         'title': 'Tificat - 为您代写专属消息的AI提醒应用',
         'og_desc': '体验会替您思考并定制专属提醒文案的全新AI应用，让您再也不会错过任何重要待办。',
-        'hero_label': 'Tificat - 开启提醒新体验',
+        'hero_label': 'Tificat',
         'hero_h1': '这是会<br><span>替您想好消息</span>的智能提醒',
         'hero_p': '享受每天收到的通知吧！AI 会根据您的具体任务，量身打造独一无二、暖心又有趣的催办消息。',
         'sec_title': '让您心生期待的提醒',
@@ -276,7 +276,7 @@ translations = {
     'zh-Hant': {
         'title': 'Tificat - 為您代寫專屬訊息的AI提醒應用',
         'og_desc': '體驗會替您思考並量身打造專屬提醒文案的全新AI應用，讓您再也不會錯過任何重要待辦。',
-        'hero_label': 'Tificat - 開啟提醒新體驗',
+        'hero_label': 'Tificat',
         'hero_h1': '這是一款會<br><span>替您想好訊息</span>的智慧提醒',
         'hero_p': '享受每天收到的通知吧！AI 會根據您的具體任務，量身打造獨一無二、暖心又有趣的催辦訊息。',
         'sec_title': '讓您心生期待的提醒',
@@ -317,7 +317,7 @@ with codecs.open('en/landing_page_en.html', 'r', 'utf-8') as f:
 replacements = [
     ('Tificat - AI-Powered Reminders That Compose Messages for You', 'title'),
     ('Experience reminders where AI crafts and sends personalized messages for your tasks. A new way to stay on track with messages designed just for you.', 'og_desc'),
-    ('Tificat - A New Reminder Experience', 'hero_label'),
+    ('Tificat', 'hero_label'),
     ('<h1>Reminders That <br><span>Think of Messages</span> For You</h1>', 'hero_h1'),
     ('Experience notifications you\'ll look forward to. AI crafts unique, personalized messages tailored to your tasks to keep you on track.', 'hero_p'),
     ('<h2>Notifications You’ll Look Forward To</h2>', 'sec_title'),
