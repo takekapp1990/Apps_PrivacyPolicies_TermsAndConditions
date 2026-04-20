@@ -317,7 +317,7 @@ nav.scrolled {
 
 
 .feature-row:hover .feature-visual img {
-    transform: scale(1.03) translateY(-10px);
+    transform: scale(1.01) translateY(-3px);
 }
 
 /* AI Message Preview */
