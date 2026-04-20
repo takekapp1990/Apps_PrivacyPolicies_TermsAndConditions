@@ -542,6 +542,7 @@ footer {
     }
     .hero h1 { font-size: 2.6em; }
     .store-buttons { justify-content: center; }
+    .hero-label { font-size: 1.8em; }
     
     /* 横スクロール型のUI */
     .features .container {
