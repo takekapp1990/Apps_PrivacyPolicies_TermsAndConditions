@@ -19,6 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.remove('scrolled');
     }
 
+    // Auto-select current language in switcher
+    const langSwitcher = document.getElementById('langSwitcher');
+    if (langSwitcher) {
+        const currentPath = window.location.pathname;
+        for (let option of langSwitcher.options) {
+            const pathEnd = option.value.replace('../', '');
+            if (currentPath.includes(pathEnd)) {
+                option.selected = true;
+                break;
+            }
+        }
+    }
+
     // Intersection Observer for Fade-in-up animation
     const observerOptions = {
         root: null,
