@@ -139,16 +139,12 @@ nav.scrolled {
 
 .hero-label {
     display: inline-block;
-    background: rgba(255, 127, 80, 0.15);
-    color: var(--primary-dark);
-    padding: 8px 20px;
-    border-radius: 20px;
+    color: var(--primary-color);
+    padding: 0;
     font-weight: 800;
-    font-size: 1.5em;
+    font-size: 2.5em;
     font-family: 'Outfit', sans-serif;
-    margin-bottom: 0;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
 .hero h1 {
