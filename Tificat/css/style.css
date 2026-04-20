@@ -530,13 +530,13 @@ footer {
 
 @media (max-width: 900px) {
     .hero {
-        padding: 90px 20px 40px;
+        padding: 70px 20px 40px;
         min-height: auto;
     }
     .hero-inner {
         flex-direction: column;
         text-align: center;
-        padding-top: 40px;
+        padding-top: 0;
     }
     .hero-header-top {
         justify-content: center;
