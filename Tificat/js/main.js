@@ -107,7 +107,34 @@ document.addEventListener('DOMContentLoaded', () => {
         // Auto-scroll every 4 seconds
         let scrollInterval = setInterval(autoScrollFeatures, 4000);
 
+        // Restart/Reset the auto-scroll timer
+        const resetAutoScrollTimer = () => {
+            clearInterval(scrollInterval);
+            scrollInterval = setInterval(autoScrollFeatures, 4000);
+        };
+
+        // Pause auto-scroll on interaction
+        featureWrapper.addEventListener('touchstart', () => {
+            isUserInteracting = true;
+            clearTimeout(interactionTimeout);
+        }, {passive: true});
+
+        const handleInteractionEnd = () => {
+            clearTimeout(interactionTimeout);
+            interactionTimeout = setTimeout(() => {
+                isUserInteracting = false;
+                resetAutoScrollTimer(); // Restart the interval cycle
+            }, 6000); // Resume after 6s of inactivity
+        };
+
+        featureWrapper.addEventListener('touchend', handleInteractionEnd, {passive: true});
         featureWrapper.addEventListener('scroll', () => {
+            // If the user is scrolling manually, mark as interacting
+            if (!isUserInteracting) {
+                isUserInteracting = true;
+                handleInteractionEnd();
+            }
+
             const wrapperRect = featureWrapper.getBoundingClientRect();
             const wrapperCenter = wrapperRect.left + wrapperRect.width / 2;
 
@@ -128,17 +155,5 @@ document.addEventListener('DOMContentLoaded', () => {
             currentFeatureIndex = detectedIndex;
             updateDots(currentFeatureIndex);
         });
-
-        // Pause auto-scroll on interaction
-        featureWrapper.addEventListener('touchstart', () => {
-            isUserInteracting = true;
-            clearTimeout(interactionTimeout);
-        }, {passive: true});
-
-        featureWrapper.addEventListener('touchend', () => {
-            interactionTimeout = setTimeout(() => {
-                isUserInteracting = false;
-            }, 5000); // Resume auto-scroll after 5s of inactivity
-        }, {passive: true});
     }
 });
