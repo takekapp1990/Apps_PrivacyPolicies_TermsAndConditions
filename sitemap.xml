@@ -726,33 +726,78 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://takekapp.com/Tificat/de/landing_page_de.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://takekapp.com/Tificat/en/landing_page_en.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://takekapp.com/Tificat/en/privacy_policy_en.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://takekapp.com/Tificat/en/terms_and_conditions_en.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/Tificat/es/landing_page_es.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/Tificat/fr/landing_page_fr.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/Tificat/id/landing_page_id.html</loc>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://takekapp.com/Tificat/ja/landing_page_ja.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://takekapp.com/Tificat/ja/privacy_policy_ja.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://takekapp.com/Tificat/ja/terms_and_conditions_ja.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/Tificat/ko/landing_page_ko.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/Tificat/pt-BR/landing_page_pt_BR.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/Tificat/pt-PT/landing_page_pt_PT.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/Tificat/zh-Hans/landing_page_zh_Hans.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/Tificat/zh-Hant/landing_page_zh_Hant.html</loc>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
