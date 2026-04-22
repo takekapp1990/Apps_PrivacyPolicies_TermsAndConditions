@@ -52,19 +52,40 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(elem);
     });
 
-    // Hero Carousel Animation (Every 2 seconds)
+    // Hero Carousel Animation - starts when visible in viewport
     const carouselContainer = document.getElementById('heroCarousel');
     if (carouselContainer) {
         const images = carouselContainer.querySelectorAll('img');
         let currentIndex = 0;
-        
-        if (images.length > 1) {
-            setInterval(() => {
+        let carouselInterval = null;
+
+        const startCarousel = () => {
+            if (carouselInterval || images.length <= 1) return;
+            carouselInterval = setInterval(() => {
                 images[currentIndex].classList.remove('active');
                 currentIndex = (currentIndex + 1) % images.length;
                 images[currentIndex].classList.add('active');
             }, 2000);
-        }
+        };
+
+        const stopCarousel = () => {
+            if (carouselInterval) {
+                clearInterval(carouselInterval);
+                carouselInterval = null;
+            }
+        };
+
+        const carouselObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCarousel();
+                } else {
+                    stopCarousel();
+                }
+            });
+        }, { threshold: 0.3 });
+
+        carouselObserver.observe(carouselContainer);
     }
 
     // Feature Carousel Dots Logic for Mobile
