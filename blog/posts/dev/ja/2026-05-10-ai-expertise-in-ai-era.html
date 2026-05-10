@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI時代の専門性との向き合い方 - TakeKApp 開発日記</title>
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="AI時代の専門性との向き合い方 - TakeKApp 開発日記">
+        <meta property="og:description" content="AIの台頭によって専門性の重心が移動している今、「判断と責任」こそが価値を持つ時代に何を鍛えるべきかを整理しました。">
+        <meta property="og:image" content="https://takekapp.com/images/ogp_img.png">
+        <meta property="og:url" content="https://takekapp.com/blog/posts/dev/ja/2026-05-10-ai-expertise-in-ai-era.html">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="AI時代の専門性との向き合い方 - TakeKApp 開発日記">
+        <meta name="twitter:description" content="AIの台頭によって専門性の重心が移動している今、「判断と責任」こそが価値を持つ時代に何を鍛えるべきかを整理しました。">
+        <meta name="twitter:image" content="https://takekapp.com/images/ogp_img.png">
+        <meta name="twitter:site" content="@takekapp">
+        <link rel="alternate" hreflang="ja"
+            href="https://takekapp.com/blog/posts/dev/ja/2026-05-10-ai-expertise-in-ai-era.html">
+        <link rel="alternate" hreflang="x-default"
+            href="https://takekapp.com/blog/posts/dev/ja/2026-05-10-ai-expertise-in-ai-era.html">
+
+        <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "AI時代の専門性との向き合い方",
+      "datePublished": "2026-05-10",
+      "dateModified": "2026-05-10",
+      "author": { "@type": "Person", "name": "takekapp1990" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TakeKApp",
+        "logo": { "@type": "ImageObject", "url": "https://takekapp.com/SharedDice/images/icon_512512_app_store.png" }
+      },
+      "articleSection": "開発日記",
+      "keywords": ["AI", "専門性", "キャリア", "判断", "責任", "スキル", "TakeKApp"]
+    }
+    </script>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-0VCS46ZTHC');
+        </script>
+        <style>
+            :root {
+                --primary-color: #4682B4;
+                --primary-dark: #2F4F4F;
+                --primary-light: #5F9EA0;
+                --secondary-color: #F5F5F5;
+                --text-color: #2C3E50;
+                --accent-color: #708090;
+            }
+
+            body {
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+                color: var(--text-color);
+                line-height: 1.8;
+                background-color: var(--secondary-color);
+            }
+
+            .navbar {
+                background-color: var(--primary-color);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar-brand {
+                color: white !important;
+                font-weight: bold;
+            }
+
+            .nav-link {
+                color: rgba(255, 255, 255, 0.9) !important;
+            }
+
+            .article-header {
+                background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+                color: white;
+                padding: 3rem 0;
+                margin-bottom: 3rem;
+            }
+
+            .article-content {
+                background: white;
+                border-radius: 15px;
+                padding: 3rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .article-sidebar {
+                position: sticky;
+                top: 80px;
+            }
+
+            .sidebar-card {
+                background: white;
+                border-radius: 15px;
+                padding: 1.5rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 1.5rem;
+            }
+
+            .sidebar-card h4 {
+                color: var(--primary-color);
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                padding-bottom: 0.75rem;
+                border-bottom: 2px solid var(--primary-color);
+            }
+
+            .sidebar-article-item {
+                padding: 0.75rem 0;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .sidebar-article-item:last-child {
+                border-bottom: none;
+            }
+
+            .sidebar-article-item a {
+                color: var(--text-color);
+                text-decoration: none;
+                font-weight: 500;
+                display: block;
+                transition: color 0.3s ease;
+            }
+
+            .sidebar-article-item a:hover {
+                color: var(--primary-color);
+            }
+
+            .sidebar-article-date {
+                color: var(--accent-color);
+                font-size: 0.85rem;
+                margin-top: 0.25rem;
+            }
+
+            @media (max-width: 991px) {
+                .article-sidebar {
+                    position: static;
+                    margin-top: 2rem;
+                }
+            }
+
+            .article-meta {
+                color: var(--accent-color);
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .article-content h2 {
+                color: var(--primary-color);
+                font-size: 1.8rem;
+                font-weight: 600;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .article-content h3 {
+                color: var(--primary-dark);
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin-top: 1.5rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .article-content h4 {
+                color: var(--primary-dark);
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-top: 1.2rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .article-content p {
+                margin-bottom: 1.5rem;
+            }
+
+            .article-content ul,
+            .article-content ol {
+                margin-bottom: 1.5rem;
+                padding-left: 2rem;
+            }
+
+            .article-content li {
+                margin-bottom: 0.5rem;
+            }
+
+            .article-content blockquote {
+                border-left: 4px solid var(--primary-color);
+                padding-left: 1.5rem;
+                margin: 1.5rem 0;
+                color: var(--accent-color);
+                font-style: italic;
+            }
+
+            .article-navigation {
+                margin-top: 3rem;
+                padding-top: 2rem;
+                border-top: 1px solid #e0e0e0;
+            }
+
+            .article-navigation a {
+                color: var(--primary-color);
+                text-decoration: none;
+            }
+
+            .article-navigation a:hover {
+                color: var(--primary-dark);
+                text-decoration: underline;
+            }
+
+            .language-switcher {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+            }
+
+            .language-switcher .btn {
+                background-color: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                color: white;
+                padding: 0.3rem 0.8rem;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+
+            .language-switcher .btn:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-color: rgba(255, 255, 255, 0.8);
+                color: white;
+            }
+
+            .language-switcher .btn.active {
+                background-color: rgba(255, 255, 255, 0.2);
+                border-color: white;
+            }
+
+            .highlight-box {
+                background: #f0f6ff;
+                border-left: 4px solid var(--primary-color);
+                padding: 1rem 1.5rem;
+                border-radius: 0 8px 8px 0;
+                margin-bottom: 1.5rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- ナビゲーションバー -->
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="../../../index.html">TakeKApp Apps</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="../../../index.html#apps">Apps</a></li>
+                        <li class="nav-item"><a class="nav-link active"
+                                href="https://takekapp.com/blog/index.html">開発日記</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../../index.html#contact">Contact</a></li>
+                    </ul>
+                    <div class="language-switcher">
+                        <a href="2026-05-10-ai-expertise-in-ai-era.html" class="btn active">日本語</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 記事ヘッダー -->
+        <section class="article-header">
+            <div class="container text-center">
+                <h1 class="display-4 mb-3">AI時代の専門性との向き合い方</h1>
+                <div class="article-meta text-white" style="opacity: 0.9;">
+                    <i class="bi bi-calendar3"></i> 2026年5月10日
+                    <span class="ms-3"><i class="bi bi-folder"></i> 開発日記</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 記事本文 -->
+        <section class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-7">
+                    <article class="article-content">
+
+                        <p>「AIによって、ホワイトカラーは必要なくなる。」、「プログラミングや動画制作やデザインなどの専門スキルの価値は下がるから学ぶ意味はない」</p>
+                        <p>こういう意見がSNSでも見られるようになってきました。これ、どう思いますか？いろいろな意見があると思いますが、私は、専門性が消えるのではなく、専門性の中で価値が上がる要素と下がる要素が出てくると思っています。
+                        </p>
+
+                        <div class="highlight-box">
+                            <p class="mb-1"><strong>AI時代に価値が下がるもの：</strong>『知識・技術を持っていること自体』</p>
+                            <p class="mb-0"><strong>AI時代に価値が上がるもの：</strong>『不確実性の中で状況に合わせて意思決定し、行動し、結果責任を引き受ける能力』</p>
+                        </div>
+
+                        <p>専門性という考え方は消えませんが、専門性が指す中身は確実に変わると思います。この記事では、専門性の定義を分解し、私なりに「これから何を鍛えるべきか」を整理してみました。</p>
+
+                        <h2>1. そもそも専門性とは何か</h2>
+                        <p>そもそも専門性って何を指すのでしょうか。専門的に勉強をしてきたこと？資格を持っていること？色々あると思います。</p>
+                        <p>専門性は以下の4つの要素に分解できるように思います。</p>
+                        <ol>
+                            <li><strong>知識：</strong>体系だった理論/方法や、多くの事例を知っている</li>
+                            <li><strong>判断：</strong>目的と制約の中で何をやるか/やらないかを根拠を持って決められる</li>
+                            <li><strong>実行：</strong>「やる」と決めたアクションを遂行することができる。高度・希少な方法も実行できる</li>
+                            <li><strong>責任：</strong>結果の利益・損失を引き受ける</li>
+                        </ol>
+                        <p>AI以前では多くの分野で、これらのうち特に「体系だった知識」と「実行」に重点が置かれていたように思います。例えばプログラマーであればプログラミング言語自体の知識を有していてコーディングやレビューができる。医者であれば医学的知識や最新の論文情報に基づいて診断や治療ができる。イラストレーターであればさまざまなパースでデザイン的な知識を持って魅力的なイラストを描ける。そういった具合です。
+                        </p>
+
+                        <h2>2. AIの台頭による変化</h2>
+
+                        <h3>AIに代替されつつある領域</h3>
+                        <p>AIの登場によって、「体系だった知識」と「実行」の一部が代替できるようになってきました。具体的には以下のような変化が起きています。</p>
+                        <ul>
+                            <li><strong>知識のコモディティ化：</strong>どの分野でも理論や方法論はAIに聞けばすぐに教えてもらえる</li>
+                            <li><strong>文書・コードの自動生成：</strong>ドキュメント作成やコーディングは、人が一から書く必要がなくなりつつある</li>
+                            <li><strong>クリエイティブ制作：</strong>デザイン・イラスト・音楽・動画も、そこそこのクオリティであればAIで生成可能になった</li>
+                            <li><strong>身体的技術：</strong>今後、ロボット・機械化によって物理的な作業もコピーされていく可能性がある</li>
+                        </ul>
+                        <p>このため、これまでの「知識」や「実行」は、より高度なものは引き続き重宝されますが、専門家の主な業務の座からは徐々に降りていくと想定しています。</p>
+
+                        <h3>それでも「専門家」への需要は残るのか</h3>
+                        <p>このような中で、「専門性はそもそも価値を失っていく＝専門家は不要になる」という結論になるのでしょうか。</p>
+                        <p>私はそうは思いません。「専門家が必要/不要」という議論は、<em>頼む側の視点</em>が重要です。AI時代にも人々が「専門家に頼りたくなる」状況が残るなら、専門家は残り続けます。変わるのは、<strong>需要の有無ではなく、求められる内容</strong>です。具体的には、顧客の状況に合わせた意思決定・迅速なアクション・そして結果に対する責任、この3点が専門家に求められる核心になっていくと思っています。</p>
+
+                        <h3>例：医師という専門家を「頼る」理由</h3>
+                        <p>病気の症状や治療法はインターネットやAIで検索すれば瞬時に手に入ります。症状から診断をしてくれるAIも出てきました。しかし、いざ自分が重い病気にかかった時、その情報だけで開腹手術を決断できる人はほとんどいないでしょう。</p>
+                        <p>五感を使って患者の状態を把握し、「こういう検査もした方が良いのでは？」「そういえばこんなことはありませんでしたか？」と追加情報を引き出す医師の存在はやはり必要です。何かあった時に責任を取るべき存在がいるという安心感は、AIには出せません。</p>
+                        <p>私たちが医師を頼る（＝専門性を認める）のは、医学的知識があるからだけでなく、「この患者の状況ならリスクを取ってでもこの手術をすべきだ」と判断し、その結果に対して責任を引き受けてくれるからです。</p>
+                        <p>AIの進化によって起きているのは、まさにこの構造の変化です。私は、<strong>AI時代ほど「判断」と「責任」の価値がより高まる</strong>と考えています。</p>
+
+                        <h2>3. 専門性の「証明」を設計する</h2>
+                        <p>判断と責任の価値が上がる時代において、「私は〇〇の知識があります（〇〇言語が書けます）」というアピールだけでは、専門性の証明として弱くなっています。では、AI時代において、他者に「この人になら重要な判断を委ねられる」と思ってもらうためにはどうすればよいでしょうか。
+                        </p>
+
+                        <h3>1. 事前の証明（トラストの構築）</h3>
+                        <p>単純な資格や職歴だけでなく、「過去にどんな難しい状況で、どういう判断を下してきたか」の履歴が重要になります。例えば、技術ブログで単なるチュートリアルを書くのではなく、「過去のプロジェクトでの失敗談と、そこから何を学び、どうチームの運用を変えたか」といった泥臭い経験則を発信することは、AIには生成できない強力な証明になります。
+                        </p>
+
+                        <h3>2. 実務中の証明（プロセスでの価値提示）</h3>
+                        <p>実際の仕事の中で「判断の質」を証明するには、AIが出した100点の正解をそのまま持っていくのではなく、以下を示して合意をとりにいくような動き方が重要になってきます。</p>
+                        <ul>
+                            <li>「予算の制約」や「納期」といったクライアント・現場のリアルな条件を明示しているか</li>
+                            <li>「プランAとプランBがあり、それぞれこういうリスクがあるが、現在の我々の状況ならプランAを推奨する」といった比較検討のプロセスがあり、クライアントに合わせてカスタマイズされているか
+                            </li>
+                            <li>「いつ、誰が何をするのか」という具体的なアクションに繋がっているか</li>
+                            <li>熱意を持っており、それが伝わるか</li>
+                        </ul>
+
+                        <h3>3. 事後の証明（結果の引き受けと評判）</h3>
+                        <p>最終的には「あの人に任せておけば、最後はどうにかしてくれる」という顧客やチームからの評価、再依頼が最大の証明になります。結果や評価から逃げず、運用を回しきるということが重要です。これらを蓄積していくことがAI時代の専門家として最も重要かもしれません。
+                        </p>
+
+                        <h2>4. 何を鍛えるべきか（実践）</h2>
+                        <p>では、このうえで具体的に私たちは何に時間を投資すべきでしょうか。</p>
+
+                        <h3>4-1. 専門性が残る分野かどうかを見極める</h3>
+                        <p>『AI時代にも、人々が「専門家に頼りたくなる」という状況が残るかどうか』という視点で自分が身につけようとしている専門性を疑ってみることがまず重要です。特に実行寄りの専門性は今後需要がしぼんでいく可能性が高いです。
+                        </p>
+                        <p>例えばプログラミングはほぼAIが書いてくれるので、もはやコードが書けること自体は専門性として弱いものになっていきます。一方で「何をなぜ作るのか」といった企画分野や「どのような設計でどの範囲まで作るのが良いか」といった判断が求められるITアーキテクチャの領域は、今後も人間の専門性が求められる領域になっていくと考えています。
+                        </p>
+
+                        <h3>4-2. 一次情報への接続を持つ</h3>
+                        <p>AIは「過去にインターネット上に存在したデータ」から学習するため、常に学習ラグがあります。また、本当に価値のある生々しいビジネスの失敗談や、まだ言語化/認知されていない現場の課題は、簡単にはネットに落ちていません。実務家や研究者との直接のネットワーク、クローズドな専門コミュニティ、現場での一次データなど、「AIがまだ知らない情報源」へのアクセス権を持つことは、強い差別化要因として残ります。
+                        </p>
+                        <p>このために、「学校」や「会社」や「コミュニティ」への参加、また有料情報へのアクセスは有効だと思います。</p>
+
+                        <h3>4-3. 「自分はどの難しい判断に強いか・強く興味があるか」を言語化する</h3>
+                        <p>「私はデータサイエンティストです」という職種（肩書き）を名乗るよりも、自分が引き受けられる判断の領域や、自分が強く興味を持つ領域とその実績を示す方が、相手に価値が伝わります。</p>
+                        <ul>
+                            <li>「XX分野で、不確実性が高く正解がない施策に対して、貴社の状況に合わせて予算・デザイン・法務等の観点からも助言ができます」</li>
+                            <li>「分析結果を現場の営業担当者が実際に動ける運用フローに落とし込み現場にも受け入れてもらうように交渉し勝ち取った実績があります」</li>
+                        </ul>
+
+                        <h3>4-4. 実装・運用まで「持ち切る」</h3>
+                        <p>「こうすれば良い」という提案やレポート報告だけして終わる評論家的な立ち位置は、今後AIに代替されやすくなります。提案したからには、関係者の利害を調整して合意形成を図り、システムや業務フローに組み込み、うまくいかなければ泥臭く改善ループを回す。この「現場でシステムや組織を前進させる力」は今後も重宝されるはずです。
+                        </p>
+
+                        <h2>5. 専門性獲得の実戦における理想と現実について</h2>
+                        <p>上記のようにAI時代により重要になるのは「判断と責任」となりますが、これは以前からそうであったことがより尖った形で現れることになるということだと考えています。</p>
+                        <p>そして、現実的には「判断と責任」分野を鍛えるにあたっては、「知識」と「実行による経験/実績」は前提として必要になってきます。このことを考えると、「自分はこういうことに興味がある」という強いアピールと共に何らかのコミュニティに属すことによって実績・経験をとにかく得て、理論的知識はAIによって爆速で身につけていくというのが良さそうです。
+                        </p>
+
+                        <h2>おわりに</h2>
+                        <p>AIの台頭によって、「今勉強しているこのスキルも、すぐに無駄になるのではないか」と不安になるのは当然のことです。しかし今は、専門性が消えてなくなる時代ではなく、専門性の重心が力強く移動している時代なのだと思います。
+                        </p>
+                        <p>AI時代では、知識はやみくもに詰め込むだけでなく、それを使うべき文脈を深く理解したうえでリスクを負って決断して交渉してでも最後までやり切るという「判断と責任」への方向性は意識しながらインプットしていくことが重要です。
+                        </p>
+                        <p>AIは仕事を奪う脅威ではなく、AIを用いて自分の知識をブーストし意思決定を強力に後押ししてくれる存在としてみなしていくことが良いのではないかと考えています。</p>
+
+                        <div class="article-navigation">
+                            <div class="d-flex justify-content-between">
+                                <a href="https://takekapp.com/blog/index.html"><i
+                                        class="bi bi-arrow-left me-2"></i>記事一覧に戻る</a>
+                                <a href="2026-01-03-awaawapon-tournament-reflection.html">前の記事: あわあわポンの大会を終えての所感と今後の方針
+                                    <i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- サイドバー -->
+                <div class="col-lg-3">
+                    <div class="article-sidebar">
+                        <div class="sidebar-card">
+                            <h4>最近の記事</h4>
+                            <div class="sidebar-article-item">
+                                <a href="2026-01-03-awaawapon-tournament-reflection.html">あわあわポンの大会を終えての所感と今後の方針</a>
+                                <div class="sidebar-article-date">2026年1月3日</div>
+                            </div>
+                            <div class="sidebar-article-item">
+                                <a href="2025-11-23-casual-game-failure.html">カジュアルゲームが爆死した話</a>
+                                <div class="sidebar-article-date">2025年11月23日</div>
+                            </div>
+                            <div class="sidebar-article-item">
+                                <a href="2025-11-22-development-diary-starts.html">開発日記を始めます</a>
+                                <div class="sidebar-article-date">2025年11月22日</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="bg-dark text-white py-4 mt-5">
+            <div class="container text-center">
+                <p>&copy; 2026 takekapp1990. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>
