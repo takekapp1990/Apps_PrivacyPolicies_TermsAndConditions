@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diario Feliz | Una app de diario amable para felicitarte cada día</title>
+    <meta name="description" content="Una app de diario breve con personajes adorables para hacer cada día un poquito más feliz. Felicítate, revisa tu fortuna diaria, cuida a tus personajes y mantén una rutina amable.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Diario Feliz | Una app de diario amable para felicitarte cada día">
+    <meta property="og:description" content="Diario breve con personajes adorables. Felicítate un poquito cada día con diario, cuidado del personaje y fortuna diaria.">
+    <meta property="og:image" content="https://takekapp.com/GoodLuckMaker/images/lp/platforms/android/locales/es-ES/feature/featureGraphic.png">
+    <meta property="og:url" content="https://takekapp.com/GoodLuckMaker/es/landing_page_es.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Diario Feliz | Una app de diario amable para felicitarte cada día">
+    <meta name="twitter:description" content="Diario breve con personajes adorables. Felicítate un poquito cada día con diario, cuidado del personaje y fortuna diaria.">
+    <meta name="twitter:image" content="https://takekapp.com/GoodLuckMaker/images/lp/platforms/android/locales/es-ES/feature/featureGraphic.png">
+    <meta name="twitter:site" content="@takekapp">
+
+    <link rel="icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-0VCS46ZTHC');
+    </script>
+
+    <style>
+
+        :root {
+            --brand-main: #ff9cb0;
+            --brand-light: #fff1f5;
+            --brand-dark: #84536b;
+            --text-main: #2f2946;
+            --text-muted: #6a637f;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --glass-shadow: 0 8px 32px 0 rgba(132, 83, 107, 0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--text-main);
+            background-color: #fff9f6;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(255, 230, 235, 0.8) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(219, 234, 255, 0.8) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(255, 217, 191, 0.8) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(214, 246, 227, 0.8) 0px, transparent 50%);
+            background-attachment: fixed;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(90%, var(--container-width));
+            margin: 0 auto;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: var(--glass-shadow);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes float-delay {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-delayed {
+            animation: float-delay 7s ease-in-out infinite 1s;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(90%, var(--container-width));
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: 99px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--brand-dark);
+        }
+
+        .nav-brand img {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-weight: 700;
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 99px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: var(--brand-dark);
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 160px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-app-name {
+            display: inline-block;
+            background: var(--brand-light);
+            color: var(--brand-dark);
+            padding: 8px 20px;
+            border-radius: 99px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(255, 156, 176, 0.3);
+        }
+        .hero-app-name strong {
+            color: var(--brand-main);
+            font-size: 1.4rem;
+            margin-left: 6px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 4.5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ff7a96, #ffb38a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            word-break: keep-all;
+            overflow-wrap: anywhere;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .feature-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .chip {
+            padding: 8px 16px;
+            border-radius: 99px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.8);
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+        .chip:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-slideshow {
+            position: relative;
+            max-width: 320px;
+            width: 100%;
+            aspect-ratio: 1080 / 2340;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(255, 122, 150, 0.2);
+            overflow: hidden;
+            z-index: 2;
+            background: #fff;
+        }
+        .hero-slideshow img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+        }
+        .hero-slideshow img:nth-child(1) { opacity: 1; }
+
+        .hero-orb {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 1;
+        }
+
+        .orb-1 {
+            background: #ffb38a;
+            top: -50px;
+            right: 0px;
+        }
+
+        .orb-2 {
+            background: #a8c8ff;
+            bottom: -50px;
+            left: 0px;
+        }
+
+        .store-badge {
+            display: inline-block;
+            transition: transform 0.2s, filter 0.2s;
+        }
+        .store-badge:hover {
+            transform: translateY(-4px);
+            filter: brightness(1.05);
+        }
+        .store-badge img {
+            height: 60px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-header .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 99px;
+            background: var(--brand-light);
+            color: var(--brand-main);
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 16px;
+        }
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            padding: 32px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(132, 83, 107, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: linear-gradient(135deg, #fff, #ffe5ec);
+            color: var(--brand-main);
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 24px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .screens-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+        .screen-mockup {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .screen-mockup:hover {
+            transform: scale(1.03) translateY(-10px);
+        }
+        .screen-mockup img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media (min-width: 769px) {
+            .stagger-up {
+                transform: translateY(30px);
+            }
+            .screen-mockup:hover.stagger-up {
+                transform: scale(1.03) translateY(20px);
+            }
+        }
+
+        .concept-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .concept-main {
+            background: linear-gradient(135deg, rgba(255, 156, 176, 0.9), rgba(255, 201, 90, 0.9));
+            color: white;
+            padding: 60px;
+            border-radius: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+        .concept-main h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .concept-main p {
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .char-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .char-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px;
+        }
+        .char-card img {
+            width: 100px;
+            border-radius: 20px;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(0deg, rgba(255,255,255,0.8), transparent);
+        }
+        .footer-legal {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .footer-legal a:hover {
+            color: var(--brand-main);
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .char-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 32px 20px 24px;
+            border-radius: 24px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .char-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(132, 83, 107, 0.15);
+        }
+
+        .char-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 6px 16px rgba(0,0,0,0.1));
+        }
+
+        .char-item h4 {
+            font-size: 1rem;
+            color: var(--brand-dark);
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .char-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-subtitle {
+                margin: 0 auto 40px;
+            }
+            .feature-chips {
+                justify-content: center;
+            }
+            .char-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-slideshow {
+                max-width: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            .hero { padding-top: 100px; }
+            .hero-grid { gap: 30px; }
+            .hero-subtitle { display: none; }
+
+            .hero-app-name {
+                font-size: 0.95rem;
+                padding: 6px 16px;
+                margin-bottom: 12px;
+            }
+            .hero-app-name strong { font-size: 1.15rem; }
+            .feature-chips { gap: 8px; margin-bottom: 24px; }
+            .chip { font-size: 0.8rem; padding: 6px 12px; }
+            .hero-slideshow { max-width: 220px; }
+            .store-badge img { height: 50px; }
+
+            .section-header { margin-bottom: 30px; }
+            .nav-links { display: none; }
+
+            .concept-main { padding: 30px 20px; }
+            .concept-main h3 { font-size: 1.6rem; margin-bottom: 16px; }
+            .concept-main p { font-size: 1rem; }
+
+            .screens-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                padding: 0;
+            }
+            .screen-mockup:hover { transform: scale(1.02) translateY(-5px); }
+
+            .features-grid { grid-template-columns: 1fr; gap: 16px; }
+            .feature-card { padding: 24px; }
+            .feature-icon { width: 60px; height: 60px; line-height: 60px; font-size: 1.8rem; margin-bottom: 12px; }
+
+            .characters-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+            .char-item {
+                padding: 20px 12px;
+            }
+            .char-item img {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 10px;
+            }
+            .char-item h4 { font-size: 0.85rem; }
+            .char-item p { font-size: 0.75rem; }
+
+            .char-card { flex-direction: column; text-align: center; padding: 20px; }
+            .char-card img { width: 80px; margin-bottom: 8px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar glass-card">
+        <div class="nav-brand">
+            <img src="https://takekapp.com/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png" alt="Icono de Diario Feliz">
+            Diario Feliz
+        </div>
+        <div class="nav-links">
+            <a href="#concept">Concepto</a>
+            <a href="#features">Funciones</a>
+            <a href="#screens">Pantallas</a>
+            <a href="#download">Descargar</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-app-name">App de diario amable<strong>Diario Feliz</strong></div>
+                <h1><span style="white-space: nowrap">Felicítate un poquito,</span><br>y haz cada día<br>más feliz.</h1>
+                <p class="hero-subtitle">Diario Feliz es una app compañera para felicitarte y hacer cada día un poquito más feliz. Mantén una rutina ligera con personajes adorables y un diario breve que sí puedes continuar.</p>
+
+                <div class="feature-chips">
+                    <div class="chip">Diario de una línea</div>
+                    <div class="chip">Personajes y voces adorables</div>
+                </div>
+
+                <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod" class="store-badge" target="_blank" rel="noopener">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponible en Google Play">
+                </a>
+            </div>
+            <div class="hero-visual floating">
+                <div class="hero-orb orb-1"></div>
+                <div class="hero-orb orb-2"></div>
+                <div class="hero-slideshow">
+                    <img src="../images/lp/platforms/android/locales/es-ES/screenshots/phone/1_es-ES.png" alt="Diario Feliz screenshot 1">
+                    <img src="../images/lp/platforms/android/locales/es-ES/screenshots/phone/2_es-ES.png" alt="Diario Feliz screenshot 2">
+                    <img src="../images/lp/platforms/android/locales/es-ES/screenshots/phone/3_es-ES.png" alt="Diario Feliz screenshot 3">
+                    <img src="../images/lp/platforms/android/locales/es-ES/screenshots/phone/4_es-ES.png" alt="Diario Feliz screenshot 4">
+                    <img src="../images/lp/platforms/android/locales/es-ES/screenshots/phone/5_es-ES.png" alt="Diario Feliz screenshot 5">
+                    <img src="../images/lp/platforms/android/locales/es-ES/screenshots/phone/6_es-ES.png" alt="Diario Feliz screenshot 6">
+                    <img src="../images/lp/platforms/android/locales/es-ES/screenshots/phone/7_es-ES.png" alt="Diario Feliz screenshot 7">
+                    <img src="../images/lp/platforms/android/locales/es-ES/screenshots/phone/8_es-ES.png" alt="Diario Feliz screenshot 8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="concept" class="container">
+        <div class="section-header">
+            <span class="tag">Concept</span>
+            <h2>No es un registro para demostrar cuánto te esforzaste,<br>sino un lugar para tratarte con cariño hoy.</h2>
+            <p>Diario Feliz no existe para medir tu productividad. Es un espacio suave para notar pequeños cambios en tu ánimo y encontrar una cosa buena que hiciste hoy.</p>
+        </div>
+
+        <div class="concept-wrap">
+            <div class="concept-main glass-card">
+                <h3>Un pequeño hábito que no pesa,<br>para que te apetezca volver mañana.</h3>
+                <p>La app está diseñada para que volver se sienta fácil. Crecer junto a tus personajes hace visible tu progreso y convierte cada día en algo un poco más cálido.</p>
+            </div>
+
+            <div class="char-grid">
+                <div class="char-card glass-card floating-delayed">
+                    <img src="../images/lp/shared/characters/f01/yumekawa_baby_base_happy.png" alt="Bebé tierno">
+                    <div>
+                        <h4 style="color: var(--brand-main); margin-bottom: 8px;">Especialmente en los días en que eres dura contigo</h4>
+                        <p style="font-size: 0.95rem;">Está pensada para abrirse no solo en los días buenos, sino también cuando estás cansada y necesitas algo amable.</p>
+                    </div>
+                </div>
+                <div class="char-card glass-card floating">
+                    <img src="../images/lp/shared/characters/f01/yumekawa_animal_penguin_base_happy.png" alt="Pingüino tierno">
+                    <div>
+                        <h4 style="color: #4a90e2; margin-bottom: 8px;">Los pequeños impulsos positivos se acumulan</h4>
+                        <p style="font-size: 0.95rem;">Tus notas diarias y el crecimiento del personaje se superponen para que sientas tu propio avance con más ternura.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="characters" class="container">
+        <div class="section-header">
+            <span class="tag">Characters</span>
+            <h2>Personajes adorables como compañeros</h2>
+            <p>Cuanto más tiempo registras con ellos, más fuerte se siente el vínculo.</p>
+        </div>
+        <div class="characters-grid">
+            <div class="char-item glass-card">
+                <img src="../images/lp/shared/characters/f01/yumekawa_baby_base_happy.png" alt="Bebé">
+                <h4>Bebé</h4>
+                <p>Tu primer compañero, cálido y reconfortante</p>
+            </div>
+            <div class="char-item glass-card">
+                <img src="../images/lp/shared/characters/f01/yumekawa_animal_usagi_base_happy.png" alt="Conejo">
+                <h4>Conejo</h4>
+                <p>Con orejitas suaves, siempre a tu lado</p>
+            </div>
+            <div class="char-item glass-card">
+                <img src="../images/lp/shared/characters/f01/yumekawa_animal_penguin_base_happy.png" alt="Pingüino">
+                <h4>Pingüino</h4>
+                <p>Un compañero encantador con pasos pequeños</p>
+            </div>
+            <div class="char-item glass-card">
+                <img src="../images/lp/shared/characters/f01/yumekawa_animal_azarashi_base_happy.png" alt="Foca">
+                <h4>Foca</h4>
+                <p>Redondita y tranquila, trae consuelo</p>
+            </div>
+            <div class="char-item glass-card">
+                <img src="../images/lp/shared/characters/f01/yumekawa_angel_tenshi_base_happy.png" alt="Ángel">
+                <h4>Ángel</h4>
+                <p>Un ángel amable que te cuida en silencio</p>
+            </div>
+            <div class="char-item glass-card">
+                <img src="../images/lp/shared/characters/f01/fantasy_unicorn_rainbow_base_happy.png" alt="Unicornio">
+                <h4>Unicornio</h4>
+                <p>Un ser mágico que trae sueños y arcoíris</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="container">
+        <div class="section-header">
+            <span class="tag">Features</span>
+            <h2>Funciones que dan ganas de volver,<br>bonitas y suaves para acompañarte.</h2>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card glass-card">
+                <div class="feature-icon">01</div>
+                <h3>Diario breve de cada día</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px;">Anota en pocas palabras tu ánimo o algo que lograste hoy. No tiene que ser largo, así que es fácil seguir con el hábito.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="feature-icon">02</div>
+                <h3>Fortuna diaria</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px;">Saca por la mañana una fortuna ligera y positiva para empezar el día con una sensación más amable.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="feature-icon">03</div>
+                <h3>Cuidado del personaje</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px;">Cuanto más continúas, más tiempo compartes con tus personajes y más fácil es notar sus cambios.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="feature-icon">04</div>
+                <h3>Minijuegos para despejarte</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px;">Incluye minijuegos cortos para jugar un momento y refrescar tu estado de ánimo en tus ratos libres.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="feature-icon">05</div>
+                <h3>Guardado en la nube</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px;">Inicia sesión con Google o Apple para guardar tus recuerdos importantes y seguir con ellos cuando lo necesites.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="feature-icon">06</div>
+                <h3>Más personajes, voces y recompensas</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px;">Sigue usando la app para conocer nuevos personajes, escuchar más voces y hacer tu diario diario aún más divertido.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="screens" class="container">
+        <div class="section-header">
+            <span class="tag">Screens</span>
+            <h2>Una estética suave que se siente desde la pantalla</h2>
+        </div>
+
+        <div class="screens-gallery">
+            <div class="screen-mockup"><img src="../images/lp/platforms/android/locales/es-ES/screenshots/phone/1_es-ES.png" alt="Diario Feliz screenshot 1"></div>
+            <div class="screen-mockup stagger-up"><img src="../images/lp/platforms/android/locales/es-ES/screenshots/phone/2_es-ES.png" alt="Diario Feliz screenshot 2"></div>
+            <div class="screen-mockup"><img src="../images/lp/platforms/android/locales/es-ES/screenshots/phone/5_es-ES.png" alt="Diario Feliz screenshot 5"></div>
+            <div class="screen-mockup stagger-up"><img src="../images/lp/platforms/android/locales/es-ES/screenshots/phone/6_es-ES.png" alt="Diario Feliz screenshot 6"></div>
+        </div>
+    </section>
+
+    <section id="download" class="cta-section">
+        <div class="container">
+            <img src="https://takekapp.com/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png"
+                 alt="Diario Feliz"
+                 style="width: 100px; height: 100px; border-radius: 28px; margin: 0 auto 28px; box-shadow: 0 16px 48px rgba(255, 122, 150, 0.35); display: block;">
+            <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 24px;">Dedícate hoy una palabra amable.</h2>
+            <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem;">Cuando quieras hacer tus días un poquito más felices, deja a este compañero adorable a tu lado.</p>
+
+            <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod" class="store-badge" target="_blank" rel="noopener">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponible en Google Play">
+            </a>
+
+            <div class="footer-legal">
+                <a href="../en/privacy_policy_en.html">Política de privacidad</a>
+                <a href="../en/terms_and_conditions_en.html">Términos de uso</a>
+                <span>© takekapp1990</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            var slides = document.querySelectorAll('.hero-slideshow img');
+            var current = 0;
+            var interval = 4000;
+            setInterval(function () {
+                slides[current].style.opacity = '0';
+                current = (current + 1) % slides.length;
+                slides[current].style.opacity = '1';
+            }, interval);
+        })();
+    </script>
+</body>
+</html>

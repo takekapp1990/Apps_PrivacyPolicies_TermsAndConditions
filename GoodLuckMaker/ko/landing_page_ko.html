@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>절대 행복 일기 | 나를 칭찬하며 이어가는 다정한 일기 앱</title>
+    <meta name="description" content="귀여운 캐릭터와 함께 매일을 조금 더 행복하게 만드는 한마디 일기 앱. 스스로를 칭찬하고 오늘의 운세를 확인하며 캐릭터를 돌보는 다정한 루틴을 이어가 보세요.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="절대 행복 일기 | 나를 칭찬하며 이어가는 다정한 일기 앱">
+    <meta property="og:description" content="귀여운 캐릭터와 함께하는 한마디 일기 앱. 일기, 캐릭터 돌보기, 오늘의 운세로 매일을 조금 더 다정하게 기록해 보세요.">
+    <meta property="og:image" content="https://takekapp.com/GoodLuckMaker/images/lp/platforms/android/locales/ko-KR/feature/featureGraphic.png">
+    <meta property="og:url" content="https://takekapp.com/GoodLuckMaker/ko/landing_page_ko.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="절대 행복 일기 | 나를 칭찬하며 이어가는 다정한 일기 앱">
+    <meta name="twitter:description" content="귀여운 캐릭터와 함께하는 한마디 일기 앱. 일기, 캐릭터 돌보기, 오늘의 운세로 매일을 조금 더 다정하게 기록해 보세요.">
+    <meta name="twitter:image" content="https://takekapp.com/GoodLuckMaker/images/lp/platforms/android/locales/ko-KR/feature/featureGraphic.png">
+    <meta name="twitter:site" content="@takekapp">
+
+    <link rel="icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-0VCS46ZTHC');
+    </script>
+
+    <style>
+
+        :root {
+            --brand-main: #ff9cb0;
+            --brand-light: #fff1f5;
+            --brand-dark: #84536b;
+            --text-main: #2f2946;
+            --text-muted: #6a637f;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --glass-shadow: 0 8px 32px 0 rgba(132, 83, 107, 0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: var(--text-main);
+            background-color: #fff9f6;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(255, 230, 235, 0.8) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(219, 234, 255, 0.8) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(255, 217, 191, 0.8) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(214, 246, 227, 0.8) 0px, transparent 50%);
+            background-attachment: fixed;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 800;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(90%, var(--container-width));
+            margin: 0 auto;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: var(--glass-shadow);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes float-delay {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-delayed {
+            animation: float-delay 7s ease-in-out infinite 1s;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(90%, var(--container-width));
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: 99px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--brand-dark);
+        }
+
+        .nav-brand img {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-weight: 700;
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 99px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: var(--brand-dark);
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 160px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-app-name {
+            display: inline-block;
+            background: var(--brand-light);
+            color: var(--brand-dark);
+            padding: 8px 20px;
+            border-radius: 99px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(255, 156, 176, 0.3);
+        }
+        .hero-app-name strong {
+            color: var(--brand-main);
+            font-size: 1.4rem;
+            margin-left: 6px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 4.5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ff7a96, #ffb38a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            word-break: keep-all;
+            overflow-wrap: anywhere;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .feature-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .chip {
+            padding: 8px 16px;
+            border-radius: 99px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.8);
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+        .chip:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-slideshow {
+            position: relative;
+            max-width: 320px;
+            width: 100%;
+            aspect-ratio: 1080 / 2340;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(255, 122, 150, 0.2);
+            overflow: hidden;
+            z-index: 2;
+            background: #fff;
+        }
+        .hero-slideshow img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+        }
+        .hero-slideshow img:nth-child(1) { opacity: 1; }
+
+        .hero-orb {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 1;
+        }
+
+        .orb-1 {
+            background: #ffb38a;
+            top: -50px;
+            right: 0px;
+        }
+
+        .orb-2 {
+            background: #a8c8ff;
+            bottom: -50px;
+            left: 0px;
+        }
+
+        .store-badge {
+            display: inline-block;
+            transition: transform 0.2s, filter 0.2s;
+        }
+        .store-badge:hover {
+            transform: translateY(-4px);
+            filter: brightness(1.05);
+        }
+        .store-badge img {
+            height: 60px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-header .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 99px;
+            background: var(--brand-light);
+            color: var(--brand-main);
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 16px;
+        }
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            padding: 32px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(132, 83, 107, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: linear-gradient(135deg, #fff, #ffe5ec);
+            color: var(--brand-main);
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 800;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 24px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .screens-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+        .screen-mockup {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .screen-mockup:hover {
+            transform: scale(1.03) translateY(-10px);
+        }
+        .screen-mockup img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media (min-width: 769px) {
+            .stagger-up {
+                transform: translateY(30px);
+            }
+            .screen-mockup:hover.stagger-up {
+                transform: scale(1.03) translateY(20px);
+            }
+        }
+
+        .concept-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .concept-main {
+            background: linear-gradient(135deg, rgba(255, 156, 176, 0.9), rgba(255, 201, 90, 0.9));
+            color: white;
+            padding: 60px;
+            border-radius: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+        .concept-main h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .concept-main p {
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .char-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .char-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px;
+        }
+        .char-card img {
+            width: 100px;
+            border-radius: 20px;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(0deg, rgba(255,255,255,0.8), transparent);
+        }
+        .footer-legal {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .footer-legal a:hover {
+            color: var(--brand-main);
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .char-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 32px 20px 24px;
+            border-radius: 24px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .char-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(132, 83, 107, 0.15);
+        }
+
+        .char-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 6px 16px rgba(0,0,0,0.1));
+        }
+
+        .char-item h4 {
+            font-size: 1rem;
+            color: var(--brand-dark);
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .char-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-subtitle {
+                margin: 0 auto 40px;
+            }
+            .feature-chips {
+                justify-content: center;
+            }
+            .char-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-slideshow {
+                max-width: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            .hero { padding-top: 100px; }
+            .hero-grid { gap: 30px; }
+            .hero-subtitle { display: none; }
+
+            .hero-app-name {
+                font-size: 0.95rem;
+                padding: 6px 16px;
+                margin-bottom: 12px;
+            }
+            .hero-app-name strong { font-size: 1.15rem; }
+            .feature-chips { gap: 8px; margin-bottom: 24px; }
+            .chip { font-size: 0.8rem; padding: 6px 12px; }
+            .hero-slideshow { max-width: 220px; }
+            .store-badge img { height: 50px; }
+
+            .section-header { margin-bottom: 30px; }
+            .nav-links { display: none; }
+
+            .concept-main { padding: 30px 20px; }
+            .concept-main h3 { font-size: 1.6rem; margin-bottom: 16px; }
+            .concept-main p { font-size: 1rem; }
+
+            .screens-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                padding: 0;
+            }
+            .screen-mockup:hover { transform: scale(1.02) translateY(-5px); }
+
+            .features-grid { grid-template-columns: 1fr; gap: 16px; }
+            .feature-card { padding: 24px; }
+            .feature-icon { width: 60px; height: 60px; line-height: 60px; font-size: 1.8rem; margin-bottom: 12px; }
+
+            .characters-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+            .char-item {
+                padding: 20px 12px;
+            }
+            .char-item img {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 10px;
+            }
+            .char-item h4 { font-size: 0.85rem; }
+            .char-item p { font-size: 0.75rem; }
+
+            .char-card { flex-direction: column; text-align: center; padding: 20px; }
+            .char-card img { width: 80px; margin-bottom: 8px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar glass-card">
+        <div class="nav-brand">
+            <img src="https://takekapp.com/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png" alt="절대 행복 일기 아이콘">
+            절대 행복 일기
+        </div>
+        <div class="nav-links">
+            <a href="#concept">콘셉트</a>
+            <a href="#features">기능</a>
+            <a href="#screens">화면</a>
+            <a href="#download">다운로드</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-app-name">다정한 일기 앱<strong>절대 행복 일기</strong></div>
+                <h1><span style="white-space: nowrap">스스로를 칭찬하면서,</span><br>하루하루를 조금 더<br>행복하게.</h1>
+                <p class="hero-subtitle">절대 행복 일기는 스스로를 칭찬하며 매일을 조금씩 더 행복하게 만들어 주는 파트너 앱입니다. 귀여운 캐릭터와 함께 부담 없는 짧은 일기 루틴을 이어갈 수 있어요.</p>
+
+                <div class="feature-chips">
+                    <div class="chip">매일 한마디 기록</div>
+                    <div class="chip">귀여운 캐릭터와 보이스</div>
+                </div>
+
+                <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod" class="store-badge" target="_blank" rel="noopener">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play에서 다운로드">
+                </a>
+            </div>
+            <div class="hero-visual floating">
+                <div class="hero-orb orb-1"></div>
+                <div class="hero-orb orb-2"></div>
+                <div class="hero-slideshow">
+                    <img src="../images/lp/platforms/android/locales/ko-KR/screenshots/phone/1_ko-KR.png" alt="절대 행복 일기 screenshot 1">
+                    <img src="../images/lp/platforms/android/locales/ko-KR/screenshots/phone/2_ko-KR.png" alt="절대 행복 일기 screenshot 2">
+                    <img src="../images/lp/platforms/android/locales/ko-KR/screenshots/phone/3_ko-KR.png" alt="절대 행복 일기 screenshot 3">
+                    <img src="../images/lp/platforms/android/locales/ko-KR/screenshots/phone/4_ko-KR.png" alt="절대 행복 일기 screenshot 4">
+                    <img src="../images/lp/platforms/android/locales/ko-KR/screenshots/phone/5_ko-KR.png" alt="절대 행복 일기 screenshot 5">
+                    <img src="../images/lp/platforms/android/locales/ko-KR/screenshots/phone/6_ko-KR.png" alt="절대 행복 일기 screenshot 6">
+                    <img src="../images/lp/platforms/android/locales/ko-KR/screenshots/phone/7_ko-KR.png" alt="절대 행복 일기 screenshot 7">
+                    <img src="../images/lp/platforms/android/locales/ko-KR/screenshots/phone/8_ko-KR.png" alt="절대 행복 일기 screenshot 8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="concept" class="container">
+        <div class="section-header">
+            <span class="tag">Concept</span>
+            <h2>열심히 했다는 걸 증명하는 기록이 아니라,<br>오늘의 나에게 다정해지는 기록.</h2>
+            <p>절대 행복 일기는 생산성을 증명하기 위한 앱이 아닙니다. 작은 기분의 변화와 오늘 해낸 한 가지를 발견할 수 있는, 부드러운 나만의 공간이에요.</p>
+        </div>
+
+        <div class="concept-wrap">
+            <div class="concept-main glass-card">
+                <h3>부담 없이 이어지는 작은 습관,<br>그래서 내일도 다시 오고 싶어져요.</h3>
+                <p>다시 열고 싶어지는 가벼움을 소중히 담았습니다. 캐릭터와 함께 쌓이는 성장감이 매일의 작은 즐거움이 되어 줍니다.</p>
+            </div>
+
+            <div class="char-grid">
+                <div class="char-card glass-card floating-delayed">
+                    <img src="../images/lp/shared/characters/f01/yumekawa_baby_base_happy.png" alt="몽글한 베이비">
+                    <div>
+                        <h4 style="color: var(--brand-main); margin-bottom: 8px;">스스로에게 더 엄격해지는 날일수록</h4>
+                        <p style="font-size: 0.95rem;">기분 좋은 날뿐 아니라 조금 지치고 마음을 달래고 싶은 날에도 자연스럽게 열 수 있도록 설계했습니다.</p>
+                    </div>
+                </div>
+                <div class="char-card glass-card floating">
+                    <img src="../images/lp/shared/characters/f01/yumekawa_animal_penguin_base_happy.png" alt="몽글한 펭귄">
+                    <div>
+                        <h4 style="color: #4a90e2; margin-bottom: 8px;">작은 긍정이 차곡차곡 쌓여요</h4>
+                        <p style="font-size: 0.95rem;">매일의 기록과 캐릭터의 변화가 겹쳐지면서, 내 걸음을 조금 더 다정한 시선으로 느낄 수 있어요.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="characters" class="container">
+        <div class="section-header">
+            <span class="tag">Characters</span>
+            <h2>귀여운 캐릭터가 나의 파트너가 돼요</h2>
+            <p>함께 기록을 쌓아 갈수록 정이 깊어집니다.</p>
+        </div>
+        <div class="characters-grid">
+            <div class="char-item glass-card">
+                <img src="../images/lp/shared/characters/f01/yumekawa_baby_base_happy.png" alt="베이비">
+                <h4>베이비</h4>
+                <p>따뜻하게 감싸 주는 첫 번째 친구</p>
+            </div>
+            <div class="char-item glass-card">
+                <img src="../images/lp/shared/characters/f01/yumekawa_animal_usagi_base_happy.png" alt="토끼">
+                <h4>토끼</h4>
+                <p>폭신한 귀로 곁을 지켜 주는 친구</p>
+            </div>
+            <div class="char-item glass-card">
+                <img src="../images/lp/shared/characters/f01/yumekawa_animal_penguin_base_happy.png" alt="펭귄">
+                <h4>펭귄</h4>
+                <p>종종걸음이 사랑스러운 파트너</p>
+            </div>
+            <div class="char-item glass-card">
+                <img src="../images/lp/shared/characters/f01/yumekawa_animal_azarashi_base_happy.png" alt="물개">
+                <h4>물개</h4>
+                <p>동그란 몸으로 편안함을 전해 줘요</p>
+            </div>
+            <div class="char-item glass-card">
+                <img src="../images/lp/shared/characters/f01/yumekawa_angel_tenshi_base_happy.png" alt="천사">
+                <h4>천사</h4>
+                <p>하늘에서 다정하게 지켜봐 주는 천사</p>
+            </div>
+            <div class="char-item glass-card">
+                <img src="../images/lp/shared/characters/f01/fantasy_unicorn_rainbow_base_happy.png" alt="유니콘">
+                <h4>유니콘</h4>
+                <p>꿈과 무지개를 실어 오는 신비로운 존재</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="container">
+        <div class="section-header">
+            <span class="tag">Features</span>
+            <h2>계속 열고 싶어지는 기능을,<br>귀엽고 다정하게 담았어요.</h2>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card glass-card">
+                <div class="feature-icon">01</div>
+                <h3>매일 한마디 일기</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px;">그날의 기분이나 해낸 일을 짧게 남겨 보세요. 긴 글이 아니어도 괜찮아서 부담 없이 이어갈 수 있어요.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="feature-icon">02</div>
+                <h3>오늘의 운세</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px;">아침에 가볍게 확인할 수 있는 긍정적인 운세로 하루를 다정하게 시작할 수 있어요.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="feature-icon">03</div>
+                <h3>캐릭터 돌보기</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px;">계속할수록 캐릭터와 보내는 시간이 깊어지고, 작은 변화가 더 잘 보이게 됩니다.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="feature-icon">04</div>
+                <h3>미니게임으로 기분 전환</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px;">짧게 즐길 수 있는 미니게임을 담아 틈날 때마다 가볍게 놀며 리프레시할 수 있어요.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="feature-icon">05</div>
+                <h3>클라우드 저장</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px;">Google 또는 Apple 로그인으로 소중한 기록을 저장하고 필요할 때 이어서 사용할 수 있어요.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="feature-icon">06</div>
+                <h3>더 많은 캐릭터와 보이스, 보상</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px;">꾸준히 이어 갈수록 새로운 캐릭터와 보이스를 만나고, 매일의 기록이 더 즐거워집니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="screens" class="container">
+        <div class="section-header">
+            <span class="tag">Screens</span>
+            <h2>화면만 봐도 전해지는 부드러운 세계관</h2>
+        </div>
+
+        <div class="screens-gallery">
+            <div class="screen-mockup"><img src="../images/lp/platforms/android/locales/ko-KR/screenshots/phone/1_ko-KR.png" alt="절대 행복 일기 screenshot 1"></div>
+            <div class="screen-mockup stagger-up"><img src="../images/lp/platforms/android/locales/ko-KR/screenshots/phone/2_ko-KR.png" alt="절대 행복 일기 screenshot 2"></div>
+            <div class="screen-mockup"><img src="../images/lp/platforms/android/locales/ko-KR/screenshots/phone/5_ko-KR.png" alt="절대 행복 일기 screenshot 5"></div>
+            <div class="screen-mockup stagger-up"><img src="../images/lp/platforms/android/locales/ko-KR/screenshots/phone/6_ko-KR.png" alt="절대 행복 일기 screenshot 6"></div>
+        </div>
+    </section>
+
+    <section id="download" class="cta-section">
+        <div class="container">
+            <img src="https://takekapp.com/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png"
+                 alt="절대 행복 일기"
+                 style="width: 100px; height: 100px; border-radius: 28px; margin: 0 auto 28px; box-shadow: 0 16px 48px rgba(255, 122, 150, 0.35); display: block;">
+            <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 24px;">오늘의 나에게 다정한 한마디를 건네 보세요.</h2>
+            <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem;">하루를 조금씩 더 행복하게 만들고 싶을 때, 귀여운 파트너처럼 곁에 두어 주세요.</p>
+
+            <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod" class="store-badge" target="_blank" rel="noopener">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play에서 다운로드">
+            </a>
+
+            <div class="footer-legal">
+                <a href="../en/privacy_policy_en.html">개인정보 처리방침</a>
+                <a href="../en/terms_and_conditions_en.html">이용약관</a>
+                <span>© takekapp1990</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            var slides = document.querySelectorAll('.hero-slideshow img');
+            var current = 0;
+            var interval = 4000;
+            setInterval(function () {
+                slides[current].style.opacity = '0';
+                current = (current + 1) % slides.length;
+                slides[current].style.opacity = '1';
+            }, interval);
+        })();
+    </script>
+</body>
+</html>
