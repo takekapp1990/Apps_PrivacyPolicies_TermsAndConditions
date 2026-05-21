@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About TakeKApp - Flutter×統計学×AI/DXで個人アプリ開発</title>
+    <meta name="description" content="TakeKApp（旧: takekapp1990）は、統計検定1級を持つITエンジニアが、あなたの毎日を少しだけ楽しくするアプリを個人開発しています。Flutter・Firebase・AIを使った10本以上のアプリを公開中。">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About TakeKApp - Flutter×統計学×AI/DXで個人アプリ開発">
+    <meta property="og:description" content="統計検定1級を持つITエンジニアが、あなたの毎日を少しだけ楽しくするアプリを個人開発しています。">
+    <meta property="og:image" content="https://takekapp.com/images/ogp_img.png">
+    <meta property="og:url" content="https://takekapp.com/about.html">
+    <link rel="icon" href="favicon.ico">
+    <link rel="canonical" href="https://takekapp.com/about.html">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-0VCS46ZTHC');
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #4682B4;
+            --primary-dark: #2F4F4F;
+            --text-color: #2C3E50;
+            --accent-color: #708090;
+            --secondary-color: #F5F5F5;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.8;
+            background-color: var(--secondary-color);
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand { color: white !important; font-weight: bold; }
+        .nav-link { color: rgba(255, 255, 255, 0.9) !important; }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .about-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .about-card h2 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .skill-badge {
+            display: inline-block;
+            background: #e8f0f8;
+            color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 99px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 0.25rem;
+            border: 1px solid rgba(70, 130, 180, 0.2);
+        }
+
+        .app-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .app-item:last-child { border-bottom: none; }
+
+        .app-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .app-item-info h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+            color: var(--primary-color);
+        }
+
+        .app-item-info p {
+            font-size: 0.88rem;
+            color: var(--accent-color);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.6rem 1.4rem;
+            border-radius: 99px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 0.3rem;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .contact-link.email {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .contact-link.twitter {
+            background: #000;
+            color: white;
+        }
+
+        .contact-link.github {
+            background: #24292e;
+            color: white;
+        }
+
+        .contact-link.coffee {
+            background: #FFDD00;
+            color: #000;
+        }
+
+        .philosophy-quote {
+            background: linear-gradient(135deg, #e8f0f8, #f0f8ff);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 12px 12px 0;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            padding: 2rem 0;
+            color: white;
+        }
+
+        .footer a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
+        .footer a:hover { color: white; }
+    </style>
+</head>
+
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">TakeKApp Apps</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#apps">Apps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog/index.html">開発日記</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ページヘッダー -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 class="display-5 mb-3">About TakeKApp</h1>
+            <p class="lead" style="opacity: 0.9;">あなたの毎日が少しだけ楽しくなるようなアプリを開発しています</p>
+        </div>
+    </section>
+
+    <div class="container" style="max-width: 900px;">
+
+        <!-- 自己紹介 -->
+        <div class="about-card">
+            <h2>はじめに</h2>
+            <p>
+                はじめまして。<strong>TakeKApp</strong>（旧: takekapp1990）です。
+                フリーランスのAI/DXコンサルタント・ITエンジニアとして活動しながら、
+                モバイルアプリの個人開発を続けています。
+            </p>
+            <div class="philosophy-quote">
+                「あなたの毎日が少しだけ楽しくなるようなアプリを作ること」
+            </div>
+            <p>
+                これが私の開発理念です。大きな問題を解決するアプリよりも、
+                日常の中でふとした楽しさや安心感を届けられるアプリを作り続けています。
+                ゲーム・日記・ユーティリティ・学習系など、ジャンルは問わず、
+                「使うと少し嬉しい」をテーマに開発しています。
+            </p>
+        </div>
+
+        <!-- 経歴・スキル -->
+        <div class="about-card">
+            <h2>スキル・専門性</h2>
+            <p>
+                統計学を専門とするITエンジニアとして、データ分析からモバイルアプリ開発、AI/DX活用まで幅広く取り組んでいます。
+            </p>
+            <p><strong>保有資格・専門:</strong></p>
+            <div class="mb-3">
+                <span class="skill-badge">統計検定1級</span>
+                <span class="skill-badge">統計学</span>
+                <span class="skill-badge">データ分析</span>
+                <span class="skill-badge">AI/DX</span>
+            </div>
+            <p><strong>開発技術:</strong></p>
+            <div class="mb-3">
+                <span class="skill-badge">Flutter</span>
+                <span class="skill-badge">Dart</span>
+                <span class="skill-badge">Firebase</span>
+                <span class="skill-badge">Firestore</span>
+                <span class="skill-badge">Google Analytics</span>
+                <span class="skill-badge">AdMob</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">HTML / CSS / JavaScript</span>
+            </div>
+            <p><strong>公開プラットフォーム:</strong></p>
+            <div>
+                <span class="skill-badge">Google Play（Android）</span>
+                <span class="skill-badge">App Store（iOS）</span>
+            </div>
+        </div>
+
+        <!-- リリースアプリ一覧 -->
+        <div class="about-card">
+            <h2>公開アプリ一覧</h2>
+            <p>これまでにリリースしたアプリの一部です。すべて無料でご利用いただけます。</p>
+
+            <div class="app-item">
+                <img src="https://takekapp.com/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png" alt="絶対幸せ日記">
+                <div class="app-item-info">
+                    <h4><a href="GoodLuckMaker/ja/landing_page_ja.html">絶対幸せ日記</a></h4>
+                    <p>自分を褒めながら毎日をやさしく記録する、ひとこと日記アプリ。可愛いキャラと一緒に続けられます。</p>
+                </div>
+            </div>
+
+            <div class="app-item">
+                <img src="https://takekapp.com/Tificat/images/app_icon.png" alt="Tificat">
+                <div class="app-item-info">
+                    <h4><a href="Tificat/ja/landing_page_ja.html">Tificat</a></h4>
+                    <p>AIがタスクに合わせた一言を考えて送ってくれる、新しい体験のリマインダーアプリ。</p>
+                </div>
+            </div>
+
+            <div class="app-item">
+                <img src="https://takekapp.com/TapAlbum/images/app_icon/pop_photo_gallery_app_icon_ios.png" alt="まほうアルバム">
+                <div class="app-item-info">
+                    <h4><a href="TapAlbum/ja/landing_page_ja.html">まほうアルバム</a></h4>
+                    <p>触れるたびに魔法がかかる、子どもも安心の写真アプリ。家族とのふれあいをもっと増やそう。</p>
+                </div>
+            </div>
+
+            <div class="app-item">
+                <img src="https://takekapp.com/NumberPlaceHint/images/app_icon/number_place_hint_app_icon_10241024_ios.png" alt="ナンプレのヒント">
+                <div class="app-item-info">
+                    <h4><a href="NumberPlaceHint/ja/landing_page_ja.html">ナンプレのヒント</a></h4>
+                    <p>カメラで読み取って、解き方のヒントを解説。答えを見るだけじゃない、実力がつくナンプレアプリ。</p>
+                </div>
+            </div>
+
+            <div class="app-item">
+                <img src="https://takekapp.com/SharedDice/images/icon_512512_app_store.png" alt="多機能サイコロ">
+                <div class="app-item-info">
+                    <h4><a href="SharedDice/landing_pages/ja/landing_page_ja.html">多機能サイコロ</a></h4>
+                    <p>通信対応・カスタム設定・詳細分析機能を持つ、リアルタイムマルチプレイヤー対応のサイコロアプリ。</p>
+                </div>
+            </div>
+
+            <div class="app-item">
+                <img src="https://takekapp.com/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png" alt="あわあわポン">
+                <div class="app-item-info">
+                    <h4><a href="AwaAwaPon/ja/landing_page_ja.html">あわあわポン</a></h4>
+                    <p>次々と出てくるキャラクターの名前を覚えて答える、記憶力バトルゲーム。</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="/#apps" class="btn btn-outline-primary">すべてのアプリを見る →</a>
+            </div>
+        </div>
+
+        <!-- 開発日記 -->
+        <div class="about-card">
+            <h2>開発日記について</h2>
+            <p>
+                アプリ開発の過程で学んだこと、失敗したこと、気づいたことを開発日記として発信しています。
+                Flutter・Firebase・AppStore審査・個人開発の収益化など、実体験に基づいた内容を不定期に更新しています。
+            </p>
+            <a href="/blog/index.html" class="btn btn-primary">開発日記を読む →</a>
+        </div>
+
+        <!-- お問い合わせ -->
+        <div class="about-card">
+            <h2>お問い合わせ・SNS</h2>
+            <p>
+                アプリへのご意見・ご要望、お仕事のご相談など、お気軽にお連絡ください。
+            </p>
+            <div class="d-flex flex-wrap gap-2 mt-3">
+                <a href="mailto:takekapp1990@gmail.com" class="contact-link email">
+                    <i class="bi bi-envelope"></i> takekapp1990@gmail.com
+                </a>
+                <a href="https://x.com/takekapp" target="_blank" rel="noopener" class="contact-link twitter">
+                    <i class="bi bi-twitter-x"></i> X (Twitter)
+                </a>
+                <a href="https://github.com/takekapp1990" target="_blank" rel="noopener" class="contact-link github">
+                    <i class="bi bi-github"></i> GitHub
+                </a>
+                <a href="https://buymeacoffee.com/takekapp1990" target="_blank" rel="noopener" class="contact-link coffee">
+                    ☕ Buy Me a Coffee
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- フッター -->
+    <footer class="footer mt-5">
+        <div class="container text-center">
+            <p>
+                <a href="/">トップページ</a> &nbsp;|&nbsp;
+                <a href="/blog/index.html">開発日記</a> &nbsp;|&nbsp;
+                <a href="/privacy_policy.html">プライバシーポリシー</a>
+            </p>
+            <p>&copy; 2024–2026 TakeKApp（旧: takekapp1990）. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

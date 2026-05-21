@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>「絶対幸せ日記」を作った理由——自分を責めないための日記アプリ - TakeKApp 開発日記</title>
+        <meta name="description" content="日記アプリ「絶対幸せ日記」を開発した背景と、設計の考え方について。なぜ「頑張るためじゃなく、自分にやさしくなるための記録」をコンセプトにしたのか、開発者の視点で振り返ります。">
+        <!-- OGP & Twitter Card -->
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="「絶対幸せ日記」を作った理由——自分を責めないための日記アプリ - TakeKApp 開発日記">
+        <meta property="og:description" content="日記アプリ「絶対幸せ日記」を開発した背景と、設計の考え方について。なぜ「頑張るためじゃなく、自分にやさしくなるための記録」をコンセプトにしたのか、開発者の視点で振り返ります。">
+        <meta property="og:image" content="https://takekapp.com/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png">
+        <meta property="og:url" content="https://takekapp.com/blog/posts/dev/ja/2026-05-22-good-luck-maker-diary-app-development.html">
+        <link rel="alternate" hreflang="ja"
+            href="https://takekapp.com/blog/posts/dev/ja/2026-05-22-good-luck-maker-diary-app-development.html" />
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="「絶対幸せ日記」を作った理由——自分を責めないための日記アプリ">
+        <meta name="twitter:description" content="なぜ「頑張るためじゃなく、自分にやさしくなるための記録」をコンセプトにしたのか、開発者の視点で振り返ります。">
+        <meta name="twitter:image" content="https://takekapp.com/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png">
+        <meta name="twitter:site" content="@takekapp">
+        <link rel="canonical" href="https://takekapp.com/blog/posts/dev/ja/2026-05-22-good-luck-maker-diary-app-development.html">
+
+        <!-- 構造化データ -->
+        <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "「絶対幸せ日記」を作った理由——自分を責めないための日記アプリ",
+      "datePublished": "2026-05-22",
+      "dateModified": "2026-05-22",
+      "author": {
+        "@type": "Person",
+        "name": "TakeKApp"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TakeKApp",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://takekapp.com/SharedDice/images/icon_512512_app_store.png"
+        }
+      },
+      "articleSection": "開発日記",
+      "keywords": ["開発日記", "アプリ開発", "Flutter", "日記アプリ", "絶対幸せ日記", "習慣化", "個人開発"]
+    }
+    </script>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-0VCS46ZTHC');
+        </script>
+        <style>
+            :root {
+                --primary-color: #4682B4;
+                --primary-dark: #2F4F4F;
+                --primary-light: #5F9EA0;
+                --secondary-color: #F5F5F5;
+                --text-color: #2C3E50;
+                --accent-color: #708090;
+            }
+
+            body {
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+                color: var(--text-color);
+                line-height: 1.8;
+                background-color: var(--secondary-color);
+            }
+
+            .navbar {
+                background-color: var(--primary-color);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar-brand {
+                color: white !important;
+                font-weight: bold;
+            }
+
+            .nav-link {
+                color: rgba(255, 255, 255, 0.9) !important;
+            }
+
+            .article-header {
+                background: linear-gradient(135deg, #ff9cb0, #ffcaa0);
+                color: white;
+                padding: 3rem 0;
+                margin-bottom: 3rem;
+            }
+
+            .article-content {
+                background: white;
+                border-radius: 15px;
+                padding: 3rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .article-sidebar {
+                position: sticky;
+                top: 80px;
+            }
+
+            .sidebar-card {
+                background: white;
+                border-radius: 15px;
+                padding: 1.5rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 1.5rem;
+            }
+
+            .sidebar-card h4 {
+                color: var(--primary-color);
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                padding-bottom: 0.75rem;
+                border-bottom: 2px solid var(--primary-color);
+            }
+
+            .sidebar-article-item {
+                padding: 0.75rem 0;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .sidebar-article-item:last-child {
+                border-bottom: none;
+            }
+
+            .sidebar-article-item a {
+                color: var(--text-color);
+                text-decoration: none;
+                font-weight: 500;
+                display: block;
+                transition: color 0.3s ease;
+            }
+
+            .sidebar-article-item a:hover {
+                color: var(--primary-color);
+            }
+
+            .sidebar-article-date {
+                color: var(--accent-color);
+                font-size: 0.85rem;
+                margin-top: 0.25rem;
+            }
+
+            @media (max-width: 991px) {
+                .article-sidebar {
+                    position: static;
+                    margin-top: 2rem;
+                }
+            }
+
+            .article-meta {
+                color: var(--accent-color);
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .article-content h2 {
+                color: var(--primary-color);
+                font-size: 1.8rem;
+                font-weight: 600;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .article-content h3 {
+                color: var(--primary-dark);
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin-top: 1.5rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .article-content p {
+                margin-bottom: 1.5rem;
+            }
+
+            .article-content ul,
+            .article-content ol {
+                margin-bottom: 1.5rem;
+                padding-left: 2rem;
+            }
+
+            .article-content li {
+                margin-bottom: 0.5rem;
+            }
+
+            .article-content blockquote {
+                border-left: 4px solid #ff9cb0;
+                padding-left: 1.5rem;
+                margin: 1.5rem 0;
+                color: var(--accent-color);
+                font-style: italic;
+                background: #fff5f8;
+                padding: 1rem 1.5rem;
+                border-radius: 0 8px 8px 0;
+            }
+
+            .highlight-box {
+                background: #fff1f5;
+                border-radius: 12px;
+                padding: 1.5rem 2rem;
+                margin: 1.5rem 0;
+                border: 1px solid rgba(255, 156, 176, 0.3);
+            }
+
+            .article-navigation {
+                margin-top: 3rem;
+                padding-top: 2rem;
+                border-top: 1px solid #e0e0e0;
+            }
+
+            .article-navigation a {
+                color: var(--primary-color);
+                text-decoration: none;
+            }
+
+            .article-navigation a:hover {
+                color: var(--primary-dark);
+                text-decoration: underline;
+            }
+
+            .language-switcher {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+            }
+
+            .language-switcher .btn {
+                background-color: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                color: white;
+                padding: 0.3rem 0.8rem;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+
+            .language-switcher .btn:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-color: rgba(255, 255, 255, 0.8);
+                color: white;
+            }
+
+            .language-switcher .btn.active {
+                background-color: rgba(255, 255, 255, 0.2);
+                border-color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- ナビゲーションバー -->
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="../../../index.html">TakeKApp Apps</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../index.html#apps">Apps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../../index.html">開発日記</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../index.html#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="language-switcher">
+                        <a href="2026-05-22-good-luck-maker-diary-app-development.html" class="btn active">日本語</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 記事ヘッダー -->
+        <section class="article-header">
+            <div class="container text-center">
+                <h1 class="display-5 mb-3">「絶対幸せ日記」を作った理由<br>——自分を責めないための日記アプリ</h1>
+                <div class="article-meta text-white" style="opacity: 0.9;">
+                    <i class="bi bi-calendar3"></i> 2026年5月22日
+                    <span class="ms-3"><i class="bi bi-folder"></i> 開発日記</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 記事本文 -->
+        <section class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-7">
+                    <article class="article-content">
+
+                        <h2>日記アプリを作ろうと思ったきっかけ</h2>
+                        <p>
+                            個人開発をしていると、毎日のように「今日は何もできなかった」という感覚に陥ることがあります。会社員時代は組織の成果として動いているので、自分の貢献が見えにくい代わりに「チームとして進んでいる」という実感がある。でも個人開発は、動かなければ何も生まれない。
+                        </p>
+                        <p>
+                            そのプレッシャーが積み重なると、どんどん「自分はダメだ」という気持ちになっていきました。ゲームが失敗した話（<a href="2025-11-23-casual-game-failure.html">カジュアルゲームが爆死した話</a>）でも書きましたが、うまくいかないことが続いたとき、自分を責めるループに入りやすい。
+                        </p>
+                        <p>
+                            そのとき思ったのが、「日記を書いても続かない理由は、書くことが義務になるからじゃないか」ということでした。毎日書けなかったとき、サボった自分を責める構造になってしまっている。
+                        </p>
+                        <p>
+                            だったら、「責めない設計の日記アプリ」があってもいいんじゃないか——それが「絶対幸せ日記」のはじまりです。
+                        </p>
+
+                        <h2>コンセプトの核心：「頑張るためじゃない」</h2>
+                        <p>
+                            多くの習慣化アプリは「毎日やること」を前提とした設計になっています。ストリーク（連続記録）を強調し、途切れると喪失感が生まれる。それ自体は悪いことではないのですが、メンタルが少し落ちているとき、その「途切れた」という事実がさらに自己否定のトリガーになりやすい。
+                        </p>
+                        <div class="highlight-box">
+                            <strong>絶対幸せ日記のコンセプト：</strong><br>
+                            「頑張るためじゃなく、今日の自分にやさしくなるための記録。」
+                        </div>
+                        <p>
+                            ストリークではなく、書いた記録の積み重ねを「できたこと」として肯定する設計にしました。1日書けなかったとしても、「昨日の自分はちゃんと書いた」という事実は消えない。そういう感覚を大切にしたいと思いました。
+                        </p>
+
+                        <h2>キャラクターを入れた理由</h2>
+                        <p>
+                            日記アプリとしては珍しく、かわいいキャラクターを採用しました。最初はシンプルなテキストUI で十分かとも思いましたが、試作を繰り返すうちに「ひとりで書くのって、どこか孤独だな」と感じるようになりました。
+                        </p>
+                        <p>
+                            キャラクターがいることで、「このキャラに報告する」という感覚が生まれる。一人で向き合う日記から、パートナーに話しかける日記へ。その感覚の違いは、意外と大きかったです。
+                        </p>
+                        <p>
+                            キャラクターのお世話機能（えさやり、なでなでなど）は、「開いた理由」をつくるためのものでもあります。「今日は何も書きたくないけど、キャラが気になるから開く」——そこから自然に日記を書くことに繋がることもある。
+                        </p>
+
+                        <h2>Flutter での実装で工夫したこと</h2>
+                        <p>
+                            技術面では、Flutterのアニメーション機能をかなり活用しています。キャラクターが画面内でふわふわ動いたり、タップに反応したりする動きは、ユーザーが「ここは生きている世界だ」と感じられるよう設計しました。
+                        </p>
+                        <p>
+                            また、Firestore を使ったクラウド保存を実装しています。日記は非常にパーソナルなデータなので、Google / Apple ログインで確実に紐付けし、機種変更しても記録が残るようにしました。認証フローの実装でいくつかハマりどころがあったので、それはまた別の記事で書こうと思います。
+                        </p>
+
+                        <h2>おみくじ機能について</h2>
+                        <p>
+                            「毎日のおみくじ」は、アプリを開く動機のひとつとして入れました。朝に引ける、前向きな言葉だけのおみくじ。「凶」は一切ありません。どんな結果でも、「今日も良い日になりそう」と思えるような言葉だけを選びました。
+                        </p>
+                        <p>
+                            占いコンテンツは以前から別アプリ（絶対幸せ占い）として展開していました。そのノウハウを活かしつつ、日記アプリのトーンに合わせてやわらかい言葉に調整しています。
+                        </p>
+
+                        <h2>リリースして感じたこと</h2>
+                        <p>
+                            Google Play にリリースして、少しずつダウンロードが積み上がっています。まだ大きな数字ではないですが、「毎日使っている」という感想をいただくと、設計の方向性が間違っていなかったと感じます。
+                        </p>
+                        <p>
+                            今後は iOS 版の公開と、キャラクターの種類を増やすことを優先して進める予定です。また、プレミアム機能（広告なし・追加キャラクター解放）の設計も継続中です。個人開発において収益化の設計は難しい課題のひとつですが、「使ってくれる人がいる」という実感があれば、続けるモチベーションになります。
+                        </p>
+                        <p>
+                            自分を責めないために作ったアプリが、自分を開発し続ける支えにもなっているのは、少し面白いなと思っています。
+                        </p>
+
+                        <div class="article-navigation">
+                            <div class="d-flex justify-content-between">
+                                <a href="../../index.html"><i class="bi bi-arrow-left me-2"></i>記事一覧に戻る</a>
+                                <a href="2026-05-10-ai-expertise-in-ai-era.html">前の記事: AI時代の専門性との向き合い方 <i
+                                        class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- サイドバー -->
+                <div class="col-lg-3">
+                    <div class="article-sidebar">
+                        <div class="sidebar-card">
+                            <h4>最近の記事</h4>
+                            <div class="sidebar-article-item">
+                                <a href="2026-05-10-ai-expertise-in-ai-era.html">AI時代の専門性との向き合い方</a>
+                                <div class="sidebar-article-date">2026年5月10日</div>
+                            </div>
+                            <div class="sidebar-article-item">
+                                <a href="2026-01-03-awaawapon-tournament-reflection.html">あわあわポンの大会を終えての所感と今後の方針</a>
+                                <div class="sidebar-article-date">2026年1月3日</div>
+                            </div>
+                            <div class="sidebar-article-item">
+                                <a href="2025-11-23-casual-game-failure.html">カジュアルゲームが爆死した話</a>
+                                <div class="sidebar-article-date">2025年11月23日</div>
+                            </div>
+                            <div class="sidebar-article-item">
+                                <a href="2025-11-22-development-diary-starts.html">開発日記を始めます</a>
+                                <div class="sidebar-article-date">2025年11月22日</div>
+                            </div>
+                        </div>
+                        <div class="sidebar-card">
+                            <h4>アプリ</h4>
+                            <p style="font-size: 0.9rem;">絶対幸せ日記はGoogle Playで無料公開中です。</p>
+                            <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod"
+                                target="_blank" rel="noopener"
+                                class="btn btn-primary btn-sm w-100">Google Playで見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="bg-dark text-white py-4 mt-5">
+            <div class="container text-center">
+                <p>&copy; 2026 TakeKApp. All rights reserved.</p>
+                <p style="font-size: 0.85rem; opacity: 0.7;">
+                    <a href="../../../index.html" style="color: rgba(255,255,255,0.7);">トップページ</a> |
+                    <a href="../../index.html" style="color: rgba(255,255,255,0.7);">開発日記</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

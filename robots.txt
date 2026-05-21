@@ -4,9 +4,6 @@ Allow: /
 # Sitemap location
 Sitemap: https://takekapp.com/sitemap.xml
 
-# Crawl delay for better server performance
-Crawl-delay: 1
-
 # Block access to private documents and development files
 Disallow: /_private_docs/
 Disallow: /.DS_Store
@@ -16,10 +13,6 @@ Allow: /*/landing_page_*.html
 Allow: /*/app_introduction.html
 Allow: /*/privacy_policy_*.html
 Allow: /*/terms_and_conditions_*.html
-
-# Block access to image directories (they're referenced directly)
-Disallow: /images/
-Disallow: /*/images/
-
-# Allow common app store badges and icons
+Allow: /images/
+Allow: /*/images/
 Allow: /commonImages/
