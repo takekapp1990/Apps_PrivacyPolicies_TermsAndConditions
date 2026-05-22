@@ -10,42 +10,41 @@ Jurnal harian ringkas.
 Jurnal singkat dengan karakter lucu dan keberuntungan harian.
 
 キーワード（100文字以内、カンマ区切り）
-jurnal,jurnal harian,keberuntungan harian,self care,pengembangan karakter,kebiasaan,mini game,mood
+jurnal,jurnal satu baris,self care,kebiasaan harian,catatan mood,karakter lucu,mini game
 
 プロモーション用テキスト（iOS用 / 170文字以内）
 Apresiasi dirimu setiap hari. Tulis jurnal singkat, lihat keberuntungan harian, dan bangun rutinitas yang lembut bersama karakter lucu.
 
 詳細の長い説明文
-Jurnal Bahagia adalah aplikasi teman yang membantumu menghargai diri sendiri dan membuat setiap hari sedikit lebih bahagia.
-Tulis catatan singkat, lihat keberuntungan harianmu, dan bangun kebiasaan yang mudah dijalani.
+Jurnal Bahagia adalah aplikasi jurnal satu baris yang lembut untuk membuat harimu sedikit lebih bahagia.
+Aplikasi ini dirancang untuk membantumu lebih menghargai diri sendiri, bukan menambah tekanan.
+Bahkan catatan singkat pun sudah cukup untuk membangun kebiasaan yang konsisten.
 
 Fitur utama
-・Jurnal harian singkat
-Catat suasana hati dan hal yang berhasil kamu lakukan hari ini.
+・Jurnal satu baris
+Catat suasana hati atau hal baik yang kamu capai hari ini dengan cepat.
 
-・Keberuntungan harian
-Mulai hari dengan pesan positif yang ringan.
+・Pengingat yang membantu
+Notifikasi ringan membantumu menjaga rutinitas harian tanpa terasa berat.
 
-・Rawat karaktermu
-Nikmati progres harian sambil merawat karakter favoritmu.
+・Pesan positif harian
+Mulai pagi dengan kalimat singkat yang memberi semangat.
 
-・Mini game untuk menyegarkan suasana
-Game singkat untuk istirahat sejenak kapan saja.
+・Kustomisasi karakter dan wallpaper
+Atur tampilan sesuai selera agar aplikasi terasa lebih personal.
 
-・Lencana, suara, dan personalisasi
-Terus gunakan aplikasinya untuk membuka lebih banyak hal seru.
+・Lencana lucu
+Semakin rutin kamu memakai aplikasi, semakin banyak lencana yang bisa kamu kumpulkan.
 
-Kenapa cocok untuk self care
-・Langkah kecil setiap hari
-Dengan jurnal singkat dan catatan mood, kebiasaan harian jadi lebih mudah dijaga.
+・Suara dan voice
+Aktifkan suara agar momen menulis harian terasa lebih menyenangkan.
 
-・Motivasi lewat pengembangan karakter
-Saat rutinitasmu berjalan, pengembangan karakter dan hadiah membuat progres terasa nyata.
-
-・Reset emosi yang ringan
-Keberuntungan harian dan mini game membantumu menenangkan pikiran di sela aktivitas.
+Cocok untuk kamu yang ingin
+・membangun kebiasaan journaling yang sederhana
+・menjaga self care secara konsisten
+・tetap termotivasi bersama karakter lucu
 
 Alur penggunaan harian
-・Pagi: cek keberuntungan harian
+・Pagi: baca pesan positif
 ・Malam: tulis jurnal satu baris
 ・Waktu senggang: main mini game dan rawat karakter

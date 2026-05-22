@@ -10,42 +10,41 @@ Diario breve y tierno.
 Diario breve con personajes adorables y fortuna diaria.
 
 キーワード（100文字以内、カンマ区切り）
-diario,diario breve,fortuna diaria,autocuidado,crianza personaje,hábito,minijuegos,ánimo,bienestar
+diario,diario en una linea,autocuidado,habito diario,animo,personajes,minijuegos,bienestar
 
 プロモーション用テキスト（iOS用 / 170文字以内）
 Felicítate un poquito cada día. Escribe una entrada corta, revisa tu fortuna diaria y crea una rutina amable con personajes adorables.
 
 詳細の長い説明文
-Diario Feliz es una app compañera para felicitarte y hacer cada día un poquito más feliz.
-Escribe una entrada corta, mira tu fortuna diaria y mantén una rutina fácil de continuar.
+Diario Feliz es una app de diario breve y amable para hacer cada día un poquito más feliz.
+Está pensada para tratarte con cariño, no para exigirte más. Incluso una línea ya cuenta.
+Con personajes adorables, mantener tu rutina diaria se vuelve más fácil y agradable.
 
 Funciones principales
-・Entrada diaria breve
-Registra tu estado de ánimo y lo que lograste en pocas palabras.
+・Diario de una línea
+Anota tu ánimo o algo bueno que lograste hoy en pocos segundos.
 
-・Fortuna diaria
-Empieza el día con un mensaje positivo y ligero.
+・Recordatorios útiles
+Notificaciones suaves para que no pierdas el ritmo de tu hábito diario.
 
-・Cuidado del personaje
-Cuida a tu personaje y disfruta del progreso diario.
+・Mensaje positivo diario
+Empieza la mañana con una frase breve y motivadora.
 
-・Minijuegos para despejarte
-Juegos cortos para cambiar de aire en cualquier momento.
+・Personalización de personaje y fondo
+Haz la app más tuya con ajustes visuales que te gusten.
 
-・Insignias, voces y personalización
-Sigue usando la app y desbloquea más contenido para hacerla tuya.
+・Insignias adorables
+Cuanto más la uses, más insignias consigues y más visible se vuelve tu avance.
 
-Por qué ayuda en el autocuidado
-・Acciones pequeñas cada día
-Con un diario breve y registro de ánimo, mantener el hábito diario se vuelve más fácil.
+・Sonidos y voces
+Activa sonidos y voces para disfrutar más tu rutina.
 
-・Motivación con crianza de personaje
-Mientras avanzas con tu rutina, la crianza de personaje y las recompensas hacen visible tu progreso.
-
-・Reinicio emocional suave
-La fortuna diaria y los minijuegos te ayudan a cambiar el ritmo y volver con más calma.
+Ideal para quienes quieren
+・crear un hábito de diario sencillo
+・mejorar su autocuidado con constancia
+・mantener la motivación con personajes adorables
 
 Sugerencia de uso diario
-・Mañana: revisa tu fortuna diaria
+・Mañana: lee un mensaje positivo
 ・Noche: escribe una línea en tu diario
 ・Pausas: juega minijuegos y cuida a tu personaje

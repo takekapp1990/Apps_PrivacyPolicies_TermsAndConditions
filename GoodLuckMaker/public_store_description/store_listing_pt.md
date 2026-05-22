@@ -10,42 +10,41 @@ Diario curto e leve.
 Diário curtinho com personagens fofos e sorte do dia.
 
 キーワード（100文字以内、カンマ区切り）
-diário,diário curto,sorte do dia,autocuidado,evolução de personagem,hábito,minijogos,humor,bem-estar
+diário,diário de uma linha,autocuidado,hábito diário,humor,personagens,minijogos,bem-estar
 
 プロモーション用テキスト（iOS用 / 170文字以内）
 Elogie-se um pouquinho todos os dias. Escreva uma nota curta, veja sua sorte do dia e crie uma rotina leve com personagens fofos.
 
 詳細の長い説明文
-Diário Feliz é um app parceiro para você se elogiar e tornar cada dia um pouquinho mais feliz.
-Escreva uma nota curta, veja sua sorte do dia e mantenha uma rotina fácil de continuar.
+Diário Feliz é um app de diário curtinho para deixar seus dias um pouco mais leves e felizes.
+Ele foi feito para fortalecer o autocuidado sem pressão: uma linha já é suficiente.
+Com personagens fofos, fica mais fácil manter a rotina com constância.
 
 Principais recursos
-・Diário curto em uma frase
-Registre seu humor e suas conquistas de forma rápida.
+・Diário de uma linha
+Registre seu humor ou uma pequena conquista do dia em poucos segundos.
 
-・Sorte do dia
-Comece o dia com uma mensagem leve e positiva.
+・Lembretes úteis
+Notificações suaves ajudam você a não perder o ritmo do hábito diário.
 
-・Cuidar do personagem
-Acompanhe seu progresso diário junto com seu personagem favorito.
+・Mensagem positiva diária
+Comece a manhã com uma frase curta para ajustar o clima do dia.
 
-・Minijogos para mudar o clima
-Jogos curtos para dar uma pausa e renovar a energia.
+・Personalização de personagem e papel de parede
+Deixe o app com a sua cara e mais gostoso de abrir todos os dias.
 
-・Medalhas, vozes e personalização
-Quanto mais você usa, mais conteúdo desbloqueia para deixar o app com a sua cara.
+・Sistema de medalhas fofas
+Quanto mais você usa, mais medalhas conquista e mais visível fica seu progresso.
 
-Por que funciona para autocuidado
-・Pequenas ações diárias
-Com diário curto e registro de humor, manter o hábito diário fica mais simples.
+・Sons e vozes
+Ative os sons para tornar a experiência diária mais divertida.
 
-・Motivação com evolução de personagem
-Ao continuar sua rotina, a evolução de personagem e as recompensas mostram seu progresso.
-
-・Reequilíbrio emocional leve
-A sorte do dia e os minijogos ajudam a aliviar a mente durante o dia.
+Perfeito para quem quer
+・criar um hábito de diário simples
+・manter autocuidado com consistência
+・seguir motivado com personagens fofos
 
 Fluxo diário recomendado
-・Manhã: veja sua sorte do dia
+・Manhã: leia uma mensagem positiva
 ・Noite: escreva uma linha no diário
 ・Pausas: jogue minijogos e cuide do personagem
