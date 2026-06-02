@@ -109,6 +109,9 @@ function renderApps(lang) {
                 description = app.locales['ja'].description;
             }
         }
+        const iosUrl = appLocale.ios || app.ios;
+        const iosNote = appLocale.iosNote || app.iosNote || '';
+
         let androidBadge = '';
         if (app.android) {
             androidBadge = `
@@ -120,12 +123,19 @@ function renderApps(lang) {
         }
         
         let iosBadge = '';
-        if (app.ios) {
+        if (iosUrl) {
              iosBadge = `
-                <a href="${app.ios}" target="_blank" class="app-store-badge">
+                <a href="${iosUrl}" target="_blank" class="app-store-badge">
                     <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_${lang === 'ja' ? 'JP_RGB_blk_100317' : 'US-UK_RGB_blk_092917'}.svg"
                         alt="${lang === 'ja' ? 'App Storeからダウンロード' : 'Download on the App Store'}" height="40">
                 </a>
+            `;
+        }
+
+        let iosNoteMarkup = '';
+        if (iosNote) {
+            iosNoteMarkup = `
+                <p class="card-text text-muted small text-center mb-0">${iosNote}</p>
             `;
         }
 
@@ -147,6 +157,7 @@ function renderApps(lang) {
                             ${androidBadge}
                             ${iosBadge}
                         </div>
+                        ${iosNoteMarkup}
                         ${policyButtons}
                     </div>
                 </div>

@@ -76,17 +76,56 @@ const appsData = [
         id: 'GoodLuckMaker',
         icon: 'https://takekapp.com/GoodLuckMaker/images/app_icon_adaptive_1024_1024_v0.5.png',
         android: 'https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod',
-        ios: null,
+        ios: 'https://apps.apple.com/us/app/id6698863339',
         locales: {
             ja: {
-                title: '絶対幸せ占い',
-                description: '毎日、絶対に幸せな占い・おみくじを引けるアプリ。',
+                title: '絶対幸せ日記',
+                description: '自分を褒めながら、毎日を少しずつ幸せにしていくやさしい日記アプリ。',
+                ios: 'https://apps.apple.com/jp/app/id6698863339',
+                iosNote: 'iOS版では「毎日の応援メッセージ」になります。',
                 lp: 'https://takekapp.com/GoodLuckMaker/ja/landing_page_ja.html'
             },
             en: {
-                title: 'Good Luck Maker',
-                description: 'A special fortune-telling and omikuji app that makes every day a little happier.',
-                lp: 'https://takekapp.com/GoodLuckMaker/ja/landing_page_ja.html'
+                title: 'Happy Daily Journal',
+                description: 'A gentle journal app that helps you praise yourself and make each day a little happier.',
+                ios: 'https://apps.apple.com/us/app/id6698863339',
+                iosNote: 'On iOS, the app shows daily encouragement messages instead of fortune results.',
+                lp: 'https://takekapp.com/GoodLuckMaker/en/landing_page_en.html'
+            },
+            es: {
+                title: 'Diario Feliz',
+                description: 'Una app de diario breve con personajes adorables para hacer cada día un poquito más feliz.',
+                ios: 'https://apps.apple.com/es/app/id6698863339',
+                iosNote: 'En iOS, la app muestra mensajes de ánimo diarios en lugar de resultados de fortuna.',
+                lp: 'https://takekapp.com/GoodLuckMaker/es/landing_page_es.html'
+            },
+            id: {
+                title: 'Jurnal Bahagia',
+                description: 'Aplikasi jurnal singkat dengan karakter lucu yang membantu membuat hari-harimu sedikit lebih bahagia.',
+                ios: 'https://apps.apple.com/id/app/id6698863339',
+                iosNote: 'Di iOS, aplikasi menampilkan pesan penyemangat harian, bukan hasil ramalan.',
+                lp: 'https://takekapp.com/GoodLuckMaker/id/landing_page_id.html'
+            },
+            ko: {
+                title: '절대 행복 일기',
+                description: '귀여운 캐릭터와 함께 매일을 조금 더 행복하게 만드는 한마디 일기 앱.',
+                ios: 'https://apps.apple.com/kr/app/id6698863339',
+                iosNote: 'iOS 버전에서는 오늘의 운세 대신 매일의 응원 메시지가 표시됩니다.',
+                lp: 'https://takekapp.com/GoodLuckMaker/ko/landing_page_ko.html'
+            },
+            pt: {
+                title: 'Diário Feliz',
+                description: 'Um app de diário curtinho com personagens fofos para deixar cada dia um pouquinho mais feliz.',
+                ios: 'https://apps.apple.com/br/app/id6698863339',
+                iosNote: 'No iOS, o app mostra mensagens diárias de incentivo em vez de resultados de sorte.',
+                lp: 'https://takekapp.com/GoodLuckMaker/pt/landing_page_pt.html'
+            },
+            zh_CN: {
+                title: '绝对幸福日记',
+                description: '有可爱角色陪伴的一句话日记应用，让每天慢慢变得更幸福。',
+                ios: 'https://apps.apple.com/cn/app/id6698863339',
+                iosNote: 'iOS 版会显示每日应援消息，而不是运势结果。',
+                lp: 'https://takekapp.com/GoodLuckMaker/zh/landing_page_zh.html'
             }
         }
     },

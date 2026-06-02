@@ -312,6 +312,21 @@
             height: 60px;
         }
 
+        .store-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .lp-note {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-top: 12px;
+            text-align: center;
+        }
+
         /* Section Headings */
         .section-header {
             text-align: center;
@@ -543,7 +558,7 @@
             .chip { font-size: 0.8rem; padding: 6px 12px; }
             .hero-slideshow { max-width: 220px; }
             .store-badge img { height: 50px; }
-            
+
             .section-header { margin-bottom: 30px; }
             .nav-links { display: none; }
             
@@ -608,10 +623,15 @@
                     <div class="chip">1日ひとこと</div>
                     <div class="chip">かわいいキャラとボイス</div>
                 </div>
-
-                <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod" class="store-badge" target="_blank" rel="noopener">
-                    <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play で手に入れよう">
-                </a>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/jp/app/id6698863339" class="store-badge" target="_blank" rel="noopener">
+                        <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード">
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod" class="store-badge" target="_blank" rel="noopener">
+                        <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play で手に入れよう">
+                    </a>
+                </div>
+                
             </div>
             <div class="hero-visual floating">
                 <div class="hero-orb orb-1"></div>
@@ -718,6 +738,7 @@
                 <div class="feature-icon">02</div>
                 <h3>毎日のおみくじ</h3>
                 <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 12px;">朝にさっと引ける、前向きな言葉だけのおみくじ。軽やかに1日を始められます。</p>
+                <p class="lp-note">※ iOSアプリでは毎日の応援メッセージが表示されます。</p>
             </div>
             <div class="feature-card glass-card">
                 <div class="feature-icon">03</div>
@@ -763,10 +784,15 @@
                  style="width: 100px; height: 100px; border-radius: 28px; margin: 0 auto 28px; box-shadow: 0 16px 48px rgba(255, 122, 150, 0.35); display: block;">
             <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 24px;">今日の自分に、やさしいひとことを。</h2>
             <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem;">毎日を少しずつ幸せにしたいとき、可愛い相棒としてそばに置いてください。</p>
-
-            <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod" class="store-badge" target="_blank" rel="noopener">
-                <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play で手に入れよう">
-            </a>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/jp/app/id6698863339" class="store-badge" target="_blank" rel="noopener">
+                        <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード">
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod" class="store-badge" target="_blank" rel="noopener">
+                        <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play で手に入れよう">
+                    </a>
+                </div>
+                
 
             <div class="footer-legal">
                 <a href="privacy_policy_ja.html">プライバシーポリシー</a>
