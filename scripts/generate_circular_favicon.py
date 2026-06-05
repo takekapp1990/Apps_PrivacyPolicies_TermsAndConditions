@@ -143,7 +143,8 @@ def main():
         "PostDrafts",
         "FlagMemoryAwaAwaPon",
         "GoodLuckMaker",
-        "Tificat"
+        "Tificat",
+        "Meiro25MojiQuiz"
     ]
 
     # Process root favicon as well
