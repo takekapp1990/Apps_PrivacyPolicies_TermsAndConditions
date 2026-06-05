@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>25文字めいろクイズ | 25文字の迷路をなぞって答える、日本語限定の脳トレ</title>
+  <meta name="description" content="25文字の迷路をなぞって問題文を読み、6択で答える脳トレゲーム。日本語のみで遊べる、短時間向けのクイズアプリです。無料20問、毎日の1問、買い切りの追加問題、広告削除に対応しています。">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#f6b34f">
+  <link rel="icon" href="../favicon.ico">
+  <style>
+    :root {
+      --bg: #fffaf3;
+      --bg-2: #fff1dc;
+      --text: #27211c;
+      --muted: #6d6256;
+      --card: rgba(255, 255, 255, 0.78);
+      --line: rgba(39, 33, 28, 0.08);
+      --accent: #f0823a;
+      --accent-2: #1f7a8c;
+      --shadow: 0 18px 50px rgba(98, 60, 21, 0.12);
+      --radius: 28px;
+      --container: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      line-height: 1.8;
+      background:
+        radial-gradient(circle at top left, rgba(240, 130, 58, 0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(31, 122, 140, 0.10), transparent 26%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(rgba(39, 33, 28, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(39, 33, 28, 0.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.75), transparent 90%);
+    }
+
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container {
+      width: min(calc(100% - 32px), var(--container));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 250, 243, 0.72);
+      border-bottom: 1px solid rgba(39, 33, 28, 0.06);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: white;
+      background: linear-gradient(135deg, var(--accent), #ffb347);
+      box-shadow: 0 10px 24px rgba(240, 130, 58, 0.25);
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      border-color: rgba(39, 33, 28, 0.08);
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .hero {
+      padding: 72px 0 36px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+      color: var(--accent-2);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      margin: 16px 0 16px;
+      font-size: clamp(2.2rem, 6vw, 4.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      max-width: 32rem;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+    .button.primary {
+      color: white;
+      background: linear-gradient(135deg, var(--accent), #ffae52);
+      box-shadow: 0 12px 28px rgba(240, 130, 58, 0.28);
+    }
+    .button.secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.72);
+      border-color: var(--line);
+    }
+
+    .store-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .maze-card {
+      position: relative;
+      padding: 24px;
+      border-radius: 34px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.82), rgba(255,255,255,0.62));
+      border: 1px solid rgba(39, 33, 28, 0.08);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .maze-card::before,
+    .maze-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(240,130,58,0.22), rgba(240,130,58,0));
+      filter: blur(8px);
+      pointer-events: none;
+    }
+    .maze-card::before { width: 180px; height: 180px; right: -56px; top: -40px; }
+    .maze-card::after { width: 160px; height: 160px; left: -40px; bottom: -48px; background: radial-gradient(circle, rgba(31,122,140,0.18), rgba(31,122,140,0)); }
+
+    .mock-screen {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: 28px;
+      padding: 18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,246,235,0.96)),
+        linear-gradient(135deg, rgba(240,130,58,0.2), rgba(31,122,140,0.15));
+      border: 1px solid rgba(39, 33, 28, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+    }
+
+    .screen-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(31, 122, 140, 0.12);
+      color: var(--accent-2);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .maze-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .cell {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255, 235, 205, 0.88));
+      border: 1px solid rgba(39, 33, 28, 0.06);
+      font-weight: 800;
+      color: #45382c;
+    }
+
+    .cell.path {
+      background: linear-gradient(180deg, rgba(240,130,58,0.22), rgba(255,255,255,0.95));
+      color: #b25a16;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 26px 0 0;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    section {
+      padding: 36px 0;
+    }
+
+    .section-card {
+      padding: 28px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 1.6rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .feature {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid var(--line);
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .feature p,
+    .section-card p,
+    .section-card li {
+      color: var(--muted);
+    }
+
+    .list {
+      padding-left: 1.2em;
+      margin: 0;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .callout {
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(31,122,140,0.12), rgba(240,130,58,0.10));
+      border: 1px solid rgba(39,33,28,0.08);
+    }
+
+    footer {
+      padding: 36px 0 56px;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .footer-links a {
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 880px) {
+      .hero-grid, .feature-grid, .two-col { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; }
+      .topbar-inner { flex-direction: column; align-items: flex-start; }
+      .nav { justify-content: flex-start; }
+      .hero { padding-top: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">25</span>
+        <span>
+          25文字めいろクイズ
+          <small>日本語だけで遊べる脳トレ</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="ページ内リンク">
+        <a href="#features">特徴</a>
+        <a href="#howto">遊び方</a>
+        <a href="#pricing">料金</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">日本語限定の、25文字なぞりクイズ</div>
+          <h1>25文字の迷路をなぞって、<br>ひらめきで答える。</h1>
+          <p class="lead">
+            「25文字めいろクイズ」は、25文字の迷路を一筆書きでたどり、現れた問題文を読んで6択で答える、日本語専用の脳トレゲームです。
+            すきま時間に1問から遊べて、無料20問と毎日の1問で気軽に続けられます。
+          </p>
+          <div class="cta-row">
+            <a class="button primary" href="#pricing">料金を見る</a>
+            <a class="button secondary" href="#howto">遊び方を見る</a>
+          </div>
+          <p class="store-note">ストア公開時は、App Store / Google Play のリンクをここに差し替えてください。</p>
+          <div class="stats" aria-label="アプリのポイント">
+            <div class="stat">
+              <strong>日本語のみ</strong>
+              <span>日本向けに読みやすく、遊びやすく。</span>
+            </div>
+            <div class="stat">
+              <strong>無料20問</strong>
+              <span>はじめやすい導入で、試しやすい。</span>
+            </div>
+            <div class="stat">
+              <strong>買い切り</strong>
+              <span>追加問題も広告削除も、分かりやすい形で。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="maze-card" aria-label="アプリ画面イメージ">
+          <div class="mock-screen">
+            <div class="screen-title">
+              <span>25文字めいろ</span>
+              <span class="badge">毎日の1問</span>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; font-size:0.92rem; color:var(--muted);">
+              <span>STARTからGOALへ</span>
+              <span>同じマスは通らない</span>
+              <span>6択で答える</span>
+            </div>
+            <div class="maze-grid" aria-hidden="true">
+              <div class="cell path">あ</div><div class="cell path">さ</div><div class="cell">い</div><div class="cell">う</div><div class="cell">え</div>
+              <div class="cell">か</div><div class="cell path">き</div><div class="cell path">く</div><div class="cell">け</div><div class="cell">こ</div>
+              <div class="cell">さ</div><div class="cell">し</div><div class="cell path">す</div><div class="cell path">せ</div><div class="cell">そ</div>
+              <div class="cell">た</div><div class="cell">ち</div><div class="cell">つ</div><div class="cell path">て</div><div class="cell path">と</div>
+              <div class="cell">な</div><div class="cell">に</div><div class="cell">ぬ</div><div class="cell">ね</div><div class="cell path">の</div>
+            </div>
+            <div style="margin-top:18px; padding:16px; border-radius:18px; background:rgba(255,255,255,0.78); border:1px solid var(--line);">
+              <div style="font-weight:800; margin-bottom:6px;">なぞって出てきたクイズに答えよう</div>
+              <div style="color:var(--muted);">ノーミスやベスト更新を狙う、短時間向けの脳トレです。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container section-card">
+        <h2 class="section-title">このアプリの特徴</h2>
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>なぞるだけで問題文が見える</h3>
+            <p>25文字の迷路をたどると、文字列として問題文が完成します。操作はシンプルでも、読み解きの楽しさがあります。</p>
+          </article>
+          <article class="feature">
+            <h3>無料20問と毎日の1問</h3>
+            <p>最初の20問は無料で遊べます。さらに、毎日の1問で毎日のちょっとした習慣にもつながります。</p>
+          </article>
+          <article class="feature">
+            <h3>買い切りで続けやすい</h3>
+            <p>広告削除と追加問題パックは買い切りです。サブスクにせず、必要なものだけ選べます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="howto">
+      <div class="container section-card">
+        <h2 class="section-title">遊び方</h2>
+        <div class="two-col">
+          <div class="callout">
+            <h3>1. 迷路をなぞる</h3>
+            <p>STARTからGOALまで、同じマスを通らずに一筆書きで進みます。</p>
+          </div>
+          <div class="callout">
+            <h3>2. 問題文を読む</h3>
+            <p>たどった文字を読むと問題文が現れます。日本語のひらめき勝負です。</p>
+          </div>
+          <div class="callout">
+            <h3>3. 6択から答える</h3>
+            <p>表示された選択肢から1つを選ぶだけ。短いけれど、ちゃんと考える楽しさがあります。</p>
+          </div>
+          <div class="callout">
+            <h3>4. 記録を更新する</h3>
+            <p>ノーミスやベスト更新を目指して、何度でも挑戦できます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container section-card">
+        <h2 class="section-title">料金と広告</h2>
+        <div class="two-col">
+          <div>
+            <p>アプリは無料で始められます。無料範囲を遊んだあとも、買い切りの追加問題パックで続けて遊べます。</p>
+            <ul class="list">
+              <li>無料20問</li>
+              <li>毎日の1問</li>
+              <li>広告削除</li>
+              <li>追加問題パック 1</li>
+              <li>追加問題パック 2</li>
+              <li>全部入りセット</li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>広告について</h3>
+            <p>バナー広告を表示します。広告削除を購入すると、画面上部と下部の広告を非表示にできます。</p>
+            <h3>買い切りについて</h3>
+            <p>継続課金ではなく、必要なタイミングで選べる買い切り型です。購入後は対象の機能がそのまま使えます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container section-card">
+        <h2 class="section-title">よくある質問</h2>
+        <div class="two-col">
+          <div>
+            <h3>日本語以外には対応していますか？</h3>
+            <p>現時点では日本語のみの提供を予定しています。日本語で遊ぶことを前提に、読みやすさと遊びやすさを優先しています。</p>
+          </div>
+          <div>
+            <h3>自作クイズは送れますか？</h3>
+            <p>自作クイズの提案機能を用意する予定です。送信内容は運営側で確認する場合があります。</p>
+          </div>
+          <div>
+            <h3>データは引き継げますか？</h3>
+            <p>端末内に保存される進捗や設定があります。端末変更や再インストール時の扱いは、利用規約とプライバシーポリシーをご確認ください。</p>
+          </div>
+          <div>
+            <h3>実況やSNS投稿はできますか？</h3>
+            <p>共有機能やシェア用の導線を用意しています。配信や投稿もしやすいように、見せ方も整える予定です。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container section-card">
+        <h2 class="section-title">お問い合わせ</h2>
+        <p>ご意見、ご要望、不具合の連絡は下記までお願いします。</p>
+        <div class="cta-row">
+          <a class="button primary" href="mailto:takekapp1990@gmail.com?subject=25%E6%96%87%E5%AD%97%E3%82%81%E3%81%84%E3%82%8D%E3%82%AF%E3%82%A4%E3%82%BA%20%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">メールで問い合わせる</a>
+          <a class="button secondary" href="./terms_and_conditions_ja.html">利用規約</a>
+          <a class="button secondary" href="./privacy_policy_ja.html">プライバシーポリシー</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© takekapp1990</div>
+      <div class="footer-links">
+        <a href="./terms_and_conditions_ja.html">利用規約</a>
+        <a href="./privacy_policy_ja.html">プライバシーポリシー</a>
+        <a href="mailto:takekapp1990@gmail.com">お問い合わせ</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
