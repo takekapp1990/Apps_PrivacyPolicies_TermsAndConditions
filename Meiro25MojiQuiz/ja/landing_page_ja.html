@@ -205,81 +205,33 @@
       line-height: 1.8;
     }
 
-    /* Store Badges Placeholders */
+    /* Store Badges */
     .store-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .badge-placeholder {
-      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
       align-items: center;
-      gap: 10px;
-      background: #111;
-      color: #ccc;
-      padding: 10px 18px;
-      border-radius: 14px;
-      text-decoration: none;
-      width: 170px;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      user-select: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .badge-placeholder::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(1px);
+    .store-badge {
+      display: inline-block;
+      transition: transform 0.2s, filter 0.2s;
     }
 
-    .badge-status-ribbon {
-      position: absolute;
-      z-index: 2;
-      background: var(--accent);
-      color: white;
-      font-size: 0.72rem;
-      font-weight: 800;
-      padding: 2px 14px;
-      border-radius: 4px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      white-space: nowrap;
-      pointer-events: none;
-      letter-spacing: 0.05em;
+    .store-badge:hover {
+      transform: translateY(-4px);
+      filter: brightness(1.05);
     }
 
-    .badge-placeholder svg {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
-      flex-shrink: 0;
+    .store-badge-ios img {
+      height: 47px;
+      display: block;
     }
 
-    .badge-placeholder-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.2;
-    }
-
-    .badge-placeholder-text small {
-      font-size: 0.62rem;
-      text-transform: uppercase;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-    }
-
-    .badge-placeholder-text strong {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #fff;
+    .store-badge-android img {
+      height: 63px;
+      display: block;
     }
 
     .store-note {
@@ -718,6 +670,14 @@
       .footer-links {
         justify-content: center;
       }
+
+      .store-badge-ios img {
+        height: 39px;
+      }
+
+      .store-badge-android img {
+        height: 52px;
+      }
     }
   </style>
 </head>
@@ -752,31 +712,15 @@
             25文字の一筆書き迷路から現れる問題文を読み解き、6択から答える新感覚の脳トレ。毎日の頭の体操やスキマ時間に最適です。
           </p>
           
-          <!-- Store Badge Placeholders -->
+          <!-- Store Badges -->
           <div class="store-badges">
-            <div class="badge-placeholder">
-              <svg viewBox="0 0 24 24">
-                <path d="M18.71,19.5C17.88,20.74,17,21.95,15.66,22c-1.31,0-1.72-.8-3.22-.8s-2,.78-3.25.82C7.89,22,6.97,20.76,6.14,19.55,4.45,17.07,3.16,12.55,4.9,9.52c.87-1.5,2.41-2.45,4.1-2.48,1.28,0,2.5.89,3.29.89s1.8-.76,3.31-.62a5.55,5.55,0,0,1,4.36,2.41,5.42,5.42,0,0,0-2.61,4.55,5.34,5.34,0,0,0,3.31,4.91ZM15.93,5.2A4.85,4.85,0,0,0,17,1.75a4.89,4.89,0,0,0-3.19,1.66,4.64,4.64,0,0,0-1.12,3.34A4.39,4.39,0,0,0,15.93,5.2Z"/>
-              </svg>
-              <div class="badge-placeholder-text">
-                <small>Download on the</small>
-                <strong>App Store</strong>
-              </div>
-              <div class="badge-status-ribbon">近日公開</div>
-            </div>
-            
-            <div class="badge-placeholder">
-              <svg viewBox="0 0 24 24">
-                <path d="M3,5.27V18.73L16.55,12L3,5.27M17.87,11.33L20.25,12.52C20.74,12.76 20.74,13.24 20.25,13.48L17.87,14.67L15,13.23L17.87,11.33M3,3.41C3.33,3.41 3.67,3.5 3.96,3.67L18.7,11L15,12.85L3,3.41M3,20.59L15,11.15L18.7,13L3.96,20.33C3.67,20.5 3.33,20.59 3,20.59Z"/>
-              </svg>
-              <div class="badge-placeholder-text">
-                <small>GET IT ON</small>
-                <strong>Google Play</strong>
-              </div>
-              <div class="badge-status-ribbon">近日公開</div>
-            </div>
+            <a href="https://apps.apple.com/jp/app/id6776966794" class="store-badge store-badge-ios" target="_blank" rel="noopener">
+              <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.takekapp.maze25characters.prod" class="store-badge store-badge-android" target="_blank" rel="noopener">
+              <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play で手に入れよう">
+            </a>
           </div>
-          <p class="store-note">※ アプリストアの審査が通過し次第、ダウンロード可能となります。</p>
         </div>
 
         <!-- Carousel Device Showcase -->
@@ -897,6 +841,25 @@
             <h3>動画配信やSNSへの投稿は可能ですか？</h3>
             <p>ゲームのプレイ動画、スクリーンショット、自作問題のSNSへの投稿はすべて歓迎いたします！特に事前連絡も不要です。</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" style="text-align: center; padding: 60px 0;">
+      <div class="container section-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;">
+        <img src="../images/app_icon/maze_25_characters_app_icon_1024_ios.png" alt="25文字めいろクイズ アイコン" style="width: 100px; height: 100px; border-radius: 24px; box-shadow: 0 12px 32px rgba(240, 130, 58, 0.25);">
+        <h2 style="font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0; font-weight: 800;">今すぐダウンロードして脳トレを始めよう！</h2>
+        <p style="color: var(--muted); margin: 0; font-size: 1.05rem; max-width: 600px; line-height: 1.6;">
+          毎日の頭の体操や、ちょっとした隙間時間に。一筆書きでなぞる新感覚のクイズパズルをお楽しみください。
+        </p>
+        <div class="store-badges" style="margin-bottom: 0; justify-content: center;">
+          <a href="https://apps.apple.com/jp/app/id6776966794" class="store-badge store-badge-ios" target="_blank" rel="noopener">
+            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.takekapp.maze25characters.prod" class="store-badge store-badge-android" target="_blank" rel="noopener">
+            <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play で手に入れよう">
+          </a>
         </div>
       </div>
     </section>
