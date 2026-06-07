@@ -511,6 +511,50 @@
             line-height: 1.5;
         }
 
+        /* Target Audience Section */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .audience-card {
+            padding: 32px 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .audience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(132, 83, 107, 0.12);
+        }
+
+        .audience-icon {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        }
+
+        .audience-card h3 {
+            font-size: 1.15rem;
+            color: var(--brand-dark);
+            line-height: 1.6;
+            font-weight: 800;
+        }
+
+
         @media (max-width: 992px) {
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -582,6 +626,25 @@
 
             .char-card { flex-direction: column; text-align: center; padding: 20px; }
             .char-card img { width: 80px; margin-bottom: 8px; }
+
+            .audience-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .audience-card {
+                padding: 24px 20px;
+            }
+            .audience-icon {
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
+                font-size: 1.8rem;
+                margin-bottom: 12px;
+            }
+            .audience-card h3 {
+                font-size: 1.05rem;
+            }
+
         }
 
     </style>
@@ -595,6 +658,7 @@
         </div>
         <div class="nav-links">
             <a href="#concept">理念</a>
+            <a href="#audience">适合人群</a>
             <a href="#features">功能</a>
             <a href="#screens">界面</a>
             <a href="#download">下载</a>
@@ -667,6 +731,32 @@
                         <p style="font-size: 0.95rem;">每天的记录和角色的成长交叠在一起，让你更温柔地感受到自己一步步向前。</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="audience" class="container">
+        <div class="section-header">
+            <span class="tag">推荐人群</span>
+            <h2>适合这样的人</h2>
+            <p>帮助你在日常中获得些许疗愈，培养自我认同感</p>
+        </div>
+        <div class="audience-grid">
+            <div class="audience-card glass-card">
+                <div class="audience-icon" style="background-color: #ffe5ec;">🌸</div>
+                <h3>容易情绪低落、<br>缺乏自信的人</h3>
+            </div>
+            <div class="audience-card glass-card">
+                <div class="audience-icon" style="background-color: #e5f0ff;">🍀</div>
+                <h3>觉得工作、学习或恋爱<br>总是不顺利的人</h3>
+            </div>
+            <div class="audience-card glass-card">
+                <div class="audience-icon" style="background-color: #e5ffe9;">🧸</div>
+                <h3>喜欢照顾<br>可爱角色的人</h3>
+            </div>
+            <div class="audience-card glass-card">
+                <div class="audience-icon" style="background-color: #f7e5ff;">💖</div>
+                <h3>想提高自我肯定感、<br>变得更幸福的人</h3>
             </div>
         </div>
     </section>

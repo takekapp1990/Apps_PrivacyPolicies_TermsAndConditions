@@ -511,6 +511,50 @@
             line-height: 1.5;
         }
 
+        /* Target Audience Section */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .audience-card {
+            padding: 32px 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .audience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(132, 83, 107, 0.12);
+        }
+
+        .audience-icon {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        }
+
+        .audience-card h3 {
+            font-size: 1.15rem;
+            color: var(--brand-dark);
+            line-height: 1.6;
+            font-weight: 800;
+        }
+
+
         @media (max-width: 992px) {
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -582,6 +626,25 @@
 
             .char-card { flex-direction: column; text-align: center; padding: 20px; }
             .char-card img { width: 80px; margin-bottom: 8px; }
+
+            .audience-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .audience-card {
+                padding: 24px 20px;
+            }
+            .audience-icon {
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
+                font-size: 1.8rem;
+                margin-bottom: 12px;
+            }
+            .audience-card h3 {
+                font-size: 1.05rem;
+            }
+
         }
 
     </style>
@@ -595,6 +658,7 @@
         </div>
         <div class="nav-links">
             <a href="#concept">Konsep</a>
+            <a href="#audience">Untukmu</a>
             <a href="#features">Fitur</a>
             <a href="#screens">Layar</a>
             <a href="#download">Unduh</a>
@@ -667,6 +731,32 @@
                         <p style="font-size: 0.95rem;">Catatan harianmu dan pertumbuhan karakter berjalan bersama, membantumu merasakan progresmu sendiri dengan cara yang lebih hangat.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="audience" class="container">
+        <div class="section-header">
+            <span class="tag">Direkomendasikan</span>
+            <h2>Cocok Untuk</h2>
+            <p>Membantu Anda menemukan kenyamanan dan memupuk harga diri</p>
+        </div>
+        <div class="audience-grid">
+            <div class="audience-card glass-card">
+                <div class="audience-icon" style="background-color: #ffe5ec;">🌸</div>
+                <h3>Mereka yang sering merasa sedih<br>dan kurang percaya diri</h3>
+            </div>
+            <div class="audience-card glass-card">
+                <div class="audience-icon" style="background-color: #e5f0ff;">🍀</div>
+                <h3>Mereka yang merasa pekerjaan, belajar, atau asmara<br>selalu tidak lancar</h3>
+            </div>
+            <div class="audience-card glass-card">
+                <div class="audience-icon" style="background-color: #e5ffe9;">🧸</div>
+                <h3>Mereka yang suka merawat<br>karakter yang lucu</h3>
+            </div>
+            <div class="audience-card glass-card">
+                <div class="audience-icon" style="background-color: #f7e5ff;">💖</div>
+                <h3>Mereka yang ingin meningkatkan harga diri<br>dan menjadi lebih bahagia</h3>
             </div>
         </div>
     </section>
