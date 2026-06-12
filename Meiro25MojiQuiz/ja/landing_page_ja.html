@@ -162,9 +162,19 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 320px;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 32px;
       align-items: center;
+    }
+
+    .pc-only {
+      display: none;
+    }
+
+    @media (min-width: 961px) {
+      .pc-only {
+        display: inline;
+      }
     }
 
     .hero-content {
@@ -693,7 +703,7 @@
           <div class="eyebrow">新感覚！一筆書き × 謎解きパズル</div>
           <h1><span style="display: inline-block;">25文字の</span><br><span style="display: inline-block;">めいろをなぞって、</span><br><span class="highlight" style="display: inline-block;">クイズに挑戦！</span></h1>
           <p class="lead">
-            25文字の一筆書き迷路から現れる問題文を読み解き、6択から答える新感覚の脳トレ。毎日の頭の体操やスキマ時間に最適です。
+            25文字の一筆書き迷路から現れる問題文を読み解き、<br class="pc-only">6択から答える新感覚の脳トレ。<br class="pc-only">毎日の頭の体操やスキマ時間に最適です。
           </p>
           
           <!-- Store Badges -->
