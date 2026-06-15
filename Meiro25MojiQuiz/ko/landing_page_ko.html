@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>25文字めいろクイズ | なぞって解く新感覚の一筆書き脳トレパズル</title>
-  <meta name="description" content="25文字のめいろを一筆書きでなぞって出たクイズに答えよう！毎日の頭の体操や隙間時間に最適な新感覚の脳トレパズルゲーム。無料20問、毎日の1問、安心の買い切り設計。">
+  <title>25칸 미로 퀴즈 | 선을 그려 푸는 새로운 감각의 한 붓 그리기 두뇌 트레이닝 퍼즐</title>
+  <meta name="description" content="25칸의 미로를 한 붓 그리기로 따라가며 나타나는 퀴즈를 맞추자! 매일 머리 식히기 및 틈새 시간에 최적화된 새로운 감각의 두뇌 트레이닝 퍼즐 게임. 무료 20문제, 매일 1문제 제공, 안심할 수 있는 인앱 결제 설계.">
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#f6b34f">
   
   <!-- OGP Meta Tags -->
-  <meta property="og:title" content="25文字めいろクイズ | なぞって解く一筆書き脳トレ">
-  <meta property="og:description" content="25文字の迷路を一筆書きでなぞってクイズを解く！毎日の頭の体操や隙間時間に最適な新感覚の脳トレパズルゲーム。">
-  <meta property="og:image" content="https://takekapp.com/Meiro25MojiQuiz/images/ogp_images/ja/ogp_image.png">
+  <meta property="og:title" content="25칸 미로 퀴즈 | 한 붓 그리기 두뇌 트레이닝 퍼즐">
+  <meta property="og:description" content="25칸의 미로를 한 붓 그리기로 따라가며 나타나는 퀴즈를 맞추자! 매일 머리 식히기 및 틈새 시간에 최적화된 새로운 감각의 두뇌 트레이닝 퍼즐 게임.">
+  <meta property="og:image" content="https://takekapp.com/Meiro25MojiQuiz/images/ogp_images/ko/ogp_image.png">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://takekapp.com/Meiro25MojiQuiz/ja/landing_page_ja.html">
-  <meta property="og:site_name" content="25文字めいろクイズ">
+  <meta property="og:url" content="https://takekapp.com/Meiro25MojiQuiz/ko/landing_page_ko.html">
+  <meta property="og:site_name" content="25칸 미로 퀴즈">
   
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="25文字めいろクイズ">
-  <meta name="twitter:description" content="25文字の迷路を一筆書きでなぞってクイズを解く！新感覚の脳トレパズルゲーム。">
-  <meta name="twitter:image" content="https://takekapp.com/Meiro25MojiQuiz/images/ogp_images/ja/ogp_image.png">
+  <meta name="twitter:title" content="25칸 미로 퀴즈">
+  <meta name="twitter:description" content="25칸의 미로를 한 붓 그리기로 따라가며 나타나는 퀴즈를 맞추자! 새로운 감각의 두뇌 트레이닝 퍼즐 게임.">
+  <meta name="twitter:image" content="https://takekapp.com/Meiro25MojiQuiz/images/ogp_images/ko/ogp_image.png">
 
   <link rel="icon" href="../favicon.ico">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -54,7 +54,7 @@
     body {
       margin: 0;
       color: var(--text);
-      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
       line-height: 1.75;
       background:
         radial-gradient(circle at top left, rgba(240, 130, 58, 0.1), transparent 40%),
@@ -64,7 +64,6 @@
       overflow-x: hidden;
     }
 
-    /* Grid Overlay */
     body::before {
       content: "";
       position: fixed;
@@ -87,7 +86,6 @@
       margin: 0 auto;
     }
 
-    /* Top Bar */
     .topbar {
       position: sticky;
       top: 0;
@@ -155,7 +153,6 @@
       background: rgba(44, 34, 30, 0.04);
     }
 
-    /* Hero Section */
     .hero {
       padding: 80px 0 60px;
     }
@@ -218,7 +215,6 @@
       line-height: 1.8;
     }
 
-    /* Store Badges */
     .store-badges {
       display: flex;
       flex-wrap: wrap;
@@ -253,7 +249,6 @@
       margin: 0;
     }
 
-    /* Device Showcase / Carousel */
     .device-container {
       position: relative;
       width: 100%;
@@ -276,11 +271,11 @@
       scroll-behavior: smooth;
       width: 100%;
       height: 100%;
-      scrollbar-width: none; /* Firefox */
+      scrollbar-width: none;
     }
 
     .device-screen-slider::-webkit-scrollbar {
-      display: none; /* Safari and Chrome */
+      display: none;
     }
 
     .device-screen-slider img {
@@ -291,7 +286,6 @@
       flex-shrink: 0;
     }
 
-    /* Carousel Navigation Dots */
     .carousel-dots {
       display: flex;
       justify-content: center;
@@ -315,7 +309,6 @@
       transform: scale(1.3);
     }
 
-    /* Sections General styling */
     section {
       padding: 60px 0;
     }
@@ -348,7 +341,6 @@
       margin: 0;
     }
 
-    /* Features Grid */
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -396,7 +388,6 @@
       line-height: 1.65;
     }
 
-    /* How to Play Grid */
     .howto-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -459,7 +450,6 @@
       transform: scale(1.03);
     }
 
-    /* FAQ Section */
     .faq-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -495,7 +485,6 @@
       line-height: 1.65;
     }
 
-    /* Contact Section */
     .contact-card {
       text-align: center;
       background: linear-gradient(160deg, rgba(255,255,255,0.9), rgba(255, 246, 235, 0.8));
@@ -549,7 +538,6 @@
       box-shadow: var(--shadow-sm);
     }
 
-    /* Footer */
     footer {
       padding: 48px 0 60px;
       color: var(--muted);
@@ -580,7 +568,6 @@
       color: var(--text);
     }
 
-    /* Responsive Design / Spacing control */
     @media (max-width: 960px) {
       .hero-grid {
         grid-template-columns: 1fr;
@@ -616,7 +603,6 @@
     }
 
     @media (max-width: 640px) {
-      /* Tighten spacing specifically on mobile to avoid excessive gaps */
       section {
         padding: 36px 0;
       }
@@ -682,17 +668,17 @@
     <div class="container topbar-inner">
       <a class="brand" href="#top">
         <!-- App Icon -->
-        <img class="brand-icon" src="../images/app_icon/maze_25_characters_app_icon_1024_ios.png" alt="25文字めいろクイズ アイコン">
+        <img class="brand-icon" src="../images/app_icon/maze_25_characters_app_icon_1024_ios.png" alt="25칸 미로 퀴즈 아이콘">
         <span>
-          25文字めいろクイズ
-          <small>一筆書き脳トレパズル</small>
+          25칸 미로 퀴즈
+          <small>한 붓 그리기 두뇌 트레이닝 퍼즐</small>
         </span>
       </a>
-      <nav class="nav" aria-label="ページ内リンク">
-        <a href="#howto">遊び方</a>
-        <a href="#features">特徴</a>
+      <nav class="nav" aria-label="페이지 내 링크">
+        <a href="#howto">플레이 방법</a>
+        <a href="#features">특징</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact">お問い合わせ</a>
+        <a href="#contact">문의하기</a>
       </nav>
     </div>
   </header>
@@ -702,19 +688,19 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
-          <div class="eyebrow">新感覚！一筆書き × 謎解きパズル</div>
-          <h1><span style="display: inline-block;">25文字の</span><br><span style="display: inline-block;">めいろをなぞって、</span><br><span class="highlight" style="display: inline-block;">クイズに挑戦！</span></h1>
+          <div class="eyebrow">새로운 감각! 한 붓 그리기 × 퀴즈 퍼즐</div>
+          <h1><span style="display: inline-block;">25칸의</span><br><span style="display: inline-block;">미로를 따라가며,</span><br><span class="highlight" style="display: inline-block;">퀴즈에 도전!</span></h1>
           <p class="lead">
-            25文字の一筆書き迷路から現れる問題文を読み解き、<br class="pc-only">6択から答える新感覚の脳トレ。<br class="pc-only">毎日の頭の体操やスキマ時間に最適です。
+            25칸의 한 붓 그리기 미로에서 나타나는 문제 문장을 읽고,<br class="pc-only">6가지 보기 중 정답을 고르는 새로운 감각의 두뇌 트레이닝.<br class="pc-only">매일 머리 식히기나 틈새 시간에 제격입니다.
           </p>
           
           <!-- Store Badges -->
           <div class="store-badges">
             <a href="https://apps.apple.com/jp/app/id6776966794" class="store-badge store-badge-ios" target="_blank" rel="noopener">
-              <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード">
+              <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="App Store에서 다운로드">
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.takekapp.maze25characters.prod" class="store-badge store-badge-android" target="_blank" rel="noopener">
-              <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play で手に入れよう">
+              <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Google Play에서 다운로드">
             </a>
           </div>
         </div>
@@ -723,19 +709,19 @@
         <div class="device-container">
           <div class="device-mockup">
             <div class="device-screen-slider" id="screenSlider">
-              <img src="../images/screen_shots/ja/1_ja-JP.png" alt="スクリーンショット 1">
-              <img src="../images/screen_shots/ja/2_ja-JP.png" alt="スクリーンショット 2">
-              <img src="../images/screen_shots/ja/3_ja-JP.png" alt="スクリーンショット 3">
-              <img src="../images/screen_shots/ja/4_ja-JP.png" alt="スクリーンショット 4">
-              <img src="../images/screen_shots/ja/5_ja-JP.png" alt="スクリーンショット 5">
+              <img src="../images/screen_shots/ko/1_ko-KR.png" alt="스크린샷 1">
+              <img src="../images/screen_shots/ko/2_ko-KR.png" alt="스크린샷 2">
+              <img src="../images/screen_shots/ko/3_ko-KR.png" alt="스크린샷 3">
+              <img src="../images/screen_shots/ko/4_ko-KR.png" alt="스크린샷 4">
+              <img src="../images/screen_shots/ko/5_ko-KR.png" alt="스크린샷 5">
             </div>
           </div>
           <div class="carousel-dots" id="carouselDots">
-            <button class="carousel-dot active" aria-label="1枚目のスライド"></button>
-            <button class="carousel-dot" aria-label="2枚目のスライド"></button>
-            <button class="carousel-dot" aria-label="3枚目のスライド"></button>
-            <button class="carousel-dot" aria-label="4枚目のスライド"></button>
-            <button class="carousel-dot" aria-label="5枚目のスライド"></button>
+            <button class="carousel-dot active" aria-label="1번째 슬라이드"></button>
+            <button class="carousel-dot" aria-label="2번째 슬라이드"></button>
+            <button class="carousel-dot" aria-label="3번째 슬라이드"></button>
+            <button class="carousel-dot" aria-label="4번째 슬라이드"></button>
+            <button class="carousel-dot" aria-label="5번째 슬라이드"></button>
           </div>
         </div>
       </div>
@@ -745,27 +731,27 @@
     <section id="howto">
       <div class="container section-card">
         <div class="section-header">
-          <h2 class="section-title">遊び方の流れ</h2>
-          <p class="section-subtitle">誰でも3ステップでかんたんに遊べます</p>
+          <h2 class="section-title">플레이 방법</h2>
+          <p class="section-subtitle">누구나 3단계로 간편하게 즐길 수 있습니다</p>
         </div>
         <div class="howto-grid">
           <div class="step-card">
             <div class="step-num">1</div>
-            <h3>迷路をなぞる</h3>
-            <p>STARTからGOALまで、同じマスを通らずに一筆書きで進みます。</p>
-            <img src="../images/screen_shots/ja/1_ja-JP.png" alt="なぞる画面" class="step-screenshot">
+            <h3>미로 따라 그리기</h3>
+            <p>START부터 GOAL까지, 같은 칸을 중복해서 지나지 않고 한 붓 그리기로 진행합니다.</p>
+            <img src="../images/screen_shots/ko/1_ko-KR.png" alt="따라 그리는 화면" class="step-screenshot">
           </div>
           <div class="step-card">
             <div class="step-num">2</div>
-            <h3>問題文を読む</h3>
-            <p>なぞった文字を読むと問題文が現れます。日本語のひらめき勝負です。</p>
-            <img src="../images/screen_shots/ja/2_ja-JP.png" alt="問題文が出現した画面" class="step-screenshot">
+            <h3>문제 읽기</h3>
+            <p>따라 그린 글자들을 읽으면 문제 문장이 나타납니다. 글자 직관력을 발휘해 보세요.</p>
+            <img src="../images/screen_shots/ko/2_ko-KR.png" alt="문제가 나타나는 화면" class="step-screenshot">
           </div>
           <div class="step-card">
             <div class="step-num">3</div>
-            <h3>6択から答える</h3>
-            <p>表示された選択肢から1つを選ぶだけ。短いけれど、ちゃんと考える楽しさがあります。</p>
-            <img src="../images/screen_shots/ja/3_ja-JP.png" alt="選択肢を選ぶ画面" class="step-screenshot">
+            <h3>6가지 보기 중 정답 고르기</h3>
+            <p>표시된 선택지 중에서 하나를 선택하면 끝. 짧지만 깊게 생각하는 재미가 있습니다.</p>
+            <img src="../images/screen_shots/ko/3_ko-KR.png" alt="정답을 선택하는 화면" class="step-screenshot">
           </div>
         </div>
       </div>
@@ -775,39 +761,39 @@
     <section id="features">
       <div class="container section-card">
         <div class="section-header">
-          <h2 class="section-title">アプリの特徴</h2>
-          <p class="section-subtitle">シンプルで奥深く、飽きずに長く遊べる仕掛けが盛りだくさん</p>
+          <h2 class="section-title">앱의 특징</h2>
+          <p class="section-subtitle">심플하면서도 깊이 있어 오랫동안 질리지 않고 즐길 수 있는 요소들이 가득합니다</p>
         </div>
         <div class="feature-grid">
           <div class="feature-card">
             <div class="feature-icon">🔍</div>
-            <h3>なぞって解く直感パズル</h3>
-            <p>ルールはシンプル。同じマスを二度通らずにスタートからゴールまでなぞるだけ。直感的な操作で、子供から大人まで誰でもすぐに楽しめます。</p>
+            <h3>직관적으로 푸는 퍼즐</h3>
+            <p>규칙은 아주 간단합니다. 같은 칸을 두 번 지나지 않고 스타트부터 골까지 선을 긋기만 하면 됩니다. 직관적인 조작으로 아이부터 어른까지 누구나 바로 즐길 수 있습니다.</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">📅</div>
-            <h3>無料問題 ＆ デイリー問題</h3>
-            <p>最初に遊べる無料の20問に加え、毎日1問新しいクイズが追加されます！飽きずに日々の習慣として続けられます。</p>
+            <h3>무료 문제 & 데일리 문제</h3>
+            <p>기본 제공되는 무료 20문제 외에도 매일 새로운 퀴즈가 1문제씩 추가됩니다! 매일 지루함 없이 두뇌 트레이닝을 습관화할 수 있습니다.</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">💎</div>
-            <h3>安心の買い切り設計</h3>
-            <p>もっと解きたい方向けの追加問題パックや広告削除はすべて買い切り。ガチャや月額サブスクはないので安心して自分のペースで進められます。</p>
+            <h3>안심할 수 있는 인앱 결제</h3>
+            <p>문제를 더 풀고 싶은 분들을 위한 추가 문제 팩 및 광고 제거는 모두 영구 소장 방식(일회성 결제)입니다. 가챠나 월 정액 구독이 없어 자신의 속도에 맞춰 안심하고 플레이할 수 있습니다.</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">🏆</div>
-            <h3>ベスト記録に挑戦</h3>
-            <p>クリアタイムの「歴代」「今週」「今日」のベストを記録。ノーミスクリアのバッジ獲得を目指し、繰り返し挑戦できます。</p>
+            <h3>최고 기록 도전</h3>
+            <p>클리어 시간의 '전체', '이번 주', '오늘'의 최고 기록을 저장합니다. 실수 없이 클리어하여 얻는 뱃지 획득을 목표로 반복해서 도전해 보세요.</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">✍️</div>
-            <h3>自作クイズとSNS共有</h3>
-            <p>あなただけのオリジナル問題を作成してプレイ可能！SNSで友達に挑戦状を送るための映える共有用カード機能も搭載しています。</p>
+            <h3>자작 퀴즈와 SNS 공유</h3>
+            <p>나만의 오리지널 문제를 만들어 플레이할 수 있습니다! SNS에 친구에게 도전장을 보내기 위한 멋진 공유 카드 기능도 탑재되어 있습니다.</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">🧠</div>
-            <h3>手軽な頭の体操に</h3>
-            <p>1プレイが数十秒〜数分で終わるため、通勤通学のスキマ時間や、認知症予防・言葉遊びの頭の体操にぴったりです。</p>
+            <h3>가벼운 머리 식히기용</h3>
+            <p>한 번 플레이하는 데 수십 초에서 수 분 정도 소요되므로 출퇴근길 틈새 시간이나 인지 능력 유지, 언어 놀이로 머리를 식히기에 제격입니다.</p>
           </div>
         </div>
       </div>
@@ -817,25 +803,25 @@
     <section id="faq">
       <div class="container section-card">
         <div class="section-header">
-          <h2 class="section-title">よくある質問</h2>
-          <p class="section-subtitle">プレイに関する疑問やご案内</p>
+          <h2 class="section-title">자주 묻는 질문</h2>
+          <p class="section-subtitle">플레이에 관한 궁금한 점 안내</p>
         </div>
         <div class="faq-grid">
           <div class="faq-item">
-            <h3>日本語以外には対応していますか？</h3>
-            <p>現時点では日本語のみに対応しています。日本語の言葉遊びやアハ体験を活かしたクイズ設計を優先しているためです。</p>
+            <h3>한국어 외의 언어도 지원하나요?</h3>
+            <p>각 언어별 버전을 순차적으로 지원하고 있습니다. 현재 보시는 버전은 한국어 대응 버전입니다.</p>
           </div>
           <div class="faq-item">
-            <h3>自作したクイズを人に遊んでもらえますか？</h3>
-            <p>自作したクイズをSNSに「共有用カード」として投稿可能です。また、他のユーザーが作ったクイズを解く機能も順次実装予定です。</p>
+            <h3>직접 만든 퀴즈를 다른 사람이 플레이하게 할 수 있나요?</h3>
+            <p>직접 만든 퀴즈를 SNS에 '공유용 카드'로 게시할 수 있습니다. 다른 사용자가 만든 퀴즈를 푸는 기능도 순차적으로 업데이트될 예정입니다.</p>
           </div>
           <div class="faq-item">
-            <h3>アプリを消したら進捗データは消えますか？</h3>
-            <p>アプリをアンインストールすると、端末に保存されているセーブデータや購入履歴、記録等は削除されますのでご注意ください。なお、購入履歴は復元できます。</p>
+            <h3>앱을 삭제하면 진행 데이터도 지워지나요?</h3>
+            <p>앱을 삭제하면 기기에 저장되어 있는 세이브 데이터 및 기록 등이 삭제되므로 주의하시기 바랍니다. 단, 결제 내역은 복구할 수 있습니다.</p>
           </div>
           <div class="faq-item">
-            <h3>動画配信やSNSへの投稿は可能ですか？</h3>
-            <p>ゲームのプレイ動画、スクリーンショット、自作問題のSNSへの投稿はすべて歓迎いたします！特に事前連絡も不要です。</p>
+            <h3>플레이 영상 업로드나 SNS 게시가 가능한가요?</h3>
+            <p>게임 플레이 영상, 스크린샷, 직접 만든 문제의 SNS 게시 등은 모두 환영합니다! 사전 연락 없이 자유롭게 게시하셔도 좋습니다.</p>
           </div>
         </div>
       </div>
@@ -844,17 +830,17 @@
     <!-- Download Section -->
     <section id="download" style="text-align: center; padding: 60px 0;">
       <div class="container section-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;">
-        <img src="../images/app_icon/maze_25_characters_app_icon_1024_ios.png" alt="25文字めいろクイズ アイコン" style="width: 100px; height: 100px; border-radius: 24px; box-shadow: 0 12px 32px rgba(240, 130, 58, 0.25);">
-        <h2 style="font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0; font-weight: 800;">今すぐダウンロードして脳トレを始めよう！</h2>
+        <img src="../images/app_icon/maze_25_characters_app_icon_1024_ios.png" alt="25칸 미로 퀴즈 아이콘" style="width: 100px; height: 100px; border-radius: 24px; box-shadow: 0 12px 32px rgba(240, 130, 58, 0.25);">
+        <h2 style="font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0; font-weight: 800;">지금 다운로드하고 두뇌 트레이닝을 시작해 보세요!</h2>
         <p style="color: var(--muted); margin: 0; font-size: 1.05rem; max-width: 600px; line-height: 1.6;">
-          毎日の頭の体操や、ちょっとした隙間時間に。一筆書きでなぞる新感覚のクイズパズルをお楽しみください。
+          매일 머리 식히기 및 가벼운 틈새 시간에. 한 붓 그리기로 그리는 새로운 감각의 퀴즈 퍼즐을 즐겨 보세요.
         </p>
         <div class="store-badges" style="margin-bottom: 0; justify-content: center;">
           <a href="https://apps.apple.com/jp/app/id6776966794" class="store-badge store-badge-ios" target="_blank" rel="noopener">
-            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード">
+            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="App Store에서 다운로드">
           </a>
           <a href="https://play.google.com/store/apps/details?id=com.takekapp.maze25characters.prod" class="store-badge store-badge-android" target="_blank" rel="noopener">
-            <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play で手に入れよう">
+            <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Google Play에서 다운로드">
           </a>
         </div>
       </div>
@@ -863,12 +849,12 @@
     <!-- Contact Section -->
     <section id="contact">
       <div class="container section-card contact-card">
-        <h2 class="section-title">お問い合わせ</h2>
-        <p>アプリに関するバグ報告、ご要望、その他のご意見は以下までお気軽にお問い合わせください。</p>
+        <h2 class="section-title">문의하기</h2>
+        <p>앱 관련 버그 제보, 요청 및 기타 의견은 아래 문의처로 언제든지 편하게 보내주시기 바랍니다.</p>
         <div class="cta-buttons">
-          <a class="button primary" href="mailto:takekapp1990@gmail.com?subject=25%E6%96%87%E5%AD%97%E3%82%81%E3%81%84%E3%82%8D%E3%82%AF%E3%82%A4%E3%82%BA%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">メールで問い合わせる</a>
-          <a class="button secondary" href="./terms_and_conditions_ja.html">利用規約</a>
-          <a class="button secondary" href="./privacy_policy_ja.html">プライバシーポリシー</a>
+          <a class="button primary" href="mailto:takekapp1990@gmail.com?subject=25%EC%B9%B8%20%EB%AF%B8%EB%A1%9C%20%ED%80%B4%EC%A6%88%20%EB%AC%B8%EC%9D%98">이메일로 문의하기</a>
+          <a class="button secondary" href="./terms_and_conditions_ko.html">이용약관</a>
+          <a class="button secondary" href="./privacy_policy_ko.html">개인정보처리방침</a>
         </div>
       </div>
     </section>
@@ -878,15 +864,14 @@
     <div class="container footer-inner">
       <div>© takekapp1990</div>
       <div class="footer-links">
-        <a href="./terms_and_conditions_ja.html">利用規約</a>
-        <a href="./privacy_policy_ja.html">プライバシーポリシー</a>
-        <a href="mailto:takekapp1990@gmail.com">お問い合わせ</a>
+        <a href="./terms_and_conditions_ko.html">이용약관</a>
+        <a href="./privacy_policy_ko.html">개인정보처리방침</a>
+        <a href="mailto:takekapp1990@gmail.com">문의하기</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // Simple Auto-Scroll / Interactive Carousel Script
     const slider = document.getElementById('screenSlider');
     const dots = document.querySelectorAll('.carousel-dot');
     let currentIndex = 0;
@@ -926,7 +911,6 @@
       clearInterval(autoSlideInterval);
     }
 
-    // Attach click events to dots
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         stopAutoSlide();
@@ -935,7 +919,6 @@
       });
     });
 
-    // Sync dots on manual scroll
     slider.addEventListener('scroll', () => {
       const slideWidth = slider.clientWidth;
       const index = Math.round(slider.scrollLeft / slideWidth);
@@ -945,7 +928,6 @@
       }
     });
 
-    // Start on load
     startAutoSlide();
   </script>
 </body>
