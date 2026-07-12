@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ローン管理・返済シミュレーター | 返済の見通しを整理できる家計サポートアプリ</title>
+  <meta name="description" content="住宅ローン・自動車ローン・教育ローンの返済計画を整理し、月々の返済額、総返済額、金利変動シナリオ、返済中ローン分析を確認できるアプリです。">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#1f4f8a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ローン管理・返済シミュレーター">
+  <meta property="og:description" content="住宅ローン・自動車ローン・教育ローンの返済計画を整理し、返済の見通しを可視化できるアプリです。">
+  <meta property="og:url" content="https://takekapp.com/LoanManagement/ja/landing_page_ja.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --bg-2: #edf2f8;
+      --surface: rgba(255, 255, 255, 0.84);
+      --text: #16202d;
+      --muted: #5b6776;
+      --brand: #1f4f8a;
+      --brand-2: #5f8bc5;
+      --accent: #f59e0b;
+      --line: rgba(31, 79, 138, 0.12);
+      --shadow: 0 20px 60px rgba(29, 53, 87, 0.12);
+      --radius: 28px;
+      --radius-sm: 18px;
+      --container: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      line-height: 1.8;
+      background:
+        radial-gradient(circle at top left, rgba(31, 79, 138, 0.12), transparent 32%),
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.10), transparent 24%),
+        linear-gradient(180deg, #fbfdff, var(--bg));
+      background-attachment: fixed;
+    }
+    a { color: inherit; }
+    .container { width: min(calc(100% - 32px), var(--container)); margin: 0 auto; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(248, 251, 255, 0.76);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+    .brand {
+      font-weight: 800;
+      text-decoration: none;
+      color: var(--brand);
+      letter-spacing: -0.02em;
+    }
+    .nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 999px;
+    }
+    .nav a:hover { background: rgba(31, 79, 138, 0.08); color: var(--brand); }
+    section { padding: 76px 0; }
+    .hero { padding-top: 84px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .hero-copy { padding: 36px; }
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(31, 79, 138, 0.08);
+      color: var(--brand);
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.16;
+      letter-spacing: -0.03em;
+    }
+    .lead { margin: 0 0 22px; color: var(--muted); font-size: 1.05rem; }
+    .note {
+      margin-top: 20px;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      background: rgba(245, 158, 11, 0.08);
+      color: #6b4a00;
+      font-size: 0.95rem;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid transparent;
+    }
+    .button.primary { background: var(--brand); color: #fff; }
+    .button.secondary { background: #fff; color: var(--brand); border-color: var(--line); }
+    .hero-card {
+      padding: 28px;
+      display: grid;
+      gap: 14px;
+      align-content: center;
+    }
+    .hero-metric {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(31, 79, 138, 0.08);
+    }
+    .hero-metric strong { display: block; font-size: 1.15rem; color: var(--brand); margin-bottom: 4px; }
+    .hero-metric span { color: var(--muted); font-size: 0.95rem; }
+    .section-header { margin-bottom: 24px; }
+    .section-header h2 { margin: 0 0 8px; font-size: clamp(1.6rem, 3vw, 2.5rem); }
+    .section-header p { margin: 0; color: var(--muted); }
+    .feature-grid, .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(29, 53, 87, 0.08);
+    }
+    .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .card ul { margin: 12px 0 0 18px; color: var(--muted); padding: 0; }
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    footer {
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 860px) {
+      .hero-grid, .split, .feature-grid, .faq-grid { grid-template-columns: 1fr; }
+      .hero-copy, .hero-card { padding: 26px; }
+      section { padding: 58px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./landing_page_ja.html">ローン管理・返済シミュレーター</a>
+      <nav class="nav">
+        <a href="#features">機能</a>
+        <a href="#faq">FAQ</a>
+        <a href="#support">サポート</a>
+        <a href="./terms_and_conditions_ja.html">利用規約</a>
+        <a href="./privacy_policy_ja.html">プライバシー</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="panel hero-copy">
+          <div class="eyebrow">TakeKApp の家計サポートアプリ</div>
+          <h1>返済の見通しを、<br>あとから見返せる形で整理する。</h1>
+          <p class="lead">住宅ローン・自動車ローン・教育ローンの返済額、総返済額、金利変動シナリオ、返済中ローン分析を一つのアプリで確認できるシミュレーションツールです。</p>
+          <div class="cta-row">
+            <a class="button primary" href="https://play.google.com/store/apps/details?id=com.takekapp1990.myloanmanagement.prod" target="_blank" rel="noopener">Google Play</a>
+            <a class="button secondary" href="#faq">よくある質問</a>
+            <a class="button secondary" href="mailto:takekapp1990@gmail.com?subject=%E3%83%AD%E3%83%BC%E3%83%B3%E7%AE%A1%E7%90%86%E3%83%BB%E8%BF%94%E6%B8%88%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">メールで問い合わせる</a>
+          </div>
+          <div class="note">注意: 本アプリの試算結果は参考情報です。実際の借入条件、手数料、税制、審査結果、返済条件は金融機関や契約内容によって異なる場合があります。</div>
+        </div>
+        <div class="panel hero-card">
+          <div class="hero-metric">
+            <strong>新規借入の試算</strong>
+            <span>月々返済額、総返済額、利息総額、完済時期を確認できます。</span>
+          </div>
+          <div class="hero-metric">
+            <strong>返済中ローン分析</strong>
+            <span>現在残債や返済実績、繰上返済履歴をもとに今後の見通しを整理できます。</span>
+          </div>
+          <div class="hero-metric">
+            <strong>コミュニティ機能</strong>
+            <span>ユーザー同士の相談、スレッド、アンケート機能を段階的に提供します。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>主な機能</h2>
+          <p>借入前の比較から、返済中の分析まで一連の判断を支える構成です。</p>
+        </div>
+        <div class="feature-grid">
+          <article class="card">
+            <h3>ローン返済シミュレーション</h3>
+            <p>借入金額、年利、返済期間、ボーナス返済などを入力して返済計画を確認できます。</p>
+          </article>
+          <article class="card">
+            <h3>金利変動シナリオ比較</h3>
+            <p>将来の金利変化を想定して、返済総額や負担の変化を見比べられます。</p>
+          </article>
+          <article class="card">
+            <h3>返済中ローン分析</h3>
+            <p>現在残債や履歴をもとに、今後の返済見込みや利息負担を整理できます。</p>
+          </article>
+          <article class="card">
+            <h3>繰上返済シミュレーション</h3>
+            <p>期間短縮型と返済額軽減型の両面から効果を見られます。</p>
+          </article>
+          <article class="card">
+            <h3>複数ローン管理</h3>
+            <p>保存済みのローンを一覧化し、家計全体の負担感を確認できます。</p>
+          </article>
+          <article class="card">
+            <h3>コミュニティ・アンケート</h3>
+            <p>相談の共有やアンケート参加など、ユーザー間の情報交換機能を含みます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="card">
+          <h3>こんな人に向いています</h3>
+          <ul>
+            <li>住宅ローンの借入前に返済感を掴みたい</li>
+            <li>返済中のローンを見直したい</li>
+            <li>繰上返済の効果を具体的に比べたい</li>
+            <li>複数ローンの負担をまとめて整理したい</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>今後の拡張メモ</h3>
+          <ul>
+            <li>ストア用スクリーンショットと OGP 画像の差し込み</li>
+            <li>iOS App Store 公開後の導線追加</li>
+            <li>将来の広告・課金導入時に法務文面を更新</li>
+            <li>多言語化時の言語別ページ追加</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2>よくある質問</h2>
+          <p>計算やデータ保存、サポートに関する基本情報です。</p>
+        </div>
+        <div class="faq-grid">
+          <article class="card">
+            <h3>試算結果は金融機関の正式結果と同じですか？</h3>
+            <p>いいえ。本アプリの結果は参考値です。適用金利、手数料、税制、審査条件は契約内容によって異なります。</p>
+          </article>
+          <article class="card">
+            <h3>入力したローン情報はどこに保存されますか？</h3>
+            <p>主に端末内に保存されます。コミュニティ機能や一部の関連機能では、Firebase を利用したデータ保存が発生する場合があります。</p>
+          </article>
+          <article class="card">
+            <h3>アプリを削除するとデータは消えますか？</h3>
+            <p>端末内保存データは失われる場合があります。重要な情報は別途控えておくことをおすすめします。</p>
+          </article>
+          <article class="card">
+            <h3>不具合や要望はどこから送れますか？</h3>
+            <p>アプリ内のお問い合わせ導線、またはこのページ内のメールリンクからご連絡ください。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="support">
+      <div class="container panel hero-copy">
+        <div class="section-header">
+          <h2>サポートと関連ページ</h2>
+          <p>法務文書と FAQ はこのページと以下のリンクから確認できます。お問い合わせはメール起動を基本導線にする想定です。</p>
+        </div>
+        <div class="cta-row">
+          <a class="button secondary" href="./terms_and_conditions_ja.html">利用規約</a>
+          <a class="button secondary" href="./privacy_policy_ja.html">プライバシーポリシー</a>
+          <a class="button secondary" href="mailto:takekapp1990@gmail.com?subject=%E3%83%AD%E3%83%BC%E3%83%B3%E7%AE%A1%E7%90%86%E3%83%BB%E8%BF%94%E6%B8%88%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">メールで問い合わせる</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© takekapp1990</div>
+      <div class="footer-links">
+        <a href="./terms_and_conditions_ja.html">利用規約</a>
+        <a href="./privacy_policy_ja.html">プライバシーポリシー</a>
+        <a href="#faq">FAQ</a>
+        <a href="mailto:takekapp1990@gmail.com">お問い合わせ</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
