@@ -573,6 +573,17 @@
       gap: 14px;
       flex-wrap: wrap;
     }
+    .footer-store-badges {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .footer-store-badges .store-badge img {
+      height: 54px;
+    }
     @media (max-width: 860px) {
       .hero-stage, .split, .feature-grid, .faq-grid, .problem-grid, .screen-showcase, .audience-grid, .support-panel, .support-links-grid { grid-template-columns: 1fr; }
       .container { width: min(calc(100% - 28px), var(--container)); }
@@ -640,6 +651,12 @@
       .hero-visual { min-height: auto; }
       .device-carousel { width: min(100%, 180px); transform: none; }
       .store-badge img { height: 48px; }
+      .footer-store-badges {
+        justify-content: center;
+      }
+      .footer-store-badges .store-badge img {
+        height: 46px;
+      }
       .button { min-height: 44px; padding: 10px 14px; }
       .card, .problem-card, .audience-card, .showcase-item, .support-link {
         padding: 16px;
@@ -724,6 +741,9 @@
             <h1>借りた住宅ローンの<br>「今」と「この先」が<br>ひと目でわかる。</h1>
             <p class="lead">残債、金利上昇、繰上返済の判断材料をまとめて見返せる住宅ローン管理アプリです。</p>
             <div class="cta-row">
+              <a class="store-badge" href="https://apps.apple.com/jp/app/id6789951919" target="_blank" rel="noopener">
+                <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード">
+              </a>
               <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.takekapp1990.myloanmanagement.prod" target="_blank" rel="noopener">
                 <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play で手に入れよう">
               </a>
@@ -981,6 +1001,14 @@
   <footer>
     <div class="container footer-inner">
       <div>© takekapp1990</div>
+      <div class="footer-store-badges" aria-label="アプリストアへのリンク">
+        <a class="store-badge" href="https://apps.apple.com/jp/app/id6789951919" target="_blank" rel="noopener">
+          <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード">
+        </a>
+        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.takekapp1990.myloanmanagement.prod" target="_blank" rel="noopener">
+          <img src="https://play.google.com/intl/ja_jp/badges/static/images/badges/ja_badge_web_generic.png" alt="Google Play で手に入れよう">
+        </a>
+      </div>
       <div class="footer-links">
         <a href="./terms_and_conditions_ja.html">利用規約</a>
         <a href="./privacy_policy_ja.html">プライバシーポリシー</a>
