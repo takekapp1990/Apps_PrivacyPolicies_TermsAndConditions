@@ -457,6 +457,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://takekapp.com/NumberPlaceHint/ar/landing_page_ar.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/NumberPlaceHint/da/landing_page_da.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://takekapp.com/NumberPlaceHint/de/landing_page_de.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -535,8 +547,50 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://takekapp.com/NumberPlaceHint/nl/landing_page_nl.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/NumberPlaceHint/pl/landing_page_pl.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://takekapp.com/NumberPlaceHint/pt/landing_page_pt.html</loc>
     <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/NumberPlaceHint/sv/landing_page_sv.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/NumberPlaceHint/th/landing_page_th.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/NumberPlaceHint/tr/landing_page_tr.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/NumberPlaceHint/uk/landing_page_uk.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takekapp.com/NumberPlaceHint/vi/landing_page_vi.html</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
