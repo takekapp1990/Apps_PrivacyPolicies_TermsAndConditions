@@ -19,27 +19,6 @@ body {
     margin: 0 auto;
 }
 
-.language-nav {
-    padding: 12px 20px;
-    text-align: center;
-    background: #fff;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.language-nav a {
-    display: inline-block;
-    margin: 3px 7px;
-    color: #2c3e50;
-    font-size: .9rem;
-    text-decoration: none;
-}
-
-.language-nav a:hover,
-.language-nav a[aria-current="page"] {
-    color: #1877b5;
-    text-decoration: underline;
-}
-
 h1, h2, h3 {
     margin-top: 0;
     color: #2c3e50;
