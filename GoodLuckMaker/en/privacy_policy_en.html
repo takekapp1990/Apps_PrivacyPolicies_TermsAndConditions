@@ -33,7 +33,15 @@
     <p>If you choose to sign in with Google or Apple, we may receive identifiers, display name, email address, and other information that the authentication provider makes available to us based on your permissions.</p>
     <p>We may associate your journal data, settings, and other app data with your signed-in account in order to provide backup, restore, transfer, and related account-based features.</p>
 
-    <h3>1.4 Information collected by third-party services</h3>
+    <h3>1.4 Information related to AI character chat</h3>
+    <p>AI character chat is available only after you review the in-app disclosure, give explicit consent, and use Google Sign-In or Sign in with Apple through Firebase Authentication. Other Application features generally do not require sign-in.</p>
+    <p>To generate replies and perform safety classification, your message, recent conversation context, conversation summary, preferences or cautions you asked the character to remember, and nickname are sent through our server to Google LLC's AI service, Google Cloud Vertex AI. Recent journal entries and profile information are sent only when you enable the relevant in-app reference setting, and only to the extent needed for the reply.</p>
+    <p>Ordinary conversation history, conversation sessions, summaries, and conversational preferences or cautions are stored in a protected local area on your device. Ordinary raw chat text is not stored in the Application's Firestore database. It is nevertheless transmitted off the device for the AI processing described above.</p>
+    <p>On our server, we store or process your AI chat consent status, consent version, daily usage count, and information needed to verify subscription status in association with your Firebase UID.</p>
+    <p>Only if you report an AI reply, we store the Firebase UID, the reported AI reply, selected report reason, character ID, language, platform, handling status, and timestamps in Firestore. The reporting user's own message and the surrounding conversation are not included in the report data.</p>
+    <p>We do not add raw chat text to Google Analytics for Firebase, Firebase Crashlytics, or data used for ad targeting, and we do not record raw chat text in our server logs.</p>
+
+    <h3>1.5 Information collected by third-party services</h3>
     <h4>Advertising</h4>
     <p>The Application may use AdMob (Google LLC). AdMob may automatically collect information for advertising and related services. Please review Google's policies for more details.</p>
     <p><a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></p>
@@ -43,7 +51,7 @@
     <p><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
 
     <h4>In-app purchases</h4>
-    <p>The Application may use RevenueCat to process and manage purchase status and subscription-related information.</p>
+    <p>The Application may use RevenueCat to process in-app purchases, manage purchase status, and verify subscription status for AI chat. RevenueCat may collect and process purchase history and other information needed to provide these services.</p>
     <p><a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></p>
 
     <h4>Authentication providers</h4>
@@ -53,6 +61,10 @@
         <li>Apple Privacy Policy: <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/legal/privacy/</a></li>
     </ul>
 
+    <h4>AI processing</h4>
+    <p>The Application uses Google Cloud Vertex AI (Google LLC) to generate AI replies and perform safety classification. The information sent is described in Section 1.4, “Information related to AI character chat.”</p>
+    <p>Google Privacy Policy<br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></p>
+
     <h2>2. How We Use Information</h2>
     <p>We use collected information to:</p>
     <ul>
@@ -60,27 +72,37 @@
         <li>enable account sign-in, data backup, restore, and transfer features;</li>
         <li>analyze usage, develop new features, and fix bugs or service issues;</li>
         <li>respond to inquiries and send important notices;</li>
-        <li>support advertising, purchase management, fraud prevention, and other necessary operations.</li>
+        <li>support advertising, purchase management, fraud prevention, and other necessary operations;</li>
+        <li>generate AI replies, perform safety classification, and manage AI chat usage and consent;</li>
+        <li>review and handle reported AI replies and improve safety.</li>
     </ul>
 
     <h2>3. Sharing of Information</h2>
-    <p>We do not sell your personal information. We may share information with service providers that help us operate the Application, and when required by law or necessary to protect our rights, users, or services.</p>
+    <p>We do not sell your personal information. We may share information with service providers that help us operate the Application, and when required by law or necessary to protect our rights, users, or services. We require service providers that handle user data to provide protection equivalent to this Policy and applicable requirements.</p>
 
     <h2>4. Data Storage and Retention</h2>
     <p>If you use Google Sign-In or Sign in with Apple, some of your Application data may be stored on servers or cloud systems used by us or our service providers in order to support account-based storage and transfer features.</p>
     <p>If you do not use sign-in, some or all of your data may remain only on your device and may be lost if the app is deleted, the device is replaced, or the device is damaged.</p>
-    <p>We retain information for as long as reasonably necessary for the purposes described in this Privacy Policy, unless a longer retention period is required by law.</p>
+    <p>Ordinary AI chat conversation data is stored in a protected local area on your device as described above. Information sent to Google Cloud Vertex AI for AI processing, information associated with your Firebase UID on our server, and report data submitted by you are each processed only as needed for the purposes described in this Policy.</p>
+    <p>We retain information for as long as reasonably necessary for the purposes described in this Privacy Policy or as required by law. We do not specify a single fixed number of days for all data types. We may retain information that must be kept for legal obligations, dispute handling, fraud prevention, or another legitimate reason, but only to the extent and for the period necessary for that purpose.</p>
 
-    <h2>5. Security</h2>
+    <h2>5. Account and Data Deletion</h2>
+    <p>If you use the in-app account deletion feature or request deletion through our website, we delete your Firebase Authentication user, personal data on our server, encrypted backups, AI chat consent information, daily usage counts, subscription verification cache, and AI reply report data. See <a href="account_deletion_en.html">Delete Your Account and Associated Data</a> for instructions.</p>
+    <p>Deleting your account does not delete journal entries, mood records, ordinary AI conversation history, or other local data stored on your device. Use the relevant in-app deletion features or remove the Application from your device to delete local data. Deleting your account also does not cancel an Apple App Store or Google Play subscription. You must cancel recurring billing separately through the relevant store.</p>
+
+    <h2>6. Security</h2>
     <p>We take reasonable steps to protect information from unauthorized access, disclosure, alteration, or destruction. However, no method of transmission or storage is completely secure.</p>
 
-    <h2>6. Children's Privacy</h2>
-    <p>The Application is not intended to knowingly collect personal information from children under 13. If you believe that a child has provided personal information to us, please contact us so that we can take appropriate action.</p>
+    <h2>7. AI Limitations and Safety Notice</h2>
+    <p>AI replies may contain errors, inaccuracies, or inappropriate content. AI character chat is not a substitute for medical care, diagnosis or treatment by a qualified professional, or emergency services. Do not rely solely on an AI reply for decisions about health or safety; contact an appropriate healthcare provider, qualified professional, or local emergency service when needed.</p>
 
-    <h2>7. Changes to This Policy</h2>
+    <h2>8. Children's Privacy</h2>
+    <p>AI character chat is available only to users who confirm in the Application that they are at least 18 years old. The Application is not intended to knowingly collect personal information from children under 13. If you believe that a child has provided personal information to us, please contact us so that we can take appropriate action.</p>
+
+    <h2>9. Changes to This Policy</h2>
     <p>We may update this Privacy Policy from time to time. Any changes will become effective when the updated policy is posted in the Application or on our website.</p>
 
-    <h2>8. Contact</h2>
+    <h2>10. Contact</h2>
     <p>If you have any questions about this Privacy Policy, please contact us at:<br>takekapp1990@gmail.com</p>
 </body>
 </html>
