@@ -246,20 +246,20 @@ const appsData = [
         }
     },
     {
-        id: 'TapAlbum',
-        icon: 'https://takekapp.com/TapAlbum/images/app_icon/pop_photo_gallery_app_icon_ios.png',
+        id: 'MemoWinkAlbum',
+        icon: 'https://takekapp.com/MemoWinkAlbum/images/app_icon/pop_photo_gallery_app_icon_ios.png',
         android: 'https://play.google.com/store/apps/details?id=com.tap.album.takekapp1990.prod',
         ios: 'https://apple.co/4aPIR5q',
         locales: {
             ja: {
                 title: 'まほうアルバム',
                 description: '触れるたびに魔法がかかる。子どもも安心の写真アプリ。撮った写真を振り返って、家族とのふれあいをもっと増やそう。',
-                lp: 'https://takekapp.com/TapAlbum/ja/landing_page_ja.html'
+                lp: 'https://takekapp.com/MemoWinkAlbum/ja/landing_page_ja.html'
             },
             en: {
-                title: 'Tap Album',
+                title: 'MemoWink Album',
                 description: 'Magic happens with every touch. A photo app safe for kids. Look back on your photos and increase family bonding time.',
-                lp: 'https://takekapp.com/TapAlbum/en/landing_page_en.html'
+                lp: 'https://takekapp.com/MemoWinkAlbum/en/landing_page_en.html'
             }
         }
     }
@@ -492,116 +492,116 @@ const extraLocales = {
             lp: 'https://takekapp.com/TimesTablesMemoryAwaAwaPon/th/landing_page_th.html'
         }
     },
-    'TapAlbum': {
+    'MemoWinkAlbum': {
         'ar': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'السحر يحدث مع كل لمسة. تطبيق صور آمن للأطفال. استعرض صورك وزِد من أوقات الترابط العائلي.',
-            lp: 'https://takekapp.com/TapAlbum/ar/landing_page_ar.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/ar/landing_page_ar.html'
         },
         'bn': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'প্রতিটি স্পর্শে জাদু ঘটে। শিশুদের জন্য নিরাপদ একটি ফটো অ্যাপ। আপনার ছবিগুলো দেখে পরিবারের সাথে বন্ধনের সময় বাড়ান।',
-            lp: 'https://takekapp.com/TapAlbum/bn/landing_page_bn.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/bn/landing_page_bn.html'
         },
         'da': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'Magien sker ved hvert tryk. En fotos-app, der er sikker for børn. Se dine billeder igen og styrk familiebåndet.',
-            lp: 'https://takekapp.com/TapAlbum/da/landing_page_da.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/da/landing_page_da.html'
         },
         'es': {
             title: 'Álbum Mágico',
             description: 'La magia ocurre con cada toque. Una app de fotos segura para niños. Repasa tus fotos y aumenta los momentos de unión familiar.',
-            lp: 'https://takekapp.com/TapAlbum/es/landing_page_es.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/es/landing_page_es.html'
         },
         'ko': {
             title: '마법앨범',
             description: '터치할 때마다 마법이 걸립니다. 아이도 안심할 수 있는 사진 앱. 찍은 사진을 돌아보며 가족과의 소통을 늘려보세요.',
-            lp: 'https://takekapp.com/TapAlbum/ko/landing_page_ko.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/ko/landing_page_ko.html'
         },
         'de': {
             title: 'Zauber Album',
             description: 'Magie bei jeder Berührung. Eine sichere Foto-App für Kinder. Schauen Sie sich Ihre Fotos an und stärken Sie die familiäre Bindung.',
-            lp: 'https://takekapp.com/TapAlbum/de/landing_page_de.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/de/landing_page_de.html'
         },
         'fr': {
             title: 'Album Magique',
             description: 'La magie opère à chaque touche. Une appli photo sûre pour les enfants. Regardez vos photos et renforcez les liens familiaux.',
-            lp: 'https://takekapp.com/TapAlbum/fr/landing_page_fr.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/fr/landing_page_fr.html'
         },
         'hi': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'हर स्पर्श के साथ जादू होता है। बच्चों के लिए सुरक्षित एक फोटो ऐप। अपनी यादों को देखें और परिवार के साथ बिताए गए समय को और खास बनाएं।',
-            lp: 'https://takekapp.com/TapAlbum/hi/landing_page_hi.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/hi/landing_page_hi.html'
         },
         'id': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'Keajaiban di setiap sentuhan. Aplikasi foto yang aman untuk anak-anak. Lihat kembali foto-foto Anda dan tingkatkan waktu berkualitas bersama keluarga.',
-            lp: 'https://takekapp.com/TapAlbum/id/landing_page_id.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/id/landing_page_id.html'
         },
         'it': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: "La magia accade con ogni tocco. Un'app sicura per i bambini. Riguarda le tue foto e aumenta il tempo di legame familiare.",
-            lp: 'https://takekapp.com/TapAlbum/it/landing_page_it.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/it/landing_page_it.html'
         },
         'nl': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'Magie gebeurt bij elke aanraking. Een kindveilige foto-app. Kijk je foto’s terug en versterk de band met je familie.',
-            lp: 'https://takekapp.com/TapAlbum/nl/landing_page_nl.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/nl/landing_page_nl.html'
         },
         'no': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'Magi skjer ved hver berøring. En barnesikker fotoapp. Se tilbake på bildene dine og styrk familiebåndene.',
-            lp: 'https://takekapp.com/TapAlbum/no/landing_page_no.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/no/landing_page_no.html'
         },
         'pl': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'Magia dzieje się przy każdym dotknięciu. Bezpieczna aplikacja fotograficzna dla dzieci. Oglądaj zdjęcia i wzmacniaj rodzinne więzi.',
-            lp: 'https://takekapp.com/TapAlbum/pl/landing_page_pl.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/pl/landing_page_pl.html'
         },
         'pt': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'A magia acontece em cada toque. Um app de fotos seguro para crianças. Relembre suas fotos e aumente o tempo de união familiar.',
-            lp: 'https://takekapp.com/TapAlbum/pt/landing_page_pt.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/pt/landing_page_pt.html'
         },
         'ru': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'Магия случается в каждом касании. Безопасное приложение для детей. Вспоминайте лучшие моменты и укрепляйте семейные связи.',
-            lp: 'https://takekapp.com/TapAlbum/ru/landing_page_ru.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/ru/landing_page_ru.html'
         },
         'sw': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'Uchawi hutokea kwa kila mguso. Programu ya picha salama kwa watoto. Tazama tena picha zako na ongeza muda wa ukaribu wa familia.',
-            lp: 'https://takekapp.com/TapAlbum/sw/landing_page_sw.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/sw/landing_page_sw.html'
         },
         'th': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'ความมหัศจรรย์เกิดขึ้นในทุกสัมผัส แอปรูปภาพที่ปลอดภัยสำหรับเด็ก ย้อนดูความทรงจำและเพิ่มเวลาความผูกพันในครอบครัว',
-            lp: 'https://takekapp.com/TapAlbum/th/landing_page_th.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/th/landing_page_th.html'
         },
         'tr': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'Her dokunuşta sihir gerçekleşir. Çocuklar için güvenli bir fotoğraf uygulaması. Fotoğraflarınıza yeniden bakın ve aile bağlarını güçlendirin.',
-            lp: 'https://takekapp.com/TapAlbum/tr/landing_page_tr.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/tr/landing_page_tr.html'
         },
         'uk': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: "Магія відбувається в кожному дотику. Безпечний фотододаток для дітей. Переглядайте свої фото та зміцнюйте сімейний зв'язок.",
-            lp: 'https://takekapp.com/TapAlbum/uk/landing_page_uk.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/uk/landing_page_uk.html'
         },
         'vi': {
-            title: 'Tap Album',
+            title: 'MemoWink Album',
             description: 'Phép thuật diễn ra trong từng lần chạm. Ứng dụng ảnh an toàn cho trẻ em. Xem lại ảnh và tăng thêm thời gian gắn kết gia đình.',
-            lp: 'https://takekapp.com/TapAlbum/vi/landing_page_vi.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/vi/landing_page_vi.html'
         },
         'zh_CN': {
             title: '魔法相册',
             description: '每次触碰都有魔法。一款让孩子安心的照片 App。回顾拍摄的照片，增进与家人的互动。',
-            lp: 'https://takekapp.com/TapAlbum/zh_Hans/landing_page_zh_Hans.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/zh_Hans/landing_page_zh_Hans.html'
         },
         'zh_TW': {
             title: '魔法相冊',
             description: '每一次觸碰都有魔法。一款讓孩子安心的相片 App。回顧拍攝的相片，增進與家人的互動。',
-            lp: 'https://takekapp.com/TapAlbum/zh_Hant/landing_page_zh_Hant.html'
+            lp: 'https://takekapp.com/MemoWinkAlbum/zh_Hant/landing_page_zh_Hant.html'
         }
     }
 };
