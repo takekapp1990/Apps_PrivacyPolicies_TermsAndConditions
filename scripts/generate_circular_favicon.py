@@ -136,7 +136,7 @@ def main():
         "FunTopics",
         "KanjiAwaAwaPon",
         "TimesTablesMemoryAwaAwaPon",
-        "TapAlbum",
+        "MemoWinkAlbum",
         "NumberPlaceHint",
         "AwaAwaPon",
         "MyDreams100",

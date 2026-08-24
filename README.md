@@ -13,12 +13,12 @@ AIが生成する励まし・応援メッセージで、毎日のタスクを楽
   * takekapp1990+tificat@gmail.com
 
 ## まほうアルバム
-<img src="https://takekapp.com/TapAlbum/images/app_icon/pop_photo_gallery_app_icon_ios.png" width="100" alt="アプリアイコン">
+<img src="https://takekapp.com/MemoWinkAlbum/images/app_icon/pop_photo_gallery_app_icon_ios.png" width="100" alt="アプリアイコン">
 触れるたびに魔法がかかる。子どもも安心の写真アプリ。
 
-* [アプリ紹介ページ](https://takekapp.com/TapAlbum/ja/landing_page_ja.html)
-* [利用規約](https://takekapp.com/TapAlbum/ja/terms_and_conditions_ja.html)
-* [プライバシーポリシー](https://takekapp.com/TapAlbum/ja/privacy_policy_ja.html)
+* [アプリ紹介ページ](https://takekapp.com/MemoWinkAlbum/ja/landing_page_ja.html)
+* [利用規約](https://takekapp.com/MemoWinkAlbum/ja/terms_and_conditions_ja.html)
+* [プライバシーポリシー](https://takekapp.com/MemoWinkAlbum/ja/privacy_policy_ja.html)
 * お問い合わせ等の連絡先: 
   * takekapp1990@gmail.com
 
@@ -149,13 +149,13 @@ Smart reminders that cheer you on. AI generates positive messages for every task
 * Contact E-mail Adress: 
   * takekapp1990+tificat@gmail.com
 
-## Tap Album
-<img src="https://takekapp.com/TapAlbum/images/app_icon/pop_photo_gallery_app_icon_ios.png" width="100" alt="app icon">
+## MemoWink Album
+<img src="https://takekapp.com/MemoWinkAlbum/images/app_icon/pop_photo_gallery_app_icon_ios.png" width="100" alt="app icon">
 Magic happens with every touch. A photo app safe for kids.
 
-* [App Introduction](https://takekapp.com/TapAlbum/en/landing_page_en.html)
-* [Terms and Conditions](https://takekapp.com/TapAlbum/en/terms_and_conditions_en.html)
-* [Privacy Policy](https://takekapp.com/TapAlbum/en/privacy_policy_en.html)
+* [App Introduction](https://takekapp.com/MemoWinkAlbum/en/landing_page_en.html)
+* [Terms and Conditions](https://takekapp.com/MemoWinkAlbum/en/terms_and_conditions_en.html)
+* [Privacy Policy](https://takekapp.com/MemoWinkAlbum/en/privacy_policy_en.html)
 * Contact E-mail Adress: 
   * takekapp1990@gmail.com
 
