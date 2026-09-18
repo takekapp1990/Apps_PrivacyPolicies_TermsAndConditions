@@ -63,6 +63,17 @@ SNS投稿の下書き管理を効率化。文字数カウント、ハッシュ�
 * お問い合わせ等の連絡先: 
   * takekapp1990@gmail.com
 
+## メモ自在（VersaMemo）
+<img src="https://takekapp.com/VersaMemo/images/app_icon.png" width="100" alt="アプリアイコン">
+自由自在に形を変える、高機能メモ。整理方法、メモ内ツール、見た目を自分仕様にしながら、データは端末中心で管理できます。
+
+* [アプリ紹介ページ](https://takekapp.com/VersaMemo/ja/)
+* [利用規約](https://takekapp.com/VersaMemo/ja/terms.html)
+* [プライバシーポリシー](https://takekapp.com/VersaMemo/ja/privacy.html)
+* [サポート](https://takekapp.com/VersaMemo/ja/support.html)
+* お問い合わせ等の連絡先:
+  * takekapp1990@takekapp.com
+
 ## やりたいこと100
 <img src="https://takekapp.com/MyDreams100/images/app_icon/my_dreams_100_app_icon_1024_1024_2.png" width="100" alt="アプリアイコン">
 あなたの「やりたい」を100個書き出して、夢の実現をサポートするアプリ。目標設定から達成管理まで。
@@ -199,6 +210,17 @@ Streamline your SNS draft management. Character counting, hashtag management, OG
 * [Privacy Policy](https://takekapp.com/PostDrafts/en/privacy_policy_en.html)
 * Contact E-mail Adress: 
   * takekapp1990@gmail.com
+
+## VersaMemo
+<img src="https://takekapp.com/VersaMemo/images/app_icon.png" width="100" alt="app icon">
+Powerful notes, shaped your way—with flexible organization, rich in-note tools, visual personalization, and local-first storage.
+
+* [App Introduction](https://takekapp.com/VersaMemo/en/)
+* [Terms of Use](https://takekapp.com/VersaMemo/en/terms.html)
+* [Privacy Policy](https://takekapp.com/VersaMemo/en/privacy.html)
+* [Support](https://takekapp.com/VersaMemo/en/support.html)
+* Contact email:
+  * takekapp1990@takekapp.com
 
 ## My Dreams 100
 <img src="https://takekapp.com/MyDreams100/images/app_icon/my_dreams_100_app_icon_1024_1024_2.png" width="100" alt="app icon">
