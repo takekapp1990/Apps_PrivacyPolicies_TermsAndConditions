@@ -253,6 +253,45 @@
       margin: 0;
     }
 
+    .web-trial {
+      margin-top: 4px;
+    }
+
+    .web-trial-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(31, 122, 140, 0.22);
+      border-radius: var(--radius-sm);
+      background: rgba(31, 122, 140, 0.06);
+      color: var(--accent-2);
+      padding: 10px 14px;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    }
+
+    .web-trial-link:hover {
+      background: rgba(31, 122, 140, 0.11);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-2px);
+    }
+
+    .web-trial-icon,
+    .web-trial-arrow {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .web-trial-copy small,
+    .web-trial-copy strong {
+      display: block;
+      line-height: 1.35;
+    }
+
+    .web-trial-copy small { font-size: 0.7rem; font-weight: 700; }
+    .web-trial-copy strong { font-size: 0.92rem; }
+
     /* Device Showcase / Carousel */
     .device-container {
       position: relative;
@@ -715,6 +754,16 @@
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.takekapp.maze25characters.prod" class="store-badge store-badge-android" target="_blank" rel="noopener">
               <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Play で手に入れよう">
+            </a>
+          </div>
+          <div class="web-trial">
+            <a href="https://maze25characters.web.app/" class="web-trial-link" target="_blank" rel="noopener noreferrer">
+              <span class="web-trial-icon" aria-hidden="true">▶</span>
+              <span class="web-trial-copy">
+                <small>インストール不要で無料体験</small>
+                <strong>ブラウザで今日の1問を遊ぶ</strong>
+              </span>
+              <span class="web-trial-arrow" aria-hidden="true">→</span>
             </a>
           </div>
         </div>
