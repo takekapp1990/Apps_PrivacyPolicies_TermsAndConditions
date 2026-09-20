@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>わたしの住宅ローン管理 | 住宅ローンからカードローン・リボまで返済を整理</title>
-  <meta name="description" content="住宅ローンを中心に、自動車ローン、奨学金、カードローン、キャッシング、リボ払いの残高・金利・返済予定をまとめて整理し、将来を試算できる日本語アプリです。">
+  <meta name="description" content="住宅ローンを中心に、残価設定ローン（残クレ）、自動車ローン、奨学金、カードローン、キャッシング、リボ払いの残高・金利・返済予定をまとめて整理し、将来を試算できる日本語アプリです。">
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#1f4f8a">
   <meta property="og:type" content="website">
@@ -438,6 +438,38 @@
     }
     .audience-card h3 { margin: 0 0 8px; font-size: 1.06rem; }
     .audience-card p { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
+    .premium-panel {
+      padding: 42px;
+      background:
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.17), transparent 32%),
+        linear-gradient(135deg, rgba(31, 79, 138, 0.98), rgba(44, 89, 143, 0.92));
+      color: #fff;
+    }
+    .premium-panel .section-header p { color: rgba(255,255,255,0.82); }
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .plan-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .plan-card.highlight { background: rgba(255,255,255,0.96); color: var(--text); }
+    .plan-card h3 { margin: 6px 0 12px; font-size: 1.35rem; }
+    .plan-card ul { margin: 0; padding-left: 1.25rem; }
+    .plan-card li + li { margin-top: 7px; }
+    .plan-label {
+      display: inline-flex;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+    .plan-card.highlight .plan-label { background: rgba(245, 158, 11, 0.16); color: #7a4e00; }
     .assurance-panel, .support-panel, .partner-panel {
       padding: 42px;
     }
@@ -588,7 +620,7 @@
       width: 100%;
     }
     @media (max-width: 860px) {
-      .hero-stage, .split, .feature-grid, .faq-grid, .problem-grid, .screen-showcase, .audience-grid, .support-panel, .support-links-grid { grid-template-columns: 1fr; }
+      .hero-stage, .split, .feature-grid, .faq-grid, .problem-grid, .screen-showcase, .audience-grid, .plan-grid, .support-panel, .support-links-grid { grid-template-columns: 1fr; }
       .container { width: min(calc(100% - 28px), var(--container)); }
       .topbar-inner {
         justify-content: center;
@@ -686,7 +718,7 @@
       }
       .screen-showcase { padding: 18px; border-radius: 22px; }
       .screen-showcase .device-carousel { width: min(100%, 195px); }
-      .assurance-panel, .support-panel, .partner-panel { padding: 26px; }
+      .assurance-panel, .premium-panel, .support-panel, .partner-panel { padding: 26px; }
       .partner-panel h2 { font-size: 1.65rem; }
       .partner-panel p { font-size: 0.96rem; line-height: 1.75; }
       .partner-tags { gap: 8px; margin-top: 18px; }
@@ -745,7 +777,7 @@
               </div>
             </div>
             <h1>住宅ローンも、<br>カードローンも。<br>返済の「今」と「この先」が<br>ひと目でわかる。</h1>
-            <p class="lead">住宅ローンを中心に、自動車ローン、奨学金、カードローン、キャッシング、リボ払いの残高と返済予定をまとめて見返せるローン管理アプリです。</p>
+            <p class="lead">住宅ローンを中心に、残価設定ローン（残クレ）、自動車ローン、奨学金、カードローン、キャッシング、リボ払いの残高と返済予定をまとめて見返せるローン管理アプリです。</p>
             <div class="cta-row">
               <a class="store-badge store-badge-ios" href="https://apps.apple.com/jp/app/id6789951919" target="_blank" rel="noopener">
                 <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード">
@@ -761,9 +793,9 @@
               <div class="device-frame">
                 <div class="device-screen-slider">
                   <img src="../images/screen_shots/ja/1_ja-JP.png" alt="返済中ローンの残債と現在地を確認できる画面">
-                  <img src="../images/screen_shots/ja/4_ja-JP.png" alt="金利シナリオを比較できる画面">
-                  <img src="../images/screen_shots/ja/5_ja-JP.png" alt="繰上返済の効果を試算できる画面">
-                  <img src="../images/screen_shots/ja/6_ja-JP.png" alt="コミュニティで返済の悩みを共有できる画面">
+                  <img src="../images/screen_shots/ja/3_ja-JP.png" alt="残クレ、奨学金、カードローン、リボを選べる画面">
+                  <img src="../images/screen_shots/ja/4_ja-JP.png" alt="返済明細を確認してCSVで保存できる画面">
+                  <img src="../images/screen_shots/ja/8_ja-JP.png" alt="コミュニティで返済の悩みを共有できる画面">
                 </div>
               </div>
               <div class="carousel-dots" aria-label="画面紹介スライド">
@@ -832,6 +864,18 @@
             <p>銀行カードローン、消費者金融、キャッシング、ショッピングリボを登録し、追加利用と返済による残高推移を概算できます。</p>
           </article>
           <article class="card">
+            <h3><span class="feature-icon accent" aria-hidden="true">＋</span>残クレ・奨学金にも対応</h3>
+            <p>残価設定ローン（残クレ）、自動車ローン、教育ローン・奨学金などを、返済方式に合った入力項目で登録できます。</p>
+          </article>
+          <article class="card">
+            <h3><span class="feature-icon" aria-hidden="true">表</span>返済明細とCSV保存</h3>
+            <p>毎月の返済額、元本、利息、返済後残高を一覧で確認。プレミアム永久版ではCSVとして保存・共有できます。</p>
+          </article>
+          <article class="card">
+            <h3><span class="feature-icon accent" aria-hidden="true">↗</span>共有コードと返済日通知</h3>
+            <p>内容を確認して取り込める共有コードと、登録した返済日に合わせたリマインダーで、家族との確認や日々の管理を支えます。</p>
+          </article>
+          <article class="card">
             <h3><span class="feature-icon" aria-hidden="true">✓</span>条件を保存してあとで見返す</h3>
             <p>作成した試算や返済中ローンを保存し、複数の候補をあとから比較できます。</p>
           </article>
@@ -843,11 +887,41 @@
       </div>
     </section>
 
+    <section id="premium">
+      <div class="container panel premium-panel">
+        <div class="section-header">
+          <h2>必要になったときだけ、買い切りで拡張。</h2>
+          <p>プレミアム永久版は一度の購入で利用でき、自動更新はありません。無料版でもコア試算と登録済みデータの確認・編集・削除を利用できます。</p>
+        </div>
+        <div class="plan-grid">
+          <article class="plan-card">
+            <span class="plan-label">無料版</span>
+            <h3>まずは基本機能から</h3>
+            <ul>
+              <li>ローンを合計2件まで登録</li>
+              <li>基本の返済試算</li>
+              <li>登録済みデータの確認・編集・削除</li>
+            </ul>
+          </article>
+          <article class="plan-card highlight">
+            <span class="plan-label">買い切り・自動更新なし</span>
+            <h3>プレミアム永久版</h3>
+            <ul>
+              <li>ローンを合計20件まで登録</li>
+              <li>返済予定や登録データをCSVで保存・共有</li>
+              <li>将来試算をいつでも利用</li>
+              <li>通常の広告を非表示</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="screenshots">
       <div class="container">
         <div class="section-header">
           <h2>数字を、判断しやすい画面で。</h2>
-          <p>残債、金利上昇、繰上返済、カードローン・リボ、コミュニティまで、返済中に気になるポイントを画面ごとに整理しています。</p>
+          <p>残債、対応ローン、返済明細、金利上昇、繰上返済、コミュニティまで、返済中に気になるポイントを画面ごとに整理しています。</p>
         </div>
         <div class="panel screen-showcase">
           <div class="device-carousel" data-carousel>
@@ -855,11 +929,12 @@
               <div class="device-screen-slider">
                 <img src="../images/screen_shots/ja/1_ja-JP.png" alt="ローン返済中の方向けに現在と将来の負担を表示する画面">
                 <img src="../images/screen_shots/ja/2_ja-JP.png" alt="残債と返済状況を見やすく整理する画面">
-                <img src="../images/screen_shots/ja/3_ja-JP.png" alt="さまざまな条件で将来を比較できる画面">
-                <img src="../images/screen_shots/ja/4_ja-JP.png" alt="金利上昇に備えて返済額と利息を試算する画面">
-                <img src="../images/screen_shots/ja/5_ja-JP.png" alt="繰上返済前に条件を並べて確認する画面">
-                <img src="../images/screen_shots/ja/6_ja-JP.png" alt="コミュニティで返済の悩みを共有する画面">
-                <img src="../images/screen_shots/ja/7_ja-JP.png" alt="住宅ローンの用語を分かりやすく解説する画面">
+                <img src="../images/screen_shots/ja/3_ja-JP.png" alt="残クレ、奨学金、カードローン、リボにも対応する画面">
+                <img src="../images/screen_shots/ja/4_ja-JP.png" alt="毎月の返済明細を確認してCSVで保存・共有する画面">
+                <img src="../images/screen_shots/ja/5_ja-JP.png" alt="さまざまな条件で将来を比較できる画面">
+                <img src="../images/screen_shots/ja/6_ja-JP.png" alt="金利上昇に備えて返済額と利息を試算する画面">
+                <img src="../images/screen_shots/ja/7_ja-JP.png" alt="繰上返済前に条件を並べて確認する画面">
+                <img src="../images/screen_shots/ja/8_ja-JP.png" alt="コミュニティで返済の悩みを共有する画面">
               </div>
             </div>
             <div class="carousel-dots" aria-label="スクリーンショットスライド">
@@ -870,6 +945,7 @@
               <button class="carousel-dot" aria-label="5枚目の画面"></button>
               <button class="carousel-dot" aria-label="6枚目の画面"></button>
               <button class="carousel-dot" aria-label="7枚目の画面"></button>
+              <button class="carousel-dot" aria-label="8枚目の画面"></button>
             </div>
           </div>
           <div class="showcase-copy">
@@ -878,12 +954,16 @@
               <span>残債、返済済み総額、残り期間、月々返済額を見やすく整理します。</span>
             </div>
             <div class="showcase-item">
-              <strong>2. 気になる将来を比べる</strong>
+              <strong>2. 借入の種類と毎月の内訳を整理する</strong>
+              <span>残クレ、奨学金、カードローン、リボを登録し、毎月の返済額・元本・利息・残高を確認できます。</span>
+            </div>
+            <div class="showcase-item">
+              <strong>3. 気になる将来を比べる</strong>
               <span>金利上昇、固定金利、繰上返済、借り換えなど、テーマごとに負担を比較できます。</span>
             </div>
             <div class="showcase-item">
-              <strong>3. 判断材料をあとで見返す</strong>
-              <span>保存した試算や返済中ローンをもとに、将来のアクションを焦らず整理できます。</span>
+              <strong>4. 保存・共有してあとで見返す</strong>
+              <span>CSVや共有コードを使い、必要な情報を手元や家族の端末でも確認できます。</span>
             </div>
           </div>
         </div>
@@ -983,7 +1063,11 @@
           </details>
           <details class="card faq-item">
             <summary>プレミアム永久版と広告について教えてください。</summary>
-            <p>無料版には一部広告があります。プレミアム永久版は買い切り型のアプリ内購入で、対象機能の上限解除と広告非表示を提供します。価格と対象機能は購入画面をご確認ください。</p>
+            <p>無料版ではローンを合計2件まで登録でき、コア試算と登録済みデータの確認・編集・削除を利用できます。プレミアム永久版は自動更新のない買い切り型で、登録上限20件、CSV保存・共有、将来試算の常時利用、通常広告の非表示を提供します。価格は購入画面をご確認ください。</p>
+          </details>
+          <details class="card faq-item">
+            <summary>ローン情報を家族と共有できますか？</summary>
+            <p>共有したいローンから共有コードを発行できます。受け取った側は内容を確認してから自分の端末へ取り込めます。</p>
           </details>
           <details class="card faq-item">
             <summary>FP相談では何が送信されますか？</summary>
