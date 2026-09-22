@@ -431,17 +431,14 @@ h1 span {
 }
 
 .carousel-status {
-    display: grid;
-    grid-template-columns: 40px minmax(0, auto) 40px;
-    width: min(320px, 100%);
-    min-height: 40px;
+    display: flex;
+    min-height: 14px;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
 }
 
 .carousel-dots {
-    grid-column: 2;
     display: flex;
     gap: 10px;
     min-height: 14px;
@@ -464,57 +461,6 @@ h1 span {
     background: #69ddd4;
     box-shadow: 0 0 0 4px rgba(105, 221, 212, 0.12);
 }
-
-.carousel-toggle {
-    grid-column: 3;
-    display: grid;
-    width: 40px;
-    height: 40px;
-    place-items: center;
-    padding: 0;
-    border: 1px solid rgba(210, 229, 239, 0.24);
-    border-radius: 999px;
-    background: rgba(7, 28, 46, 0.48);
-    color: #d9ebf4;
-    cursor: pointer;
-}
-
-.carousel-toggle span {
-    position: relative;
-    display: block;
-    width: 12px;
-    height: 14px;
-}
-
-.carousel-toggle span::before,
-.carousel-toggle span::after {
-    position: absolute;
-    top: 1px;
-    width: 3px;
-    height: 12px;
-    border-radius: 2px;
-    background: currentColor;
-    content: "";
-}
-
-.carousel-toggle span::before { left: 1px; }
-.carousel-toggle span::after { right: 1px; }
-
-.carousel-toggle.is-paused span::before {
-    top: 0;
-    left: 2px;
-    width: 0;
-    height: 0;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 11px solid currentColor;
-    border-radius: 0;
-    background: transparent;
-}
-
-.carousel-toggle.is-paused span::after { display: none; }
-.carousel-toggle:hover { border-color: rgba(105, 221, 212, 0.58); color: #fff; }
-.carousel-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
 .hero-device {
     position: absolute;
@@ -1326,7 +1272,6 @@ h1 span {
     .hero-slide { transition: none; }
     .carousel-nav button { transition: none; }
     .carousel-dots span { transition: none; }
-    .carousel-toggle { display: none; }
     .store-badge-link { transition: none; }
     .hero-inline-link span { transition: none; }
 }

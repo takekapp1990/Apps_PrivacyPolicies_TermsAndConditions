@@ -45,13 +45,11 @@ window.addEventListener("DOMContentLoaded", () => {
         const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
         const buttons = Array.from(carousel.querySelectorAll("[data-carousel-button]"));
         const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
-        const toggle = carousel.querySelector("[data-carousel-toggle]");
         if (slides.length < 2 || slides.length !== buttons.length) return;
 
         let currentIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
         let timer;
         let userPaused = false;
-        let ignoreInteractionPause = false;
 
         const showSlide = (nextIndex) => {
             currentIndex = (nextIndex + slides.length) % slides.length;
@@ -68,26 +66,14 @@ window.addEventListener("DOMContentLoaded", () => {
             dots.forEach((dot, index) => dot.classList.toggle("is-active", index === currentIndex));
         };
 
-        const syncToggle = () => {
-            if (!toggle) return;
-            toggle.classList.toggle("is-paused", userPaused);
-            toggle.setAttribute("aria-pressed", String(userPaused));
-            toggle.setAttribute(
-                "aria-label",
-                userPaused ? toggle.dataset.playLabel : toggle.dataset.pauseLabel,
-            );
-        };
-
         const stop = () => {
             if (timer) window.clearTimeout(timer);
             timer = undefined;
         };
 
         const interactionPaused = () => (
-            !ignoreInteractionPause && (
-                carousel.matches(":hover") ||
-                carousel.contains(document.activeElement)
-            )
+            carousel.matches(":hover") ||
+            carousel.contains(document.activeElement)
         );
 
         const start = () => {
@@ -108,41 +94,22 @@ window.addEventListener("DOMContentLoaded", () => {
 
         buttons.forEach((button, index) => {
             button.addEventListener("click", () => {
-                ignoreInteractionPause = false;
+                userPaused = true;
                 stop();
                 showSlide(index);
-                start();
             });
         });
 
-        toggle?.addEventListener("click", () => {
-            userPaused = !userPaused;
-            ignoreInteractionPause = !userPaused;
-            syncToggle();
-            if (userPaused) stop();
-            else start();
-        });
-
-        carousel.addEventListener("mouseenter", () => {
-            if (!ignoreInteractionPause) stop();
-        });
-        carousel.addEventListener("mouseleave", () => {
-            ignoreInteractionPause = false;
-            start();
-        });
-        carousel.addEventListener("focusin", (event) => {
-            if (event.target !== toggle) ignoreInteractionPause = false;
-            if (!ignoreInteractionPause) stop();
-        });
+        carousel.addEventListener("mouseenter", stop);
+        carousel.addEventListener("mouseleave", start);
+        carousel.addEventListener("focusin", stop);
         carousel.addEventListener("focusout", (event) => {
-            if (!carousel.contains(event.relatedTarget)) {
-                ignoreInteractionPause = false;
-                start();
-            }
+            if (!carousel.contains(event.relatedTarget)) start();
         });
         carousel.addEventListener("keydown", (event) => {
             if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
             event.preventDefault();
+            userPaused = true;
             stop();
             showSlide(currentIndex + (event.key === "ArrowRight" ? 1 : -1));
             buttons[currentIndex].focus();
@@ -153,7 +120,6 @@ window.addEventListener("DOMContentLoaded", () => {
         });
 
         showSlide(currentIndex);
-        syncToggle();
         start();
     });
 });
