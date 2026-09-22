@@ -44,10 +44,14 @@ window.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-hero-carousel]").forEach((carousel) => {
         const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
         const buttons = Array.from(carousel.querySelectorAll("[data-carousel-button]"));
+        const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
+        const toggle = carousel.querySelector("[data-carousel-toggle]");
         if (slides.length < 2 || slides.length !== buttons.length) return;
 
         let currentIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
         let timer;
+        let userPaused = false;
+        let ignoreInteractionPause = false;
 
         const showSlide = (nextIndex) => {
             currentIndex = (nextIndex + slides.length) % slides.length;
@@ -61,37 +65,80 @@ window.addEventListener("DOMContentLoaded", () => {
                 button.classList.toggle("is-active", active);
                 button.setAttribute("aria-pressed", String(active));
             });
+            dots.forEach((dot, index) => dot.classList.toggle("is-active", index === currentIndex));
+        };
+
+        const syncToggle = () => {
+            if (!toggle) return;
+            toggle.classList.toggle("is-paused", userPaused);
+            toggle.setAttribute("aria-pressed", String(userPaused));
+            toggle.setAttribute(
+                "aria-label",
+                userPaused ? toggle.dataset.playLabel : toggle.dataset.pauseLabel,
+            );
         };
 
         const stop = () => {
-            if (timer) window.clearInterval(timer);
+            if (timer) window.clearTimeout(timer);
             timer = undefined;
         };
+
+        const interactionPaused = () => (
+            !ignoreInteractionPause && (
+                carousel.matches(":hover") ||
+                carousel.contains(document.activeElement)
+            )
+        );
 
         const start = () => {
             if (
                 reduceMotion ||
+                userPaused ||
                 timer ||
                 document.hidden ||
-                carousel.matches(":hover") ||
-                carousel.contains(document.activeElement)
+                interactionPaused()
             ) return;
-            timer = window.setInterval(() => showSlide(currentIndex + 1), 6000);
+            timer = window.setTimeout(() => {
+                timer = undefined;
+                if (document.hidden || userPaused || interactionPaused()) return;
+                showSlide(currentIndex + 1);
+                start();
+            }, 6000);
         };
 
         buttons.forEach((button, index) => {
             button.addEventListener("click", () => {
+                ignoreInteractionPause = false;
                 stop();
                 showSlide(index);
                 start();
             });
         });
 
-        carousel.addEventListener("mouseenter", stop);
-        carousel.addEventListener("mouseleave", start);
-        carousel.addEventListener("focusin", stop);
+        toggle?.addEventListener("click", () => {
+            userPaused = !userPaused;
+            ignoreInteractionPause = !userPaused;
+            syncToggle();
+            if (userPaused) stop();
+            else start();
+        });
+
+        carousel.addEventListener("mouseenter", () => {
+            if (!ignoreInteractionPause) stop();
+        });
+        carousel.addEventListener("mouseleave", () => {
+            ignoreInteractionPause = false;
+            start();
+        });
+        carousel.addEventListener("focusin", (event) => {
+            if (event.target !== toggle) ignoreInteractionPause = false;
+            if (!ignoreInteractionPause) stop();
+        });
         carousel.addEventListener("focusout", (event) => {
-            if (!carousel.contains(event.relatedTarget)) start();
+            if (!carousel.contains(event.relatedTarget)) {
+                ignoreInteractionPause = false;
+                start();
+            }
         });
         carousel.addEventListener("keydown", (event) => {
             if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
@@ -106,6 +153,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
 
         showSlide(currentIndex);
+        syncToggle();
         start();
     });
 });

@@ -65,7 +65,7 @@ SNS投稿の下書き管理を効率化。文字数カウント、ハッシュ�
 
 ## VersaMemo
 <img src="https://takekapp.com/VersaMemo/images/app_icon.png" width="100" alt="アプリアイコン">
-なんでも記録。必要な形に、育てられる。文章、画像、音声、表、カード、カレンダーまで、アカウントなしで使えるローカルファーストのメモアプリです。
+自由自在に形を変える、高機能メモ。日記、学習、仕事、お金の記録まで、文章から始めて必要な機能をあとから足せる、アカウント不要のメモアプリです。
 
 * [アプリ紹介ページ](https://takekapp.com/VersaMemo/ja/)
 * [利用規約](https://takekapp.com/VersaMemo/ja/terms.html)
@@ -213,7 +213,7 @@ Streamline your SNS draft management. Character counting, hashtag management, OG
 
 ## VersaMemo
 <img src="https://takekapp.com/VersaMemo/images/app_icon.png" width="100" alt="app icon">
-Capture anything. Shape it your way. Keep text, images, audio, tables, cards, and calendar together in a flexible, local-first note app with no account required.
+Powerful notes, shaped your way. Start with text, add images, audio, tables, or checklists when they help, and organize later with cards, hierarchy, and calendars—no account required.
 
 * [App Introduction](https://takekapp.com/VersaMemo/en/)
 * [Terms of Use](https://takekapp.com/VersaMemo/en/terms.html)
