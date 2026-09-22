@@ -166,6 +166,7 @@
       line-height: 1.16;
       letter-spacing: 0;
     }
+    .hero-title-mobile-break { display: none; }
     .lead { margin: 0 0 22px; color: var(--muted); font-size: 1.08rem; max-width: 560px; }
     .hero-points {
       display: grid;
@@ -743,6 +744,15 @@
       .device-carousel { width: min(100%, 180px); }
       .screen-showcase .device-carousel { width: min(100%, 195px); }
     }
+    @media (max-width: 375px) {
+      h1 {
+        font-size: 1.75rem;
+        line-height: 1.16;
+      }
+    }
+    @media (max-width: 340px) {
+      .hero-title-mobile-break { display: inline; }
+    }
   </style>
 </head>
 <body>
@@ -776,7 +786,7 @@
                 <span class="eyebrow">返済中のローンをまとめたい方へ</span>
               </div>
             </div>
-            <h1>住宅ローンも、<br>カードローンも。<br>返済の「今」と「この先」が<br>ひと目でわかる。</h1>
+            <h1>借りたローンの<br>「今」と<span class="hero-title-mobile-break"><br></span>「この先」が、<br>ひと目でわかる。</h1>
             <p class="lead">住宅ローンを中心に、残価設定ローン（残クレ）、自動車ローン、奨学金、カードローン、キャッシング、リボ払いの残高と返済予定をまとめて見返せるローン管理アプリです。</p>
             <div class="cta-row">
               <a class="store-badge store-badge-ios" href="https://apps.apple.com/jp/app/id6789951919" target="_blank" rel="noopener">
