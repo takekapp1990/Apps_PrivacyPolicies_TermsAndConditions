@@ -89,7 +89,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 if (document.hidden || userPaused || interactionPaused()) return;
                 showSlide(currentIndex + 1);
                 start();
-            }, 6000);
+            }, 5000);
         };
 
         buttons.forEach((button, index) => {
