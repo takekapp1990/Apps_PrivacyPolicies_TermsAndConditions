@@ -63,9 +63,9 @@ SNS投稿の下書き管理を効率化。文字数カウント、ハッシュ�
 * お問い合わせ等の連絡先: 
   * takekapp1990@gmail.com
 
-## メモ自在（VersaMemo）
+## VersaMemo
 <img src="https://takekapp.com/VersaMemo/images/app_icon.png" width="100" alt="アプリアイコン">
-自由自在に形を変える、高機能メモ。整理方法、メモ内ツール、見た目を自分仕様にしながら、データは端末中心で管理できます。
+なんでも記録。必要な形に、育てられる。文章、画像、音声、表、カード、カレンダーまで、アカウントなしで使えるローカルファーストのメモアプリです。
 
 * [アプリ紹介ページ](https://takekapp.com/VersaMemo/ja/)
 * [利用規約](https://takekapp.com/VersaMemo/ja/terms.html)
@@ -213,7 +213,7 @@ Streamline your SNS draft management. Character counting, hashtag management, OG
 
 ## VersaMemo
 <img src="https://takekapp.com/VersaMemo/images/app_icon.png" width="100" alt="app icon">
-Powerful notes, shaped your way—with flexible organization, rich in-note tools, visual personalization, and local-first storage.
+Capture anything. Shape it your way. Keep text, images, audio, tables, cards, and calendar together in a flexible, local-first note app with no account required.
 
 * [App Introduction](https://takekapp.com/VersaMemo/en/)
 * [Terms of Use](https://takekapp.com/VersaMemo/en/terms.html)
