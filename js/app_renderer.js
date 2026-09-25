@@ -117,7 +117,7 @@ function renderApps(lang) {
             androidBadge = `
                 <a href="${app.android}" target="_blank" class="app-store-badge">
                     <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_${lang === 'ja' ? 'Japanese' : 'English'}.png"
-                        alt="${lang === 'ja' ? 'Google Playで手に入れよう' : 'Get it on Google Play'}" height="40">
+                        alt="${lang === 'ja' ? 'Google Playで手に入れよう' : 'Get it on Google Play'}" height="40" loading="lazy" decoding="async">
                 </a>
             `;
         }
@@ -127,7 +127,7 @@ function renderApps(lang) {
              iosBadge = `
                 <a href="${iosUrl}" target="_blank" class="app-store-badge">
                     <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_${lang === 'ja' ? 'JP_RGB_blk_100317' : 'US-UK_RGB_blk_092917'}.svg"
-                        alt="${lang === 'ja' ? 'App Storeからダウンロード' : 'Download on the App Store'}" height="40">
+                        alt="${lang === 'ja' ? 'App Storeからダウンロード' : 'Download on the App Store'}" height="40" loading="lazy" decoding="async">
                 </a>
             `;
         }
@@ -143,7 +143,7 @@ function renderApps(lang) {
             <div class="card app-card h-100">
                 <div class="card-body">
                     <div class="d-flex mb-3">
-                        <img src="${app.icon}" class="app-icon me-3" alt="${appLocale.title}">
+                        <img src="${app.icon}" class="app-icon me-3" alt="${appLocale.title}" loading="lazy" decoding="async">
                         <div>
                             <h3 class="card-title">
                                 <a href="${lpUrl}" class="text-decoration-none text-primary">${appLocale.title}</a>

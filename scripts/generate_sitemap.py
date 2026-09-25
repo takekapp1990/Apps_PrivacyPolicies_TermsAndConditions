@@ -1,63 +1,65 @@
 
-import datetime
-import re
+import subprocess
+import xml.etree.ElementTree as ET
+from datetime import date
 from pathlib import Path
 
-def generate_sitemap():
-    js_file_path = 'js/apps_data.js'
-    sitemap_path = 'sitemap.xml'
-    base_url = 'https://takekapp.com'
-    
-    urls = set()
-    
-    # 1. Add key static pages
-    urls.add(f'{base_url}/index.html')
-    urls.add(f'{base_url}/')
-    
-    # 2. Collect all public HTML pages from repository
-    for html_path in Path('.').rglob('*.html'):
-        parts = html_path.parts
-        if any(part.startswith('.') for part in parts):
+BASE_URL = "https://takekapp.com"
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def canonical_url(path: Path) -> str:
+    relative = path.relative_to(ROOT).as_posix()
+    if relative == "index.html":
+        return f"{BASE_URL}/"
+    if relative.endswith("/index.html"):
+        return f"{BASE_URL}/{relative[:-10]}"
+    return f"{BASE_URL}/{relative}"
+
+
+def last_modified(path: Path) -> str:
+    relative = str(path.relative_to(ROOT))
+    dirty = subprocess.run(
+        ["git", "diff", "--quiet", "HEAD", "--", relative],
+        cwd=ROOT,
+        check=False,
+    )
+    if dirty.returncode == 1:
+        return date.today().isoformat()
+    result = subprocess.run(
+        ["git", "log", "-1", "--format=%cs", "--", relative],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    return result.stdout.strip() or date.today().isoformat()
+
+
+def generate_sitemap() -> None:
+    pages: dict[str, Path] = {}
+    for path in ROOT.rglob("*.html"):
+        if ".git" in path.parts or "_private_docs" in path.parts:
             continue
-        rel_path = html_path.as_posix().lstrip('./')
-        urls.add(f'{base_url}/{rel_path}')
+        source = path.read_text(encoding="utf-8", errors="ignore")
+        if "noindex" in source.lower():
+            continue
+        url = canonical_url(path)
+        pages.setdefault(url, path)
 
-    # 3. Extract URLs from apps_data.js (kept as safety net for LP links)
-    try:
-        with open(js_file_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-            matches = re.findall(r"lp:\s*['\"](https://takekapp\.com/[^'\"]+)['\"]", content)
-            for url in matches:
-                urls.add(url)
-                
-    except FileNotFoundError:
-        print(f"Error: {js_file_path} not found.")
-        # Continue with file system URLs only
+    ET.register_namespace("", "http://www.sitemaps.org/schemas/sitemap/0.9")
+    urlset = ET.Element("{http://www.sitemaps.org/schemas/sitemap/0.9}urlset")
+    for url, path in sorted(pages.items()):
+        entry = ET.SubElement(urlset, "{http://www.sitemaps.org/schemas/sitemap/0.9}url")
+        ET.SubElement(entry, "{http://www.sitemaps.org/schemas/sitemap/0.9}loc").text = url
+        ET.SubElement(entry, "{http://www.sitemaps.org/schemas/sitemap/0.9}lastmod").text = last_modified(path)
 
-    # 4. Generate XML
-    xml_content = ['<?xml version="1.0" encoding="UTF-8"?>']
-    xml_content.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
-    
-    # Current date for lastmod
-    today = datetime.date.today().isoformat()
-    
-    for url in sorted(urls):
-        xml_content.append('  <url>')
-        xml_content.append(f'    <loc>{url}</loc>')
-        xml_content.append(f'    <lastmod>{today}</lastmod>')
-        # Priority logic: top pages 1.0, others 0.8
-        if url.endswith('index.html') or url == f'{base_url}/':
-             xml_content.append('    <priority>1.0</priority>')
-        else:
-             xml_content.append('    <priority>0.8</priority>')
-        xml_content.append('  </url>')
-        
-    xml_content.append('</urlset>')
-    
-    with open(sitemap_path, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(xml_content))
-    
-    print(f"Successfully generated {sitemap_path} with {len(urls)} URLs.")
+    tree = ET.ElementTree(urlset)
+    ET.indent(tree, space="  ")
+    tree.write(ROOT / "sitemap.xml", encoding="utf-8", xml_declaration=True)
+    with (ROOT / "sitemap.xml").open("a", encoding="utf-8") as stream:
+        stream.write("\n")
+    print(f"Successfully generated sitemap.xml with {len(pages)} canonical URLs.")
 
 if __name__ == "__main__":
     generate_sitemap()
