@@ -166,7 +166,7 @@
       line-height: 1.16;
       letter-spacing: 0;
     }
-    .hero-title-mobile-break { display: none; }
+    .hero-title-nowrap { white-space: nowrap; }
     .lead { margin: 0 0 22px; color: var(--muted); font-size: 1.08rem; max-width: 560px; }
     .hero-points {
       display: grid;
@@ -666,7 +666,7 @@
       }
       h1 {
         margin-bottom: 12px;
-        font-size: 1.86rem;
+        font-size: clamp(1.45rem, 7.2vw, 1.72rem);
         line-height: 1.12;
       }
       .lead {
@@ -744,15 +744,6 @@
       .device-carousel { width: min(100%, 180px); }
       .screen-showcase .device-carousel { width: min(100%, 195px); }
     }
-    @media (max-width: 375px) {
-      h1 {
-        font-size: 1.75rem;
-        line-height: 1.16;
-      }
-    }
-    @media (max-width: 340px) {
-      .hero-title-mobile-break { display: inline; }
-    }
   </style>
     <link rel="canonical" href="https://takekapp.com/LoanManagement/ja/landing_page_ja.html">
     <script type="application/ld+json">
@@ -805,10 +796,10 @@
               <img class="hero-app-icon" src="../images/app_icon/icon_loan_management_1024_1024_ios.png" alt="わたしの住宅ローン管理のアイコン" decoding="async" loading="lazy">
               <div>
                 <span class="hero-app-name">わたしの住宅ローン管理</span>
-                <span class="eyebrow">返済中のローンをまとめたい方へ</span>
+                <span class="eyebrow">返済中のローンがある方へ</span>
               </div>
             </div>
-            <h1>借りたローンの<br>「今」と<span class="hero-title-mobile-break"><br></span>「この先」が、<br>ひと目でわかる。</h1>
+            <h1>借りたローンの<br><span class="hero-title-nowrap">「今」と「この先」が、</span><br>ひと目でわかる。</h1>
             <p class="lead">住宅ローンを中心に、残価設定ローン（残クレ）、自動車ローン、奨学金、カードローン、キャッシング、リボ払いの残高と返済予定をまとめて見返せるローン管理アプリです。</p>
             <div class="cta-row">
               <a class="store-badge store-badge-ios" href="https://apps.apple.com/jp/app/id6789951919" target="_blank" rel="noopener">
@@ -919,36 +910,6 @@
       </div>
     </section>
 
-    <section id="premium">
-      <div class="container panel premium-panel">
-        <div class="section-header">
-          <h2>必要になったときだけ、買い切りで拡張。</h2>
-          <p>プレミアム永久版は一度の購入で利用でき、自動更新はありません。無料版でもコア試算と登録済みデータの確認・編集・削除を利用できます。</p>
-        </div>
-        <div class="plan-grid">
-          <article class="plan-card">
-            <span class="plan-label">無料版</span>
-            <h3>まずは基本機能から</h3>
-            <ul>
-              <li>ローンを合計2件まで登録</li>
-              <li>基本の返済試算</li>
-              <li>登録済みデータの確認・編集・削除</li>
-            </ul>
-          </article>
-          <article class="plan-card highlight">
-            <span class="plan-label">買い切り・自動更新なし</span>
-            <h3>プレミアム永久版</h3>
-            <ul>
-              <li>ローンを合計20件まで登録</li>
-              <li>返済予定や登録データをCSVで保存・共有</li>
-              <li>将来試算をいつでも利用</li>
-              <li>通常の広告を非表示</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section id="screenshots">
       <div class="container">
         <div class="section-header">
@@ -1028,6 +989,36 @@
             <span aria-hidden="true">4</span>
             <h3>カードローンやリボも一緒に整理したい</h3>
             <p>商品に近い入力補助を使い、現在残高から返済予定を確認できます。掲載商品以外も手入力できます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="premium">
+      <div class="container panel premium-panel">
+        <div class="section-header">
+          <h2>必要になったときだけ、買い切りで拡張。</h2>
+          <p>プレミアム永久版は一度の購入で利用でき、自動更新はありません。無料版でもコア試算と登録済みデータの確認・編集・削除を利用できます。</p>
+        </div>
+        <div class="plan-grid">
+          <article class="plan-card">
+            <span class="plan-label">無料版</span>
+            <h3>まずは基本機能から</h3>
+            <ul>
+              <li>ローンを合計2件まで登録</li>
+              <li>基本の返済試算</li>
+              <li>登録済みデータの確認・編集・削除</li>
+            </ul>
+          </article>
+          <article class="plan-card highlight">
+            <span class="plan-label">買い切り・自動更新なし</span>
+            <h3>プレミアム永久版</h3>
+            <ul>
+              <li>ローンを合計20件まで登録</li>
+              <li>返済予定や登録データをCSVで保存・共有</li>
+              <li>将来試算をいつでも利用</li>
+              <li>通常の広告を非表示</li>
+            </ul>
           </article>
         </div>
       </div>
