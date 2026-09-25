@@ -4,7 +4,8 @@
 The script intentionally limits itself to mechanical, repository-wide fixes:
 canonical URLs, missing descriptions/language declarations, reciprocal hreflang
 clusters, SoftwareApplication JSON-LD, image loading hints, known broken local
-references, and retired duplicate blog URLs.
+references, analytics tags on public landing pages, and retired duplicate blog
+URLs.
 """
 
 from __future__ import annotations
@@ -19,6 +20,13 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = "https://takekapp.com"
+GA_MEASUREMENT_ID = "G-0VCS46ZTHC"
+
+ANALYTICS_EXTRA_PAGES = {
+    "AwaAwaPon/ja/tournament_202507_ja.html",
+    "VersaMemo/en/index.html",
+    "VersaMemo/ja/index.html",
+}
 
 RETIRED_URLS = {
     "blog/posts/dev/ja/2025-01-30-development-diary-starts.html":
@@ -155,6 +163,25 @@ def add_basic_metadata(path: Path, source: str) -> str:
     if additions:
         source = insert_before_head_end(source, "\n".join(additions))
     return source
+
+
+def add_analytics(path: Path, source: str) -> str:
+    relative = rel(path)
+    is_landing_page = "landing_page_" in path.name or path.name == "app_introduction.html"
+    if not (is_landing_page or relative in ANALYTICS_EXTRA_PAGES):
+        return source
+    if "noindex" in source.lower() or GA_MEASUREMENT_ID in source:
+        return source
+
+    block = f'''    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={GA_MEASUREMENT_ID}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {{ dataLayer.push(arguments); }}
+        gtag('js', new Date());
+        gtag('config', '{GA_MEASUREMENT_ID}');
+    </script>'''
+    return insert_before_head_end(source, block)
 
 
 def clamp_description(value: str, language: str) -> str:
@@ -408,6 +435,7 @@ def main() -> None:
         before = path.read_text(encoding="utf-8", errors="ignore")
         source = replace_known_broken_references(path, before)
         source = add_basic_metadata(path, source)
+        source = add_analytics(path, source)
         source = normalize_description(path, source)
         source = add_software_schema(path, source)
         if path in clusters:
