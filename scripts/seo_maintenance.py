@@ -4,8 +4,8 @@
 The script intentionally limits itself to mechanical, repository-wide fixes:
 canonical URLs, missing descriptions/language declarations, reciprocal hreflang
 clusters, SoftwareApplication JSON-LD, image loading hints, known broken local
-references, analytics tags on public landing pages, and retired duplicate blog
-URLs.
+references, analytics tags and store-click tracking on public landing pages,
+and retired duplicate blog URLs.
 """
 
 from __future__ import annotations
@@ -21,6 +21,7 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = "https://takekapp.com"
 GA_MEASUREMENT_ID = "G-0VCS46ZTHC"
+APP_STORE_ANALYTICS_SCRIPT = "/js/app_store_analytics.js"
 
 ANALYTICS_EXTRA_PAGES = {
     "AwaAwaPon/ja/tournament_202507_ja.html",
@@ -181,6 +182,26 @@ def add_analytics(path: Path, source: str) -> str:
         gtag('js', new Date());
         gtag('config', '{GA_MEASUREMENT_ID}');
     </script>'''
+    return insert_before_head_end(source, block)
+
+
+def has_app_store_link(source: str) -> bool:
+    store_hosts = (
+        "apps.apple.com",
+        "apple.co/",
+        "toolbox.marketingtools.apple.com",
+        "play.google.com/store/apps/",
+    )
+    return any(host in source for host in store_hosts)
+
+
+def add_app_store_click_tracking(path: Path, source: str) -> str:
+    if "noindex" in source.lower() or not has_app_store_link(source):
+        return source
+    if GA_MEASUREMENT_ID not in source or APP_STORE_ANALYTICS_SCRIPT in source:
+        return source
+
+    block = f'    <script defer src="{APP_STORE_ANALYTICS_SCRIPT}"></script>'
     return insert_before_head_end(source, block)
 
 
@@ -436,6 +457,7 @@ def main() -> None:
         source = replace_known_broken_references(path, before)
         source = add_basic_metadata(path, source)
         source = add_analytics(path, source)
+        source = add_app_store_click_tracking(path, source)
         source = normalize_description(path, source)
         source = add_software_schema(path, source)
         if path in clusters:
