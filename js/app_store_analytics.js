@@ -31,11 +31,27 @@
         return 'content';
     }
 
+    function trackYahooStoreClick(storeName) {
+        const conversions = window.takekYahooStoreConversions;
+        const conversion = conversions && conversions[storeName];
+        if (!conversion || typeof window.ytag !== 'function') return;
+
+        window.ytag({
+            type: 'yjad_conversion',
+            config: {
+                yahoo_ydn_conv_io: conversion.yahoo_ydn_conv_io,
+                yahoo_ydn_conv_label: conversion.yahoo_ydn_conv_label,
+                yahoo_ydn_conv_transaction_id: '',
+                yahoo_ydn_conv_value: '0'
+            }
+        });
+    }
+
     document.addEventListener('click', function (event) {
         if (!(event.target instanceof Element)) return;
 
         const link = event.target.closest('a[href]');
-        if (!link || typeof window.gtag !== 'function') return;
+        if (!link) return;
 
         let destination;
         try {
@@ -50,12 +66,16 @@
         const sourcePage = getSourcePage();
         const pathParts = sourcePage.pathname.split('/').filter(Boolean);
 
-        window.gtag('event', 'app_store_click', {
-            store_name: storeName,
-            app_name: pathParts[0] || 'takekapp',
-            lp_path: sourcePage.pathname,
-            link_url: destination.href,
-            link_position: getLinkPosition(link)
-        });
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', 'app_store_click', {
+                store_name: storeName,
+                app_name: pathParts[0] || 'takekapp',
+                lp_path: sourcePage.pathname,
+                link_url: destination.href,
+                link_position: getLinkPosition(link)
+            });
+        }
+
+        trackYahooStoreClick(storeName);
     }, { capture: true });
 })();
