@@ -496,8 +496,21 @@
       font-weight: 800;
     }
     .plan-card.highlight .plan-label { background: rgba(245, 158, 11, 0.16); color: #7a4e00; }
-    .assurance-panel, .support-panel, .partner-panel {
+    .support-panel, .partner-panel {
       padding: 42px;
+    }
+    .assurance-panel {
+      padding: 0;
+      overflow: hidden;
+    }
+    .assurance-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+      min-height: 500px;
+    }
+    .assurance-content {
+      padding: 42px;
+      align-self: center;
     }
     .assurance-list {
       display: grid;
@@ -646,7 +659,7 @@
       width: 100%;
     }
     @media (max-width: 860px) {
-      .hero-stage, .split, .feature-grid, .faq-grid, .problem-grid, .screen-showcase, .audience-grid, .plan-grid, .support-panel, .support-links-grid { grid-template-columns: 1fr; }
+      .hero-stage, .split, .feature-grid, .faq-grid, .problem-grid, .screen-showcase, .audience-grid, .plan-grid, .assurance-layout, .support-panel, .support-links-grid { grid-template-columns: 1fr; }
       .container { width: min(calc(100% - 28px), var(--container)); }
       .topbar-inner {
         justify-content: center;
@@ -744,11 +757,8 @@
       }
       .screen-showcase { padding: 18px; border-radius: 22px; }
       .screen-showcase .device-carousel { width: min(100%, 195px); }
-      .assurance-panel, .premium-panel, .support-panel, .partner-panel { padding: 26px; }
-      .partner-panel h2 { font-size: 1.65rem; }
-      .partner-panel p { font-size: 0.96rem; line-height: 1.75; }
-      .partner-tags { gap: 8px; margin-top: 18px; }
-      .partner-tags li { padding: 6px 10px; font-size: 0.9rem; }
+      .premium-panel, .support-panel, .partner-panel { padding: 26px; }
+      .assurance-content { padding: 26px; }
       .assurance-list { gap: 10px; }
       .assurance-list li {
         grid-template-columns: 30px 1fr;
@@ -768,6 +778,88 @@
     @media (max-width: 560px) {
       .device-carousel { width: min(100%, 180px); }
       .screen-showcase .device-carousel { width: min(100%, 195px); }
+    }
+
+    /* v3: preserve the original messaging; photos never sit behind text or gradients. */
+    html { scroll-padding-top: 110px; }
+    .hero { padding-bottom: 48px; }
+    .lifestyle-section { padding: 0 0 28px; }
+    .lifestyle-panel, .family-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+      grid-template-rows: auto auto;
+      grid-template-areas: "heading photo" "copy photo";
+      column-gap: clamp(24px, 3.5vw, 48px);
+      align-items: center;
+      padding: 32px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: 0 12px 34px rgba(29, 53, 87, .045);
+    }
+    .lifestyle-heading, .family-heading { grid-area: heading; align-self: end; min-width: 0; }
+    .lifestyle-heading .eyebrow, .family-heading .eyebrow { margin-bottom: 14px; font-size: .875rem; }
+    .lifestyle-heading h2, .family-heading h2 { margin: 0; font-size: clamp(1.65rem, 2.4vw, 2.1rem); line-height: 1.55; letter-spacing: .01em; overflow-wrap: anywhere; }
+    .lifestyle-copy, .family-copy { grid-area: copy; align-self: start; min-width: 0; padding-top: 16px; }
+    .lifestyle-copy p, .family-copy p { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.85; }
+    .lifestyle-points { display: grid; gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; }
+    .lifestyle-points li { display: flex; gap: 10px; align-items: flex-start; font-size: .9375rem; font-weight: 700; line-height: 1.65; }
+    .lifestyle-points li::before { content: "✓"; color: var(--brand); flex: 0 0 auto; }
+    .lifestyle-visual, .family-visual { grid-area: photo; margin: 0; width: 100%; min-width: 0; aspect-ratio: 4 / 3; border-radius: 18px; overflow: hidden; background: #f6f5f1; }
+    .lifestyle-visual img, .family-visual img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 88% 50%; }
+    .family-section { padding: 12px 0 28px; }
+    .family-panel { background: #f8fafc; }
+    .family-visual { aspect-ratio: 3 / 2; }
+    .family-visual img { object-position: center; }
+    .family-copy .cta-row { gap: 12px; margin-top: 22px; }
+    .family-copy .store-badge img { height: 42px; }
+    .assurance-layout { display: block; min-height: 0; }
+    .assurance-content { max-width: 920px; margin: auto; }
+    .store-badge { min-height: 44px; align-items: center; }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #b66b00; outline-offset: 5px; }
+    @media (min-width: 861px) and (max-width: 1050px) {
+      .hero-title-nowrap { white-space: normal; }
+      .lifestyle-panel, .family-panel { padding: 26px; column-gap: 24px; }
+      .lifestyle-heading h2, .family-heading h2 { font-size: 1.65rem; }
+    }
+    @media (max-width: 860px) {
+      .hero { padding-bottom: 28px; }
+      .hero-copy .cta-row { order: 4; justify-content: center; gap: 10px; }
+      .hero-visual { order: 5; margin-top: 8px; }
+      .lifestyle-panel, .family-panel { padding: 24px; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto; grid-template-areas: "heading" "photo" "copy"; gap: 20px; }
+      .lifestyle-heading h2, .family-heading h2 { font-size: 1.75rem; }
+      .lifestyle-copy, .family-copy { padding: 0; }
+      .lifestyle-visual, .family-visual { width: min(100%, 520px); justify-self: center; aspect-ratio: 3 / 2; }
+      .family-panel { padding: 26px; }
+    }
+    @media (max-width: 600px) {
+      .hero-title-nowrap { white-space: normal; }
+      .lifestyle-section { padding-bottom: 8px; }
+      .lifestyle-panel, .family-panel { padding: 22px; gap: 18px; border-radius: 22px; }
+      .lifestyle-heading .eyebrow, .family-heading .eyebrow { margin-bottom: 12px; padding: 5px 10px; }
+      .lifestyle-heading h2, .family-heading h2 { font-size: clamp(1.35rem, 5.5vw, 1.65rem); line-height: 1.55; }
+      .lifestyle-visual, .family-visual { border-radius: 14px; }
+      .lifestyle-points { margin-top: 16px; gap: 8px; }
+      .family-copy .cta-row { margin-top: 18px; gap: 10px; }
+      .family-copy .store-badge img { height: 37px; }
+      .family-section { padding: 8px 0 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html, .device-screen-slider { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+
+    /* v5: supporting features follow the screen showcase; KV focuses on store links. */
+    .supporting-features { margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .supporting-features > h3 { margin: 0 0 20px; color: var(--brand); font-size: 1.05rem; line-height: 1.65; }
+    .supporting-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 32px; }
+    .supporting-feature { min-width: 0; }
+    .supporting-feature h4 { display: flex; align-items: center; gap: 10px; margin: 0 0 6px; font-size: 1rem; line-height: 1.6; }
+    .supporting-feature .feature-icon { flex: 0 0 26px; width: 26px; height: 26px; border-radius: 8px; font-size: .875rem; box-shadow: none; }
+    .supporting-feature p { margin: 0; color: var(--muted); font-size: .9375rem; line-height: 1.75; }
+    @media (max-width: 860px) {
+      .supporting-feature-grid { grid-template-columns: 1fr; gap: 20px; }
+      .supporting-features { margin-top: 24px; padding-top: 22px; }
     }
   </style>
     <link rel="canonical" href="https://takekapp.com/LoanManagement/ja/landing_page_ja.html">
@@ -794,10 +886,10 @@
     </script>
     <script defer src="/js/app_store_analytics.js"></script>
 </head>
-<body>
+<body id="top">
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand" href="./landing_page_ja.html">
+      <a class="brand" href="#top">
         <img class="brand-icon" src="../images/app_icon/icon_loan_management_1024_1024_ios.png" alt="" aria-hidden="true" decoding="async">
         <span>わたしの住宅ローン管理</span>
       </a>
@@ -826,15 +918,14 @@
               </div>
             </div>
             <h1>借りたローンの<br><span class="hero-title-nowrap">「今」と「この先」が、</span><br>ひと目でわかる。</h1>
-            <p class="lead">住宅ローンを中心に、残価設定ローン（残クレ）、自動車ローン、奨学金、カードローン、キャッシング、リボ払いの残高と返済予定をまとめて見返せるローン管理アプリです。</p>
+            <p class="lead">残債、金利上昇、繰上返済の判断材料をまとめて見返せる住宅ローン管理アプリです。</p>
             <div class="cta-row">
               <a class="store-badge store-badge-ios" href="https://apps.apple.com/jp/app/id6789951919" target="_blank" rel="noopener">
-                <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" decoding="async" loading="lazy">
+                <img src="/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" decoding="async" loading="lazy">
               </a>
               <a class="store-badge store-badge-android" href="https://play.google.com/store/apps/details?id=com.takekapp1990.myloanmanagement.prod" target="_blank" rel="noopener">
-                <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Play で手に入れよう" decoding="async" loading="lazy">
+                <img src="/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Play で手に入れよう" decoding="async" loading="lazy">
               </a>
-              <a class="button secondary" href="#screenshots">画面を見る</a>
             </div>
           </div>
           <div class="hero-visual">
@@ -859,6 +950,26 @@
       </div>
     </section>
 
+    <section class="lifestyle-section" aria-labelledby="lifestyle-heading">
+      <div class="container lifestyle-panel">
+        <div class="lifestyle-heading">
+          <span class="eyebrow">毎日の中で、さっと確認</span>
+          <h2 id="lifestyle-heading">借りた後こそ、<br>ローンを見直せるように。</h2>
+        </div>
+        <figure class="lifestyle-visual">
+          <img src="../images/lifestyle/loan-management-at-home.jpg" width="1536" height="1024" alt="自宅のテーブルでスマートフォンを確認する女性" decoding="async" loading="lazy">
+        </figure>
+        <div class="lifestyle-copy">
+          <p>残債や金利、これからの返済予定を、暮らしの中で無理なく確認。気になったときに、自分の条件で将来を比べられます。</p>
+          <ul class="lifestyle-points">
+            <li>今の残債と返済期間をひと目で整理</li>
+            <li>金利上昇や繰上返済の影響を試算</li>
+            <li>大切な判断の前に、条件を並べて比較</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section id="problems">
       <div class="container">
         <div class="section-header">
@@ -879,7 +990,7 @@
           <article class="problem-card">
             <span>3</span>
             <h3>繰上返済や借り換えの判断材料がない</h3>
-            <p>なんとなく返しているだけではいつの間にか利息が増えて損になっているかもしれません。</p>
+            <p>繰上返済や借り換えで負担がどう変わるか、自分の条件で比べる判断材料が必要です。</p>
           </article>
         </div>
       </div>
@@ -891,7 +1002,7 @@
           <h2>返済に関する判断材料を、このアプリが提供します。</h2>
           <p>返済中の住宅ローンを中心に、さまざまなローンの現在地確認から将来の比較までをまとめて整理できます。</p>
         </div>
-        <div class="feature-grid">
+        <div class="feature-grid feature-grid-primary">
           <article class="card">
             <h3><span class="feature-icon" aria-hidden="true">¥</span>返済中ローンの現在地を確認</h3>
             <p>現在の残債、適用金利、返済額、返済実績、残り期間をまとめて見返せます。</p>
@@ -907,30 +1018,6 @@
           <article class="card">
             <h3><span class="feature-icon accent" aria-hidden="true">↓</span>繰上返済の効果を試算</h3>
             <p>返済額軽減型・期間短縮型の違いや、利息削減・期間短縮の目安を確認できます。</p>
-          </article>
-          <article class="card">
-            <h3><span class="feature-icon" aria-hidden="true">▣</span>カードローン・リボも管理</h3>
-            <p>銀行カードローン、消費者金融、キャッシング、ショッピングリボを登録し、追加利用と返済による残高推移を概算できます。</p>
-          </article>
-          <article class="card">
-            <h3><span class="feature-icon accent" aria-hidden="true">＋</span>残クレ・奨学金にも対応</h3>
-            <p>残価設定ローン（残クレ）、自動車ローン、教育ローン・奨学金などを、返済方式に合った入力項目で登録できます。</p>
-          </article>
-          <article class="card">
-            <h3><span class="feature-icon" aria-hidden="true">表</span>返済明細とCSV保存</h3>
-            <p>毎月の返済額、元本、利息、返済後残高を一覧で確認。プレミアム永久版ではCSVとして保存・共有できます。</p>
-          </article>
-          <article class="card">
-            <h3><span class="feature-icon accent" aria-hidden="true">↗</span>共有コードと返済日通知</h3>
-            <p>内容を確認して取り込める共有コードと、登録した返済日に合わせたリマインダーで、家族との確認や日々の管理を支えます。</p>
-          </article>
-          <article class="card">
-            <h3><span class="feature-icon" aria-hidden="true">✓</span>条件を保存してあとで見返す</h3>
-            <p>作成した試算や返済中ローンを保存し、複数の候補をあとから比較できます。</p>
-          </article>
-          <article class="card">
-            <h3><span class="feature-icon accent" aria-hidden="true">?</span>用語ガイドとコミュニティ</h3>
-            <p>住宅ローン用語の確認や、返済に関する悩みを共有できるコミュニティ機能があります。</p>
           </article>
         </div>
       </div>
@@ -984,6 +1071,58 @@
               <strong>4. 保存・共有してあとで見返す</strong>
               <span>CSVや共有コードを使い、必要な情報を手元や家族の端末でも確認できます。</span>
             </div>
+          </div>
+        </div>
+        <div class="supporting-features" aria-labelledby="supporting-features-heading">
+          <h3 id="supporting-features-heading">対応ローンと、日々の管理を支える機能</h3>
+          <div class="supporting-feature-grid">
+          <article class="supporting-feature">
+            <h4><span class="feature-icon" aria-hidden="true">▣</span>カードローン・リボも管理</h4>
+            <p>銀行カードローン、消費者金融、キャッシング、ショッピングリボを登録し、追加利用と返済による残高推移を概算できます。</p>
+          </article>
+          <article class="supporting-feature">
+            <h4><span class="feature-icon accent" aria-hidden="true">＋</span>残クレ・奨学金にも対応</h4>
+            <p>残価設定ローン（残クレ）、自動車ローン、教育ローン・奨学金などを、返済方式に合った入力項目で登録できます。</p>
+          </article>
+          <article class="supporting-feature">
+            <h4><span class="feature-icon" aria-hidden="true">表</span>返済明細とCSV保存</h4>
+            <p>毎月の返済額、元本、利息、返済後残高を一覧で確認。プレミアム永久版ではCSVとして保存・共有できます。</p>
+          </article>
+          <article class="supporting-feature">
+            <h4><span class="feature-icon accent" aria-hidden="true">↗</span>共有コードと返済日通知</h4>
+            <p>内容を確認して取り込める共有コードと、登録した返済日に合わせたリマインダーで、家族との確認や日々の管理を支えます。</p>
+          </article>
+          <article class="supporting-feature">
+            <h4><span class="feature-icon" aria-hidden="true">✓</span>条件を保存してあとで見返す</h4>
+            <p>作成した試算や返済中ローンを保存し、複数の候補をあとから比較できます。</p>
+          </article>
+          <article class="supporting-feature">
+            <h4><span class="feature-icon accent" aria-hidden="true">?</span>用語ガイドとコミュニティ</h4>
+            <p>住宅ローン用語の確認や、返済に関する悩みを共有できるコミュニティ機能があります。</p>
+          </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="family-download" class="family-section" aria-labelledby="family-heading">
+      <div class="container family-panel">
+        <div class="family-heading">
+          <span class="eyebrow">これからの暮らしを、家族で</span>
+          <h2 id="family-heading">家族と安心して、<br>この家に住み続けるために。</h2>
+        </div>
+        <figure class="family-visual">
+          <img src="../images/lifestyle/family-home-planning.jpg" width="1536" height="1024" alt="自宅でスマートフォンを一緒に見る家族" decoding="async" loading="lazy">
+        </figure>
+        <div class="family-copy">
+          <p>今の残債も、これからの返済も。<br>数字を見ながら、家族で将来を考えるきっかけに。</p>
+          <div class="cta-row" aria-label="アプリをダウンロード">
+            <a class="store-badge store-badge-ios" href="https://apps.apple.com/jp/app/id6789951919" target="_blank" rel="noopener">
+              <img src="/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" decoding="async" loading="lazy">
+            </a>
+            <a class="store-badge store-badge-android" href="https://play.google.com/store/apps/details?id=com.takekapp1990.myloanmanagement.prod" target="_blank" rel="noopener">
+              <img src="/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Play で手に入れよう" decoding="async" loading="lazy">
+            </a>
           </div>
         </div>
       </div>
@@ -1052,17 +1191,22 @@
 
     <section id="assurance">
       <div class="container panel assurance-panel">
-        <div class="section-header">
-          <h2>安心して使うために</h2>
-          <p>住宅ローンは大きな判断につながる情報だからこそ、アプリの役割と注意点を明確にしています。</p>
+        <div class="assurance-layout">
+          <div class="assurance-content">
+            <div class="section-header">
+              <span class="eyebrow">ご利用にあたって</span>
+              <h2>安心して使うために。</h2>
+              <p>住宅ローンは大きな判断につながる情報だからこそ、アプリの役割と注意点を明確にしています。</p>
+            </div>
+            <ul class="assurance-list">
+              <li>本アプリの試算結果は参考情報として確認してください。</li>
+              <li>実際の金利、手数料、税制、審査条件、返済条件は金融機関や契約内容によって異なります。</li>
+              <li>重要な判断を行う場合は、金融機関や専門家にもご確認ください。</li>
+              <li>商品プリセットは入力補助です。掲載は推奨や提携を意味せず、最新の契約内容・明細を優先してください。</li>
+              <li>コミュニティでは、氏名、住所、勤務先、正確な年収や残債など、個人を特定できる情報を投稿しないでください。</li>
+            </ul>
+          </div>
         </div>
-        <ul class="assurance-list">
-          <li>本アプリの試算結果は参考情報として確認してください。</li>
-          <li>実際の金利、手数料、税制、審査条件、返済条件は金融機関や契約内容によって異なります。</li>
-          <li>重要な判断を行う場合は、金融機関や専門家にもご確認ください。</li>
-          <li>商品プリセットは入力補助です。掲載は推奨や提携を意味せず、最新の契約内容・明細を優先してください。</li>
-          <li>コミュニティでは、氏名、住所、勤務先、正確な年収や残債など、個人を特定できる情報を投稿しないでください。</li>
-        </ul>
       </div>
     </section>
 
@@ -1163,10 +1307,10 @@
       <div>© takekapp1990</div>
       <div class="footer-store-badges" aria-label="アプリストアへのリンク">
         <a class="store-badge store-badge-ios" href="https://apps.apple.com/jp/app/id6789951919" target="_blank" rel="noopener">
-          <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" decoding="async" loading="lazy">
+          <img src="/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" decoding="async" loading="lazy">
         </a>
         <a class="store-badge store-badge-android" href="https://play.google.com/store/apps/details?id=com.takekapp1990.myloanmanagement.prod" target="_blank" rel="noopener">
-          <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Play で手に入れよう" decoding="async" loading="lazy">
+          <img src="/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Play で手に入れよう" decoding="async" loading="lazy">
         </a>
       </div>
       <div class="footer-links">
@@ -1183,12 +1327,12 @@
       const dots = [...root.querySelectorAll('.carousel-dot')];
       if (!slider || dots.length === 0) return;
       let activeIndex = 0;
-      let autoTimer = null;
 
       function setActive(index) {
         activeIndex = index;
         dots.forEach((dot, dotIndex) => {
           dot.classList.toggle('active', dotIndex === index);
+          dot.setAttribute('aria-pressed', String(dotIndex === index));
         });
       }
 
@@ -1200,18 +1344,10 @@
         setActive(index);
       }
 
-      function startAutoSlide() {
-        window.clearInterval(autoTimer);
-        autoTimer = window.setInterval(() => {
-          const nextIndex = (activeIndex + 1) % dots.length;
-          slideTo(nextIndex);
-        }, 3600);
-      }
 
       dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
           slideTo(index);
-          startAutoSlide();
         });
       });
 
@@ -1222,7 +1358,7 @@
         }
       });
 
-      startAutoSlide();
+      setActive(0);
     }
 
     document.querySelectorAll('[data-carousel]').forEach(initCarousel);
