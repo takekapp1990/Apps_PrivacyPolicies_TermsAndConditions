@@ -627,6 +627,11 @@
       font-size: 0.9rem;
       font-weight: 600;
     }
+    .support-link.related-hub {
+      grid-column: 1 / -1;
+      background: rgba(236, 246, 255, .8);
+      border-color: rgba(31, 79, 138, .18);
+    }
     .split {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -857,9 +862,25 @@
     .supporting-feature h4 { display: flex; align-items: center; gap: 10px; margin: 0 0 6px; font-size: 1rem; line-height: 1.6; }
     .supporting-feature .feature-icon { flex: 0 0 26px; width: 26px; height: 26px; border-radius: 8px; font-size: .875rem; box-shadow: none; }
     .supporting-feature p { margin: 0; color: var(--muted); font-size: .9375rem; line-height: 1.75; }
+    .columns-section { padding-top: 18px; padding-bottom: 18px; }
+    .columns-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 30px 34px;
+      background: linear-gradient(120deg, rgba(236,246,255,.96), rgba(255,255,255,.96));
+      border-color: rgba(31,79,138,.16);
+    }
+    .columns-copy { max-width: 720px; }
+    .columns-copy h2 { margin: 7px 0 8px; font-size: clamp(1.45rem, 2.5vw, 2rem); }
+    .columns-copy p { margin: 0; color: var(--muted); line-height: 1.75; }
+    .columns-panel .button { flex: 0 0 auto; }
     @media (max-width: 860px) {
       .supporting-feature-grid { grid-template-columns: 1fr; gap: 20px; }
       .supporting-features { margin-top: 24px; padding-top: 22px; }
+      .columns-section { padding-top: 10px; padding-bottom: 10px; }
+      .columns-panel { align-items: flex-start; flex-direction: column; gap: 18px; padding: 24px; }
     }
   </style>
     <link rel="canonical" href="https://takekapp.com/LoanManagement/ja/landing_page_ja.html">
@@ -897,6 +918,7 @@
         <a href="#problems">課題</a>
         <a href="#features">機能</a>
         <a href="#screenshots">画面</a>
+        <a href="#columns">コラム</a>
         <a href="#faq">FAQ</a>
         <a class="mobile-hide" href="#support">サポート</a>
         <a class="mobile-hide" href="./terms_and_conditions_ja.html">利用規約</a>
@@ -1210,6 +1232,17 @@
       </div>
     </section>
 
+    <section id="columns" class="columns-section">
+      <div class="container panel columns-panel">
+        <div class="columns-copy">
+          <span class="eyebrow">返済中の方へ</span>
+          <h2>ローン返済コラム</h2>
+          <p>変動金利の5年ルールや繰上返済、残債管理など、返済中に気になるテーマを取り上げています。</p>
+        </div>
+        <a class="button secondary" href="./columns/">コラム一覧を見る</a>
+      </div>
+    </section>
+
     <section id="partner">
       <div class="container panel partner-panel">
         <div class="partner-content">
@@ -1293,6 +1326,7 @@
           <p>アプリのご利用に関する確認事項、規約、プライバシー情報、お問い合わせ先をまとめています。</p>
         </div>
         <div class="support-links-grid">
+          <a class="support-link related-hub" href="./columns/">ローン返済コラム<span>金利・繰上返済・残債管理の記事をまとめて見る</span></a>
           <a class="support-link" href="./terms_and_conditions_ja.html">利用規約<span>アプリ利用時の条件</span></a>
           <a class="support-link" href="./privacy_policy_ja.html">プライバシーポリシー<span>データの取り扱い</span></a>
           <a class="support-link" href="#faq">FAQ<span>よくある質問</span></a>
