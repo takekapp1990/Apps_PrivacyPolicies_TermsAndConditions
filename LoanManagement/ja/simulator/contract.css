@@ -1,0 +1,63 @@
+.contract-details {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin: 2px 0 22px;
+  background: #fbfcfe;
+}
+.contract-details > summary {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  padding: 13px 36px 13px 14px;
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 700;
+  list-style: none;
+}
+.contract-details > summary::-webkit-details-marker { display: none; }
+.contract-details > summary::after {
+  content: '＋';
+  position: absolute;
+  right: 14px;
+  top: 17px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.contract-details[open] > summary::after { content: '−'; }
+.contract-details > summary small { font-weight: 400; margin: 1px 0 0; }
+.contract-body { padding: 3px 13px 13px; border-top: 1px solid var(--line); }
+.check-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 1px;
+  border-bottom: 1px solid #edf1f5;
+  cursor: pointer;
+}
+.check-row span { display: block; }
+.check-row strong { display: block; font-size: 12px; }
+.check-row small { margin: 2px 0 0; }
+.check-row input {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  margin: 2px 0 0;
+  accent-color: var(--brand);
+}
+.sub-check { padding-left: 12px; }
+.month-input {
+  width: 100%;
+  border: 1px solid #b7c5d4;
+  border-radius: 10px;
+  background: white;
+  color: var(--ink);
+  padding: 12px 10px;
+  font-size: 14px;
+}
+.contract-body > .field,
+#five-year-fields > .field,
+#bonus-fields > .field { margin: 14px 0; }
+.month-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.month-pair .field { margin: 14px 0 0; }
