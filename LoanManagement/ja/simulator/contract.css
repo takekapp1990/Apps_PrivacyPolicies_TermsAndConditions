@@ -61,3 +61,4 @@
 #bonus-fields > .field { margin: 14px 0; }
 .month-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .month-pair .field { margin: 14px 0 0; }
+.current-bonus{margin:-5px 0 19px;border:1px solid var(--line);border-radius:12px;background:#fbfcfe;padding:0 13px}.current-bonus>.check-row{border-bottom:0}.current-bonus:has(#bonus-enabled:checked)>.check-row{border-bottom:1px solid #edf1f5}.current-bonus #bonus-fields{padding-bottom:13px}.current-bonus #bonus-fields>.field{margin:14px 0}.current-bonus .month-pair .field{margin-top:6px}

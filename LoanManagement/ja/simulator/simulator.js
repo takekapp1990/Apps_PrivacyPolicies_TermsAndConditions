@@ -18,8 +18,23 @@
   };
   const interestChange = (value, baseline) => {
     const difference = Math.round(value - baseline);
-    if (difference === 0) return '残りの利息 変わらない';
-    return `残りの利息 ${yen(Math.abs(difference))}${difference > 0 ? '増' : '減'}`;
+    if (difference === 0) return '残りの利息総額 変わらない';
+    return `残りの利息総額 ${yen(Math.abs(difference))}${difference > 0 ? '増' : '減'}`;
+  };
+  const currentMoneyChange = (value, baseline) => {
+    const difference = Math.round(value - baseline);
+    if (difference === 0) return '現状と変わらない';
+    return `現状から${yen(Math.abs(difference))}${difference > 0 ? '増加' : '減少'}`;
+  };
+  const currentPeriodChange = (value, baseline) => {
+    const difference = value - baseline;
+    if (difference === 0) return '現状と変わらない';
+    return `現状から${duration(Math.abs(difference))}${difference > 0 ? '延長' : '短縮'}`;
+  };
+  const currentInterestChange = (value, baseline) => {
+    const difference = Math.round(value - baseline);
+    if (difference === 0) return '現状と変わらない';
+    return `現状から約${man(Math.abs(difference))}${difference > 0 ? '増加' : '減少'}`;
   };
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const tabs = [...document.querySelectorAll('[role="tab"]')];
@@ -88,16 +103,18 @@
     });
     $('payment-field').hidden = mode === 'new';
     $('payment').disabled = mode === 'new';
+    $('current-bonus-section').hidden = mode === 'new';
     $('current-term-fields').hidden = mode === 'new';
     $('current-term-fields').querySelectorAll('input').forEach(el => { el.disabled = mode === 'new'; });
     $('contract-details').hidden = mode === 'new';
-    $('contract-details').querySelectorAll('input,select').forEach(el => { el.disabled = mode === 'new' || (el.closest('#five-year-fields') && !$('five-year-rule').checked) || (el.closest('#bonus-fields') && !$('bonus-enabled').checked); });
+    $('contract-details').querySelectorAll('input,select').forEach(el => { el.disabled = mode === 'new' || (el.closest('#five-year-fields') && !$('five-year-rule').checked); });
+    updateContractFields();
     updateCustomRateFields();
     updateNewFields();
     $('balance-label').textContent = mode === 'new' ? '借りたい金額' : '今の残債';
     $('balance-hint').textContent = mode === 'new' ? '頭金を差し引いた借入額（1〜100,000万円）' : '現在のローン残高（1〜100,000万円）';
     $('rate-label').textContent = mode === 'new' ? '借入金利（年利）' : '現在の適用金利（年利）';
-    $('rate-hint').textContent = mode === 'new' ? '新たに借り入れる際の年利を入力してください。' : '現在の返済に適用されている年利を入力してください。';
+    $('rate-hint').textContent = mode === 'new' ? '新たに借り入れる際の年利を入力してください。' : '現在の返済に適用されている年利（0〜10%）を入力してください。';
     $('form-intro').textContent = copy[mode].intro;
     $('scope-note').textContent = copy[mode].scope;
     $('app-title').textContent = copy[mode].cta;
@@ -198,7 +215,7 @@
     return multiplier > 1 ? Math.round(scaled) : value;
   }
   function readRequest() {
-    const request = { mode, balance: number('balance', mode === 'new' ? '借入額（万円）' : '残債（万円）', 1, 100000, 10000), rate: number('rate', mode === 'new' ? '借入金利（年利）' : '現在の適用金利（年利）', 0, 20) };
+    const request = { mode, balance: number('balance', mode === 'new' ? '借入額（万円）' : '残債（万円）', 1, 100000, 10000), rate: number('rate', mode === 'new' ? '借入金利（年利）' : '現在の適用金利（年利）', 0, mode === 'new' ? 20 : 10) };
     if (mode === 'new') {
       const years = number('years', '返済期間（年）', 1, 50, 1, true);
       request.months = years * 12;
@@ -252,6 +269,11 @@
         request.bonusPayment = number('bonus-payment', 'ボーナス月の追加返済額（万円）', 0.0001, 100000, 10000);
         request.bonusMonth1 = Number($('bonus-month-1').value); request.bonusMonth2 = Number($('bonus-month-2').value);
         if (request.bonusMonth1 === request.bonusMonth2) { $('bonus-month-2').setAttribute('aria-invalid', 'true'); $('bonus-month-2').focus(); throw new Error('ボーナス返済月は異なる月を選んでください。'); }
+      }
+      const annualPayment = request.payment * 12 + (request.bonusPayment || 0) * (request.bonusPayment ? 2 : 0);
+      if (!request.applyFiveYearRule && annualPayment <= request.balance * request.rate / 100) {
+        $('rate').setAttribute('aria-invalid', 'true'); $('rate').focus();
+        throw new Error('現在の適用金利に対して返済額が利息以下になります。金利・月々の返済額・ボーナス返済額を確認してください。');
       }
       if (mode === 'prepayment') {
         request.afterMonths = Number($('prepayment-after').value);
@@ -311,7 +333,7 @@
     const totalRows = plans.map(p => `<tr><th scope="row">${escape(p.label)}</th><td>${yen(p.total)}</td></tr>`).join('');
     const monthlyHeading = isNew ? '通常月／初回' : request.mode === 'rate' ? '通常月の最大額' : '通常月の返済額';
     const monthlyNote = request.mode === 'rate' ? '表示額はボーナス加算分を除く通常月返済額のうち、試算期間内で最も高い金額です。' : '表示額はボーナス加算分を除く通常月の返済額です。';
-    return `<div class="result-block"><h3>${isNew ? '同じ借入額で比較' : '同じ条件で比較'}</h3><div class="table-scroll" tabindex="0" role="region" aria-label="返済額と利息の比較表。横にスクロールできます。"><table class="comparison-table"><thead><tr><th scope="col">返済プラン</th><th scope="col">${monthlyHeading}</th><th scope="col">${isNew ? '返済期間' : '今から完済まで'}</th><th scope="col">${isNew ? '利息の合計' : '残りの利息'}</th><th scope="col">${isNew ? '入力条件との差' : 'いまのままとの差'}</th></tr></thead><tbody>${rows}</tbody></table></div><p class="result-note">${isNew ? '元利均等は通常月の返済額がほぼ一定です。元金均等の欄は初回の通常月返済額で、その後徐々に減ります。差分は入力条件を基準にしています。' : `${monthlyNote} 差分は「いまのまま」を基準にしています。`} 最終回の返済額は調整されます。</p><details class="result-note"><summary>元本を含む${isNew ? '' : '今後の'}支払総額を見る</summary><table class="comparison-table"><thead><tr><th scope="col">返済プラン</th><th scope="col">支払総額</th></tr></thead><tbody>${totalRows}</tbody></table>${request.mode === 'prepayment' ? '<p>支払総額には繰上げ返済額を含みます。</p>' : ''}</details></div>`;
+    return `<div class="result-block"><h3>${isNew ? '同じ借入額で比較' : '同じ条件で比較'}</h3><div class="table-scroll" tabindex="0" role="region" aria-label="返済額と利息の比較表。横にスクロールできます。"><table class="comparison-table"><thead><tr><th scope="col">返済プラン</th><th scope="col">${monthlyHeading}</th><th scope="col">${isNew ? '返済期間' : '今から完済まで'}</th><th scope="col">${isNew ? '利息総額' : '残りの利息総額'}</th><th scope="col">${isNew ? '入力条件との差' : 'いまのままとの差'}</th></tr></thead><tbody>${rows}</tbody></table></div><p class="result-note">${isNew ? '元利均等は通常月の返済額がほぼ一定です。元金均等の欄は初回の通常月返済額で、その後徐々に減ります。差分は入力条件を基準にしています。' : `${monthlyNote} 差分は「いまのまま」を基準にしています。`} 最終回の返済額は調整されます。</p><details class="result-note"><summary>元本を含む${isNew ? '' : '今後の'}支払総額を見る</summary><table class="comparison-table"><thead><tr><th scope="col">返済プラン</th><th scope="col">支払総額</th></tr></thead><tbody>${totalRows}</tbody></table>${request.mode === 'prepayment' ? '<p>支払総額には繰上げ返済額を含みます。</p>' : ''}</details></div>`;
   }
   function render(result, request) {
     const [base, ...others] = result.plans;
@@ -319,10 +341,10 @@
     const when = request.afterMonths === 0 ? '次回の返済前' : `${duration(request.afterMonths)}分の通常返済の後`;
     if (request.mode === 'prepayment') {
       const [term, payment] = others;
-      const termInterestSaving = Math.max(0, base.interest - term.interest);
-      const paymentInterestSaving = Math.max(0, base.interest - payment.interest);
-      highlight = `<p class="eyebrow">2つの方法を同じ基準で比較</p><h3>${when}に<strong>${man(request.extra)}</strong>を繰上げ返済した場合</h3><div class="highlight-plan-grid"><section><h4>期間短縮型</h4><p>残りの利息 <b>約${man(termInterestSaving)}減</b></p></section><section><h4>返済額軽減型</h4><p>残りの利息 <b>約${man(paymentInterestSaving)}減</b></p></section></div><p class="highlight-sub">手数料・住宅ローン控除の影響は含みません。</p>`;
-      cards = `<div class="metric-card plan-metric"><h3>期間短縮型</h3><p>${interestChange(term.interest,base.interest)}</p><dl><div><dt>月々</dt><dd>${moneyChange(term.monthly,base.monthly,'')}</dd></div><div><dt>完済</dt><dd>${periodChange(term.months,base.months).replace('完済時期 ','')}</dd></div></dl><span class="status-chip">返済額：${request.recalculateTermPayment ? '繰上げ時に再計算' : '繰上げ時は据え置き'}</span></div><div class="metric-card plan-metric"><h3>返済額軽減型</h3><p>${interestChange(payment.interest,base.interest)}</p><dl><div><dt>月々</dt><dd>${moneyChange(payment.monthly,base.monthly,'')}</dd></div><div><dt>完済</dt><dd>${periodChange(payment.months,base.months).replace('完済時期 ','')}</dd></div></dl><span class="status-chip">返済額：繰上げ時に再計算</span></div>`;
+      const planMetric = (label, value, change) => `<div><dt>${label}</dt><dd><b class="plan-change">${change}</b><small class="plan-value">試算後 ${value}</small></dd></div>`;
+      const planCard = (title, caption, plan) => `<section class="prepayment-plan-card"><div class="plan-card-heading"><h4>${title}</h4><p>${caption}</p></div><dl>${planMetric('残りの利息総額',yen(plan.interest),currentInterestChange(plan.interest,base.interest))}${planMetric('月々の返済額',yen(plan.monthly),currentMoneyChange(plan.monthly,base.monthly))}${planMetric('今から完済まで',period(plan.months),currentPeriodChange(plan.months,base.months))}</dl></section>`;
+      highlight = `<div class="prepayment-highlight-head"><div><p class="eyebrow">2つの方法を同じ基準で比較</p><h3>${when}に<strong>${man(request.extra)}</strong>を繰上げ返済した場合</h3></div><button class="plan-info-button" type="button" data-open-prepayment-info aria-haspopup="dialog"><span aria-hidden="true">i</span> 2つの方式の違い</button></div><div class="prepayment-plan-cards">${planCard('期間短縮型',request.recalculateTermPayment ? '繰上げ時に返済額を再計算' : '繰上げ時の返済額は据え置き',term)}${planCard('返済額軽減型','契約上の完済時期を維持',payment)}</div><p class="highlight-sub">差分は「いまのまま」を基準にしています。手数料・住宅ローン控除の影響は含みません。</p>`;
+      cards = '';
       const termPaymentPolicy = request.recalculateTermPayment ? '期間短縮型は、繰上げ時点で短縮後の期間に合わせて通常月の返済額も再計算します。' : '期間短縮型は、繰上げ時点では通常月の返済額を据え置きます。';
       notes = `繰上げ時点の残債は${yen(result.balanceAtChange)}の見込み。繰上げ返済後も年${rateLabel(request.rate)}%が続く前提です。${termPaymentPolicy}${request.applyFiveYearRule ? ` 5年ルールに基づき、${request.paymentReviewBaseMonth}月を5回経過した時点の残債・残期間から返済額を再計算します。` : ' 5年ルールは適用していません。'}${request.apply125PercentCap ? ' 見直し後の通常月返済額には、直前額の125%上限を適用します。' : ''}${request.bonusPayment ? ` ボーナス月は年2回、通常返済に${yen(request.bonusPayment)}を加算します。` : ''}${request.extra === result.balanceAtChange ? '今回は全額返済のため、両方式の結果は同じです。' : ''}`;
     } else if (request.mode === 'rate') {
@@ -332,21 +354,22 @@
       const comparisonBasis = request.applyFiveYearRule ? '「いまのまま」の通常月最大額より' : '現在の返済額より';
       const ratePath = target.steps.map(step => `${step.afterMonths === 0 ? '次回から' : `${duration(step.afterMonths)}後`} 年${rateLabel(step.rate)}%`).join(' → ');
       highlight = `<p class="eyebrow">${escape(target.label)}｜${escape(ratePath)}</p><h3>通常月の返済額は最大で <strong>${yen(target.monthly)}</strong></h3><p class="highlight-sub">${comparisonBasis} ${moneyChange(target.monthly,base.monthly,'')}。契約上の完済時期を維持して再計算しています。</p>`;
-      cards = `<div class="metric-card"><h3>残りの利息の変化</h3><p>約${man(Math.abs(target.interest-base.interest))}${target.interest < base.interest ? '減' : '増'}</p><small>${escape(target.label)}との比較</small></div><div class="metric-card"><h3>最初に返済額を見直す時期</h3><p>${reviewTiming}</p><small>${request.applyFiveYearRule ? `${request.paymentReviewBaseMonth}月を5回経過後、3か月後から反映` : '各金利上昇の時点で再計算'}</small></div>`;
+      cards = `<div class="metric-card"><h3>残りの利息総額の変化</h3><p>約${man(Math.abs(target.interest-base.interest))}${target.interest < base.interest ? '減' : '増'}</p><small>${escape(target.label)}との比較</small></div><div class="metric-card"><h3>最初に返済額を見直す時期</h3><p>${reviewTiming}</p><small>${request.applyFiveYearRule ? `${request.paymentReviewBaseMonth}月を5回経過後、3か月後から反映` : '各金利上昇の時点で再計算'}</small></div>`;
       notes = `<strong>${others.length}件の上昇シナリオを比較しています。${escape(target.label)}は ${escape(ratePath)} の想定です。</strong> ${request.applyFiveYearRule ? `5年ルールを反映し、${request.paymentReviewBaseMonth}月を5回経過するまでは現在の返済額を据え置き、反映直前の残債・その時点の適用金利・残期間から新返済額を計算して3か月後から反映します。「いまのまま」も同じ見直し日に現在金利で再計算します。` : '各段階で通常月の返済額を見直します。'}${request.apply125PercentCap ? ' 見直し額には直前の通常月返済額の125%上限を適用します。最終回に残額を精算する場合があります。' : ''}${request.bonusPayment ? ` ボーナス月は通常返済に${yen(request.bonusPayment)}を加算します。` : ''}`;
     } else {
       const bonusText = base.firstBonusMonthPayment == null ? '' : `／ボーナス月 ${yen(base.firstBonusMonthPayment)}`;
       highlight = `<p class="eyebrow">入力条件｜元利均等返済</p><h3>通常月の返済額は <strong>${yen(base.monthly)}</strong></h3><p class="highlight-sub">借入${man(request.balance)}・年${rateLabel(request.rate)}%・${period(request.months)}返済${bonusText}</p>`;
-      cards = `<div class="metric-card"><h3>初年度の返済額</h3><p>約${man(base.firstYearPayment)}</p><small>${request.newBonusPrincipal ? '年2回のボーナス返済を含む' : '通常月の返済額を12か月分'}</small></div><div class="metric-card"><h3>入力条件の利息合計</h3><p>約${man(base.interest)}</p><small>支払総額 ${yen(base.total)}</small></div>`;
+      cards = `<div class="metric-card"><h3>初年度の返済額</h3><p>約${man(base.firstYearPayment)}</p><small>${request.newBonusPrincipal ? '年2回のボーナス返済を含む' : '通常月の返済額を12か月分'}</small></div><div class="metric-card"><h3>入力条件の利息総額</h3><p>約${man(base.interest)}</p><small>支払総額 ${yen(base.total)}</small></div>`;
       notes = `<strong>入力条件を基準に${others.length}件の条件を比較しています。</strong> 各条件の金利は完済まで一定と仮定します。${request.newBonusPrincipal ? `すべての条件で、借入元本のうち${man(request.newBonusPrincipal)}を${request.newBonusMonth1}月・${request.newBonusMonth2}月のボーナス返済分に割り当てます。` : 'ボーナス返済は含めていません。'} 手数料・保証料等は含みません。`;
     }
     const summary = `${example ? '入力例での試算です。' : ''}${request.mode === 'new' ? `借入${man(request.balance)}を、入力条件と選択した比較条件で試算しています。` : `残債${man(request.balance)}・通常月${yen(request.payment)}・年${rateLabel(request.rate)}%。返済開始月と当初期間から、契約上の残り期間は${period(result.estimatedMonths)}です。`}`;
-    $('result-content').innerHTML = `<p class="result-summary">${summary}</p><div class="highlight">${highlight}</div><div class="comparison-cards">${cards}</div>${table(result.plans,request)}${graph(result.plans,request.balance)}<p class="condition-note">${notes}</p><a class="result-cta" href="#app-next">この先の返済計画を、アプリで管理する ↓</a>`;
+    const comparisonTable = request.mode === 'prepayment' ? '' : table(result.plans,request);
+    $('result-content').innerHTML = `<p class="result-summary">${summary}</p><div class="highlight">${highlight}</div>${cards ? `<div class="comparison-cards">${cards}</div>` : ''}${comparisonTable}${graph(result.plans,request.balance)}<p class="condition-note">${notes}</p><a class="result-cta" href="#app-next">この先の返済計画を、アプリで管理する ↓</a>`;
     $('result-badge').textContent = example ? '入力例の結果' : '入力した条件での概算';
     $('result-badge').classList.add('ready');
     $('stale-note').hidden = true;
     $('result-area').classList.remove('result-stale');
-    $('result-announcement').textContent = '試算が完了しました。結果の比較表とグラフを表示しています。';
+    $('result-announcement').textContent = request.mode === 'prepayment' ? '試算が完了しました。2つの方式の結果と残債グラフを表示しています。' : '試算が完了しました。結果の比較表とグラフを表示しています。';
     hasResult = true;
     $('result-area').focus({preventScroll:true});
     if (window.matchMedia('(max-width:700px)').matches) $('result-area').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block:'start'});
@@ -368,6 +391,17 @@
       }
       if (!$('loan-form').querySelector('[aria-invalid=true]')) $('form-error').scrollIntoView({block:'nearest'});
     }
+  });
+  const prepaymentInfoDialog = $('prepayment-info-dialog');
+  document.addEventListener('click', event => {
+    if (event.target.closest('[data-open-prepayment-info]')) {
+      if (typeof prepaymentInfoDialog.showModal === 'function') prepaymentInfoDialog.showModal();
+      else prepaymentInfoDialog.setAttribute('open', '');
+    }
+    if (event.target.closest('[data-close-prepayment-info]')) prepaymentInfoDialog.close();
+  });
+  prepaymentInfoDialog.addEventListener('click', event => {
+    if (event.target === prepaymentInfoDialog) prepaymentInfoDialog.close();
   });
   window.addEventListener('hashchange', () => { const hash = location.hash.slice(1); if (copy[hash] && hash !== mode) switchMode(hash,false); });
   updateContractFields();

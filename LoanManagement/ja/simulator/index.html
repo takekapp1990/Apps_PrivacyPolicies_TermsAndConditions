@@ -14,11 +14,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://takekapp.com/LoanManagement/ja/simulator/">
   <link rel="icon" href="../../images/app_icon/icon_loan_management_1024_1024_ios.png">
-  <link rel="stylesheet" href="./simulator.css?v=20261008-11">
-  <link rel="stylesheet" href="./contract.css?v=20261004-4">
+  <link rel="stylesheet" href="./simulator.css?v=20261009-18">
+  <link rel="stylesheet" href="./contract.css?v=20261009-5">
   <link rel="stylesheet" href="./app-card.css?v=20261008-9">
-  <script defer src="./calculator.js?v=20261008-11"></script>
-  <script defer src="./simulator.js?v=20261008-11"></script>
+  <script defer src="./calculator.js?v=20261009-12"></script>
+  <script defer src="./simulator.js?v=20261009-16"></script>
   <script defer src="./analytics.js?v=20261004-4"></script>
   <script defer src="/js/app_store_analytics.js"></script>
 </head>
@@ -33,7 +33,7 @@
       <p class="eyebrow">登録不要・無料のWebシミュレーター</p>
       <h1>ローンの「もしも」を、<br class="mobile-break">いま試してみよう。</h1>
       <p class="intro">繰上げ返済、金利の上昇、これからの借入。<br>気になることを選んで、手元の数字でさっと比較。</p>
-      <div class="trust"><span>✓ 契約上の残り期間で計算</span><span>✓ 入力した金額は送信しません</span></div>
+      <div class="trust"><span>✓ 契約上の残り期間で計算</span><span>✓ 計算はブラウザ内で完結</span></div>
     </div>
     <section id="simulator" aria-label="住宅ローンかんたん試算">
       <div class="tabs" role="tablist" aria-label="試算の種類">
@@ -48,24 +48,26 @@
           <form id="loan-form" novalidate>
             <div class="field"><label for="balance" id="balance-label">今の残債</label><div class="input-unit"><input id="balance" name="balance" inputmode="decimal" type="text" placeholder="例：3,000" autocomplete="off" aria-describedby="balance-hint" required><span>万円</span></div><small id="balance-hint">現在のローン残高（1〜100,000万円）</small></div>
             <div class="field" id="payment-field"><label for="payment">現在の月々の返済額</label><div class="input-unit"><input id="payment" name="payment" inputmode="decimal" type="text" placeholder="例：10" autocomplete="off" aria-describedby="payment-hint" required><span>万円</span></div><small id="payment-hint">ボーナス分・手数料を含まない現在の実額。5年ルールありの場合は次の見直しまでこの金額を使い、見直し後は残債・適用金利・残期間から再計算します。</small></div>
+            <div class="current-bonus" id="current-bonus-section">
+              <label class="check-row" for="bonus-enabled"><span><strong>ボーナス返済もある</strong><small>年2回の追加返済を残り期間と利息に反映する</small></span><input id="bonus-enabled" type="checkbox"></label>
+              <div id="bonus-fields" hidden>
+                <div class="field"><label for="bonus-payment">ボーナス月の追加返済額</label><div class="input-unit"><input id="bonus-payment" inputmode="decimal" type="text" placeholder="例：20" autocomplete="off"><span>万円／回</span></div><small>通常の月々返済額に上乗せする1回分の金額</small></div>
+                <div class="month-pair"><div class="field"><label for="bonus-month-1">1回目</label><select id="bonus-month-1"></select></div><div class="field"><label for="bonus-month-2">2回目</label><select id="bonus-month-2"></select></div></div>
+              </div>
+            </div>
             <div id="current-term-fields">
               <div class="field"><label for="repayment-start">返済開始月</label><input class="month-input" id="repayment-start" type="month" required><small>当初の返済期間と合わせて、契約上の残り期間を計算します。</small></div>
               <div class="field"><label for="original-term-years">当初の返済期間</label><div class="input-unit"><input id="original-term-years" inputmode="numeric" type="text" placeholder="例：35" autocomplete="off" required><span>年</span></div><small>借入時に設定した期間（1〜50年）</small></div>
             </div>
-            <div class="field"><label for="rate" id="rate-label">現在の適用金利（年利）</label><div class="input-unit"><input id="rate" name="rate" inputmode="decimal" type="text" placeholder="例：0.8" autocomplete="off" aria-describedby="rate-hint" required><span>%</span></div><small id="rate-hint">現在の返済に適用されている年利を入力してください。</small></div>
+            <div class="field"><label for="rate" id="rate-label">現在の適用金利（年利）</label><div class="input-unit"><input id="rate" name="rate" inputmode="decimal" type="text" placeholder="例：0.8" autocomplete="off" aria-describedby="rate-hint" required><span>%</span></div><small id="rate-hint">現在の返済に適用されている年利（0〜10%）を入力してください。</small></div>
             <details class="contract-details" id="contract-details">
-              <summary><span>契約条件を反映</span><small>5年・125%ルール／ボーナス返済</small></summary>
+              <summary><span>契約条件を反映</span><small>5年ルール／125%ルール</small></summary>
               <div class="contract-body">
                 <label class="check-row" for="five-year-rule"><span><strong>5年ルールあり</strong><small>金利が変わっても、返済額は5年ごとの見直しまで据え置く</small></span><input id="five-year-rule" type="checkbox" checked></label>
                 <details class="rule-info"><summary aria-label="繰上げ返済と5年周期について" title="繰上げ返済と5年周期について">i</summary><p>繰上げ返済をしても、5年ごとの見直し周期は返済開始月を起点に継続します。繰上げ月を起点にリセットしません。</p></details>
                 <div id="five-year-fields">
                   <div class="field"><label for="payment-review-base-month">返済額見直しの基準月</label><select id="payment-review-base-month"><option value="1">1月</option><option value="2">2月</option><option value="3">3月</option><option value="4">4月</option><option value="5">5月</option><option value="6">6月</option><option value="7">7月</option><option value="8">8月</option><option value="9">9月</option><option value="10" selected>10月</option><option value="11">11月</option><option value="12">12月</option></select><small>多くの契約に合わせて10月を初期値にしています。5回目の基準月後、反映直前の残債・適用金利・残期間から再計算し、3か月後から新返済額を反映します。</small></div>
                   <label class="check-row sub-check" for="cap-rule"><span><strong>125%ルールあり</strong><small>次回は、入力した現在の月々返済額を基準に125%上限を計算する</small></span><input id="cap-rule" type="checkbox" checked></label>
-                </div>
-                <label class="check-row" for="bonus-enabled"><span><strong>ボーナス返済あり</strong><small>年2回の追加返済を残り期間と利息に反映する</small></span><input id="bonus-enabled" type="checkbox"></label>
-                <div id="bonus-fields" hidden>
-                  <div class="field"><label for="bonus-payment">ボーナス月の追加返済額</label><div class="input-unit"><input id="bonus-payment" inputmode="decimal" type="text" placeholder="例：20" autocomplete="off"><span>万円／回</span></div><small>通常の月々返済額に上乗せする1回分の金額</small></div>
-                  <div class="month-pair"><div class="field"><label for="bonus-month-1">1回目</label><select id="bonus-month-1"></select></div><div class="field"><label for="bonus-month-2">2回目</label><select id="bonus-month-2"></select></div></div>
                 </div>
               </div>
             </details>
@@ -119,14 +121,13 @@
             </div>
             <p class="scope-note" id="scope-note">元利均等の簡易試算です。返済開始月と当初期間から残り期間を計算します。</p>
             <p class="form-error" id="form-error" role="alert" hidden></p>
-            <button class="primary-button" id="calculate" type="submit">結果を比較する <span aria-hidden="true">→</span></button>
-            <p class="privacy-note">計算はこのブラウザ内で完結します。<br>入力情報は保存されず、ページを閉じると消えます。</p>
+            <button class="primary-button" id="calculate" type="submit">試算結果を見る <span aria-hidden="true">→</span></button>
           </form>
           <noscript><p class="form-error">試算にはJavaScriptを有効にしてください。</p></noscript>
         </div>
         <section class="result-area" id="result-area" aria-labelledby="result-title" tabindex="-1">
           <div class="result-heading"><span class="step">02</span><h2 id="result-title">試算結果</h2><span id="result-badge" class="badge">入力すると表示</span></div>
-          <p class="stale-note" id="stale-note" role="status" hidden>条件が変更されています。「結果を比較する」で更新してください。</p>
+          <p class="stale-note" id="stale-note" role="status" hidden>条件が変更されています。「試算結果を見る」で更新してください。</p>
           <div id="result-content"><div class="empty-result"><div class="empty-icon" aria-hidden="true">↘</div><h3>返済の選択肢を、数字で。</h3><p>利息はどれくらい変わる？<br>完済まで、あと何年？<br>条件を入れると、ここで比較できます。</p><div class="empty-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><p class="empty-hint">まずは「入力例を使う」でも試せます。</p></div></div>
           <p class="sr-only" id="result-announcement" role="status" aria-live="polite"></p>
         </section>
@@ -139,6 +140,13 @@
     <section class="assumptions" aria-labelledby="assumptions-title"><h2 id="assumptions-title">この試算でわかること・計算の前提</h2><div class="assumption-grid"><div><h3>返済中のローン</h3><p>返済開始月と当初の返済期間から、契約上の残り期間を月単位で計算します。現在の金利から残り期間を逆算しません。元利均等返済を前提としています。</p></div><div><h3>繰上げ返済</h3><p>指定した回数の通常返済の直後（「今すぐ」は次回返済の前）に元本を減らします。期間短縮型は返済額を原則維持し、「返済額も更新」が選ばれた場合は短縮後期間に合わせて再計算します。返済額軽減型は契約上の完済時期を維持します。</p></div><div><h3>金利上昇</h3><p>選んだシナリオの各時点で金利が段階的に上がると仮定します。5年ルールありの場合は、返済開始後に入力した基準月を5回経過するごとに、反映直前の残債・その時点の適用金利・残期間から返済額を再計算し、3か月後から反映します。現在金利の比較対象も同じ条件で再計算します。125%ルールありの場合は通常月の返済額に増額上限を適用します。</p></div><div><h3>新規借入・共通の条件</h3><p>新規借入は同じ借入額で金利・期間・返済方式の違いを比較し、各条件の金利は完済まで一定と仮定します。ボーナス返済では借入元本を通常返済分とボーナス返済分に分けて計算します。月利＝年利÷12、月ごとの利息・返済額は円未満切り捨て、最終回で残額を調整します。手数料・保証料・税金・住宅ローン控除・日割り計算は含みません。</p></div></div><p class="disclaimer">5年ルール・125%ルールの有無や詳細、基準月から新返済額を反映するまでの時期は金融機関・商品により異なります。結果は比較のための概算です。返済予定表と契約条件を確認してご利用ください。</p></section>
     <section class="reading"><h2>もう少し知りたいときに</h2><a href="../columns/prepayment-term-vs-payment.html">期間短縮型と返済額軽減型の違い <span>↗</span></a><a href="../columns/variable-rate-five-year-rule-prepayment.html">5年ルール中の繰上げ返済 <span>↗</span></a></section>
   </main>
+  <dialog class="comparison-dialog" id="prepayment-info-dialog" aria-labelledby="prepayment-info-title">
+    <div class="dialog-heading"><h2 id="prepayment-info-title">期間短縮型と返済額軽減型の違い</h2><button type="button" data-close-prepayment-info aria-label="閉じる">×</button></div>
+    <div class="dialog-plan"><h3>期間短縮型</h3><p>月々の返済額を原則維持し、完済までの期間を短くする方法です。同じ金額を繰上げ返済する場合、一般に返済額軽減型より利息を減らしやすくなります。</p></div>
+    <div class="dialog-plan"><h3>返済額軽減型</h3><p>契約上の完済時期を変えず、月々の返済額を軽くする方法です。毎月の家計負担を抑えたい場合に向いています。</p></div>
+    <p class="dialog-note">実際の取扱いや手数料は金融機関・商品によって異なります。試算では、月々の返済額・完済まで・残りの利息総額を同じ基準で比較しています。</p>
+    <button class="dialog-close" type="button" data-close-prepayment-info>閉じる</button>
+  </dialog>
   <footer class="container"><span>© TakeKApp</span><div><a href="../landing_page_ja.html">アプリ紹介</a><a href="../privacy_policy_ja.html">プライバシー</a><a href="../terms_and_conditions_ja.html">利用規約</a></div></footer>
 </body>
 </html>
