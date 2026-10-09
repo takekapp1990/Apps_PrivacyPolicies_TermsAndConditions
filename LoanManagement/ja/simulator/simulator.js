@@ -57,6 +57,14 @@
   const now = new Date();
   const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
   $('repayment-start').max = currentMonth;
+  for (const id of ['original-term-years', 'years', 'new-custom-years']) {
+    for (let year = 1; year <= 50; year++) {
+      const option = document.createElement('option');
+      option.value = String(year); option.textContent = `${year}年`;
+      $(id).append(option);
+    }
+    $(id).value = '35';
+  }
   for (const id of ['bonus-month-1', 'bonus-month-2', 'new-bonus-month-1', 'new-bonus-month-2']) {
     for (let month = 1; month <= 12; month++) {
       const option = document.createElement('option');
@@ -105,7 +113,7 @@
     $('payment').disabled = mode === 'new';
     $('current-bonus-section').hidden = mode === 'new';
     $('current-term-fields').hidden = mode === 'new';
-    $('current-term-fields').querySelectorAll('input').forEach(el => { el.disabled = mode === 'new'; });
+    $('current-term-fields').querySelectorAll('input,select').forEach(el => { el.disabled = mode === 'new'; });
     $('contract-details').hidden = mode === 'new';
     $('contract-details').querySelectorAll('input,select').forEach(el => { el.disabled = mode === 'new' || (el.closest('#five-year-fields') && !$('five-year-rule').checked); });
     updateContractFields();
@@ -168,9 +176,8 @@
   $('custom-rate-enabled').addEventListener('change', updateCustomRateFields);
   $('new-custom-enabled').addEventListener('change', updateNewFields);
   $('new-bonus-enabled').addEventListener('change', updateNewFields);
-  document.querySelectorAll('[data-extra],[data-years]').forEach(button => button.addEventListener('click', () => {
-    const key = button.dataset.extra ? 'extra' : 'years';
-    $(key).value = button.dataset[key]; markChanged(); $(key).focus();
+  document.querySelectorAll('[data-extra]').forEach(button => button.addEventListener('click', () => {
+    $('extra').value = button.dataset.extra; markChanged(); $('extra').focus();
   }));
   $('example').addEventListener('click', () => {
     $('balance').value = mode === 'new' ? '3500' : '3000';
@@ -186,7 +193,7 @@
       $('years').value = '35';
       document.querySelectorAll('[data-new-scenario]').forEach(input => { input.checked = ['higher-rate','shorter','principal'].includes(input.dataset.newScenario); });
       $('new-custom-enabled').checked = false;
-      $('new-custom-rate').value = ''; $('new-custom-years').value = '';
+      $('new-custom-rate').value = ''; $('new-custom-years').value = '35';
       $('new-bonus-enabled').checked = false; $('new-bonus-principal').value = '';
       $('new-start').value = currentMonth;
       updateNewFields();

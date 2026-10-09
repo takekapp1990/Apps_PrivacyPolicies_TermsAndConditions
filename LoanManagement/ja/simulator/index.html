@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="./contract.css?v=20261009-5">
   <link rel="stylesheet" href="./app-card.css?v=20261008-9">
   <script defer src="./calculator.js?v=20261009-12"></script>
-  <script defer src="./simulator.js?v=20261009-16"></script>
+  <script defer src="./simulator.js?v=20261009-17"></script>
   <script defer src="./analytics.js?v=20261004-4"></script>
   <script defer src="/js/app_store_analytics.js"></script>
 </head>
@@ -57,7 +57,7 @@
             </div>
             <div id="current-term-fields">
               <div class="field"><label for="repayment-start">返済開始月</label><input class="month-input" id="repayment-start" type="month" required><small>当初の返済期間と合わせて、契約上の残り期間を計算します。</small></div>
-              <div class="field"><label for="original-term-years">当初の返済期間</label><div class="input-unit"><input id="original-term-years" inputmode="numeric" type="text" placeholder="例：35" autocomplete="off" required><span>年</span></div><small>借入時に設定した期間（1〜50年）</small></div>
+              <div class="field"><label for="original-term-years">当初の返済期間</label><select id="original-term-years" required aria-describedby="original-term-years-hint"></select><small id="original-term-years-hint">借入時に設定した期間。35年を初期値にしています。</small></div>
             </div>
             <div class="field"><label for="rate" id="rate-label">現在の適用金利（年利）</label><div class="input-unit"><input id="rate" name="rate" inputmode="decimal" type="text" placeholder="例：0.8" autocomplete="off" aria-describedby="rate-hint" required><span>%</span></div><small id="rate-hint">現在の返済に適用されている年利（0〜10%）を入力してください。</small></div>
             <details class="contract-details" id="contract-details">
@@ -96,7 +96,7 @@
               </details>
             </div>
             <div id="panel-new" role="tabpanel" aria-labelledby="tab-new" hidden>
-              <div class="field"><label for="years">返済期間</label><div class="input-unit"><input id="years" name="years" inputmode="numeric" type="text" placeholder="例：35" autocomplete="off" required><span>年</span></div><div class="chips" aria-label="返済期間の候補"><button type="button" data-years="20">20年</button><button type="button" data-years="30">30年</button><button type="button" data-years="35">35年</button></div><small>1〜50年。ここで入力した条件を比較の基準にします。</small></div>
+              <div class="field"><label for="years">返済期間</label><select id="years" name="years" required aria-describedby="years-hint"></select><small id="years-hint">35年を初期値にしています。ここで選んだ条件を比較の基準にします。</small></div>
               <div class="divider-label">一緒に比較する条件</div>
               <p class="scenario-note">入力条件を基準に、気になる違いを選んで比較できます。</p>
               <div class="rate-scenario-list new-scenario-list" aria-label="新規借入の比較条件">
@@ -108,7 +108,7 @@
               </div>
               <details class="custom-rate new-custom"><summary>独自の金利・期間も比較する</summary>
                 <label class="check-row custom-rate-toggle" for="new-custom-enabled"><span><strong>独自条件を追加</strong><small>金融機関から提示された条件などを入力</small></span><input id="new-custom-enabled" type="checkbox"></label>
-                <div id="new-custom-fields" class="new-custom-fields" hidden><div class="field"><label for="new-custom-rate">比較する金利（年利）</label><div class="input-unit"><input id="new-custom-rate" inputmode="decimal" type="text" placeholder="例：1.2" autocomplete="off"><span>%</span></div></div><div class="field"><label for="new-custom-years">比較する返済期間</label><div class="input-unit"><input id="new-custom-years" inputmode="numeric" type="text" placeholder="例：30" autocomplete="off"><span>年</span></div></div></div>
+                <div id="new-custom-fields" class="new-custom-fields" hidden><div class="field"><label for="new-custom-rate">比較する金利（年利）</label><div class="input-unit"><input id="new-custom-rate" inputmode="decimal" type="text" placeholder="例：1.2" autocomplete="off"><span>%</span></div></div><div class="field"><label for="new-custom-years">比較する返済期間</label><select id="new-custom-years"></select></div></div>
               </details>
               <details class="custom-rate new-details"><summary>ボーナス返済を含める</summary>
                 <label class="check-row custom-rate-toggle" for="new-bonus-enabled"><span><strong>ボーナス返済あり</strong><small>年2回の追加返済をすべての比較条件に反映</small></span><input id="new-bonus-enabled" type="checkbox"></label>
