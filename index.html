@@ -519,11 +519,13 @@
             }
 
             /* 言語別コンテンツの表示制御 - Multilingual Content Visibility */
-            [class*="content-"] {
+            .content-ja,
+            .content-en {
                 display: none;
             }
 
-            [class*="content-"].active {
+            .content-ja.active,
+            .content-en.active {
                 display: block;
             }
 
@@ -2164,7 +2166,7 @@
                 const isStatic = (lang === 'ja' || lang === 'en');
 
                 // 1. Hide everything first
-                document.querySelectorAll('[class*="content-"]').forEach(el => {
+                document.querySelectorAll('.content-ja, .content-en').forEach(el => {
                     el.classList.remove('active');
                 });
                 const dynamicContainer = document.getElementById('dynamic-app-container');
