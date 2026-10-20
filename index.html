@@ -519,11 +519,13 @@
             }
 
             /* 言語別コンテンツの表示制御 - Multilingual Content Visibility */
-            [class*="content-"] {
+            .content-ja,
+            .content-en {
                 display: none;
             }
 
-            [class*="content-"].active {
+            .content-ja.active,
+            .content-en.active {
                 display: block;
             }
 
@@ -1835,6 +1837,66 @@
             </div>
         </section>
 
+        <!-- アプリ・Webツールの紹介に続けて開発記事を案内 -->
+        <section id="guides" class="container py-5" aria-label="開発の実体験と便利なツール">
+            <div class="content-ja" id="guides-ja">
+                <h2 class="section-title">開発の実体験と、毎日に使えるツール</h2>
+                <p class="text-center mb-4">アプリを作って試した過程と、うまくいかなかったことも公開しています。文章や画像を整理したいときは、ブラウザで使えるツールもご利用ください。</p>
+                <div class="row g-4">
+                    <article class="col-md-4">
+                        <div class="card app-card h-100"><div class="card-body">
+                            <p class="small text-muted">個人開発の振り返り</p>
+                            <h3 class="h5"><a href="/blog/posts/dev/ja/2025-11-23-casual-game-failure.html">カジュアルゲームが爆死した話</a></h3>
+                            <p>想定した遊ばれ方と実際の使われ方の違い、集客、継続利用、課金への導線。初めてのゲーム公開で見えてきた課題を、開発者自身の経験から振り返ります。</p>
+                        </div></div>
+                    </article>
+                    <article class="col-md-4">
+                        <div class="card app-card h-100"><div class="card-body">
+                            <p class="small text-muted">ユーザーと試した記録</p>
+                            <h3 class="h5"><a href="/blog/posts/dev/ja/2026-01-03-awaawapon-tournament-reflection.html">あわあわポンの大会を終えて</a></h3>
+                            <p>記憶力ゲームの大会を開いて感じた面白さと限界、良かった点と反省点を記録しました。リリース後に何を見直すか、次の改善を考える過程をまとめています。</p>
+                        </div></div>
+                    </article>
+                    <article class="col-md-4">
+                        <div class="card app-card h-100"><div class="card-body">
+                            <p class="small text-muted">ブラウザで作業を進める</p>
+                            <h3 class="h5"><a href="https://handytools.takekapp.com/ja/">文章・画像・動画の便利なツール</a></h3>
+                            <p>文字数の確認、重複行の整理、リストの変換、画像や動画の切り抜きに。入力データの処理はブラウザ内で行います。各ツールの使い方と仕様も確認できます。</p>
+                        </div></div>
+                    </article>
+                </div>
+                <div class="text-center mt-4"><a href="/blog/" class="btn btn-outline-primary">開発日記をすべて読む</a></div>
+            </div>
+            <div class="content-en" id="guides-en" lang="en">
+                <h2 class="section-title">Lessons from building apps, and tools you can use</h2>
+                <p class="text-center mb-4">Read what I learned from releasing and improving my own apps, including the things that did not work. Use the browser tools when you need to work with text, images or video.</p>
+                <div class="row g-4">
+                    <article class="col-md-4">
+                        <div class="card app-card h-100"><div class="card-body">
+                            <p class="small text-muted">An indie developer’s experience</p>
+                            <h3 class="h5"><a href="/blog/posts/dev/en/2025-11-23-casual-game-failure.html">The story of a casual game failure</a></h3>
+                            <p>What changed between the audience I imagined and the way people actually played. A reflection on the game’s concept, promotion, retention and paths to paid features.</p>
+                        </div></div>
+                    </article>
+                    <article class="col-md-4">
+                        <div class="card app-card h-100"><div class="card-body">
+                            <p class="small text-muted">Learning from players</p>
+                            <h3 class="h5"><a href="/blog/posts/dev/en/2026-01-03-awaawapon-tournament-reflection.html">After the AwaAwaPon tournament</a></h3>
+                            <p>What a memory-game tournament revealed about the app’s appeal and limitations, what went well, and what I plan to improve after release.</p>
+                        </div></div>
+                    </article>
+                    <article class="col-md-4">
+                        <div class="card app-card h-100"><div class="card-body">
+                            <p class="small text-muted">Get a task done in your browser</p>
+                            <h3 class="h5"><a href="https://handytools.takekapp.com/en/">Tools for text, images and video</a></h3>
+                            <p>Count characters, remove duplicate lines, convert lists and crop images or video. Input is processed in your browser. Check each tool’s usage examples and specifications before starting.</p>
+                        </div></div>
+                    </article>
+                </div>
+                <div class="text-center mt-4"><a href="/blog/" class="btn btn-outline-primary">Browse the development diary</a></div>
+            </div>
+        </section>
+
         <!-- Aboutセクション -->
         <section id="about" class="py-5" style="background-color: white;">
             <div class="container">
@@ -2104,7 +2166,7 @@
                 const isStatic = (lang === 'ja' || lang === 'en');
 
                 // 1. Hide everything first
-                document.querySelectorAll('[class*="content-"]').forEach(el => {
+                document.querySelectorAll('.content-ja, .content-en').forEach(el => {
                     el.classList.remove('active');
                 });
                 const dynamicContainer = document.getElementById('dynamic-app-container');
