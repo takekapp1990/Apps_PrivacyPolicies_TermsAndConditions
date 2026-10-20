@@ -342,6 +342,10 @@
     const monthlyNote = request.mode === 'rate' ? '表示額はボーナス加算分を除く通常月返済額のうち、試算期間内で最も高い金額です。' : '表示額はボーナス加算分を除く通常月の返済額です。';
     return `<div class="result-block"><h3>${isNew ? '同じ借入額で比較' : '同じ条件で比較'}</h3><div class="table-scroll" tabindex="0" role="region" aria-label="返済額と利息の比較表。横にスクロールできます。"><table class="comparison-table"><thead><tr><th scope="col">返済プラン</th><th scope="col">${monthlyHeading}</th><th scope="col">${isNew ? '返済期間' : '今から完済まで'}</th><th scope="col">${isNew ? '利息総額' : '残りの利息総額'}</th><th scope="col">${isNew ? '入力条件との差' : 'いまのままとの差'}</th></tr></thead><tbody>${rows}</tbody></table></div><p class="result-note">${isNew ? '元利均等は通常月の返済額がほぼ一定です。元金均等の欄は初回の通常月返済額で、その後徐々に減ります。差分は入力条件を基準にしています。' : `${monthlyNote} 差分は「いまのまま」を基準にしています。`} 最終回の返済額は調整されます。</p><details class="result-note"><summary>元本を含む${isNew ? '' : '今後の'}支払総額を見る</summary><table class="comparison-table"><thead><tr><th scope="col">返済プラン</th><th scope="col">支払総額</th></tr></thead><tbody>${totalRows}</tbody></table>${request.mode === 'prepayment' ? '<p>支払総額には繰上げ返済額を含みます。</p>' : ''}</details></div>`;
   }
+  function prepaymentNotes(plans) {
+    const notes = plans.flatMap(plan => (plan.notes || []).map(note => `<section><p class="notice-plan">${escape(plan.id === 'term' ? '期間短縮型' : '返済額軽減型')}</p><h4>${escape(note.title)}</h4><p>${escape(note.message)}</p></section>`));
+    return notes.length ? `<aside class="prepayment-notes" aria-label="試算結果の注意事項"><h3>試算結果の注意事項</h3>${notes.join('')}</aside>` : '';
+  }
   function render(result, request) {
     const [base, ...others] = result.plans;
     let highlight, cards, notes;
@@ -350,9 +354,11 @@
       const [term, payment] = others;
       const planMetric = (label, value, change) => `<div><dt>${label}</dt><dd><b class="plan-change">${change}</b><small class="plan-value">試算後 ${value}</small></dd></div>`;
       const planCard = (title, caption, plan) => `<section class="prepayment-plan-card"><div class="plan-card-heading"><h4>${title}</h4><p>${caption}</p></div><dl>${planMetric('残りの利息総額',yen(plan.interest),currentInterestChange(plan.interest,base.interest))}${planMetric('月々の返済額',yen(plan.monthly),currentMoneyChange(plan.monthly,base.monthly))}${planMetric('今から完済まで',period(plan.months),currentPeriodChange(plan.months,base.months))}</dl></section>`;
-      highlight = `<div class="prepayment-highlight-head"><div><p class="eyebrow">2つの方法を同じ基準で比較</p><h3>${when}に<strong>${man(request.extra)}</strong>を繰上げ返済した場合</h3></div><button class="plan-info-button" type="button" data-open-prepayment-info aria-haspopup="dialog"><span aria-hidden="true">i</span> 2つの方式の違い</button></div><div class="prepayment-plan-cards">${planCard('期間短縮型',request.recalculateTermPayment ? '繰上げ時に返済額を再計算' : '繰上げ時の返済額は据え置き',term)}${planCard('返済額軽減型','契約上の完済時期を維持',payment)}</div><p class="highlight-sub">差分は「いまのまま」を基準にしています。手数料・住宅ローン控除の影響は含みません。</p>`;
+      const termCaption = term.payoffAdjusted ? '少額残高のため早期完済に調整' : result.termPaymentRecalculated ? '繰上げ時に返済額を再計算' : '繰上げ時の返済額は据え置き';
+      const paymentCaption = payment.payoffAdjusted ? '少額残高のため早期完済に調整' : '契約上の完済時期を維持';
+      highlight = `<div class="prepayment-highlight-head"><div><p class="eyebrow">2つの方法を同じ基準で比較</p><h3>${when}に<strong>${man(request.extra)}</strong>を繰上げ返済した場合</h3></div><button class="plan-info-button" type="button" data-open-prepayment-info aria-haspopup="dialog"><span aria-hidden="true">i</span> 2つの方式の違い</button></div><div class="prepayment-plan-cards">${planCard('期間短縮型',termCaption,term)}${planCard('返済額軽減型',paymentCaption,payment)}</div><p class="highlight-sub">差分は「いまのまま」を基準にしています。手数料・住宅ローン控除の影響は含みません。</p>`;
       cards = '';
-      const termPaymentPolicy = request.recalculateTermPayment ? '期間短縮型は、繰上げ時点で短縮後の期間に合わせて通常月の返済額も再計算します。' : '期間短縮型は、繰上げ時点では通常月の返済額を据え置きます。';
+      const termPaymentPolicy = result.termPaymentRecalculated ? '期間短縮型は、繰上げ時点で短縮後の期間に合わせて通常月の返済額も再計算します。' : '期間短縮型は、繰上げ時点では通常月の返済額を据え置きます。';
       notes = `繰上げ時点の残債は${yen(result.balanceAtChange)}の見込み。繰上げ返済後も年${rateLabel(request.rate)}%が続く前提です。${termPaymentPolicy}${request.applyFiveYearRule ? ` 5年ルールに基づき、${request.paymentReviewBaseMonth}月を5回経過した時点の残債・残期間から返済額を再計算します。` : ' 5年ルールは適用していません。'}${request.apply125PercentCap ? ' 見直し後の通常月返済額には、直前額の125%上限を適用します。' : ''}${request.bonusPayment ? ` ボーナス月は年2回、通常返済に${yen(request.bonusPayment)}を加算します。` : ''}${request.extra === result.balanceAtChange ? '今回は全額返済のため、両方式の結果は同じです。' : ''}`;
     } else if (request.mode === 'rate') {
       const target = others.find(p => p.id === 'standard') || others[0];
@@ -371,7 +377,8 @@
     }
     const summary = `${example ? '入力例での試算です。' : ''}${request.mode === 'new' ? `借入${man(request.balance)}を、入力条件と選択した比較条件で試算しています。` : `残債${man(request.balance)}・通常月${yen(request.payment)}・年${rateLabel(request.rate)}%。返済開始月と当初期間から、契約上の残り期間は${period(result.estimatedMonths)}です。`}`;
     const comparisonTable = request.mode === 'prepayment' ? '' : table(result.plans,request);
-    $('result-content').innerHTML = `<p class="result-summary">${summary}</p><div class="highlight">${highlight}</div>${cards ? `<div class="comparison-cards">${cards}</div>` : ''}${comparisonTable}${graph(result.plans,request.balance)}<p class="condition-note">${notes}</p><a class="result-cta" href="#app-next">この先の返済計画を、アプリで管理する ↓</a>`;
+    const notices = request.mode === 'prepayment' ? prepaymentNotes(others) : '';
+    $('result-content').innerHTML = `<p class="result-summary">${summary}</p><div class="highlight">${highlight}</div>${notices}${cards ? `<div class="comparison-cards">${cards}</div>` : ''}${comparisonTable}${graph(result.plans,request.balance)}<p class="condition-note">${notes}</p><a class="result-cta" href="#app-next">この先の返済計画を、アプリで管理する ↓</a>`;
     $('result-badge').textContent = example ? '入力例の結果' : '入力した条件での概算';
     $('result-badge').classList.add('ready');
     $('stale-note').hidden = true;
