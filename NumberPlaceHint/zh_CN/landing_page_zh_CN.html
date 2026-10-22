@@ -1,772 +1,102 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sudoku Hint - Number Place Solver & Logic Teacher</title>
-        <link rel="icon" href="../favicon.ico">
-        <!-- OGP & Twitter Card -->
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="数独提示 - Number Place Solver & Logic Teacher">
-        <meta property="og:description" content="告诉你“为什么”的数独助手。">
-        <!-- Image paths are placeholders -->
-        <!-- <meta property="og:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/zh_CN/ogp_main.png"> -->
-        <meta property="og:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/zh_CN/ogp_main.png">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="数独提示 - Number Place Solver & Logic Teacher">
-        <meta name="twitter:description" content="告诉你“为什么”的数独助手。">
-        <!-- <meta name="twitter:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/zh_CN/ogp_main.png"> -->
-        <meta name="twitter:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/zh_CN/ogp_main.png">
-        <meta name="twitter:site" content="@takekapp">
-
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-        <style>
-            /* Basic Styles */
-            body {
-                font-family: 'Open Sans', sans-serif;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                line-height: 1.6;
-                color: #333;
-                background-color: #f9f9f9;
-            }
-
-            .container {
-                max-width: 960px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-
-            h1,
-            h2,
-            h3 {
-                font-family: 'Montserrat', sans-serif;
-                color: #2c3e50;
-                text-align: center;
-                margin-bottom: 30px;
-            }
-
-            h1 {
-                font-size: 2.4em;
-                margin-top: 30px;
-            }
-
-            h2 {
-                font-size: 1.8em;
-                border-bottom: 2px solid #ddd;
-                padding-bottom: 10px;
-                margin-top: 15px;
-            }
-
-            h3 {
-                font-size: 1.8em;
-                color: #3498db;
-                margin-bottom: 15px;
-            }
-
-            p {
-                text-align: center;
-                margin-bottom: 20px;
-                font-size: 1.1em;
-                line-height: 1.8;
-            }
-
-            .hero {
-                background: linear-gradient(135deg, #3498db, #2c3e50);
-                color: white;
-                padding: 40px 20px;
-                text-align: center;
-                border-radius: 10px;
-                margin-bottom: 30px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            }
-
-            .app-icon {
-                width: 80px;
-                height: 80px;
-                border-radius: 16px;
-                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-                display: inline-block;
-                vertical-align: middle;
-                margin-left: 20px;
-            }
-
-            .hero-title {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 10px;
-            }
-
-            .hero-title h1 {
-                margin: 0;
-                color: white;
-                font-size: 2.6em;
-            }
-
-            .hero p {
-                font-size: 1.4em;
-                max-width: 700px;
-                margin: 0 auto 20px;
-            }
-
-            .btn-secondary {
-                display: inline-block;
-                background-color: #1da1f2;
-                color: white;
-                padding: 10px 20px;
-                border-radius: 8px;
-                text-decoration: none;
-                font-weight: bold;
-                font-size: 1em;
-                transition: background-color 0.3s ease;
-                margin: 5px;
-            }
-
-            .btn-secondary:hover {
-                background-color: #0d8bd9;
-            }
-
-            /* Store badges styling */
-            .store-badge {
-                text-decoration: none;
-                outline: none;
-            }
-
-            .store-badge img {
-                outline: none;
-                border: none;
-            }
-
-            .d-flex {
-                display: flex;
-            }
-
-            .justify-content-center {
-                justify-content: center;
-            }
-
-            .gap-3 {
-                gap: 1rem;
-            }
-
-            .flex-wrap {
-                flex-wrap: wrap;
-            }
-
-            /* Value Section */
-            .value-section {
-                background-color: #fff;
-                padding: 40px 20px;
-                border-radius: 10px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-                margin-bottom: 30px;
-            }
-
-            .value-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 30px;
-                margin-top: 40px;
-            }
-
-            .value-item {
-                background-color: #f8f9fa;
-                padding: 30px;
-                border-radius: 10px;
-                border-left: 5px solid #3498db;
-                text-align: center;
-            }
-
-            .value-item h3 {
-                color: #2c3e50;
-                margin-bottom: 15px;
-                text-align: center;
-                font-size: 1.2em;
-            }
-
-            .value-item p {
-                text-align: left;
-                color: #555;
-                margin-bottom: 0;
-            }
-
-            .value-item i {
-                display: block;
-                font-size: 3em;
-                margin-bottom: 20px;
-                color: #3498db;
-            }
-
-            /* Problem Section */
-            .problem-section {
-                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-                color: #2c3e50;
-                padding: 40px 20px 30px 20px;
-                border-radius: 16px;
-                box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
-                margin-bottom: 30px;
-            }
-
-            .problem-section h2 {
-                color: #e67e22;
-            }
-
-            .problem-cards {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                max-width: 700px;
-                margin: 0 auto;
-            }
-
-            .problem-card {
-                background: #fff;
-                border-radius: 12px;
-                box-shadow: 0 2px 12px rgba(52, 73, 94, 0.07);
-                padding: 28px 24px 20px 24px;
-                display: flex;
-                align-items: flex-start;
-                gap: 20px;
-            }
-
-            .problem-card .icon {
-                font-size: 1.8em;
-                flex-shrink: 0;
-                margin-top: 2px;
-                color: #3498db;
-            }
-
-            .problem-card-content {
-                flex: 1;
-            }
-
-            .problem-card-title {
-                font-weight: bold;
-                font-size: 1.15em;
-                margin-bottom: 8px;
-                color: #2c3e50;
-            }
-
-            .problem-card-desc {
-                color: #555;
-                font-size: 1em;
-                line-height: 1.7;
-            }
-
-            /* Solution Section */
-            .solution-section {
-                background-color: #ecf0f1;
-                padding: 40px 20px;
-                border-radius: 10px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-                margin-bottom: 30px;
-            }
-
-            .feature-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center;
-                margin-top: 30px;
-            }
-
-            .feature-item {
-                background-color: white;
-                padding: 25px;
-                border-radius: 8px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                width: calc(33% - 20px);
-                box-sizing: border-box;
-                text-align: center;
-            }
-
-            .feature-item h3 {
-                margin-top: 0;
-                margin-bottom: 10px;
-                font-size: 1.2em;
-                color: #2c3e50;
-            }
-
-            .feature-item i {
-                font-size: 3em;
-                margin-bottom: 15px;
-                display: block;
-            }
-
-            .feature-item .fa-camera {
-                color: #3498db;
-            }
-
-            .feature-item .fa-lightbulb {
-                color: #f1c40f;
-            }
-
-            .feature-item .fa-book {
-                color: #2ecc71;
-            }
-
-            .feature-item .fa-check-circle {
-                color: #e74c3c;
-            }
-
-            .feature-item .fa-pencil-alt {
-                color: #9b59b6;
-            }
-
-            .feature-item .fa-crown {
-                color: #34495e;
-            }
-
-            /* Download Section */
-            .download-section {
-                background: linear-gradient(135deg, #2c3e50, #3498db);
-                color: white;
-                padding: 40px 20px;
-                text-align: center;
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-                margin-bottom: 30px;
-            }
-
-            .download-section h2 {
-                color: white;
-                border-bottom: none;
-            }
-
-            .download-section p {
-                font-size: 1.2em;
-                margin-bottom: 25px;
-            }
-
-
-            /* Recommended Section */
-            .recommended-section {
-                background-color: #fff;
-                padding: 40px 20px;
-                border-radius: 10px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-                margin-bottom: 30px;
-                text-align: center;
-            }
-
-            .recommended-list {
-                display: inline-block;
-                text-align: left;
-                max-width: 600px;
-                width: 100%;
-            }
-
-            .recommended-list ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            .recommended-list li {
-                padding: 12px 15px;
-                border-bottom: 1px solid #eee;
-                font-size: 1.1em;
-            }
-
-            .recommended-list li:last-child {
-                border-bottom: none;
-            }
-
-            .recommended-list li i {
-                color: #27ae60;
-                margin-right: 12px;
-                width: 20px;
-                text-align: center;
-            }
-
-            /* Footer */
-            footer {
-                text-align: center;
-                padding: 20px;
-                font-size: 0.9em;
-                color: #777;
-                border-top: 1px solid #eee;
-                margin-top: 30px;
-            }
-
-            @media (max-width: 768px) {
-                h1 {
-                    font-size: 2em;
-                    margin-top: 20px;
-                }
-
-                .section,
-                .value-section,
-                .problem-section,
-                .solution-section,
-                .download-section,
-                .recommended-section {
-                    padding: 30px 15px;
-                }
-
-                .problem-card {
-                    flex-direction: row;
-                    align-items: center;
-                    padding: 15px 12px;
-                }
-
-                /* 2 columns for features on mobile */
-                .feature-item {
-                    width: calc(50% - 10px);
-                    padding: 15px 10px;
-                }
-
-                .feature-item i {
-                    font-size: 2em;
-                    margin-bottom: 10px;
-                }
-
-                .feature-item h3 {
-                    font-size: 1em;
-                    margin-bottom: 0;
-                }
-
-                /* 2 columns for values on mobile */
-                .value-grid {
-                    grid-template-columns: 1fr 1fr;
-                    gap: 15px;
-                    margin-top: 25px;
-                }
-
-                .value-item {
-                    padding: 15px 10px;
-                }
-
-                .value-item i {
-                    font-size: 2em;
-                    margin-bottom: 10px;
-                }
-
-                .value-item h3 {
-                    font-size: 1em;
-                    margin-bottom: 10px;
-                }
-
-                .value-item p {
-                    font-size: 0.85em;
-                    line-height: 1.4;
-                }
-
-                .recommended-list li {
-                    font-size: 1em;
-                    padding: 10px;
-                }
-            }
-        
-            /* Screenshots Section */
-            .screenshots-container {
-                overflow-x: auto;
-                overflow-y: hidden;
-                padding: 10px 0 30px 0;
-                margin-bottom: 10px;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: thin;
-                scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
-            }
-
-            .screenshots-container::-webkit-scrollbar {
-                height: 8px;
-            }
-
-            .screenshots-container::-webkit-scrollbar-track {
-                background: transparent;
-            }
-
-            .screenshots-container::-webkit-scrollbar-thumb {
-                background-color: rgba(0, 0, 0, 0.3);
-                border-radius: 4px;
-            }
-
-            .screenshots-wrapper {
-                display: flex;
-                gap: 20px;
-                padding: 10px 20px; /* Horizontal padding for first/last item visibility */
-            }
-
-            .screenshot-item {
-                flex: 0 0 auto;
-                width: 280px;
-                border-radius: 16px;
-                overflow: hidden;
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-                transition: transform 0.3s ease;
-                background-color: #fff;
-            }
-
-            .screenshot-item:hover {
-                transform: translateY(-5px);
-            }
-
-            .screenshot-item img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-
-            @media (max-width: 768px) {
-                .screenshot-item {
-                    width: 220px;
-                }
-            }
-
-        </style>
-    <meta name="description" content="告诉你“为什么”的数独助手。 Instantly scan unsolvable puzzles with your camera. From beginners to experts, take your Sudoku skills to the next level.">
-    <link rel="canonical" href="https://takekapp.com/NumberPlaceHint/zh_CN/landing_page_zh_CN.html">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "name": "Sudoku Hint",
-  "url": "https://takekapp.com/NumberPlaceHint/zh_CN/landing_page_zh_CN.html",
-  "description": "告诉你“为什么”的数独助手。 Instantly scan unsolvable puzzles with your camera. From beginners to experts, take your Sudoku skills to the next level.",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "Android, iOS",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "TakeKApp",
-    "url": "https://takekapp.com/"
-  }
-}
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-0VCS46ZTHC');
-    </script>
-    <script defer src="/js/app_store_analytics.js"></script>
-    <link rel="alternate" hreflang="ar" href="https://takekapp.com/NumberPlaceHint/ar/landing_page_ar.html">
-    <link rel="alternate" hreflang="da" href="https://takekapp.com/NumberPlaceHint/da/landing_page_da.html">
-    <link rel="alternate" hreflang="de" href="https://takekapp.com/NumberPlaceHint/de/landing_page_de.html">
-    <link rel="alternate" hreflang="en" href="https://takekapp.com/NumberPlaceHint/en/landing_page_en.html">
-    <link rel="alternate" hreflang="es" href="https://takekapp.com/NumberPlaceHint/es/landing_page_es.html">
-    <link rel="alternate" hreflang="fr" href="https://takekapp.com/NumberPlaceHint/fr/landing_page_fr.html">
-    <link rel="alternate" hreflang="hi" href="https://takekapp.com/NumberPlaceHint/hi/landing_page_hi.html">
-    <link rel="alternate" hreflang="id" href="https://takekapp.com/NumberPlaceHint/id/landing_page_id.html">
-    <link rel="alternate" hreflang="it" href="https://takekapp.com/NumberPlaceHint/it/landing_page_it.html">
-    <link rel="alternate" hreflang="ja" href="https://takekapp.com/NumberPlaceHint/ja/landing_page_ja.html">
-    <link rel="alternate" hreflang="ko" href="https://takekapp.com/NumberPlaceHint/ko/landing_page_ko.html">
-    <link rel="alternate" hreflang="nl" href="https://takekapp.com/NumberPlaceHint/nl/landing_page_nl.html">
-    <link rel="alternate" hreflang="pl" href="https://takekapp.com/NumberPlaceHint/pl/landing_page_pl.html">
-    <link rel="alternate" hreflang="pt" href="https://takekapp.com/NumberPlaceHint/pt/landing_page_pt.html">
-    <link rel="alternate" hreflang="ru" href="https://takekapp.com/NumberPlaceHint/ru/landing_page_ru.html">
-    <link rel="alternate" hreflang="sv" href="https://takekapp.com/NumberPlaceHint/sv/landing_page_sv.html">
-    <link rel="alternate" hreflang="th" href="https://takekapp.com/NumberPlaceHint/th/landing_page_th.html">
-    <link rel="alternate" hreflang="tr" href="https://takekapp.com/NumberPlaceHint/tr/landing_page_tr.html">
-    <link rel="alternate" hreflang="uk" href="https://takekapp.com/NumberPlaceHint/uk/landing_page_uk.html">
-    <link rel="alternate" hreflang="vi" href="https://takekapp.com/NumberPlaceHint/vi/landing_page_vi.html">
-    <link rel="alternate" hreflang="zh-Hans" href="https://takekapp.com/NumberPlaceHint/zh_CN/landing_page_zh_CN.html">
-    <link rel="alternate" hreflang="zh-Hant" href="https://takekapp.com/NumberPlaceHint/zh_TW/landing_page_zh_TW.html">
-    <link rel="alternate" hreflang="x-default" href="https://takekapp.com/NumberPlaceHint/en/landing_page_en.html">
-<link rel="stylesheet" href="../ja/learn/experience.css"><link rel="stylesheet" href="../learning-locales/international.css"><script defer src="learn/experience-browser.js"></script></head>
-
-    <body>
-        <nav id="language-switcher"></nav>
-        <script src="../language_switcher.js"></script>
-        <header class="hero">
-            <div class="container">
-                <div class="hero-title">
-                    <h1>数独提示</h1>
-                    <!-- Image src can be added here -->
-                    <img src="../images/app_icon/number_place_hint_app_icon_10241024_ios.png" alt="App Icon"
-                        class="app-icon" decoding="async">
-                </div>
-                <p><strong>告诉你“为什么”的数独助手。</strong><br><br>
-                    Instantly scan unsolvable puzzles with your camera.<br>
-                    From beginners to experts, take your Sudoku skills to the next level.</p>
-                <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <!-- Links to be set later -->
-                    <a href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod" class="store-badge">
-                        <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
-                            alt="Get it on Google Play" height="60" decoding="async" loading="lazy">
-                    </a>
-                    <a href="https://apps.apple.com/us/app/sudoku-hint/id6758233715" class="store-badge">
-                        <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-                            alt="Download on the App Store" height="60" decoding="async" loading="lazy">
-                    </a>
-                </div>
-            </div>
-        </header>
-
-        <!-- Screenshots Section -->
-        <section class="container" style="margin-top: -20px; margin-bottom: 20px; position: relative; z-index: 10;">
-            <div class="screenshots-container">
-                <div class="screenshots-wrapper">
-
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/zh_CN/resized_slide_074.png" alt="Screenshot 1" decoding="async" loading="lazy">
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/zh_CN/resized_slide_075.png" alt="Screenshot 2" decoding="async" loading="lazy">
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/zh_CN/resized_slide_076.png" alt="Screenshot 3" decoding="async" loading="lazy">
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/zh_CN/resized_slide_077.png" alt="Screenshot 4" decoding="async" loading="lazy">
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/zh_CN/resized_slide_078.png" alt="Screenshot 5" decoding="async" loading="lazy">
-                        </div>
-                </div>
-            </div>
-        </section>
-
-
-        <main class="container">
-
-            <section class="problem-section">
-                <h2>Do you have these problems with Sudoku?</h2>
-                <div class="problem-cards">
-                    <div class="problem-card">
-                        <span class="icon">🤔</span>
-                        <div class="problem-card-content">
-                            <div class="problem-card-title">Stuck on a puzzle</div>
-                            <div class="problem-card-desc">You're almost there, but can't figure out where you missed
-                                something.</div>
-                        </div>
-                    </div>
-                    <div class="problem-card">
-                        <span class="icon">🤯</span>
-                        <div class="problem-card-content">
-                            <div class="problem-card-title">Check the answer but don't know "Why?"</div>
-                            <div class="problem-card-desc">You see the number in the solution, but don't understand the
-                                logic behind it.</div>
-                        </div>
-                    </div>
-                    <div class="problem-card">
-                        <span class="icon">😩</span>
-                        <div class="problem-card-content">
-                            <div class="problem-card-title">Don't want tedious manual entry</div>
-                            <div class="problem-card-desc">Typing in every single number to transfer a puzzle to an app
-                                is a hassle.</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="value-section">
-                <h2>What you can do with "Sudoku Hint"</h2>
-                <div class="value-grid">
-                    <div class="value-item">
-                        <i class="fas fa-camera"></i>
-                        <h3>📷 即时 OCR 扫描</h3>
-                        <p>Just snap a photo of newspaper or magazine puzzles. Start instantly without manual entry.</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-lightbulb"></i>
-                        <h3>💡 逻辑提示</h3>
-                        <p>Explains "Why" a number fits logically. It doesn't just give you the answer.</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>🎓 掌握技巧</h3>
-                        <p>Master everything from basics to advanced techniques naturally through gameplay.</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-magic"></i>
-                        <h3>✨ Comfortable Assist</h3>
-                        <p>Auto-fill candidates and mistake warnings help you solve smoothly.</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-undo-alt"></i>
-                        <h3>↩️ Provisional Input</h3>
-                        <p>Trial & Error made easy. "If I put 1 here..." - easily revert anytime.</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-palette"></i>
-                        <h3>🎨 Customize Your Look</h3>
-                        <p>Eye-friendly dark mode and various color themes to suit your style.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="solution-section">
-                <h2>Full Support Features</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <i class="fas fa-pencil-alt"></i>
-                        <h3>Candidate Notes</h3>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <h3>Answer Check</h3>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-highlighter"></i>
-                        <h3>Highlight Function</h3>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-crown"></i>
-                        <h3>Premium Plan</h3>
-                    </div>
-                </div>
-            </section>
-
-
-
-            <section class="recommended-section">
-                <h2>Recommended For</h2>
-                <div class="recommended-list">
-                    <ul>
-                        <li><i class="fas fa-check"></i> Sudoku Beginners</li>
-                        <li><i class="fas fa-check"></i> Sudoku Lovers</li>
-                        <li><i class="fas fa-check"></i> Those who love solving paper puzzles</li>
-                        <li><i class="fas fa-check"></i> Those who want to learn solving techniques</li>
-                        <li><i class="fas fa-check"></i> Those who want to solve carefully</li>
-                        <li><i class="fas fa-check"></i> Those who want just the right amount of hints</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="download-section" id="download">
-                <h2>Make your Sudoku life more comfortable.</h2>
-                <p>Download now and clear that puzzle you couldn't solve!</p>
-                <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <a href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod" class="store-badge">
-                        <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
-                            alt="Get it on Google Play" height="60" decoding="async" loading="lazy">
-                    </a>
-                    <a href="https://apps.apple.com/us/app/sudoku-hint/id6758233715" class="store-badge">
-                        <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-                            alt="Download on the App Store" height="60" decoding="async" loading="lazy">
-                    </a>
-                </div>
-
-                <div style="margin-top: 20px; text-align: center;">
-                    <a href="../en/terms_and_conditions_en.html" class="btn-secondary" style="margin: 5px;">Terms and
-                        Conditions (EN)</a>
-                    <a href="../en/privacy_policy_en.html" class="btn-secondary" style="margin: 5px;">Privacy Policy
-                        (EN)</a>
-                </div>
-            </section>
-        <!-- sudoku-learning:start --><section class="container" id="learning"><h2>数独指南</h2><p>对照行、列和宫，找出数字能放在哪里。先看看自动解题演示，再自己试一道题。</p><div class="sudoku-experience xp-demo" id="lp-demo" data-demo data-style="standard"><p class="xp-caption">像这样逐步填入数字</p><div class="xp-controls"><button type="button" class="xp-button " data-action="play">播放演示</button><button type="button" class="xp-button xp-secondary" data-action="step">前进一步</button><button type="button" class="xp-button xp-secondary" data-action="reset">重新开始</button></div><div class="xp-stage"><div class="experience-grid" role="group" aria-label="体验数独盘面，9行9列"><span class="xp-cell xp-given">5</span><span class="xp-cell xp-given">3</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">7</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">1</span><span class="xp-cell xp-given">9</span><span class="xp-cell xp-given">5</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">9</span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">3</span><span class="xp-cell xp-given">4</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell xp-given">3</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">1</span><span class="xp-cell xp-given">7</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">2</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">2</span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">4</span><span class="xp-cell xp-given">1</span><span class="xp-cell xp-given">9</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">5</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">7</span><span class="xp-cell xp-given">9</span></div><div class="xp-effects" aria-hidden="true"></div></div><p class="xp-status" role="status">填入数字和完成行列宫时的特效可选择四种风格。演示没有声音。</p><div class="xp-options"><label>特效 <select data-setting="style"><option value="standard">标准</option><option value="sparkle">闪光</option><option value="neon">霓虹</option><option value="zen">禅意</option></select></label><label>速度 <select data-setting="speed"><option value="1400">慢速</option><option value="850" selected>正常</option><option value="350">快速</option></select></label><label><input type="checkbox" data-setting="effects" checked>显示特效</label></div><p class="xp-small">填入数字和完成行列宫时的特效可选择四种风格。演示没有声音。</p></div><p><a class="btn-secondary" href="learn/">边玩数独，边学习解题方法。 →</a></p></section><!-- sudoku-learning:end -->
+<html lang="zh-Hans" dir="ltr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudoku Hint - Number Place Solver &amp; Logic Teacher</title><link rel="icon" href="../favicon.ico"><meta name="description" content="报纸、杂志上的题目，也能拍照导入。 理解数字为何能填在这里，再继续自己解题。">
+<link rel="canonical" href="https://takekapp.com/NumberPlaceHint/zh_CN/landing_page_zh_CN.html"><link rel="alternate" hreflang="ja" href="https://takekapp.com/NumberPlaceHint/ja/landing_page_ja.html"><link rel="alternate" hreflang="en" href="https://takekapp.com/NumberPlaceHint/en/landing_page_en.html"><link rel="alternate" hreflang="ar" href="https://takekapp.com/NumberPlaceHint/ar/landing_page_ar.html"><link rel="alternate" hreflang="da" href="https://takekapp.com/NumberPlaceHint/da/landing_page_da.html"><link rel="alternate" hreflang="de" href="https://takekapp.com/NumberPlaceHint/de/landing_page_de.html"><link rel="alternate" hreflang="es" href="https://takekapp.com/NumberPlaceHint/es/landing_page_es.html"><link rel="alternate" hreflang="fr" href="https://takekapp.com/NumberPlaceHint/fr/landing_page_fr.html"><link rel="alternate" hreflang="hi" href="https://takekapp.com/NumberPlaceHint/hi/landing_page_hi.html"><link rel="alternate" hreflang="id" href="https://takekapp.com/NumberPlaceHint/id/landing_page_id.html"><link rel="alternate" hreflang="it" href="https://takekapp.com/NumberPlaceHint/it/landing_page_it.html"><link rel="alternate" hreflang="ko" href="https://takekapp.com/NumberPlaceHint/ko/landing_page_ko.html"><link rel="alternate" hreflang="nl" href="https://takekapp.com/NumberPlaceHint/nl/landing_page_nl.html"><link rel="alternate" hreflang="pl" href="https://takekapp.com/NumberPlaceHint/pl/landing_page_pl.html"><link rel="alternate" hreflang="pt" href="https://takekapp.com/NumberPlaceHint/pt/landing_page_pt.html"><link rel="alternate" hreflang="ru" href="https://takekapp.com/NumberPlaceHint/ru/landing_page_ru.html"><link rel="alternate" hreflang="sv" href="https://takekapp.com/NumberPlaceHint/sv/landing_page_sv.html"><link rel="alternate" hreflang="th" href="https://takekapp.com/NumberPlaceHint/th/landing_page_th.html"><link rel="alternate" hreflang="tr" href="https://takekapp.com/NumberPlaceHint/tr/landing_page_tr.html"><link rel="alternate" hreflang="uk" href="https://takekapp.com/NumberPlaceHint/uk/landing_page_uk.html"><link rel="alternate" hreflang="vi" href="https://takekapp.com/NumberPlaceHint/vi/landing_page_vi.html"><link rel="alternate" hreflang="zh-Hans" href="https://takekapp.com/NumberPlaceHint/zh_CN/landing_page_zh_CN.html"><link rel="alternate" hreflang="zh-Hant" href="https://takekapp.com/NumberPlaceHint/zh_TW/landing_page_zh_TW.html"><link rel="alternate" hreflang="x-default" href="https://takekapp.com/NumberPlaceHint/en/landing_page_en.html">
+<meta property="og:type" content="website"><meta property="og:url" content="https://takekapp.com/NumberPlaceHint/zh_CN/landing_page_zh_CN.html"><meta property="og:title" content="Sudoku Hint - Number Place Solver &amp; Logic Teacher"><meta property="og:description" content="报纸、杂志上的题目，也能拍照导入。 理解数字为何能填在这里，再继续自己解题。"><meta property="og:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/zh_CN/ogp_main.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Sudoku Hint - Number Place Solver &amp; Logic Teacher"><meta name="twitter:description" content="报纸、杂志上的题目，也能拍照导入。 理解数字为何能填在这里，再继续自己解题。"><meta name="twitter:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/zh_CN/ogp_main.png"><meta name="twitter:site" content="@takekapp">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "数独提示", "url": "https://takekapp.com/NumberPlaceHint/zh_CN/landing_page_zh_CN.html", "description": "报纸、杂志上的题目，也能拍照导入。 理解数字为何能填在这里，再继续自己解题。", "applicationCategory": "EducationalApplication", "operatingSystem": "Android, iOS", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "publisher": {"@type": "Organization", "name": "TakeKApp", "url": "https://takekapp.com/"}}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-0VCS46ZTHC');</script>
+<script defer src="/js/app_store_analytics.js"></script><link rel="stylesheet" href="../language_switcher.css"><link rel="stylesheet" href="../ja/landing-page.css?v=20261023"><script defer src="../ja/landing-page.js?v=20261023"></script></head>
+<body data-lp-redesign>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="site-header shell">
+ <a class="brand" href="landing_page_zh_CN.html" aria-label="数独提示 · 应用介绍"><img src="../images/app_icon/number_place_hint_app_icon_10241024_ios.png" width="36" height="36" alt=""><span>数独提示</span></a>
+ <nav class="header-links" aria-label="本页内容"><a href="#how-it-works">应用介绍</a><a href="#learning">数独指南</a></nav>
+ <nav id="language-switcher" aria-label="选择语言"></nav><script src="../language_switcher.js?v=20261023"></script>
+</header>
+<main id="main">
+ <div class="hero-band">
+  <section class="hero shell" aria-labelledby="hero-title">
+   <p class="hero-kicker">相机识别 · 带理由的提示</p>
+   <div class="hero-app"><img src="../images/app_icon/number_place_hint_app_icon_10241024_ios.png" width="76" height="76" alt="" decoding="async"><h1 id="hero-title">数独提示</h1></div>
+   <h2 class="hero-tagline">数独卡住了？<br><span>给你恰到好处的提示。</span></h2>
+   <p class="hero-lead">报纸、杂志上的题目，也能拍照导入。<br>理解数字为何能填在这里，再继续自己解题。</p>
+   <div class="store-links" aria-label="App Store / Google Play">
+ <a class="store-badge" data-analytics-position="hero" href="https://apps.apple.com/cn/app/id6758233715"><img src="../../commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="135" height="40" alt="App Store" decoding="async"></a>
+ <a class="store-badge google-play" data-analytics-position="hero" href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod"><img src="../../commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" width="155" height="46" alt="Google Play" decoding="async"></a>
+ </div>
+   <p class="store-note">iPhone、Android / 免费下载 · App 内购买</p>
+  </section>
+ </div>
+ <section class="screenshots-section shell" aria-label="实际应用画面" data-carousel>
+  <div class="screenshots-track" id="app-screenshots" tabindex="0" role="region" aria-label="实际应用画面">
+  <figure class="screenshot-card" data-carousel-item><img src="../images/lp/zh_CN/hint-explanation.png" width="1290" height="2796" alt="带理由的提示" decoding="async" fetchpriority="high"><figcaption><span>01</span>带理由的提示</figcaption></figure>
+<figure class="screenshot-card" data-carousel-item><img src="../images/lp/zh_CN/image-scan.png" width="1290" height="2796" alt="从图片识别" decoding="async" loading="lazy"><figcaption><span>02</span>从图片识别</figcaption></figure>
+<figure class="screenshot-card" data-carousel-item><img src="../images/lp/zh_CN/technique-practice.png" width="1290" height="2796" alt="按技巧练习" decoding="async" loading="lazy"><figcaption><span>03</span>按技巧练习</figcaption></figure>
+<figure class="screenshot-card" data-carousel-item><img src="../images/lp/zh_CN/gameplay.png" width="1290" height="2796" alt="候选笔记与假设模式" decoding="async" loading="lazy"><figcaption><span>04</span>候选笔记与假设模式</figcaption></figure>
+<figure class="screenshot-card" data-carousel-item><img src="../images/screen_shots/zh_CN/resized_slide_077.png" width="1290" height="2796" alt="舒适的主题" decoding="async" loading="lazy"><figcaption><span>05</span>舒适的主题</figcaption></figure>
+  </div>
+  <div class="carousel-dots" data-carousel-dots aria-label="实际应用画面" hidden></div>
+ </section>
+ <section class="problem-section shell" id="problems" aria-labelledby="problem-title">
+  <div class="section-heading"><p class="eyebrow">解题时，你也遇到过这些情况吗？</p><h2 id="problem-title">想知道答案。<br class="mobile-break">但更想自己解出来。</h2></div>
+  <div class="problem-grid">
+   <article><span class="problem-number" aria-hidden="true">01</span><h3>“接下来该看哪里？”</h3><p>反复检查棋盘，还是填不出数字，<br>一直卡在同一个地方。</p></article>
+   <article><span class="problem-number" aria-hidden="true">02</span><h3>“只看答案，还是不明白。”</h3><p>为什么这里一定是这个数字？<br>照着答案填，并不能满足好奇心。</p></article>
+   <article><span class="problem-number" aria-hidden="true">03</span><h3>“手动输入整道题太麻烦。”</h3><p>想把手头正在做的纸上数独，<br>直接放到应用里继续解。</p></article>
+  </div>
+ </section>
+ <section class="features-section" id="how-it-works" aria-labelledby="features-title">
+  <div class="shell">
+   <div class="section-heading"><p class="eyebrow">把卡住的地方，变成下一条线索</p><h2 id="features-title">数独提示<br>主要功能</h2></div>
+   <div class="feature-grid">
+    <article class="feature-card"><span class="feature-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 14h8l4-5h8l4 5h8v25H8z"/><circle cx="24" cy="26" r="8"/></svg></span><h3>拍下来，导入题目。</h3><p>从报纸或杂志的照片中识别数独，减少逐个输入数字的麻烦。</p><span class="feature-detail">从图片识别</span></article>
+    <article class="feature-card feature-card-primary"><span class="feature-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 33v-4a12 12 0 1 1 12 0v4zM18 38h12M21 43h6M24 3V0M8 10 4 7M40 10l4-3"/></svg></span><h3>看懂“为什么”。</h3><p>通过提示了解数字能填入的理由。不只是补上答案，也为下一步思考提供线索。</p><span class="feature-detail">带理由的提示</span></article>
+    <article class="feature-card"><span class="feature-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 18 21-10 21 10-21 10zM11 22v13c8 7 18 7 26 0V22M44 19v17"/></svg></span><h3>学会解题技巧。</h3><p>查看各类技巧的讲解和练习，再练习自己找出学过的技巧。</p><span class="feature-detail">按技巧练习</span></article>
+   </div>
+   <div class="assist-features"><h3>还有帮你慢慢思考的功能。</h3><ul><li>显示候选数</li><li>检查答案</li><li>高亮</li><li>临时模式</li><li>颜色主题与深色模式</li></ul></div>
+  </div>
+ </section>
+ <section class="recommended-section shell" id="recommended" aria-labelledby="recommended-title">
+  <div class="section-heading"><p class="eyebrow">献给享受独立解题乐趣的你</p><h2 id="recommended-title">适合这些用户</h2></div>
+  <ul class="recommended-list"><li><span aria-hidden="true">✓</span><div><h3>喜欢报纸和杂志上的数独</h3><p>导入平时在做的题目，从停下的地方继续。</p></div></li><li><span aria-hidden="true">✓</span><div><h3>想在看完整答案前，先获得一点提示</h3><p>理解卡住之处的理由，再自己往下解。</p></div></li><li><span aria-hidden="true">✓</span><div><h3>想学习数独解题技巧</h3><p>无论刚入门，还是想学下一个技巧。</p></div></li></ul>
+ </section>
+ <section class="learning-section" id="learning" aria-labelledby="learning-title">
+  <div class="shell">
+   <div class="section-heading"><p class="eyebrow">阅读 · 体验 · 练习</p><h2 id="learning-title">数独指南</h2><p>先在浏览器里试试。<br class="mobile-break">阅读讲解，或完整挑战一道题。</p></div>
+   <div class="guide-links"><a href="learn/"><span class="guide-mark" aria-hidden="true">01</span><h3>学习解题技巧</h3><p>从候选笔记，到解题技巧的讲解和练习。</p><span class="guide-arrow" aria-hidden="true">↗</span></a><a href="learn/play.html"><span class="guide-mark" aria-hidden="true">02</span><h3>玩一道数独</h3><p>需要时使用提示，试着把一道题解到最后。</p><span class="guide-arrow" aria-hidden="true">↗</span></a><a href="learn/enjoy.html"><span class="guide-mark" aria-hidden="true">03</span><h3>数独的乐趣</h3><p>了解规则，感受线索相连的乐趣。</p><span class="guide-arrow" aria-hidden="true">↗</span></a></div>
+   <details class="inline-demo"><summary>在本页看看提示如何起作用</summary><div class="inline-demo-content"><div class="demo-copy"><h3>为什么这个格子一定是 5？</h3><p>注意蓝框格子，打开提示看看。</p></div>
+   <div class="hint-preview" id="lp-demo" data-hint-preview data-state="initial">
+    <div class="preview-heading"><span>下一步提示</span><span class="preview-label">示例</span></div>
+    <div class="preview-grid" role="group" aria-label="体验数独盘面，9行9列"><span class="preview-cell is-given" aria-label="第1行第1列, 5">5</span><span class="preview-cell is-given" aria-label="第1行第2列, 3">3</span><span class="preview-cell" aria-label="第1行第3列, 空格"></span><span class="preview-cell" aria-label="第1行第4列, 空格"></span><span class="preview-cell is-given is-related" aria-label="第1行第5列, 7">7</span><span class="preview-cell" aria-label="第1行第6列, 空格"></span><span class="preview-cell" aria-label="第1行第7列, 空格"></span><span class="preview-cell" aria-label="第1行第8列, 空格"></span><span class="preview-cell" aria-label="第1行第9列, 空格"></span><span class="preview-cell is-given" aria-label="第2行第1列, 6">6</span><span class="preview-cell" aria-label="第2行第2列, 空格"></span><span class="preview-cell" aria-label="第2行第3列, 空格"></span><span class="preview-cell is-given" aria-label="第2行第4列, 1">1</span><span class="preview-cell is-given is-related" aria-label="第2行第5列, 9">9</span><span class="preview-cell is-given" aria-label="第2行第6列, 5">5</span><span class="preview-cell" aria-label="第2行第7列, 空格"></span><span class="preview-cell" aria-label="第2行第8列, 空格"></span><span class="preview-cell" aria-label="第2行第9列, 空格"></span><span class="preview-cell" aria-label="第3行第1列, 空格"></span><span class="preview-cell is-given" aria-label="第3行第2列, 9">9</span><span class="preview-cell is-given" aria-label="第3行第3列, 8">8</span><span class="preview-cell" aria-label="第3行第4列, 空格"></span><span class="preview-cell is-related" aria-label="第3行第5列, 空格"></span><span class="preview-cell" aria-label="第3行第6列, 空格"></span><span class="preview-cell" aria-label="第3行第7列, 空格"></span><span class="preview-cell is-given" aria-label="第3行第8列, 6">6</span><span class="preview-cell" aria-label="第3行第9列, 空格"></span><span class="preview-cell is-given" aria-label="第4行第1列, 8">8</span><span class="preview-cell" aria-label="第4行第2列, 空格"></span><span class="preview-cell" aria-label="第4行第3列, 空格"></span><span class="preview-cell is-related" aria-label="第4行第4列, 空格"></span><span class="preview-cell is-given is-related" aria-label="第4行第5列, 6">6</span><span class="preview-cell is-related" aria-label="第4行第6列, 空格"></span><span class="preview-cell" aria-label="第4行第7列, 空格"></span><span class="preview-cell" aria-label="第4行第8列, 空格"></span><span class="preview-cell is-given" aria-label="第4行第9列, 3">3</span><span class="preview-cell is-given is-related" aria-label="第5行第1列, 4">4</span><span class="preview-cell is-related" aria-label="第5行第2列, 空格"></span><span class="preview-cell is-related" aria-label="第5行第3列, 空格"></span><span class="preview-cell is-given is-related" aria-label="第5行第4列, 8">8</span><span class="preview-cell is-related is-target" aria-label="第5行第5列, 空格" data-preview-cell>?</span><span class="preview-cell is-given is-related" aria-label="第5行第6列, 3">3</span><span class="preview-cell is-related" aria-label="第5行第7列, 空格"></span><span class="preview-cell is-related" aria-label="第5行第8列, 空格"></span><span class="preview-cell is-given is-related" aria-label="第5行第9列, 1">1</span><span class="preview-cell is-given" aria-label="第6行第1列, 7">7</span><span class="preview-cell" aria-label="第6行第2列, 空格"></span><span class="preview-cell" aria-label="第6行第3列, 空格"></span><span class="preview-cell is-related" aria-label="第6行第4列, 空格"></span><span class="preview-cell is-given is-related" aria-label="第6行第5列, 2">2</span><span class="preview-cell is-related" aria-label="第6行第6列, 空格"></span><span class="preview-cell" aria-label="第6行第7列, 空格"></span><span class="preview-cell" aria-label="第6行第8列, 空格"></span><span class="preview-cell is-given" aria-label="第6行第9列, 6">6</span><span class="preview-cell" aria-label="第7行第1列, 空格"></span><span class="preview-cell is-given" aria-label="第7行第2列, 6">6</span><span class="preview-cell" aria-label="第7行第3列, 空格"></span><span class="preview-cell" aria-label="第7行第4列, 空格"></span><span class="preview-cell is-related" aria-label="第7行第5列, 空格"></span><span class="preview-cell" aria-label="第7行第6列, 空格"></span><span class="preview-cell is-given" aria-label="第7行第7列, 2">2</span><span class="preview-cell is-given" aria-label="第7行第8列, 8">8</span><span class="preview-cell" aria-label="第7行第9列, 空格"></span><span class="preview-cell" aria-label="第8行第1列, 空格"></span><span class="preview-cell" aria-label="第8行第2列, 空格"></span><span class="preview-cell" aria-label="第8行第3列, 空格"></span><span class="preview-cell is-given" aria-label="第8行第4列, 4">4</span><span class="preview-cell is-given is-related" aria-label="第8行第5列, 1">1</span><span class="preview-cell is-given" aria-label="第8行第6列, 9">9</span><span class="preview-cell" aria-label="第8行第7列, 空格"></span><span class="preview-cell" aria-label="第8行第8列, 空格"></span><span class="preview-cell is-given" aria-label="第8行第9列, 5">5</span><span class="preview-cell" aria-label="第9行第1列, 空格"></span><span class="preview-cell" aria-label="第9行第2列, 空格"></span><span class="preview-cell" aria-label="第9行第3列, 空格"></span><span class="preview-cell" aria-label="第9行第4列, 空格"></span><span class="preview-cell is-given is-related" aria-label="第9行第5列, 8">8</span><span class="preview-cell" aria-label="第9行第6列, 空格"></span><span class="preview-cell" aria-label="第9行第7列, 空格"></span><span class="preview-cell is-given" aria-label="第9行第8列, 7">7</span><span class="preview-cell is-given" aria-label="第9行第9列, 9">9</span></div>
+    <div class="preview-explanation" aria-live="polite" aria-atomic="true"><p class="hint-kicker" data-preview-kicker>下一步提示</p><p class="hint-reason" data-preview-reason>请检查空格中的候选数。</p></div>
+    <div class="preview-controls"><button class="button" type="button" data-preview-action hidden>下一步提示 <span aria-hidden="true">→</span></button><button class="reset-button" type="button" data-preview-reset hidden>重新开始</button></div>
+    <p class="preview-note">这是用于体验一步解法的网页示例，与应用中的显示不同。</p>
+    <noscript><p class="no-script">第5行第5列只剩候选数5，因此可以填入这个数字。</p></noscript>
+   </div>
+   </div></details>
+  </div>
+ </section>
+ <section class="closing-section" id="download" aria-labelledby="download-title"><div class="shell">
+  <p class="eyebrow">数独卡住时。</p><h2 id="download-title">让恰到好处的提示，<br>陪你解平时喜欢的数独。</h2><p>下载 数独提示</p>
+  <div class="store-links" aria-label="App Store / Google Play">
+ <a class="store-badge" data-analytics-position="download" href="https://apps.apple.com/cn/app/id6758233715"><img src="../../commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="135" height="40" alt="App Store" decoding="async"></a>
+ <a class="store-badge google-play" data-analytics-position="download" href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod"><img src="../../commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" width="155" height="46" alt="Google Play" decoding="async"></a>
+ </div>
+  <p class="store-note">免费下载 · App 内购买</p>
+ </div></section>
+ <section class="faq-section shell" id="faq" aria-labelledby="faq-title"><div class="section-heading"><h2 id="faq-title">常见问题</h2></div>
+  <div class="faq-list">
+   <details><summary>可以免费使用吗？</summary><div><p>可以免费下载和体验。提示、答案检查、图片识别等有使用次数限制；部分使用需要观看视频广告。</p><p>Premium 为按月或按年订阅，可移除广告，并无限使用提示和答案检查等功能。即使订阅 Premium，图片识别仍有上限。价格及使用条件请在应用内确认。</p></div></details>
+   <details><summary>可以使用报纸、杂志上的题目吗？</summary><div><p>可以导入数独的照片。开始前请检查识别出的数字，并修正错误。支持标准的 9×9 数独。</p></div></details>
+   <details><summary>没有自己的题目也能玩吗？</summary><div><p>可以挑战应用内的题目，也能查看技巧讲解并练习。部分题目和练习需要 Premium。</p></div></details>
+   <details><summary>安装前可以先体验吗？</summary><div><p>除了本页的一步演示，还能在浏览器中完整挑战一道题，并阅读技巧讲解、进行练习。</p><a class="text-link" href="learn/">数独指南 <span aria-hidden="true">→</span></a></div></details>
+  </div>
+ </section>
 </main>
-
-        <footer>
-            <div class="container">
-                <p>&copy; TakeKApp. All rights reserved.</p>
-            </div>
-        </footer>
-    </body>
-
+<footer class="site-footer shell"><p>© TakeKApp</p><nav aria-label="其他讲解"><a href="learn/">数独指南</a><a href="../en/privacy_policy_en.html">隐私政策 (English)</a><a href="../en/terms_and_conditions_en.html">使用条款 (English)</a><a href="../../about.html">开发者介绍</a></nav></footer>
+<nav class="takekapp-site-nav" data-takekapp-site-nav aria-label="TakeKApp"><a href="/">TakeKApp Apps</a><a href="/blog/">Development Blog</a></nav>
+<script type="application/json" id="lp-messages">{"initialKicker": "下一步提示", "initialReason": "请检查空格中的候选数。", "hint": "下一步提示", "reset": "重新开始", "candidateLabel": "第5行第5列, 候选数5", "hintKicker": "带理由的提示", "hintReason": "第5行第5列只剩候选数5，因此可以填入这个数字。", "place": "前进一步", "placedLabel": "第5行第5列, 5, 已填数字", "appliedKicker": "5 · 已填数字", "appliedReason": "需要时使用提示，试着把一道题解到最后。", "complete": "5 ✓", "resetLabel": "第5行第5列, 空格"}</script>
+</body>
 </html>

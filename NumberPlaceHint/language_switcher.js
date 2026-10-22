@@ -46,7 +46,9 @@
         vi: "Chọn ngôn ngữ", "zh-CN": "选择语言", "zh-TW": "選擇語言"
     };
 
-    const currentLanguage = document.documentElement.lang || "en";
+    const languageAliases = { "zh-Hans": "zh-CN", "zh-Hant": "zh-TW" };
+    const pageLanguage = document.documentElement.lang || "en";
+    const currentLanguage = languageAliases[pageLanguage] || pageLanguage;
     const labelText = labels[currentLanguage] || labels.en;
     const inner = document.createElement("div");
     inner.className = "language-switcher__inner";

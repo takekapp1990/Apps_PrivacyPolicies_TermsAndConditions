@@ -1,777 +1,102 @@
 <!DOCTYPE html>
-<html lang="it">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sudoku Hint - Number Place Solver & Logic Teacher</title>
-        <link rel="icon" href="../favicon.ico">
-        <!-- OGP & Twitter Card -->
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Suggerimenti Sudoku - Number Place Solver & Logic Teacher">
-        <meta property="og:description"
-            content="Scansiona con la fotocamera e ottieni suggerimenti logici. Un'app di Sudoku per imparare e migliorare.">
-        <!-- Image paths are placeholders -->
-        <!-- <meta property="og:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/it/ogp_main.png"> -->
-        <meta property="og:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/it/ogp_main.png">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Suggerimenti Sudoku - Number Place Solver & Logic Teacher">
-        <meta name="twitter:description"
-            content="Scansiona con la fotocamera e ottieni suggerimenti logici. Un'app di Sudoku per imparare e migliorare.">
-        <!-- <meta name="twitter:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/it/ogp_main.png"> -->
-        <meta name="twitter:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/it/ogp_main.png">
-        <meta name="twitter:site" content="@takekapp">
-
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-        <style>
-            /* Basic Styles */
-            body {
-                font-family: 'Open Sans', sans-serif;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                line-height: 1.6;
-                color: #333;
-                background-color: #f9f9f9;
-            }
-
-            .container {
-                max-width: 960px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-
-            h1,
-            h2,
-            h3 {
-                font-family: 'Montserrat', sans-serif;
-                color: #2c3e50;
-                text-align: center;
-                margin-bottom: 30px;
-            }
-
-            h1 {
-                font-size: 2.4em;
-                margin-top: 30px;
-            }
-
-            h2 {
-                font-size: 1.8em;
-                border-bottom: 2px solid #ddd;
-                padding-bottom: 10px;
-                margin-top: 15px;
-            }
-
-            h3 {
-                font-size: 1.8em;
-                color: #3498db;
-                margin-bottom: 15px;
-            }
-
-            p {
-                text-align: center;
-                margin-bottom: 20px;
-                font-size: 1.1em;
-                line-height: 1.8;
-            }
-
-            .hero {
-                background: linear-gradient(135deg, #3498db, #2c3e50);
-                color: white;
-                padding: 40px 20px;
-                text-align: center;
-                border-radius: 10px;
-                margin-bottom: 30px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            }
-
-            .app-icon {
-                width: 80px;
-                height: 80px;
-                border-radius: 16px;
-                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-                display: inline-block;
-                vertical-align: middle;
-                margin-left: 20px;
-            }
-
-            .hero-title {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 10px;
-            }
-
-            .hero-title h1 {
-                margin: 0;
-                color: white;
-                font-size: 2.6em;
-            }
-
-            .hero p {
-                font-size: 1.4em;
-                max-width: 700px;
-                margin: 0 auto 20px;
-            }
-
-            .btn-secondary {
-                display: inline-block;
-                background-color: #1da1f2;
-                color: white;
-                padding: 10px 20px;
-                border-radius: 8px;
-                text-decoration: none;
-                font-weight: bold;
-                font-size: 1em;
-                transition: background-color 0.3s ease;
-                margin: 5px;
-            }
-
-            .btn-secondary:hover {
-                background-color: #0d8bd9;
-            }
-
-            /* Store badges styling */
-            .store-badge {
-                text-decoration: none;
-                outline: none;
-            }
-
-            .store-badge img {
-                outline: none;
-                border: none;
-            }
-
-            .d-flex {
-                display: flex;
-            }
-
-            .justify-content-center {
-                justify-content: center;
-            }
-
-            .gap-3 {
-                gap: 1rem;
-            }
-
-            .flex-wrap {
-                flex-wrap: wrap;
-            }
-
-            /* Value Section */
-            .value-section {
-                background-color: #fff;
-                padding: 40px 20px;
-                border-radius: 10px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-                margin-bottom: 30px;
-            }
-
-            .value-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 30px;
-                margin-top: 40px;
-            }
-
-            .value-item {
-                background-color: #f8f9fa;
-                padding: 30px;
-                border-radius: 10px;
-                border-left: 5px solid #3498db;
-                text-align: center;
-            }
-
-            .value-item h3 {
-                color: #2c3e50;
-                margin-bottom: 15px;
-                text-align: center;
-                font-size: 1.2em;
-            }
-
-            .value-item p {
-                text-align: left;
-                color: #555;
-                margin-bottom: 0;
-            }
-
-            .value-item i {
-                display: block;
-                font-size: 3em;
-                margin-bottom: 20px;
-                color: #3498db;
-            }
-
-            /* Problem Section */
-            .problem-section {
-                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-                color: #2c3e50;
-                padding: 40px 20px 30px 20px;
-                border-radius: 16px;
-                box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
-                margin-bottom: 30px;
-            }
-
-            .problem-section h2 {
-                color: #e67e22;
-            }
-
-            .problem-cards {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                max-width: 700px;
-                margin: 0 auto;
-            }
-
-            .problem-card {
-                background: #fff;
-                border-radius: 12px;
-                box-shadow: 0 2px 12px rgba(52, 73, 94, 0.07);
-                padding: 28px 24px 20px 24px;
-                display: flex;
-                align-items: flex-start;
-                gap: 20px;
-            }
-
-            .problem-card .icon {
-                font-size: 1.8em;
-                flex-shrink: 0;
-                margin-top: 2px;
-                color: #3498db;
-            }
-
-            .problem-card-content {
-                flex: 1;
-            }
-
-            .problem-card-title {
-                font-weight: bold;
-                font-size: 1.15em;
-                margin-bottom: 8px;
-                color: #2c3e50;
-            }
-
-            .problem-card-desc {
-                color: #555;
-                font-size: 1em;
-                line-height: 1.7;
-            }
-
-            /* Solution Section */
-            .solution-section {
-                background-color: #ecf0f1;
-                padding: 40px 20px;
-                border-radius: 10px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-                margin-bottom: 30px;
-            }
-
-            .feature-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center;
-                margin-top: 30px;
-            }
-
-            .feature-item {
-                background-color: white;
-                padding: 25px;
-                border-radius: 8px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                width: calc(33% - 20px);
-                box-sizing: border-box;
-                text-align: center;
-            }
-
-            .feature-item h3 {
-                margin-top: 0;
-                margin-bottom: 10px;
-                font-size: 1.2em;
-                color: #2c3e50;
-            }
-
-            .feature-item i {
-                font-size: 3em;
-                margin-bottom: 15px;
-                display: block;
-            }
-
-            .feature-item .fa-camera {
-                color: #3498db;
-            }
-
-            .feature-item .fa-lightbulb {
-                color: #f1c40f;
-            }
-
-            .feature-item .fa-book {
-                color: #2ecc71;
-            }
-
-            .feature-item .fa-check-circle {
-                color: #e74c3c;
-            }
-
-            .feature-item .fa-pencil-alt {
-                color: #9b59b6;
-            }
-
-            .feature-item .fa-crown {
-                color: #34495e;
-            }
-
-            /* Download Section */
-            .download-section {
-                background: linear-gradient(135deg, #2c3e50, #3498db);
-                color: white;
-                padding: 40px 20px;
-                text-align: center;
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-                margin-bottom: 30px;
-            }
-
-            .download-section h2 {
-                color: white;
-                border-bottom: none;
-            }
-
-            .download-section p {
-                font-size: 1.2em;
-                margin-bottom: 25px;
-            }
-
-
-            /* Recommended Section */
-            .recommended-section {
-                background-color: #fff;
-                padding: 40px 20px;
-                border-radius: 10px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-                margin-bottom: 30px;
-                text-align: center;
-            }
-
-            .recommended-list {
-                display: inline-block;
-                text-align: left;
-                max-width: 600px;
-                width: 100%;
-            }
-
-            .recommended-list ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            .recommended-list li {
-                padding: 12px 15px;
-                border-bottom: 1px solid #eee;
-                font-size: 1.1em;
-            }
-
-            .recommended-list li:last-child {
-                border-bottom: none;
-            }
-
-            .recommended-list li i {
-                color: #27ae60;
-                margin-right: 12px;
-                width: 20px;
-                text-align: center;
-            }
-
-            /* Footer */
-            footer {
-                text-align: center;
-                padding: 20px;
-                font-size: 0.9em;
-                color: #777;
-                border-top: 1px solid #eee;
-                margin-top: 30px;
-            }
-
-            @media (max-width: 768px) {
-                h1 {
-                    font-size: 2em;
-                    margin-top: 20px;
-                }
-
-                .section,
-                .value-section,
-                .problem-section,
-                .solution-section,
-                .download-section,
-                .recommended-section {
-                    padding: 30px 15px;
-                }
-
-                .problem-card {
-                    flex-direction: row;
-                    align-items: center;
-                    padding: 15px 12px;
-                }
-
-                /* 2 columns for features on mobile */
-                .feature-item {
-                    width: calc(50% - 10px);
-                    padding: 15px 10px;
-                }
-
-                .feature-item i {
-                    font-size: 2em;
-                    margin-bottom: 10px;
-                }
-
-                .feature-item h3 {
-                    font-size: 1em;
-                    margin-bottom: 0;
-                }
-
-                /* 2 columns for values on mobile */
-                .value-grid {
-                    grid-template-columns: 1fr 1fr;
-                    gap: 15px;
-                    margin-top: 25px;
-                }
-
-                .value-item {
-                    padding: 15px 10px;
-                }
-
-                .value-item i {
-                    font-size: 2em;
-                    margin-bottom: 10px;
-                }
-
-                .value-item h3 {
-                    font-size: 1em;
-                    margin-bottom: 10px;
-                }
-
-                .value-item p {
-                    font-size: 0.85em;
-                    line-height: 1.4;
-                }
-
-                .recommended-list li {
-                    font-size: 1em;
-                    padding: 10px;
-                }
-            }
-        
-            /* Screenshots Section */
-            .screenshots-container {
-                overflow-x: auto;
-                overflow-y: hidden;
-                padding: 10px 0 30px 0;
-                margin-bottom: 10px;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: thin;
-                scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
-            }
-
-            .screenshots-container::-webkit-scrollbar {
-                height: 8px;
-            }
-
-            .screenshots-container::-webkit-scrollbar-track {
-                background: transparent;
-            }
-
-            .screenshots-container::-webkit-scrollbar-thumb {
-                background-color: rgba(0, 0, 0, 0.3);
-                border-radius: 4px;
-            }
-
-            .screenshots-wrapper {
-                display: flex;
-                gap: 20px;
-                padding: 10px 20px; /* Horizontal padding for first/last item visibility */
-            }
-
-            .screenshot-item {
-                flex: 0 0 auto;
-                width: 280px;
-                border-radius: 16px;
-                overflow: hidden;
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-                transition: transform 0.3s ease;
-                background-color: #fff;
-            }
-
-            .screenshot-item:hover {
-                transform: translateY(-5px);
-            }
-
-            .screenshot-item img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-
-            @media (max-width: 768px) {
-                .screenshot-item {
-                    width: 220px;
-                }
-            }
-
-        </style>
-    <meta name="description" content="Un assistente che ti spiega il &#x27;PERCHÉ&#x27;. Scansiona istantaneamente i puzzle impossibili con la fotocamera. Dai principianti agli esperti, porta le tue…">
-    <link rel="canonical" href="https://takekapp.com/NumberPlaceHint/it/landing_page_it.html">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "name": "Sudoku Hint",
-  "url": "https://takekapp.com/NumberPlaceHint/it/landing_page_it.html",
-  "description": "Un assistente che ti spiega il 'PERCHÉ'. Scansiona istantaneamente i puzzle impossibili con la fotocamera. Dai principianti agli esperti, porta le tue…",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "Android, iOS",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "TakeKApp",
-    "url": "https://takekapp.com/"
-  }
-}
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-0VCS46ZTHC');
-    </script>
-    <script defer src="/js/app_store_analytics.js"></script>
-    <link rel="alternate" hreflang="ar" href="https://takekapp.com/NumberPlaceHint/ar/landing_page_ar.html">
-    <link rel="alternate" hreflang="da" href="https://takekapp.com/NumberPlaceHint/da/landing_page_da.html">
-    <link rel="alternate" hreflang="de" href="https://takekapp.com/NumberPlaceHint/de/landing_page_de.html">
-    <link rel="alternate" hreflang="en" href="https://takekapp.com/NumberPlaceHint/en/landing_page_en.html">
-    <link rel="alternate" hreflang="es" href="https://takekapp.com/NumberPlaceHint/es/landing_page_es.html">
-    <link rel="alternate" hreflang="fr" href="https://takekapp.com/NumberPlaceHint/fr/landing_page_fr.html">
-    <link rel="alternate" hreflang="hi" href="https://takekapp.com/NumberPlaceHint/hi/landing_page_hi.html">
-    <link rel="alternate" hreflang="id" href="https://takekapp.com/NumberPlaceHint/id/landing_page_id.html">
-    <link rel="alternate" hreflang="it" href="https://takekapp.com/NumberPlaceHint/it/landing_page_it.html">
-    <link rel="alternate" hreflang="ja" href="https://takekapp.com/NumberPlaceHint/ja/landing_page_ja.html">
-    <link rel="alternate" hreflang="ko" href="https://takekapp.com/NumberPlaceHint/ko/landing_page_ko.html">
-    <link rel="alternate" hreflang="nl" href="https://takekapp.com/NumberPlaceHint/nl/landing_page_nl.html">
-    <link rel="alternate" hreflang="pl" href="https://takekapp.com/NumberPlaceHint/pl/landing_page_pl.html">
-    <link rel="alternate" hreflang="pt" href="https://takekapp.com/NumberPlaceHint/pt/landing_page_pt.html">
-    <link rel="alternate" hreflang="ru" href="https://takekapp.com/NumberPlaceHint/ru/landing_page_ru.html">
-    <link rel="alternate" hreflang="sv" href="https://takekapp.com/NumberPlaceHint/sv/landing_page_sv.html">
-    <link rel="alternate" hreflang="th" href="https://takekapp.com/NumberPlaceHint/th/landing_page_th.html">
-    <link rel="alternate" hreflang="tr" href="https://takekapp.com/NumberPlaceHint/tr/landing_page_tr.html">
-    <link rel="alternate" hreflang="uk" href="https://takekapp.com/NumberPlaceHint/uk/landing_page_uk.html">
-    <link rel="alternate" hreflang="vi" href="https://takekapp.com/NumberPlaceHint/vi/landing_page_vi.html">
-    <link rel="alternate" hreflang="zh-Hans" href="https://takekapp.com/NumberPlaceHint/zh_CN/landing_page_zh_CN.html">
-    <link rel="alternate" hreflang="zh-Hant" href="https://takekapp.com/NumberPlaceHint/zh_TW/landing_page_zh_TW.html">
-    <link rel="alternate" hreflang="x-default" href="https://takekapp.com/NumberPlaceHint/en/landing_page_en.html">
-<link rel="stylesheet" href="../ja/learn/experience.css"><link rel="stylesheet" href="../learning-locales/international.css"><script defer src="learn/experience-browser.js"></script></head>
-
-    <body>
-        <nav id="language-switcher"></nav>
-        <script src="../language_switcher.js"></script>
-        <header class="hero">
-            <div class="container">
-                <div class="hero-title">
-                    <h1>Suggerimenti Sudoku</h1>
-                    <!-- Image src can be added here -->
-                    <img src="../images/app_icon/number_place_hint_app_icon_10241024_ios.png" alt="App Icon"
-                        class="app-icon" decoding="async">
-                </div>
-                <p><strong>Un assistente che ti spiega il 'PERCHÉ'.</strong><br><br>
-                    Scansiona istantaneamente i puzzle impossibili con la fotocamera.<br>
-                    Dai principianti agli esperti, porta le tue abilità nel Sudoku al livello successivo.</p>
-                <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <!-- Links to be set later -->
-                    <a href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod" class="store-badge">
-                        <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
-                            alt="Get it on Google Play" height="60" decoding="async" loading="lazy">
-                    </a>
-                    <a href="https://toolbox.marketingtools.apple.com/en-us/app-store/it/app/6758233715" class="store-badge">
-                        <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-                            alt="Download on the App Store" height="60" decoding="async" loading="lazy">
-                    </a>
-                </div>
-            </div>
-        </header>
-
-        <!-- Screenshots Section -->
-        <section class="container" style="margin-top: -20px; margin-bottom: 20px; position: relative; z-index: 10;">
-            <div class="screenshots-container">
-                <div class="screenshots-wrapper">
-
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/it/resized_slide_050.png" alt="Screenshot 1" decoding="async" loading="lazy">
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/it/resized_slide_051.png" alt="Screenshot 2" decoding="async" loading="lazy">
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/it/resized_slide_052.png" alt="Screenshot 3" decoding="async" loading="lazy">
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/it/resized_slide_053.png" alt="Screenshot 4" decoding="async" loading="lazy">
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/it/resized_slide_054.png" alt="Screenshot 5" decoding="async" loading="lazy">
-                        </div>
-                </div>
-            </div>
-        </section>
-
-
-        <main class="container">
-
-            <section class="problem-section">
-                <h2>Hai questi problemi con il Sudoku?</h2>
-                <div class="problem-cards">
-                    <div class="problem-card">
-                        <span class="icon">🤔</span>
-                        <div class="problem-card-content">
-                            <div class="problem-card-title">Stuck on a puzzle</div>
-                            <div class="problem-card-desc">You're almost there, but can't figure out where you missed
-                                something.</div>
-                        </div>
-                    </div>
-                    <div class="problem-card">
-                        <span class="icon">🤯</span>
-                        <div class="problem-card-content">
-                            <div class="problem-card-title">Check the answer but don't know "Why?"</div>
-                            <div class="problem-card-desc">You see the number in the solution, but don't understand the
-                                logic behind it.</div>
-                        </div>
-                    </div>
-                    <div class="problem-card">
-                        <span class="icon">😩</span>
-                        <div class="problem-card-content">
-                            <div class="problem-card-title">Don't want tedious manual entry</div>
-                            <div class="problem-card-desc">Typing in every single number to transfer a puzzle to an app
-                                is a hassle.</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="value-section">
-                <h2>Cosa puoi fare con "Suggerimenti Sudoku"</h2>
-                <div class="value-grid">
-                    <div class="value-item">
-                        <i class="fas fa-camera"></i>
-                        <h3>📷 Scansione OCR Istantanea</h3>
-                        <p>Scatta semplicemente una foto del puzzle. Inizia istantaneamente senza inserimento manuale.
-                        </p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-lightbulb"></i>
-                        <h3>💡 Suggerimenti Logici</h3>
-                        <p>Spiega logicamente 'PERCHÉ' un numero è corretto. Non ti dà solo la risposta.</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>🎓 Impara le Tecniche</h3>
-                        <p>Padroneggia tutto, dalle basi alle tecniche avanzate, naturalmente giocando.</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-magic"></i>
-                        <h3>✨ Assistenza Comoda</h3>
-                        <p>Il riempimento automatico dei candidati e gli avvisi di errore ti aiutano a risolvere senza
-                            intoppi.</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-undo-alt"></i>
-                        <h3>↩️ Inserimento Provvisorio</h3>
-                        <p>Tentativi ed errori facili. "Se metto un 1 qui..." - annulla facilmente in qualsiasi momento.
-                        </p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-palette"></i>
-                        <h3>🎨 Personalizza il Look</h3>
-                        <p>Modalità scura amica degli occhi e vari temi di colore per adattarsi al tuo stile.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="solution-section">
-                <h2>Full Support Features</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <i class="fas fa-pencil-alt"></i>
-                        <h3>Candidate Notes</h3>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <h3>Answer Check</h3>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-highlighter"></i>
-                        <h3>Highlight Function</h3>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-crown"></i>
-                        <h3>Premium Plan</h3>
-                    </div>
-                </div>
-            </section>
-
-
-
-            <section class="recommended-section">
-                <h2>Recommended For</h2>
-                <div class="recommended-list">
-                    <ul>
-                        <li><i class="fas fa-check"></i> Sudoku Beginners</li>
-                        <li><i class="fas fa-check"></i> Sudoku Lovers</li>
-                        <li><i class="fas fa-check"></i> Those who love solving paper puzzles</li>
-                        <li><i class="fas fa-check"></i> Those who want to learn solving techniques</li>
-                        <li><i class="fas fa-check"></i> Those who want to solve carefully</li>
-                        <li><i class="fas fa-check"></i> Those who want just the right amount of hints</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="download-section" id="download">
-                <h2>Make your Sudoku life more comfortable.</h2>
-                <p>Download now and clear that puzzle you couldn't solve!</p>
-                <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <a href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod" class="store-badge">
-                        <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
-                            alt="Get it on Google Play" height="60" decoding="async" loading="lazy">
-                    </a>
-                    <a href="https://toolbox.marketingtools.apple.com/en-us/app-store/it/app/6758233715" class="store-badge">
-                        <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-                            alt="Download on the App Store" height="60" decoding="async" loading="lazy">
-                    </a>
-                </div>
-
-                <div style="margin-top: 20px; text-align: center;">
-                    <a href="../en/terms_and_conditions_en.html" class="btn-secondary" style="margin: 5px;">Termini e
-                        Condizioni (EN)</a>
-                    <a href="../en/privacy_policy_en.html" class="btn-secondary" style="margin: 5px;">Informativa sulla
-                        Privacy (EN)</a>
-                </div>
-            </section>
-        <!-- sudoku-learning:start --><section class="container" id="learning"><h2>Guida al sudoku</h2><p>Confronta righe, colonne e blocchi per trovare il posto di ogni numero. Guarda la demo e prova una griglia.</p><div class="sudoku-experience xp-demo" id="lp-demo" data-demo data-style="standard"><p class="xp-caption">Ecco come riempire la griglia</p><div class="xp-controls"><button type="button" class="xp-button " data-action="play">Avvia demo</button><button type="button" class="xp-button xp-secondary" data-action="step">Una mossa</button><button type="button" class="xp-button xp-secondary" data-action="reset">Ricomincia</button></div><div class="xp-stage"><div class="experience-grid" role="group" aria-label="Griglia di prova, 9 righe e 9 colonne"><span class="xp-cell xp-given">5</span><span class="xp-cell xp-given">3</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">7</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">1</span><span class="xp-cell xp-given">9</span><span class="xp-cell xp-given">5</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">9</span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">3</span><span class="xp-cell xp-given">4</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell xp-given">3</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">1</span><span class="xp-cell xp-given">7</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">2</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">2</span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">4</span><span class="xp-cell xp-given">1</span><span class="xp-cell xp-given">9</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">5</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">7</span><span class="xp-cell xp-given">9</span></div><div class="xp-effects" aria-hidden="true"></div></div><p class="xp-status" role="status">Quattro stili animano gli inserimenti e i gruppi completati. La demo è senza audio.</p><div class="xp-options"><label>Effetti <select data-setting="style"><option value="standard">Standard</option><option value="sparkle">Scintille</option><option value="neon">Neon</option><option value="zen">Zen</option></select></label><label>Velocità <select data-setting="speed"><option value="1400">Lenta</option><option value="850" selected>Normale</option><option value="350">Veloce</option></select></label><label><input type="checkbox" data-setting="effects" checked>Mostra effetti</label></div><p class="xp-small">Quattro stili animano gli inserimenti e i gruppi completati. La demo è senza audio.</p></div><p><a class="btn-secondary" href="learn/">Gioca a sudoku e impara a risolverlo. →</a></p></section><!-- sudoku-learning:end -->
+<html lang="it" dir="ltr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudoku Hint - Number Place Solver &amp; Logic Teacher</title><link rel="icon" href="../favicon.ico"><meta name="description" content="Scansiona i sudoku di giornali e riviste. Scopri perché un numero va in una casella e continua da solo.">
+<link rel="canonical" href="https://takekapp.com/NumberPlaceHint/it/landing_page_it.html"><link rel="alternate" hreflang="ja" href="https://takekapp.com/NumberPlaceHint/ja/landing_page_ja.html"><link rel="alternate" hreflang="en" href="https://takekapp.com/NumberPlaceHint/en/landing_page_en.html"><link rel="alternate" hreflang="ar" href="https://takekapp.com/NumberPlaceHint/ar/landing_page_ar.html"><link rel="alternate" hreflang="da" href="https://takekapp.com/NumberPlaceHint/da/landing_page_da.html"><link rel="alternate" hreflang="de" href="https://takekapp.com/NumberPlaceHint/de/landing_page_de.html"><link rel="alternate" hreflang="es" href="https://takekapp.com/NumberPlaceHint/es/landing_page_es.html"><link rel="alternate" hreflang="fr" href="https://takekapp.com/NumberPlaceHint/fr/landing_page_fr.html"><link rel="alternate" hreflang="hi" href="https://takekapp.com/NumberPlaceHint/hi/landing_page_hi.html"><link rel="alternate" hreflang="id" href="https://takekapp.com/NumberPlaceHint/id/landing_page_id.html"><link rel="alternate" hreflang="it" href="https://takekapp.com/NumberPlaceHint/it/landing_page_it.html"><link rel="alternate" hreflang="ko" href="https://takekapp.com/NumberPlaceHint/ko/landing_page_ko.html"><link rel="alternate" hreflang="nl" href="https://takekapp.com/NumberPlaceHint/nl/landing_page_nl.html"><link rel="alternate" hreflang="pl" href="https://takekapp.com/NumberPlaceHint/pl/landing_page_pl.html"><link rel="alternate" hreflang="pt" href="https://takekapp.com/NumberPlaceHint/pt/landing_page_pt.html"><link rel="alternate" hreflang="ru" href="https://takekapp.com/NumberPlaceHint/ru/landing_page_ru.html"><link rel="alternate" hreflang="sv" href="https://takekapp.com/NumberPlaceHint/sv/landing_page_sv.html"><link rel="alternate" hreflang="th" href="https://takekapp.com/NumberPlaceHint/th/landing_page_th.html"><link rel="alternate" hreflang="tr" href="https://takekapp.com/NumberPlaceHint/tr/landing_page_tr.html"><link rel="alternate" hreflang="uk" href="https://takekapp.com/NumberPlaceHint/uk/landing_page_uk.html"><link rel="alternate" hreflang="vi" href="https://takekapp.com/NumberPlaceHint/vi/landing_page_vi.html"><link rel="alternate" hreflang="zh-Hans" href="https://takekapp.com/NumberPlaceHint/zh_CN/landing_page_zh_CN.html"><link rel="alternate" hreflang="zh-Hant" href="https://takekapp.com/NumberPlaceHint/zh_TW/landing_page_zh_TW.html"><link rel="alternate" hreflang="x-default" href="https://takekapp.com/NumberPlaceHint/en/landing_page_en.html">
+<meta property="og:type" content="website"><meta property="og:url" content="https://takekapp.com/NumberPlaceHint/it/landing_page_it.html"><meta property="og:title" content="Sudoku Hint - Number Place Solver &amp; Logic Teacher"><meta property="og:description" content="Scansiona i sudoku di giornali e riviste. Scopri perché un numero va in una casella e continua da solo."><meta property="og:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/it/ogp_main.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Sudoku Hint - Number Place Solver &amp; Logic Teacher"><meta name="twitter:description" content="Scansiona i sudoku di giornali e riviste. Scopri perché un numero va in una casella e continua da solo."><meta name="twitter:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/it/ogp_main.png"><meta name="twitter:site" content="@takekapp">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Suggerimenti Sudoku", "url": "https://takekapp.com/NumberPlaceHint/it/landing_page_it.html", "description": "Scansiona i sudoku di giornali e riviste. Scopri perché un numero va in una casella e continua da solo.", "applicationCategory": "EducationalApplication", "operatingSystem": "Android, iOS", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "publisher": {"@type": "Organization", "name": "TakeKApp", "url": "https://takekapp.com/"}}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-0VCS46ZTHC');</script>
+<script defer src="/js/app_store_analytics.js"></script><link rel="stylesheet" href="../language_switcher.css"><link rel="stylesheet" href="../ja/landing-page.css?v=20261023"><script defer src="../ja/landing-page.js?v=20261023"></script></head>
+<body data-lp-redesign>
+<a class="skip-link" href="#main">Vai al contenuto</a>
+<header class="site-header shell">
+ <a class="brand" href="landing_page_it.html" aria-label="Suggerimenti Sudoku · Informazioni sull’app"><img src="../images/app_icon/number_place_hint_app_icon_10241024_ios.png" width="36" height="36" alt=""><span>Suggerimenti Sudoku</span></a>
+ <nav class="header-links" aria-label="In questa pagina"><a href="#how-it-works">Informazioni sull’app</a><a href="#learning">Guida al sudoku</a></nav>
+ <nav id="language-switcher" aria-label="Scegli lingua"></nav><script src="../language_switcher.js?v=20261023"></script>
+</header>
+<main id="main">
+ <div class="hero-band">
+  <section class="hero shell" aria-labelledby="hero-title">
+   <p class="hero-kicker">Scansione con fotocamera · Indizi spiegati</p>
+   <div class="hero-app"><img src="../images/app_icon/number_place_hint_app_icon_10241024_ios.png" width="76" height="76" alt="" decoding="async"><h1 id="hero-title">Suggerimenti Sudoku</h1></div>
+   <h2 class="hero-tagline">Bloccato con un sudoku?<br><span>L’indizio che ti serve.</span></h2>
+   <p class="hero-lead">Scansiona i sudoku di giornali e riviste.<br>Scopri perché un numero va in una casella e continua da solo.</p>
+   <div class="store-links" aria-label="App Store / Google Play">
+ <a class="store-badge" data-analytics-position="hero" href="https://apps.apple.com/it/app/id6758233715"><img src="../../commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="135" height="40" alt="App Store" decoding="async"></a>
+ <a class="store-badge google-play" data-analytics-position="hero" href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod"><img src="../../commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" width="155" height="46" alt="Google Play" decoding="async"></a>
+ </div>
+   <p class="store-note">iPhone e Android / Download gratuito · Acquisti in-app</p>
+  </section>
+ </div>
+ <section class="screenshots-section shell" aria-label="Schermate reali dell’app" data-carousel>
+  <div class="screenshots-track" id="app-screenshots" tabindex="0" role="region" aria-label="Schermate reali dell’app">
+  <figure class="screenshot-card" data-carousel-item><img src="../images/lp/it/hint-explanation.png" width="1290" height="2796" alt="Indizi spiegati" decoding="async" fetchpriority="high"><figcaption><span>01</span>Indizi spiegati</figcaption></figure>
+<figure class="screenshot-card" data-carousel-item><img src="../images/lp/it/image-scan.png" width="1290" height="2796" alt="Lettura da immagine" decoding="async" loading="lazy"><figcaption><span>02</span>Lettura da immagine</figcaption></figure>
+<figure class="screenshot-card" data-carousel-item><img src="../images/lp/it/technique-practice.png" width="1290" height="2796" alt="Esercizi per tecnica" decoding="async" loading="lazy"><figcaption><span>03</span>Esercizi per tecnica</figcaption></figure>
+<figure class="screenshot-card" data-carousel-item><img src="../images/lp/it/gameplay.png" width="1290" height="2796" alt="Note e modalità di prova" decoding="async" loading="lazy"><figcaption><span>04</span>Note e modalità di prova</figcaption></figure>
+<figure class="screenshot-card" data-carousel-item><img src="../images/screen_shots/it/resized_slide_053.png" width="1290" height="2796" alt="Temi confortevoli" decoding="async" loading="lazy"><figcaption><span>05</span>Temi confortevoli</figcaption></figure>
+  </div>
+  <div class="carousel-dots" data-carousel-dots aria-label="Schermate reali dell’app" hidden></div>
+ </section>
+ <section class="problem-section shell" id="problems" aria-labelledby="problem-title">
+  <div class="section-heading"><p class="eyebrow">Ti succede mentre giochi?</p><h2 id="problem-title">Vuoi sapere la risposta.<br class="mobile-break">Ma vuoi risolverlo da solo.</h2></div>
+  <div class="problem-grid">
+   <article><span class="problem-number" aria-hidden="true">01</span><h3>«Dove dovrei guardare adesso?»</h3><p>Controlli la griglia più e più volte,<br>ma resti bloccato nello stesso punto.</p></article>
+   <article><span class="problem-number" aria-hidden="true">02</span><h3>«La risposta da sola non mi spiega nulla.»</h3><p>Perché quel numero va proprio lì?<br>Copiare la soluzione non ti basta.</p></article>
+   <article><span class="problem-number" aria-hidden="true">03</span><h3>«Inserire tutta la griglia richiede troppo tempo.»</h3><p>Vuoi prendere il sudoku su carta che stai risolvendo<br>e continuarlo nell’app.</p></article>
+  </div>
+ </section>
+ <section class="features-section" id="how-it-works" aria-labelledby="features-title">
+  <div class="shell">
+   <div class="section-heading"><p class="eyebrow">Da un ostacolo a un indizio</p><h2 id="features-title">Suggerimenti Sudoku<br>Funzionalità</h2></div>
+   <div class="feature-grid">
+    <article class="feature-card"><span class="feature-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 14h8l4-5h8l4 5h8v25H8z"/><circle cx="24" cy="26" r="8"/></svg></span><h3>Fotografa e inizia.</h3><p>Leggi un sudoku di un giornale o una rivista da una foto, riducendo l’inserimento manuale dei numeri.</p><span class="feature-detail">Lettura da immagine</span></article>
+    <article class="feature-card feature-card-primary"><span class="feature-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 33v-4a12 12 0 1 1 12 0v4zM18 38h12M21 43h6M24 3V0M8 10 4 7M40 10l4-3"/></svg></span><h3>Comprendi il «perché».</h3><p>Leggi il ragionamento dietro una mossa e usalo per trovare il passo successivo, invece di copiare solo la risposta.</p><span class="feature-detail">Indizi spiegati</span></article>
+    <article class="feature-card"><span class="feature-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 18 21-10 21 10-21 10zM11 22v13c8 7 18 7 26 0V22M44 19v17"/></svg></span><h3>Impara a risolvere.</h3><p>Consulta spiegazioni ed esercizi dedicati alle tecniche e allenati a riconoscerle da solo.</p><span class="feature-detail">Esercizi per tecnica</span></article>
+   </div>
+   <div class="assist-features"><h3>Strumenti per ragionare con calma.</h3><ul><li>Mostra candidati</li><li>Controlla risposta</li><li>Evidenzia</li><li>Modo Provvisorio</li><li>Temi di colore e modalità scura</li></ul></div>
+  </div>
+ </section>
+ <section class="recommended-section shell" id="recommended" aria-labelledby="recommended-title">
+  <div class="section-heading"><p class="eyebrow">Per chi ama trovare la soluzione da sé</p><h2 id="recommended-title">A chi è rivolta?</h2></div>
+  <ul class="recommended-list"><li><span aria-hidden="true">✓</span><div><h3>Ti piacciono i sudoku di giornali e riviste</h3><p>Importa la tua griglia e riprendi da dove eri rimasto.</p></div></li><li><span aria-hidden="true">✓</span><div><h3>Vuoi un indizio prima di vedere tutta la soluzione</h3><p>Comprendi il passaggio difficile e poi continua da solo.</p></div></li><li><span aria-hidden="true">✓</span><div><h3>Vuoi imparare le tecniche del sudoku</h3><p>Per principianti e per chi vuole imparare un’altra tecnica.</p></div></li></ul>
+ </section>
+ <section class="learning-section" id="learning" aria-labelledby="learning-title">
+  <div class="shell">
+   <div class="section-heading"><p class="eyebrow">Leggi · Prova · Esercitati</p><h2 id="learning-title">Guida al sudoku</h2><p>Inizia dal browser.<br class="mobile-break">Leggi una guida o gioca una griglia completa.</p></div>
+   <div class="guide-links"><a href="learn/"><span class="guide-mark" aria-hidden="true">01</span><h3>Impara le tecniche</h3><p>Dalle note sui candidati alle tecniche e agli esercizi.</p><span class="guide-arrow" aria-hidden="true">↗</span></a><a href="learn/play.html"><span class="guide-mark" aria-hidden="true">02</span><h3>Gioca una griglia</h3><p>Prova a completare una griglia con gli indizi quando servono.</p><span class="guide-arrow" aria-hidden="true">↗</span></a><a href="learn/enjoy.html"><span class="guide-mark" aria-hidden="true">03</span><h3>Il bello del sudoku</h3><p>Scopri le regole e il piacere di collegare gli indizi.</p><span class="guide-arrow" aria-hidden="true">↗</span></a></div>
+   <details class="inline-demo"><summary>Vedi qui come funziona un indizio</summary><div class="inline-demo-content"><div class="demo-copy"><h3>Perché questa casella deve contenere 5?</h3><p>Guarda la casella con il bordo blu e apri l’indizio.</p></div>
+   <div class="hint-preview" id="lp-demo" data-hint-preview data-state="initial">
+    <div class="preview-heading"><span>Indizio per la prossima mossa</span><span class="preview-label">Esempio</span></div>
+    <div class="preview-grid" role="group" aria-label="Griglia di prova, 9 righe e 9 colonne"><span class="preview-cell is-given" aria-label="riga 1, colonna 1, 5">5</span><span class="preview-cell is-given" aria-label="riga 1, colonna 2, 3">3</span><span class="preview-cell" aria-label="riga 1, colonna 3, casella vuota"></span><span class="preview-cell" aria-label="riga 1, colonna 4, casella vuota"></span><span class="preview-cell is-given is-related" aria-label="riga 1, colonna 5, 7">7</span><span class="preview-cell" aria-label="riga 1, colonna 6, casella vuota"></span><span class="preview-cell" aria-label="riga 1, colonna 7, casella vuota"></span><span class="preview-cell" aria-label="riga 1, colonna 8, casella vuota"></span><span class="preview-cell" aria-label="riga 1, colonna 9, casella vuota"></span><span class="preview-cell is-given" aria-label="riga 2, colonna 1, 6">6</span><span class="preview-cell" aria-label="riga 2, colonna 2, casella vuota"></span><span class="preview-cell" aria-label="riga 2, colonna 3, casella vuota"></span><span class="preview-cell is-given" aria-label="riga 2, colonna 4, 1">1</span><span class="preview-cell is-given is-related" aria-label="riga 2, colonna 5, 9">9</span><span class="preview-cell is-given" aria-label="riga 2, colonna 6, 5">5</span><span class="preview-cell" aria-label="riga 2, colonna 7, casella vuota"></span><span class="preview-cell" aria-label="riga 2, colonna 8, casella vuota"></span><span class="preview-cell" aria-label="riga 2, colonna 9, casella vuota"></span><span class="preview-cell" aria-label="riga 3, colonna 1, casella vuota"></span><span class="preview-cell is-given" aria-label="riga 3, colonna 2, 9">9</span><span class="preview-cell is-given" aria-label="riga 3, colonna 3, 8">8</span><span class="preview-cell" aria-label="riga 3, colonna 4, casella vuota"></span><span class="preview-cell is-related" aria-label="riga 3, colonna 5, casella vuota"></span><span class="preview-cell" aria-label="riga 3, colonna 6, casella vuota"></span><span class="preview-cell" aria-label="riga 3, colonna 7, casella vuota"></span><span class="preview-cell is-given" aria-label="riga 3, colonna 8, 6">6</span><span class="preview-cell" aria-label="riga 3, colonna 9, casella vuota"></span><span class="preview-cell is-given" aria-label="riga 4, colonna 1, 8">8</span><span class="preview-cell" aria-label="riga 4, colonna 2, casella vuota"></span><span class="preview-cell" aria-label="riga 4, colonna 3, casella vuota"></span><span class="preview-cell is-related" aria-label="riga 4, colonna 4, casella vuota"></span><span class="preview-cell is-given is-related" aria-label="riga 4, colonna 5, 6">6</span><span class="preview-cell is-related" aria-label="riga 4, colonna 6, casella vuota"></span><span class="preview-cell" aria-label="riga 4, colonna 7, casella vuota"></span><span class="preview-cell" aria-label="riga 4, colonna 8, casella vuota"></span><span class="preview-cell is-given" aria-label="riga 4, colonna 9, 3">3</span><span class="preview-cell is-given is-related" aria-label="riga 5, colonna 1, 4">4</span><span class="preview-cell is-related" aria-label="riga 5, colonna 2, casella vuota"></span><span class="preview-cell is-related" aria-label="riga 5, colonna 3, casella vuota"></span><span class="preview-cell is-given is-related" aria-label="riga 5, colonna 4, 8">8</span><span class="preview-cell is-related is-target" aria-label="riga 5, colonna 5, casella vuota" data-preview-cell>?</span><span class="preview-cell is-given is-related" aria-label="riga 5, colonna 6, 3">3</span><span class="preview-cell is-related" aria-label="riga 5, colonna 7, casella vuota"></span><span class="preview-cell is-related" aria-label="riga 5, colonna 8, casella vuota"></span><span class="preview-cell is-given is-related" aria-label="riga 5, colonna 9, 1">1</span><span class="preview-cell is-given" aria-label="riga 6, colonna 1, 7">7</span><span class="preview-cell" aria-label="riga 6, colonna 2, casella vuota"></span><span class="preview-cell" aria-label="riga 6, colonna 3, casella vuota"></span><span class="preview-cell is-related" aria-label="riga 6, colonna 4, casella vuota"></span><span class="preview-cell is-given is-related" aria-label="riga 6, colonna 5, 2">2</span><span class="preview-cell is-related" aria-label="riga 6, colonna 6, casella vuota"></span><span class="preview-cell" aria-label="riga 6, colonna 7, casella vuota"></span><span class="preview-cell" aria-label="riga 6, colonna 8, casella vuota"></span><span class="preview-cell is-given" aria-label="riga 6, colonna 9, 6">6</span><span class="preview-cell" aria-label="riga 7, colonna 1, casella vuota"></span><span class="preview-cell is-given" aria-label="riga 7, colonna 2, 6">6</span><span class="preview-cell" aria-label="riga 7, colonna 3, casella vuota"></span><span class="preview-cell" aria-label="riga 7, colonna 4, casella vuota"></span><span class="preview-cell is-related" aria-label="riga 7, colonna 5, casella vuota"></span><span class="preview-cell" aria-label="riga 7, colonna 6, casella vuota"></span><span class="preview-cell is-given" aria-label="riga 7, colonna 7, 2">2</span><span class="preview-cell is-given" aria-label="riga 7, colonna 8, 8">8</span><span class="preview-cell" aria-label="riga 7, colonna 9, casella vuota"></span><span class="preview-cell" aria-label="riga 8, colonna 1, casella vuota"></span><span class="preview-cell" aria-label="riga 8, colonna 2, casella vuota"></span><span class="preview-cell" aria-label="riga 8, colonna 3, casella vuota"></span><span class="preview-cell is-given" aria-label="riga 8, colonna 4, 4">4</span><span class="preview-cell is-given is-related" aria-label="riga 8, colonna 5, 1">1</span><span class="preview-cell is-given" aria-label="riga 8, colonna 6, 9">9</span><span class="preview-cell" aria-label="riga 8, colonna 7, casella vuota"></span><span class="preview-cell" aria-label="riga 8, colonna 8, casella vuota"></span><span class="preview-cell is-given" aria-label="riga 8, colonna 9, 5">5</span><span class="preview-cell" aria-label="riga 9, colonna 1, casella vuota"></span><span class="preview-cell" aria-label="riga 9, colonna 2, casella vuota"></span><span class="preview-cell" aria-label="riga 9, colonna 3, casella vuota"></span><span class="preview-cell" aria-label="riga 9, colonna 4, casella vuota"></span><span class="preview-cell is-given is-related" aria-label="riga 9, colonna 5, 8">8</span><span class="preview-cell" aria-label="riga 9, colonna 6, casella vuota"></span><span class="preview-cell" aria-label="riga 9, colonna 7, casella vuota"></span><span class="preview-cell is-given" aria-label="riga 9, colonna 8, 7">7</span><span class="preview-cell is-given" aria-label="riga 9, colonna 9, 9">9</span></div>
+    <div class="preview-explanation" aria-live="polite" aria-atomic="true"><p class="hint-kicker" data-preview-kicker>Indizio per la prossima mossa</p><p class="hint-reason" data-preview-reason>Controlla i candidati di una casella vuota.</p></div>
+    <div class="preview-controls"><button class="button" type="button" data-preview-action hidden>Indizio per la prossima mossa <span aria-hidden="true">→</span></button><button class="reset-button" type="button" data-preview-reset hidden>Ricomincia</button></div>
+    <p class="preview-note">Questo esempio web permette di provare una mossa. L’app ha una visualizzazione diversa.</p>
+    <noscript><p class="no-script">riga 5, colonna 5 ha solo il candidato 5, quindi puoi inserirlo lì.</p></noscript>
+   </div>
+   </div></details>
+  </div>
+ </section>
+ <section class="closing-section" id="download" aria-labelledby="download-title"><div class="shell">
+  <p class="eyebrow">Quando un sudoku ti blocca.</p><h2 id="download-title">L’indizio giusto<br>per i tuoi sudoku preferiti.</h2><p>Scarica Suggerimenti Sudoku</p>
+  <div class="store-links" aria-label="App Store / Google Play">
+ <a class="store-badge" data-analytics-position="download" href="https://apps.apple.com/it/app/id6758233715"><img src="../../commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" width="135" height="40" alt="App Store" decoding="async"></a>
+ <a class="store-badge google-play" data-analytics-position="download" href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod"><img src="../../commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" width="155" height="46" alt="Google Play" decoding="async"></a>
+ </div>
+  <p class="store-note">Download gratuito · Acquisti in-app</p>
+ </div></section>
+ <section class="faq-section shell" id="faq" aria-labelledby="faq-title"><div class="section-heading"><h2 id="faq-title">Domande frequenti</h2></div>
+  <div class="faq-list">
+   <details><summary>Posso usarla gratis?</summary><div><p>L’app si scarica e si prova gratuitamente. Indizi, controlli e letture di immagini hanno limiti di utilizzo; alcune operazioni richiedono un annuncio video.</p><p>Premium è un abbonamento mensile o annuale. Rimuove gli annunci e include indizi e controlli illimitati. La lettura delle immagini resta limitata anche con Premium. Prezzi e condizioni sono indicati nell’app.</p></div></details>
+   <details><summary>Posso usare griglie di giornali e riviste?</summary><div><p>Importa una foto del sudoku. Controlla i numeri riconosciuti e correggi gli errori prima di iniziare. Sono supportati i sudoku classici di 9×9.</p></div></details>
+   <details><summary>Posso giocare senza una mia griglia?</summary><div><p>Puoi usare le griglie integrate, le spiegazioni e gli esercizi sulle tecniche. Alcune griglie e alcuni esercizi richiedono Premium.</p></div></details>
+   <details><summary>Posso provare prima di installare?</summary><div><p>Oltre a questa demo di una mossa, puoi giocare una griglia completa nel browser e consultare guide ed esercizi.</p><a class="text-link" href="learn/">Guida al sudoku <span aria-hidden="true">→</span></a></div></details>
+  </div>
+ </section>
 </main>
-
-        <footer>
-            <div class="container">
-                <p>&copy; TakeKApp. All rights reserved.</p>
-            </div>
-        </footer>
-    </body>
-
+<footer class="site-footer shell"><p>© TakeKApp</p><nav aria-label="Altre guide"><a href="learn/">Guida al sudoku</a><a href="../en/privacy_policy_en.html">Privacy (English)</a><a href="../en/terms_and_conditions_en.html">Condizioni d’uso (English)</a><a href="../../about.html">Informazioni sullo sviluppatore</a></nav></footer>
+<nav class="takekapp-site-nav" data-takekapp-site-nav aria-label="TakeKApp"><a href="/">TakeKApp Apps</a><a href="/blog/">Development Blog</a></nav>
+<script type="application/json" id="lp-messages">{"initialKicker": "Indizio per la prossima mossa", "initialReason": "Controlla i candidati di una casella vuota.", "hint": "Indizio per la prossima mossa", "reset": "Ricomincia", "candidateLabel": "riga 5, colonna 5, candidati 5", "hintKicker": "Indizi spiegati", "hintReason": "riga 5, colonna 5 ha solo il candidato 5, quindi puoi inserirlo lì.", "place": "Una mossa", "placedLabel": "riga 5, colonna 5, 5, numero inserito", "appliedKicker": "5 · numero inserito", "appliedReason": "Prova a completare una griglia con gli indizi quando servono.", "complete": "5 ✓", "resetLabel": "riga 5, colonna 5, casella vuota"}</script>
+</body>
 </html>

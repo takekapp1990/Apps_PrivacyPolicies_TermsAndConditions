@@ -1,774 +1,102 @@
 <!DOCTYPE html>
-<html lang="ja">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ナンプレのヒント - 数独の解き方がわかる学習アプリ</title>
-        <link rel="icon" href="../favicon.ico">
-        <!-- OGP & Twitter Card -->
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="ナンプレのヒント - 数独の解き方がわかる学習アプリ">
-        <meta property="og:description" content="カメラで読み取って、解き方のヒントを解説。答えを見るだけじゃない、実力がつくナンプレアプリ。">
-        <!-- 画像パスはプレースホルダー -->
-        <meta property="og:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/ja/ogp_main.png">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="ナンプレのヒント - 数独の解き方がわかる学習アプリ">
-        <meta name="twitter:description" content="カメラで読み取って、解き方のヒントを解説。答えを見るだけじゃない、実力がつくナンプレアプリ。">
-        <meta name="twitter:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/ja/ogp_main.png">
-        <meta name="twitter:site" content="@takekapp">
-
-        <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@700&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-        <style>
-            /* 基本スタイル */
-            body {
-                font-family: 'Noto Sans JP', sans-serif;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                line-height: 1.6;
-                color: #333;
-                background-color: #f9f9f9;
-            }
-
-            .container {
-                max-width: 960px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-
-            h1,
-            h2,
-            h3 {
-                font-family: 'Montserrat', sans-serif;
-                color: #2c3e50;
-                text-align: center;
-                margin-bottom: 30px;
-            }
-
-            h1 {
-                font-size: 2.4em;
-                margin-top: 30px;
-            }
-
-            h2 {
-                font-size: 1.8em;
-                border-bottom: 2px solid #ddd;
-                padding-bottom: 10px;
-                margin-top: 15px;
-            }
-
-            h3 {
-                font-size: 1.8em;
-                color: #3498db;
-                margin-bottom: 15px;
-            }
-
-            p {
-                text-align: center;
-                margin-bottom: 20px;
-                font-size: 1.1em;
-                line-height: 1.8;
-            }
-
-            .hero {
-                background: linear-gradient(135deg, #3498db, #2c3e50);
-                color: white;
-                padding: 40px 20px;
-                text-align: center;
-                border-radius: 10px;
-                margin-bottom: 30px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            }
-
-            .app-icon {
-                width: 80px;
-                height: 80px;
-                border-radius: 16px;
-                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-                display: inline-block;
-                vertical-align: middle;
-                margin-left: 20px;
-            }
-
-            .hero-title {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 10px;
-            }
-
-            .hero-title h1 {
-                margin: 0;
-                color: white;
-                font-size: 2.6em;
-            }
-
-            .hero p {
-                font-size: 1.4em;
-                max-width: 700px;
-                margin: 0 auto 20px;
-            }
-
-            .btn-secondary {
-                display: inline-block;
-                background-color: #1da1f2;
-                color: white;
-                padding: 10px 20px;
-                border-radius: 8px;
-                text-decoration: none;
-                font-weight: bold;
-                font-size: 1em;
-                transition: background-color 0.3s ease;
-                margin: 5px;
-            }
-
-            .btn-secondary:hover {
-                background-color: #0d8bd9;
-            }
-
-            /* Store badges styling */
-            .store-badge {
-                text-decoration: none;
-                outline: none;
-            }
-
-            .store-badge img {
-                outline: none;
-                border: none;
-            }
-
-            .d-flex {
-                display: flex;
-            }
-
-            .justify-content-center {
-                justify-content: center;
-            }
-
-            .gap-3 {
-                gap: 1rem;
-            }
-
-            .flex-wrap {
-                flex-wrap: wrap;
-            }
-
-            /* 価値提案セクション */
-            .value-section {
-                background-color: #fff;
-                padding: 40px 20px;
-                border-radius: 10px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-                margin-bottom: 30px;
-            }
-
-            .value-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 30px;
-                margin-top: 40px;
-            }
-
-            .value-item {
-                background-color: #f8f9fa;
-                padding: 30px;
-                border-radius: 10px;
-                border-left: 5px solid #3498db;
-                text-align: center;
-            }
-
-            .value-item h3 {
-                color: #2c3e50;
-                margin-bottom: 15px;
-                text-align: center;
-                font-size: 1.2em;
-            }
-
-            .value-item p {
-                text-align: left;
-                color: #555;
-                margin-bottom: 0;
-            }
-
-            .value-item i {
-                display: block;
-                font-size: 3em;
-                margin-bottom: 20px;
-                color: #3498db;
-            }
-
-            /* 課題セクション */
-            .problem-section {
-                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-                color: #2c3e50;
-                padding: 40px 20px 30px 20px;
-                border-radius: 16px;
-                box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
-                margin-bottom: 30px;
-            }
-
-            .problem-section h2 {
-                color: #e67e22;
-            }
-
-            .problem-cards {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                max-width: 700px;
-                margin: 0 auto;
-            }
-
-            .problem-card {
-                background: #fff;
-                border-radius: 12px;
-                box-shadow: 0 2px 12px rgba(52, 73, 94, 0.07);
-                padding: 28px 24px 20px 24px;
-                display: flex;
-                align-items: flex-start;
-                gap: 20px;
-            }
-
-            .problem-card .icon {
-                font-size: 1.8em;
-                flex-shrink: 0;
-                margin-top: 2px;
-                color: #3498db;
-            }
-
-            .problem-card-content {
-                flex: 1;
-            }
-
-            .problem-card-title {
-                font-weight: bold;
-                font-size: 1.15em;
-                margin-bottom: 8px;
-                color: #2c3e50;
-            }
-
-            .problem-card-desc {
-                color: #555;
-                font-size: 1em;
-                line-height: 1.7;
-            }
-
-            /* 解決策セクション */
-            .solution-section {
-                background-color: #ecf0f1;
-                padding: 40px 20px;
-                border-radius: 10px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-                margin-bottom: 30px;
-            }
-
-            .feature-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center;
-                margin-top: 30px;
-            }
-
-            .feature-item {
-                background-color: white;
-                padding: 25px;
-                border-radius: 8px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                width: calc(33% - 20px);
-                box-sizing: border-box;
-                text-align: center;
-            }
-
-            .feature-item h3 {
-                margin-top: 0;
-                margin-bottom: 10px;
-                font-size: 1.2em;
-                color: #2c3e50;
-            }
-
-            .feature-item i {
-                font-size: 3em;
-                margin-bottom: 15px;
-                display: block;
-            }
-
-            .feature-item .fa-camera {
-                color: #3498db;
-            }
-
-            .feature-item .fa-lightbulb {
-                color: #f1c40f;
-            }
-
-            .feature-item .fa-book {
-                color: #2ecc71;
-            }
-
-            .feature-item .fa-check-circle {
-                color: #e74c3c;
-            }
-
-            .feature-item .fa-pencil-alt {
-                color: #9b59b6;
-            }
-
-            .feature-item .fa-crown {
-                color: #34495e;
-            }
-
-            /* 事前登録/ダウンロードセクション */
-            .download-section {
-                background: linear-gradient(135deg, #2c3e50, #3498db);
-                color: white;
-                padding: 40px 20px;
-                text-align: center;
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-                margin-bottom: 30px;
-            }
-
-            .download-section h2 {
-                color: white;
-                border-bottom: none;
-            }
-
-            .download-section p {
-                font-size: 1.2em;
-                margin-bottom: 25px;
-            }
-
-
-            /* Recommended Section */
-            .recommended-section {
-                background-color: #fff;
-                padding: 40px 20px;
-                border-radius: 10px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-                margin-bottom: 30px;
-                text-align: center;
-            }
-
-            .recommended-list {
-                display: inline-block;
-                text-align: left;
-                max-width: 600px;
-                width: 100%;
-            }
-
-            .recommended-list ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            .recommended-list li {
-                padding: 12px 15px;
-                border-bottom: 1px solid #eee;
-                font-size: 1.1em;
-            }
-
-            .recommended-list li:last-child {
-                border-bottom: none;
-            }
-
-            .recommended-list li i {
-                color: #27ae60;
-                margin-right: 12px;
-                width: 20px;
-                text-align: center;
-            }
-
-            /* フッター */
-            footer {
-                text-align: center;
-                padding: 20px;
-                font-size: 0.9em;
-                color: #777;
-                border-top: 1px solid #eee;
-                margin-top: 30px;
-            }
-
-            @media (max-width: 768px) {
-                h1 {
-                    font-size: 2em;
-                    margin-top: 20px;
-                }
-
-                .section,
-                .value-section,
-                .problem-section,
-                .solution-section,
-                .download-section,
-                .recommended-section {
-                    padding: 30px 15px;
-                }
-
-                .problem-card {
-                    flex-direction: row;
-                    align-items: center;
-                    padding: 15px 12px;
-                }
-
-                /* 2 columns for features on mobile */
-                .feature-item {
-                    width: calc(50% - 10px);
-                    padding: 15px 10px;
-                }
-
-                .feature-item i {
-                    font-size: 2em;
-                    margin-bottom: 10px;
-                }
-
-                .feature-item h3 {
-                    font-size: 1em;
-                    margin-bottom: 0;
-                }
-
-                /* 2 columns for values on mobile */
-                .value-grid {
-                    grid-template-columns: 1fr 1fr;
-                    gap: 15px;
-                    margin-top: 25px;
-                }
-
-                .value-item {
-                    padding: 15px 10px;
-                }
-
-                .value-item i {
-                    font-size: 2em;
-                    margin-bottom: 10px;
-                }
-
-                .value-item h3 {
-                    font-size: 1em;
-                    margin-bottom: 10px;
-                }
-
-                .value-item p {
-                    font-size: 0.85em;
-                    line-height: 1.4;
-                }
-
-                .recommended-list li {
-                    font-size: 1em;
-                    padding: 10px;
-                }
-            }
-        
-            /* Screenshots Section */
-            .screenshots-container {
-                overflow-x: auto;
-                overflow-y: hidden;
-                padding: 10px 0 30px 0;
-                margin-bottom: 10px;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: thin;
-                scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
-            }
-
-            .screenshots-container::-webkit-scrollbar {
-                height: 8px;
-            }
-
-            .screenshots-container::-webkit-scrollbar-track {
-                background: transparent;
-            }
-
-            .screenshots-container::-webkit-scrollbar-thumb {
-                background-color: rgba(0, 0, 0, 0.3);
-                border-radius: 4px;
-            }
-
-            .screenshots-wrapper {
-                display: flex;
-                gap: 20px;
-                padding: 10px 20px; /* Horizontal padding for first/last item visibility */
-            }
-
-            .screenshot-item {
-                flex: 0 0 auto;
-                width: 280px;
-                border-radius: 16px;
-                overflow: hidden;
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-                transition: transform 0.3s ease;
-                background-color: #fff;
-            }
-
-            .screenshot-item:hover {
-                transform: translateY(-5px);
-            }
-
-            .screenshot-item img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-
-            @media (max-width: 768px) {
-                .screenshot-item {
-                    width: 220px;
-                }
-            }
-
-        </style>
-    <meta name="description" content="「なぜその数字が入るのか」がわかる、解説付きサポーター。 解けない問題をカメラで一瞬スキャン。 初心者から上級者まで、あなたのナンプレ力を次のレベルへ。">
-    <link rel="canonical" href="https://takekapp.com/NumberPlaceHint/ja/landing_page_ja.html">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "name": "ナンプレのヒント",
-  "url": "https://takekapp.com/NumberPlaceHint/ja/landing_page_ja.html",
-  "description": "「なぜその数字が入るのか」がわかる、解説付きサポーター。 解けない問題をカメラで一瞬スキャン。 初心者から上級者まで、あなたのナンプレ力を次のレベルへ。",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "Android, iOS",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "JPY"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "TakeKApp",
-    "url": "https://takekapp.com/"
-  }
-}
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-0VCS46ZTHC');
-    </script>
-    <script defer src="/js/app_store_analytics.js"></script>
-    <link rel="alternate" hreflang="ar" href="https://takekapp.com/NumberPlaceHint/ar/landing_page_ar.html">
-    <link rel="alternate" hreflang="da" href="https://takekapp.com/NumberPlaceHint/da/landing_page_da.html">
-    <link rel="alternate" hreflang="de" href="https://takekapp.com/NumberPlaceHint/de/landing_page_de.html">
-    <link rel="alternate" hreflang="en" href="https://takekapp.com/NumberPlaceHint/en/landing_page_en.html">
-    <link rel="alternate" hreflang="es" href="https://takekapp.com/NumberPlaceHint/es/landing_page_es.html">
-    <link rel="alternate" hreflang="fr" href="https://takekapp.com/NumberPlaceHint/fr/landing_page_fr.html">
-    <link rel="alternate" hreflang="hi" href="https://takekapp.com/NumberPlaceHint/hi/landing_page_hi.html">
-    <link rel="alternate" hreflang="id" href="https://takekapp.com/NumberPlaceHint/id/landing_page_id.html">
-    <link rel="alternate" hreflang="it" href="https://takekapp.com/NumberPlaceHint/it/landing_page_it.html">
-    <link rel="alternate" hreflang="ja" href="https://takekapp.com/NumberPlaceHint/ja/landing_page_ja.html">
-    <link rel="alternate" hreflang="ko" href="https://takekapp.com/NumberPlaceHint/ko/landing_page_ko.html">
-    <link rel="alternate" hreflang="nl" href="https://takekapp.com/NumberPlaceHint/nl/landing_page_nl.html">
-    <link rel="alternate" hreflang="pl" href="https://takekapp.com/NumberPlaceHint/pl/landing_page_pl.html">
-    <link rel="alternate" hreflang="pt" href="https://takekapp.com/NumberPlaceHint/pt/landing_page_pt.html">
-    <link rel="alternate" hreflang="ru" href="https://takekapp.com/NumberPlaceHint/ru/landing_page_ru.html">
-    <link rel="alternate" hreflang="sv" href="https://takekapp.com/NumberPlaceHint/sv/landing_page_sv.html">
-    <link rel="alternate" hreflang="th" href="https://takekapp.com/NumberPlaceHint/th/landing_page_th.html">
-    <link rel="alternate" hreflang="tr" href="https://takekapp.com/NumberPlaceHint/tr/landing_page_tr.html">
-    <link rel="alternate" hreflang="uk" href="https://takekapp.com/NumberPlaceHint/uk/landing_page_uk.html">
-    <link rel="alternate" hreflang="vi" href="https://takekapp.com/NumberPlaceHint/vi/landing_page_vi.html">
-    <link rel="alternate" hreflang="zh-Hans" href="https://takekapp.com/NumberPlaceHint/zh_CN/landing_page_zh_CN.html">
-    <link rel="alternate" hreflang="zh-Hant" href="https://takekapp.com/NumberPlaceHint/zh_TW/landing_page_zh_TW.html">
-    <link rel="alternate" hreflang="x-default" href="https://takekapp.com/NumberPlaceHint/en/landing_page_en.html">
-<link rel="stylesheet" href="learn/experience.css">
-<script defer src="learn/experience-browser.js"></script>
-</head>
-
-    <body>
-        <nav id="language-switcher"></nav>
-        <script src="../language_switcher.js"></script>
-        <header class="hero">
-            <div class="container">
-                <div class="hero-title">
-                    <h1>ナンプレのヒント</h1>
-                    <!-- アプリアイコン画像があればここにsrcを入れる -->
-                    <img src="../images/app_icon/number_place_hint_app_icon_10241024_ios.png" alt="アプリアイコン"
-                        class="app-icon" decoding="async">
-                </div>
-                <p><strong>「なぜその数字が入るのか」がわかる、解説付きサポーター。</strong><br><br>
-                    解けない問題をカメラで一瞬スキャン。<br>
-                    初心者から上級者まで、あなたのナンプレ力を次のレベルへ。</p>
-                <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <!-- リンクは後で設定 -->
-                    <a href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod" class="store-badge">
-                        <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
-                            alt="Google Playで手に入れよう" height="60" decoding="async" loading="lazy">
-                    </a>
-                    <a href="https://apps.apple.com/jp/app/%E3%83%8A%E3%83%B3%E3%83%97%E3%83%AC%E3%81%AE%E3%83%92%E3%83%B3%E3%83%88/id6758233715" class="store-badge">
-                        <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
-                            alt="App Storeからダウンロード" height="60" decoding="async" loading="lazy">
-                    </a>
-                </div>
-            </div>
-        </header>
-
-        <!-- Screenshots Section -->
-        <section class="container" style="margin-top: -20px; margin-bottom: 20px; position: relative; z-index: 10;">
-            <div class="screenshots-container">
-                <div class="screenshots-wrapper">
-
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/ja/resized_slide_001.png" alt="Screenshot 1" decoding="async" loading="lazy">
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/ja/resized_slide_002.png" alt="Screenshot 2" decoding="async" loading="lazy">
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/ja/resized_slide_003.png" alt="Screenshot 3" decoding="async" loading="lazy">
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/ja/resized_slide_004.png" alt="Screenshot 4" decoding="async" loading="lazy">
-                        </div>
-                        <div class="screenshot-item">
-                            <img src="../images/screen_shots/ja/resized_slide_005.png" alt="Screenshot 5" decoding="async" loading="lazy">
-                        </div>
-                </div>
-            </div>
-        </section>
-
-
-        <main class="container">
-
-            <section class="problem-section">
-                <h2>ナンプレでこんな悩みはありませんか？</h2>
-                <div class="problem-cards">
-                    <div class="problem-card">
-                        <span class="icon">🤔</span>
-                        <div class="problem-card-content">
-                            <div class="problem-card-title">どうしても解けない問題がある</div>
-                            <div class="problem-card-desc">あと少しなのに、どこを見落としているのかわからない。</div>
-                        </div>
-                    </div>
-                    <div class="problem-card">
-                        <span class="icon">🤯</span>
-                        <div class="problem-card-content">
-                            <div class="problem-card-title">答えを見ても「なぜ？」かわからない</div>
-                            <div class="problem-card-desc">解答ページの数字を見ても、そこに決まる理由が理解できない。</div>
-                        </div>
-                    </div>
-                    <div class="problem-card">
-                        <span class="icon">😩</span>
-                        <div class="problem-card-content">
-                            <div class="problem-card-title">面倒な手入力はしたくない</div>
-                            <div class="problem-card-desc">アプリに問題を移すとき、すべての数字を手打ちするのは大変。</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="value-section">
-                <h2>「ナンプレのヒント」でできること</h2>
-                <div class="value-grid">
-                    <div class="value-item">
-                        <i class="fas fa-camera"></i>
-                        <h3>📷 瞬間OCRスキャン</h3>
-                        <p>新聞や雑誌の問題をカメラで撮るだけ。手入力の手間なしで即スタート。</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-lightbulb"></i>
-                        <h3>💡 根拠がわかるヒント</h3>
-                        <p>「なぜその数字が入るのか」を論理的に解説。答えを教えるだけではありません。</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>🎓 手筋を学んで上達</h3>
-                        <p>基本の手筋から上級テクニックまで、実戦形式で自然に身につきます。</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-magic"></i>
-                        <h3>✨ 快適アシスト機能</h3>
-                        <p>候補数字の自動入力や、ミスした箇所の警告表示で、サクサク解き進められます。</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-undo-alt"></i>
-                        <h3>↩️ 安心の仮確定モード</h3>
-                        <p>「もしここに1が入ったら...」を気軽に試行錯誤。いつでも元の状態に戻せます。</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-palette"></i>
-                        <h3>🎨 自分好みにカスタム</h3>
-                        <p>目に優しいダークモードや、選べるカラーテーマで見やすく調整できます。</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="solution-section">
-                <h2>充実の機能でサポート</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <i class="fas fa-pencil-alt"></i>
-                        <h3>候補メモ機能</h3>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <h3>正解チェック</h3>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-highlighter"></i>
-                        <h3>ハイライト機能</h3>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-crown"></i>
-                        <h3>プレミアムプラン</h3>
-                    </div>
-                </div>
-            </section>
-
-
-
-            <section class="recommended-section">
-                <h2>こんな方におすすめ</h2>
-                <div class="recommended-list">
-                    <ul>
-                        <li><i class="fas fa-check"></i> ナンプレ初心者</li>
-                        <li><i class="fas fa-check"></i> 数独が好きな方</li>
-                        <li><i class="fas fa-check"></i> 新聞や雑誌に載っているナンプレを解くのが好きな方</li>
-                        <li><i class="fas fa-check"></i> ナンプレの解法を学びたい</li>
-                        <li><i class="fas fa-check"></i> ナンプレをじっくり解きたい</li>
-                        <li><i class="fas fa-check"></i> ナンプレのちょうど良いヒントが欲しい</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="learning-section" id="learning" style="margin: 36px 0; padding: 30px 20px; background: #e9f3f8; border-radius: 10px;">
-                <h2>ナンプレの楽しみ方と解き方</h2>
-                <p>数字が入る理由を、自動で解くデモで見てみませんか。<br>1問遊べる体験版と、手筋ごとの解説・練習も用意しています。</p>
-                <div class="sudoku-experience xp-demo" id="lp-demo" data-demo data-style="standard"><p class="xp-caption">こんな感じで数字を埋めていこう</p><div class="xp-controls"><button type="button" class="xp-button" data-action="play">デモを再生</button><button type="button" class="xp-button xp-secondary" data-action="step">一手進める</button><button type="button" class="xp-button xp-secondary" data-action="reset">最初に戻す</button></div><div class="xp-stage"><div class="experience-grid" role="group" aria-label="自動で解くデモの盤面、9行9列"><span class="xp-cell xp-given">5</span><span class="xp-cell xp-given">3</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">7</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">1</span><span class="xp-cell xp-given">9</span><span class="xp-cell xp-given">5</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">9</span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">3</span><span class="xp-cell xp-given">4</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell xp-given">3</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">1</span><span class="xp-cell xp-given">7</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">2</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell xp-given">6</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">2</span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">4</span><span class="xp-cell xp-given">1</span><span class="xp-cell xp-given">9</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">5</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">8</span><span class="xp-cell "></span><span class="xp-cell "></span><span class="xp-cell xp-given">7</span><span class="xp-cell xp-given">9</span></div><div class="xp-effects" aria-hidden="true"></div></div><p class="xp-status" role="status">画面に表示されると、音なしで自動再生します。</p><div class="xp-options"><label>演出 <select data-setting="style"><option value="standard">スタンダード</option><option value="sparkle">スパークル</option><option value="neon">ネオン</option><option value="zen">禅</option></select></label><label>速さ <select data-setting="speed"><option value="1400">ゆっくり</option><option value="850" selected>ふつう</option><option value="350">速く</option></select></label><label><input type="checkbox" data-setting="effects" checked>演出を表示</label></div><p class="xp-small">数字を入れるときやマスがそろったときの演出を、4種類から選べます。デモは音なしで再生します。</p><noscript><p>デモの再生にはJavaScriptが必要です。</p></noscript></div>
-                <p><a href="learn/" class="btn-secondary" style="background: #166a9b;">楽しみ方・体験版を見る →</a></p>
-                <p style="font-size: 0.95em;"><a href="learn/play.html">ナンプレを1問遊ぶ</a> ／ <a href="learn/enjoy.html">面白さ・楽しみ方を読む</a></p>
-            </section>
-
-            <section class="download-section" id="download">
-                <h2>あなたのナンプレライフを、もっと快適に。</h2>
-                <p>今すぐダウンロードして、解けなかったあの問題をクリアしましょう！</p>
-                <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <a href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod" class="store-badge">
-                        <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
-                            alt="Google Playで手に入れよう" height="60" decoding="async" loading="lazy">
-                    </a>
-                    <a href="https://apps.apple.com/jp/app/%E3%83%8A%E3%83%B3%E3%83%97%E3%83%AC%E3%81%AE%E3%83%92%E3%83%B3%E3%83%88/id6758233715" class="store-badge">
-                        <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
-                            alt="App Storeからダウンロード" height="60" decoding="async" loading="lazy">
-                    </a>
-                </div>
-
-                <div style="margin-top: 20px; text-align: center;">
-                    <a href="terms_and_conditions_ja.html" class="btn-secondary" style="margin: 5px;">利用規約</a>
-                    <a href="privacy_policy_ja.html" class="btn-secondary" style="margin: 5px;">プライバシーポリシー</a>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="container">
-                <p>&copy; TakeKApp. All rights reserved.</p>
-            </div>
-        </footer>
-    </body>
-
+<html lang="ja" dir="ltr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ナンプレのヒント - 数独の解き方がわかる学習アプリ</title><link rel="icon" href="../favicon.ico"><meta name="description" content="新聞や雑誌の問題も、カメラで取り込み。 数字が決まる理由を知って、また自分で解き進められます。">
+<link rel="canonical" href="https://takekapp.com/NumberPlaceHint/ja/landing_page_ja.html"><link rel="alternate" hreflang="ja" href="https://takekapp.com/NumberPlaceHint/ja/landing_page_ja.html"><link rel="alternate" hreflang="en" href="https://takekapp.com/NumberPlaceHint/en/landing_page_en.html"><link rel="alternate" hreflang="ar" href="https://takekapp.com/NumberPlaceHint/ar/landing_page_ar.html"><link rel="alternate" hreflang="da" href="https://takekapp.com/NumberPlaceHint/da/landing_page_da.html"><link rel="alternate" hreflang="de" href="https://takekapp.com/NumberPlaceHint/de/landing_page_de.html"><link rel="alternate" hreflang="es" href="https://takekapp.com/NumberPlaceHint/es/landing_page_es.html"><link rel="alternate" hreflang="fr" href="https://takekapp.com/NumberPlaceHint/fr/landing_page_fr.html"><link rel="alternate" hreflang="hi" href="https://takekapp.com/NumberPlaceHint/hi/landing_page_hi.html"><link rel="alternate" hreflang="id" href="https://takekapp.com/NumberPlaceHint/id/landing_page_id.html"><link rel="alternate" hreflang="it" href="https://takekapp.com/NumberPlaceHint/it/landing_page_it.html"><link rel="alternate" hreflang="ko" href="https://takekapp.com/NumberPlaceHint/ko/landing_page_ko.html"><link rel="alternate" hreflang="nl" href="https://takekapp.com/NumberPlaceHint/nl/landing_page_nl.html"><link rel="alternate" hreflang="pl" href="https://takekapp.com/NumberPlaceHint/pl/landing_page_pl.html"><link rel="alternate" hreflang="pt" href="https://takekapp.com/NumberPlaceHint/pt/landing_page_pt.html"><link rel="alternate" hreflang="ru" href="https://takekapp.com/NumberPlaceHint/ru/landing_page_ru.html"><link rel="alternate" hreflang="sv" href="https://takekapp.com/NumberPlaceHint/sv/landing_page_sv.html"><link rel="alternate" hreflang="th" href="https://takekapp.com/NumberPlaceHint/th/landing_page_th.html"><link rel="alternate" hreflang="tr" href="https://takekapp.com/NumberPlaceHint/tr/landing_page_tr.html"><link rel="alternate" hreflang="uk" href="https://takekapp.com/NumberPlaceHint/uk/landing_page_uk.html"><link rel="alternate" hreflang="vi" href="https://takekapp.com/NumberPlaceHint/vi/landing_page_vi.html"><link rel="alternate" hreflang="zh-Hans" href="https://takekapp.com/NumberPlaceHint/zh_CN/landing_page_zh_CN.html"><link rel="alternate" hreflang="zh-Hant" href="https://takekapp.com/NumberPlaceHint/zh_TW/landing_page_zh_TW.html"><link rel="alternate" hreflang="x-default" href="https://takekapp.com/NumberPlaceHint/en/landing_page_en.html">
+<meta property="og:type" content="website"><meta property="og:url" content="https://takekapp.com/NumberPlaceHint/ja/landing_page_ja.html"><meta property="og:title" content="ナンプレのヒント - 数独の解き方がわかる学習アプリ"><meta property="og:description" content="新聞や雑誌の問題も、カメラで取り込み。 数字が決まる理由を知って、また自分で解き進められます。"><meta property="og:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/ja/ogp_main.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ナンプレのヒント - 数独の解き方がわかる学習アプリ"><meta name="twitter:description" content="新聞や雑誌の問題も、カメラで取り込み。 数字が決まる理由を知って、また自分で解き進められます。"><meta name="twitter:image" content="https://takekapp.com/NumberPlaceHint/images/ogp_images/ja/ogp_main.png"><meta name="twitter:site" content="@takekapp">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "ナンプレのヒント", "url": "https://takekapp.com/NumberPlaceHint/ja/landing_page_ja.html", "description": "新聞や雑誌の問題も、カメラで取り込み。 数字が決まる理由を知って、また自分で解き進められます。", "applicationCategory": "EducationalApplication", "operatingSystem": "Android, iOS", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "publisher": {"@type": "Organization", "name": "TakeKApp", "url": "https://takekapp.com/"}}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-0VCS46ZTHC');</script>
+<script defer src="/js/app_store_analytics.js"></script><link rel="stylesheet" href="../language_switcher.css"><link rel="stylesheet" href="../fonts/fonts.css"><link rel="stylesheet" href="../ja/landing-page.css?v=20261023"><script defer src="../ja/landing-page.js?v=20261023"></script></head>
+<body data-lp-redesign>
+<a class="skip-link" href="#main">本文へスキップ</a>
+<header class="site-header shell">
+ <a class="brand" href="landing_page_ja.html" aria-label="ナンプレのヒント ホーム"><img src="../images/app_icon/number_place_hint_app_icon_10241024_ios.png" width="36" height="36" alt=""><span>ナンプレのヒント</span></a>
+ <nav class="header-links" aria-label="ページ内メニュー"><a href="#how-it-works">アプリの機能</a><a href="#learning">解き方ガイド</a></nav>
+ <nav id="language-switcher" aria-label="言語を選択"></nav><script src="../language_switcher.js?v=20261023"></script>
+</header>
+<main id="main">
+ <div class="hero-band">
+  <section class="hero shell" aria-labelledby="hero-title">
+   <p class="hero-kicker">カメラで読み取り・理由付きのヒント</p>
+   <div class="hero-app"><img src="../images/app_icon/number_place_hint_app_icon_10241024_ios.png" width="76" height="76" alt="" decoding="async"><h1 id="hero-title">ナンプレのヒント</h1></div>
+   <h2 class="hero-tagline">ナンプレで詰まった？<br><span>ちょうど良いヒントを。</span></h2>
+   <p class="hero-lead">新聞や雑誌の問題も、カメラで取り込み。<br>数字が決まる理由を知って、また自分で解き進められます。</p>
+   <div class="store-links" aria-label="アプリをダウンロード">
+ <a class="store-badge" data-analytics-position="hero" href="https://apps.apple.com/jp/app/id6758233715"><img src="../../commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" width="135" height="40" alt="App Storeからダウンロード" decoding="async"></a>
+ <a class="store-badge google-play" data-analytics-position="hero" href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod"><img src="../../commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" width="155" height="46" alt="Google Playで手に入れよう" decoding="async"></a>
+ </div>
+   <p class="store-note">iPhone・Android対応 / 無料ダウンロード・アプリ内課金あり</p>
+  </section>
+ </div>
+ <section class="screenshots-section shell" aria-label="実際のアプリ画面" data-carousel>
+  <div class="screenshots-track" id="app-screenshots" tabindex="0" role="region" aria-label="スクリーンショット。横にスクロールして5枚の画面を見られます。">
+  <figure class="screenshot-card" data-carousel-item><img src="../images/lp/ja/hint-explanation.png" width="1290" height="2796" alt="数字が決まる理由を順番に説明するヒント画面" decoding="async" fetchpriority="high"><figcaption><span>01</span>理由付きのヒント</figcaption></figure>
+<figure class="screenshot-card" data-carousel-item><img src="../images/lp/ja/image-scan.png" width="1290" height="2796" alt="紙のナンプレの画像を取り込む画面" decoding="async" loading="lazy"><figcaption><span>02</span>画像から読み取り</figcaption></figure>
+<figure class="screenshot-card" data-carousel-item><img src="../images/lp/ja/technique-practice.png" width="1290" height="2796" alt="学びたい手筋を選んで練習する画面" decoding="async" loading="lazy"><figcaption><span>03</span>手筋ごとの練習</figcaption></figure>
+<figure class="screenshot-card" data-carousel-item><img src="../images/lp/ja/gameplay.png" width="1290" height="2796" alt="候補メモと仮確定モードを使って解いている画面" decoding="async" loading="lazy"><figcaption><span>04</span>メモ・仮確定モード</figcaption></figure>
+<figure class="screenshot-card" data-carousel-item><img src="../images/screen_shots/ja/resized_slide_004.png" width="1290" height="2796" alt="ライト系とダーク系のカラーテーマを選ぶ画面" decoding="async" loading="lazy"><figcaption><span>05</span>見やすいテーマ</figcaption></figure>
+  </div>
+  <div class="carousel-dots" data-carousel-dots aria-label="アプリ画面の表示位置" hidden></div>
+ </section>
+ <section class="problem-section shell" id="problems" aria-labelledby="problem-title">
+  <div class="section-heading"><p class="eyebrow">解いていると、こんなことありませんか？</p><h2 id="problem-title">答えは知りたい。<br class="mobile-break">でも、自分で解きたい。</h2></div>
+  <div class="problem-grid">
+   <article><span class="problem-number" aria-hidden="true">01</span><h3>「次に、どこを見ればいい？」</h3><p>何度見直しても数字が入らず、<br>同じところで止まってしまう。</p></article>
+   <article><span class="problem-number" aria-hidden="true">02</span><h3>「答えだけ見ても、わからない。」</h3><p>その数字になるのは、どうして？<br>解答を写すだけでは物足りない。</p></article>
+   <article><span class="problem-number" aria-hidden="true">03</span><h3>「問題を全部、手入力するのは大変。」</h3><p>いま解いている紙の問題を、<br>そのままアプリで続けたい。</p></article>
+  </div>
+ </section>
+ <section class="features-section" id="how-it-works" aria-labelledby="features-title">
+  <div class="shell">
+   <div class="section-heading"><p class="eyebrow">その「困った」を、解く手がかりに</p><h2 id="features-title">「ナンプレのヒント」で<br>できること</h2></div>
+   <div class="feature-grid">
+    <article class="feature-card"><span class="feature-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 14h8l4-5h8l4 5h8v25H8z"/><circle cx="24" cy="26" r="8"/></svg></span><h3>撮って、取り込む。</h3><p>新聞や雑誌のナンプレを画像から読み取り。数字をひとつずつ入力する手間を減らせます。</p><span class="feature-detail">カメラ・画像からの読み取り</span></article>
+    <article class="feature-card feature-card-primary"><span class="feature-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 33v-4a12 12 0 1 1 12 0v4zM18 38h12M21 43h6M24 3V0M8 10 4 7M40 10l4-3"/></svg></span><h3>「なぜ」がわかる。</h3><p>ヒントで数字が入る理由を確認。答えを埋めるだけでなく、次の一手を考える手がかりになります。</p><span class="feature-detail">根拠がわかるヒント・解説</span></article>
+    <article class="feature-card"><span class="feature-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 18 21-10 21 10-21 10zM11 22v13c8 7 18 7 26 0V22M44 19v17"/></svg></span><h3>解き方を、身につける。</h3><p>手筋ごとの解説と練習で、気になる解き方を確認。覚えた手筋を、自分で見つける練習ができます。</p><span class="feature-detail">手筋の解説・テクニック練習</span></article>
+   </div>
+   <div class="assist-features"><h3>じっくり考えるための機能も。</h3><ul><li>候補メモ</li><li>正解チェック</li><li>ハイライト</li><li>仮確定モード</li><li>カラーテーマ・ダークモード</li></ul></div>
+  </div>
+ </section>
+ <section class="recommended-section shell" id="recommended" aria-labelledby="recommended-title">
+  <div class="section-heading"><p class="eyebrow">自分で解く楽しさを、大切にしたい方へ</p><h2 id="recommended-title">こんな方におすすめ</h2></div>
+  <ul class="recommended-list"><li><span aria-hidden="true">✓</span><div><h3>新聞や雑誌のナンプレを解くのが好き</h3><p>いつもの問題を取り込んで、続きから解きたい。</p></div></li><li><span aria-hidden="true">✓</span><div><h3>答えを全部見る前に、ヒントがほしい</h3><p>詰まったところの理由を確かめて、自分で進めたい。</p></div></li><li><span aria-hidden="true">✓</span><div><h3>ナンプレの解き方を覚えたい</h3><p>初心者の方も、次の手筋を学びたい方も。</p></div></li></ul>
+ </section>
+ <section class="learning-section" id="learning" aria-labelledby="learning-title">
+  <div class="shell">
+   <div class="section-heading"><p class="eyebrow">読む・試す・練習する</p><h2 id="learning-title">ナンプレの楽しみ方と解き方</h2><p>まずはブラウザで。<br class="mobile-break">解説を読んだり、1問遊んだりできます。</p></div>
+   <div class="guide-links"><a href="learn/"><span class="guide-mark" aria-hidden="true">01</span><h3>解き方を学ぶ</h3><p>候補メモから、手筋の解説・練習まで。</p><span class="guide-arrow" aria-hidden="true">↗</span></a><a href="learn/play.html"><span class="guide-mark" aria-hidden="true">02</span><h3>1問遊んでみる</h3><p>ヒントを使いながら、最後まで挑戦。</p><span class="guide-arrow" aria-hidden="true">↗</span></a><a href="learn/enjoy.html"><span class="guide-mark" aria-hidden="true">03</span><h3>楽しみ方を知る</h3><p>ルールと、数字がつながる面白さを紹介。</p><span class="guide-arrow" aria-hidden="true">↗</span></a></div>
+   <details class="inline-demo"><summary>ヒントの仕組みを、このページで見る</summary><div class="inline-demo-content"><div class="demo-copy"><h3>このマスに入るのは、なぜ「5」？</h3><p>青枠のマスに注目して、「ヒントを見る」を押してみてください。</p></div>
+   <div class="hint-preview" id="lp-demo" data-hint-preview data-state="initial">
+    <div class="preview-heading"><span>一手のヒントを体験</span><span class="preview-label">WEB DEMO</span></div>
+    <div class="preview-grid" role="group" aria-label="ヒントを体験する9行9列の盤面。5行5列の青枠のマスに注目してください。"><span class="preview-cell is-given" aria-label="1行1列、5">5</span><span class="preview-cell is-given" aria-label="1行2列、3">3</span><span class="preview-cell" aria-label="1行3列、空きマス"></span><span class="preview-cell" aria-label="1行4列、空きマス"></span><span class="preview-cell is-given is-related" aria-label="1行5列、7">7</span><span class="preview-cell" aria-label="1行6列、空きマス"></span><span class="preview-cell" aria-label="1行7列、空きマス"></span><span class="preview-cell" aria-label="1行8列、空きマス"></span><span class="preview-cell" aria-label="1行9列、空きマス"></span><span class="preview-cell is-given" aria-label="2行1列、6">6</span><span class="preview-cell" aria-label="2行2列、空きマス"></span><span class="preview-cell" aria-label="2行3列、空きマス"></span><span class="preview-cell is-given" aria-label="2行4列、1">1</span><span class="preview-cell is-given is-related" aria-label="2行5列、9">9</span><span class="preview-cell is-given" aria-label="2行6列、5">5</span><span class="preview-cell" aria-label="2行7列、空きマス"></span><span class="preview-cell" aria-label="2行8列、空きマス"></span><span class="preview-cell" aria-label="2行9列、空きマス"></span><span class="preview-cell" aria-label="3行1列、空きマス"></span><span class="preview-cell is-given" aria-label="3行2列、9">9</span><span class="preview-cell is-given" aria-label="3行3列、8">8</span><span class="preview-cell" aria-label="3行4列、空きマス"></span><span class="preview-cell is-related" aria-label="3行5列、空きマス"></span><span class="preview-cell" aria-label="3行6列、空きマス"></span><span class="preview-cell" aria-label="3行7列、空きマス"></span><span class="preview-cell is-given" aria-label="3行8列、6">6</span><span class="preview-cell" aria-label="3行9列、空きマス"></span><span class="preview-cell is-given" aria-label="4行1列、8">8</span><span class="preview-cell" aria-label="4行2列、空きマス"></span><span class="preview-cell" aria-label="4行3列、空きマス"></span><span class="preview-cell is-related" aria-label="4行4列、空きマス"></span><span class="preview-cell is-given is-related" aria-label="4行5列、6">6</span><span class="preview-cell is-related" aria-label="4行6列、空きマス"></span><span class="preview-cell" aria-label="4行7列、空きマス"></span><span class="preview-cell" aria-label="4行8列、空きマス"></span><span class="preview-cell is-given" aria-label="4行9列、3">3</span><span class="preview-cell is-given is-related" aria-label="5行1列、4">4</span><span class="preview-cell is-related" aria-label="5行2列、空きマス"></span><span class="preview-cell is-related" aria-label="5行3列、空きマス"></span><span class="preview-cell is-given is-related" aria-label="5行4列、8">8</span><span class="preview-cell is-related is-target" aria-label="5行5列、空きマス、ヒントの対象" data-preview-cell>?</span><span class="preview-cell is-given is-related" aria-label="5行6列、3">3</span><span class="preview-cell is-related" aria-label="5行7列、空きマス"></span><span class="preview-cell is-related" aria-label="5行8列、空きマス"></span><span class="preview-cell is-given is-related" aria-label="5行9列、1">1</span><span class="preview-cell is-given" aria-label="6行1列、7">7</span><span class="preview-cell" aria-label="6行2列、空きマス"></span><span class="preview-cell" aria-label="6行3列、空きマス"></span><span class="preview-cell is-related" aria-label="6行4列、空きマス"></span><span class="preview-cell is-given is-related" aria-label="6行5列、2">2</span><span class="preview-cell is-related" aria-label="6行6列、空きマス"></span><span class="preview-cell" aria-label="6行7列、空きマス"></span><span class="preview-cell" aria-label="6行8列、空きマス"></span><span class="preview-cell is-given" aria-label="6行9列、6">6</span><span class="preview-cell" aria-label="7行1列、空きマス"></span><span class="preview-cell is-given" aria-label="7行2列、6">6</span><span class="preview-cell" aria-label="7行3列、空きマス"></span><span class="preview-cell" aria-label="7行4列、空きマス"></span><span class="preview-cell is-related" aria-label="7行5列、空きマス"></span><span class="preview-cell" aria-label="7行6列、空きマス"></span><span class="preview-cell is-given" aria-label="7行7列、2">2</span><span class="preview-cell is-given" aria-label="7行8列、8">8</span><span class="preview-cell" aria-label="7行9列、空きマス"></span><span class="preview-cell" aria-label="8行1列、空きマス"></span><span class="preview-cell" aria-label="8行2列、空きマス"></span><span class="preview-cell" aria-label="8行3列、空きマス"></span><span class="preview-cell is-given" aria-label="8行4列、4">4</span><span class="preview-cell is-given is-related" aria-label="8行5列、1">1</span><span class="preview-cell is-given" aria-label="8行6列、9">9</span><span class="preview-cell" aria-label="8行7列、空きマス"></span><span class="preview-cell" aria-label="8行8列、空きマス"></span><span class="preview-cell is-given" aria-label="8行9列、5">5</span><span class="preview-cell" aria-label="9行1列、空きマス"></span><span class="preview-cell" aria-label="9行2列、空きマス"></span><span class="preview-cell" aria-label="9行3列、空きマス"></span><span class="preview-cell" aria-label="9行4列、空きマス"></span><span class="preview-cell is-given is-related" aria-label="9行5列、8">8</span><span class="preview-cell" aria-label="9行6列、空きマス"></span><span class="preview-cell" aria-label="9行7列、空きマス"></span><span class="preview-cell is-given" aria-label="9行8列、7">7</span><span class="preview-cell is-given" aria-label="9行9列、9">9</span></div>
+    <div class="preview-explanation" aria-live="polite" aria-atomic="true"><p class="hint-kicker" data-preview-kicker>どこから考える？</p><p class="hint-reason" data-preview-reason>青枠のマスと同じ行・列・ブロックには、どの数字があるでしょう。</p></div>
+    <div class="preview-controls"><button class="button" type="button" data-preview-action hidden>ヒントを見る <span aria-hidden="true">→</span></button><button class="reset-button" type="button" data-preview-reset hidden>もう一度</button></div>
+    <p class="preview-note">解き方を体験するWeb用の例題です。アプリとは表示が異なります。</p>
+    <noscript><p class="no-script">このマスは、同じ行・列・ブロックにある数字を除くと、候補が5だけになります。操作するにはJavaScriptを有効にしてください。</p></noscript>
+   </div>
+   </div></details>
+  </div>
+ </section>
+ <section class="closing-section" id="download" aria-labelledby="download-title"><div class="shell">
+  <p class="eyebrow">ナンプレで詰まったら。</p><h2 id="download-title">ちょうど良いヒントを、<br>いつものナンプレに。</h2><p>「ナンプレのヒント」をダウンロード</p>
+  <div class="store-links" aria-label="アプリをダウンロード">
+ <a class="store-badge" data-analytics-position="download" href="https://apps.apple.com/jp/app/id6758233715"><img src="../../commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" width="135" height="40" alt="App Storeからダウンロード" decoding="async"></a>
+ <a class="store-badge google-play" data-analytics-position="download" href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod"><img src="../../commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" width="155" height="46" alt="Google Playで手に入れよう" decoding="async"></a>
+ </div>
+  <p class="store-note">無料ダウンロード・アプリ内課金あり</p>
+ </div></section>
+ <section class="faq-section shell" id="faq" aria-labelledby="faq-title"><div class="section-heading"><h2 id="faq-title">よくある質問</h2></div>
+  <div class="faq-list">
+   <details><summary>無料で使えますか？</summary><div><p>無料でダウンロードして試せます。ヒント・正解チェック・画像の読み取りなどには利用回数の制限があり、機能によって動画広告の視聴が必要になります。</p><p>プレミアムは月額・年額のサブスクリプションです。広告の非表示、ヒント・正解チェックの無制限利用などに対応しています。読み取りにはプレミアムでも上限があります。料金・利用条件はアプリ内で確認できます。</p></div></details>
+   <details><summary>新聞や雑誌の問題も使えますか？</summary><div><p>カメラで撮影したナンプレの画像を読み込めます。読み取り結果を確認し、数字が違っていたら修正してから始めてください。一般的な9×9のナンプレが対象です。</p></div></details>
+   <details><summary>手元に問題がなくても遊べますか？</summary><div><p>アプリ内の問題でも遊べます。解き方を覚えたいときは、手筋ごとの解説・練習も利用できます。一部の問題・練習はプレミアム向けです。</p></div></details>
+   <details><summary>インストール前に試せますか？</summary><div><p>このページの一手のデモに加え、ブラウザで1問遊べる体験版と、手筋の解説・練習を用意しています。</p><a class="text-link" href="learn/">楽しみ方・解き方のガイドへ <span aria-hidden="true">→</span></a></div></details>
+  </div>
+ </section>
+</main>
+<footer class="site-footer shell"><p>© TakeKApp</p><nav aria-label="関連リンク"><a href="learn/">楽しみ方・解き方</a><a href="privacy_policy_ja.html">プライバシーポリシー</a><a href="terms_and_conditions_ja.html">利用規約</a><a href="../../about.html">開発者について</a></nav></footer>
+<nav class="takekapp-site-nav" data-takekapp-site-nav aria-label="TakeKApp"><a href="/">TakeKApp Apps</a><a href="/blog/">Development Blog</a></nav>
+<script type="application/json" id="lp-messages">{"initialKicker": "どこから考える？", "initialReason": "青枠のマスと同じ行・列・ブロックには、どの数字があるでしょう。", "hint": "ヒントを見る", "reset": "もう一度", "candidateLabel": "5行5列、候補は5。まだ入力していません", "hintKicker": "残る候補は、5だけ。", "hintReason": "同じ行・列・ブロックには、1・2・3・4・6・7・8・9があります。このマスに入るのは、残った「5」です。", "place": "5を入れてみる", "placedLabel": "5行5列、5を入力しました", "appliedKicker": "「5」が決まりました。", "appliedReason": "こうして数字をひとつずつ絞り込んでいきます。続きを解きたいときは、体験版で1問遊んでみてください。", "complete": "一手できました", "resetLabel": "5行5列、空きマス、ヒントの対象"}</script>
+</body>
 </html>

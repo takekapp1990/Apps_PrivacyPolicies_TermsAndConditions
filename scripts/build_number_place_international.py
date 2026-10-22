@@ -70,13 +70,15 @@ def build(root,app_root):
   for slug,title,desc,content in [('enjoy',m['enjoy'],m['enjoyIntro'],enjoy),('brain-training',m['brain'],m['brainIntro'],brain),('play',m['playTrial'],m['gameFoot'],play)]:
    (out/(slug+'.html')).write_text(shell(m,slug,title,desc,heading(title,desc)+content+cta(m,apple),apple,image))
   compile_bundles(source,m,out)
-  # Add one bounded section, preserving every existing LP edit outside the marker.
-  lptext=re.sub(r'<!-- sudoku-learning:start -->.*?<!-- sudoku-learning:end -->\s*','',lptext,flags=re.S)
-  section='<!-- sudoku-learning:start --><section class="container" id="learning"><h2>'+esc(m['guide'])+'</h2>'+para(m['intro'])+demo(m,'lp-demo')+'<p><a class="btn-secondary" href="learn/">'+esc(m['hero'])+' →</a></p></section><!-- sudoku-learning:end -->\n'
-  lptext=lptext.replace('</main>',section+'</main>',1)
-  deps='<link rel="stylesheet" href="../ja/learn/experience.css"><link rel="stylesheet" href="../learning-locales/international.css"><script defer src="learn/experience-browser.js"></script>'
-  if 'src="learn/experience-browser.js"' not in lptext:lptext=lptext.replace('</head>',deps+'</head>',1)
-  lp.write_text(lptext)
+  # Redesigned LPs are maintained by build_number_place_landing.py.
+  if 'data-lp-redesign' not in lptext:
+   # Add one bounded section, preserving every existing LP edit outside the marker.
+   lptext=re.sub(r'<!-- sudoku-learning:start -->.*?<!-- sudoku-learning:end -->\s*','',lptext,flags=re.S)
+   section='<!-- sudoku-learning:start --><section class="container" id="learning"><h2>'+esc(m['guide'])+'</h2>'+para(m['intro'])+demo(m,'lp-demo')+'<p><a class="btn-secondary" href="learn/">'+esc(m['hero'])+' →</a></p></section><!-- sudoku-learning:end -->\n'
+   lptext=lptext.replace('</main>',section+'</main>',1)
+   deps='<link rel="stylesheet" href="../ja/learn/experience.css"><link rel="stylesheet" href="../learning-locales/international.css"><script defer src="learn/experience-browser.js"></script>'
+   if 'src="learn/experience-browser.js"' not in lptext:lptext=lptext.replace('</head>',deps+'</head>',1)
+   lp.write_text(lptext)
  # Keep the approved Japanese body, adding only language navigation and alternate URLs.
  jm={'language':'言語を選択'}
  for slug in SLUGS:

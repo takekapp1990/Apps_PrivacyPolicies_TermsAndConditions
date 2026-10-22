@@ -57,7 +57,9 @@ for code in LANGS:
  lp=ROOT/f'NumberPlaceHint/{code}/landing_page_{code}.html';s=lp.read_text()
  assert s.count('id="learning"')==1,(code,'LP entry')
  assert 'href="learn/"' in s,(code,'LP link')
- assert 'experience-browser.js' in s,(code,'LP demo')
+ if 'data-lp-redesign' in s:
+  assert '../ja/landing-page.js' in s and 'id="lp-messages"' in s and 'data-hint-preview' in s,(code,'LP hint preview')
+ else:assert 'experience-browser.js' in s,(code,'LP demo')
  for name in ['experience-browser.js','learning-browser.js']:
   source=(lp.parent/'learn'/name).read_text();assert 'await fetch(' not in source,(code,name)
 assert len(PACKS)==21

@@ -6,6 +6,20 @@
 
 ## 編集・再生成
 
+### 日本語のアプリ紹介LP
+
+`../landing_page_ja.html`、`../landing-page.css`、`../landing-page.js` は直接編集します。
+LPはKV・画面カルーセル・課題・機能・おすすめ・解説ガイド・ダウンロードの順です。
+カルーセルは横スクロール・ドット・矢印キーに対応し、自動では切り替わりません。ドットは画面幅に応じて到達できる表示位置ごとに生成し、現在位置と連動します。
+書体は `../../fonts/README.md` のZen Kaku Gothic Newをサイト内から読み込みます。
+LPの `#learning` はガイドへの入口を保ち、折りたたみ内の `#lp-demo` に一手だけを試す独立したデモを置いています。
+初期盤面は `experience-data.mjs` の `PUZZLE` と同じです。5行5列の候補が5だけであることを、
+`sudoku-engine.mjs` の `candidates` で確認できます。ヒント表示、5の入力、リセットの3操作で、
+自動再生や演出設定はありません。JSが無効でも盤面と解説が読めます。
+`landing-page.js` の `sudoku_lp_hint_view` と `sudoku_lp_step_complete` は、一手デモの操作を計測します。
+体験版1問のクリアを表す `sudoku_trial_complete` とは区別してください。
+LPの実画面画像の出典は `../../images/lp/ja/README.md` に記載しています。全22言語版の再生成は `scripts/build_number_place_landing.py --app-root /path/to/number_place_hint`、検証は `scripts/validate_number_place_landing.py` です。日本語の文言を変える際は、`scripts/number_place_lp_ja.json` と `scripts/number_place_lp_translations.py` の対応する項目も更新してください。画像は各言語の実画面素材から取得し、デモの動的メッセージも各ページのJSONから読み込みます。
+
 記事本文、共通ページ構造、図解、サンプル抽出ルールは `scripts/build_number_place_learning.py` にあります。HTMLはその生成結果です。本文は生成スクリプトを編集してから再生成してください。CSSとJSはこのディレクトリ内で直接編集します。
 
 リポジトリ直下で実行：
