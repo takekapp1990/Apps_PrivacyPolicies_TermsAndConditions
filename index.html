@@ -359,12 +359,27 @@
 
             .app-card .policy-buttons {
                 display: flex;
+                align-items: center;
                 gap: 0.5rem;
                 width: 100%;
             }
 
             .app-card .policy-buttons .btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 flex: 1;
+                min-width: 0;
+                min-height: 44px;
+                padding: 0.3rem 0.6rem;
+                font-size: 0.75rem;
+                color: var(--primary-color);
+                text-decoration: none;
+            }
+
+            .app-card .policy-buttons .btn:hover {
+                color: var(--primary-dark);
+                text-decoration: underline;
             }
 
             .app-screenshot {
@@ -480,13 +495,25 @@
             }
 
             /* アプリストアバッジのスタイル */
+            .store-buttons {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
             .app-store-badge {
+                display: inline-flex;
+                align-items: center;
+                flex-shrink: 0;
                 text-decoration: none;
-                outline: none;
             }
 
             .app-store-badge img {
-                outline: none;
+                display: block;
+                width: auto;
+                height: 40px;
                 border: none;
             }
 
@@ -691,11 +718,11 @@
                                 </div>
                                 <div class="d-flex flex-column gap-2">
                                     <a href="/VersaMemo/ja/" class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex flex-wrap gap-2 justify-content-center">
-                                        <a href="https://apps.apple.com/jp/app/id6813485758" target="_blank" rel="noopener noreferrer" class="app-store-badge" data-analytics-app="VersaMemo" data-analytics-position="app_list_versamemo_ja"><img src="/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" width="135" height="40" decoding="async" loading="lazy"></a>
-                                        <a href="https://play.google.com/store/apps/details?id=com.takekapp.versamemo.prod" target="_blank" rel="noopener noreferrer" class="app-store-badge" data-analytics-app="VersaMemo" data-analytics-position="app_list_versamemo_ja"><img src="/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで手に入れよう" width="129" height="50" decoding="async" loading="lazy"></a>
+                                    <div class="store-buttons">
+                                        <a href="https://play.google.com/store/apps/details?id=com.takekapp.versamemo.prod" target="_blank" rel="noopener noreferrer" class="app-store-badge" data-analytics-app="VersaMemo" data-analytics-position="app_list_versamemo_ja"><img src="/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで手に入れよう" height="40" decoding="async" loading="lazy"></a>
+                                        <a href="https://apps.apple.com/jp/app/id6813485758" target="_blank" rel="noopener noreferrer" class="app-store-badge" data-analytics-app="VersaMemo" data-analytics-position="app_list_versamemo_ja"><img src="/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" height="40" decoding="async" loading="lazy"></a>
                                     </div>
-                                    <div class="policy-buttons"><a href="/VersaMemo/ja/terms.html" class="btn btn-outline-primary">利用規約</a><a href="/VersaMemo/ja/privacy.html" class="btn btn-outline-primary">プライバシーポリシー</a></div>
+                                    <div class="policy-buttons"><a href="/VersaMemo/ja/terms.html" class="btn btn-link">利用規約</a><a href="/VersaMemo/ja/privacy.html" class="btn btn-link">プライバシーポリシー</a></div>
                                 </div>
                             </div>
                         </div>
@@ -719,23 +746,23 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/Meiro25MojiQuiz/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
-                                        <a href="https://apps.apple.com/jp/app/id6776966794"
-                                            target="_blank" class="app-store-badge">
-                                            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
-                                                alt="App Storeからダウンロード" height="40" decoding="async" loading="lazy">
-                                        </a>
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.takekapp.maze25characters.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
                                                 alt="Google Playで手に入れよう" height="40" decoding="async" loading="lazy">
                                         </a>
+                                        <a href="https://apps.apple.com/jp/app/id6776966794"
+                                            target="_blank" class="app-store-badge">
+                                            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
+                                                alt="App Storeからダウンロード" height="40" decoding="async" loading="lazy">
+                                        </a>
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/Meiro25MojiQuiz/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/Meiro25MojiQuiz/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -760,23 +787,23 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/Tificat/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
-                                        <a href="https://apps.apple.com/jp/app/id6762003829"
-                                            target="_blank" class="app-store-badge">
-                                            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
-                                                alt="App Storeからダウンロード" height="40" decoding="async" loading="lazy">
-                                        </a>
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.share.reminder.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
                                                 alt="Google Playで手に入れよう" height="40" decoding="async" loading="lazy">
                                         </a>
+                                        <a href="https://apps.apple.com/jp/app/id6762003829"
+                                            target="_blank" class="app-store-badge">
+                                            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
+                                                alt="App Storeからダウンロード" height="40" decoding="async" loading="lazy">
+                                        </a>
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/Tificat/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/Tificat/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -801,7 +828,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/MemoWinkAlbum/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.tap.album.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
@@ -814,9 +841,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/MemoWinkAlbum/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/MemoWinkAlbum/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -841,7 +868,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/NumberPlaceHint/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
@@ -855,9 +882,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/NumberPlaceHint/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/NumberPlaceHint/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -882,7 +909,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/AwaAwaPon/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
@@ -896,9 +923,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/AwaAwaPon/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/AwaAwaPon/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -923,7 +950,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/FunTopics/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.fun_topics_takekapp.takekapp1990.fun_topics"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
@@ -937,9 +964,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/FunTopics/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/FunTopics/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -964,24 +991,24 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/GoodLuckMaker/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
-                                        <a href="https://apps.apple.com/jp/app/id6698863339"
-                                            target="_blank" class="app-store-badge">
-                                            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
-                                                alt="App Storeからダウンロード" height="40" decoding="async" loading="lazy">
-                                        </a>
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
                                                 alt="Google Playで手に入れよう" height="40" decoding="async" loading="lazy">
                                         </a>
+                                        <a href="https://apps.apple.com/jp/app/id6698863339"
+                                            target="_blank" class="app-store-badge">
+                                            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
+                                                alt="App Storeからダウンロード" height="40" decoding="async" loading="lazy">
+                                        </a>
                                     </div>
                                     <p class="card-text small text-muted text-center mb-0">※ iOSアプリでは毎日の応援メッセージが表示されます。</p>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/GoodLuckMaker/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/GoodLuckMaker/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -1006,7 +1033,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/LearningStatistics/ja/app_introduction.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.learning_statistics_takekapp.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
@@ -1020,9 +1047,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/LearningStatistics/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/LearningStatistics/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -1047,7 +1074,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/SharedDice/landing_pages/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
@@ -1061,9 +1088,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/SharedDice/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/SharedDice/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -1088,7 +1115,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/MyDreams100/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.mydreams100.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
@@ -1102,9 +1129,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/MyDreams100/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/MyDreams100/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -1129,21 +1156,21 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/LoanManagement/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
-                                        <a href="https://apps.apple.com/jp/app/id6789951919" target="_blank" rel="noopener" class="app-store-badge">
-                                            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
-                                                alt="App Storeからダウンロード" height="40" decoding="async" loading="lazy">
-                                        </a>
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.takekapp1990.myloanmanagement.prod" target="_blank" rel="noopener" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
                                                 alt="Google Playで手に入れよう" height="40" decoding="async" loading="lazy">
                                         </a>
+                                        <a href="https://apps.apple.com/jp/app/id6789951919" target="_blank" rel="noopener" class="app-store-badge">
+                                            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
+                                                alt="App Storeからダウンロード" height="40" decoding="async" loading="lazy">
+                                        </a>
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/LoanManagement/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/LoanManagement/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -1168,7 +1195,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/PostDrafts/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.postdrafts.takekapp1990.prod"
                                             class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
@@ -1182,9 +1209,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/PostDrafts/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/PostDrafts/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -1209,7 +1236,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/KanjiAwaAwaPon/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.KanjiMemoryAwaPop.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
@@ -1223,9 +1250,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/KanjiAwaAwaPon/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/KanjiAwaAwaPon/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -1250,7 +1277,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/FlagMemoryAwaAwaPon/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.NationalFlagsAwaPop.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
@@ -1264,9 +1291,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/FlagMemoryAwaAwaPon/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/FlagMemoryAwaAwaPon/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -1291,7 +1318,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/TimesTablesMemoryAwaAwaPon/ja/landing_page_ja.html"
                                         class="btn btn-primary">詳細を見る</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.TimesTablesAwaPop.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
@@ -1305,9 +1332,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/TimesTablesMemoryAwaAwaPon/ja/terms_and_conditions_ja.html"
-                                            class="btn btn-outline-primary">利用規約</a>
+                                            class="btn btn-link">利用規約</a>
                                         <a href="https://takekapp.com/TimesTablesMemoryAwaAwaPon/ja/privacy_policy_ja.html"
-                                            class="btn btn-outline-primary">プライバシーポリシー</a>
+                                            class="btn btn-link">プライバシーポリシー</a>
                                     </div>
                                 </div>
                             </div>
@@ -1333,11 +1360,11 @@
                                 </div>
                                 <div class="d-flex flex-column gap-2">
                                     <a href="/VersaMemo/en/" class="btn btn-primary">Learn More</a>
-                                    <div class="d-flex flex-wrap gap-2 justify-content-center">
-                                        <a href="https://apps.apple.com/us/app/id6813485758" target="_blank" rel="noopener noreferrer" class="app-store-badge" data-analytics-app="VersaMemo" data-analytics-position="app_list_versamemo_en"><img src="/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width="135" height="40" decoding="async" loading="lazy"></a>
-                                        <a href="https://play.google.com/store/apps/details?id=com.takekapp.versamemo.prod" target="_blank" rel="noopener noreferrer" class="app-store-badge" data-analytics-app="VersaMemo" data-analytics-position="app_list_versamemo_en"><img src="/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" width="129" height="50" decoding="async" loading="lazy"></a>
+                                    <div class="store-buttons">
+                                        <a href="https://play.google.com/store/apps/details?id=com.takekapp.versamemo.prod" target="_blank" rel="noopener noreferrer" class="app-store-badge" data-analytics-app="VersaMemo" data-analytics-position="app_list_versamemo_en"><img src="/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" height="40" decoding="async" loading="lazy"></a>
+                                        <a href="https://apps.apple.com/us/app/id6813485758" target="_blank" rel="noopener noreferrer" class="app-store-badge" data-analytics-app="VersaMemo" data-analytics-position="app_list_versamemo_en"><img src="/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" height="40" decoding="async" loading="lazy"></a>
                                     </div>
-                                    <div class="policy-buttons"><a href="/VersaMemo/en/terms.html" class="btn btn-outline-primary">Terms</a><a href="/VersaMemo/en/privacy.html" class="btn btn-outline-primary">Privacy Policy</a></div>
+                                    <div class="policy-buttons"><a href="/VersaMemo/en/terms.html" class="btn btn-link">Terms</a><a href="/VersaMemo/en/privacy.html" class="btn btn-link">Privacy Policy</a></div>
                                 </div>
                             </div>
                         </div>
@@ -1362,23 +1389,23 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/Tificat/en/landing_page_en.html"
                                         class="btn btn-primary">Learn More</a>
-                                    <div class="d-flex gap-2 justify-content-center">
-                                        <a href="https://apps.apple.com/us/app/id6762003829"
-                                            target="_blank" class="app-store-badge">
-                                            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-                                                alt="Download on the App Store" height="40" decoding="async" loading="lazy">
-                                        </a>
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.share.reminder.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
                                                 alt="Get it on Google Play" height="40" decoding="async" loading="lazy">
                                         </a>
+                                        <a href="https://apps.apple.com/us/app/id6762003829"
+                                            target="_blank" class="app-store-badge">
+                                            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                                                alt="Download on the App Store" height="40" decoding="async" loading="lazy">
+                                        </a>
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/Tificat/en/terms_and_conditions_en.html"
-                                            class="btn btn-outline-primary">Terms and Conditions</a>
+                                            class="btn btn-link">Terms and Conditions</a>
                                         <a href="https://takekapp.com/Tificat/en/privacy_policy_en.html"
-                                            class="btn btn-outline-primary">Privacy Policy</a>
+                                            class="btn btn-link">Privacy Policy</a>
                                     </div>
                                 </div>
                             </div>
@@ -1405,7 +1432,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/MemoWinkAlbum/en/landing_page_en.html"
                                         class="btn btn-primary">Learn More</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.tap.album.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
@@ -1419,9 +1446,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/MemoWinkAlbum/en/terms_and_conditions_en.html"
-                                            class="btn btn-outline-primary">Terms and Conditions</a>
+                                            class="btn btn-link">Terms and Conditions</a>
                                         <a href="https://takekapp.com/MemoWinkAlbum/en/privacy_policy_en.html"
-                                            class="btn btn-outline-primary">Privacy Policy</a>
+                                            class="btn btn-link">Privacy Policy</a>
                                     </div>
                                 </div>
                             </div>
@@ -1447,7 +1474,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/NumberPlaceHint/en/landing_page_en.html"
                                         class="btn btn-primary">Learn More</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.NumberPlaceHint.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
@@ -1461,9 +1488,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/NumberPlaceHint/en/terms_and_conditions_en.html"
-                                            class="btn btn-outline-primary">Terms and Conditions</a>
+                                            class="btn btn-link">Terms and Conditions</a>
                                         <a href="https://takekapp.com/NumberPlaceHint/en/privacy_policy_en.html"
-                                            class="btn btn-outline-primary">Privacy Policy</a>
+                                            class="btn btn-link">Privacy Policy</a>
                                     </div>
                                 </div>
                             </div>
@@ -1489,7 +1516,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/AwaAwaPon/en/landing_page_en.html"
                                         class="btn btn-primary">Learn More</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.MonMonMemory.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
@@ -1503,9 +1530,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/AwaAwaPon/en/terms_and_conditions_en.html"
-                                            class="btn btn-outline-primary">Terms and Conditions</a>
+                                            class="btn btn-link">Terms and Conditions</a>
                                         <a href="https://takekapp.com/AwaAwaPon/en/privacy_policy_en.html"
-                                            class="btn btn-outline-primary">Privacy Policy</a>
+                                            class="btn btn-link">Privacy Policy</a>
                                     </div>
                                 </div>
                             </div>
@@ -1531,7 +1558,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/FunTopics/en/landing_page_en.html"
                                         class="btn btn-primary">Learn More</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.fun_topics_takekapp.takekapp1990.fun_topics"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
@@ -1545,9 +1572,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/FunTopics/en/terms_and_conditions_en.html"
-                                            class="btn btn-outline-primary">Terms and Conditions</a>
+                                            class="btn btn-link">Terms and Conditions</a>
                                         <a href="https://takekapp.com/FunTopics/en/privacy_policy_en.html"
-                                            class="btn btn-outline-primary">Privacy Policy</a>
+                                            class="btn btn-link">Privacy Policy</a>
                                     </div>
                                 </div>
                             </div>
@@ -1574,7 +1601,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/SharedDice/landing_pages/en/landing_page_en.html"
                                         class="btn btn-primary">Learn More</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.shared_dice_takekapp.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
@@ -1588,9 +1615,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/SharedDice/en/terms_and_conditions_en.html"
-                                            class="btn btn-outline-primary">Terms and Conditions</a>
+                                            class="btn btn-link">Terms and Conditions</a>
                                         <a href="https://takekapp.com/SharedDice/en/privacy_policy_en.html"
-                                            class="btn btn-outline-primary">Privacy Policy</a>
+                                            class="btn btn-link">Privacy Policy</a>
                                     </div>
                                 </div>
                             </div>
@@ -1618,7 +1645,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/MyDreams100/en/landing_page_en.html"
                                         class="btn btn-primary">Learn More</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.mydreams100.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
@@ -1632,9 +1659,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/MyDreams100/en/terms_and_conditions_en.html"
-                                            class="btn btn-outline-primary">Terms and Conditions</a>
+                                            class="btn btn-link">Terms and Conditions</a>
                                         <a href="https://takekapp.com/MyDreams100/en/privacy_policy_en.html"
-                                            class="btn btn-outline-primary">Privacy Policy</a>
+                                            class="btn btn-link">Privacy Policy</a>
                                     </div>
                                 </div>
                             </div>
@@ -1662,7 +1689,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/PostDrafts/en/landing_page_en.html"
                                         class="btn btn-primary">Learn More</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.postdrafts.takekapp1990.prod"
                                             class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
@@ -1676,9 +1703,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/PostDrafts/en/terms_and_conditions_en.html"
-                                            class="btn btn-outline-primary">Terms and Conditions</a>
+                                            class="btn btn-link">Terms and Conditions</a>
                                         <a href="https://takekapp.com/PostDrafts/en/privacy_policy_en.html"
-                                            class="btn btn-outline-primary">Privacy Policy</a>
+                                            class="btn btn-link">Privacy Policy</a>
                                     </div>
                                 </div>
                             </div>
@@ -1704,7 +1731,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/FlagMemoryAwaAwaPon/en/landing_page_en.html"
                                         class="btn btn-primary">Learn More</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.NationalFlagsAwaPop.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
@@ -1718,9 +1745,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/FlagMemoryAwaAwaPon/en/terms_and_conditions_en.html"
-                                            class="btn btn-outline-primary">Terms and Conditions</a>
+                                            class="btn btn-link">Terms and Conditions</a>
                                         <a href="https://takekapp.com/FlagMemoryAwaAwaPon/en/privacy_policy_en.html"
-                                            class="btn btn-outline-primary">Privacy Policy</a>
+                                            class="btn btn-link">Privacy Policy</a>
                                     </div>
                                 </div>
                             </div>
@@ -1748,7 +1775,7 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/TimesTablesMemoryAwaAwaPon/en/landing_page_en.html"
                                         class="btn btn-primary">Learn More</a>
-                                    <div class="d-flex gap-2 justify-content-center">
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.TimesTablesAwaPop.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
@@ -1762,9 +1789,9 @@
                                     </div>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/TimesTablesMemoryAwaAwaPon/en/terms_and_conditions_en.html"
-                                            class="btn btn-outline-primary">Terms and Conditions</a>
+                                            class="btn btn-link">Terms and Conditions</a>
                                         <a href="https://takekapp.com/TimesTablesMemoryAwaAwaPon/en/privacy_policy_en.html"
-                                            class="btn btn-outline-primary">Privacy Policy</a>
+                                            class="btn btn-link">Privacy Policy</a>
                                     </div>
                                 </div>
                             </div>
@@ -1790,24 +1817,24 @@
                                 <div class="d-flex flex-column gap-2">
                                     <a href="https://takekapp.com/GoodLuckMaker/en/landing_page_en.html"
                                         class="btn btn-primary">Learn More</a>
-                                    <div class="d-flex gap-2 justify-content-center">
-                                        <a href="https://apps.apple.com/us/app/id6698863339"
-                                            target="_blank" class="app-store-badge">
-                                            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-                                                alt="Download on the App Store" height="40" decoding="async" loading="lazy">
-                                        </a>
+                                    <div class="store-buttons">
                                         <a href="https://play.google.com/store/apps/details?id=com.goodLuckMaker.takekapp1990.prod"
                                             target="_blank" class="app-store-badge">
                                             <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png"
                                                 alt="Get it on Google Play" height="40" decoding="async" loading="lazy">
                                         </a>
+                                        <a href="https://apps.apple.com/us/app/id6698863339"
+                                            target="_blank" class="app-store-badge">
+                                            <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+                                                alt="Download on the App Store" height="40" decoding="async" loading="lazy">
+                                        </a>
                                     </div>
                                     <p class="card-text small text-muted text-center mb-0">On iOS, the app shows daily encouragement messages instead of fortune results.</p>
                                     <div class="policy-buttons">
                                         <a href="https://takekapp.com/GoodLuckMaker/en/terms_and_conditions_en.html"
-                                            class="btn btn-outline-primary">Terms and Conditions</a>
+                                            class="btn btn-link">Terms and Conditions</a>
                                         <a href="https://takekapp.com/GoodLuckMaker/en/privacy_policy_en.html"
-                                            class="btn btn-outline-primary">Privacy Policy</a>
+                                            class="btn btn-link">Privacy Policy</a>
                                     </div>
                                 </div>
                             </div>

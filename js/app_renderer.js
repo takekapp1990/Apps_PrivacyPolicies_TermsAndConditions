@@ -90,9 +90,9 @@ function renderApps(lang) {
             policyButtons = `
                 <div class="policy-buttons">
                     <a href="https://takekapp.com/${app.id}/${lang === 'ja' ? 'ja' : 'en'}/terms_and_conditions_${lang === 'ja' ? 'ja' : 'en'}.html"
-                        class="btn btn-outline-primary">${lang === 'ja' ? '利用規約' : 'Terms and Conditions'}</a>
+                        class="btn btn-link">${lang === 'ja' ? '利用規約' : 'Terms and Conditions'}</a>
                     <a href="https://takekapp.com/${app.id}/${lang === 'ja' ? 'ja' : 'en'}/privacy_policy_${lang === 'ja' ? 'ja' : 'en'}.html"
-                        class="btn btn-outline-primary">${lang === 'ja' ? 'プライバシーポリシー' : 'Privacy Policy'}</a>
+                        class="btn btn-link">${lang === 'ja' ? 'プライバシーポリシー' : 'Privacy Policy'}</a>
                 </div>
             `;
         }
@@ -153,7 +153,7 @@ function renderApps(lang) {
                     </div>
                     <div class="d-flex flex-column gap-2">
                         <a href="${lpUrl}" class="btn btn-primary">${lang === 'ja' ? '詳細を見る' : 'Learn More'}</a>
-                        <div class="d-flex gap-2 justify-content-center">
+                        <div class="store-buttons">
                             ${androidBadge}
                             ${iosBadge}
                         </div>
