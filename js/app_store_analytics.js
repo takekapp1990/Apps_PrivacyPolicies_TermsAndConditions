@@ -69,7 +69,7 @@
         if (typeof window.gtag === 'function') {
             window.gtag('event', 'app_store_click', {
                 store_name: storeName,
-                app_name: pathParts[0] || 'takekapp',
+                app_name: link.dataset.analyticsApp || pathParts[0] || 'takekapp',
                 lp_path: sourcePage.pathname,
                 link_url: destination.href,
                 link_position: getLinkPosition(link)

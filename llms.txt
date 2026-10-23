@@ -47,6 +47,9 @@ x-app-description: "Mobile applications for Android and iOS platforms"
 
 # Available Applications
 x-apps:
+  - name: "VersaMemo"
+    description: "Flexible local-first notes with cards, hierarchy, calendars, and a one-time Pro purchase"
+    pattern: "/VersaMemo/{ja,en}/"
   - name: "SharedDice"
     description: "Multi-functional dice app with various dice types and features"
     pattern: "/SharedDice/landing_pages/*/landing_page_*.html"

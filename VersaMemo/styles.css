@@ -1131,7 +1131,7 @@ h1 span {
     box-shadow: var(--soft-shadow);
 }
 
-.closing-icon { width: 94px; border-radius: 24px; box-shadow: 0 13px 30px rgba(16, 53, 82, 0.16); }
+.closing-icon { width: 94px; height: auto; border-radius: 24px; box-shadow: 0 13px 30px rgba(16, 53, 82, 0.16); }
 .closing h2 { margin-bottom: 8px; font-size: clamp(1.9rem, 3.7vw, 3.1rem); }
 .closing .actions { margin-top: 0; }
 
@@ -1274,4 +1274,25 @@ h1 span {
     .carousel-dots span { transition: none; }
     .store-badge-link { transition: none; }
     .hero-inline-link span { transition: none; }
+}
+
+/* Released-app download and plan details. */
+.download-actions { display: grid; gap: 14px; justify-items: start; }
+.download-store-links { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.download-store-links .store-badge-link:focus-visible { outline-color: var(--blue); }
+.closing-support { color: var(--blue); font-weight: 800; text-underline-offset: 4px; }
+.plan-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
+.plan-comparison article { padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255, 255, 255, 0.62); }
+.plan-comparison h3 { margin: 0 0 8px; font-size: 1rem; }
+.plan-comparison p, .product-copy .trial-note { margin: 0; font-size: 0.9rem; }
+.product-copy > .trial-note { margin-top: 16px; font-size: 0.9rem; }
+@media (min-width: 761px) and (max-width: 1020px) {
+    .download-actions { grid-column: 2; }
+}
+@media (max-width: 760px) {
+    .download-actions { justify-items: center; grid-column: 1; }
+    .download-store-links { justify-content: center; }
+}
+@media (max-width: 560px) {
+    .plan-comparison { grid-template-columns: 1fr; }
 }
