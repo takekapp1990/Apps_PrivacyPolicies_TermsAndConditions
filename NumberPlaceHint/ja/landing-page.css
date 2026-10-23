@@ -184,9 +184,9 @@ section[id], [id="lp-demo"] { scroll-margin-top: 24px; }
     .store-links { gap: 10px; margin-top: 20px; }
     .store-note { font-size: .65rem; margin-top: 9px; }
     .hero-band::before { background-size: 42px 42px; opacity: .06; }
-    .screenshots-section { margin-top: -30px; }
-    .screenshots-track { gap: 16px; margin-right: -20px; padding: 3px 20px 15px 0; }
-    .screenshot-card { width: 210px; flex-basis: 210px; border-radius: 11px; }
+    .screenshots-section { --screenshot-width: 210px; margin-top: -30px; }
+    .screenshots-track { gap: 16px; margin-inline: -20px; padding: 3px calc((100vw - var(--screenshot-width)) / 2) 15px; scroll-snap-type: x mandatory; }
+    .screenshot-card { width: var(--screenshot-width); flex-basis: var(--screenshot-width); border-radius: 11px; scroll-snap-align: center; }
     .screenshot-card figcaption { padding: 10px 12px; font-size: .75rem; }
     .carousel-dots { display: flex; justify-content: center; align-items: center; gap: 4px; min-height: 56px; }
 .carousel-dots button { display: grid; place-items: center; width: 30px; height: 40px; padding: 0; border: 0; background: transparent; }
@@ -256,8 +256,8 @@ section[id], [id="lp-demo"] { scroll-margin-top: 24px; }
     .hero-app img { width: 38px; height: 38px; }
     .store-links { gap: 4px; }
     .hero-lead { font-size: .9rem; }
-    .screenshot-card { width: 198px; flex-basis: 198px; }
-    .screenshots-track { margin-right: -16px; padding-right: 16px; }
+    .screenshots-section { --screenshot-width: 198px; }
+    .screenshots-track { margin-inline: -16px; }
     .feature-card { padding-inline: 17px; }
 }
 @media (prefers-reduced-motion: reduce) {

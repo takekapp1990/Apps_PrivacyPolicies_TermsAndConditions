@@ -105,7 +105,7 @@ def head(code,title,description,image,brand):
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{esc(image)}"><meta name="twitter:site" content="@takekapp">
 <script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-0VCS46ZTHC');</script>
-<script defer src="/js/app_store_analytics.js"></script><link rel="stylesheet" href="../language_switcher.css">{('<link rel="stylesheet" href="../fonts/fonts.css">' if code=='ja' else '')}<link rel="stylesheet" href="../ja/landing-page.css?v=20261023-badges"><script defer src="../ja/landing-page.js?v=20261023"></script></head>
+<script defer src="/js/app_store_analytics.js"></script><link rel="stylesheet" href="../language_switcher.css">{('<link rel="stylesheet" href="../fonts/fonts.css">' if code=='ja' else '')}<link rel="stylesheet" href="../ja/landing-page.css?v=20261023-centered-carousel"><script defer src="../ja/landing-page.js?v=20261023"></script></head>
 '''
 
 
