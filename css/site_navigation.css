@@ -1,0 +1,33 @@
+.takekapp-site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-top: 1px solid rgba(127, 127, 127, 0.25);
+    background: #fff;
+    color: #334155;
+    font: 600 0.9rem/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.takekapp-site-nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.takekapp-site-nav a:hover,
+.takekapp-site-nav a:focus-visible {
+    text-decoration: underline;
+}
+
+video.hero-mockup {
+    aspect-ratio: 600 / 1304;
+    object-fit: cover;
+}
+
+@media (prefers-color-scheme: dark) {
+    .takekapp-site-nav {
+        background: #111827;
+        color: #e5e7eb;
+    }
+}

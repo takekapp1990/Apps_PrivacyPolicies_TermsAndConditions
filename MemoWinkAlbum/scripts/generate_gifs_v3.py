@@ -1,6 +1,23 @@
 import os
 import subprocess
-import shutil
+
+
+def generate_web_video(gif_path):
+    """Create a compact MP4 counterpart for web delivery."""
+    output_path = os.path.splitext(gif_path)[0] + ".mp4"
+    subprocess.run([
+        "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+        "-i", gif_path,
+        "-an",
+        "-vf", "scale=480:-2:flags=lanczos",
+        "-c:v", "libx264",
+        "-preset", "slow",
+        "-crf", "28",
+        "-pix_fmt", "yuv420p",
+        "-movflags", "+faststart",
+        output_path,
+    ], check=True)
+    print(f"  Successfully created {output_path}")
 
 def generate_gifs():
     # Base directory relative to where the script is run (project root)
@@ -134,6 +151,7 @@ def generate_gifs():
                 final_output
             ], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
             print(f"  Successfully created {final_output}")
+            generate_web_video(final_output)
             
         except subprocess.CalledProcessError as e:
             print(f"  Error concatenating: {e}")

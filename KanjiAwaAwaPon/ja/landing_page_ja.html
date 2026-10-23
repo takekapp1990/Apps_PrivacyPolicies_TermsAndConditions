@@ -416,6 +416,7 @@
 }
     </script>
     <script defer src="/js/app_store_analytics.js"></script>
+    <link rel="stylesheet" href="/css/site_navigation.css">
 </head>
 
     <body>
@@ -424,7 +425,7 @@
             <div class="container">
                 <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
                     <img src="https://takekapp.com/KanjiAwaAwaPon/images/awaawapon_kanji_app_icon_10241024_ios.png"
-                        alt="難読漢字 あわあわポン アイコン" class="navbar-icon me-2" decoding="async">
+                        alt="難読漢字 あわあわポン アイコン" class="navbar-icon me-2" decoding="async" width="1024" height="1024">
                     難読漢字 あわあわポン
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -450,7 +451,7 @@
         <section class="hero-section">
             <div class="container text-center">
                 <img src="https://takekapp.com/KanjiAwaAwaPon/images/awaawapon_kanji_app_icon_10241024_ios.png"
-                    class="app-icon-large mb-4" alt="難読漢字 あわあわポン" decoding="async" loading="lazy">
+                    class="app-icon-large mb-4" alt="難読漢字 あわあわポン" decoding="async" loading="lazy" width="1024" height="1024">
                 <h1 class="display-4 fw-bold mb-3">難読漢字<br class="d-md-none"> あわあわポン</h1>
                 <h2 class="h3 mb-4">楽しく学ぶ！<br>漢字クイズゲーム</h2>
                 <p class="lead mb-4">難読漢字を楽しく覚えよう！記憶力バトルゲームで漢字の知識を身につけよう！</p>
@@ -481,32 +482,35 @@
                         <div class="screenshots-container">
                             <div class="screenshots-wrapper">
                                 <div class="screenshot-item">
-                                    <img src="https://takekapp.com/KanjiAwaAwaPon/images/screen_shots/ja/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202026-01-15%20at%2023.09.13.png"
-                                        alt="難読漢字 あわあわポン スクリーンショット1" decoding="async" loading="lazy">
+                                    <picture>
+                                        <source srcset="../images/screen_shots/ja/screenshot_01.avif" type="image/avif">
+                                        <img src="../images/screen_shots/ja/screenshot_01.png"
+                                            alt="難読漢字 あわあわポン スクリーンショット1" width="660" height="1434" decoding="async" loading="lazy">
+                                    </picture>
                                 </div>
                                 <div class="screenshot-item">
                                     <img src="https://takekapp.com/KanjiAwaAwaPon/images/screen_shots/ja/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202026-01-15%20at%2023.10.47.png"
-                                        alt="難読漢字 あわあわポン スクリーンショット2" decoding="async" loading="lazy">
+                                        alt="難読漢字 あわあわポン スクリーンショット2" decoding="async" loading="lazy" width="1320" height="2868">
                                 </div>
                                 <div class="screenshot-item">
                                     <img src="https://takekapp.com/KanjiAwaAwaPon/images/screen_shots/ja/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202026-01-15%20at%2023.10.54.png"
-                                        alt="難読漢字 あわあわポン スクリーンショット3" decoding="async" loading="lazy">
+                                        alt="難読漢字 あわあわポン スクリーンショット3" decoding="async" loading="lazy" width="1320" height="2868">
                                 </div>
                                 <div class="screenshot-item">
                                     <img src="https://takekapp.com/KanjiAwaAwaPon/images/screen_shots/ja/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202026-01-15%20at%2023.10.59.png"
-                                        alt="難読漢字 あわあわポン スクリーンショット4" decoding="async" loading="lazy">
+                                        alt="難読漢字 あわあわポン スクリーンショット4" decoding="async" loading="lazy" width="1320" height="2868">
                                 </div>
                                 <div class="screenshot-item">
                                     <img src="https://takekapp.com/KanjiAwaAwaPon/images/screen_shots/ja/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202026-01-15%20at%2023.11.03.png"
-                                        alt="難読漢字 あわあわポン スクリーンショット5" decoding="async" loading="lazy">
+                                        alt="難読漢字 あわあわポン スクリーンショット5" decoding="async" loading="lazy" width="1320" height="2868">
                                 </div>
                                 <div class="screenshot-item">
                                     <img src="https://takekapp.com/KanjiAwaAwaPon/images/screen_shots/ja/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202026-01-15%20at%2023.11.17.png"
-                                        alt="難読漢字 あわあわポン スクリーンショット6" decoding="async" loading="lazy">
+                                        alt="難読漢字 あわあわポン スクリーンショット6" decoding="async" loading="lazy" width="1320" height="2868">
                                 </div>
                                 <div class="screenshot-item">
                                     <img src="https://takekapp.com/KanjiAwaAwaPon/images/screen_shots/ja/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202026-01-15%20at%2023.11.30.png"
-                                        alt="難読漢字 あわあわポン スクリーンショット7" decoding="async" loading="lazy">
+                                        alt="難読漢字 あわあわポン スクリーンショット7" decoding="async" loading="lazy" width="1320" height="2868">
                                 </div>
                             </div>
                         </div>
@@ -848,6 +852,10 @@
                 });
             })();
         </script>
-    </body>
+    <nav class="takekapp-site-nav" data-takekapp-site-nav aria-label="TakeKApp">
+        <a href="/">TakeKApp Apps</a>
+        <a href="/blog/">Development Blog</a>
+    </nav>
+</body>
 
 </html>

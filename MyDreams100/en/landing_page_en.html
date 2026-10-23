@@ -587,6 +587,7 @@
 }
     </script>
     <script defer src="/js/app_store_analytics.js"></script>
+    <link rel="stylesheet" href="/css/site_navigation.css">
     <link rel="alternate" hreflang="en" href="https://takekapp.com/MyDreams100/en/landing_page_en.html">
     <link rel="alternate" hreflang="ja" href="https://takekapp.com/MyDreams100/ja/landing_page_ja.html">
     <link rel="alternate" hreflang="x-default" href="https://takekapp.com/MyDreams100/en/landing_page_en.html">
@@ -598,7 +599,7 @@
                 <div class="hero-title">
                     <h1>My Dreams 100</h1>
                     <img src="../images/app_icon/my_dreams_100_app_icon_1024_1024_2.png" alt="My Dreams 100 App Icon"
-                        class="app-icon" decoding="async">
+                        class="app-icon" decoding="async" width="1024" height="1024">
                 </div>
                 <p><strong>Discover what you truly want to do.</strong><br><br>
                     Reflect on yourself, write it down, and make it happen.<br>Create a list of 100 things you want to
@@ -627,28 +628,28 @@
                 <div class="value-grid">
                     <div class="value-item">
                         <img src="../images/lp/Google_AI_Studio_2025-07-30_方向性が明確になる.png"
-                            alt="Life direction becomes clear" decoding="async" loading="lazy">
+                            alt="Life direction becomes clear" decoding="async" loading="lazy" width="1408" height="768">
                         <h3>🎯 Life Direction Becomes Clear</h3>
                         <p>Solve the challenge of spending days vaguely and find excitement in daily life by writing 100
                             things you want to do, creating opportunities for life improvement.</p>
                     </div>
                     <div class="value-item">
                         <img src="../images/lp/Google_AI_Studio_2025-07-30_本当の自分が見えてくる.png"
-                            alt="True self becomes visible" decoding="async" loading="lazy">
+                            alt="True self becomes visible" decoding="async" loading="lazy" width="1408" height="768">
                         <h3>🔍 Your True Self Becomes Visible</h3>
                         <p>Solve the challenge of not knowing what you want to do and discover what you truly want by
                             writing 100 things you want to do.</p>
                     </div>
                     <div class="value-item">
                         <img src="../images/lp/Google_AI_Studio_2025-07-30_行動力が自然と湧いてくる.png"
-                            alt="Motivation naturally arises" decoding="async" loading="lazy">
+                            alt="Motivation naturally arises" decoding="async" loading="lazy" width="1408" height="768">
                         <h3>💪 Motivation Naturally Arises</h3>
                         <p>Having specific goals changes your daily choices and naturally increases your motivation to
                             take action.</p>
                     </div>
                     <div class="value-item">
                         <img src="../images/lp/Google_AI_Studio_2025-07-30_人生の満足度が向上する.png"
-                            alt="Life satisfaction improves" decoding="async" loading="lazy">
+                            alt="Life satisfaction improves" decoding="async" loading="lazy" width="1408" height="768">
                         <h3>🌟 Life Satisfaction Improves</h3>
                         <p>Having goals increases opportunities to experience achievement and improves overall life
                             satisfaction.</p>
@@ -742,23 +743,26 @@
                 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
                     <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
                         <img src="../images/screen_shots/en/resized_slide_6.png" alt="My Dreams 100 Screenshot 1"
-                            style="width: 100%; height: auto;" decoding="async" loading="lazy">
+                            style="width: 100%; height: auto;" decoding="async" loading="lazy" width="1290" height="2796">
                     </div>
                     <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
-                        <img src="../images/screen_shots/en/resized_slide_7.png" alt="My Dreams 100 Screenshot 2"
-                            style="width: 100%; height: auto;" decoding="async" loading="lazy">
+                        <picture>
+                            <source srcset="../images/screen_shots/en/resized_slide_7.avif" type="image/avif">
+                            <img src="../images/screen_shots/en/resized_slide_7_web.png" alt="My Dreams 100 Screenshot 2"
+                                width="645" height="1398" style="width: 100%; height: auto;" decoding="async" loading="lazy">
+                        </picture>
                     </div>
                     <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
                         <img src="../images/screen_shots/en/resized_slide_8.png" alt="My Dreams 100 Screenshot 3"
-                            style="width: 100%; height: auto;" decoding="async" loading="lazy">
+                            style="width: 100%; height: auto;" decoding="async" loading="lazy" width="1290" height="2796">
                     </div>
                     <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
                         <img src="../images/screen_shots/en/resized_slide_9.png" alt="My Dreams 100 Screenshot 4"
-                            style="width: 100%; height: auto;" decoding="async" loading="lazy">
+                            style="width: 100%; height: auto;" decoding="async" loading="lazy" width="1290" height="2796">
                     </div>
                     <div class="screenshot-container" style="width: calc(20% - 16px); min-width: 150px;">
                         <img src="../images/screen_shots/en/resized_slide_10.png" alt="My Dreams 100 Screenshot 5"
-                            style="width: 100%; height: auto;" decoding="async" loading="lazy">
+                            style="width: 100%; height: auto;" decoding="async" loading="lazy" width="1290" height="2796">
                     </div>
                 </div>
             </section>
@@ -793,6 +797,10 @@
                 <p>&copy; TakeKApp. All rights reserved.</p>
             </div>
         </footer>
-    </body>
+    <nav class="takekapp-site-nav" data-takekapp-site-nav aria-label="TakeKApp">
+        <a href="/">TakeKApp Apps</a>
+        <a href="/blog/">Development Blog</a>
+    </nav>
+</body>
 
 </html>

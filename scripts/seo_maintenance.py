@@ -13,15 +13,17 @@ from __future__ import annotations
 import html
 import json
 import re
+import struct
 from collections import defaultdict
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import unquote, urljoin, urlparse, urlunparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = "https://takekapp.com"
 GA_MEASUREMENT_ID = "G-0VCS46ZTHC"
 APP_STORE_ANALYTICS_SCRIPT = "/js/app_store_analytics.js"
+SITE_NAVIGATION_STYLESHEET = "/css/site_navigation.css"
 
 ANALYTICS_EXTRA_PAGES = {
     "AwaAwaPon/ja/tournament_202507_ja.html",
@@ -84,6 +86,30 @@ def canonical_url(path: Path) -> str:
     if relative.endswith("/index.html"):
         return f"{BASE_URL}/{relative[:-10]}"
     return f"{BASE_URL}/{relative}"
+
+
+def normalize_blog_index_links(path: Path, source: str) -> str:
+    """Use canonical blog links and correct article links to the site home."""
+    def replace(match: re.Match[str]) -> str:
+        raw_url = html.unescape(match.group("url"))
+        resolved = urlparse(urljoin(canonical_url(path), raw_url))
+        # Articles are four levels below the site root, not three.
+        if rel(path).startswith("blog/posts/dev/") and urlparse(raw_url).path == "../../../index.html":
+            target = urlunparse(("", "", "/", resolved.params, resolved.query, resolved.fragment))
+            return match.group("prefix") + html.escape(target, quote=True) + match.group("quote")
+        if resolved.hostname not in {"takekapp.com", "www.takekapp.com"}:
+            return match.group(0)
+        if resolved.path != "/blog/index.html":
+            return match.group(0)
+        target = urlunparse(("", "", "/blog/", resolved.params, resolved.query, resolved.fragment))
+        return match.group("prefix") + html.escape(target, quote=True) + match.group("quote")
+
+    return re.sub(
+        r'(?P<prefix>\bhref\s*=\s*(?P<quote>["\']))(?P<url>.*?)(?P=quote)',
+        replace,
+        source,
+        flags=re.I,
+    )
 
 
 def language_for(path: Path) -> str:
@@ -205,6 +231,29 @@ def add_app_store_click_tracking(path: Path, source: str) -> str:
     return insert_before_head_end(source, block)
 
 
+def add_site_navigation(path: Path, source: str) -> str:
+    """Give every public app page a crawlable route back to the site hubs."""
+    relative = rel(path)
+    is_landing_page = "landing_page_" in path.name or path.name == "app_introduction.html"
+    is_versamemo_home = relative in {"VersaMemo/en/index.html", "VersaMemo/ja/index.html"}
+    if not (is_landing_page or is_versamemo_home) or "noindex" in source.lower():
+        return source
+    if "data-takekapp-site-nav" in source:
+        return source
+
+    if SITE_NAVIGATION_STYLESHEET not in source:
+        source = insert_before_head_end(
+            source,
+            f'    <link rel="stylesheet" href="{SITE_NAVIGATION_STYLESHEET}">',
+        )
+
+    navigation = '''    <nav class="takekapp-site-nav" data-takekapp-site-nav aria-label="TakeKApp">
+        <a href="/">TakeKApp Apps</a>
+        <a href="/blog/">Development Blog</a>
+    </nav>'''
+    return re.sub(r"\s*</body>", f"\n{navigation}\n</body>", source, count=1, flags=re.I)
+
+
 def clamp_description(value: str, language: str) -> str:
     terminal = ".!?。！？…"
     if len(value) <= 160 and (len(value) < 150 or value.rstrip('"\'”’）)]').endswith(tuple(terminal))):
@@ -249,10 +298,52 @@ def local_path_for_image(page: Path, src: str) -> Path | None:
     if parsed.scheme in {"http", "https"}:
         if parsed.netloc not in {"takekapp.com", "www.takekapp.com"}:
             return None
-        return ROOT / parsed.path.lstrip("/")
+        return ROOT / unquote(parsed.path.lstrip("/"))
     if src.startswith(("data:", "//")):
         return None
-    return (ROOT / src.lstrip("/")) if src.startswith("/") else (page.parent / src)
+    decoded_path = unquote(parsed.path)
+    return (ROOT / decoded_path.lstrip("/")) if decoded_path.startswith("/") else (page.parent / decoded_path)
+
+
+def image_dimensions(image_path: Path) -> tuple[int, int] | None:
+    """Read PNG, GIF, or JPEG dimensions without third-party dependencies."""
+    try:
+        with image_path.open("rb") as stream:
+            header = stream.read(32)
+            if header.startswith(b"\x89PNG\r\n\x1a\n") and len(header) >= 24:
+                return struct.unpack(">II", header[16:24])
+            if header[:6] in {b"GIF87a", b"GIF89a"} and len(header) >= 10:
+                return struct.unpack("<HH", header[6:10])
+            if header.startswith(b"\xff\xd8"):
+                stream.seek(2)
+                while True:
+                    marker_start = stream.read(1)
+                    if not marker_start:
+                        break
+                    if marker_start != b"\xff":
+                        continue
+                    marker = stream.read(1)
+                    while marker == b"\xff":
+                        marker = stream.read(1)
+                    if marker in {b"\xd8", b"\xd9"}:
+                        continue
+                    length_data = stream.read(2)
+                    if len(length_data) != 2:
+                        break
+                    segment_length = struct.unpack(">H", length_data)[0]
+                    if marker and marker[0] in {
+                        0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7,
+                        0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF,
+                    }:
+                        payload = stream.read(5)
+                        if len(payload) == 5:
+                            height, width = struct.unpack(">HH", payload[1:5])
+                            return width, height
+                        break
+                    stream.seek(max(segment_length - 2, 0), 1)
+    except (OSError, struct.error):
+        return None
+    return None
 
 
 def optimize_images(path: Path, source: str) -> str:
@@ -262,6 +353,13 @@ def optimize_images(path: Path, source: str) -> str:
         nonlocal image_number
         tag = match.group(0)
         image_number += 1
+        source_match = re.search(r'\bsrc=["\']([^"\']+)["\']', tag, flags=re.I)
+        if source_match and not re.search(r"\bwidth=", tag, flags=re.I) and not re.search(r"\bheight=", tag, flags=re.I):
+            image_path = local_path_for_image(path, source_match.group(1))
+            dimensions = image_dimensions(image_path) if image_path and image_path.is_file() else None
+            if dimensions:
+                width, height = dimensions
+                tag = tag[:-1].rstrip() + f' width="{width}" height="{height}">'
         if "decoding=" not in tag.lower():
             tag = tag[:-1].rstrip() + ' decoding="async">'
         if image_number > 1 and "loading=" not in tag.lower():
@@ -377,6 +475,20 @@ def replace_known_broken_references(path: Path, source: str) -> str:
                             lambda m: 'href="../en/privacy_policy_en.html"' if "privacy" in m.group(0)
                             else 'href="../en/terms_and_conditions_en.html"', source)
 
+    for app in ("FlagMemoryAwaAwaPon", "TimesTablesMemoryAwaAwaPon"):
+        if relative.startswith(f"{app}/") and "landing_page_" in path.name:
+            language = language_for(path)
+            if language not in {"ja", "en"}:
+                source = re.sub(
+                    rf'href=["\']https://takekapp\.com/{app}/[^/]+/'
+                    rf'(?P<document>terms_and_conditions|privacy_policy)_[^"\']+\.html["\']',
+                    lambda match: (
+                        f'href="https://takekapp.com/{app}/en/'
+                        f'{match.group("document")}_en.html"'
+                    ),
+                    source,
+                )
+
     return source
 
 
@@ -455,9 +567,11 @@ def main() -> None:
     for path in paths:
         before = path.read_text(encoding="utf-8", errors="ignore")
         source = replace_known_broken_references(path, before)
+        source = normalize_blog_index_links(path, source)
         source = add_basic_metadata(path, source)
         source = add_analytics(path, source)
         source = add_app_store_click_tracking(path, source)
+        source = add_site_navigation(path, source)
         source = normalize_description(path, source)
         source = add_software_schema(path, source)
         if path in clusters:

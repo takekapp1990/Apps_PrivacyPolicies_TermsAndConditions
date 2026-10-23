@@ -2,3 +2,7 @@
 
 # Private documents - not for public repository
 _private_docs/
+
+# Python bytecode caches
+__pycache__/
+*.py[cod]
