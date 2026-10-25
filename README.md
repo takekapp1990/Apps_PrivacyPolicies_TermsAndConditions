@@ -34,7 +34,7 @@ AIが生成する励まし・応援メッセージで、毎日のタスクを楽
 
 ## あわあわポン
 <img src="https://takekapp.com/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png" width="100" alt="アプリアイコン">
-次々と出てくるキャラクターの名前を覚えて答える、記憶力が試されるゲームです。笑いながら脳トレしよう！
+個性豊かなキャラクターと記憶・集中を使う短いゲームを楽しめるアプリです。遊んだ記録を振り返りながら、50種類のバッジやキャラ図鑑を集められます。
 
 * [アプリ紹介ページ](https://takekapp.com/AwaAwaPon/ja/landing_page_ja.html)
 * [利用規約](https://takekapp.com/AwaAwaPon/ja/terms_and_conditions_ja.html)
@@ -182,7 +182,7 @@ Scan with your camera and get logical hints. A Sudoku app that helps you learn a
 
 ## Awa Pop
 <img src="https://takekapp.com/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png" width="100" alt="app icon">
-Remember hilarious nicknames! Memory party game with crazy character names.
+Bite-sized memory and focus games played with lovable characters. Review your records and collect 50 badges and favorite characters.
 
 * [App Introduction](https://takekapp.com/AwaAwaPon/en/landing_page_en.html)
 * [Terms and Conditions](https://takekapp.com/AwaAwaPon/en/terms_and_conditions_en.html)

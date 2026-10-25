@@ -54,7 +54,7 @@ x-apps:
     description: "Multi-functional dice app with various dice types and features"
     pattern: "/SharedDice/landing_pages/*/landing_page_*.html"
   - name: "AwaAwaPon"
-    description: "Memory training battle game with cute characters"
+    description: "Bite-sized memory and focus games with cute characters, 5-area record radar chart, 50 badges, and character collection"
     pattern: "/AwaAwaPon/*/landing_page_*.html"
   - name: "MyDreams100"
     description: "Bucket list app to help you achieve 100 dreams"

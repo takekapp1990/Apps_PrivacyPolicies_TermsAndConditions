@@ -44,12 +44,12 @@ const appsData = [
         locales: {
             ja: {
                 title: 'あわあわポン',
-                description: '次々と出てくるキャラクターの名前を覚えて答える、記憶力が試されるゲームです。笑いながら脳トレしよう！',
+                description: '個性豊かなキャラと記憶・集中を使う短いゲーム！記録を振り返りながら、50種類のバッジやキャラ図鑑を集められます。',
                 lp: 'https://takekapp.com/AwaAwaPon/ja/landing_page_ja.html'
             },
             en: {
                 title: 'Awa Pop',
-                description: 'Remember hilarious nicknames! Memory party game with crazy character names.',
+                description: 'Bite-sized memory and focus games with lovable characters. Review your records and collect 50 badges and favorite characters.',
                 lp: 'https://takekapp.com/AwaAwaPon/en/landing_page_en.html'
             }
         }
