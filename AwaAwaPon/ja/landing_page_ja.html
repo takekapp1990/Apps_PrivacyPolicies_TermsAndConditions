@@ -1426,6 +1426,24 @@
             .swap-kv-controls { padding-top: 7px; font-size: .61rem; }
             .hero-benefits { font-size: .69rem; gap: 7px 13px; padding-top: 18px; }
         }
+
+        /* Each native game clip keeps a fixed stage; the swap quiz has thinking time. */
+        .preview-steps { display: flex; gap: 5px; margin-bottom: 10px; }
+        .preview-steps span { flex: 1; padding: 6px 2px; border-radius: 8px; text-align: center; font-size: .72rem; font-weight: 700; color: #767083; background: #f3f0f7; }
+        .preview-steps .is-active { color: #583190; background: #e9ddfb; }
+        .preview-phase { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 30px; margin: 0 3px 7px; color: #583190; font-size: .9rem; }
+        #previewCountdown { white-space: nowrap; font-size: .75rem; font-weight: 700; color: #6b627c; }
+        .preview-stage { position: relative; aspect-ratio: 720 / 774; overflow: hidden; border-radius: 18px; background: #f7f2fc; }
+        .preview-stage video { height: 100%; object-fit: contain; }
+        .preview-gap { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 14px; background: #f7f2fc; color: #7047b6; font-size: .8rem; }
+        .preview-gap[hidden] { display: none; }
+        .preview-gap strong { font-size: 1.45rem; }
+        .preview-gap > span:first-child { letter-spacing: 8px; font-size: .8rem; color: #b59bdc; }
+        .preview-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 13px; }
+        .preview-choices button { font: inherit; font-size: .75rem; font-weight: 700; border: 1px solid #e5ddf0; color: #625970; background: #faf8fd; border-radius: 10px; padding: 9px 3px; cursor: pointer; }
+        .preview-choices button[aria-pressed="true"] { color: #583190; background: #ede3fc; border-color: #b69bdc; }
+        .preview-choices button:focus-visible { outline: 3px solid #7047b6; outline-offset: 2px; }
+        @media(max-width:640px) { .preview-steps span { font-size: .65rem; padding: 5px 1px; } .preview-phase { font-size: .8rem; } .preview-choices button { font-size: .68rem; } .preview-gap strong { font-size: 1.2rem; } }
     </style>
 </head>
 
@@ -1481,10 +1499,21 @@
                     <p class="hero-subnote">iOS / Android 対応・基本プレイ無料</p>
                 </div>
                 <div class="hero-showcase">
-                    <div class="swap-kv">
-                        <div class="swap-kv-heading"><span class="swap-kv-kicker">まずは、記憶力にチャレンジ</span><h2>入れ替わり探し</h2><p>覚えた配置、どこが変わった？</p></div>
-                        <video id="swapHeroVideo" class="swap-kv-video" width="720" height="774" muted playsinline loop preload="metadata" poster="../images/screenshots/ja/swap_hunt_kv.jpg" aria-label="入れ替わり探しの実際のゲーム映像。配置を覚えて、入れ替わった場所を2か所タップします。"><source src="../images/screenshots/ja/swap_hunt_kv.mp4" type="video/mp4"></video>
+                    <div class="swap-kv" id="gamePreview">
+                        <div class="swap-kv-heading"><span class="swap-kv-kicker" id="previewKicker">記憶力にチャレンジ</span><h2 id="previewTitle">入れ替わり探し</h2><p id="previewDescription">配置を覚えて、変わった場所を見つけよう。</p></div>
+                        <div class="preview-steps" aria-label="ゲームの流れ"><span data-step="0" class="is-active">1 覚える</span><span data-step="1">2 ひと呼吸</span><span data-step="2">3 答える</span></div>
+                        <div class="preview-phase"><strong id="previewPhase">配置を覚えよう</strong><span id="previewCountdown">あと4秒</span></div>
+                        <div class="preview-stage">
+                            <video id="swapHeroVideo" class="swap-kv-video" width="720" height="774" muted playsinline preload="metadata" poster="../images/screenshots/ja/swap_hunt_kv_v2.jpg" aria-label="入れ替わり探しのプレイ映像"><source src="../images/screenshots/ja/swap_hunt_kv_v2.mp4" type="video/mp4"></video>
+                            <div class="preview-gap" id="previewGap" hidden><span aria-hidden="true">● ● ●</span><strong>覚えているかな？</strong><span>このあと、入れ替わります</span></div>
+                        </div>
                         <div class="swap-kv-controls"><span>実際のゲーム映像・一部編集</span><button type="button" id="swapVideoToggle" aria-controls="swapHeroVideo">映像を再生</button></div>
+                        <div class="preview-choices" role="group" aria-label="ゲーム映像を選ぶ">
+                            <button type="button" data-game="0" aria-pressed="true">入れ替わり探し</button>
+                            <button type="button" data-game="1" aria-pressed="false">キャラ神経衰弱</button>
+                            <button type="button" data-game="2" aria-pressed="false">探してタップ</button>
+                            <button type="button" data-game="3" aria-pressed="false">あわのかくれんぼ</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1899,19 +1928,90 @@
         </div>
     </footer>
 
-    <!-- KV video: respect reduced motion; pause/resume is always available. -->
+    <!-- Native game previews: one full round before switching, manual selection and pause. -->
     <script>
     (function () {
         var video = document.getElementById('swapHeroVideo');
         var toggle = document.getElementById('swapVideoToggle');
         if (!video || !toggle) return;
-        function update() { toggle.textContent = video.paused ? '映像を再生' : '映像を一時停止'; }
-        video.addEventListener('play', update);
-        video.addEventListener('pause', update);
+        var title = document.getElementById('previewTitle');
+        var kicker = document.getElementById('previewKicker');
+        var description = document.getElementById('previewDescription');
+        var phase = document.getElementById('previewPhase');
+        var countdown = document.getElementById('previewCountdown');
+        var gap = document.getElementById('previewGap');
+        var steps = Array.prototype.slice.call(document.querySelectorAll('.preview-steps span'));
+        var choices = Array.prototype.slice.call(document.querySelectorAll('[data-game]'));
+        var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        var games = [
+            { name: '入れ替わり探し', file: 'swap_hunt_kv_v2', kicker: '記憶力にチャレンジ', description: '配置を覚えて、変わった場所を見つけよう。', steps: ['1 覚える', '2 ひと呼吸', '3 答える'] },
+            { name: 'キャラ神経衰弱', file: 'memory_kv', kicker: '記憶力にチャレンジ', description: 'カードの場所を覚えて、同じキャラをそろえよう。', steps: ['1 めくる', '2 覚える', '3 ペアを発見'] },
+            { name: '探してタップ', file: 'search_kv', kicker: '集中力にチャレンジ', description: 'お題のキャラとマークを、すばやく見つけよう。', steps: ['1 お題を見る', '2 探す', '3 タップ'] },
+            { name: 'あわのかくれんぼ', file: 'bubbles_kv', kicker: '集中力にチャレンジ', description: '泡に隠れたキャラを、最後まで目で追おう。', steps: ['1 覚える', '2 目で追う', '3 見つける'] }
+        ];
+        var current = 0;
+        var wantsPlay = !motion.matches;
+        var onscreen = true;
+        function canPlay() { return wantsPlay && onscreen && !document.hidden; }
+        function updateToggle() { toggle.textContent = wantsPlay ? '映像を一時停止' : '映像を再生'; }
+        function playIfWanted() { if (canPlay()) video.play().catch(function (error) { if (error.name !== 'AbortError') { wantsPlay = false; updateToggle(); } }); }
+        function showPhase() {
+            var t = video.currentTime;
+            var step = 0;
+            var text = '', remaining = '';
+            gap.hidden = true;
+            if (current === 0) {
+                if (t < 4) { text = '配置を覚えよう'; remaining = 'あと' + Math.max(1, Math.ceil(4-t)) + '秒'; }
+                else if (t < 5.2) { step = 1; text = 'ひと呼吸おいて…'; gap.hidden = false; }
+                else if (t < 9.7) { step = 2; text = '入れ替わった2か所は？'; remaining = '考えてみよう'; }
+                else { step = 2; text = '答え合わせ'; remaining = '上の2か所！'; }
+            } else if (current === 1) {
+                step = t < 1 ? 0 : (t < 2 ? 1 : 2);
+                text = t < 2 ? 'めくったキャラの場所を覚えよう' : '同じキャラのペアを発見！';
+            } else if (current === 2) {
+                step = t < .7 ? 0 : (t % 2 < 1.2 ? 1 : 2);
+                text = 'お題と同じキャラ・マークはどこ？';
+            } else {
+                step = t < .65 ? 0 : (t < 4.55 ? 1 : 2);
+                text = t < .65 ? 'このキャラの場所を覚えよう' : (t < 4.55 ? '隠れたキャラを目で追おう' : (t < 5.25 ? 'どの泡にいる？' : 'みつけた！'));
+            }
+            phase.textContent = text;
+            countdown.textContent = remaining;
+            steps.forEach(function (el, i) { el.classList.toggle('is-active', i === step); });
+        }
+        function select(index) {
+            current = index;
+            var game = games[index];
+            title.textContent = game.name;
+            kicker.textContent = game.kicker;
+            description.textContent = game.description;
+            steps.forEach(function (el, i) { el.textContent = game.steps[i]; });
+            choices.forEach(function (button, i) { button.setAttribute('aria-pressed', String(i === index)); });
+            video.poster = '../images/screenshots/ja/' + game.file + '.jpg';
+            video.setAttribute('aria-label', game.name + 'のプレイ映像');
+            video.src = '../images/screenshots/ja/' + game.file + '.mp4';
+            video.load();
+            showPhase();
+            playIfWanted();
+        }
+        choices.forEach(function (button, i) { button.addEventListener('click', function () { select(i); }); });
+        video.addEventListener('timeupdate', showPhase);
+        video.addEventListener('loadedmetadata', showPhase);
+        video.addEventListener('ended', function () { if (canPlay()) select((current + 1) % games.length); });
         toggle.addEventListener('click', function () {
-            if (video.paused) video.play().catch(update); else video.pause();
+            wantsPlay = !wantsPlay;
+            updateToggle();
+            if (wantsPlay) playIfWanted(); else video.pause();
         });
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) video.play().catch(update);
+        document.addEventListener('visibilitychange', function () { if (document.hidden) video.pause(); else playIfWanted(); });
+        if ('IntersectionObserver' in window) new IntersectionObserver(function (entries) {
+            onscreen = entries[0].isIntersecting;
+            if (onscreen) playIfWanted(); else video.pause();
+        }, {threshold: 0}).observe(document.getElementById('gamePreview'));
+        motion.addEventListener('change', function (event) { if (event.matches) { wantsPlay = false; video.pause(); updateToggle(); } });
+        updateToggle();
+        showPhase();
+        playIfWanted();
     }());
     </script>
 
