@@ -7,6 +7,8 @@ ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / 'FlagMemoryAwaAwaPon'
 COPY = Path(__file__).parent / 'flag_memory_lp_copy'
 LANGUAGES = {'ja': '日本語', 'en': 'English', 'es': 'Español', 'de': 'Deutsch', 'ko': '한국어', 'th': 'ไทย', 'id': 'Bahasa Indonesia', 'fr': 'Français', 'pt-BR': 'Português (Brasil)', 'zh-Hant': '繁體中文（台灣）'}
+# Each LP opens the storefront corresponding to its language/region.
+APP_STORE_COUNTRIES = {'ja': 'jp', 'en': 'us', 'es': 'es', 'de': 'de', 'ko': 'kr', 'th': 'th', 'id': 'id', 'fr': 'be', 'pt-BR': 'br', 'zh-Hant': 'tw'}
 BASE = 'https://takekapp.com/FlagMemoryAwaAwaPon'
 ASSET = '../images/lp'
 
@@ -36,13 +38,18 @@ def language_menu(lang, d):
     links = ''.join(f'<li><a href="../{key}/landing_page_{key}.html" lang="{key}" hreflang="{key}"'+(' aria-current="page"' if key == lang else '')+f'>{e(label)}</a></li>' for key, label in LANGUAGES.items())
     return f'<details class="language-menu"><summary aria-label="{e(d["languageLabel"]+": "+LANGUAGES[lang])}"><span aria-hidden="true">◎</span>{e(LANGUAGES[lang])}</summary><ul>{links}</ul></details>'
 
+def app_store_url(lang):
+    # France returned 404 on 2026-11-02; Belgium offers the French listing.
+    language = '?l=fr-FR' if lang == 'fr' else ''
+    return f'https://apps.apple.com/{APP_STORE_COUNTRIES[lang]}/app/id6757128485{language}'
+
 def stores(lang, d, position):
     ja = lang == 'ja'
     apple = 'Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg' if ja else 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg'
     google = 'GetItOnGooglePlay_Badge_Web_color_Japanese.png' if ja else 'GetItOnGooglePlay_Badge_Web_color_English.png'
     loading = 'eager' if position == 'hero' else 'lazy'
     apple_width = 109 if ja else 120
-    return f'''<div class="store-links"><a class="store-badge" data-analytics-position="{position}" href="https://apps.apple.com/app/id6757128485" aria-label="{e(d['appStore'])}"><img src="../../commonImages/badgeiOSAppStore/{apple}" alt="{e(d['appStore'])}" width="{apple_width}" height="40" decoding="async" loading="{loading}"></a><a class="store-badge google" data-analytics-position="{position}" href="https://play.google.com/store/apps/details?id=com.NationalFlagsAwaPop.takekapp1990.prod&amp;hl={lang}" aria-label="{e(d['googlePlay'])}"><img src="../../commonImages/badgeAndroid/{google}" alt="{e(d['googlePlay'])}" width="270" height="80" decoding="async" loading="{loading}"></a></div>'''
+    return f'''<div class="store-links"><a class="store-badge" data-analytics-position="{position}" href="{app_store_url(lang)}" aria-label="{e(d['appStore'])}"><img src="../../commonImages/badgeiOSAppStore/{apple}" alt="{e(d['appStore'])}" width="{apple_width}" height="40" decoding="async" loading="{loading}"></a><a class="store-badge google" data-analytics-position="{position}" href="https://play.google.com/store/apps/details?id=com.NationalFlagsAwaPop.takekapp1990.prod&amp;hl={lang}" aria-label="{e(d['googlePlay'])}"><img src="../../commonImages/badgeAndroid/{google}" alt="{e(d['googlePlay'])}" width="270" height="80" decoding="async" loading="{loading}"></a></div>'''
 
 def screen(lang, d, number, cls='', eager=False):
     return f'<div class="phone {cls}"><img src="{ASSET}/{lang}/screen-{number:02}.webp" alt="{e(d["screenshotAlt"][number-1])}" width="820" height="1777" decoding="async"'+(' fetchpriority="high"' if eager else ' loading="lazy"')+'></div>'

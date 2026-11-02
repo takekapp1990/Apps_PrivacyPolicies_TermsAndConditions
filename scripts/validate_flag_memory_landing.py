@@ -71,6 +71,9 @@ def main():
             assert page.schema[0]['inLanguage']==list(builder.LANGUAGES)
             assert len(page.schema[1]['mainEntity'])==6
             assert len([x for x in page.links if 'apps.apple.com' in x])==2
+            apple_links=[x for x in page.links if urlsplit(x).netloc=='apps.apple.com']
+            expected_apple=builder.app_store_url(page.lang)
+            assert apple_links==[expected_apple]*2,(file,'localized App Store links',apple_links)
             assert len([x for x in page.links if 'play.google.com' in x])==2
             for position in ['hero','download']:
                 links=[a for a in page.store_links if a.get('data-analytics-position')==position]
@@ -81,6 +84,6 @@ def main():
     sitemap=ET.parse(ROOT/'sitemap.xml')
     urls={e.text for e in sitemap.findall('.//s:loc',ns)}
     for file in files:assert f'https://takekapp.com/{file.relative_to(ROOT).as_posix()}' in urls
-    print(f'PASS: {len(files)} HTML pages, 10 LP locales, metadata, internal links/fragments, assets, sitemap, schema and Spanish copy')
+    print(f'PASS: {len(files)} HTML pages, 10 LP locales, localized App Store links, metadata, internal links/fragments, assets, sitemap, schema and Spanish copy')
 
 if __name__=='__main__':main()
