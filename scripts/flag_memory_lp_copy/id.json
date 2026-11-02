@@ -1,0 +1,181 @@
+{
+  "name": "Kuis Bendera: Awa Pop",
+  "shortName": "Awa Pop",
+  "title": "Belajar bendera dan ibu kota | Awa Pop",
+  "description": "Pelajari bendera dan ibu kota 206 negara dan wilayah melalui pelajaran harian, ulasan, delapan permainan, dan ensiklopedia negara. Gratis di iPhone dan Android dengan pembelian dalam aplikasi.",
+  "skip": "Langsung ke konten",
+  "navLearn": "Cara belajar",
+  "navGames": "8 permainan",
+  "navPlans": "Gratis & STUDY PLUS",
+  "languageLabel": "Bahasa",
+  "download": "Mulai gratis",
+  "appStore": "Unduh di App Store",
+  "googlePlay": "Dapatkan di Google Play",
+  "storeNote": "iPhone & Android / Unduh gratis · Pembelian dalam aplikasi",
+  "heroEyebrow": "Kuis Bendera: Awa Pop",
+  "heroTitle": [
+    "Belajar bendera",
+    "Latihan dengan kuis"
+  ],
+  "heroLead": "Pelajari bendera dan ibu kota 206 negara dan wilayah.\nUji ingatanmu melalui pelajaran harian dan delapan permainan.",
+  "heroSecondary": "Lihat cara belajar",
+  "heroCaption": "Tampilan aplikasi sesungguhnya",
+  "heroSticker": "Bendera, ibu kota, dan geografi",
+  "facts": [
+    "negara dan wilayah",
+    "jenis permainan",
+    "bahasa"
+  ],
+  "learnTitle": "Pelajaran harian dan ulasan",
+  "learnLead": "Pelajari bendera dan nama negara, lalu uji dengan kuis. Ulasan disesuaikan dengan riwayat belajarmu.",
+  "steps": [
+    {
+      "title": "Pelajari bendera dan nama negara",
+      "body": "Pelajaran hari ini menampilkan bendera beserta nama negara, ibu kota, dan petunjuk untuk mengingatnya.",
+      "label": "Sesi hari ini"
+    },
+    {
+      "title": "Uji dengan kuis",
+      "body": "Pilih nama negara yang sesuai dengan bendera atau cari bendera untuk suatu negara.",
+      "label": "Kuis bendera"
+    },
+    {
+      "title": "Ulangi materi yang dipelajari",
+      "body": "Ulasan mengikuti riwayat belajarmu. Kamu juga bisa melihat hari belajar dan catatan per negara.",
+      "label": "Catatan belajar"
+    }
+  ],
+  "recordNote": "Layar catatan memakai data contoh. Analisis belajar terperinci tersedia dengan STUDY PLUS.",
+  "screenshotAlt": [
+    "Sesi hari ini dengan bendera, nama negara, ibu kota, dan kiat mengingat",
+    "Kuis memilih nama negara berdasarkan benderanya",
+    "Kuis membandingkan bendera yang mirip",
+    "Penjelasan kesamaan dan sejarah bendera",
+    "Contoh layar catatan belajar",
+    "Layar untuk memilih dari 8 jenis permainan"
+  ],
+  "compareTitle": "Membedakan bendera yang mirip",
+  "compareLead": "Bandingkan warna dan pola untuk mempelajari perbedaannya. Coba contoh dengan bendera Prancis dan Italia.",
+  "demoLabel": "Contoh di web untuk mencoba membedakan bendera. Tampilannya berbeda dari aplikasi.",
+  "demoQuestion": "Mana bendera Prancis?",
+  "demoChoices": [
+    "Pilih bendera kiri",
+    "Pilih bendera kanan"
+  ],
+  "demoReveal": "Lihat jawaban dan cara membedakan",
+  "demoReset": "Coba lagi",
+  "demoInitial": "Perhatikan urutan warna bendera kiri dan kanan.",
+  "demoCorrect": "Benar! Prancis ada di kiri.",
+  "demoWrong": "Hampir! Bendera Prancis ada di kiri.",
+  "demoExplanation": "Prancis: biru, putih, merah. Italia di kanan: hijau, putih, merah. Warna di sisi kiri jadi petunjuknya.",
+  "countries": [
+    "Prancis",
+    "Italia"
+  ],
+  "gamesTitle": "Delapan permainan belajar",
+  "gamesLead": "Latih pengetahuan tentang bendera, nama negara, tempat terkenal, dan negara tetangga. Pilih permainan sesuai topik yang ingin dipelajari.",
+  "games": [
+    [
+      "Kuis bendera 4 pilihan",
+      "Pilih nama negara untuk sebuah bendera atau bendera untuk suatu negara."
+    ],
+    [
+      "Cocokkan pasangan",
+      "Hubungkan setiap bendera dengan nama negaranya."
+    ],
+    [
+      "Kuis membedakan bendera",
+      "Pilih bendera yang benar dari dua desain yang mirip."
+    ],
+    [
+      "Tantangan ingatan",
+      "Ingat bendera dan nama negara, lalu jawab soal pilihan ganda."
+    ],
+    [
+      "Tebak negara",
+      "Tebak negara dari petunjuk yang muncul bertahap."
+    ],
+    [
+      "Kuis tempat",
+      "Tentukan negara dari tempat terkenal dan warisan alam."
+    ],
+    [
+      "Bandingkan negara",
+      "Bandingkan jumlah penduduk, luas wilayah, dan data lain dari dua negara."
+    ],
+    [
+      "Kuis negara tetangga",
+      "Pilih negara yang berbagi perbatasan darat."
+    ]
+  ],
+  "worldTitle": "Cari bendera dan ibu kota",
+  "worldItems": [
+    [
+      "Ensiklopedia negara",
+      "Bendera, ibu kota, peta, asal-usul, dan budaya 206 negara dan wilayah. Langsung cari tahu negara yang membuatmu penasaran saat kuis."
+    ],
+    [
+      "Cerita negara",
+      "Bagikan budaya dan rekomendasi dari negara atau wilayah asalmu. Postingan pengguna diterjemahkan dan ditinjau pengelola sebelum terbit, lalu bisa dibaca dalam bahasa yang didukung."
+    ]
+  ],
+  "worldNote": "Nama panggilan di Cerita negara bersifat opsional. Kamu bisa melaporkan atau menyembunyikan postingan. Video YouTube dibuka di luar aplikasi.",
+  "plansTitle": "Fitur gratis dan Study Plus",
+  "freeTitle": "Gratis",
+  "freeBadge": "Belajar harian",
+  "freeItems": [
+    "Sesi hari ini dan pengulangan biasa",
+    "Rincian hingga 3 negara berbeda per hari",
+    "Total hingga 3 permainan per hari di tab Game"
+  ],
+  "freeNote": "Tonton iklan video berhadiah yang tersedia untuk menambah 3 penggunaan pada kategori pilihanmu hari itu. Membuka kembali negara yang sama pada hari itu tidak mengurangi jatah.",
+  "plusTitle": "STUDY PLUS",
+  "plusBadge": "Tanpa batas penggunaan dan iklan",
+  "plusItems": [
+    "Rincian negara dan permainan tanpa batas",
+    "Tanpa iklan",
+    "Analisis belajar terperinci"
+  ],
+  "planPeriod": "Paket bulanan dan tahunan yang diperpanjang otomatis",
+  "trialNote": "Pengguna yang memenuhi syarat dapat mencoba paket bulanan gratis selama 1 bulan. Paket tahunan tidak menyediakan uji coba gratis.",
+  "priceNote": "Lihat harga, syarat uji coba gratis, biaya setelah uji coba, dan periode perpanjangan di layar pembelian aplikasi.",
+  "languagesTitle": "Tersedia dalam 10 bahasa",
+  "languagesBody": "Tersedia dalam 10 bahasa: Jepang, Inggris, Spanyol, Jerman, Korea, Thai, Indonesia, Prancis, Portugis Brasil, dan Mandarin Tradisional Taiwan.",
+  "faqTitle": "Pertanyaan umum",
+  "faqs": [
+    [
+      "Apa saja yang gratis?",
+      "Sesi hari ini dan pengulangan biasa gratis. Kamu bisa membuka rincian 3 negara berbeda dan bermain total 3 kali di tab Game per hari. Iklan video berhadiah yang tersedia menambah 3 penggunaan pada kategori pilihanmu hari itu."
+    ],
+    [
+      "Apakah STUDY PLUS punya uji coba gratis?",
+      "Pengguna yang memenuhi syarat dapat mencoba paket bulanan gratis selama 1 bulan. Paket tahunan tidak menyediakan uji coba gratis. Lihat biaya dan syaratnya di layar pembelian aplikasi."
+    ],
+    [
+      "Perlu membuat akun?",
+      "Tidak perlu mendaftar atau masuk. Kamu bisa mengirim Cerita Negara dan masukan dari aplikasi."
+    ],
+    [
+      "Apakah catatan belajar ikut pindah ke perangkat lain?",
+      "Catatan belajar disimpan di perangkat dan tidak disinkronkan otomatis ke perangkat lain. Memulihkan pembelian dan memindahkan catatan belajar adalah dua hal yang berbeda."
+    ],
+    [
+      "Bisa dipakai bersama anak?",
+      "Siapa pun yang tertarik dengan bendera dan geografi bisa belajar sesuai ritmenya. Aplikasi memuat iklan, pembelian opsional, fitur postingan, dan tautan eksternal. Dampingi anak kecil saat menggunakannya."
+    ],
+    [
+      "Apakah Cerita negara langsung diterbitkan?",
+      "Kirim setelah menyetujui aturan postingan, penerjemahan, dan publikasi. Postingan akan diterjemahkan dan ditinjau pengelola sebelum terbit. Nama panggilan opsional. Kamu bisa menghapus, melaporkan, atau menyembunyikan postingan."
+    ]
+  ],
+  "closingTitle": "Kuis Bendera: Awa Pop",
+  "closingLead": "Coba pelajaran harian dan delapan permainan di aplikasi.",
+  "privacy": "Kebijakan Privasi",
+  "terms": "Ketentuan Penggunaan",
+  "contact": "Hubungi kami",
+  "allApps": "Aplikasi TakeKApp lainnya",
+  "footerNote": "Tampilan bendera dan cakupan negara mengikuti materi pembelajaran.",
+  "menuLabel": "Menu halaman",
+  "demoStatusLabel": "Penjelasan contoh",
+  "screenLabel": "Pilih layar aplikasi yang ditampilkan"
+}

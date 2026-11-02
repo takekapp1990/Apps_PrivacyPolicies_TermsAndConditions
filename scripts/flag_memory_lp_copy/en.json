@@ -1,0 +1,181 @@
+{
+  "name": "Flag Quiz Awa Pop",
+  "shortName": "Awa Pop",
+  "title": "Learn flags and capitals | Flag Quiz Awa Pop",
+  "description": "Learn flags and capitals from 206 countries and territories with daily lessons, review, eight games and a country encyclopedia. Free on iPhone and Android with in-app purchases.",
+  "skip": "Skip to content",
+  "navLearn": "How you learn",
+  "navGames": "8 games",
+  "navPlans": "Free & Study Plus",
+  "languageLabel": "Language",
+  "download": "Start for free",
+  "appStore": "Download on the App Store",
+  "googlePlay": "Get it on Google Play",
+  "storeNote": "iPhone & Android / Free download with in-app purchases",
+  "heroEyebrow": "Flag Quiz Awa Pop",
+  "heroTitle": [
+    "Learn world flags",
+    "Practise with quizzes"
+  ],
+  "heroLead": "Learn flags and capitals from 206 countries and territories.\nDaily lessons and eight games help you check what you remember.",
+  "heroSecondary": "See how it works",
+  "heroCaption": "Actual app screens",
+  "heroSticker": "Flags, capitals & geography",
+  "facts": [
+    "countries & territories",
+    "ways to play",
+    "app languages"
+  ],
+  "learnTitle": "Daily lessons and review",
+  "learnLead": "Study flags and country names, then check them in a quiz. Review sessions use your learning history.",
+  "steps": [
+    {
+      "title": "Learn flags and country names",
+      "body": "Today’s Learning shows each flag with its country name, capital and a memory hint.",
+      "label": "Today’s Learning"
+    },
+    {
+      "title": "Check with a quiz",
+      "body": "Choose a country name for each flag or find the right flag for a country.",
+      "label": "Flag quiz"
+    },
+    {
+      "title": "Review what you have learned",
+      "body": "Review sessions use your learning history. You can also look back at your study days and country records.",
+      "label": "Learning records"
+    }
+  ],
+  "recordNote": "The records screen uses sample data. Detailed learning analysis is available with Study Plus.",
+  "screenshotAlt": [
+    "Today’s Learning with a flag, country name, capital and memory hint",
+    "A multiple-choice quiz matching a flag to a country name",
+    "A quiz comparing two similar flags",
+    "An explanation of shared flag designs and their history",
+    "A learning records screen with sample data",
+    "The game selection screen with eight types of games"
+  ],
+  "compareTitle": "How to tell similar flags apart",
+  "compareLead": "Compare colours and patterns to learn the differences. Try this example with the flags of France and Italy.",
+  "demoLabel": "A sample made for this website to demonstrate flag recognition. It looks different from the app.",
+  "demoQuestion": "Which one is the flag of France?",
+  "demoChoices": [
+    "Choose the flag on the left",
+    "Choose the flag on the right"
+  ],
+  "demoReveal": "Show the answer & the difference",
+  "demoReset": "Try again",
+  "demoInitial": "Look closely at the order of the colors.",
+  "demoCorrect": "Correct. France is on the left.",
+  "demoWrong": "France is on the left. Italy is on the right.",
+  "demoExplanation": "France uses blue, white and red. Italy, on the right, uses green, white and red. The left-hand stripe is your clue.",
+  "countries": [
+    "France",
+    "Italy"
+  ],
+  "gamesTitle": "Eight learning games",
+  "gamesLead": "Practise flags, country names, landmarks and neighbouring countries. Choose a game for the topic you want to learn.",
+  "games": [
+    [
+      "Flag quiz",
+      "Choose a country name for a flag or the right flag for a country."
+    ],
+    [
+      "Pair match",
+      "Connect each flag to its country name."
+    ],
+    [
+      "Similar flags",
+      "Choose the correct flag from two similar designs."
+    ],
+    [
+      "Memory challenge",
+      "Memorise flags and country names, then answer multiple-choice questions."
+    ],
+    [
+      "Country detective",
+      "Identify a country as clues appear."
+    ],
+    [
+      "Landmark quiz",
+      "Identify countries from landmarks and natural heritage."
+    ],
+    [
+      "World comparison",
+      "Compare the population, area and other figures of two countries."
+    ],
+    [
+      "Neighbor quiz",
+      "Choose the countries that share a land border."
+    ]
+  ],
+  "worldTitle": "Look up flags and capitals",
+  "worldItems": [
+    [
+      "A world encyclopedia",
+      "Explore flags, capitals, maps, origins and culture for 206 countries and territories. Look up the places that catch your eye in a quiz."
+    ],
+    [
+      "Country Stories",
+      "Share culture and recommendations from your country or territory. User posts are translated and reviewed before publication, then readable in supported languages."
+    ]
+  ],
+  "worldNote": "Nicknames are optional. You can report and hide posts. YouTube videos open externally.",
+  "plansTitle": "Free features and Study Plus",
+  "freeTitle": "Free",
+  "freeBadge": "Daily learning",
+  "freeItems": [
+    "Today’s Learning and regular review",
+    "Details for 3 distinct countries per day",
+    "3 game starts per day across the Games tab"
+  ],
+  "freeNote": "An eligible rewarded video adds 3 uses to your selected allowance for that day. Reopening the same country on the same day uses no extra allowance.",
+  "plusTitle": "Study Plus",
+  "plusBadge": "Unlimited use without ads",
+  "plusItems": [
+    "Unlimited country details and game starts",
+    "No ads",
+    "Detailed learning analysis"
+  ],
+  "planPeriod": "Auto-renewing monthly & annual plans",
+  "trialNote": "Eligible users can try the monthly plan free for one month. The annual plan has no free trial.",
+  "priceNote": "Check the in-app purchase screen for prices, trial eligibility, charges after the trial and renewal periods.",
+  "languagesTitle": "Available in 10 languages",
+  "languagesBody": "The app supports Japanese, English, Spanish, German, Korean, Thai, Indonesian, French, Portuguese (Brazil) and Traditional Chinese (Taiwan).",
+  "faqTitle": "Frequently asked questions",
+  "faqs": [
+    [
+      "What can I use for free?",
+      "Today’s Learning and regular review are free. Country details are limited to 3 distinct countries a day, and the Games tab to 3 game starts in total a day. Eligible rewarded videos add 3 uses to your selected allowance for that day."
+    ],
+    [
+      "Does Study Plus have a free trial?",
+      "Eligible users can try the monthly plan free for one month. There is no free trial on the annual plan. See the in-app purchase screen for prices and eligibility."
+    ],
+    [
+      "Do I need to create an account?",
+      "No registration or sign-in is required. You can submit Country Stories and feedback from the app."
+    ],
+    [
+      "Will my learning records sync to another device?",
+      "Learning records are saved on your device and do not sync automatically. Restoring purchases is separate from transferring learning records."
+    ],
+    [
+      "Can I use it with my child?",
+      "People interested in flags and geography can learn at their own pace. The app includes ads, optional purchases, posting and external links. Please review these together with a parent or guardian when young children use the app."
+    ],
+    [
+      "Are Country Stories published immediately?",
+      "Posts are submitted after agreement to the posting, translation and publication rules, then translated and reviewed before publication. Nicknames are optional. You can delete your own post, report posts and hide them."
+    ]
+  ],
+  "closingTitle": "Flag Quiz Awa Pop",
+  "closingLead": "Try the daily lessons and eight games in the app.",
+  "privacy": "Privacy policy",
+  "terms": "Terms of use",
+  "contact": "Contact",
+  "allApps": "More apps by TakeKApp",
+  "footerNote": "Flag designs and included countries and territories are part of the learning content.",
+  "menuLabel": "On this page",
+  "demoStatusLabel": "Sample explanation",
+  "screenLabel": "Choose an app screen"
+}

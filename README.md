@@ -128,8 +128,8 @@ SNS投稿の下書き管理を効率化。文字数カウント、ハッシュ�
   * takekapp1990@gmail.com
 
 ## 国旗の暗記 あわあわポン
-<img src="https://takekapp.com/FlagMemoryAwaAwaPon/images/awaawapon_national_flags_app_icon_10241024_ios.png" width="100" alt="アプリアイコン">
-世界の国旗を楽しく覚えよう！記憶力バトルゲームで国旗の知識を身につけよう！
+<img src="https://takekapp.com/FlagMemoryAwaAwaPon/images/lp/app-icon.webp" width="100" alt="アプリアイコン">
+206の国・地域の国旗や首都を学べるアプリです。毎日の学習と復習、8種類のゲーム、世界の国図鑑を使えます。
 
 * [アプリ紹介ページ](https://takekapp.com/FlagMemoryAwaAwaPon/ja/landing_page_ja.html)
 * [利用規約](https://takekapp.com/FlagMemoryAwaAwaPon/ja/terms_and_conditions_ja.html)
@@ -244,8 +244,8 @@ Dice application that allows communication and data to be viewed in a graph.
   * takekapp1990@gmail.com
 
 ## Flag Quiz Awa Pop
-<img src="https://takekapp.com/FlagMemoryAwaAwaPon/images/awaawapon_national_flags_app_icon_10241024_ios.png" width="100" alt="app icon">
-Learn world flags in a fun way! Memory battle game to master flag knowledge.
+<img src="https://takekapp.com/FlagMemoryAwaAwaPon/images/lp/app-icon.webp" width="100" alt="app icon">
+Learn flags and capitals from 206 countries and territories with daily lessons, review, eight games and a country encyclopedia.
 
 * [App Introduction](https://takekapp.com/FlagMemoryAwaAwaPon/en/landing_page_en.html)
 * [Terms and Conditions](https://takekapp.com/FlagMemoryAwaAwaPon/en/terms_and_conditions_en.html)

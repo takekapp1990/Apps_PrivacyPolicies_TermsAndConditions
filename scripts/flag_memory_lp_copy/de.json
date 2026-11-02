@@ -1,0 +1,181 @@
+{
+  "name": "Flaggen lernen: Awa Pop",
+  "shortName": "Awa Pop",
+  "title": "Flaggen und Hauptstädte lernen | Awa Pop",
+  "description": "Lerne Flaggen und Hauptstädte von 206 Ländern und Gebieten mit täglichen Lerneinheiten, Wiederholungen, acht Spielen und einem Länderlexikon. Kostenlos für iPhone und Android mit In-App-Käufen.",
+  "skip": "Zum Inhalt",
+  "navLearn": "So lernst du",
+  "navGames": "8 Spiele",
+  "navPlans": "Kostenlos & Study Plus",
+  "languageLabel": "Sprache",
+  "download": "Kostenlos starten",
+  "appStore": "Im App Store laden",
+  "googlePlay": "Jetzt bei Google Play",
+  "storeNote": "iPhone & Android · Kostenloser Download mit In-App-Käufen",
+  "heroEyebrow": "Flaggen lernen: Awa Pop",
+  "heroTitle": [
+    "Flaggen lernen",
+    "Mit Quiz üben"
+  ],
+  "heroLead": "Lerne Flaggen und Hauptstädte von 206 Ländern und Gebieten.\nTägliche Lerneinheiten und acht Spiele helfen dir, dein Wissen zu prüfen.",
+  "heroSecondary": "Wie lerne ich damit?",
+  "heroCaption": "Echte Ansichten aus der App",
+  "heroSticker": "Flaggen, Hauptstädte und Geografie",
+  "facts": [
+    "Länder und Gebiete",
+    "Spiele zur Auswahl",
+    "verfügbare Sprachen"
+  ],
+  "learnTitle": "Tägliches Lernen und Wiederholen",
+  "learnLead": "Lerne Flaggen und Ländernamen und prüfe dein Wissen im Quiz. Die Wiederholungen richten sich nach deinem Lernverlauf.",
+  "steps": [
+    {
+      "title": "Flaggen und Ländernamen lernen",
+      "body": "Die tägliche Lerneinheit zeigt jede Flagge mit Ländernamen, Hauptstadt und einer Merkhilfe.",
+      "label": "Tägliche Lerneinheit"
+    },
+    {
+      "title": "Wissen im Quiz prüfen",
+      "body": "Wähle den Ländernamen zu einer Flagge oder die passende Flagge zu einem Land.",
+      "label": "Flaggenquiz"
+    },
+    {
+      "title": "Gelerntes wiederholen",
+      "body": "Die Wiederholungen richten sich nach deinem Lernverlauf. Du kannst auch deine Lerntage und Einträge zu einzelnen Ländern ansehen.",
+      "label": "Dein Lernverlauf"
+    }
+  ],
+  "recordNote": "Die Fortschrittsansicht zeigt Beispieldaten. Detaillierte Lernanalysen sind mit Study Plus verfügbar.",
+  "screenshotAlt": [
+    "Tägliche Lerneinheit mit Flagge, Ländername, Hauptstadt und Merkhilfe",
+    "Quiz mit Auswahl des Landes zu einer Flagge",
+    "Quiz zum Vergleich zweier ähnlicher Flaggen",
+    "Erklärung zu Gemeinsamkeiten und Geschichte von Flaggen",
+    "Fortschrittsansicht mit Beispieldaten",
+    "Spielauswahl mit 8 Spielen"
+  ],
+  "compareTitle": "Ähnliche Flaggen unterscheiden",
+  "compareLead": "Vergleiche Farben und Muster, um die Unterschiede zu erkennen. Probiere es mit den Flaggen von Frankreich und Italien.",
+  "demoLabel": "Interaktives Beispiel für diese Website zum Unterscheiden von Flaggen. Die Darstellung weicht von der App ab.",
+  "demoQuestion": "Welche Flagge gehört zu Frankreich?",
+  "demoChoices": [
+    "Linke Flagge wählen",
+    "Rechte Flagge wählen"
+  ],
+  "demoReveal": "Antwort und Unterschied ansehen",
+  "demoReset": "Noch einmal",
+  "demoInitial": "Schau dir die Reihenfolge der Farben genau an.",
+  "demoCorrect": "Richtig! Links ist Frankreich.",
+  "demoWrong": "Fast! Frankreich ist links.",
+  "demoExplanation": "Frankreich: Blau, Weiß, Rot. Rechts ist Italien mit Grün, Weiß, Rot. Die Farbe auf der linken Seite macht den Unterschied.",
+  "countries": [
+    "Frankreich",
+    "Italien"
+  ],
+  "gamesTitle": "Acht Lernspiele",
+  "gamesLead": "Übe Flaggen, Ländernamen, Sehenswürdigkeiten und Nachbarländer. Wähle ein Spiel passend zu deinem Lernthema.",
+  "games": [
+    [
+      "Flaggenquiz",
+      "Wähle das Land zur Flagge oder die Flagge zum Land."
+    ],
+    [
+      "Paare finden",
+      "Verbinde jede Flagge mit dem passenden Ländernamen."
+    ],
+    [
+      "Ähnliche Flaggen",
+      "Wähle aus zwei ähnlichen Flaggen die richtige aus."
+    ],
+    [
+      "Gedächtnis-Challenge",
+      "Merke dir Flaggen und Ländernamen und beantworte Multiple-Choice-Fragen."
+    ],
+    [
+      "Länderrätsel",
+      "Erkenne das Land anhand der nach und nach angezeigten Hinweise."
+    ],
+    [
+      "Orte-Quiz",
+      "Erkenne Länder anhand von Sehenswürdigkeiten und Naturerbestätten."
+    ],
+    [
+      "Länder vergleichen",
+      "Vergleiche Bevölkerung, Fläche und weitere Zahlen zweier Länder."
+    ],
+    [
+      "Nachbarländer-Quiz",
+      "Wähle die Länder mit einer gemeinsamen Landgrenze."
+    ]
+  ],
+  "worldTitle": "Flaggen und Hauptstädte nachschlagen",
+  "worldItems": [
+    [
+      "Länderlexikon",
+      "Flaggen, Hauptstädte, Karten, Ursprünge und Kultur von 206 Ländern und Gebieten. Erfahre mehr über das Land, das dich im Quiz neugierig gemacht hat."
+    ],
+    [
+      "Geschichten aus aller Welt",
+      "Entdecke Kultur und Empfehlungen aus den Ländern und Gebieten der Beitragenden. Beiträge werden übersetzt und geprüft, bevor sie in den App-Sprachen erscheinen."
+    ]
+  ],
+  "worldNote": "Ein Spitzname ist freiwillig. Du kannst Beiträge melden oder ausblenden. YouTube-Videos öffnen sich außerhalb der App.",
+  "plansTitle": "Kostenlose Funktionen und Study Plus",
+  "freeTitle": "Kostenlos",
+  "freeBadge": "Tägliches Lernen",
+  "freeItems": [
+    "Tägliche Lerneinheit und reguläre Wiederholungen",
+    "Details zu bis zu 3 verschiedenen Ländern pro Tag",
+    "Insgesamt bis zu 3 Spiele pro Tag im Spiele-Tab"
+  ],
+  "freeNote": "Ein verfügbares Belohnungsvideo fügt der gewählten Kategorie für diesen Tag 3 Nutzungen hinzu. Öffnest du ein Land am selben Tag erneut, verbrauchst du keine weitere Nutzung.",
+  "plusTitle": "Study Plus",
+  "plusBadge": "Unbegrenzt und ohne Werbung",
+  "plusItems": [
+    "Unbegrenzt Länderdetails öffnen und spielen",
+    "Keine Werbung",
+    "Detaillierte Lernanalysen"
+  ],
+  "planPeriod": "Monats- und Jahresabo mit automatischer Verlängerung",
+  "trialNote": "Berechtigte Nutzer können das Monatsabo 1 Monat kostenlos testen. Das Jahresabo hat keinen kostenlosen Testzeitraum.",
+  "priceNote": "Preis, Testvoraussetzungen, Kosten nach dem Test und Verlängerungszeitraum findest du im Kaufbildschirm der App.",
+  "languagesTitle": "In 10 Sprachen verfügbar",
+  "languagesBody": "Die App unterstützt 10 Sprachen: Japanisch, Englisch, Spanisch, Deutsch, Koreanisch, Thai, Indonesisch, Französisch, brasilianisches Portugiesisch und traditionelles Chinesisch (Taiwan).",
+  "faqTitle": "Häufige Fragen",
+  "faqs": [
+    [
+      "Was kann ich kostenlos nutzen?",
+      "Die tägliche Lerneinheit und reguläre Wiederholungen sind kostenlos. Pro Tag kannst du Details zu 3 verschiedenen Ländern öffnen und im Spiele-Tab insgesamt bis zu 3 Spiele starten. Ein verfügbares Belohnungsvideo fügt der gewählten Kategorie für diesen Tag 3 Nutzungen hinzu."
+    ],
+    [
+      "Gibt es einen kostenlosen Test für Study Plus?",
+      "Berechtigte Nutzer können das Monatsabo 1 Monat kostenlos testen. Das Jahresabo hat keinen kostenlosen Testzeitraum. Preise und Voraussetzungen stehen im Kaufbildschirm der App."
+    ],
+    [
+      "Brauche ich ein Konto?",
+      "Du musst dich weder registrieren noch anmelden. Länderberichte und Feedback kannst du direkt in der App senden."
+    ],
+    [
+      "Wird mein Lernverlauf auf andere Geräte übertragen?",
+      "Deine Lernaufzeichnungen werden auf dem Gerät gespeichert. Es gibt keine automatische Synchronisierung mit anderen Geräten. Das Wiederherstellen von Käufen und die Übertragung von Lernaufzeichnungen sind getrennte Funktionen."
+    ],
+    [
+      "Kann ich die App mit Kindern nutzen?",
+      "Wer sich für Flaggen und Geografie interessiert, kann im eigenen Tempo lernen. Die App enthält Werbung, optionale Käufe, Beiträge und externe Links. Kleine Kinder sollten die App gemeinsam mit einer erwachsenen Bezugsperson nutzen."
+    ],
+    [
+      "Werden Beiträge sofort veröffentlicht?",
+      "Vor dem Senden stimmst du den Beitragsregeln, der Übersetzung und der Veröffentlichung zu. Beiträge erscheinen nach Übersetzung und Prüfung. Ein Spitzname ist freiwillig. Du kannst eigene Beiträge löschen und Beiträge melden oder ausblenden."
+    ]
+  ],
+  "closingTitle": "Flaggen lernen mit Awa Pop",
+  "closingLead": "Probiere die täglichen Lerneinheiten und acht Spiele in der App aus.",
+  "privacy": "Datenschutz",
+  "terms": "Nutzungsbedingungen",
+  "contact": "Kontakt",
+  "allApps": "Weitere Apps von TakeKApp",
+  "footerNote": "Die Auswahl und Darstellung von Flaggen richtet sich nach den Lerninhalten der App.",
+  "menuLabel": "Seitenmenü",
+  "demoStatusLabel": "Erklärung zum Beispiel",
+  "screenLabel": "App-Ansicht auswählen"
+}

@@ -1,0 +1,181 @@
+{
+  "name": "Quiz de drapeaux : Awa Pop",
+  "shortName": "Awa Pop",
+  "title": "Apprendre les drapeaux et les capitales | Awa Pop",
+  "description": "Apprends les drapeaux et capitales de 206 pays et territoires avec des leçons quotidiennes, des révisions, huit jeux et une encyclopédie des pays. Gratuit sur iPhone et Android avec achats intégrés.",
+  "skip": "Aller au contenu",
+  "navLearn": "Comment apprendre",
+  "navGames": "8 jeux",
+  "navPlans": "Gratuit et Study Plus",
+  "languageLabel": "Langue",
+  "download": "Commencer gratuitement",
+  "appStore": "Télécharger dans l’App Store",
+  "googlePlay": "Disponible sur Google Play",
+  "storeNote": "iPhone et Android · Téléchargement gratuit avec achats intégrés",
+  "heroEyebrow": "Quiz de drapeaux : Awa Pop",
+  "heroTitle": [
+    "Apprends les drapeaux",
+    "Révise avec des quiz"
+  ],
+  "heroLead": "Étudie les drapeaux et capitales de 206 pays et territoires.\nTeste tes connaissances avec des leçons quotidiennes et huit jeux.",
+  "heroSecondary": "Comment ça marche ?",
+  "heroCaption": "Écrans réels de l’app",
+  "heroSticker": "Drapeaux, capitales et géographie",
+  "facts": [
+    "pays et territoires",
+    "façons de jouer",
+    "langues disponibles"
+  ],
+  "learnTitle": "Leçons quotidiennes et révisions",
+  "learnLead": "Apprends les drapeaux et les noms des pays, puis teste tes connaissances avec un quiz. Les révisions suivent ton historique d’apprentissage.",
+  "steps": [
+    {
+      "title": "Apprendre les drapeaux et les pays",
+      "body": "La leçon du jour présente chaque drapeau avec le nom du pays, sa capitale et une astuce pour le retenir.",
+      "label": "Séance du jour"
+    },
+    {
+      "title": "Vérifier avec un quiz",
+      "body": "Choisis le nom du pays correspondant au drapeau ou retrouve le drapeau d’un pays.",
+      "label": "Quiz de drapeaux"
+    },
+    {
+      "title": "Réviser ce que tu as appris",
+      "body": "Les révisions suivent ton historique d’apprentissage. Tu peux aussi consulter tes jours d’étude et tes résultats par pays.",
+      "label": "Tes progrès"
+    }
+  ],
+  "recordNote": "L’écran de progression contient des données d’exemple. Les analyses détaillées sont disponibles avec Study Plus.",
+  "screenshotAlt": [
+    "Séance du jour avec drapeau, nom du pays, capitale et astuce pour retenir",
+    "Quiz pour choisir le pays correspondant à un drapeau",
+    "Quiz comparant deux drapeaux similaires",
+    "Explication des points communs et de l’histoire des drapeaux",
+    "Écran de progression avec des données d’exemple",
+    "Écran de sélection parmi 8 jeux"
+  ],
+  "compareTitle": "Distinguer les drapeaux similaires",
+  "compareLead": "Compare les couleurs et les motifs pour repérer les différences. Essaie avec les drapeaux de la France et de l’Italie.",
+  "demoLabel": "Exemple interactif conçu pour ce site afin de distinguer les drapeaux. Sa présentation diffère de celle de l’app.",
+  "demoQuestion": "Quel est le drapeau de la France ?",
+  "demoChoices": [
+    "Choisir le drapeau de gauche",
+    "Choisir le drapeau de droite"
+  ],
+  "demoReveal": "Voir la réponse et la différence",
+  "demoReset": "Réessayer",
+  "demoInitial": "Observe bien l’ordre des couleurs à gauche et à droite.",
+  "demoCorrect": "Bravo ! La France est à gauche.",
+  "demoWrong": "Presque ! La France est à gauche.",
+  "demoExplanation": "France : bleu, blanc, rouge. À droite, l’Italie : vert, blanc, rouge. La couleur de gauche permet de les distinguer.",
+  "countries": [
+    "France",
+    "Italie"
+  ],
+  "gamesTitle": "Huit jeux pour apprendre",
+  "gamesLead": "Entraîne-toi sur les drapeaux, les noms de pays, les monuments et les pays voisins. Choisis un jeu selon le sujet que tu veux étudier.",
+  "games": [
+    [
+      "Quiz de drapeaux",
+      "Choisis le pays d’un drapeau ou le drapeau d’un pays."
+    ],
+    [
+      "Paires drapeau-pays",
+      "Relie chaque drapeau au nom de son pays."
+    ],
+    [
+      "Drapeaux similaires",
+      "Choisis le bon drapeau parmi deux dessins similaires."
+    ],
+    [
+      "Défi mémoire",
+      "Mémorise les drapeaux et les pays, puis réponds aux questions à choix multiples."
+    ],
+    [
+      "Pays mystère",
+      "Identifie le pays à mesure que les indices apparaissent."
+    ],
+    [
+      "Quiz sur les lieux",
+      "Identifie les pays grâce aux monuments et au patrimoine naturel."
+    ],
+    [
+      "Comparer les pays",
+      "Compare la population, la superficie et d’autres données de deux pays."
+    ],
+    [
+      "Pays voisins",
+      "Choisis les pays qui partagent une frontière terrestre."
+    ]
+  ],
+  "worldTitle": "Consulter les drapeaux et capitales",
+  "worldItems": [
+    [
+      "Encyclopédie des pays",
+      "Drapeaux, capitales, cartes, origines et culture de 206 pays et territoires. Un pays t’intrigue dans un quiz ? Poursuis la découverte sur sa fiche."
+    ],
+    [
+      "Histoires du monde",
+      "Découvre la culture et les recommandations des pays et territoires des participants. Les publications sont traduites et vérifiées avant de paraître dans les langues de l’app."
+    ]
+  ],
+  "worldNote": "Le pseudo est facultatif. Tu peux signaler ou masquer les publications. Les vidéos YouTube s’ouvrent hors de l’app.",
+  "plansTitle": "Fonctions gratuites et Study Plus",
+  "freeTitle": "Gratuit",
+  "freeBadge": "Apprentissage quotidien",
+  "freeItems": [
+    "Séance du jour et révisions habituelles",
+    "Fiches de 3 pays différents par jour maximum",
+    "3 parties par jour au total dans l’onglet Jeux"
+  ],
+  "freeNote": "Une vidéo avec récompense disponible ajoute 3 utilisations à la catégorie choisie pour la journée. Rouvrir un pays le même jour ne consomme pas d’utilisation supplémentaire.",
+  "plusTitle": "Study Plus",
+  "plusBadge": "Utilisation illimitée sans publicité",
+  "plusItems": [
+    "Fiches des pays et parties sans limite",
+    "Sans publicité",
+    "Analyses détaillées de l’apprentissage"
+  ],
+  "planPeriod": "Abonnements mensuel et annuel à renouvellement automatique",
+  "trialNote": "L’offre mensuelle comprend 1 mois d’essai gratuit pour les utilisateurs éligibles. L’offre annuelle ne comprend pas d’essai gratuit.",
+  "priceNote": "Consulte le prix, les conditions de l’essai, le tarif après l’essai et la période de renouvellement sur l’écran d’achat de l’app.",
+  "languagesTitle": "Disponible en 10 langues",
+  "languagesBody": "L’app est disponible en 10 langues : japonais, anglais, espagnol, allemand, coréen, thaï, indonésien, français, portugais du Brésil et chinois traditionnel de Taïwan.",
+  "faqTitle": "Questions fréquentes",
+  "faqs": [
+    [
+      "Que puis-je utiliser gratuitement ?",
+      "La séance du jour et les révisions habituelles sont gratuites. Tu peux consulter les fiches de 3 pays différents et lancer 3 parties au total par jour dans l’onglet Jeux. Une vidéo avec récompense disponible ajoute 3 utilisations à la catégorie choisie pour la journée."
+    ],
+    [
+      "Peut-on essayer Study Plus gratuitement ?",
+      "L’offre mensuelle comprend 1 mois d’essai gratuit pour les utilisateurs éligibles. L’offre annuelle ne comprend pas d’essai gratuit. Consulte les tarifs et les conditions sur l’écran d’achat de l’app."
+    ],
+    [
+      "Faut-il créer un compte ?",
+      "Aucune inscription ni connexion n’est nécessaire. Tu peux envoyer des récits sur les pays et des commentaires depuis l’application."
+    ],
+    [
+      "Mes progrès se retrouvent-ils sur un autre appareil ?",
+      "Les données d’apprentissage sont enregistrées sur ton appareil. Elles ne se synchronisent pas automatiquement avec d’autres appareils. La restauration des achats et le transfert de l’historique d’apprentissage sont deux fonctions distinctes."
+    ],
+    [
+      "Peut-on l’utiliser avec des enfants ?",
+      "Toute personne curieuse des drapeaux et de la géographie peut apprendre à son rythme. L’app comprend des publicités, des achats facultatifs, des publications et des liens externes. Pour les jeunes enfants, un accompagnement par un adulte est conseillé."
+    ],
+    [
+      "Les Histoires du monde sont-elles publiées immédiatement ?",
+      "L’envoi nécessite d’accepter les règles de publication, la traduction et la diffusion. Les publications paraissent après traduction et vérification. Le pseudo est facultatif. Tu peux supprimer tes publications, signaler des contenus et masquer des publications."
+    ]
+  ],
+  "closingTitle": "Quiz de drapeaux : Awa Pop",
+  "closingLead": "Essaie les leçons quotidiennes et les huit jeux dans l’application.",
+  "privacy": "Politique de confidentialité",
+  "terms": "Conditions d’utilisation",
+  "contact": "Nous contacter",
+  "allApps": "Les autres apps TakeKApp",
+  "footerNote": "La sélection et la présentation des drapeaux suivent le contenu pédagogique de l’app.",
+  "menuLabel": "Menu de la page",
+  "demoStatusLabel": "Explication de l’exemple",
+  "screenLabel": "Choisir un écran de l’app"
+}

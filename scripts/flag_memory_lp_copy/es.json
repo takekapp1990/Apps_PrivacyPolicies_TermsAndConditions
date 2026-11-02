@@ -1,0 +1,181 @@
+{
+  "name": "Banderas: aprende con Awa Pop",
+  "shortName": "Awa Pop",
+  "title": "Aprende banderas y capitales | Awa Pop",
+  "description": "Aprende las banderas y capitales de 206 países y territorios con lecciones diarias, repasos, ocho juegos y una enciclopedia de países. Gratis en iPhone y Android con compras en la app.",
+  "skip": "Ir al contenido",
+  "navLearn": "Cómo aprender",
+  "navGames": "8 juegos",
+  "navPlans": "Gratis y Study Plus",
+  "languageLabel": "Idioma",
+  "download": "Empieza gratis",
+  "appStore": "Descargar en el App Store",
+  "googlePlay": "Disponible en Google Play",
+  "storeNote": "iPhone y Android · Descarga gratuita con compras en la app",
+  "heroEyebrow": "Banderas: aprende con Awa Pop",
+  "heroTitle": [
+    "Aprende banderas",
+    "Practica con juegos"
+  ],
+  "heroLead": "Estudia las banderas y capitales de 206 países y territorios.\nComprueba lo que recuerdas con lecciones diarias y ocho juegos.",
+  "heroSecondary": "¿Cómo se aprende?",
+  "heroCaption": "Pantallas reales de la app",
+  "heroSticker": "Banderas, capitales y geografía",
+  "facts": [
+    "países y territorios",
+    "formas de jugar",
+    "idiomas disponibles"
+  ],
+  "learnTitle": "Lecciones diarias y repaso",
+  "learnLead": "Estudia las banderas y los nombres de los países y compruébalos en un quiz. Los repasos se basan en tu historial de aprendizaje.",
+  "steps": [
+    {
+      "title": "Aprende banderas y países",
+      "body": "La sesión del día muestra cada bandera con el nombre del país, su capital y una pista para recordarla.",
+      "label": "Sesión del día"
+    },
+    {
+      "title": "Comprueba con un quiz",
+      "body": "Elige el nombre del país para cada bandera o busca la bandera de un país.",
+      "label": "Quiz de banderas"
+    },
+    {
+      "title": "Repasa lo aprendido",
+      "body": "Los repasos se basan en tu historial. También puedes consultar los días de estudio y tus registros por país.",
+      "label": "Tu progreso"
+    }
+  ],
+  "recordNote": "La pantalla de progreso muestra datos de ejemplo. El análisis detallado está disponible con Study Plus.",
+  "screenshotAlt": [
+    "Sesión del día con bandera, nombre del país, capital y pistas para recordar",
+    "Quiz para elegir el país de una bandera",
+    "Quiz que compara dos banderas similares",
+    "Explicación de semejanzas e historia de las banderas",
+    "Pantalla de progreso con datos de ejemplo",
+    "Pantalla para elegir entre 8 juegos"
+  ],
+  "compareTitle": "Cómo distinguir banderas parecidas",
+  "compareLead": "Compara colores y diseños para reconocer las diferencias. Prueba con las banderas de Francia e Italia.",
+  "demoLabel": "Ejemplo interactivo para esta web sobre cómo distinguir banderas. Su presentación es distinta a la de la app.",
+  "demoQuestion": "¿Cuál es la bandera de Francia?",
+  "demoChoices": [
+    "Elegir la bandera de la izquierda",
+    "Elegir la bandera de la derecha"
+  ],
+  "demoReveal": "Ver la respuesta y la diferencia",
+  "demoReset": "Volver a intentar",
+  "demoInitial": "Fíjate en el orden de los colores de cada bandera.",
+  "demoCorrect": "¡Correcto! Francia está a la izquierda.",
+  "demoWrong": "¡Casi! Francia está a la izquierda.",
+  "demoExplanation": "Francia: azul, blanco y rojo. Italia, a la derecha: verde, blanco y rojo. El color de la izquierda es la clave.",
+  "countries": [
+    "Francia",
+    "Italia"
+  ],
+  "gamesTitle": "Ocho juegos para aprender",
+  "gamesLead": "Practica banderas, nombres de países, lugares y países vecinos. Elige un juego según lo que quieras aprender.",
+  "games": [
+    [
+      "Quiz de banderas",
+      "Elige el país de una bandera o la bandera de un país."
+    ],
+    [
+      "Une las parejas",
+      "Une cada bandera con el nombre de su país."
+    ],
+    [
+      "Banderas similares",
+      "Elige la bandera correcta entre dos diseños parecidos."
+    ],
+    [
+      "Reto de memoria",
+      "Memoriza banderas y países y responde preguntas de opción múltiple."
+    ],
+    [
+      "Pistas del país",
+      "Identifica el país a medida que aparecen las pistas."
+    ],
+    [
+      "Lugares famosos",
+      "Identifica países por sus monumentos y patrimonio natural."
+    ],
+    [
+      "Compara países",
+      "Compara la población, superficie y otros datos de dos países."
+    ],
+    [
+      "Países vecinos",
+      "Elige los países que comparten una frontera terrestre."
+    ]
+  ],
+  "worldTitle": "Consulta banderas y capitales",
+  "worldItems": [
+    [
+      "Guía de países",
+      "Banderas, capitales, mapas, orígenes y cultura de 206 países y territorios. Investiga ese país que te ha llamado la atención en el quiz."
+    ],
+    [
+      "Historias del mundo",
+      "Descubre la cultura y las recomendaciones de los países y territorios de quienes participan. Las publicaciones se traducen y revisan antes de aparecer en los idiomas de la app."
+    ]
+  ],
+  "worldNote": "El apodo es opcional. Puedes reportar u ocultar publicaciones. Los vídeos de YouTube se abren fuera de la app.",
+  "plansTitle": "Funciones gratuitas y Study Plus",
+  "freeTitle": "Gratis",
+  "freeBadge": "Aprendizaje diario",
+  "freeItems": [
+    "Sesión del día y repaso habitual",
+    "Detalles de hasta 3 países distintos al día",
+    "Hasta 3 partidas al día en total en la pestaña de juegos"
+  ],
+  "freeNote": "Un vídeo con recompensa disponible añade 3 usos a la categoría elegida para ese día. Volver a abrir el mismo país el mismo día no consume otro uso.",
+  "plusTitle": "Study Plus",
+  "plusBadge": "Uso ilimitado sin anuncios",
+  "plusItems": [
+    "Detalles de países y partidas sin límite",
+    "Sin anuncios",
+    "Análisis detallado del aprendizaje"
+  ],
+  "planPeriod": "Planes mensuales y anuales de renovación automática",
+  "trialNote": "El plan mensual ofrece 1 mes de prueba gratuita a quienes cumplan los requisitos. El plan anual no incluye prueba gratuita.",
+  "priceNote": "Consulta el precio, los requisitos de la prueba, el importe posterior y el periodo de renovación en la pantalla de compra de la app.",
+  "languagesTitle": "Disponible en 10 idiomas",
+  "languagesBody": "La app está disponible en 10 idiomas: japonés, inglés, español, alemán, coreano, tailandés, indonesio, francés, portugués de Brasil y chino tradicional de Taiwán.",
+  "faqTitle": "Preguntas frecuentes",
+  "faqs": [
+    [
+      "¿Qué puedo hacer gratis?",
+      "La sesión del día y el repaso habitual son gratuitos. Puedes consultar detalles de 3 países distintos e iniciar hasta 3 partidas en total al día desde la pestaña de juegos. Un vídeo con recompensa disponible añade 3 usos a la categoría elegida ese día."
+    ],
+    [
+      "¿Hay una prueba gratuita de Study Plus?",
+      "El plan mensual ofrece 1 mes de prueba gratuita a quienes cumplan los requisitos. El anual no incluye prueba gratuita. Consulta el precio y los requisitos en la pantalla de compra de la app."
+    ],
+    [
+      "¿Necesito crear una cuenta?",
+      "No necesitas registrarte ni iniciar sesión. Puedes enviar Historias de países y comentarios desde la app."
+    ],
+    [
+      "¿Mi progreso se sincroniza con otros dispositivos?",
+      "Los registros de aprendizaje se guardan en el dispositivo. No hay sincronización automática con otros dispositivos. Restaurar compras y trasladar los registros de aprendizaje son funciones distintas."
+    ],
+    [
+      "¿Puedo usarla con niños?",
+      "Quienes sientan curiosidad por las banderas y la geografía pueden aprender a su ritmo. La app incluye anuncios, compras opcionales, publicaciones y enlaces externos. Si la usa un niño pequeño, conviene que una persona adulta lo acompañe."
+    ],
+    [
+      "¿Las Historias del mundo se publican al instante?",
+      "Se envían tras aceptar las normas de publicación, la traducción y la difusión. Se publican después de traducirse y revisarse. El apodo es opcional; puedes eliminar tus publicaciones, reportar contenido y ocultar publicaciones."
+    ]
+  ],
+  "closingTitle": "Banderas: aprende con Awa Pop",
+  "closingLead": "Prueba las lecciones diarias y los ocho juegos en la app.",
+  "privacy": "Política de privacidad",
+  "terms": "Condiciones de uso",
+  "contact": "Contacto",
+  "allApps": "Más apps de TakeKApp",
+  "footerNote": "Las banderas y los territorios incluidos responden al contenido educativo de la app.",
+  "menuLabel": "Menú de la página",
+  "demoStatusLabel": "Explicación del ejemplo",
+  "screenLabel": "Elegir una pantalla de la app"
+}

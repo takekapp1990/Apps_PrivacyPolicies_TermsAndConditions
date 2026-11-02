@@ -211,18 +211,18 @@ const appsData = [
     },
     {
         id: 'FlagMemoryAwaAwaPon',
-        icon: 'https://takekapp.com/FlagMemoryAwaAwaPon/images/awaawapon_national_flags_app_icon_10241024_ios.png',
+        icon: 'https://takekapp.com/FlagMemoryAwaAwaPon/images/lp/app-icon.webp',
         android: 'https://play.google.com/store/apps/details?id=com.NationalFlagsAwaPop.takekapp1990.prod',
         ios: 'https://apps.apple.com/jp/app/%E5%9B%BD%E6%97%97%E3%81%AE%E6%9A%97%E8%A8%98-%E3%81%82%E3%82%8F%E3%81%82%E3%82%8F%E3%83%9D%E3%83%B3/id6757128485',
         locales: {
             ja: {
                 title: '国旗の暗記 あわあわポン',
-                description: '世界の国旗を楽しく覚えよう！記憶力バトルゲームで国旗の知識を身につけよう！',
+                description: '206の国・地域の国旗や首都を学べるアプリです。毎日の学習と復習、8種類のゲーム、世界の国図鑑を使えます。',
                 lp: 'https://takekapp.com/FlagMemoryAwaAwaPon/ja/landing_page_ja.html'
             },
             en: {
                 title: 'Flag Quiz Awa Pop',
-                description: 'Learn world flags in a fun way! Memory battle game to master flag knowledge.',
+                description: 'Learn flags and capitals from 206 countries and territories with daily lessons, review, eight games and a country encyclopedia.',
                 lp: 'https://takekapp.com/FlagMemoryAwaAwaPon/en/landing_page_en.html'
             }
         }
@@ -439,30 +439,45 @@ const extraLocales = {
         }
     },
     'FlagMemoryAwaAwaPon': {
-        'de': {
-            title: 'Flaggen merken Awa Pop - Weltflaggen Quiz-Spiel',
-            description: null,
-            lp: 'https://takekapp.com/FlagMemoryAwaAwaPon/de/landing_page_de.html'
+        "de": {
+            "title": "Flaggen lernen: Awa Pop",
+            "description": "Lerne Flaggen und Hauptstädte von 206 Ländern und Gebieten mit täglichen Lerneinheiten, Wiederholungen, acht Spielen und einem Länderlexikon. Kostenlos für iPhone und Android mit In-App-Käufen.",
+            "lp": "https://takekapp.com/FlagMemoryAwaAwaPon/de/landing_page_de.html"
         },
-        'es': {
-            title: 'Bandera Quiz Awa Pop - Juego de Quiz de Banderas del Mundo',
-            description: null,
-            lp: 'https://takekapp.com/FlagMemoryAwaAwaPon/es/landing_page_es.html'
+        "es": {
+            "title": "Banderas: aprende con Awa Pop",
+            "description": "Aprende las banderas y capitales de 206 países y territorios con lecciones diarias, repasos, ocho juegos y una enciclopedia de países. Gratis en iPhone y Android con compras en la app.",
+            "lp": "https://takekapp.com/FlagMemoryAwaAwaPon/es/landing_page_es.html"
         },
-        'id': {
-            title: 'Hafalan Bendera Awa Pop - Game Kuis Bendera Dunia',
-            description: null,
-            lp: 'https://takekapp.com/FlagMemoryAwaAwaPon/id/landing_page_id.html'
+        "id": {
+            "title": "Kuis Bendera: Awa Pop",
+            "description": "Pelajari bendera dan ibu kota 206 negara dan wilayah melalui pelajaran harian, ulasan, delapan permainan, dan ensiklopedia negara. Gratis di iPhone dan Android dengan pembelian dalam aplikasi.",
+            "lp": "https://takekapp.com/FlagMemoryAwaAwaPon/id/landing_page_id.html"
         },
-        'ko': {
-            title: '국기 암기 Awa Pop - 세계 국기 퀴즈 게임',
-            description: null,
-            lp: 'https://takekapp.com/FlagMemoryAwaAwaPon/ko/landing_page_ko.html'
+        "ko": {
+            "title": "국기 암기 퀴즈 아와아와팡",
+            "description": "206개 국가·지역의 국기와 수도를 배우는 무료 앱입니다. 매일 학습과 복습, 8가지 게임, 세계 국가 도감을 이용할 수 있습니다. iPhone·Android 지원 및 앱 내 구매 제공.",
+            "lp": "https://takekapp.com/FlagMemoryAwaAwaPon/ko/landing_page_ko.html"
         },
-        'th': {
-            title: 'ท่องจำธงชาติ Awa Pop - เกมควิซธงชาติโลก',
-            description: null,
-            lp: 'https://takekapp.com/FlagMemoryAwaAwaPon/th/landing_page_th.html'
+        "th": {
+            "title": "ธงชาติ Awa Pop",
+            "description": "เรียนรู้ธงชาติและเมืองหลวงของ 206 ประเทศและดินแดน พร้อมบทเรียนรายวัน การทบทวน เกม 8 แบบ และสารานุกรมประเทศ ดาวน์โหลดฟรีบน iPhone และ Android มีการซื้อในแอป",
+            "lp": "https://takekapp.com/FlagMemoryAwaAwaPon/th/landing_page_th.html"
+        },
+        "fr": {
+            "title": "Quiz de drapeaux : Awa Pop",
+            "description": "Apprends les drapeaux et capitales de 206 pays et territoires avec des leçons quotidiennes, des révisions, huit jeux et une encyclopédie des pays. Gratuit sur iPhone et Android avec achats intégrés.",
+            "lp": "https://takekapp.com/FlagMemoryAwaAwaPon/fr/landing_page_fr.html"
+        },
+        "pt": {
+            "title": "Quiz de Bandeiras: Awa Pop",
+            "description": "Aprenda bandeiras e capitais de 206 países e territórios com lições diárias, revisão, oito jogos e uma enciclopédia de países. Grátis para iPhone e Android com compras no app.",
+            "lp": "https://takekapp.com/FlagMemoryAwaAwaPon/pt-BR/landing_page_pt-BR.html"
+        },
+        "zh_TW": {
+            "title": "國旗記憶測驗・Awa Pop",
+            "description": "免費學習206個國家與地區的國旗與首都。提供每日學習、複習、8種遊戲與世界國家圖鑑，支援iPhone與Android，含App內購買。",
+            "lp": "https://takekapp.com/FlagMemoryAwaAwaPon/zh-Hant/landing_page_zh-Hant.html"
         }
     },
     'TimesTablesMemoryAwaAwaPon': {
