@@ -1,0 +1,3428 @@
+{
+  "ja": {
+    "name": "寝落ち防止",
+    "other": "English",
+    "otherLang": "en",
+    "title": "寝落ち防止｜仮眠・寝かしつけ用の振動アラーム",
+    "description": "変な振動で、起こします。仮眠や寝かしつけの寝落ち対策に。変化する振動、複数回のお知らせ、計算やタップによる停止操作を備えたアプリです。",
+    "skip": "本文へ",
+    "nav": [
+      "特徴",
+      "使い方",
+      "料金",
+      "よくある質問"
+    ],
+    "download": "ダウンロード",
+    "category": "仮眠・寝かしつけ用の振動アラーム",
+    "headline": "変な振動で、<br><span>起こします。</span>",
+    "audience": "仮眠や寝かしつけで、<br class=\"desktop-break\">そのまま寝てしまう人へ。",
+    "intro": "短い振動、長い振動、連打するリズム。<br>変化のある振動と複数回のお知らせ、<br class=\"desktop-break\">計算やタップによる停止操作を組み合わせました。",
+    "heroCta": "どんなアプリ？",
+    "availability": "iPhone / Android",
+    "freeNote": "基本無料・アプリ内課金あり",
+    "iosShort": "iPhoneの独自振動は、アプリを開いたまま使います。",
+    "heroCaption": "「何分後」か「時刻」でセット",
+    "overview": [
+      "変化する振動",
+      "複数回のお知らせ",
+      "計算・タップで停止"
+    ],
+    "vLabel": "振動パターン",
+    "vTitle": "短い。長い。連打。<br>次が読めない振動。",
+    "vBenefit": "普段の通知とは違う、長さもリズムも変わる振動。「いつもと違う」という違和感を、目を覚ますきっかけに。",
+    "vBody": "振動の長さや間隔を変えながら、いろいろなパターンを組み合わせます。「おまかせ」「通知風中心」「長め中心」「短め中心」の4種類から選べます。",
+    "vFoot": "アプリで振動を試してから、好みのパターンを選べます。",
+    "rhythm": "振動のリズムのイメージ",
+    "rhythms": [
+      "短い振動",
+      "長い振動",
+      "連打するリズム"
+    ],
+    "repeatLabel": "複数回のお知らせ",
+    "repeatTitle": "1回セットすれば、<br>複数回お知らせ。",
+    "repeatBody": "何個もアラームを作る手間を減らせます。今回のお知らせを止めて次の回を待つことも、起きたら残りをまとめて終了することもできます。",
+    "repeatFoot": "回数と間隔の変更はプレミアムで利用できます。",
+    "repeatSteps": [
+      "1回セット",
+      "複数回お知らせ",
+      "起きたら全体を終了"
+    ],
+    "repeatDiagram": "セットから終了までのイメージ",
+    "repeatCount": "1回目",
+    "repeatCount2": "2回目",
+    "repeatCount3": "3回目",
+    "repeatDiagramNote": "回数を3回に設定した場合のイメージ。",
+    "stopLabel": "停止操作",
+    "stopTitle": "計算やタップで、<br>アラームを止める。",
+    "stopBody": "計算、数字の順番タップ、長押し、連打。アラームを止めるときに、頭と手を使う操作を用意しています。",
+    "stopFoot": "標準の停止・スヌーズは無料。解除方法の変更や組み合わせの編集はプレミアムです。",
+    "math": "計算する",
+    "sequence": "数字を順番にタップする",
+    "nightLabel": "使い方・ナイト画面",
+    "nightTitle": "セットしたら、<br>画面を暗くして待機。",
+    "nightBody": "ナイト画面では、明るさや時計の見え方を調整できます。表示を消して待ち、タップしたときだけ時計を表示することもできます。",
+    "how": [
+      [
+        "時間を決める",
+        "「30分後」などの時間ボタン、または起きたい時刻でセット。"
+      ],
+      [
+        "ナイト画面で待つ",
+        "画面を暗くして待機。音やライトは、使いたいときだけオンに。"
+      ],
+      [
+        "起きたら終了する",
+        "停止操作を進め、不要になった残りのお知らせを終了。"
+      ]
+    ],
+    "iosTitle": "iPhoneでは、画面をロックせずに。",
+    "iosBody": "独自の振動を使うときは、ナイト画面を開いたまま待ってください。サイドボタンでロックしたり、別のアプリに切り替えたりすると、設定した振動パターンや強さは適用されません。黒いナイト画面は、端末のロックとは異なります。",
+    "scheduleTitle": "曜日を決めて、繰り返し使う。",
+    "scheduleBody": "毎日・平日などの予定には、時刻と曜日で設定する定期アラームを。",
+    "relaxLabel": "ナイト画面の音とライト",
+    "relaxTitle": "休むときには、<br>音と明かりも。",
+    "relaxBody": "仮眠や寝かしつけのおともに。ナイト画面から、必要なときだけオンにできます。",
+    "soundTitle": "雨や波の音を、好きな音量で。",
+    "soundBody": "雨・波・ホワイトノイズの3種類。最初のお知らせに向けて音が小さくなり、振動が始まるまでに止まります。",
+    "lightTitle": "手元を照らす、画面のライト。",
+    "lightBody": "授乳や夜中のお世話にも。暖色・淡い赤・淡い白から選んで、画面の明るさを調整できます。",
+    "lightColors": [
+      "暖色",
+      "淡い赤",
+      "淡い白"
+    ],
+    "relaxFoot": "リラックス音もライトも、無料で使えます。",
+    "relaxAlt": "ナイト画面のリラックス音とライト。ライトの色と明るさを調整する画面",
+    "priceLabel": "無料とプレミアム",
+    "priceTitle": "基本機能は無料で使えます。",
+    "priceBody": "まずは振動や停止操作を試して、細かく調整したくなったらプレミアムへ。",
+    "priceHead": [
+      "機能",
+      "無料",
+      "プレミアム"
+    ],
+    "priceRows": [
+      [
+        "基本4種類の振動",
+        "使えます",
+        "使えます"
+      ],
+      [
+        "複数回のお知らせ",
+        "標準設定",
+        "回数・間隔を変更"
+      ],
+      [
+        "停止・スヌーズの操作",
+        "標準の操作",
+        "手順を変更・組み合わせ"
+      ],
+      [
+        "ナイト画面・音・ライト",
+        "使えます",
+        "使えます"
+      ],
+      [
+        "自作の振動パターン",
+        "—",
+        "作成・編集"
+      ],
+      [
+        "広告",
+        "一部の画面に表示",
+        "すべて非表示"
+      ]
+    ],
+    "priceFoot": "プレミアムは月額・買い切りから選べます。料金はアプリ内の購入画面でご確認ください。月額は自動更新で、ストアの設定から管理・解約できます。",
+    "faqTitle": "使う前に、知っておきたいこと。",
+    "faq": [
+      [
+        "iPhoneをロックしたまま使えますか？",
+        "アプリ独自の振動パターンを使うには、ナイト画面を開いたまま待機してください。ロック中や他のアプリを使っている間はiOS側の制御になり、選んだ振動パターンや強さは適用されません。"
+      ],
+      [
+        "音は鳴りますか？",
+        "アラームは音の代わりに振動で知らせる設計です。リラックス音は自分でオンにしたときだけ再生します。振動が机や寝具に伝わる音、端末設定による動作の違いはあるため、使う場所と端末で事前にお試しください。"
+      ],
+      [
+        "無料でどこまで使えますか？",
+        "基本4種類の振動、標準の複数回アラーム、停止・スヌーズ、ナイト画面、リラックス音、ライトを利用できます。回数や間隔、停止手順の変更、自作パターン、広告の非表示はプレミアムです。"
+      ],
+      [
+        "アカウント登録は必要ですか？",
+        "アプリ専用のアカウント登録は不要です。設定や予定は端末に保存します。広告・解析・購入に関するデータの扱いは、プライバシーポリシーをご確認ください。"
+      ],
+      [
+        "使い始めに何を確認すればよいですか？",
+        "アプリの案内に沿って必要な権限を許可し、「権限・動作確認」で試してください。Androidでは端末の省電力設定も動作に影響する場合があります。通知の到達や起床を保証するものではありません。"
+      ]
+    ],
+    "support": "詳しい使い方・お問い合わせ",
+    "downloadTitle": "寝落ち防止",
+    "downloadBody": "仮眠・寝かしつけ用の振動アラーム。",
+    "requirements": "iPhone：iOS 26.1以降 / Android：8.0以降<br>アプリは日本語・英語を含む20言語に対応",
+    "footer": [
+      "プライバシー",
+      "利用規約",
+      "サポート"
+    ],
+    "top": "ページの先頭へ",
+    "uiControls": [
+      "表示言語",
+      "アプリの画面",
+      "前の画面",
+      "次の画面",
+      "自動切替を停止",
+      "自動切替を再開",
+      "画面を表示",
+      "スライド",
+      "メインナビゲーション"
+    ],
+    "ringingCaption": "振動でお知らせ",
+    "nightCaption": "暗いナイト画面で待機",
+    "legalLang": "ja"
+  },
+  "en": {
+    "name": "Nap & Stay Awake",
+    "other": "日本語",
+    "otherLang": "ja",
+    "title": "Nap & Stay Awake | Vibration alarms for naps and bedtime",
+    "description": "Wake up to unusual vibrations. Changing vibration patterns, multiple reminders and math or tapping tasks for naps and getting back up after settling your child.",
+    "skip": "Skip to content",
+    "nav": [
+      "Features",
+      "How to use",
+      "Pricing",
+      "FAQ"
+    ],
+    "download": "Download",
+    "category": "Vibration alarms for naps & bedtime",
+    "headline": "Wake up to<br><span>unusual vibrations.</span>",
+    "audience": "For when a short nap turns into a long sleep.<br>Or you fall asleep while settling your child.",
+    "intro": "Short pulses, long pulses and bursts.<br>Changing vibrations, multiple reminders and<br class=\"desktop-break\"> math or tapping tasks in one alarm app.",
+    "heroCta": "Explore the app",
+    "availability": "iPhone / Android",
+    "freeNote": "Free basics · In-app purchases",
+    "iosShort": "On iPhone, keep the app open to use custom vibrations.",
+    "heroCaption": "Choose a duration or a wake-up time",
+    "overview": [
+      "Changing vibrations",
+      "Multiple reminders",
+      "Math & tapping tasks"
+    ],
+    "vLabel": "Vibration patterns",
+    "vTitle": "Short pulses. Long pulses.<br>Bursts. A changing rhythm.",
+    "vBenefit": "Changing lengths and rhythms feel different from your everyday notifications. That unfamiliar feeling is designed to help you notice the alarm and wake up.",
+    "vBody": "The app combines patterns with changes in duration and spacing. Choose from four modes: Random, Notification Mix, Mostly Long and Mostly Short.",
+    "vFoot": "Try the vibrations in the app before choosing a pattern.",
+    "rhythm": "An illustration of vibration rhythms",
+    "rhythms": [
+      "Short pulses",
+      "Long pulses",
+      "Bursts"
+    ],
+    "repeatLabel": "Multiple reminders",
+    "repeatTitle": "Set once.<br>Get several reminders.",
+    "repeatBody": "No need to create each alarm separately. Stop the current reminder and wait for the next one, or finish the remaining set once you are up.",
+    "repeatFoot": "Adjusting the number of reminders and their spacing requires Premium.",
+    "repeatSteps": [
+      "Set one alarm",
+      "Get several reminders",
+      "Finish the set when up"
+    ],
+    "repeatDiagram": "From setup to finishing the set",
+    "repeatCount": "First",
+    "repeatCount2": "Second",
+    "repeatCount3": "Third",
+    "repeatDiagramNote": "An illustration of a set with three reminders.",
+    "stopLabel": "Stop tasks",
+    "stopTitle": "Solve or tap<br>to stop the alarm.",
+    "stopBody": "Solve a calculation, tap numbers in order, hold or tap repeatedly. Stopping the alarm involves actions that use your mind and hands.",
+    "stopFoot": "Standard stop and snooze tasks are free. Editing and combining the steps requires Premium.",
+    "math": "Solve a calculation",
+    "sequence": "Tap numbers in order",
+    "nightLabel": "How to use · Night Screen",
+    "nightTitle": "Set your alarm.<br>Wait with a dim screen.",
+    "nightBody": "Adjust the brightness and clock display in Night Screen. You can also hide the display while waiting and tap to see the clock again.",
+    "how": [
+      [
+        "Choose a time",
+        "Use a duration such as 30 minutes, or set the time you want to wake up."
+      ],
+      [
+        "Wait with Night Screen",
+        "Dim the screen. Turn on relaxing sounds or light only if you want them."
+      ],
+      [
+        "Finish when you are up",
+        "Complete the stop tasks and finish the remaining reminders you no longer need."
+      ]
+    ],
+    "iosTitle": "On iPhone, keep the screen unlocked.",
+    "iosBody": "Keep Night Screen open to use custom vibrations. Locking with the side button or switching apps puts vibration under iOS control; your chosen pattern and strength will not apply. A black Night Screen is not the same as locking your phone.",
+    "scheduleTitle": "Repeat on the days you choose.",
+    "scheduleBody": "Set a time and weekdays for recurring alarms, such as every day or workdays.",
+    "relaxLabel": "Night Screen sounds & light",
+    "relaxTitle": "Sounds and light<br>while you rest.",
+    "relaxBody": "For naps or settling your child. Turn either on from Night Screen whenever you need it.",
+    "soundTitle": "Rain or waves, at your volume.",
+    "soundBody": "Choose rain, waves or white noise. The sound fades out before the first reminder and stops by the time vibration begins.",
+    "lightTitle": "A screen light for nighttime care.",
+    "lightBody": "For feeds or checking on your child at night. Choose warm, pale red or pale white light, then adjust the screen brightness.",
+    "lightColors": [
+      "Warm",
+      "Pale red",
+      "Pale white"
+    ],
+    "relaxFoot": "Relaxing sounds and light are both free.",
+    "relaxAlt": "Night Screen relaxing sound and light controls, with light color and brightness settings",
+    "priceLabel": "Free & Premium",
+    "priceTitle": "Start with the free basics.",
+    "priceBody": "Try the vibrations and stop tasks. Choose Premium if you want more control.",
+    "priceHead": [
+      "Feature",
+      "Free",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "Four vibration modes",
+        "Included",
+        "Included"
+      ],
+      [
+        "Multiple reminders",
+        "Standard settings",
+        "Adjust count & spacing"
+      ],
+      [
+        "Stop & snooze tasks",
+        "Standard tasks",
+        "Edit & combine steps"
+      ],
+      [
+        "Night Screen, sounds & light",
+        "Included",
+        "Included"
+      ],
+      [
+        "Custom vibration patterns",
+        "—",
+        "Create & edit"
+      ],
+      [
+        "Ads",
+        "On some screens",
+        "All removed"
+      ]
+    ],
+    "priceFoot": "Premium offers a monthly plan or a one-time purchase. See the in-app purchase screen for prices. Monthly subscriptions renew automatically; manage or cancel them in your store account settings.",
+    "faqTitle": "Before you start.",
+    "faq": [
+      [
+        "Can I lock my iPhone while using the app?",
+        "Keep Night Screen open to use the app’s custom vibration patterns. While your phone is locked or another app is open, iOS controls vibration and your chosen pattern and strength will not apply."
+      ],
+      [
+        "Does the app play sound?",
+        "The alarm is designed to use vibration instead of an alarm tone. Relaxing sounds play only when you turn them on. Vibration can make noise against a desk or bedding, and device settings can affect behavior. Test it where you plan to use it."
+      ],
+      [
+        "What can I use for free?",
+        "Four vibration modes, standard multiple reminders, stop and snooze tasks, Night Screen, relaxing sounds and light. Adjusting reminder count and spacing, editing stop tasks, creating patterns and removing ads require Premium."
+      ],
+      [
+        "Do I need an account?",
+        "No app-specific account is required. Settings and schedules are stored on your device. See the privacy policy for information about data used for advertising, analytics and purchases."
+      ],
+      [
+        "What should I check before using it?",
+        "Follow the app’s introduction to allow the required permissions, then try Permissions & Test. Android battery-saving settings may affect operation. Alarm delivery and waking are not guaranteed."
+      ]
+    ],
+    "support": "Full guide & support",
+    "downloadTitle": "Nap & Stay Awake",
+    "downloadBody": "Vibration alarms for naps and bedtime.",
+    "requirements": "iPhone: iOS 26.1 or later / Android: 8.0 or later<br>App available in 20 languages, including English and Japanese",
+    "footer": [
+      "Privacy",
+      "Terms",
+      "Support"
+    ],
+    "top": "Back to top",
+    "uiControls": [
+      "Display language",
+      "App screenshots",
+      "Previous screen",
+      "Next screen",
+      "Pause slideshow",
+      "Resume slideshow",
+      "Show screen",
+      "slide",
+      "Main navigation"
+    ],
+    "ringingCaption": "Vibration alarm in progress",
+    "nightCaption": "Wait with Night Screen",
+    "legalLang": "en"
+  },
+  "zh-Hans": {
+    "name": "防止睡着",
+    "title": "防止睡着 | 多次提醒与计算、点按，帮你清醒",
+    "description": "想小睡后起来，也想在哄睡后留些自己的时间。用变化的振动、多次提醒和计算、点按操作，创造醒来的契机。搭配夜间画面、放松音效和可调灯光，按自己的方式休息。",
+    "skip": "跳至正文",
+    "nav": [
+      "功能",
+      "使用方法",
+      "价格",
+      "常见问题"
+    ],
+    "download": "下载",
+    "category": "适合小睡与哄睡的振动闹钟",
+    "headline": "<span>用不一样的振动叫醒你。</span>",
+    "audience": "写给午睡睡过头，或哄孩子时也跟着睡着的你。",
+    "heroCta": "了解应用",
+    "freeNote": "基本功能免费",
+    "heroCaption": "闹钟",
+    "overview": [
+      "变化的振动",
+      "多次提醒",
+      "停止操作"
+    ],
+    "vLabel": "振动模式",
+    "vTitle": "变化的振动节奏",
+    "vBenefit": "长度和节奏不断变化，带来不同于日常通知的振动。让这种“不太一样”的感觉，成为醒来的契机。",
+    "vBody": "短振、长振、连续振动。可以选择随机、通知风格、以长振为主、以短振为主四种基本模式。通过时长和间隔的变化带来不同节奏，设置前也能先试一试。",
+    "vFoot": "",
+    "rhythm": "振动模式",
+    "rhythms": [
+      "短振动",
+      "长振动",
+      "连续振动"
+    ],
+    "repeatLabel": "多次提醒",
+    "repeatTitle": "设置一次，自动多次提醒",
+    "repeatBody": "无需逐个建立闹钟。 可以只停止本次提醒并保留后续提醒，也可以结束整组，取消剩余预约。",
+    "repeatFoot": "保存次数和间隔需要高级版。",
+    "repeatSteps": [
+      "设置时间",
+      "保持夜间画面打开",
+      "起身后结束"
+    ],
+    "repeatDiagram": "多次提醒",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "停止操作",
+    "stopTitle": "动动脑，也动动手",
+    "stopBody": "计算、按顺序点击数字、长按、连续点击等操作，让停止和稍后提醒需要主动完成步骤。 标准停止和稍后提醒流程已包含在内；修改与组合步骤需使用高级版。",
+    "stopFoot": "",
+    "math": "完成计算",
+    "sequence": "按顺序点击",
+    "nightLabel": "夜间界面",
+    "nightTitle": "暗色夜间画面，安心休息",
+    "nightBody": "设置后可打开夜间画面等待，调整屏幕亮度和时钟显示。也可以在一段时间未操作后隐藏画面，轻点即可重新显示时钟和控制项。",
+    "how": [
+      [
+        "设置时间",
+        "选择例如30分钟的时长，或指定起床时间。"
+      ],
+      [
+        "保持夜间画面打开",
+        "保持夜间画面打开，按需开启音效或灯光。"
+      ],
+      [
+        "起身后结束",
+        "起身后完成停止步骤，并结束剩余提醒。"
+      ]
+    ],
+    "iosTitle": "在iPhone上使用",
+    "iosBody": "要使用应用自定义的振动节奏，请在设置闹钟后保持夜间画面打开。按侧边按钮锁屏或切换到其他应用后，振动将由iOS控制，所选的自定义节奏和强度不会生效。使用前请检查权限与设备振动设置，并进行运行测试。",
+    "scheduleTitle": "每天，或指定的星期",
+    "scheduleBody": "既能设置本次小睡的闹钟，也能按时间与星期安排重复闹钟。",
+    "relaxLabel": "放松音效与可调灯光",
+    "relaxTitle": "休息时，也有声音与灯光。",
+    "relaxBody": "小睡或哄孩子入睡时，可按需从夜间画面开启。",
+    "soundTitle": "放松声音",
+    "soundBody": "休息时可聆听雨声、海浪或白噪音。 声音只在你主动开启后播放，并在第一次闹钟前逐渐减弱、停止。",
+    "lightTitle": "灯光",
+    "lightBody": "灯光可选暖色、淡红色、柔和白色，亮度可按当时的环境调整。",
+    "lightColors": [
+      "暖色",
+      "浅红",
+      "柔白"
+    ],
+    "relaxFoot": "基本功能免费",
+    "relaxAlt": "夜间界面 — 放松音效与可调灯光",
+    "priceLabel": "免费 / 高级版",
+    "priceTitle": "基本功能免费",
+    "priceBody": "四种基本振动、标准停止与稍后提醒、夜间画面、放松音效和灯光均可使用。 部分画面会显示广告。",
+    "priceHead": [
+      "功能",
+      "免费",
+      "高级版"
+    ],
+    "priceRows": [
+      [
+        "振动模式",
+        "✓",
+        "✓"
+      ],
+      [
+        "多次提醒",
+        "标准设置",
+        "可自定义"
+      ],
+      [
+        "停止操作",
+        "标准设置",
+        "可自定义"
+      ],
+      [
+        "夜间界面 / 放松声音 / 灯光",
+        "✓",
+        "✓"
+      ],
+      [
+        "创建和编辑自己的振动节奏。",
+        "—",
+        "✓"
+      ],
+      [
+        "移除全部广告。",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "可以选择月度方案或一次性购买。月度方案会自动续订，可在商店账户设置中管理或取消。购买前请查看购买页面上的价格与条件。",
+    "faqTitle": "使用前须知",
+    "faq": [
+      [
+        "iPhone可以锁屏使用吗？",
+        "要使用应用自定义的振动节奏，请在设置闹钟后保持夜间画面打开。按侧边按钮锁屏或切换到其他应用后，振动将由iOS控制，所选的自定义节奏和强度不会生效。使用前请检查权限与设备振动设置，并进行运行测试。"
+      ],
+      [
+        "有哪些声音和灯光？",
+        "休息时可聆听雨声、海浪或白噪音。声音只在你主动开启后播放，并在第一次闹钟前逐渐减弱、停止。 灯光可选暖色、淡红色、柔和白色，亮度可按当时的环境调整。"
+      ],
+      [
+        "哪些功能免费？",
+        "四种基本振动、标准停止与稍后提醒、夜间画面、放松音效和灯光均可使用。 部分画面会显示广告。 移除全部广告。 调整提醒次数与间隔。 编辑停止与稍后提醒的操作步骤。 创建和编辑自己的振动节奏。 可以选择月度方案或一次性购买。月度方案会自动续订，可在商店账户设置中管理或取消。购买前请查看购买页面上的价格与条件。"
+      ]
+    ],
+    "support": "使用指南与支持（英语）",
+    "downloadTitle": "防止睡着",
+    "downloadBody": "适合小睡与哄睡的振动闹钟",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "隐私政策 (EN)",
+      "使用条款 (EN)",
+      "使用指南与支持（英语）"
+    ],
+    "top": "返回顶部",
+    "uiControls": [
+      "显示语言",
+      "应用画面",
+      "上一张",
+      "下一张",
+      "暂停自动切换",
+      "恢复自动切换",
+      "显示画面",
+      "幻灯片",
+      "主导航"
+    ],
+    "ringingCaption": "闹钟时间到了",
+    "nightCaption": "夜间界面",
+    "legalLang": "en"
+  },
+  "zh-Hant": {
+    "name": "防止睡著",
+    "title": "防止睡著 | 多次提醒與計算、點按，幫你清醒",
+    "description": "想小睡後起來，也想在哄睡後留些自己的時間。用變化的震動、多次提醒與計算、點按操作，創造醒來的契機。搭配夜間畫面、放鬆音效與可調燈光，用自己的方式休息。",
+    "skip": "跳至正文",
+    "nav": [
+      "功能",
+      "使用方式",
+      "價格",
+      "常見問題"
+    ],
+    "download": "下載",
+    "category": "適合小睡與哄睡的震動鬧鐘",
+    "headline": "<span>用不一樣的震動叫醒你。</span>",
+    "audience": "寫給午睡睡過頭，或哄孩子時也跟著睡著的你。",
+    "heroCta": "認識應用程式",
+    "freeNote": "基本功能免費",
+    "heroCaption": "鬧鐘",
+    "overview": [
+      "變化的震動",
+      "多次提醒",
+      "停止操作"
+    ],
+    "vLabel": "震動模式",
+    "vTitle": "變化的震動節奏",
+    "vBenefit": "長度與節奏不斷變化，帶來不同於日常通知的震動。讓這種「不太一樣」的感覺，成為醒來的契機。",
+    "vBody": "短震、長震、連續震動。可選隨機、通知風格、以長震為主、以短震為主四種基本模式。透過長度與間隔變化帶來不同節奏，設定前也能先試一試。",
+    "vFoot": "",
+    "rhythm": "震動模式",
+    "rhythms": [
+      "短震動",
+      "長震動",
+      "連續震動"
+    ],
+    "repeatLabel": "多次提醒",
+    "repeatTitle": "設定一次，自動多次提醒",
+    "repeatBody": "不必逐一建立鬧鐘。 可以只停止本次提醒並保留後續提醒，也可以結束整組，取消剩餘預約。",
+    "repeatFoot": "儲存次數和間隔需要進階版。",
+    "repeatSteps": [
+      "設定時間",
+      "保持夜間畫面開啟",
+      "起身後結束"
+    ],
+    "repeatDiagram": "多次提醒",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "停止操作",
+    "stopTitle": "動動腦，也動動手",
+    "stopBody": "計算、依序點按數字、長按、連續點按等操作，讓停止與稍後提醒需要主動完成步驟。 標準停止與稍後提醒流程已包含在內；修改與組合步驟需使用進階版。",
+    "stopFoot": "",
+    "math": "完成計算",
+    "sequence": "按依序點按",
+    "nightLabel": "夜間畫面",
+    "nightTitle": "暗色夜間畫面，好好休息",
+    "nightBody": "設定後可開啟夜間畫面等待，調整螢幕亮度與時鐘顯示。也可以在一段時間未操作後隱藏畫面，輕點即可重新顯示時鐘和控制項。",
+    "how": [
+      [
+        "設定時間",
+        "選擇例如30分鐘的時長，或指定起床時間。"
+      ],
+      [
+        "保持夜間畫面開啟",
+        "保持夜間畫面開啟，依需要開啟音效或燈光。"
+      ],
+      [
+        "起身後結束",
+        "起身後完成停止步驟，並結束剩餘提醒。"
+      ]
+    ],
+    "iosTitle": "在iPhone上使用",
+    "iosBody": "若要使用應用程式自訂的震動節奏，請在設定鬧鐘後保持夜間畫面開啟。按側邊按鈕鎖定螢幕或切換至其他應用程式後，震動將由iOS控制，所選的自訂節奏與強度不會套用。使用前請檢查權限與裝置震動設定，並進行運作測試。",
+    "scheduleTitle": "每天，或指定的星期",
+    "scheduleBody": "既能設定這次小睡的鬧鐘，也能依時間與星期安排重複鬧鐘。",
+    "relaxLabel": "放鬆音效與可調燈光",
+    "relaxTitle": "休息時，也有聲音與燈光。",
+    "relaxBody": "小睡或哄孩子入睡時，可依需要從夜間畫面開啟。",
+    "soundTitle": "放鬆聲音",
+    "soundBody": "休息時可聆聽雨聲、海浪或白噪音。 聲音只在你主動開啟後播放，並在第一次鬧鐘前漸弱、停止。",
+    "lightTitle": "燈光",
+    "lightBody": "燈光可選暖色、淡紅色或柔和白色，亮度可依當時環境調整。",
+    "lightColors": [
+      "暖色",
+      "淺紅",
+      "柔白"
+    ],
+    "relaxFoot": "基本功能免費",
+    "relaxAlt": "夜間畫面 — 放鬆音效與可調燈光",
+    "priceLabel": "免費 / 進階版",
+    "priceTitle": "基本功能免費",
+    "priceBody": "四種基本震動、標準停止與稍後提醒、夜間畫面、放鬆音效與燈光皆可使用。 部分畫面會顯示廣告。",
+    "priceHead": [
+      "功能",
+      "免費",
+      "進階版"
+    ],
+    "priceRows": [
+      [
+        "震動模式",
+        "✓",
+        "✓"
+      ],
+      [
+        "多次提醒",
+        "標準設定",
+        "可自訂"
+      ],
+      [
+        "停止操作",
+        "標準設定",
+        "可自訂"
+      ],
+      [
+        "夜間畫面 / 放鬆聲音 / 燈光",
+        "✓",
+        "✓"
+      ],
+      [
+        "建立與編輯自己的震動節奏。",
+        "—",
+        "✓"
+      ],
+      [
+        "移除所有廣告。",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "可選月費方案或一次性購買。月費方案會自動續訂，可在商店帳號設定中管理或取消。購買前請查看購買畫面上的價格與條件。",
+    "faqTitle": "使用前須知",
+    "faq": [
+      [
+        "iPhone可以鎖定螢幕使用嗎？",
+        "若要使用應用程式自訂的震動節奏，請在設定鬧鐘後保持夜間畫面開啟。按側邊按鈕鎖定螢幕或切換至其他應用程式後，震動將由iOS控制，所選的自訂節奏與強度不會套用。使用前請檢查權限與裝置震動設定，並進行運作測試。"
+      ],
+      [
+        "有哪些聲音與燈光？",
+        "休息時可聆聽雨聲、海浪或白噪音。聲音只在你主動開啟後播放，並在第一次鬧鐘前漸弱、停止。 燈光可選暖色、淡紅色或柔和白色，亮度可依當時環境調整。"
+      ],
+      [
+        "哪些功能免費？",
+        "四種基本震動、標準停止與稍後提醒、夜間畫面、放鬆音效與燈光皆可使用。 部分畫面會顯示廣告。 移除所有廣告。 調整提醒次數與間隔。 編輯停止與稍後提醒的操作步驟。 建立與編輯自己的震動節奏。 可選月費方案或一次性購買。月費方案會自動續訂，可在商店帳號設定中管理或取消。購買前請查看購買畫面上的價格與條件。"
+      ]
+    ],
+    "support": "使用指南與支援（英語）",
+    "downloadTitle": "防止睡著",
+    "downloadBody": "適合小睡與哄睡的震動鬧鐘",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "隱私權政策 (EN)",
+      "使用條款 (EN)",
+      "使用指南與支援（英語）"
+    ],
+    "top": "返回頂部",
+    "uiControls": [
+      "顯示語言",
+      "應用程式畫面",
+      "上一張",
+      "下一張",
+      "暫停自動切換",
+      "恢復自動切換",
+      "顯示畫面",
+      "投影片",
+      "主導覽"
+    ],
+    "ringingCaption": "鬧鐘時間到了",
+    "nightCaption": "夜間畫面",
+    "legalLang": "en"
+  },
+  "ko": {
+    "name": "졸음 방지",
+    "title": "졸음 방지 | 반복 알림과 계산·터치로 잠 깨기",
+    "description": "잠깐 쉬었다 일어나고 싶을 때, 아이를 재운 뒤 다시 일어나고 싶을 때. 달라지는 진동과 반복 알림, 계산·터치 과제로 잠에서 깰 계기를 만드세요. 야간 화면과 편안한 소리도 함께.",
+    "skip": "본문으로 이동",
+    "nav": [
+      "기능",
+      "사용 방법",
+      "요금",
+      "자주 묻는 질문"
+    ],
+    "download": "다운로드",
+    "category": "낮잠과 아이 재우기를 위한 진동 알람",
+    "headline": "<span>색다른 진동으로 깨워요.</span>",
+    "audience": "낮잠을 오래 자거나 아이를 재우다 함께 잠드는 분께.",
+    "heroCta": "앱 알아보기",
+    "freeNote": "기본 기능은 무료",
+    "heroCaption": "알람",
+    "overview": [
+      "변화하는 진동",
+      "여러 번 알림",
+      "정지 과제"
+    ],
+    "vLabel": "진동 패턴",
+    "vTitle": "다양하게 달라지는 진동",
+    "vBenefit": "길이와 리듬이 달라져 평소 알림과 다르게 느껴지는 진동. ‘평소와 다르다’는 느낌이 잠에서 깨는 계기가 되도록 했습니다.",
+    "vBody": "짧은 진동, 긴 진동, 연속 진동. 무작위, 알림 스타일 중심, 긴 진동 중심, 짧은 진동 중심의 기본 4가지 모드에서 선택하세요. 길이와 간격의 변화가 리듬을 바꿉니다. 설정 전에 진동을 직접 시험할 수 있습니다.",
+    "vFoot": "",
+    "rhythm": "진동 패턴",
+    "rhythms": [
+      "짧은 진동",
+      "긴 진동",
+      "연속 진동"
+    ],
+    "repeatLabel": "여러 번 알림",
+    "repeatTitle": "한 번 설정하면 자동으로 여러 번",
+    "repeatBody": "알람을 하나씩 만들 필요가 없습니다. 현재 알림만 멈추고 다음 알림을 남기거나, 세트를 종료해 남은 예약을 모두 취소할 수 있습니다.",
+    "repeatFoot": "횟수와 간격 저장은 프리미엄 기능입니다.",
+    "repeatSteps": [
+      "시간 설정",
+      "야간 화면으로 대기",
+      "일어나면 종료"
+    ],
+    "repeatDiagram": "여러 번 알림",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "정지 과제",
+    "stopTitle": "머리와 손을 움직여요",
+    "stopBody": "계산, 숫자를 순서대로 누르기, 길게 누르기, 연속 터치 등의 과제로 정지와 스누즈를 진행합니다. 표준 해제 과제는 기본 제공됩니다. 과제를 수정하고 조합하는 기능은 프리미엄에서 사용할 수 있습니다.",
+    "stopFoot": "",
+    "math": "계산하기",
+    "sequence": "순서대로 누르기",
+    "nightLabel": "야간 화면",
+    "nightTitle": "어두운 야간 화면으로 휴식",
+    "nightBody": "알람을 설정한 후 야간 화면으로 기다리며 밝기와 시계 표시를 조정하세요. 잠시 조작하지 않으면 표시를 숨기고, 화면을 누르면 시계와 조작 버튼을 다시 표시하는 방식도 선택할 수 있습니다.",
+    "how": [
+      [
+        "시간 설정",
+        "30분 뒤 같은 시간 간격이나 일어날 시각을 선택하세요."
+      ],
+      [
+        "야간 화면으로 대기",
+        "야간 화면을 열어 두고 필요할 때 소리나 빛을 켜세요."
+      ],
+      [
+        "일어나면 종료",
+        "일어나면 해제 과제를 마치고 남은 세트를 종료하세요."
+      ]
+    ],
+    "iosTitle": "iPhone에서 사용할 때",
+    "iosBody": "앱 고유의 진동 패턴을 사용하려면 알람 설정 후 야간 화면을 열어 두세요. 측면 버튼으로 화면을 잠그거나 다른 앱으로 전환하면 iOS가 진동을 제어하며 선택한 패턴과 세기는 적용되지 않습니다. 권한과 기기 진동 설정을 확인하고 사용 전에 작동 테스트를 해 주세요.",
+    "scheduleTitle": "매일 또는 원하는 요일에",
+    "scheduleBody": "한 번의 낮잠 알람과 시각·요일별 반복 알람을 상황에 맞게 사용하세요.",
+    "relaxLabel": "편안한 소리와 조절 가능한 빛",
+    "relaxTitle": "쉴 때는 소리와 빛도 함께.",
+    "relaxBody": "낮잠이나 아이를 재울 때, 필요하면 야간 화면에서 켤 수 있습니다.",
+    "soundTitle": "휴식 사운드",
+    "soundBody": "비, 파도, 백색소음을 들으며 쉬세요. 소리는 직접 켰을 때만 재생되며 첫 알람에 맞춰 서서히 줄어들어 멈춥니다.",
+    "lightTitle": "조명",
+    "lightBody": "따뜻한 색, 연한 빨강, 부드러운 흰색 빛에서 선택하고 밝기를 조절할 수 있습니다.",
+    "lightColors": [
+      "따뜻한 색",
+      "연한 빨강",
+      "연한 흰색"
+    ],
+    "relaxFoot": "기본 기능은 무료",
+    "relaxAlt": "야간 화면 — 편안한 소리와 조절 가능한 빛",
+    "priceLabel": "무료 / 프리미엄",
+    "priceTitle": "기본 기능은 무료",
+    "priceBody": "기본 4가지 진동, 표준 정지·스누즈, 야간 화면, 편안한 소리와 빛을 사용할 수 있습니다. 일부 화면에는 광고가 표시됩니다.",
+    "priceHead": [
+      "기능",
+      "무료",
+      "프리미엄"
+    ],
+    "priceRows": [
+      [
+        "진동 패턴",
+        "✓",
+        "✓"
+      ],
+      [
+        "여러 번 알림",
+        "표준 설정",
+        "직접 설정"
+      ],
+      [
+        "정지 과제",
+        "표준 설정",
+        "직접 설정"
+      ],
+      [
+        "야간 화면 / 휴식 사운드 / 조명",
+        "✓",
+        "✓"
+      ],
+      [
+        "나만의 진동 패턴 생성 및 편집.",
+        "—",
+        "✓"
+      ],
+      [
+        "모든 광고 제거.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "월간 요금제와 일회성 구매 중 선택할 수 있습니다. 월간 요금제는 자동 갱신되며 스토어 계정 설정에서 관리·해지할 수 있습니다. 가격과 조건은 구매 화면에서 확인하세요.",
+    "faqTitle": "사용 전에 확인하세요",
+    "faq": [
+      [
+        "iPhone을 잠근 채 사용할 수 있나요?",
+        "앱 고유의 진동 패턴을 사용하려면 알람 설정 후 야간 화면을 열어 두세요. 측면 버튼으로 화면을 잠그거나 다른 앱으로 전환하면 iOS가 진동을 제어하며 선택한 패턴과 세기는 적용되지 않습니다. 권한과 기기 진동 설정을 확인하고 사용 전에 작동 테스트를 해 주세요."
+      ],
+      [
+        "어떤 소리와 빛을 사용할 수 있나요?",
+        "비, 파도, 백색소음을 들으며 쉬세요. 소리는 직접 켰을 때만 재생되며 첫 알람에 맞춰 서서히 줄어들어 멈춥니다. 따뜻한 색, 연한 빨강, 부드러운 흰색 빛에서 선택하고 밝기를 조절할 수 있습니다."
+      ],
+      [
+        "어디까지 무료인가요?",
+        "기본 4가지 진동, 표준 정지·스누즈, 야간 화면, 편안한 소리와 빛을 사용할 수 있습니다. 일부 화면에는 광고가 표시됩니다. 모든 광고 제거. 알림 횟수와 간격 조정. 정지·스누즈 해제 과제 편집. 나만의 진동 패턴 생성 및 편집. 월간 요금제와 일회성 구매 중 선택할 수 있습니다. 월간 요금제는 자동 갱신되며 스토어 계정 설정에서 관리·해지할 수 있습니다. 가격과 조건은 구매 화면에서 확인하세요."
+      ]
+    ],
+    "support": "사용 안내 및 지원 (영어)",
+    "downloadTitle": "졸음 방지",
+    "downloadBody": "낮잠과 아이 재우기를 위한 진동 알람",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "개인정보 처리방침 (EN)",
+      "이용약관 (EN)",
+      "사용 안내 및 지원 (영어)"
+    ],
+    "top": "맨 위로",
+    "uiControls": [
+      "표시 언어",
+      "앱 화면",
+      "이전 화면",
+      "다음 화면",
+      "자동 전환 일시정지",
+      "자동 전환 재개",
+      "화면 표시",
+      "슬라이드",
+      "주 메뉴"
+    ],
+    "ringingCaption": "알람 시간입니다",
+    "nightCaption": "야간 화면",
+    "legalLang": "en"
+  },
+  "es": {
+    "name": "Siesta y Alerta",
+    "title": "Siesta y Alerta | Avisos repetidos y retos",
+    "description": "Una siesta o volver a levantarte tras dormir a tu peque. Vibraciones variadas, avisos repetidos y retos para despertar. Descansa con pantalla nocturna y sonidos.",
+    "skip": "Ir al contenido",
+    "nav": [
+      "Funciones",
+      "Cómo usar",
+      "Precios",
+      "Preguntas frecuentes"
+    ],
+    "download": "Descargar",
+    "category": "Alarma vibratoria para siestas y para después de acostar a tu hijo",
+    "headline": "<span>Despierta con vibraciones distintas.</span>",
+    "audience": "Para quienes alargan la siesta o se duermen al acostar a sus hijos.",
+    "heroCta": "Conoce la app",
+    "freeNote": "Funciones básicas gratuitas",
+    "heroCaption": "Alarma",
+    "overview": [
+      "Vibraciones variables",
+      "Varios avisos",
+      "Tareas para parar"
+    ],
+    "vLabel": "Patrones de vibración",
+    "vTitle": "Vibraciones que cambian",
+    "vBenefit": "La duración y el ritmo cambian para sentirse distintos de tus notificaciones habituales. Esa sensación poco familiar busca ayudarte a notar la alarma y despertar.",
+    "vBody": "Pulsos cortos, largos y en ráfagas. Elige entre cuatro modos básicos: aleatorio, estilo notificación, principalmente largos o principalmente cortos. Las variaciones de duración e intervalo aportan cambios de ritmo. Puedes probarlos antes de activar la alarma.",
+    "vFoot": "",
+    "rhythm": "Patrones de vibración",
+    "rhythms": [
+      "Pulsos cortos",
+      "Pulsos largos",
+      "Ráfagas"
+    ],
+    "repeatLabel": "Varios avisos",
+    "repeatTitle": "Una configuración, varios avisos",
+    "repeatBody": "Puedes parar solo el aviso actual o terminar el conjunto para cancelar los que quedan.",
+    "repeatFoot": "Guardar la cantidad y el intervalo es una función Premium.",
+    "repeatSteps": [
+      "Elige una hora",
+      "Espera en la pantalla nocturna",
+      "Termina al levantarte"
+    ],
+    "repeatDiagram": "Varios avisos",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "Tareas para parar",
+    "stopTitle": "Activa la mente y las manos",
+    "stopBody": "Resuelve cálculos, toca números en orden, mantén pulsado o toca repetidamente para completar la parada o posposición. Las tareas estándar están incluidas; editar y combinar los pasos requiere Premium.",
+    "stopFoot": "",
+    "math": "Resuelve el cálculo",
+    "sequence": "Toca por orden",
+    "nightLabel": "Pantalla nocturna",
+    "nightTitle": "Descansa con la pantalla nocturna",
+    "nightBody": "Ajusta el brillo y la apariencia del reloj. También puedes ocultar la pantalla tras un rato sin tocarla y volver a mostrar el reloj y los controles con un toque.",
+    "how": [
+      [
+        "Elige una hora",
+        "Elige una duración, como 30 minutos, o una hora para despertar."
+      ],
+      [
+        "Espera en la pantalla nocturna",
+        "Espera con la pantalla nocturna abierta; activa sonido o luz si quieres."
+      ],
+      [
+        "Termina al levantarte",
+        "Completa la parada y termina el conjunto cuando te hayas levantado."
+      ]
+    ],
+    "iosTitle": "Uso en iPhone",
+    "iosBody": "Para utilizar los patrones de vibración propios de la app, deja abierta la pantalla nocturna tras configurar la alarma. Si bloqueas con el botón lateral o cambias de app, iOS controla la vibración y no se aplica tu patrón ni intensidad personalizados. Revisa los permisos y ajustes de vibración y realiza la prueba de funcionamiento antes de usarla.",
+    "scheduleTitle": "Cada día o los días que elijas",
+    "scheduleBody": "Combina alarmas de siesta para una ocasión con alarmas recurrentes por hora y día de la semana.",
+    "relaxLabel": "Sonidos relajantes y luz a tu gusto",
+    "relaxTitle": "Sonidos y luz mientras descansas.",
+    "relaxBody": "Para la siesta o para acostar a tu hijo. Actívalos desde la pantalla nocturna cuando los necesites.",
+    "soundTitle": "Sonidos relajantes",
+    "soundBody": "Escucha lluvia, olas o ruido blanco. El sonido empieza solo al activarlo y se desvanece antes de la primera alarma.",
+    "lightTitle": "Luz",
+    "lightBody": "Elige luz cálida, rojo suave o blanco suave y ajusta el brillo.",
+    "lightColors": [
+      "Cálido",
+      "Rojo suave",
+      "Blanco suave"
+    ],
+    "relaxFoot": "Funciones básicas gratuitas",
+    "relaxAlt": "Pantalla nocturna — Sonidos relajantes y luz a tu gusto",
+    "priceLabel": "Gratis / Premium",
+    "priceTitle": "Funciones básicas gratuitas",
+    "priceBody": "Incluye cuatro modos de vibración, parada y posposición estándar, pantalla nocturna, sonidos y luz. Algunas pantallas muestran anuncios.",
+    "priceHead": [
+      "Función",
+      "Gratis",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "Patrones de vibración",
+        "✓",
+        "✓"
+      ],
+      [
+        "Varios avisos",
+        "Ajustes estándar",
+        "Personalizable"
+      ],
+      [
+        "Tareas para parar",
+        "Ajustes estándar",
+        "Personalizable"
+      ],
+      [
+        "Pantalla nocturna / Sonidos relajantes / Luz",
+        "✓",
+        "✓"
+      ],
+      [
+        "Crea y edita tus propios patrones de vibración.",
+        "—",
+        "✓"
+      ],
+      [
+        "Elimina todos los anuncios.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "Puedes elegir un plan mensual o una compra única. El plan mensual se renueva automáticamente y se gestiona o cancela en la configuración de tu cuenta de la tienda. Consulta los precios y condiciones antes de comprar.",
+    "faqTitle": "Antes de empezar",
+    "faq": [
+      [
+        "¿Puedo bloquear el iPhone?",
+        "Para utilizar los patrones de vibración propios de la app, deja abierta la pantalla nocturna tras configurar la alarma. Si bloqueas con el botón lateral o cambias de app, iOS controla la vibración y no se aplica tu patrón ni intensidad personalizados. Revisa los permisos y ajustes de vibración y realiza la prueba de funcionamiento antes de usarla."
+      ],
+      [
+        "¿Qué sonidos y luces ofrece?",
+        "Escucha lluvia, olas o ruido blanco. El sonido empieza solo al activarlo y se desvanece antes de la primera alarma. Elige luz cálida, rojo suave o blanco suave y ajusta el brillo."
+      ],
+      [
+        "¿Qué puedo usar gratis?",
+        "Incluye cuatro modos de vibración, parada y posposición estándar, pantalla nocturna, sonidos y luz. Algunas pantallas muestran anuncios. Elimina todos los anuncios. Ajusta la cantidad de avisos y el intervalo. Edita los pasos de parada y posposición. Crea y edita tus propios patrones de vibración. Puedes elegir un plan mensual o una compra única. El plan mensual se renueva automáticamente y se gestiona o cancela en la configuración de tu cuenta de la tienda. Consulta los precios y condiciones antes de comprar."
+      ]
+    ],
+    "support": "Guía y ayuda (en inglés)",
+    "downloadTitle": "Siesta y Alerta",
+    "downloadBody": "Alarma vibratoria para siestas y para después de acostar a tu hijo",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "Política de privacidad (EN)",
+      "Condiciones de uso (EN)",
+      "Guía y ayuda (en inglés)"
+    ],
+    "top": "Volver arriba",
+    "uiControls": [
+      "Idioma",
+      "Pantallas de la app",
+      "Pantalla anterior",
+      "Pantalla siguiente",
+      "Pausar presentación",
+      "Reanudar presentación",
+      "Mostrar pantalla",
+      "diapositiva",
+      "Navegación principal"
+    ],
+    "ringingCaption": "Es la hora de tu alarma",
+    "nightCaption": "Pantalla nocturna",
+    "legalLang": "en"
+  },
+  "pt-BR": {
+    "name": "Não pegue no sono",
+    "title": "Não pegue no sono | Alertas repetidos e desafios",
+    "description": "Cochile ou volte a se levantar depois de colocar seu filho para dormir. Vibrações variadas, vários alertas e tarefas ajudam a despertar. Relaxe com sons e tela noturna.",
+    "skip": "Ir para o conteúdo",
+    "nav": [
+      "Recursos",
+      "Como usar",
+      "Preços",
+      "Perguntas frequentes"
+    ],
+    "download": "Baixar",
+    "category": "Alarme vibratório para cochilos e para depois de colocar seu filho para dormir",
+    "headline": "<span>Acorde com vibrações diferentes.</span>",
+    "audience": "Para quem estica a soneca ou adormece ao colocar os filhos para dormir.",
+    "heroCta": "Conheça o app",
+    "freeNote": "Comece com as funções gratuitas",
+    "heroCaption": "Alarme",
+    "overview": [
+      "Vibrações variadas",
+      "Vários alertas",
+      "Tarefas para parar"
+    ],
+    "vLabel": "Padrões de vibração",
+    "vTitle": "Vibrações com variação",
+    "vBenefit": "A duração e o ritmo mudam para que a vibração seja diferente das notificações do dia a dia. Essa sensação incomum foi pensada para ajudar você a perceber o alarme e acordar.",
+    "vBody": "Pulsos curtos, longos e em sequência. Escolha entre quatro modos básicos: aleatório, estilo notificação, principalmente longos ou principalmente curtos. A duração e os intervalos variam para mudar o ritmo. Experimente antes de ativar o alarme.",
+    "vFoot": "",
+    "rhythm": "Padrões de vibração",
+    "rhythms": [
+      "Pulsos curtos",
+      "Pulsos longos",
+      "Sequências rápidas"
+    ],
+    "repeatLabel": "Vários alertas",
+    "repeatTitle": "Configure uma vez e receba vários alertas",
+    "repeatBody": "Pare apenas o alerta atual para manter os próximos, ou encerre o conjunto para cancelar os restantes.",
+    "repeatFoot": "Salvar a quantidade e o intervalo é um recurso Premium.",
+    "repeatSteps": [
+      "Escolha o horário",
+      "Aguarde na tela noturna",
+      "Encerre ao levantar"
+    ],
+    "repeatDiagram": "Vários alertas",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "Tarefas para parar",
+    "stopTitle": "Use a mente e as mãos",
+    "stopBody": "Cálculos, números em ordem, toque prolongado e toques repetidos tornam a parada uma ação consciente. Os passos padrão de parada e soneca estão incluídos. Editar e combinar os passos é uma função Premium.",
+    "stopFoot": "",
+    "math": "Resolva o cálculo",
+    "sequence": "Toque na ordem",
+    "nightLabel": "Tela noturna",
+    "nightTitle": "Descanse com a tela noturna",
+    "nightBody": "Ajuste o brilho e a aparência do relógio. Se quiser, o visor desaparece após um tempo sem interação; toque para ver novamente o relógio e os controles.",
+    "how": [
+      [
+        "Escolha o horário",
+        "Escolha uma duração, como 30 minutos, ou o horário de acordar."
+      ],
+      [
+        "Aguarde na tela noturna",
+        "Aguarde com a tela noturna aberta. Ative som ou luz se desejar."
+      ],
+      [
+        "Encerre ao levantar",
+        "Complete os passos de parada e encerre o conjunto quando se levantar."
+      ]
+    ],
+    "iosTitle": "Uso no iPhone",
+    "iosBody": "Para usar os padrões de vibração próprios do app, mantenha a tela noturna aberta após ativar o alarme. Ao bloquear pelo botão lateral ou mudar de app, a vibração passa ao controle do iOS e o padrão e a intensidade personalizados não se aplicam. Confira as permissões e os ajustes de vibração e faça o teste de funcionamento antes do uso.",
+    "scheduleTitle": "Todos os dias ou nos dias escolhidos",
+    "scheduleBody": "Use um alarme para um cochilo específico ou programe alarmes recorrentes por horário e dia da semana.",
+    "relaxLabel": "Sons relaxantes e luz ajustável",
+    "relaxTitle": "Sons e luz enquanto você descansa.",
+    "relaxBody": "Para cochilar ou colocar seu filho para dormir. Ative na tela noturna quando precisar.",
+    "soundTitle": "Sons relaxantes",
+    "soundBody": "Ouça chuva, ondas ou ruído branco. O som só começa quando você o ativa e diminui gradualmente até parar no primeiro alarme.",
+    "lightTitle": "Luz",
+    "lightBody": "Escolha luz quente, vermelha suave ou branca suave e ajuste o brilho.",
+    "lightColors": [
+      "Quente",
+      "Vermelho suave",
+      "Branco suave"
+    ],
+    "relaxFoot": "Comece com as funções gratuitas",
+    "relaxAlt": "Tela noturna — Sons relaxantes e luz ajustável",
+    "priceLabel": "Grátis / Premium",
+    "priceTitle": "Comece com as funções gratuitas",
+    "priceBody": "Quatro modos de vibração, parada e soneca padrão, tela noturna, sons e luz estão incluídos. Algumas telas exibem anúncios.",
+    "priceHead": [
+      "Recurso",
+      "Grátis",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "Padrões de vibração",
+        "✓",
+        "✓"
+      ],
+      [
+        "Vários alertas",
+        "Ajustes padrão",
+        "Personalizável"
+      ],
+      [
+        "Tarefas para parar",
+        "Ajustes padrão",
+        "Personalizável"
+      ],
+      [
+        "Tela noturna / Sons relaxantes / Luz",
+        "✓",
+        "✓"
+      ],
+      [
+        "Crie e edite seus próprios padrões de vibração.",
+        "—",
+        "✓"
+      ],
+      [
+        "Remova todos os anúncios.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "Escolha um plano mensal ou uma compra única. O plano mensal tem renovação automática e pode ser gerenciado ou cancelado na conta da loja. Consulte os preços e as condições na tela de compra.",
+    "faqTitle": "Antes de começar",
+    "faq": [
+      [
+        "Posso bloquear o iPhone?",
+        "Para usar os padrões de vibração próprios do app, mantenha a tela noturna aberta após ativar o alarme. Ao bloquear pelo botão lateral ou mudar de app, a vibração passa ao controle do iOS e o padrão e a intensidade personalizados não se aplicam. Confira as permissões e os ajustes de vibração e faça o teste de funcionamento antes do uso."
+      ],
+      [
+        "Quais sons e luzes estão disponíveis?",
+        "Ouça chuva, ondas ou ruído branco. O som só começa quando você o ativa e diminui gradualmente até parar no primeiro alarme. Escolha luz quente, vermelha suave ou branca suave e ajuste o brilho."
+      ],
+      [
+        "O que posso usar de graça?",
+        "Quatro modos de vibração, parada e soneca padrão, tela noturna, sons e luz estão incluídos. Algumas telas exibem anúncios. Remova todos os anúncios. Ajuste a quantidade e o intervalo dos alertas. Edite os passos de parada e soneca. Crie e edite seus próprios padrões de vibração. Escolha um plano mensal ou uma compra única. O plano mensal tem renovação automática e pode ser gerenciado ou cancelado na conta da loja. Consulte os preços e as condições na tela de compra."
+      ]
+    ],
+    "support": "Guia e suporte (em inglês)",
+    "downloadTitle": "Não pegue no sono",
+    "downloadBody": "Alarme vibratório para cochilos e para depois de colocar seu filho para dormir",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "Política de privacidade (EN)",
+      "Termos de uso (EN)",
+      "Guia e suporte (em inglês)"
+    ],
+    "top": "Voltar ao topo",
+    "uiControls": [
+      "Idioma",
+      "Telas do app",
+      "Tela anterior",
+      "Próxima tela",
+      "Pausar apresentação",
+      "Retomar apresentação",
+      "Mostrar tela",
+      "slide",
+      "Navegação principal"
+    ],
+    "ringingCaption": "Está na hora do seu alarme",
+    "nightCaption": "Tela noturna",
+    "legalLang": "en"
+  },
+  "fr": {
+    "name": "Restez éveillé",
+    "title": "Restez éveillé | Rappels et défis pour se lever",
+    "description": "Une sieste ou se relever après avoir endormi son enfant : vibrations variées, rappels et petits défis vous aident à émerger. Reposez-vous avec sons et écran de nuit.",
+    "skip": "Aller au contenu",
+    "nav": [
+      "Fonctions",
+      "Utilisation",
+      "Tarifs",
+      "Questions fréquentes"
+    ],
+    "download": "Télécharger",
+    "category": "Alarme vibrante pour la sieste et après le coucher des enfants",
+    "headline": "<span>Des vibrations qui vous réveillent.</span>",
+    "audience": "Pour les siestes qui se prolongent et les parents qui s’endorment en couchant leur enfant.",
+    "heroCta": "Découvrir l’app",
+    "freeNote": "Les fonctions de base sont gratuites",
+    "heroCaption": "Alarme",
+    "overview": [
+      "Vibrations variées",
+      "Plusieurs rappels",
+      "Tâches d’arrêt"
+    ],
+    "vLabel": "Motifs de vibration",
+    "vTitle": "Des vibrations qui changent",
+    "vBenefit": "La durée et le rythme varient pour se distinguer de vos notifications habituelles. Cette sensation inhabituelle est conçue pour vous aider à remarquer l’alarme et à vous réveiller.",
+    "vBody": "Impulsions courtes, longues ou répétées. Choisissez parmi quatre modes de base : aléatoire, notifications, plutôt longues ou plutôt courtes. Les durées et les intervalles varient pour changer le rythme. Essayez-les avant de régler l’alarme.",
+    "vFoot": "",
+    "rhythm": "Motifs de vibration",
+    "rhythms": [
+      "Impulsions courtes",
+      "Impulsions longues",
+      "Rafales"
+    ],
+    "repeatLabel": "Plusieurs rappels",
+    "repeatTitle": "Un réglage, plusieurs rappels",
+    "repeatBody": "Arrêtez seulement l’alerte en cours pour conserver les suivantes, ou terminez la série pour annuler le reste.",
+    "repeatFoot": "L’enregistrement du nombre et de l’intervalle est une fonction Premium.",
+    "repeatSteps": [
+      "Choisir une heure",
+      "Attendre sur l’écran de nuit",
+      "Terminer une fois levé"
+    ],
+    "repeatDiagram": "Plusieurs rappels",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "Tâches d’arrêt",
+    "stopTitle": "Faites travailler la tête et les mains",
+    "stopBody": "Calculs, nombres à toucher dans l’ordre, appui long et touches répétées accompagnent l’arrêt et le report. Les étapes standard sont incluses. Leur modification et leur combinaison nécessitent Premium.",
+    "stopFoot": "",
+    "math": "Résolvez le calcul",
+    "sequence": "Touchez dans l’ordre",
+    "nightLabel": "Écran Nuit",
+    "nightTitle": "Un écran de nuit pour se reposer",
+    "nightBody": "Réglez la luminosité et l’apparence de l’horloge. Vous pouvez masquer l’affichage après un moment sans interaction, puis toucher l’écran pour retrouver l’heure et les commandes.",
+    "how": [
+      [
+        "Choisir une heure",
+        "Choisissez une durée, par exemple 30 minutes, ou une heure de réveil."
+      ],
+      [
+        "Attendre sur l’écran de nuit",
+        "Gardez l’écran de nuit ouvert. Activez les sons ou la lumière si vous le souhaitez."
+      ],
+      [
+        "Terminer une fois levé",
+        "Effectuez les étapes d’arrêt et terminez la série lorsque vous êtes levé."
+      ]
+    ],
+    "iosTitle": "Utilisation sur iPhone",
+    "iosBody": "Pour utiliser les vibrations personnalisées de l’app, gardez l’écran de nuit ouvert après avoir réglé l’alarme. Le verrouillage par le bouton latéral ou le passage à une autre app confie la vibration à iOS : le rythme et l’intensité personnalisés ne s’appliquent plus. Vérifiez les autorisations et les réglages de vibration, puis lancez un test avant utilisation.",
+    "scheduleTitle": "Chaque jour ou les jours choisis",
+    "scheduleBody": "Utilisez une alarme ponctuelle pour la sieste ou des alarmes récurrentes selon l’heure et les jours de la semaine.",
+    "relaxLabel": "Sons relaxants et lumière réglable",
+    "relaxTitle": "Des sons et de la lumière pour se reposer.",
+    "relaxBody": "Pour la sieste ou le coucher de votre enfant. Activez-les depuis l’écran de nuit quand vous en avez besoin.",
+    "soundTitle": "Sons relaxants",
+    "soundBody": "Écoutez la pluie, les vagues ou du bruit blanc. Le son démarre uniquement si vous l’activez et s’estompe pour s’arrêter à la première alarme.",
+    "lightTitle": "Lumière",
+    "lightBody": "Choisissez une lumière chaude, rouge pâle ou blanche douce, et ajustez son intensité.",
+    "lightColors": [
+      "Chaud",
+      "Rouge doux",
+      "Blanc doux"
+    ],
+    "relaxFoot": "Les fonctions de base sont gratuites",
+    "relaxAlt": "Écran Nuit — Sons relaxants et lumière réglable",
+    "priceLabel": "Gratuit / Premium",
+    "priceTitle": "Les fonctions de base sont gratuites",
+    "priceBody": "Quatre modes de vibration, arrêt et report standard, écran de nuit, sons et lumière sont inclus. Certaines pages affichent des publicités.",
+    "priceHead": [
+      "Fonction",
+      "Gratuit",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "Motifs de vibration",
+        "✓",
+        "✓"
+      ],
+      [
+        "Plusieurs rappels",
+        "Réglages standard",
+        "Personnalisable"
+      ],
+      [
+        "Tâches d’arrêt",
+        "Réglages standard",
+        "Personnalisable"
+      ],
+      [
+        "Écran Nuit / Sons relaxants / Lumière",
+        "✓",
+        "✓"
+      ],
+      [
+        "Créez et modifiez vos propres vibrations.",
+        "—",
+        "✓"
+      ],
+      [
+        "Supprimez toutes les publicités.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "Choisissez une formule mensuelle ou un achat unique. La formule mensuelle se renouvelle automatiquement ; gérez-la ou résiliez-la dans les réglages de votre compte sur la boutique. Les prix et conditions figurent sur l’écran d’achat.",
+    "faqTitle": "Avant de commencer",
+    "faq": [
+      [
+        "Puis-je verrouiller mon iPhone ?",
+        "Pour utiliser les vibrations personnalisées de l’app, gardez l’écran de nuit ouvert après avoir réglé l’alarme. Le verrouillage par le bouton latéral ou le passage à une autre app confie la vibration à iOS : le rythme et l’intensité personnalisés ne s’appliquent plus. Vérifiez les autorisations et les réglages de vibration, puis lancez un test avant utilisation."
+      ],
+      [
+        "Quels sons et lumières sont proposés ?",
+        "Écoutez la pluie, les vagues ou du bruit blanc. Le son démarre uniquement si vous l’activez et s’estompe pour s’arrêter à la première alarme. Choisissez une lumière chaude, rouge pâle ou blanche douce, et ajustez son intensité."
+      ],
+      [
+        "Quelles fonctions sont gratuites ?",
+        "Quatre modes de vibration, arrêt et report standard, écran de nuit, sons et lumière sont inclus. Certaines pages affichent des publicités. Supprimez toutes les publicités. Réglez le nombre d’alertes et leur intervalle. Modifiez les étapes d’arrêt et de report. Créez et modifiez vos propres vibrations. Choisissez une formule mensuelle ou un achat unique. La formule mensuelle se renouvelle automatiquement ; gérez-la ou résiliez-la dans les réglages de votre compte sur la boutique. Les prix et conditions figurent sur l’écran d’achat."
+      ]
+    ],
+    "support": "Guide et assistance (en anglais)",
+    "downloadTitle": "Restez éveillé",
+    "downloadBody": "Alarme vibrante pour la sieste et après le coucher des enfants",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "Politique de confidentialité (EN)",
+      "Conditions d’utilisation (EN)",
+      "Guide et assistance (en anglais)"
+    ],
+    "top": "Retour en haut",
+    "uiControls": [
+      "Langue",
+      "Écrans de l’app",
+      "Écran précédent",
+      "Écran suivant",
+      "Mettre le diaporama en pause",
+      "Reprendre le diaporama",
+      "Afficher l’écran",
+      "diapositive",
+      "Navigation principale"
+    ],
+    "ringingCaption": "C’est l’heure de votre alarme",
+    "nightCaption": "Écran Nuit",
+    "legalLang": "en"
+  },
+  "de": {
+    "name": "Nickerchen & Wachbleiben",
+    "title": "Nickerchen & Wachbleiben | Mit Vibrationen und Weckserien",
+    "description": "Kurz ausruhen oder nach dem Einschlafbegleiten wieder aufstehen: wechselnde Vibrationen, mehrere Hinweise und Aufgaben helfen dabei. Mit Nachtbildschirm und Klängen.",
+    "skip": "Zum Inhalt",
+    "nav": [
+      "Funktionen",
+      "Anwendung",
+      "Preise",
+      "Häufige Fragen"
+    ],
+    "download": "Laden",
+    "category": "Vibrationswecker für Nickerchen und nach der Einschlafbegleitung",
+    "headline": "<span>Ungewohnte Vibrationen wecken dich.</span>",
+    "audience": "Für alle, die beim Nickerchen oder beim Einschlafbegleiten selbst weiterschlafen.",
+    "heroCta": "App kennenlernen",
+    "freeNote": "Die Grundfunktionen sind kostenlos",
+    "heroCaption": "Wecker",
+    "overview": [
+      "Wechselnde Vibrationen",
+      "Mehrere Hinweise",
+      "Aufgaben zum Stoppen"
+    ],
+    "vLabel": "Vibrationsmuster",
+    "vTitle": "Vibrationen mit Abwechslung",
+    "vBenefit": "Wechselnde Länge und wechselnder Rhythmus fühlen sich anders an als alltägliche Benachrichtigungen. Dieses ungewohnte Gefühl soll dir helfen, den Alarm zu bemerken und aufzuwachen.",
+    "vBody": "Kurze Impulse, lange Impulse und schnelle Folgen. Vier Grundmodi stehen bereit: Zufall, Benachrichtigungsmix, überwiegend lang und überwiegend kurz. Dauer und Abstände wechseln für mehr Abwechslung. Probiere die Muster vor dem Stellen aus.",
+    "vFoot": "",
+    "rhythm": "Vibrationsmuster",
+    "rhythms": [
+      "Kurze Impulse",
+      "Lange Impulse",
+      "Schnelle Folgen"
+    ],
+    "repeatLabel": "Mehrere Hinweise",
+    "repeatTitle": "Einmal einstellen, mehrmals erinnert werden",
+    "repeatBody": "Stoppe nur den aktuellen Hinweis und behalte die nächsten, oder beende die Serie, um den Rest zu löschen.",
+    "repeatFoot": "Das Speichern von Anzahl und Abstand ist eine Premium-Funktion.",
+    "repeatSteps": [
+      "Zeit wählen",
+      "Nachtbildschirm offen lassen",
+      "Nach dem Aufstehen beenden"
+    ],
+    "repeatDiagram": "Mehrere Hinweise",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "Aufgaben zum Stoppen",
+    "stopTitle": "Kopf und Hände einsetzen",
+    "stopBody": "Rechnen, Zahlen der Reihe nach antippen, gedrückt halten und wiederholt tippen begleiten Stoppen und Schlummern. Die Standardschritte sind enthalten. Zum Bearbeiten und Kombinieren der Schritte brauchst du Premium.",
+    "stopFoot": "",
+    "math": "Löse die Rechenaufgabe",
+    "sequence": "Tippe der Reihe nach",
+    "nightLabel": "Nachtbildschirm",
+    "nightTitle": "Mit dem Nachtbildschirm ausruhen",
+    "nightBody": "Passe Helligkeit und Uhranzeige an. Die Anzeige kann nach kurzer Inaktivität verschwinden. Durch Antippen werden Uhr und Bedienelemente wieder sichtbar.",
+    "how": [
+      [
+        "Zeit wählen",
+        "Wähle eine Dauer, etwa 30 Minuten, oder eine Aufstehzeit."
+      ],
+      [
+        "Nachtbildschirm offen lassen",
+        "Lass den Nachtbildschirm geöffnet. Schalte Klänge oder Licht bei Bedarf ein."
+      ],
+      [
+        "Nach dem Aufstehen beenden",
+        "Erledige die Stoppschritte und beende die Serie, wenn du aufgestanden bist."
+      ]
+    ],
+    "iosTitle": "Verwendung auf dem iPhone",
+    "iosBody": "Für eigene Vibrationsmuster muss der Nachtbildschirm nach dem Stellen geöffnet bleiben. Wenn du mit der Seitentaste sperrst oder die App wechselst, übernimmt iOS die Vibration; dein gewähltes Muster und die Stärke gelten dann nicht. Prüfe Berechtigungen und Vibrationseinstellungen und führe vor der Nutzung den Funktionstest aus.",
+    "scheduleTitle": "Täglich oder an gewählten Wochentagen",
+    "scheduleBody": "Nutze einen einmaligen Kurzschlafwecker oder wiederkehrende Alarme für feste Uhrzeiten und Wochentage.",
+    "relaxLabel": "Entspannende Klänge und Licht",
+    "relaxTitle": "Klänge und Licht beim Ausruhen.",
+    "relaxBody": "Für Nickerchen oder die Einschlafbegleitung. Schalte beides bei Bedarf auf dem Nachtbildschirm ein.",
+    "soundTitle": "Entspannungsgeräusche",
+    "soundBody": "Höre Regen, Wellen oder weißes Rauschen. Audio startet nur, wenn du es einschaltest, und blendet zum ersten Alarm aus.",
+    "lightTitle": "Licht",
+    "lightBody": "Wähle warmes, blassrotes oder sanftweißes Licht und passe die Helligkeit an.",
+    "lightColors": [
+      "Warm",
+      "Sanftes Rot",
+      "Sanftes Weiß"
+    ],
+    "relaxFoot": "Die Grundfunktionen sind kostenlos",
+    "relaxAlt": "Nachtbildschirm — Entspannende Klänge und Licht",
+    "priceLabel": "Kostenlos / Premium",
+    "priceTitle": "Die Grundfunktionen sind kostenlos",
+    "priceBody": "Vier Vibrationsmodi, Standard-Stoppen und Schlummern, Nachtbildschirm, Klänge und Licht sind enthalten. Einige Ansichten zeigen Werbung.",
+    "priceHead": [
+      "Funktion",
+      "Kostenlos",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "Vibrationsmuster",
+        "✓",
+        "✓"
+      ],
+      [
+        "Mehrere Hinweise",
+        "Standard",
+        "Anpassbar"
+      ],
+      [
+        "Aufgaben zum Stoppen",
+        "Standard",
+        "Anpassbar"
+      ],
+      [
+        "Nachtbildschirm / Entspannungsgeräusche / Licht",
+        "✓",
+        "✓"
+      ],
+      [
+        "Eigene Vibrationsmuster erstellen und bearbeiten.",
+        "—",
+        "✓"
+      ],
+      [
+        "Sämtliche Werbung entfernen.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "Wähle einen Monatsplan oder Einmalkauf. Der Monatsplan verlängert sich automatisch und lässt sich in den Kontoeinstellungen des Stores verwalten oder kündigen. Preise und Bedingungen findest du vor dem Kauf.",
+    "faqTitle": "Vor dem Start",
+    "faq": [
+      [
+        "Kann ich mein iPhone sperren?",
+        "Für eigene Vibrationsmuster muss der Nachtbildschirm nach dem Stellen geöffnet bleiben. Wenn du mit der Seitentaste sperrst oder die App wechselst, übernimmt iOS die Vibration; dein gewähltes Muster und die Stärke gelten dann nicht. Prüfe Berechtigungen und Vibrationseinstellungen und führe vor der Nutzung den Funktionstest aus."
+      ],
+      [
+        "Welche Klänge und Lichtfarben gibt es?",
+        "Höre Regen, Wellen oder weißes Rauschen. Audio startet nur, wenn du es einschaltest, und blendet zum ersten Alarm aus. Wähle warmes, blassrotes oder sanftweißes Licht und passe die Helligkeit an."
+      ],
+      [
+        "Was kann ich kostenlos nutzen?",
+        "Vier Vibrationsmodi, Standard-Stoppen und Schlummern, Nachtbildschirm, Klänge und Licht sind enthalten. Einige Ansichten zeigen Werbung. Sämtliche Werbung entfernen. Anzahl und Abstand der Hinweise ändern. Stopp- und Schlummerschritte bearbeiten. Eigene Vibrationsmuster erstellen und bearbeiten. Wähle einen Monatsplan oder Einmalkauf. Der Monatsplan verlängert sich automatisch und lässt sich in den Kontoeinstellungen des Stores verwalten oder kündigen. Preise und Bedingungen findest du vor dem Kauf."
+      ]
+    ],
+    "support": "Anleitung & Hilfe (Englisch)",
+    "downloadTitle": "Nickerchen & Wachbleiben",
+    "downloadBody": "Vibrationswecker für Nickerchen und nach der Einschlafbegleitung",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "Datenschutzerklärung (EN)",
+      "Nutzungsbedingungen (EN)",
+      "Anleitung & Hilfe (Englisch)"
+    ],
+    "top": "Nach oben",
+    "uiControls": [
+      "Sprache",
+      "App-Ansichten",
+      "Vorherige Ansicht",
+      "Nächste Ansicht",
+      "Diashow pausieren",
+      "Diashow fortsetzen",
+      "Ansicht anzeigen",
+      "Folie",
+      "Hauptnavigation"
+    ],
+    "ringingCaption": "Es ist Zeit für deinen Wecker",
+    "nightCaption": "Nachtbildschirm",
+    "legalLang": "en"
+  },
+  "it": {
+    "name": "Resta sveglio",
+    "title": "Resta sveglio | Avvisi ripetuti e sfide",
+    "description": "Un pisolino o rialzarsi dopo aver fatto addormentare tuo figlio: vibrazioni diverse, avvisi ripetuti e piccole prove. Riposa con suoni e schermo notturno.",
+    "skip": "Vai al contenuto",
+    "nav": [
+      "Funzioni",
+      "Come si usa",
+      "Prezzi",
+      "Domande frequenti"
+    ],
+    "download": "Scarica",
+    "category": "Sveglia a vibrazione per i riposini e dopo aver addormentato i bambini",
+    "headline": "<span>Ti svegliano vibrazioni insolite.</span>",
+    "audience": "Per chi prolunga il pisolino o si addormenta mentre mette a letto i figli.",
+    "heroCta": "Scopri l’app",
+    "freeNote": "Funzioni base gratuite",
+    "heroCaption": "Sveglia",
+    "overview": [
+      "Vibrazioni variabili",
+      "Più avvisi",
+      "Attività per fermare"
+    ],
+    "vLabel": "Sequenze di vibrazione",
+    "vTitle": "Vibrazioni che cambiano",
+    "vBenefit": "La durata e il ritmo cambiano per distinguersi dalle notifiche quotidiane. Questa sensazione insolita è pensata per aiutarti a notare la sveglia e a svegliarti.",
+    "vBody": "Impulsi brevi, lunghi e ripetuti. Scegli tra quattro modalità base: casuale, stile notifica, soprattutto lunghe o soprattutto brevi. Durata e intervalli cambiano per variare il ritmo. Puoi provarle prima di impostare la sveglia.",
+    "vFoot": "",
+    "rhythm": "Sequenze di vibrazione",
+    "rhythms": [
+      "Impulsi brevi",
+      "Impulsi lunghi",
+      "Sequenze rapide"
+    ],
+    "repeatLabel": "Più avvisi",
+    "repeatTitle": "Una sola impostazione, più avvisi",
+    "repeatBody": "Ferma solo quello attuale per mantenere i successivi, oppure termina la serie per annullare quelli rimasti.",
+    "repeatFoot": "Salvare il numero e l’intervallo è una funzione Premium.",
+    "repeatSteps": [
+      "Scegli l’ora",
+      "Attendi sullo schermo notturno",
+      "Termina quando ti alzi"
+    ],
+    "repeatDiagram": "Più avvisi",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "Attività per fermare",
+    "stopTitle": "Muovi mente e mani",
+    "stopBody": "Calcoli, numeri da toccare in ordine, pressione prolungata e tocchi ripetuti accompagnano arresto e rinvio. I passaggi standard sono inclusi. Per modificarli e combinarli serve Premium.",
+    "stopFoot": "",
+    "math": "Risolvi il calcolo",
+    "sequence": "Tocca in ordine",
+    "nightLabel": "Schermata notturna",
+    "nightTitle": "Riposa con lo schermo notturno",
+    "nightBody": "Regola luminosità e aspetto dell’orologio. Puoi nascondere il display dopo un periodo di inattività e toccare per vedere di nuovo ora e comandi.",
+    "how": [
+      [
+        "Scegli l’ora",
+        "Scegli una durata, ad esempio 30 minuti, o un’ora per svegliarti."
+      ],
+      [
+        "Attendi sullo schermo notturno",
+        "Tieni aperto lo schermo notturno e attiva suoni o luce se vuoi."
+      ],
+      [
+        "Termina quando ti alzi",
+        "Completa i passaggi di arresto e termina la serie quando ti alzi."
+      ]
+    ],
+    "iosTitle": "Uso su iPhone",
+    "iosBody": "Per usare le vibrazioni personalizzate dell’app, lascia aperto lo schermo notturno dopo aver impostato la sveglia. Se blocchi con il tasto laterale o passi a un’altra app, la vibrazione viene controllata da iOS e non si applicano ritmo e intensità personalizzati. Controlla permessi e impostazioni della vibrazione e fai una prova prima dell’uso.",
+    "scheduleTitle": "Ogni giorno o nei giorni scelti",
+    "scheduleBody": "Usa una sveglia occasionale per il pisolino o imposta allarmi ricorrenti per orario e giorni della settimana.",
+    "relaxLabel": "Suoni rilassanti e luce regolabile",
+    "relaxTitle": "Suoni e luce mentre riposi.",
+    "relaxBody": "Per un riposino o per addormentare il tuo bambino. Attivali dallo schermo notturno quando servono.",
+    "soundTitle": "Suoni rilassanti",
+    "soundBody": "Ascolta pioggia, onde o rumore bianco. L’audio parte solo quando lo attivi e sfuma fino a fermarsi alla prima sveglia.",
+    "lightTitle": "Luce",
+    "lightBody": "Scegli una luce calda, rosso tenue o bianco tenue e regola la luminosità.",
+    "lightColors": [
+      "Caldo",
+      "Rosso tenue",
+      "Bianco tenue"
+    ],
+    "relaxFoot": "Funzioni base gratuite",
+    "relaxAlt": "Schermata notturna — Suoni rilassanti e luce regolabile",
+    "priceLabel": "Gratis / Premium",
+    "priceTitle": "Funzioni base gratuite",
+    "priceBody": "Sono inclusi quattro modi di vibrazione, arresto e rinvio standard, schermo notturno, suoni e luce. Alcune schermate mostrano pubblicità.",
+    "priceHead": [
+      "Funzione",
+      "Gratis",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "Sequenze di vibrazione",
+        "✓",
+        "✓"
+      ],
+      [
+        "Più avvisi",
+        "Impostazioni standard",
+        "Personalizzabile"
+      ],
+      [
+        "Attività per fermare",
+        "Impostazioni standard",
+        "Personalizzabile"
+      ],
+      [
+        "Schermata notturna / Suoni rilassanti / Luce",
+        "✓",
+        "✓"
+      ],
+      [
+        "Crea e modifica i tuoi ritmi di vibrazione.",
+        "—",
+        "✓"
+      ],
+      [
+        "Rimuovi tutta la pubblicità.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "Scegli un piano mensile o un acquisto unico. Il piano mensile si rinnova automaticamente e puoi gestirlo o annullarlo nelle impostazioni del tuo account dello store. Prezzi e condizioni sono indicati prima dell’acquisto.",
+    "faqTitle": "Prima di iniziare",
+    "faq": [
+      [
+        "Posso bloccare l’iPhone?",
+        "Per usare le vibrazioni personalizzate dell’app, lascia aperto lo schermo notturno dopo aver impostato la sveglia. Se blocchi con il tasto laterale o passi a un’altra app, la vibrazione viene controllata da iOS e non si applicano ritmo e intensità personalizzati. Controlla permessi e impostazioni della vibrazione e fai una prova prima dell’uso."
+      ],
+      [
+        "Quali suoni e luci sono disponibili?",
+        "Ascolta pioggia, onde o rumore bianco. L’audio parte solo quando lo attivi e sfuma fino a fermarsi alla prima sveglia. Scegli una luce calda, rosso tenue o bianco tenue e regola la luminosità."
+      ],
+      [
+        "Quali funzioni sono gratuite?",
+        "Sono inclusi quattro modi di vibrazione, arresto e rinvio standard, schermo notturno, suoni e luce. Alcune schermate mostrano pubblicità. Rimuovi tutta la pubblicità. Cambia il numero degli avvisi e gli intervalli. Modifica i passaggi di arresto e rinvio. Crea e modifica i tuoi ritmi di vibrazione. Scegli un piano mensile o un acquisto unico. Il piano mensile si rinnova automaticamente e puoi gestirlo o annullarlo nelle impostazioni del tuo account dello store. Prezzi e condizioni sono indicati prima dell’acquisto."
+      ]
+    ],
+    "support": "Guida e assistenza (in inglese)",
+    "downloadTitle": "Resta sveglio",
+    "downloadBody": "Sveglia a vibrazione per i riposini e dopo aver addormentato i bambini",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "Informativa sulla privacy (EN)",
+      "Condizioni d’uso (EN)",
+      "Guida e assistenza (in inglese)"
+    ],
+    "top": "Torna in alto",
+    "uiControls": [
+      "Lingua",
+      "Schermate dell’app",
+      "Schermata precedente",
+      "Schermata successiva",
+      "Pausa presentazione",
+      "Riprendi presentazione",
+      "Mostra schermata",
+      "diapositiva",
+      "Navigazione principale"
+    ],
+    "ringingCaption": "È l’ora della tua sveglia",
+    "nightCaption": "Schermata notturna",
+    "legalLang": "en"
+  },
+  "nl": {
+    "name": "Blijf wakker",
+    "title": "Blijf wakker | Herhaalde meldingen en taken",
+    "description": "Een dutje doen of weer opstaan nadat je kind slaapt: wisselende trillingen, herhaalde meldingen en taken helpen je op weg. Rust met nachtscherm en geluiden.",
+    "skip": "Naar de inhoud",
+    "nav": [
+      "Functies",
+      "Gebruik",
+      "Prijzen",
+      "Veelgestelde vragen"
+    ],
+    "download": "Downloaden",
+    "category": "Trilwekker voor dutjes en na het naar bed brengen van je kind",
+    "headline": "<span>Wakker met ongewone trillingen.</span>",
+    "audience": "Voor wie een dutje verslaapt of zelf in slaap valt bij het naar bed brengen.",
+    "heroCta": "Ontdek de app",
+    "freeNote": "Gratis basisfuncties",
+    "heroCaption": "Wekker",
+    "overview": [
+      "Wisselende trillingen",
+      "Meerdere meldingen",
+      "Taken om te stoppen"
+    ],
+    "vLabel": "Trilpatronen",
+    "vTitle": "Trillingen met afwisseling",
+    "vBenefit": "Wisselende lengtes en ritmes voelen anders dan je dagelijkse meldingen. Dat ongewone gevoel is bedoeld om je het alarm te laten opmerken en wakker te helpen worden.",
+    "vBody": "Korte pulsen, lange pulsen en snelle reeksen. Kies uit vier basismodi: willekeurig, meldingsstijl, vooral lang of vooral kort. Variaties in duur en tussenpozen zorgen voor een ander ritme. Probeer ze voordat je een alarm instelt.",
+    "vFoot": "",
+    "rhythm": "Trilpatronen",
+    "rhythms": [
+      "Korte pulsen",
+      "Lange pulsen",
+      "Snelle reeksen"
+    ],
+    "repeatLabel": "Meerdere meldingen",
+    "repeatTitle": "Eén keer instellen, meerdere meldingen",
+    "repeatBody": "Stop alleen de huidige melding om de volgende te behouden, of beëindig de reeks om de rest te annuleren.",
+    "repeatFoot": "Het aantal en het interval opslaan is een Premium-functie.",
+    "repeatSteps": [
+      "Kies een tijd",
+      "Wacht met het nachtscherm",
+      "Beëindig als je opstaat"
+    ],
+    "repeatDiagram": "Meerdere meldingen",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "Taken om te stoppen",
+    "stopTitle": "Gebruik hoofd en handen",
+    "stopBody": "Rekenen, cijfers op volgorde aantikken, vasthouden en herhaald tikken begeleiden stoppen en sluimeren. De standaardstappen zijn inbegrepen. Stappen bewerken en combineren kan met Premium.",
+    "stopFoot": "",
+    "math": "Los de som op",
+    "sequence": "Tik op volgorde",
+    "nightLabel": "Nachtscherm",
+    "nightTitle": "Rust met het nachtscherm",
+    "nightBody": "Pas de helderheid en klokweergave aan. Je kunt het beeld na een tijdje zonder bediening verbergen. Tik om de klok en knoppen opnieuw te tonen.",
+    "how": [
+      [
+        "Kies een tijd",
+        "Kies een duur, bijvoorbeeld 30 minuten, of een tijd om op te staan."
+      ],
+      [
+        "Wacht met het nachtscherm",
+        "Houd het nachtscherm open. Zet geluid of licht aan als je dat wilt."
+      ],
+      [
+        "Beëindig als je opstaat",
+        "Voltooi de stopstappen en beëindig de reeks wanneer je opstaat."
+      ]
+    ],
+    "iosTitle": "Gebruik op iPhone",
+    "iosBody": "Houd na het instellen het nachtscherm open om de eigen trilpatronen van de app te gebruiken. Vergrendel je met de zijknop of wissel je van app, dan neemt iOS de trilling over en gelden je eigen patroon en sterkte niet. Controleer de toestemmingen en trilinstellingen en test de werking voor gebruik.",
+    "scheduleTitle": "Elke dag of op gekozen weekdagen",
+    "scheduleBody": "Gebruik een eenmalig alarm voor een dutje of terugkerende alarmen op vaste tijden en weekdagen.",
+    "relaxLabel": "Ontspannende geluiden en licht",
+    "relaxTitle": "Geluid en licht terwijl je rust.",
+    "relaxBody": "Voor een dutje of het naar bed brengen van je kind. Zet ze op het nachtscherm aan wanneer je ze nodig hebt.",
+    "soundTitle": "Ontspannende geluiden",
+    "soundBody": "Luister naar regen, golven of witte ruis. Geluid start alleen als je het aanzet en wordt voor het eerste alarm zachtjes uitgezet.",
+    "lightTitle": "Licht",
+    "lightBody": "Kies warm, zachtrood of zachtwit licht en stel de helderheid in.",
+    "lightColors": [
+      "Warm",
+      "Zachtrood",
+      "Zachtwit"
+    ],
+    "relaxFoot": "Gratis basisfuncties",
+    "relaxAlt": "Nachtscherm — Ontspannende geluiden en licht",
+    "priceLabel": "Gratis / Premium",
+    "priceTitle": "Gratis basisfuncties",
+    "priceBody": "Vier trilmodi, standaard stoppen en sluimeren, het nachtscherm, geluiden en licht zijn inbegrepen. Sommige schermen tonen advertenties.",
+    "priceHead": [
+      "Functie",
+      "Gratis",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "Trilpatronen",
+        "✓",
+        "✓"
+      ],
+      [
+        "Meerdere meldingen",
+        "Standaard",
+        "Aanpasbaar"
+      ],
+      [
+        "Taken om te stoppen",
+        "Standaard",
+        "Aanpasbaar"
+      ],
+      [
+        "Nachtscherm / Ontspannende geluiden / Licht",
+        "✓",
+        "✓"
+      ],
+      [
+        "Maak en bewerk je eigen trilpatronen.",
+        "—",
+        "✓"
+      ],
+      [
+        "Verwijder alle advertenties.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "Kies een maandabonnement of een eenmalige aankoop. Het maandabonnement wordt automatisch verlengd en is te beheren of op te zeggen via je winkelaccount. Bekijk de prijzen en voorwaarden voor aankoop.",
+    "faqTitle": "Voor je begint",
+    "faq": [
+      [
+        "Kan ik mijn iPhone vergrendelen?",
+        "Houd na het instellen het nachtscherm open om de eigen trilpatronen van de app te gebruiken. Vergrendel je met de zijknop of wissel je van app, dan neemt iOS de trilling over en gelden je eigen patroon en sterkte niet. Controleer de toestemmingen en trilinstellingen en test de werking voor gebruik."
+      ],
+      [
+        "Welke geluiden en lichtkleuren zijn er?",
+        "Luister naar regen, golven of witte ruis. Geluid start alleen als je het aanzet en wordt voor het eerste alarm zachtjes uitgezet. Kies warm, zachtrood of zachtwit licht en stel de helderheid in."
+      ],
+      [
+        "Wat kan ik gratis gebruiken?",
+        "Vier trilmodi, standaard stoppen en sluimeren, het nachtscherm, geluiden en licht zijn inbegrepen. Sommige schermen tonen advertenties. Verwijder alle advertenties. Wijzig het aantal meldingen en de tussenpozen. Bewerk stop- en sluimerstappen. Maak en bewerk je eigen trilpatronen. Kies een maandabonnement of een eenmalige aankoop. Het maandabonnement wordt automatisch verlengd en is te beheren of op te zeggen via je winkelaccount. Bekijk de prijzen en voorwaarden voor aankoop."
+      ]
+    ],
+    "support": "Handleiding en hulp (Engels)",
+    "downloadTitle": "Blijf wakker",
+    "downloadBody": "Trilwekker voor dutjes en na het naar bed brengen van je kind",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "Privacybeleid (EN)",
+      "Gebruiksvoorwaarden (EN)",
+      "Handleiding en hulp (Engels)"
+    ],
+    "top": "Naar boven",
+    "uiControls": [
+      "Taal",
+      "App-schermen",
+      "Vorig scherm",
+      "Volgend scherm",
+      "Diavoorstelling pauzeren",
+      "Diavoorstelling hervatten",
+      "Scherm tonen",
+      "dia",
+      "Hoofdnavigatie"
+    ],
+    "ringingCaption": "Het is tijd voor je wekker",
+    "nightCaption": "Nachtscherm",
+    "legalLang": "en"
+  },
+  "ru": {
+    "name": "Не усни",
+    "title": "Не усни | Повторные сигналы и задания",
+    "description": "Вздремнуть или встать после укладывания ребёнка: меняющиеся вибрации, повторные сигналы и задания помогают проснуться. Отдыхайте с ночным экраном и звуками.",
+    "skip": "К содержимому",
+    "nav": [
+      "Функции",
+      "Как пользоваться",
+      "Тарифы",
+      "Вопросы и ответы"
+    ],
+    "download": "Скачать",
+    "category": "Вибробудильник для короткого сна и после укладывания ребёнка",
+    "headline": "<span>Разбудим необычной вибрацией.</span>",
+    "audience": "Для тех, кто засыпает надолго во время короткого отдыха или укладывая ребёнка.",
+    "heroCta": "Обзор приложения",
+    "freeNote": "Базовые функции бесплатны",
+    "heroCaption": "Будильник",
+    "overview": [
+      "Разная вибрация",
+      "Несколько сигналов",
+      "Задания для остановки"
+    ],
+    "vLabel": "Рисунки вибрации",
+    "vTitle": "Вибрации с переменами",
+    "vBenefit": "Меняются длительность и ритм — вибрация отличается от привычных уведомлений. Это непривычное ощущение задумано как повод заметить будильник и проснуться.",
+    "vBody": "Короткие импульсы, длинные и частые серии. Четыре базовых режима: случайный, в стиле уведомлений, преимущественно длинный и преимущественно короткий. Длительность и интервалы меняются. Попробуйте вибрацию до установки будильника.",
+    "vFoot": "",
+    "rhythm": "Рисунки вибрации",
+    "rhythms": [
+      "Короткие импульсы",
+      "Длинные импульсы",
+      "Серии импульсов"
+    ],
+    "repeatLabel": "Несколько сигналов",
+    "repeatTitle": "Одна настройка — несколько сигналов",
+    "repeatBody": "Можно остановить только текущий сигнал или завершить серию, отменив оставшиеся.",
+    "repeatFoot": "Сохранение количества и интервала — функция Премиум.",
+    "repeatSteps": [
+      "Выберите время",
+      "Оставьте ночной экран открытым",
+      "Завершите серию после подъёма"
+    ],
+    "repeatDiagram": "Несколько сигналов",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "Задания для остановки",
+    "stopTitle": "Задействуйте голову и руки",
+    "stopBody": "Примеры, нажатие чисел по порядку, удержание и повторные нажатия сопровождают остановку и откладывание. Стандартные шаги доступны бесплатно. Их редактирование и комбинирование — функция Premium.",
+    "stopFoot": "",
+    "math": "Решите пример",
+    "sequence": "Нажимайте по порядку",
+    "nightLabel": "Ночной экран",
+    "nightTitle": "Ночной экран для отдыха",
+    "nightBody": "Настройте яркость и вид часов. Можно скрывать изображение после небольшого периода бездействия и возвращать часы и кнопки касанием.",
+    "how": [
+      [
+        "Выберите время",
+        "Выберите длительность, например 30 минут, или время подъёма."
+      ],
+      [
+        "Оставьте ночной экран открытым",
+        "Оставьте ночной экран открытым; звук и свет включите по желанию."
+      ],
+      [
+        "Завершите серию после подъёма",
+        "Выполните шаги остановки и завершите серию, когда встанете."
+      ]
+    ],
+    "iosTitle": "Использование на iPhone",
+    "iosBody": "Для собственных вибраций приложения после настройки будильника оставьте ночной экран открытым. При блокировке боковой кнопкой или переходе в другое приложение вибрацией управляет iOS: выбранные ритм и сила не применяются. Проверьте разрешения, настройки вибрации и выполните проверку работы.",
+    "scheduleTitle": "Каждый день или по дням недели",
+    "scheduleBody": "Используйте разовый будильник для отдыха или повторяющиеся будильники на выбранное время и дни.",
+    "relaxLabel": "Расслабляющие звуки и свет",
+    "relaxTitle": "Звуки и свет во время отдыха.",
+    "relaxBody": "Для короткого сна или укладывания ребёнка. Включайте их на ночном экране по необходимости.",
+    "soundTitle": "Звуки для отдыха",
+    "soundBody": "Слушайте дождь, волны или белый шум. Звук начинается только после вашего включения и плавно затихает к первому сигналу.",
+    "lightTitle": "Свет",
+    "lightBody": "Выберите тёплый, бледно-красный или мягкий белый свет и настройте яркость.",
+    "lightColors": [
+      "Тёплый",
+      "Нежно-красный",
+      "Нежно-белый"
+    ],
+    "relaxFoot": "Базовые функции бесплатны",
+    "relaxAlt": "Ночной экран — Расслабляющие звуки и свет",
+    "priceLabel": "Бесплатно / Premium",
+    "priceTitle": "Базовые функции бесплатны",
+    "priceBody": "Четыре режима вибрации, стандартная остановка и откладывание, ночной экран, звуки и свет включены. На некоторых экранах есть реклама.",
+    "priceHead": [
+      "Функция",
+      "Бесплатно",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "Рисунки вибрации",
+        "✓",
+        "✓"
+      ],
+      [
+        "Несколько сигналов",
+        "Стандартные настройки",
+        "Настраивается"
+      ],
+      [
+        "Задания для остановки",
+        "Стандартные настройки",
+        "Настраивается"
+      ],
+      [
+        "Ночной экран / Звуки для отдыха / Свет",
+        "✓",
+        "✓"
+      ],
+      [
+        "Создавайте и меняйте свои вибрации.",
+        "—",
+        "✓"
+      ],
+      [
+        "Уберите всю рекламу.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "Можно выбрать месячную подписку или разовую покупку. Подписка продлевается автоматически; управлять ею и отменить её можно в настройках аккаунта магазина. Цены и условия указаны перед покупкой.",
+    "faqTitle": "Перед началом",
+    "faq": [
+      [
+        "Можно ли заблокировать iPhone?",
+        "Для собственных вибраций приложения после настройки будильника оставьте ночной экран открытым. При блокировке боковой кнопкой или переходе в другое приложение вибрацией управляет iOS: выбранные ритм и сила не применяются. Проверьте разрешения, настройки вибрации и выполните проверку работы."
+      ],
+      [
+        "Какие есть звуки и свет?",
+        "Слушайте дождь, волны или белый шум. Звук начинается только после вашего включения и плавно затихает к первому сигналу. Выберите тёплый, бледно-красный или мягкий белый свет и настройте яркость."
+      ],
+      [
+        "Что доступно бесплатно?",
+        "Четыре режима вибрации, стандартная остановка и откладывание, ночной экран, звуки и свет включены. На некоторых экранах есть реклама. Уберите всю рекламу. Изменяйте количество сигналов и интервал. Редактируйте шаги остановки и откладывания. Создавайте и меняйте свои вибрации. Можно выбрать месячную подписку или разовую покупку. Подписка продлевается автоматически; управлять ею и отменить её можно в настройках аккаунта магазина. Цены и условия указаны перед покупкой."
+      ]
+    ],
+    "support": "Руководство и поддержка (на английском)",
+    "downloadTitle": "Не усни",
+    "downloadBody": "Вибробудильник для короткого сна и после укладывания ребёнка",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "Политика конфиденциальности (EN)",
+      "Условия использования (EN)",
+      "Руководство и поддержка (на английском)"
+    ],
+    "top": "Наверх",
+    "uiControls": [
+      "Язык",
+      "Экраны приложения",
+      "Предыдущий экран",
+      "Следующий экран",
+      "Приостановить показ",
+      "Продолжить показ",
+      "Показать экран",
+      "слайд",
+      "Основная навигация"
+    ],
+    "ringingCaption": "Время будильника",
+    "nightCaption": "Ночной экран",
+    "legalLang": "en"
+  },
+  "uk": {
+    "name": "Не засинай",
+    "title": "Не засинай | Повторні сигнали й завдання",
+    "description": "Подрімати чи встати після укладання дитини: мінливі вібрації, повторні сигнали та завдання допомагають прокинутися. Відпочивайте з нічним екраном і звуками.",
+    "skip": "До вмісту",
+    "nav": [
+      "Функції",
+      "Як користуватися",
+      "Тарифи",
+      "Запитання й відповіді"
+    ],
+    "download": "Завантажити",
+    "category": "Вібробудильник для короткого сну та після вкладання дитини",
+    "headline": "<span>Розбудимо незвичною вібрацією.</span>",
+    "audience": "Для тих, хто засинає надовго під час короткого відпочинку або вкладаючи дитину.",
+    "heroCta": "Про застосунок",
+    "freeNote": "Базові функції безкоштовні",
+    "heroCaption": "Будильник",
+    "overview": [
+      "Різна вібрація",
+      "Кілька сигналів",
+      "Завдання для зупинки"
+    ],
+    "vLabel": "Візерунки вібрації",
+    "vTitle": "Вібрації, що змінюються",
+    "vBenefit": "Змінюються тривалість і ритм — вібрація відрізняється від звичних сповіщень. Це незвичне відчуття покликане допомогти помітити будильник і прокинутися.",
+    "vBody": "Короткі імпульси, довгі й часті серії. Оберіть один із чотирьох базових режимів: випадковий, у стилі сповіщень, переважно довгі або переважно короткі. Тривалість та інтервали змінюються. Спробуйте вібрацію до встановлення будильника.",
+    "vFoot": "",
+    "rhythm": "Візерунки вібрації",
+    "rhythms": [
+      "Короткі імпульси",
+      "Довгі імпульси",
+      "Серії імпульсів"
+    ],
+    "repeatLabel": "Кілька сигналів",
+    "repeatTitle": "Одне налаштування — кілька сигналів",
+    "repeatBody": "Зупиніть лише поточний сигнал, зберігши наступні, або завершіть серію, щоб скасувати решту.",
+    "repeatFoot": "Збереження кількості та інтервалу — функція Преміум.",
+    "repeatSteps": [
+      "Оберіть час",
+      "Залиште нічний екран відкритим",
+      "Завершіть серію після підйому"
+    ],
+    "repeatDiagram": "Кілька сигналів",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "Завдання для зупинки",
+    "stopTitle": "Залучіть голову й руки",
+    "stopBody": "Приклади, числа за порядком, утримання та повторні натискання супроводжують зупинку й відкладення. Стандартні кроки включено. Їх редагування та поєднання потребує Premium.",
+    "stopFoot": "",
+    "math": "Розв’яжіть приклад",
+    "sequence": "Натискайте за порядком",
+    "nightLabel": "Нічний екран",
+    "nightTitle": "Нічний екран для відпочинку",
+    "nightBody": "Налаштуйте яскравість і вигляд годинника. Можна приховувати зображення після короткої бездіяльності та повертати годинник і кнопки дотиком.",
+    "how": [
+      [
+        "Оберіть час",
+        "Виберіть тривалість, наприклад 30 хвилин, або час підйому."
+      ],
+      [
+        "Залиште нічний екран відкритим",
+        "Залиште нічний екран відкритим; за бажанням увімкніть звук чи світло."
+      ],
+      [
+        "Завершіть серію після підйому",
+        "Виконайте кроки зупинки й завершіть серію, коли встанете."
+      ]
+    ],
+    "iosTitle": "Використання на iPhone",
+    "iosBody": "Для власних вібрацій застосунку залиште нічний екран відкритим після налаштування будильника. Після блокування бічною кнопкою або переходу в інший застосунок вібрацією керує iOS: вибрані ритм і сила не застосовуються. Перевірте дозволи, налаштування вібрації та виконайте перевірку роботи.",
+    "scheduleTitle": "Щодня чи у вибрані дні",
+    "scheduleBody": "Використовуйте разовий будильник для дрімоти або повторювані будильники за часом і днями тижня.",
+    "relaxLabel": "Заспокійливі звуки та світло",
+    "relaxTitle": "Звуки та світло під час відпочинку.",
+    "relaxBody": "Для короткого сну або вкладання дитини. Вмикайте їх на нічному екрані за потреби.",
+    "soundTitle": "Звуки для відпочинку",
+    "soundBody": "Слухайте дощ, хвилі або білий шум. Звук починається лише після вашого ввімкнення й плавно стихає до першого сигналу.",
+    "lightTitle": "Світло",
+    "lightBody": "Виберіть тепле, блідо-червоне чи м’яке біле світло та налаштуйте яскравість.",
+    "lightColors": [
+      "Тепле",
+      "Ніжно-червоне",
+      "Ніжно-біле"
+    ],
+    "relaxFoot": "Базові функції безкоштовні",
+    "relaxAlt": "Нічний екран — Заспокійливі звуки та світло",
+    "priceLabel": "Безкоштовно / Premium",
+    "priceTitle": "Базові функції безкоштовні",
+    "priceBody": "Чотири режими вібрації, стандартна зупинка й відкладення, нічний екран, звуки та світло включені. На деяких екранах є реклама.",
+    "priceHead": [
+      "Функція",
+      "Безкоштовно",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "Візерунки вібрації",
+        "✓",
+        "✓"
+      ],
+      [
+        "Кілька сигналів",
+        "Стандартні налаштування",
+        "Можна налаштувати"
+      ],
+      [
+        "Завдання для зупинки",
+        "Стандартні налаштування",
+        "Можна налаштувати"
+      ],
+      [
+        "Нічний екран / Звуки для відпочинку / Світло",
+        "✓",
+        "✓"
+      ],
+      [
+        "Створюйте та змінюйте власні вібрації.",
+        "—",
+        "✓"
+      ],
+      [
+        "Приберіть усю рекламу.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "Оберіть місячний план або разову покупку. Місячний план поновлюється автоматично; керувати ним і скасувати його можна в налаштуваннях облікового запису магазину. Ціни та умови наведено перед покупкою.",
+    "faqTitle": "Перед початком",
+    "faq": [
+      [
+        "Чи можна заблокувати iPhone?",
+        "Для власних вібрацій застосунку залиште нічний екран відкритим після налаштування будильника. Після блокування бічною кнопкою або переходу в інший застосунок вібрацією керує iOS: вибрані ритм і сила не застосовуються. Перевірте дозволи, налаштування вібрації та виконайте перевірку роботи."
+      ],
+      [
+        "Які звуки та світло доступні?",
+        "Слухайте дощ, хвилі або білий шум. Звук починається лише після вашого ввімкнення й плавно стихає до першого сигналу. Виберіть тепле, блідо-червоне чи м’яке біле світло та налаштуйте яскравість."
+      ],
+      [
+        "Що можна використовувати безкоштовно?",
+        "Чотири режими вібрації, стандартна зупинка й відкладення, нічний екран, звуки та світло включені. На деяких екранах є реклама. Приберіть усю рекламу. Змінюйте кількість сигналів та інтервал. Редагуйте кроки зупинки й відкладення. Створюйте та змінюйте власні вібрації. Оберіть місячний план або разову покупку. Місячний план поновлюється автоматично; керувати ним і скасувати його можна в налаштуваннях облікового запису магазину. Ціни та умови наведено перед покупкою."
+      ]
+    ],
+    "support": "Посібник і підтримка (англійською)",
+    "downloadTitle": "Не засинай",
+    "downloadBody": "Вібробудильник для короткого сну та після вкладання дитини",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "Політика конфіденційності (EN)",
+      "Умови використання (EN)",
+      "Посібник і підтримка (англійською)"
+    ],
+    "top": "Нагору",
+    "uiControls": [
+      "Мова",
+      "Екрани застосунку",
+      "Попередній екран",
+      "Наступний екран",
+      "Призупинити показ",
+      "Продовжити показ",
+      "Показати екран",
+      "слайд",
+      "Основна навігація"
+    ],
+    "ringingCaption": "Час будильника",
+    "nightCaption": "Нічний екран",
+    "legalLang": "en"
+  },
+  "pl": {
+    "name": "Nie zaśnij",
+    "title": "Nie zaśnij | Powtórzenia i zadania",
+    "description": "Drzemka lub powrót do zajęć po uśpieniu dziecka: zmienne wibracje, powtarzane alerty i zadania pomagają się obudzić. Odpocznij z nocnym ekranem i dźwiękami.",
+    "skip": "Przejdź do treści",
+    "nav": [
+      "Funkcje",
+      "Jak używać",
+      "Cennik",
+      "Pytania i odpowiedzi"
+    ],
+    "download": "Pobierz",
+    "category": "Budzik wibracyjny na drzemki i po usypianiu dziecka",
+    "headline": "<span>Budzą Cię nietypowe wibracje.</span>",
+    "audience": "Dla tych, którzy przedłużają drzemkę lub zasypiają podczas usypiania dziecka.",
+    "heroCta": "Poznaj aplikację",
+    "freeNote": "Podstawy bez opłat",
+    "heroCaption": "Budzik",
+    "overview": [
+      "Zmienne wibracje",
+      "Kilka alertów",
+      "Zadania zatrzymania"
+    ],
+    "vLabel": "Wzory wibracji",
+    "vTitle": "Wibracje, które się zmieniają",
+    "vBenefit": "Zmienna długość i rytm odróżniają wibracje od codziennych powiadomień. To nietypowe odczucie ma pomóc zauważyć alarm i się obudzić.",
+    "vBody": "Krótkie i długie impulsy oraz szybkie serie. Wybierz jeden z czterech trybów: losowy, jak powiadomienia, głównie długie lub głównie krótkie. Czas trwania i odstępy zmieniają rytm. Wypróbuj go przed ustawieniem alarmu.",
+    "vFoot": "",
+    "rhythm": "Wzory wibracji",
+    "rhythms": [
+      "Krótkie impulsy",
+      "Długie impulsy",
+      "Serie impulsów"
+    ],
+    "repeatLabel": "Kilka alertów",
+    "repeatTitle": "Jedno ustawienie, kilka alertów",
+    "repeatBody": "Zatrzymaj tylko bieżący alert, aby zachować następne, lub zakończ serię i anuluj pozostałe.",
+    "repeatFoot": "Zapisywanie liczby alarmów i odstępu to funkcja Premium.",
+    "repeatSteps": [
+      "Wybierz czas",
+      "Pozostaw nocny ekran otwarty",
+      "Zakończ po wstaniu"
+    ],
+    "repeatDiagram": "Kilka alertów",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "Zadania zatrzymania",
+    "stopTitle": "Rusz głową i rękami",
+    "stopBody": "Obliczenia, dotykanie liczb po kolei, przytrzymanie i wielokrotne dotknięcia towarzyszą zatrzymaniu i odroczeniu. Standardowe kroki są dostępne. Ich edycja i łączenie wymaga Premium.",
+    "stopFoot": "",
+    "math": "Rozwiąż działanie",
+    "sequence": "Dotykaj po kolei",
+    "nightLabel": "Ekran nocny",
+    "nightTitle": "Odpocznij z nocnym ekranem",
+    "nightBody": "Dostosuj jasność i wygląd zegara. Możesz ukryć obraz po chwili bezczynności i dotknąć ekranu, aby ponownie pokazać godzinę i przyciski.",
+    "how": [
+      [
+        "Wybierz czas",
+        "Wybierz czas, np. 30 minut, lub godzinę pobudki."
+      ],
+      [
+        "Pozostaw nocny ekran otwarty",
+        "Pozostaw otwarty nocny ekran; włącz dźwięk lub światło, jeśli chcesz."
+      ],
+      [
+        "Zakończ po wstaniu",
+        "Wykonaj kroki zatrzymania i zakończ serię, gdy wstaniesz."
+      ]
+    ],
+    "iosTitle": "Korzystanie na iPhonie",
+    "iosBody": "Aby używać własnych wibracji aplikacji, po ustawieniu alarmu pozostaw otwarty nocny ekran. Zablokowanie bocznym przyciskiem lub przejście do innej aplikacji przekazuje sterowanie wibracjami do iOS; wybrany rytm i siła nie są wtedy stosowane. Sprawdź uprawnienia i ustawienia wibracji oraz wykonaj próbę działania.",
+    "scheduleTitle": "Codziennie lub w wybrane dni",
+    "scheduleBody": "Korzystaj z jednorazowego alarmu na drzemkę albo alarmów cyklicznych o wybranych godzinach i dniach tygodnia.",
+    "relaxLabel": "Relaksujące dźwięki i światło",
+    "relaxTitle": "Dźwięki i światło podczas odpoczynku.",
+    "relaxBody": "Na drzemkę lub usypianie dziecka. Włączaj je na nocnym ekranie, kiedy potrzebujesz.",
+    "soundTitle": "Dźwięki relaksacyjne",
+    "soundBody": "Słuchaj deszczu, fal lub białego szumu. Dźwięk zaczyna się tylko po włączeniu i stopniowo cichnie przed pierwszym alarmem.",
+    "lightTitle": "Światło",
+    "lightBody": "Wybierz ciepłe, jasnoczerwone lub delikatne białe światło i ustaw jasność.",
+    "lightColors": [
+      "Ciepłe",
+      "Delikatna czerwień",
+      "Delikatna biel"
+    ],
+    "relaxFoot": "Podstawy bez opłat",
+    "relaxAlt": "Ekran nocny — Relaksujące dźwięki i światło",
+    "priceLabel": "Bezpłatnie / Premium",
+    "priceTitle": "Podstawy bez opłat",
+    "priceBody": "Cztery tryby wibracji, standardowe zatrzymanie i odroczenie, nocny ekran, dźwięki i światło są dostępne. Niektóre ekrany pokazują reklamy.",
+    "priceHead": [
+      "Funkcja",
+      "Bezpłatnie",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "Wzory wibracji",
+        "✓",
+        "✓"
+      ],
+      [
+        "Kilka alertów",
+        "Ustawienia standardowe",
+        "Można dostosować"
+      ],
+      [
+        "Zadania zatrzymania",
+        "Ustawienia standardowe",
+        "Można dostosować"
+      ],
+      [
+        "Ekran nocny / Dźwięki relaksacyjne / Światło",
+        "✓",
+        "✓"
+      ],
+      [
+        "Twórz i edytuj własne wibracje.",
+        "—",
+        "✓"
+      ],
+      [
+        "Usuń wszystkie reklamy.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "Wybierz plan miesięczny lub zakup jednorazowy. Plan miesięczny odnawia się automatycznie; zarządzaj nim lub anuluj go w ustawieniach konta sklepu. Ceny i warunki znajdziesz przed zakupem.",
+    "faqTitle": "Zanim zaczniesz",
+    "faq": [
+      [
+        "Czy mogę zablokować iPhone’a?",
+        "Aby używać własnych wibracji aplikacji, po ustawieniu alarmu pozostaw otwarty nocny ekran. Zablokowanie bocznym przyciskiem lub przejście do innej aplikacji przekazuje sterowanie wibracjami do iOS; wybrany rytm i siła nie są wtedy stosowane. Sprawdź uprawnienia i ustawienia wibracji oraz wykonaj próbę działania."
+      ],
+      [
+        "Jakie dźwięki i światło są dostępne?",
+        "Słuchaj deszczu, fal lub białego szumu. Dźwięk zaczyna się tylko po włączeniu i stopniowo cichnie przed pierwszym alarmem. Wybierz ciepłe, jasnoczerwone lub delikatne białe światło i ustaw jasność."
+      ],
+      [
+        "Co jest dostępne bez opłat?",
+        "Cztery tryby wibracji, standardowe zatrzymanie i odroczenie, nocny ekran, dźwięki i światło są dostępne. Niektóre ekrany pokazują reklamy. Usuń wszystkie reklamy. Zmień liczbę alertów i odstępy. Edytuj kroki zatrzymania i odroczenia. Twórz i edytuj własne wibracje. Wybierz plan miesięczny lub zakup jednorazowy. Plan miesięczny odnawia się automatycznie; zarządzaj nim lub anuluj go w ustawieniach konta sklepu. Ceny i warunki znajdziesz przed zakupem."
+      ]
+    ],
+    "support": "Poradnik i pomoc (po angielsku)",
+    "downloadTitle": "Nie zaśnij",
+    "downloadBody": "Budzik wibracyjny na drzemki i po usypianiu dziecka",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "Polityka prywatności (EN)",
+      "Warunki użytkowania (EN)",
+      "Poradnik i pomoc (po angielsku)"
+    ],
+    "top": "Na górę",
+    "uiControls": [
+      "Język",
+      "Ekrany aplikacji",
+      "Poprzedni ekran",
+      "Następny ekran",
+      "Wstrzymaj pokaz",
+      "Wznów pokaz",
+      "Pokaż ekran",
+      "slajd",
+      "Nawigacja główna"
+    ],
+    "ringingCaption": "Czas na pobudkę",
+    "nightCaption": "Ekran nocny",
+    "legalLang": "en"
+  },
+  "tr": {
+    "name": "Uyanık Kal",
+    "title": "Uyanık Kal | Tekrarlı uyarılar ve görevler",
+    "description": "Kısa bir uyku veya çocuğunu uyuttuktan sonra kalkmak için: değişen titreşimler, tekrarlı uyarılar ve görevler. Gece ekranı ve rahatlatıcı seslerle dinlen.",
+    "skip": "İçeriğe geç",
+    "nav": [
+      "Özellikler",
+      "Kullanım",
+      "Fiyatlar",
+      "Sık sorulan sorular"
+    ],
+    "download": "İndir",
+    "category": "Şekerlemeler ve çocuğunu uyuttuktan sonra kalkmak için titreşimli alarm",
+    "headline": "<span>Farklı titreşimlerle uyan.</span>",
+    "audience": "Kısa uykusu uzayanlara ve çocuğunu uyuturken uyuyakalanlara.",
+    "heroCta": "Uygulamayı tanı",
+    "freeNote": "Temel özellikler ücretsiz",
+    "heroCaption": "Alarm",
+    "overview": [
+      "Değişen titreşimler",
+      "Birden çok uyarı",
+      "Durdurma görevleri"
+    ],
+    "vLabel": "Titreşim desenleri",
+    "vTitle": "Değişen titreşimler",
+    "vBenefit": "Değişen süre ve ritimler, günlük bildirimlerinden farklı hissettirir. Bu alışılmadık his, alarmı fark edip uyanmana yardımcı olması için tasarlandı.",
+    "vBody": "Kısa ve uzun darbeler, hızlı tekrarlar. Dört temel moddan birini seç: rastgele, bildirim tarzı, çoğunlukla uzun veya çoğunlukla kısa. Süre ve aralıklar ritmi değiştirir. Alarmı kurmadan önce deneyebilirsin.",
+    "vFoot": "",
+    "rhythm": "Titreşim desenleri",
+    "rhythms": [
+      "Kısa titreşimler",
+      "Uzun titreşimler",
+      "Hızlı titreşimler"
+    ],
+    "repeatLabel": "Birden çok uyarı",
+    "repeatTitle": "Bir kez kur, birkaç kez hatırlat",
+    "repeatBody": "Sonrakileri korumak için yalnızca mevcut uyarıyı durdur veya kalanları iptal etmek için diziyi bitir.",
+    "repeatFoot": "Sayıyı ve aralığı kaydetmek Premium özelliğidir.",
+    "repeatSteps": [
+      "Saati seç",
+      "Gece ekranını açık tut",
+      "Kalkınca bitir"
+    ],
+    "repeatDiagram": "Birden çok uyarı",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "Durdurma görevleri",
+    "stopTitle": "Zihnini ve ellerini kullan",
+    "stopBody": "Hesap soruları, sayılara sırayla dokunma, basılı tutma ve tekrar dokunma durdurma ve ertelemeye eşlik eder. Standart adımlar dahildir. Adımları düzenlemek ve birleştirmek Premium gerektirir.",
+    "stopFoot": "",
+    "math": "İşlemi çözün",
+    "sequence": "Sırayla dokunun",
+    "nightLabel": "Gece ekranı",
+    "nightTitle": "Gece ekranıyla dinlen",
+    "nightBody": "Parlaklığı ve saat görünümünü ayarla. Bir süre işlem yapılmadığında görüntüyü gizleyebilir, dokunarak saat ve kontrolleri yeniden gösterebilirsin.",
+    "how": [
+      [
+        "Saati seç",
+        "Örneğin 30 dakika gibi bir süre veya kalkma saati seç."
+      ],
+      [
+        "Gece ekranını açık tut",
+        "Gece ekranını açık tut; istersen ses veya ışığı aç."
+      ],
+      [
+        "Kalkınca bitir",
+        "Durdurma adımlarını tamamla ve kalktığında diziyi bitir."
+      ]
+    ],
+    "iosTitle": "iPhone’da kullanım",
+    "iosBody": "Uygulamanın özel titreşimlerini kullanmak için alarmı kurduktan sonra gece ekranını açık tut. Yan düğmeyle kilitler veya başka bir uygulamaya geçersen titreşimi iOS yönetir; seçtiğin özel ritim ve güç uygulanmaz. İzinleri ve cihaz titreşim ayarlarını kontrol edip kullanmadan önce çalışmasını dene.",
+    "scheduleTitle": "Her gün veya seçtiğin günlerde",
+    "scheduleBody": "Tek seferlik şekerleme alarmı kullan ya da saat ve haftanın günlerine göre yinelenen alarmlar oluştur.",
+    "relaxLabel": "Rahatlatıcı ses ve ışık",
+    "relaxTitle": "Dinlenirken ses ve ışık da yanında.",
+    "relaxBody": "Şekerleme yaparken veya çocuğunu uyuturken, ihtiyaç duyduğunda gece ekranından aç.",
+    "soundTitle": "Rahatlatıcı sesler",
+    "soundBody": "Yağmur, dalga veya beyaz gürültü dinle. Ses yalnızca sen açınca başlar ve ilk alarma doğru azalarak durur.",
+    "lightTitle": "Işık",
+    "lightBody": "Sıcak, açık kırmızı veya yumuşak beyaz ışık seç ve parlaklığı ayarla.",
+    "lightColors": [
+      "Sıcak",
+      "Yumuşak kırmızı",
+      "Yumuşak beyaz"
+    ],
+    "relaxFoot": "Temel özellikler ücretsiz",
+    "relaxAlt": "Gece ekranı — Rahatlatıcı ses ve ışık",
+    "priceLabel": "Ücretsiz / Premium",
+    "priceTitle": "Temel özellikler ücretsiz",
+    "priceBody": "Dört titreşim modu, standart durdurma ve erteleme, gece ekranı, sesler ve ışık dahildir. Bazı ekranlarda reklam gösterilir.",
+    "priceHead": [
+      "Özellik",
+      "Ücretsiz",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "Titreşim desenleri",
+        "✓",
+        "✓"
+      ],
+      [
+        "Birden çok uyarı",
+        "Standart ayarlar",
+        "Özelleştirilebilir"
+      ],
+      [
+        "Durdurma görevleri",
+        "Standart ayarlar",
+        "Özelleştirilebilir"
+      ],
+      [
+        "Gece ekranı / Rahatlatıcı sesler / Işık",
+        "✓",
+        "✓"
+      ],
+      [
+        "Kendi titreşimlerini oluştur ve düzenle.",
+        "—",
+        "✓"
+      ],
+      [
+        "Tüm reklamları kaldır.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "Aylık plan veya tek seferlik satın alma seçebilirsin. Aylık plan otomatik yenilenir; mağaza hesabı ayarlarından yönetebilir veya iptal edebilirsin. Fiyat ve koşulları satın alma ekranında kontrol et.",
+    "faqTitle": "Başlamadan önce",
+    "faq": [
+      [
+        "iPhone’umu kilitleyebilir miyim?",
+        "Uygulamanın özel titreşimlerini kullanmak için alarmı kurduktan sonra gece ekranını açık tut. Yan düğmeyle kilitler veya başka bir uygulamaya geçersen titreşimi iOS yönetir; seçtiğin özel ritim ve güç uygulanmaz. İzinleri ve cihaz titreşim ayarlarını kontrol edip kullanmadan önce çalışmasını dene."
+      ],
+      [
+        "Hangi ses ve ışıklar var?",
+        "Yağmur, dalga veya beyaz gürültü dinle. Ses yalnızca sen açınca başlar ve ilk alarma doğru azalarak durur. Sıcak, açık kırmızı veya yumuşak beyaz ışık seç ve parlaklığı ayarla."
+      ],
+      [
+        "Neleri ücretsiz kullanabilirim?",
+        "Dört titreşim modu, standart durdurma ve erteleme, gece ekranı, sesler ve ışık dahildir. Bazı ekranlarda reklam gösterilir. Tüm reklamları kaldır. Uyarı sayısını ve aralığını değiştir. Durdurma ve erteleme adımlarını düzenle. Kendi titreşimlerini oluştur ve düzenle. Aylık plan veya tek seferlik satın alma seçebilirsin. Aylık plan otomatik yenilenir; mağaza hesabı ayarlarından yönetebilir veya iptal edebilirsin. Fiyat ve koşulları satın alma ekranında kontrol et."
+      ]
+    ],
+    "support": "Kılavuz ve destek (İngilizce)",
+    "downloadTitle": "Uyanık Kal",
+    "downloadBody": "Şekerlemeler ve çocuğunu uyuttuktan sonra kalkmak için titreşimli alarm",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "Gizlilik politikası (EN)",
+      "Kullanım koşulları (EN)",
+      "Kılavuz ve destek (İngilizce)"
+    ],
+    "top": "Başa dön",
+    "uiControls": [
+      "Dil",
+      "Uygulama ekranları",
+      "Önceki ekran",
+      "Sonraki ekran",
+      "Slayt gösterisini duraklat",
+      "Slayt gösterisini sürdür",
+      "Ekranı göster",
+      "slayt",
+      "Ana gezinme"
+    ],
+    "ringingCaption": "Alarm zamanı geldi",
+    "nightCaption": "Gece ekranı",
+    "legalLang": "en"
+  },
+  "ar": {
+    "name": "تنبيه الغفوة",
+    "title": "تنبيه الغفوة | تنبيهات متكررة ومهام للإيقاظ",
+    "description": "لقيلولة قصيرة أو للنهوض بعد تنويم طفلك: اهتزازات متغيرة وتنبيهات متكررة ومهام تحرك الذهن واليدين. استرح مع الشاشة الليلية والأصوات الهادئة.",
+    "skip": "انتقل إلى المحتوى",
+    "nav": [
+      "المزايا",
+      "طريقة الاستخدام",
+      "الأسعار",
+      "الأسئلة الشائعة"
+    ],
+    "download": "تنزيل",
+    "category": "منبه بالاهتزاز للقيلولة وللنهوض بعد تنويم طفلك",
+    "headline": "<span>نوقظك باهتزازات غير مألوفة.</span>",
+    "audience": "لمن تطول غفوتهم أو يغلبهم النوم أثناء تهدئة طفلهم لينام.",
+    "heroCta": "تعرّف على التطبيق",
+    "freeNote": "الأساسيات مجانية",
+    "heroCaption": "المنبّه",
+    "overview": [
+      "اهتزازات متغيرة",
+      "عدة تنبيهات",
+      "مهام الإيقاف"
+    ],
+    "vLabel": "أنماط الاهتزاز",
+    "vTitle": "اهتزازات تتغير",
+    "vBenefit": "تتغير مدة الاهتزازات وإيقاعها لتختلف عن إشعاراتك المعتادة. هذا الإحساس غير المألوف مصمم ليساعدك على ملاحظة المنبه والاستيقاظ.",
+    "vBody": "نبضات قصيرة وطويلة ومتتابعة. اختر من أربعة أوضاع أساسية: عشوائي، شبيه بالإشعارات، يغلب عليه الطويل أو يغلب عليه القصير. يتغير الإيقاع مع مدة النبضات والفواصل. يمكنك تجربته قبل ضبط المنبه.",
+    "vFoot": "",
+    "rhythm": "أنماط الاهتزاز",
+    "rhythms": [
+      "نبضات قصيرة",
+      "نبضات طويلة",
+      "نبضات متتابعة"
+    ],
+    "repeatLabel": "عدة تنبيهات",
+    "repeatTitle": "إعداد واحد لعدة تنبيهات",
+    "repeatBody": "أوقف التنبيه الحالي فقط للإبقاء على التالي، أو أنهِ المجموعة لإلغاء ما تبقى.",
+    "repeatFoot": "حفظ عدد التنبيهات والفاصل بينها ميزة Premium.",
+    "repeatSteps": [
+      "اختر الوقت",
+      "اترك الشاشة الليلية مفتوحة",
+      "أنهِ المجموعة عند النهوض"
+    ],
+    "repeatDiagram": "عدة تنبيهات",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "مهام الإيقاف",
+    "stopTitle": "استخدم ذهنك ويديك",
+    "stopBody": "الحساب، ولمس الأرقام بالترتيب، والضغط المطول، واللمسات المتكررة ترافق الإيقاف والغفوة. الخطوات الأساسية متاحة. تعديل الخطوات ودمجها يتطلب Premium.",
+    "stopFoot": "",
+    "math": "حل المسألة الحسابية",
+    "sequence": "انقر بالترتيب",
+    "nightLabel": "الشاشة الليلية",
+    "nightTitle": "استرح مع الشاشة الليلية",
+    "nightBody": "اضبط السطوع وطريقة عرض الساعة. يمكنك إخفاء العرض بعد فترة قصيرة دون تفاعل، ثم لمسه لإظهار الساعة وأدوات التحكم مجددًا.",
+    "how": [
+      [
+        "اختر الوقت",
+        "اختر مدة، مثل 30 دقيقة، أو وقتًا للنهوض."
+      ],
+      [
+        "اترك الشاشة الليلية مفتوحة",
+        "اترك الشاشة الليلية مفتوحة، وشغّل الصوت أو الضوء إذا رغبت."
+      ],
+      [
+        "أنهِ المجموعة عند النهوض",
+        "أكمل خطوات الإيقاف وأنهِ المجموعة عندما تنهض."
+      ]
+    ],
+    "iosTitle": "الاستخدام على iPhone",
+    "iosBody": "لاستخدام أنماط الاهتزاز الخاصة بالتطبيق، اترك الشاشة الليلية مفتوحة بعد ضبط المنبه. عند القفل بالزر الجانبي أو الانتقال لتطبيق آخر، يصبح الاهتزاز تحت تحكم iOS ولا يُطبّق النمط والقوة المخصصان. تحقق من الأذونات وإعدادات الاهتزاز، واختبر التشغيل قبل الاستخدام.",
+    "scheduleTitle": "كل يوم أو في أيام محددة",
+    "scheduleBody": "استخدم منبهًا لمرة واحدة للقيلولة، أو منبهات متكررة في أوقات وأيام تختارها.",
+    "relaxLabel": "أصوات هادئة وإضاءة قابلة للتعديل",
+    "relaxTitle": "أصوات وإضاءة أثناء الراحة.",
+    "relaxBody": "للقيلولة أو لتنويم طفلك. شغّلهما من الشاشة الليلية عند الحاجة.",
+    "soundTitle": "أصوات الاسترخاء",
+    "soundBody": "استمع للمطر أو الأمواج أو الضوضاء البيضاء. لا يبدأ الصوت إلا عندما تشغله، ويتلاشى ليتوقف عند المنبه الأول.",
+    "lightTitle": "إضاءة",
+    "lightBody": "اختر إضاءة دافئة أو حمراء باهتة أو بيضاء ناعمة واضبط سطوعها.",
+    "lightColors": [
+      "دافئ",
+      "أحمر خفيف",
+      "أبيض خفيف"
+    ],
+    "relaxFoot": "الأساسيات مجانية",
+    "relaxAlt": "الشاشة الليلية — أصوات هادئة وإضاءة قابلة للتعديل",
+    "priceLabel": "مجاني / Premium",
+    "priceTitle": "الأساسيات مجانية",
+    "priceBody": "تتضمن أربعة أوضاع للاهتزاز، وإيقافًا وغفوة بخطوات أساسية، وشاشة ليلية وأصواتًا وإضاءة. تظهر إعلانات في بعض الشاشات.",
+    "priceHead": [
+      "الميزة",
+      "مجاني",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "أنماط الاهتزاز",
+        "✓",
+        "✓"
+      ],
+      [
+        "عدة تنبيهات",
+        "إعدادات أساسية",
+        "قابل للتخصيص"
+      ],
+      [
+        "مهام الإيقاف",
+        "إعدادات أساسية",
+        "قابل للتخصيص"
+      ],
+      [
+        "الشاشة الليلية / أصوات الاسترخاء / إضاءة",
+        "✓",
+        "✓"
+      ],
+      [
+        "إنشاء أنماط اهتزاز خاصة وتعديلها.",
+        "—",
+        "✓"
+      ],
+      [
+        "إزالة كل الإعلانات.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "اختر خطة شهرية أو شراءً لمرة واحدة. تتجدد الخطة الشهرية تلقائيًا ويمكن إدارتها أو إلغاؤها في إعدادات حساب المتجر. راجع الأسعار والشروط قبل الشراء.",
+    "faqTitle": "قبل البدء",
+    "faq": [
+      [
+        "هل يمكنني قفل iPhone؟",
+        "لاستخدام أنماط الاهتزاز الخاصة بالتطبيق، اترك الشاشة الليلية مفتوحة بعد ضبط المنبه. عند القفل بالزر الجانبي أو الانتقال لتطبيق آخر، يصبح الاهتزاز تحت تحكم iOS ولا يُطبّق النمط والقوة المخصصان. تحقق من الأذونات وإعدادات الاهتزاز، واختبر التشغيل قبل الاستخدام."
+      ],
+      [
+        "ما الأصوات والإضاءة المتاحة؟",
+        "استمع للمطر أو الأمواج أو الضوضاء البيضاء. لا يبدأ الصوت إلا عندما تشغله، ويتلاشى ليتوقف عند المنبه الأول. اختر إضاءة دافئة أو حمراء باهتة أو بيضاء ناعمة واضبط سطوعها."
+      ],
+      [
+        "ما المزايا المجانية؟",
+        "تتضمن أربعة أوضاع للاهتزاز، وإيقافًا وغفوة بخطوات أساسية، وشاشة ليلية وأصواتًا وإضاءة. تظهر إعلانات في بعض الشاشات. إزالة كل الإعلانات. تعديل عدد التنبيهات والفاصل بينها. تحرير خطوات الإيقاف والغفوة. إنشاء أنماط اهتزاز خاصة وتعديلها. اختر خطة شهرية أو شراءً لمرة واحدة. تتجدد الخطة الشهرية تلقائيًا ويمكن إدارتها أو إلغاؤها في إعدادات حساب المتجر. راجع الأسعار والشروط قبل الشراء."
+      ]
+    ],
+    "support": "الدليل والدعم (بالإنجليزية)",
+    "downloadTitle": "تنبيه الغفوة",
+    "downloadBody": "منبه بالاهتزاز للقيلولة وللنهوض بعد تنويم طفلك",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "سياسة الخصوصية (EN)",
+      "شروط الاستخدام (EN)",
+      "الدليل والدعم (بالإنجليزية)"
+    ],
+    "top": "العودة للأعلى",
+    "uiControls": [
+      "اللغة",
+      "شاشات التطبيق",
+      "الشاشة السابقة",
+      "الشاشة التالية",
+      "إيقاف العرض مؤقتًا",
+      "استئناف العرض",
+      "عرض الشاشة",
+      "شريحة",
+      "التنقل الرئيسي"
+    ],
+    "ringingCaption": "حان وقت المنبّه",
+    "nightCaption": "الشاشة الليلية",
+    "legalLang": "en"
+  },
+  "hi": {
+    "name": "झपकी से बचें",
+    "title": "झपकी से बचें | कई सूचनाएँ और जगाने वाले काम",
+    "description": "थोड़ा आराम करने या बच्चे को सुलाकर फिर उठने के लिए। बदलते कंपन, कई सूचनाएँ और छोटे काम जागने में मदद करते हैं। रात की स्क्रीन, शांत ध्वनियाँ और रोशनी भी।",
+    "skip": "मुख्य सामग्री पर जाएँ",
+    "nav": [
+      "सुविधाएँ",
+      "इस्तेमाल का तरीका",
+      "कीमतें",
+      "अक्सर पूछे जाने वाले सवाल"
+    ],
+    "download": "डाउनलोड करें",
+    "category": "झपकी और बच्चे को सुलाने के बाद उठने के लिए कंपन अलार्म",
+    "headline": "<span>अनोखे कंपन आपको जगाएँगे।</span>",
+    "audience": "उन लोगों के लिए जो झपकी लेते हुए या बच्चे को सुलाते हुए सोते रह जाते हैं।",
+    "heroCta": "ऐप के बारे में जानें",
+    "freeNote": "मूल सुविधाएँ मुफ्त",
+    "heroCaption": "अलार्म",
+    "overview": [
+      "बदलते कंपन",
+      "कई सूचनाएँ",
+      "रोकने के काम"
+    ],
+    "vLabel": "कंपन पैटर्न",
+    "vTitle": "बदलते कंपन",
+    "vBenefit": "बदलती अवधि और लय, रोज़ की सूचनाओं से अलग महसूस होती हैं। यह अनोखा एहसास अलार्म पर ध्यान देने और जागने में मदद करने के लिए है।",
+    "vBody": "छोटे, लंबे और लगातार कंपन। चार मूल मोड चुनें: रैंडम, नोटिफिकेशन शैली, अधिक लंबे या अधिक छोटे कंपन। अवधि और अंतराल में बदलाव से लय बदलती है। अलार्म लगाने से पहले आज़मा सकते हैं।",
+    "vFoot": "",
+    "rhythm": "कंपन पैटर्न",
+    "rhythms": [
+      "छोटे कंपन",
+      "लंबे कंपन",
+      "लगातार कंपन"
+    ],
+    "repeatLabel": "कई सूचनाएँ",
+    "repeatTitle": "एक बार सेट करें, कई सूचनाएँ पाएँ",
+    "repeatBody": "केवल मौजूदा सूचना रोककर अगली सूचनाएँ रख सकते हैं, या पूरा सेट समाप्त करके बाकी रद्द कर सकते हैं।",
+    "repeatFoot": "अलार्म की संख्या और अंतराल सेव करना प्रीमियम सुविधा है।",
+    "repeatSteps": [
+      "समय चुनें",
+      "रात की स्क्रीन खुली रखें",
+      "उठने पर समाप्त करें"
+    ],
+    "repeatDiagram": "कई सूचनाएँ",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "रोकने के काम",
+    "stopTitle": "दिमाग और हाथों का इस्तेमाल",
+    "stopBody": "गणित, संख्याओं को क्रम से छूना, दबाकर रखना और बार-बार टैप करना रोकने और स्नूज़ के चरणों में शामिल हैं। सामान्य चरण उपलब्ध हैं। उन्हें बदलने या मिलाने के लिए Premium चाहिए।",
+    "stopFoot": "",
+    "math": "सवाल हल करें",
+    "sequence": "क्रम से टैप करें",
+    "nightLabel": "नाइट स्क्रीन",
+    "nightTitle": "रात की स्क्रीन पर आराम",
+    "nightBody": "चमक और घड़ी का रूप बदलें। कुछ देर उपयोग न होने पर डिस्प्ले छिपा सकते हैं; छूने पर घड़ी और नियंत्रण फिर दिखते हैं।",
+    "how": [
+      [
+        "समय चुनें",
+        "30 मिनट जैसी अवधि या उठने का समय चुनें।"
+      ],
+      [
+        "रात की स्क्रीन खुली रखें",
+        "रात की स्क्रीन खुली रखें। चाहें तो ध्वनि या प्रकाश चालू करें।"
+      ],
+      [
+        "उठने पर समाप्त करें",
+        "उठने पर रोकने के चरण पूरे करें और बाकी सेट समाप्त करें।"
+      ]
+    ],
+    "iosTitle": "iPhone पर उपयोग",
+    "iosBody": "ऐप के अपने कंपन पैटर्न के लिए अलार्म लगाने के बाद रात की स्क्रीन खुली रखें। साइड बटन से लॉक करने या दूसरे ऐप पर जाने पर कंपन iOS के नियंत्रण में आता है; आपका चुना पैटर्न और तीव्रता लागू नहीं होते। अनुमतियाँ और कंपन सेटिंग देखें और उपयोग से पहले जाँच करें।",
+    "scheduleTitle": "रोज़ या चुने हुए दिनों में",
+    "scheduleBody": "एक बार की झपकी के लिए अलार्म या समय व सप्ताह के दिन के अनुसार दोहराने वाले अलार्म चुनें।",
+    "relaxLabel": "शांत ध्वनियाँ और रोशनी",
+    "relaxTitle": "आराम के समय ध्वनि और रोशनी भी।",
+    "relaxBody": "झपकी लेते या बच्चे को सुलाते समय, ज़रूरत हो तो रात की स्क्रीन से चालू करें।",
+    "soundTitle": "सुकून देने वाली आवाज़ें",
+    "soundBody": "बारिश, लहरों या व्हाइट नॉइज़ के साथ आराम करें। ध्वनि केवल आपके चालू करने पर बजती है और पहले अलार्म तक धीरे-धीरे बंद हो जाती है।",
+    "lightTitle": "रोशनी",
+    "lightBody": "गर्म रंग, हल्का लाल या हल्का सफेद प्रकाश चुनें और चमक बदलें।",
+    "lightColors": [
+      "गर्म रंग",
+      "हल्का लाल",
+      "हल्का सफ़ेद"
+    ],
+    "relaxFoot": "मूल सुविधाएँ मुफ्त",
+    "relaxAlt": "नाइट स्क्रीन — शांत ध्वनियाँ और रोशनी",
+    "priceLabel": "मुफ्त / Premium",
+    "priceTitle": "मूल सुविधाएँ मुफ्त",
+    "priceBody": "चार कंपन मोड, सामान्य रोकना व स्नूज़, रात की स्क्रीन, ध्वनियाँ और प्रकाश शामिल हैं। कुछ स्क्रीन पर विज्ञापन दिखते हैं।",
+    "priceHead": [
+      "सुविधा",
+      "मुफ्त",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "कंपन पैटर्न",
+        "✓",
+        "✓"
+      ],
+      [
+        "कई सूचनाएँ",
+        "सामान्य सेटिंग",
+        "अपनी पसंद की सेटिंग"
+      ],
+      [
+        "रोकने के काम",
+        "सामान्य सेटिंग",
+        "अपनी पसंद की सेटिंग"
+      ],
+      [
+        "नाइट स्क्रीन / सुकून देने वाली आवाज़ें / रोशनी",
+        "✓",
+        "✓"
+      ],
+      [
+        "अपने कंपन पैटर्न बनाएँ और संपादित करें।",
+        "—",
+        "✓"
+      ],
+      [
+        "सभी विज्ञापन हटाएँ।",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "मासिक प्लान या एक बार की खरीद चुन सकते हैं। मासिक प्लान अपने आप नवीनीकृत होता है; स्टोर खाते की सेटिंग से प्रबंधन या रद्द कर सकते हैं। कीमत और शर्तें खरीद स्क्रीन पर देखें।",
+    "faqTitle": "शुरू करने से पहले",
+    "faq": [
+      [
+        "क्या iPhone लॉक कर सकते हैं?",
+        "ऐप के अपने कंपन पैटर्न के लिए अलार्म लगाने के बाद रात की स्क्रीन खुली रखें। साइड बटन से लॉक करने या दूसरे ऐप पर जाने पर कंपन iOS के नियंत्रण में आता है; आपका चुना पैटर्न और तीव्रता लागू नहीं होते। अनुमतियाँ और कंपन सेटिंग देखें और उपयोग से पहले जाँच करें।"
+      ],
+      [
+        "कौन-सी ध्वनियाँ और रोशनी मिलती हैं?",
+        "बारिश, लहरों या व्हाइट नॉइज़ के साथ आराम करें। ध्वनि केवल आपके चालू करने पर बजती है और पहले अलार्म तक धीरे-धीरे बंद हो जाती है। गर्म रंग, हल्का लाल या हल्का सफेद प्रकाश चुनें और चमक बदलें।"
+      ],
+      [
+        "कौन-सी सुविधाएँ मुफ्त हैं?",
+        "चार कंपन मोड, सामान्य रोकना व स्नूज़, रात की स्क्रीन, ध्वनियाँ और प्रकाश शामिल हैं। कुछ स्क्रीन पर विज्ञापन दिखते हैं। सभी विज्ञापन हटाएँ। सूचनाओं की संख्या और अंतर बदलें। रोकने और स्नूज़ के चरण बदलें। अपने कंपन पैटर्न बनाएँ और संपादित करें। मासिक प्लान या एक बार की खरीद चुन सकते हैं। मासिक प्लान अपने आप नवीनीकृत होता है; स्टोर खाते की सेटिंग से प्रबंधन या रद्द कर सकते हैं। कीमत और शर्तें खरीद स्क्रीन पर देखें।"
+      ]
+    ],
+    "support": "गाइड और सहायता (अंग्रेज़ी में)",
+    "downloadTitle": "झपकी से बचें",
+    "downloadBody": "झपकी और बच्चे को सुलाने के बाद उठने के लिए कंपन अलार्म",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "गोपनीयता नीति (EN)",
+      "उपयोग की शर्तें (EN)",
+      "गाइड और सहायता (अंग्रेज़ी में)"
+    ],
+    "top": "ऊपर जाएँ",
+    "uiControls": [
+      "भाषा",
+      "ऐप की स्क्रीन",
+      "पिछली स्क्रीन",
+      "अगली स्क्रीन",
+      "अपने आप बदलना रोकें",
+      "अपने आप बदलना फिर चालू करें",
+      "स्क्रीन दिखाएँ",
+      "स्लाइड",
+      "मुख्य नेविगेशन"
+    ],
+    "ringingCaption": "अलार्म का समय हो गया",
+    "nightCaption": "नाइट स्क्रीन",
+    "legalLang": "en"
+  },
+  "id": {
+    "name": "Cegah Ketiduran",
+    "title": "Cegah Ketiduran | Pengingat berulang dan tugas",
+    "description": "Tidur sejenak atau bangun lagi setelah menidurkan anak. Getaran bervariasi, beberapa pengingat dan tugas membantu bangun. Istirahat dengan layar malam dan suara.",
+    "skip": "Ke konten",
+    "nav": [
+      "Fitur",
+      "Cara pakai",
+      "Harga",
+      "Tanya jawab"
+    ],
+    "download": "Unduh",
+    "category": "Alarm getar untuk tidur singkat dan bangun setelah menidurkan anak",
+    "headline": "<span>Bangun dengan getaran tak biasa.</span>",
+    "audience": "Untuk yang kebablasan tidur siang atau ikut tertidur saat menidurkan anak.",
+    "heroCta": "Kenali aplikasinya",
+    "freeNote": "Fitur dasar gratis",
+    "heroCaption": "Alarm",
+    "overview": [
+      "Getaran bervariasi",
+      "Beberapa pengingat",
+      "Tugas berhenti"
+    ],
+    "vLabel": "Pola getaran",
+    "vTitle": "Getaran yang berubah",
+    "vBenefit": "Durasi dan ritme yang berubah terasa berbeda dari notifikasi sehari-hari. Rasa yang tidak biasa ini dirancang untuk membantu Anda menyadari alarm dan bangun.",
+    "vBody": "Pulsa pendek, panjang dan beruntun. Pilih dari empat mode dasar: acak, gaya notifikasi, dominan panjang atau dominan pendek. Durasi dan jeda bervariasi agar ritmenya berubah. Coba sebelum memasang alarm.",
+    "vFoot": "",
+    "rhythm": "Pola getaran",
+    "rhythms": [
+      "Getaran pendek",
+      "Getaran panjang",
+      "Getaran beruntun"
+    ],
+    "repeatLabel": "Beberapa pengingat",
+    "repeatTitle": "Atur sekali, dapatkan beberapa pengingat",
+    "repeatBody": "Hentikan hanya pengingat saat ini untuk mempertahankan berikutnya, atau akhiri rangkaian untuk membatalkan sisanya.",
+    "repeatFoot": "Menyimpan jumlah dan interval adalah fitur Premium.",
+    "repeatSteps": [
+      "Pilih waktu",
+      "Biarkan layar malam terbuka",
+      "Akhiri setelah bangun"
+    ],
+    "repeatDiagram": "Beberapa pengingat",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "Tugas berhenti",
+    "stopTitle": "Gunakan pikiran dan tangan",
+    "stopBody": "Hitungan, mengetuk angka berurutan, menahan dan mengetuk berulang menyertai penghentian dan tunda. Langkah standar sudah tersedia. Mengedit dan menggabungkan langkah memerlukan Premium.",
+    "stopFoot": "",
+    "math": "Selesaikan hitungan",
+    "sequence": "Ketuk berurutan",
+    "nightLabel": "Layar Malam",
+    "nightTitle": "Istirahat dengan layar malam",
+    "nightBody": "Sesuaikan kecerahan dan tampilan jam. Sembunyikan tampilan setelah beberapa saat tanpa interaksi, lalu ketuk untuk menampilkan jam dan kontrol kembali.",
+    "how": [
+      [
+        "Pilih waktu",
+        "Pilih durasi, misalnya 30 menit, atau waktu bangun."
+      ],
+      [
+        "Biarkan layar malam terbuka",
+        "Biarkan layar malam terbuka; nyalakan suara atau cahaya bila ingin."
+      ],
+      [
+        "Akhiri setelah bangun",
+        "Selesaikan langkah berhenti dan akhiri rangkaian setelah bangun."
+      ]
+    ],
+    "iosTitle": "Penggunaan di iPhone",
+    "iosBody": "Untuk pola getaran khusus aplikasi, biarkan layar malam terbuka setelah memasang alarm. Mengunci dengan tombol samping atau beralih aplikasi membuat getaran dikendalikan iOS; pola dan kekuatan pilihan tidak berlaku. Periksa izin dan pengaturan getaran perangkat, lalu uji sebelum digunakan.",
+    "scheduleTitle": "Setiap hari atau hari pilihan",
+    "scheduleBody": "Gunakan alarm satu kali untuk tidur singkat atau jadwalkan alarm berulang berdasarkan jam dan hari.",
+    "relaxLabel": "Suara santai dan cahaya",
+    "relaxTitle": "Suara dan cahaya saat beristirahat.",
+    "relaxBody": "Untuk tidur singkat atau menidurkan anak. Nyalakan dari layar malam saat diperlukan.",
+    "soundTitle": "Suara relaksasi",
+    "soundBody": "Dengarkan hujan, ombak atau derau putih. Suara hanya mulai saat dinyalakan dan memudar hingga berhenti pada alarm pertama.",
+    "lightTitle": "Lampu",
+    "lightBody": "Pilih cahaya hangat, merah muda pucat atau putih lembut dan atur kecerahannya.",
+    "lightColors": [
+      "Hangat",
+      "Merah lembut",
+      "Putih lembut"
+    ],
+    "relaxFoot": "Fitur dasar gratis",
+    "relaxAlt": "Layar Malam — Suara santai dan cahaya",
+    "priceLabel": "Gratis / Premium",
+    "priceTitle": "Fitur dasar gratis",
+    "priceBody": "Empat mode getaran, berhenti dan tunda standar, layar malam, suara dan cahaya sudah termasuk. Beberapa layar menampilkan iklan.",
+    "priceHead": [
+      "Fitur",
+      "Gratis",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "Pola getaran",
+        "✓",
+        "✓"
+      ],
+      [
+        "Beberapa pengingat",
+        "Pengaturan standar",
+        "Bisa disesuaikan"
+      ],
+      [
+        "Tugas berhenti",
+        "Pengaturan standar",
+        "Bisa disesuaikan"
+      ],
+      [
+        "Layar Malam / Suara relaksasi / Lampu",
+        "✓",
+        "✓"
+      ],
+      [
+        "Buat dan edit pola getaran sendiri.",
+        "—",
+        "✓"
+      ],
+      [
+        "Hapus semua iklan.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "Pilih paket bulanan atau pembelian satu kali. Paket bulanan diperpanjang otomatis dan dapat dikelola atau dibatalkan melalui pengaturan akun toko. Periksa harga dan ketentuan di layar pembelian.",
+    "faqTitle": "Sebelum mulai",
+    "faq": [
+      [
+        "Bolehkah iPhone dikunci?",
+        "Untuk pola getaran khusus aplikasi, biarkan layar malam terbuka setelah memasang alarm. Mengunci dengan tombol samping atau beralih aplikasi membuat getaran dikendalikan iOS; pola dan kekuatan pilihan tidak berlaku. Periksa izin dan pengaturan getaran perangkat, lalu uji sebelum digunakan."
+      ],
+      [
+        "Suara dan cahaya apa yang tersedia?",
+        "Dengarkan hujan, ombak atau derau putih. Suara hanya mulai saat dinyalakan dan memudar hingga berhenti pada alarm pertama. Pilih cahaya hangat, merah muda pucat atau putih lembut dan atur kecerahannya."
+      ],
+      [
+        "Fitur apa yang gratis?",
+        "Empat mode getaran, berhenti dan tunda standar, layar malam, suara dan cahaya sudah termasuk. Beberapa layar menampilkan iklan. Hapus semua iklan. Atur jumlah pengingat dan jedanya. Edit langkah berhenti dan tunda. Buat dan edit pola getaran sendiri. Pilih paket bulanan atau pembelian satu kali. Paket bulanan diperpanjang otomatis dan dapat dikelola atau dibatalkan melalui pengaturan akun toko. Periksa harga dan ketentuan di layar pembelian."
+      ]
+    ],
+    "support": "Panduan dan bantuan (bahasa Inggris)",
+    "downloadTitle": "Cegah Ketiduran",
+    "downloadBody": "Alarm getar untuk tidur singkat dan bangun setelah menidurkan anak",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "Kebijakan privasi (EN)",
+      "Ketentuan penggunaan (EN)",
+      "Panduan dan bantuan (bahasa Inggris)"
+    ],
+    "top": "Kembali ke atas",
+    "uiControls": [
+      "Bahasa",
+      "Layar aplikasi",
+      "Layar sebelumnya",
+      "Layar berikutnya",
+      "Jeda tayangan",
+      "Lanjutkan tayangan",
+      "Tampilkan layar",
+      "slide",
+      "Navigasi utama"
+    ],
+    "ringingCaption": "Waktunya alarm Anda",
+    "nightCaption": "Layar Malam",
+    "legalLang": "en"
+  },
+  "vi": {
+    "name": "Đừng ngủ quên",
+    "title": "Đừng ngủ quên | Nhắc nhiều lần, làm bài để dậy",
+    "description": "Chợp mắt hoặc dậy sau khi ru con ngủ: nhịp rung thay đổi, nhiều lần nhắc và thao tác giúp bạn tỉnh dậy. Nghỉ với màn hình đêm, âm thanh và ánh sáng tùy chỉnh.",
+    "skip": "Đến nội dung",
+    "nav": [
+      "Tính năng",
+      "Cách dùng",
+      "Giá",
+      "Câu hỏi thường gặp"
+    ],
+    "download": "Tải xuống",
+    "category": "Báo thức rung cho giấc ngủ ngắn và sau khi ru con ngủ",
+    "headline": "<span>Đánh thức bằng nhịp rung khác lạ.</span>",
+    "audience": "Dành cho người ngủ quên khi chợp mắt hoặc ngủ theo lúc ru con.",
+    "heroCta": "Tìm hiểu ứng dụng",
+    "freeNote": "Miễn phí các chức năng cơ bản",
+    "heroCaption": "Báo thức",
+    "overview": [
+      "Nhịp rung thay đổi",
+      "Nhắc nhiều lần",
+      "Thao tác dừng"
+    ],
+    "vLabel": "Kiểu rung",
+    "vTitle": "Nhịp rung thay đổi",
+    "vBenefit": "Độ dài và nhịp rung thay đổi, tạo cảm giác khác với thông báo hằng ngày. Cảm giác lạ này được thiết kế để giúp bạn chú ý đến báo thức và tỉnh dậy.",
+    "vBody": "Rung ngắn, dài và liên tiếp. Chọn một trong bốn chế độ cơ bản: ngẫu nhiên, kiểu thông báo, chủ yếu dài hoặc chủ yếu ngắn. Độ dài và khoảng nghỉ thay đổi để tạo nhịp khác nhau. Bạn có thể thử trước khi đặt báo thức.",
+    "vFoot": "",
+    "rhythm": "Kiểu rung",
+    "rhythms": [
+      "Rung ngắn",
+      "Rung dài",
+      "Rung liên tiếp"
+    ],
+    "repeatLabel": "Nhắc nhiều lần",
+    "repeatTitle": "Cài một lần, tự nhắc nhiều lần",
+    "repeatBody": "Dừng riêng lần hiện tại để giữ các lần sau, hoặc kết thúc cả loạt để hủy phần còn lại.",
+    "repeatFoot": "Lưu số lần và khoảng cách là tính năng Premium.",
+    "repeatSteps": [
+      "Chọn giờ",
+      "Giữ màn hình đêm mở",
+      "Kết thúc khi đã dậy"
+    ],
+    "repeatDiagram": "Nhắc nhiều lần",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "Thao tác dừng",
+    "stopTitle": "Dùng đầu óc và đôi tay",
+    "stopBody": "Tính toán, chạm số theo thứ tự, nhấn giữ và chạm liên tục là các bước để dừng hoặc báo lại. Các bước tiêu chuẩn được cung cấp sẵn. Chỉnh sửa và kết hợp bước cần Premium.",
+    "stopFoot": "",
+    "math": "Giải phép tính",
+    "sequence": "Chạm theo thứ tự",
+    "nightLabel": "Màn hình Ban đêm",
+    "nightTitle": "Nghỉ với màn hình đêm",
+    "nightBody": "Điều chỉnh độ sáng và cách hiển thị đồng hồ. Có thể ẩn màn hình sau một lúc không thao tác, rồi chạm để hiện lại giờ và nút điều khiển.",
+    "how": [
+      [
+        "Chọn giờ",
+        "Chọn khoảng thời gian, như 30 phút, hoặc giờ muốn dậy."
+      ],
+      [
+        "Giữ màn hình đêm mở",
+        "Giữ màn hình đêm mở; bật âm thanh hoặc ánh sáng nếu muốn."
+      ],
+      [
+        "Kết thúc khi đã dậy",
+        "Hoàn thành các bước dừng và kết thúc loạt khi đã dậy."
+      ]
+    ],
+    "iosTitle": "Sử dụng trên iPhone",
+    "iosBody": "Để dùng nhịp rung riêng của ứng dụng, hãy giữ màn hình đêm mở sau khi đặt báo thức. Khóa bằng nút sườn hoặc chuyển ứng dụng sẽ để iOS điều khiển rung; nhịp và cường độ đã chọn không được áp dụng. Kiểm tra quyền và cài đặt rung rồi chạy thử trước khi dùng.",
+    "scheduleTitle": "Hằng ngày hoặc ngày đã chọn",
+    "scheduleBody": "Dùng báo thức một lần cho giấc ngủ ngắn hoặc đặt lịch lặp theo giờ và thứ trong tuần.",
+    "relaxLabel": "Âm thanh thư giãn và ánh sáng",
+    "relaxTitle": "Âm thanh và ánh sáng khi nghỉ ngơi.",
+    "relaxBody": "Khi ngủ ngắn hoặc ru con ngủ, hãy bật từ màn hình đêm nếu cần.",
+    "soundTitle": "Âm thanh thư giãn",
+    "soundBody": "Nghe tiếng mưa, sóng hoặc tiếng ồn trắng. Âm thanh chỉ phát khi bạn bật và nhỏ dần đến khi dừng ở báo thức đầu tiên.",
+    "lightTitle": "Đèn",
+    "lightBody": "Chọn ánh sáng ấm, đỏ nhạt hoặc trắng dịu rồi chỉnh độ sáng.",
+    "lightColors": [
+      "Màu ấm",
+      "Đỏ nhạt",
+      "Trắng nhạt"
+    ],
+    "relaxFoot": "Miễn phí các chức năng cơ bản",
+    "relaxAlt": "Màn hình Ban đêm — Âm thanh thư giãn và ánh sáng",
+    "priceLabel": "Miễn phí / Premium",
+    "priceTitle": "Miễn phí các chức năng cơ bản",
+    "priceBody": "Bốn chế độ rung, dừng và báo lại tiêu chuẩn, màn hình đêm, âm thanh và ánh sáng đều có sẵn. Một số màn hình có quảng cáo.",
+    "priceHead": [
+      "Tính năng",
+      "Miễn phí",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "Kiểu rung",
+        "✓",
+        "✓"
+      ],
+      [
+        "Nhắc nhiều lần",
+        "Cài đặt tiêu chuẩn",
+        "Có thể tùy chỉnh"
+      ],
+      [
+        "Thao tác dừng",
+        "Cài đặt tiêu chuẩn",
+        "Có thể tùy chỉnh"
+      ],
+      [
+        "Màn hình Ban đêm / Âm thanh thư giãn / Đèn",
+        "✓",
+        "✓"
+      ],
+      [
+        "Tạo và sửa nhịp rung riêng.",
+        "—",
+        "✓"
+      ],
+      [
+        "Xóa toàn bộ quảng cáo.",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "Chọn gói tháng hoặc mua một lần. Gói tháng tự động gia hạn; quản lý hoặc hủy trong cài đặt tài khoản cửa hàng. Xem giá và điều kiện trên màn hình mua.",
+    "faqTitle": "Trước khi bắt đầu",
+    "faq": [
+      [
+        "Có thể khóa iPhone không?",
+        "Để dùng nhịp rung riêng của ứng dụng, hãy giữ màn hình đêm mở sau khi đặt báo thức. Khóa bằng nút sườn hoặc chuyển ứng dụng sẽ để iOS điều khiển rung; nhịp và cường độ đã chọn không được áp dụng. Kiểm tra quyền và cài đặt rung rồi chạy thử trước khi dùng."
+      ],
+      [
+        "Có những âm thanh và ánh sáng nào?",
+        "Nghe tiếng mưa, sóng hoặc tiếng ồn trắng. Âm thanh chỉ phát khi bạn bật và nhỏ dần đến khi dừng ở báo thức đầu tiên. Chọn ánh sáng ấm, đỏ nhạt hoặc trắng dịu rồi chỉnh độ sáng."
+      ],
+      [
+        "Những tính năng nào miễn phí?",
+        "Bốn chế độ rung, dừng và báo lại tiêu chuẩn, màn hình đêm, âm thanh và ánh sáng đều có sẵn. Một số màn hình có quảng cáo. Xóa toàn bộ quảng cáo. Đổi số lần nhắc và khoảng cách. Chỉnh các bước dừng và báo lại. Tạo và sửa nhịp rung riêng. Chọn gói tháng hoặc mua một lần. Gói tháng tự động gia hạn; quản lý hoặc hủy trong cài đặt tài khoản cửa hàng. Xem giá và điều kiện trên màn hình mua."
+      ]
+    ],
+    "support": "Hướng dẫn và hỗ trợ (tiếng Anh)",
+    "downloadTitle": "Đừng ngủ quên",
+    "downloadBody": "Báo thức rung cho giấc ngủ ngắn và sau khi ru con ngủ",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "Chính sách quyền riêng tư (EN)",
+      "Điều khoản sử dụng (EN)",
+      "Hướng dẫn và hỗ trợ (tiếng Anh)"
+    ],
+    "top": "Về đầu trang",
+    "uiControls": [
+      "Ngôn ngữ",
+      "Màn hình ứng dụng",
+      "Màn hình trước",
+      "Màn hình tiếp theo",
+      "Tạm dừng trình chiếu",
+      "Tiếp tục trình chiếu",
+      "Hiển thị màn hình",
+      "trang chiếu",
+      "Điều hướng chính"
+    ],
+    "ringingCaption": "Đến giờ báo thức",
+    "nightCaption": "Màn hình Ban đêm",
+    "legalLang": "en"
+  },
+  "th": {
+    "name": "กันเผลอหลับ",
+    "title": "กันเผลอหลับ | เตือนซ้ำและภารกิจปลุกให้ตื่น",
+    "description": "งีบสั้น ๆ หรือลุกอีกครั้งหลังกล่อมลูกนอน จังหวะสั่นที่เปลี่ยนไป การเตือนซ้ำ และภารกิจช่วยให้ตื่น พักกับหน้าจอกลางคืน เสียงผ่อนคลาย และแสงที่ปรับได้",
+    "skip": "ข้ามไปยังเนื้อหา",
+    "nav": [
+      "ฟีเจอร์",
+      "วิธีใช้",
+      "ราคา",
+      "คำถามที่พบบ่อย"
+    ],
+    "download": "ดาวน์โหลด",
+    "category": "นาฬิกาปลุกแบบสั่นสำหรับงีบและลุกหลังกล่อมลูกนอน",
+    "headline": "<span>ปลุกด้วยการสั่นที่ไม่คุ้นเคย</span>",
+    "audience": "สำหรับคนที่งีบแล้วหลับยาว หรือเผลอหลับไปตอนกล่อมลูก",
+    "heroCta": "รู้จักแอป",
+    "freeNote": "ฟังก์ชันพื้นฐานใช้ฟรี",
+    "heroCaption": "ปลุก",
+    "overview": [
+      "การสั่นที่เปลี่ยนจังหวะ",
+      "เตือนหลายครั้ง",
+      "ขั้นตอนหยุดปลุก"
+    ],
+    "vLabel": "รูปแบบการสั่น",
+    "vTitle": "จังหวะสั่นที่เปลี่ยนไป",
+    "vBenefit": "ความยาวและจังหวะการสั่นที่เปลี่ยนไปให้ความรู้สึกต่างจากการแจ้งเตือนทั่วไป ความรู้สึกที่ไม่คุ้นเคยนี้ออกแบบมาเพื่อช่วยให้สังเกตการปลุกและตื่นขึ้น",
+    "vBody": "สั่นสั้น สั่นยาว และสั่นต่อเนื่อง เลือกได้ 4 โหมดพื้นฐาน: สุ่ม แบบแจ้งเตือน เน้นยาว หรือเน้นสั้น ระยะเวลาและช่วงพักที่เปลี่ยนไปทำให้จังหวะต่างกัน ลองสั่นก่อนตั้งปลุกได้",
+    "vFoot": "",
+    "rhythm": "รูปแบบการสั่น",
+    "rhythms": [
+      "สั่นสั้น",
+      "สั่นยาว",
+      "สั่นต่อเนื่อง"
+    ],
+    "repeatLabel": "เตือนหลายครั้ง",
+    "repeatTitle": "ตั้งครั้งเดียว เตือนหลายครั้ง",
+    "repeatBody": "หยุดเฉพาะครั้งปัจจุบันเพื่อเก็บครั้งถัดไป หรือจบชุดเพื่อยกเลิกเวลาที่เหลือได้",
+    "repeatFoot": "การบันทึกจำนวนครั้งและช่วงห่างเป็นฟีเจอร์พรีเมียม",
+    "repeatSteps": [
+      "เลือกเวลา",
+      "เปิดหน้าจอกลางคืนค้างไว้",
+      "จบชุดเมื่อลุกแล้ว"
+    ],
+    "repeatDiagram": "เตือนหลายครั้ง",
+    "repeatCount": "1",
+    "repeatCount2": "2",
+    "repeatCount3": "3",
+    "repeatDiagramNote": "",
+    "stopLabel": "ขั้นตอนหยุดปลุก",
+    "stopTitle": "ใช้ความคิดและมือ",
+    "stopBody": "คำนวณ แตะตัวเลขตามลำดับ กดค้าง และแตะรัว เป็นขั้นตอนสำหรับหยุดหรือเลื่อนปลุก มีขั้นตอนมาตรฐานให้ใช้ ส่วนการแก้ไขและผสมขั้นตอนต้องใช้ Premium",
+    "stopFoot": "",
+    "math": "ทำโจทย์คำนวณ",
+    "sequence": "แตะตามลำดับ",
+    "nightLabel": "หน้าจอกลางคืน",
+    "nightTitle": "พักกับหน้าจอกลางคืน",
+    "nightBody": "ปรับความสว่างและรูปแบบนาฬิกาได้ เลือกซ่อนภาพเมื่อไม่ได้ใช้งานสักพัก แล้วแตะเพื่อแสดงนาฬิกาและปุ่มควบคุมอีกครั้ง",
+    "how": [
+      [
+        "เลือกเวลา",
+        "เลือกระยะเวลา เช่น 30 นาที หรือเวลาที่อยากตื่น"
+      ],
+      [
+        "เปิดหน้าจอกลางคืนค้างไว้",
+        "เปิดหน้าจอกลางคืนค้างไว้ จะเปิดเสียงหรือแสงด้วยก็ได้"
+      ],
+      [
+        "จบชุดเมื่อลุกแล้ว",
+        "ทำขั้นตอนหยุดและจบชุดที่เหลือเมื่อลุกแล้ว"
+      ]
+    ],
+    "iosTitle": "การใช้บน iPhone",
+    "iosBody": "หากต้องการใช้รูปแบบสั่นเฉพาะของแอป ให้เปิดหน้าจอกลางคืนค้างไว้หลังตั้งปลุก เมื่อล็อกด้วยปุ่มด้านข้างหรือสลับไปแอปอื่น iOS จะควบคุมการสั่น ทำให้รูปแบบและความแรงที่เลือกไม่ถูกนำมาใช้ ตรวจสอบสิทธิ์และการตั้งค่าสั่น แล้วทดสอบก่อนใช้งาน",
+    "scheduleTitle": "ทุกวันหรือวันที่เลือก",
+    "scheduleBody": "ใช้การปลุกครั้งเดียวสำหรับงีบ หรือกำหนดการปลุกซ้ำตามเวลาและวันในสัปดาห์",
+    "relaxLabel": "เสียงผ่อนคลายและแสง",
+    "relaxTitle": "เสียงและแสงระหว่างพักผ่อน",
+    "relaxBody": "ขณะงีบหรือกล่อมลูกนอน เปิดจากหน้าจอกลางคืนได้เมื่อต้องการ",
+    "soundTitle": "เสียงผ่อนคลาย",
+    "soundBody": "ฟังเสียงฝน คลื่น หรือไวต์นอยส์ เสียงจะเริ่มเมื่อคุณเปิดเองเท่านั้น และค่อย ๆ เบาลงจนหยุดเมื่อถึงการปลุกครั้งแรก ",
+    "lightTitle": "ไฟ",
+    "lightBody": "เลือกแสงโทนอุ่น แดงอ่อน หรือขาวนวล แล้วปรับความสว่าง",
+    "lightColors": [
+      "โทนอุ่น",
+      "แดงอ่อน",
+      "ขาวอ่อน"
+    ],
+    "relaxFoot": "ฟังก์ชันพื้นฐานใช้ฟรี",
+    "relaxAlt": "หน้าจอกลางคืน — เสียงผ่อนคลายและแสง",
+    "priceLabel": "ฟรี / Premium",
+    "priceTitle": "ฟังก์ชันพื้นฐานใช้ฟรี",
+    "priceBody": "รวมการสั่น 4 โหมด การหยุดและเลื่อนปลุกแบบมาตรฐาน หน้าจอกลางคืน เสียง และแสง บางหน้ามีโฆษณา",
+    "priceHead": [
+      "ฟีเจอร์",
+      "ฟรี",
+      "Premium"
+    ],
+    "priceRows": [
+      [
+        "รูปแบบการสั่น",
+        "✓",
+        "✓"
+      ],
+      [
+        "เตือนหลายครั้ง",
+        "ค่ามาตรฐาน",
+        "ปรับแต่งได้"
+      ],
+      [
+        "ขั้นตอนหยุดปลุก",
+        "ค่ามาตรฐาน",
+        "ปรับแต่งได้"
+      ],
+      [
+        "หน้าจอกลางคืน / เสียงผ่อนคลาย / ไฟ",
+        "✓",
+        "✓"
+      ],
+      [
+        "สร้างและแก้ไขรูปแบบการสั่นของตัวเอง",
+        "—",
+        "✓"
+      ],
+      [
+        "ลบโฆษณาทั้งหมด",
+        "—",
+        "✓"
+      ]
+    ],
+    "priceFoot": "เลือกแผนรายเดือนหรือซื้อครั้งเดียวได้ แผนรายเดือนต่ออายุอัตโนมัติ จัดการหรือยกเลิกได้ในการตั้งค่าบัญชีร้านค้า ตรวจสอบราคาและเงื่อนไขในหน้าซื้อก่อนชำระเงิน",
+    "faqTitle": "ก่อนเริ่มใช้",
+    "faq": [
+      [
+        "ล็อกหน้าจอ iPhone ได้ไหม?",
+        "หากต้องการใช้รูปแบบสั่นเฉพาะของแอป ให้เปิดหน้าจอกลางคืนค้างไว้หลังตั้งปลุก เมื่อล็อกด้วยปุ่มด้านข้างหรือสลับไปแอปอื่น iOS จะควบคุมการสั่น ทำให้รูปแบบและความแรงที่เลือกไม่ถูกนำมาใช้ ตรวจสอบสิทธิ์และการตั้งค่าสั่น แล้วทดสอบก่อนใช้งาน"
+      ],
+      [
+        "มีเสียงและแสงแบบไหนบ้าง?",
+        "ฟังเสียงฝน คลื่น หรือไวต์นอยส์ เสียงจะเริ่มเมื่อคุณเปิดเองเท่านั้น และค่อย ๆ เบาลงจนหยุดเมื่อถึงการปลุกครั้งแรก เลือกแสงโทนอุ่น แดงอ่อน หรือขาวนวล แล้วปรับความสว่าง"
+      ],
+      [
+        "ฟีเจอร์ใดใช้ฟรีบ้าง?",
+        "รวมการสั่น 4 โหมด การหยุดและเลื่อนปลุกแบบมาตรฐาน หน้าจอกลางคืน เสียง และแสง บางหน้ามีโฆษณา ลบโฆษณาทั้งหมด ปรับจำนวนครั้งและช่วงห่างการเตือน แก้ไขขั้นตอนหยุดและเลื่อนปลุก สร้างและแก้ไขรูปแบบการสั่นของตัวเอง เลือกแผนรายเดือนหรือซื้อครั้งเดียวได้ แผนรายเดือนต่ออายุอัตโนมัติ จัดการหรือยกเลิกได้ในการตั้งค่าบัญชีร้านค้า ตรวจสอบราคาและเงื่อนไขในหน้าซื้อก่อนชำระเงิน"
+      ]
+    ],
+    "support": "คู่มือและความช่วยเหลือ (ภาษาอังกฤษ)",
+    "downloadTitle": "กันเผลอหลับ",
+    "downloadBody": "นาฬิกาปลุกแบบสั่นสำหรับงีบและลุกหลังกล่อมลูกนอน",
+    "requirements": "iPhone: iOS 26.1+ / Android: 8.0+",
+    "footer": [
+      "นโยบายความเป็นส่วนตัว (EN)",
+      "ข้อกำหนดการใช้งาน (EN)",
+      "คู่มือและความช่วยเหลือ (ภาษาอังกฤษ)"
+    ],
+    "top": "กลับด้านบน",
+    "uiControls": [
+      "ภาษา",
+      "หน้าจอแอป",
+      "หน้าจอก่อนหน้า",
+      "หน้าจอถัดไป",
+      "หยุดการเปลี่ยนอัตโนมัติ",
+      "เริ่มเปลี่ยนอัตโนมัติอีกครั้ง",
+      "แสดงหน้าจอ",
+      "สไลด์",
+      "เมนูหลัก"
+    ],
+    "ringingCaption": "ถึงเวลาปลุกแล้ว",
+    "nightCaption": "หน้าจอกลางคืน",
+    "legalLang": "en"
+  }
+}

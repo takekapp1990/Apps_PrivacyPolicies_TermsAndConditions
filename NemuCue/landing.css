@@ -215,3 +215,35 @@ html[lang=en] .brand{font-size:17px}
  html[lang=en] .hero h1{font-size:clamp(37px,9vw,56px)}html[lang=en] h2{font-size:28px}html[lang=en] .audience{font-size:15px}html[lang=en] .rhythm-row>span{width:92px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* All 20 app languages share the same layout and screenshot treatment. */
+.language-menu{max-height:min(60vh,420px);overflow-y:auto;overscroll-behavior:contain;inset-inline-end:0;right:auto}
+.language-menu a,.language-menu span{unicode-bidi:plaintext}
+.language-entry{padding-block:60px}.language-entry h1{font-size:36px}.language-entry ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;list-style:none;padding:25px 0}.language-entry a{display:block;padding:10px 15px;border:1px solid var(--line);border-radius:8px;background:#fffcf7;text-decoration:none}
+html:not([lang=ja]):not([lang=en]) .header{flex-wrap:wrap;padding-block:20px;gap:20px}
+html:not([lang=ja]):not([lang=en]) .header .brand{max-width:280px;font-size:17px}
+html:not([lang=ja]):not([lang=en]) .header nav{gap:18px}
+html:not([lang=ja]):not([lang=en]) .hero h1{font-size:clamp(38px,4.3vw,58px);overflow-wrap:anywhere}
+html:not([lang=ja]):not([lang=en]) .audience{font-size:17px}
+h2,h3,th,td{overflow-wrap:anywhere}
+html:lang(ar) h1,html:lang(ar) h2,html:lang(hi) h1,html:lang(hi) h2,html:lang(th) h1,html:lang(th) h2{letter-spacing:normal;line-height:1.65}
+html[dir=rtl] .header nav{margin-left:0;margin-inline-start:auto}
+html[dir=rtl] .overview a+a{border-left:0;border-inline-start:1px solid var(--line)}
+html[dir=rtl] .overview b{margin-left:0;margin-inline-start:auto}
+html[dir=rtl] .feature-copy>.feature-foot{border-left:0;border-inline-start:2px solid #cdb99e;padding-left:0;padding-inline-start:13px}
+html[dir=rtl] th,html[dir=rtl] td{text-align:start}
+html[dir=rtl] .footer>div{margin-left:0;margin-inline-start:auto}
+html[dir=rtl] .back-top{margin-left:0;margin-inline-start:auto}
+html[dir=rtl] .carousel-controls{direction:ltr}
+html[dir=rtl] .repeat-start span,html[dir=rtl] .repeat-end span{margin-right:0;margin-inline-end:9px}
+@media(max-width:1200px){html:not([lang=ja]):not([lang=en]) .header nav{display:none}html:not([lang=ja]):not([lang=en]) .language-picker{margin-inline-start:auto}}
+@media(max-width:760px){
+ html:not([lang=ja]):not([lang=en]) .header{flex-wrap:nowrap;padding-block:15px;gap:12px}
+ html:not([lang=ja]):not([lang=en]) .header .brand{max-width:calc(100% - 135px);font-size:15px}
+ html:not([lang=ja]):not([lang=en]) .hero h1{font-size:clamp(34px,9vw,49px)}
+ html:not([lang=ja]):not([lang=en]) .audience{font-size:15px}
+ html[dir=rtl] .language-picker{margin-left:0;margin-inline-start:auto}
+ html[dir=rtl] .overview a+a{border-inline-start:0}
+ html[dir=rtl] .footer>div{margin-inline-start:0}
+ .language-menu{max-width:calc(100vw - 40px)}
+}
