@@ -57,7 +57,7 @@ document.querySelectorAll('[data-hero-carousel]').forEach((carousel) => {
       timer = undefined;
       show(index + 1);
       start();
-    }, 5000);
+    }, 4000);
   };
   const select = (next) => {
     userPaused = true;
