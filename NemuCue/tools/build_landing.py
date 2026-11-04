@@ -1,10 +1,11 @@
 from pathlib import Path
 from html import escape as esc
-import json, re
+import json, re, hashlib
 
 ROOT = Path(__file__).resolve().parents[1]
 COPY = json.loads((ROOT / 'content/landing-copy.json').read_text())
 LOCALES = json.loads((ROOT / 'content/locales.json').read_text())
+CSS_VERSION = hashlib.sha256((ROOT / 'landing.css').read_bytes()).hexdigest()[:12]
 
 def caption_text(sentence, lang):
     text = esc(sentence)
@@ -44,8 +45,9 @@ for locale in LOCALES:
   <title>{esc(c['title'])}</title><meta name="description" content="{esc(c['description'])}">
   <link rel="canonical" href="https://takekapp.com/NemuCue/{lang}/index.html">
   {alternates}
-  <meta property="og:type" content="website"><meta property="og:title" content="{esc(c['title'])}"><meta property="og:description" content="{esc(c['description'])}"><meta property="og:url" content="https://takekapp.com/NemuCue/{lang}/index.html"><meta property="og:image" content="https://takekapp.com/NemuCue/images/app_icon.png">
-  <link rel="icon" href="../images/app_icon.png"><link rel="stylesheet" href="../landing.css"><script src="../language-router.js" defer></script><script src="../landing.js" defer></script>
+  <meta property="og:type" content="website"><meta property="og:title" content="{esc(c['title'])}"><meta property="og:description" content="{esc(c['description'])}"><meta property="og:url" content="https://takekapp.com/NemuCue/{lang}/index.html"><meta property="og:image" content="https://takekapp.com/NemuCue/images/ogp/{lang}.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="800"><meta property="og:image:alt" content="{esc(c['name'] + ' — ' + c['category'])}">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(c['title'])}"><meta name="twitter:description" content="{esc(c['description'])}"><meta name="twitter:image" content="https://takekapp.com/NemuCue/images/ogp/{lang}.jpg"><meta name="twitter:image:alt" content="{esc(c['name'] + ' — ' + c['category'])}">
+  <link rel="icon" href="../images/app_icon.png"><link rel="stylesheet" href="../landing.css?v={CSS_VERSION}"><script src="../language-router.js" defer></script><script src="../landing.js" defer></script>
 </head>
 <body id="top">
 <a class="skip" href="#main">{c['skip']}</a>

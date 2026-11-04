@@ -74,3 +74,11 @@ node --check NemuCue/landing.js
 ```
 
 Each KV screenshot has a localized sentence explaining its use or benefit. Captions use 16px desktop / 15px mobile text. All five captions participate in one CSS grid cell, reserving the height of the longest caption at the current width so the page stays still when slides change. Image alt text and selector names retain concise screen labels.
+
+## OGP images
+
+`images/ogp/<locale>.jpg` contains browser screenshots of each localized KV at 1200×800. The 3:2 image ratio and compact centered capture layout keep the headline, real app screen, app name and store badges together. These are deterministic screenshots of the first carousel slide, not generated illustrations. The shared `/NemuCue/` entry uses the Japanese image so social crawlers do not depend on JavaScript; language-specific pages use their own image. Open Graph dimensions, image alt text and Twitter large-image tags are set explicitly.
+
+The live desktop KV is limited to 1000px with a 24px column gap to bring the copy and phone closer to the center. Mobile retains its existing single-column layout. The stylesheet URL includes a content hash for cache refresh.
+
+To refresh images after editing the LP, run `python3 NemuCue/tools/build_landing.py`, then `python3 NemuCue/tools/prepare_ogp_capture.py`. Serve the repository locally, open `/NemuCue/_ogp/<locale>.html` with a browser viewport of exactly 1200×800, wait for the actual app screenshot to load, and save a viewport JPEG to `NemuCue/images/ogp/<locale>.jpg`. `_ogp/` is an ignored temporary preview directory and is not part of the published source.

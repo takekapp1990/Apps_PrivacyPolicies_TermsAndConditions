@@ -32,7 +32,7 @@ h3{font-size:17px}
 .language-menu a:hover{background:var(--paper);color:var(--orange)}
 .header-cta{display:flex;align-items:center;gap:20px;background:var(--ink);color:var(--paper);padding:10px 17px;border-radius:5px;font-size:12px;text-decoration:none}
 .header-cta:hover{background:#4c3b2a}
-.hero{display:grid;grid-template-columns:1.15fr 1fr;gap:44px;align-items:center;padding-top:58px;padding-bottom:62px}
+.hero{width:min(1000px,calc(100% - 96px));display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center;padding-top:58px;padding-bottom:62px}
 .category{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.035em}
 .category>span{width:7px;height:7px;background:var(--orange);border-radius:50%;flex-shrink:0}
 .hero h1{font-size:clamp(40px,5.2vw,66px);font-weight:800;line-height:1.35;letter-spacing:-.055em;margin:22px 0 25px}
@@ -190,7 +190,7 @@ td:last-child,thead th:last-child{background:#eee4d699}
 .footer a:hover{color:var(--orange)}
 .footer small{font-size:10px;color:var(--muted)}
 .back-top{display:grid;place-items:center;width:35px;height:35px;border:1px solid var(--line)}
-html[lang=en] .hero h1{font-size:clamp(39px,4.6vw,58px);letter-spacing:-.045em}
+html[lang=en] .hero h1{font-size:clamp(39px,4.3vw,54px);letter-spacing:-.045em}
 html[lang=en] .audience{font-size:17px}
 html[lang=en] .header{gap:21px}
 html[lang=en] .header nav{gap:17px}
