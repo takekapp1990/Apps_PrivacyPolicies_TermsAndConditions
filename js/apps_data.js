@@ -1,6 +1,114 @@
 
 const appsData = [
     {
+        "id": "NemuCue",
+        "icon": "/NemuCue/images/app_icon.png",
+        "android": "https://play.google.com/store/apps/details?id=com.takekapp1990.nemucue",
+        "ios": "https://apps.apple.com/app/id6827425453",
+        "locales": {
+            "ja": {
+                "title": "寝落ち防止",
+                "description": "変な振動で、起こします。仮眠や寝かしつけに使える振動アラーム。複数回のお知らせと、計算やタップの停止操作で起きるきっかけをつくります。",
+                "lp": "/NemuCue/"
+            },
+            "en": {
+                "title": "Nap & Stay Awake",
+                "description": "Wake up to unusual vibrations. An alarm app for naps and bedtime, with changing rhythms, multiple reminders, and math or tapping tasks.",
+                "lp": "/NemuCue/"
+            },
+            "zh_CN": {
+                "title": "防止睡着",
+                "description": "小睡、休息或哄孩子入睡时，用变化的振动、多次提醒和计算、点按操作，创造起身的契机。",
+                "lp": "/NemuCue/"
+            },
+            "zh_TW": {
+                "title": "防止睡著",
+                "description": "小睡、休息或哄孩子入睡時，用變化的震動、多次提醒與計算、點按操作，創造起身的契機。",
+                "lp": "/NemuCue/"
+            },
+            "ko": {
+                "title": "졸음 방지",
+                "description": "낮잠이나 아이를 재우는 시간에, 달라지는 진동과 반복 알림으로 잠에서 깰 계기를 만드세요.",
+                "lp": "/NemuCue/"
+            },
+            "es": {
+                "title": "Siesta y Alerta",
+                "description": "Vibraciones variables y avisos repetidos para siestas y la hora de dormir.",
+                "lp": "/NemuCue/"
+            },
+            "pt": {
+                "title": "Não pegue no sono",
+                "description": "Vibrações variadas e alertas repetidos para cochilos e a hora de dormir.",
+                "lp": "/NemuCue/"
+            },
+            "fr": {
+                "title": "Restez éveillé",
+                "description": "Vibrations variées et rappels répétés pour les siestes et le coucher.",
+                "lp": "/NemuCue/"
+            },
+            "de": {
+                "title": "Nickerchen & Wachbleiben",
+                "description": "Wechselnde Vibrationen, mehrere Hinweise und Aufgaben zum Wachwerden.",
+                "lp": "/NemuCue/"
+            },
+            "it": {
+                "title": "Resta sveglio",
+                "description": "Vibrazioni diverse e avvisi ripetuti per pisolini e l’ora della nanna.",
+                "lp": "/NemuCue/"
+            },
+            "nl": {
+                "title": "Blijf wakker",
+                "description": "Wisselende trillingen en herhaalde meldingen voor dutjes en bedtijd.",
+                "lp": "/NemuCue/"
+            },
+            "ru": {
+                "title": "Не усни",
+                "description": "Разные вибрации и повторные сигналы для короткого сна и укладывания детей.",
+                "lp": "/NemuCue/"
+            },
+            "uk": {
+                "title": "Не засинай",
+                "description": "Мінливі вібрації та повторні сигнали для дрімоти й укладання дітей спати.",
+                "lp": "/NemuCue/"
+            },
+            "pl": {
+                "title": "Nie zaśnij",
+                "description": "Zmienne wibracje i powtarzane alerty na drzemkę i usypianie dziecka.",
+                "lp": "/NemuCue/"
+            },
+            "tr": {
+                "title": "Uyanık Kal",
+                "description": "Şekerleme ve uykuya dalma anları için değişen titreşimler ve tekrar uyarılar.",
+                "lp": "/NemuCue/"
+            },
+            "ar": {
+                "title": "تنبيه الغفوة",
+                "description": "اهتزازات متغيرة وتنبيهات متكررة للقيلولة وللنهوض بعد تنويم طفلك.",
+                "lp": "/NemuCue/"
+            },
+            "hi": {
+                "title": "झपकी से बचें",
+                "description": "छोटी नींद और बच्चे को सुलाने के बाद उठने के लिए बदलते कंपन और कई सूचनाएँ।",
+                "lp": "/NemuCue/"
+            },
+            "id": {
+                "title": "Cegah Ketiduran",
+                "description": "Getaran bervariasi dan pengingat berulang untuk tidur sejenak dan waktu tidur.",
+                "lp": "/NemuCue/"
+            },
+            "vi": {
+                "title": "Đừng ngủ quên",
+                "description": "Nhịp rung thay đổi và nhắc nhiều lần cho giấc ngủ ngắn, lúc ru con ngủ.",
+                "lp": "/NemuCue/"
+            },
+            "th": {
+                "title": "กันเผลอหลับ",
+                "description": "จังหวะสั่นที่เปลี่ยนไปและการเตือนซ้ำ สำหรับงีบพักและช่วงกล่อมลูกนอน",
+                "lp": "/NemuCue/"
+            }
+        }
+    },
+    {
         id: 'Tificat',
         icon: 'https://takekapp.com/Tificat/images/app_icon.png',
         android: '#',
