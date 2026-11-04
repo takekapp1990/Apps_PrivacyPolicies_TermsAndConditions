@@ -136,4 +136,19 @@ for locale in LOCALES:
         page = page.replace('<br>', '<br> ')
     page = re.sub(r'<p class="(?:feature-foot|small-note)"></p>', '', page)
     (ROOT/lang/'index.html').write_text(page)
-print(f'Built {len(LOCALES)} localized landing pages.')
+
+# Keep the entry page's early inline redirect identical to the shared locale logic.
+entry_path = ROOT / 'index.html'
+entry = entry_path.read_text()
+start_marker = '<script id="locale-entry">\n'
+end_marker = '\n</script>'
+before, found_start, remainder = entry.partition(start_marker)
+_, found_end, after = remainder.partition(end_marker)
+if not found_start or not found_end:
+    raise ValueError('Missing inline locale router in the entry page')
+router = (ROOT / 'language-router.js').read_text().strip()
+if '</script' in router.lower():
+    raise ValueError('Locale router cannot be embedded safely in HTML')
+entry_path.write_text(before + start_marker + router + end_marker + after)
+
+print(f'Built {len(LOCALES)} localized landing pages and synced the entry router.')

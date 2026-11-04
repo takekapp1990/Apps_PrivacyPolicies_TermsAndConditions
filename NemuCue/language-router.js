@@ -32,7 +32,10 @@
     let saved;
     try { saved = localStorage.getItem(storageKey); } catch (_) { /* Use browser preferences. */ }
     const locale = choose(navigator.languages?.length ? navigator.languages : [navigator.language], saved);
-    window.location.replace(`./${locale}/index.html${window.location.search}${window.location.hash}`);
+    const suffix = `${window.location.search}${window.location.hash}`;
+    window.setTimeout(() => window.location.replace(`./en/index.html${suffix}`), 3000);
+    try { window.location.replace(`./${locale}/index.html${suffix}`); }
+    catch (_) { /* The timed English fallback and language links remain available. */ }
   }
   document.addEventListener('click', (event) => {
     const link = event.target.closest?.('a[data-language]');

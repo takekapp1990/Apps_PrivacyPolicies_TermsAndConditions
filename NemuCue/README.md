@@ -1,7 +1,7 @@
 # NemuCue landing pages
 
 20 localized LPs: `<language>/index.html`.
-Shared LP styles: `landing.css`. Edit `content/landing-copy.json`, then run `python3 NemuCue/tools/build_landing.py` from the website repository root. The generated static HTML has no runtime build dependency.
+Shared LP styles: `landing.css`. Edit `content/landing-copy.json`, then run `python3 NemuCue/tools/build_landing.py` from the website repository root. The generated static HTML has no runtime build dependency. The build also copies `language-router.js` into the shared entry page's inline script.
 The existing `styles.css` belongs to privacy, terms and support pages.
 
 ## Copy sources (2026-11-04)
@@ -62,7 +62,7 @@ The app and uploaded store listing support 20 locales: ja, en, zh-Hans, zh-Hant,
 
 The 18 added translations reuse the corresponding uploaded store headline, feature descriptions, purchase terms and app introduction, plus localized navigation and the vibration-benefit explanation. Release-specific fixed alarm timing is omitted. Each locale uses its own existing iPhone screenshot set. Arabic uses `dir="rtl"` with matching layout rules. Added-language FAQs cover iPhone use, sounds/light and free functions. Japanese and English retain their existing five questions. Legal/support content remains at the existing Japanese and English URLs; added LPs explicitly label their English destinations. Official English store badges are reused outside Japanese.
 
-`/NemuCue/` is the shared entry URL. `language-router.js` selects a saved manual choice first, then the first supported language from `navigator.languages`, and finally English. Chinese script tags take precedence over region: Hant or TW/HK/MO uses Traditional Chinese, otherwise Hans. Portuguese variants use pt-BR. Query parameters and the hash are retained. Storage errors are tolerated. Language-specific URLs never auto-redirect, so shared links and explicit selections stay in that language. The dropdown remembers explicit choices when browser storage is available. Without JavaScript the shared entry provides links to all 20 LPs.
+`/NemuCue/` is the shared entry URL. Its router runs inline in the document head, before any stylesheet or external script, and immediately redirects to a locale page. No LP stylesheet is fetched for the entry page. It selects a saved manual choice first, then the first supported language from `navigator.languages`, and finally English. Chinese script tags take precedence over region: Hant or TW/HK/MO uses Traditional Chinese, otherwise Hans. Portuguese variants use pt-BR. Query parameters and the hash are retained. Storage errors are tolerated. If the page remains open after three seconds, JavaScript retries with the English page. A `noscript` refresh also moves to English after three seconds when JavaScript is disabled. Language-specific URLs never auto-redirect, so shared links and explicit selections stay in that language. The dropdown remains on each LP and remembers explicit choices when browser storage is available. If redirecting is unavailable, the shared entry provides links to all 20 LPs.
 
 Validation:
 
