@@ -6,6 +6,10 @@ ROOT = Path(__file__).resolve().parents[1]
 COPY = json.loads((ROOT / 'content/landing-copy.json').read_text())
 LOCALES = json.loads((ROOT / 'content/locales.json').read_text())
 
+def caption_text(sentence, lang):
+    text = esc(sentence)
+    return text.replace("。", "。<br>", 1) if lang == "ja" else text
+
 def phone(lang, name, alt, eager=False):
     return f'<div class="phone"><img src="../images/lp/{lang}/{name}.jpg" alt="{esc(alt)}" width="640" height="1388" loading="{"eager" if eager else "lazy"}" {"fetchpriority=high" if eager else ""}></div>'
 
@@ -29,8 +33,9 @@ for locale in LOCALES:
     faq = ''.join(f'<details><summary>{q}<span aria-hidden="true">+</span></summary><p>{a}</p></details>' for q,a in c['faq'])
     foot = ''.join(f'<a href="../{c["legalLang"]}/{target}.html" hreflang="{c["legalLang"]}">{label}</a>' for target,label in zip(['privacy','terms','support'],c['footer']))
     carousel_items = [('alarm', c['heroCaption']), ('ringing', c['ringingCaption']), ('vibration', c['vLabel']), ('math', c['math']), ('night', c['nightCaption'])]
-    carousel_slides = ''.join(f'<div class="hero-slide{" is-active" if i == 0 else ""}" data-carousel-slide data-caption="{esc(label)}" role="group" aria-roledescription="{ctl[7]}" aria-label="{i+1} / {len(carousel_items)}" aria-hidden="{str(i != 0).lower()}"><img src="../images/lp/{lang}/{name}.jpg" alt="{esc(label)}" width="640" height="1388" decoding="async" {"fetchpriority=high" if i == 0 else ""}></div>' for i,(name,label) in enumerate(carousel_items))
+    carousel_slides = ''.join(f'<div class="hero-slide{" is-active" if i == 0 else ""}" data-carousel-slide role="group" aria-roledescription="{ctl[7]}" aria-label="{i+1} / {len(carousel_items)}" aria-hidden="{str(i != 0).lower()}"><img src="../images/lp/{lang}/{name}.jpg" alt="{esc(label)}" width="640" height="1388" decoding="async" {"fetchpriority=high" if i == 0 else ""}></div>' for i,(name,label) in enumerate(carousel_items))
     carousel_dots = ''.join(f'<button type="button" class="carousel-dot" data-carousel-dot aria-label="{esc(ctl[6])}: {esc(label)}" aria-pressed="{str(i == 0).lower()}"><span aria-hidden="true"></span></button>' for i,(_,label) in enumerate(carousel_items))
+    carousel_captions = ''.join(f'<span class="carousel-caption-item{" is-active" if i == 0 else ""}" data-carousel-description aria-hidden="{str(i != 0).lower()}">{caption_text(sentence,lang)}</span>' for i,sentence in enumerate(c['carouselCaptions']))
     page = f'''<!doctype html>
 <html lang="{lang}" dir="{locale['direction']}">
 <head>
@@ -63,9 +68,9 @@ for locale in LOCALES:
       <div class="actions"><a class="text-link" href="#features">{c['heroCta']} <span aria-hidden="true">↓</span></a></div>
     </div>
     <figure class="hero-visual" data-hero-carousel role="region" aria-roledescription="{ctl[7]}" aria-label="{ctl[1]}">
-      <div class="hero-backdrop" aria-hidden="true"></div>
-      <div class="phone carousel-phone"><div class="carousel-slides" data-carousel-viewport>{carousel_slides}</div></div>
-      <figcaption><span data-carousel-caption aria-live="off" aria-atomic="true">{c['heroCaption']}</span></figcaption>
+      <div class="hero-stage"><div class="hero-backdrop" aria-hidden="true"></div>
+      <div class="phone carousel-phone"><div class="carousel-slides" data-carousel-viewport>{carousel_slides}</div></div></div>
+      <figcaption data-carousel-caption aria-live="off" aria-atomic="true">{carousel_captions}</figcaption>
       <div class="carousel-controls" hidden>
         <button type="button" class="carousel-arrow" data-carousel-prev aria-label="{ctl[2]}">←</button>
         <div class="carousel-dots" role="group" aria-label="{ctl[6]}">{carousel_dots}</div>

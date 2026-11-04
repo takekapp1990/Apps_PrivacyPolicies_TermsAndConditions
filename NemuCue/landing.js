@@ -19,6 +19,7 @@ document.querySelectorAll('[data-hero-carousel]').forEach((carousel) => {
   if (slides.length < 2 || slides.length !== dots.length) return;
   const viewport = carousel.querySelector('[data-carousel-viewport]');
   const caption = carousel.querySelector('[data-carousel-caption]');
+  const descriptions = [...carousel.querySelectorAll('[data-carousel-description]')];
   const rotation = carousel.querySelector('[data-carousel-rotation]');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let index = 0;
@@ -48,7 +49,11 @@ document.querySelectorAll('[data-hero-carousel]').forEach((carousel) => {
       slide.setAttribute('aria-hidden', String(!active));
       dots[i].setAttribute('aria-pressed', String(active));
     });
-    caption.textContent = slides[index].dataset.caption;
+    descriptions.forEach((description, i) => {
+      const active = i === index;
+      description.classList.toggle('is-active', active);
+      description.setAttribute('aria-hidden', String(!active));
+    });
   };
   const start = () => {
     stop();

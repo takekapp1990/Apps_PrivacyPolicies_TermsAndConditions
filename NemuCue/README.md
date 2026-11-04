@@ -72,3 +72,5 @@ node NemuCue/tools/check_language_router.cjs
 node --check NemuCue/language-router.js
 node --check NemuCue/landing.js
 ```
+
+Each KV screenshot has a localized sentence explaining its use or benefit. Captions use 16px desktop / 15px mobile text. All five captions participate in one CSS grid cell, reserving the height of the longest caption at the current width so the page stays still when slides change. Image alt text and selector names retain concise screen labels.

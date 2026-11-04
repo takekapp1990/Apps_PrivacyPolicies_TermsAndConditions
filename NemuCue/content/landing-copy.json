@@ -180,7 +180,14 @@
     ],
     "ringingCaption": "振動でお知らせ",
     "nightCaption": "暗いナイト画面で待機",
-    "legalLang": "ja"
+    "legalLang": "ja",
+    "carouselCaptions": [
+      "「30分後」でも、起きたい時刻でも。休みたい時間に合わせてセットできます。",
+      "一度のセットで、複数回お知らせ。起きたら残りをまとめて終了できます。",
+      "短い、長い、連打する振動。「いつもと違う」感覚を、起きるきっかけに。",
+      "アラームを止めるには、ちょっと計算。頭と手を動かして、目を覚ますきっかけに。",
+      "待つ間は、画面を暗く。音やライトも、仮眠や寝かしつけに使えます。"
+    ]
   },
   "en": {
     "name": "Nap & Stay Awake",
@@ -363,7 +370,14 @@
     ],
     "ringingCaption": "Vibration alarm in progress",
     "nightCaption": "Wait with Night Screen",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "Set an alarm for 30 minutes from now or a specific time. Choose how long you want to rest.",
+      "Set once and get several reminders. Finish the remaining set when you are up.",
+      "Short pulses, long pulses and bursts feel different from everyday notifications—a cue to wake up.",
+      "Solve a quick calculation to stop the alarm. Using your mind and hands gives you a cue to wake up.",
+      "Dim the screen while you rest. Add sounds or light for a nap or while settling your child."
+    ]
   },
   "zh-Hans": {
     "name": "防止睡着",
@@ -533,7 +547,14 @@
     ],
     "ringingCaption": "闹钟时间到了",
     "nightCaption": "夜间界面",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "设定30分钟后，或指定起床时间。按想休息的时长，轻松设置闹钟。",
+      "一次设置，多次提醒。起身后，可以一并结束剩余的提醒。",
+      "短振、长振、连续振动。让不同于平常通知的感觉，成为醒来的契机。",
+      "先做一道计算，再停止闹钟。动动脑、动动手，为醒来创造一个契机。",
+      "等待时让屏幕暗下来。也可开启声音或灯光，陪伴小睡或哄孩子入睡。"
+    ]
   },
   "zh-Hant": {
     "name": "防止睡著",
@@ -703,7 +724,14 @@
     ],
     "ringingCaption": "鬧鐘時間到了",
     "nightCaption": "夜間畫面",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "設定30分鐘後，或指定起床時間。依想休息的時長，輕鬆設定鬧鐘。",
+      "一次設定，多次提醒。起身後，可以一併結束剩餘的提醒。",
+      "短震、長震、連續震動。讓不同於平常通知的感覺，成為醒來的契機。",
+      "先做一道計算，再停止鬧鐘。動動腦、動動手，為醒來創造一個契機。",
+      "等待時讓螢幕暗下來。也可開啟聲音或燈光，陪伴小睡或哄孩子入睡。"
+    ]
   },
   "ko": {
     "name": "졸음 방지",
@@ -873,7 +901,14 @@
     ],
     "ringingCaption": "알람 시간입니다",
     "nightCaption": "야간 화면",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "30분 뒤도, 원하는 시각도 설정할 수 있어요. 쉬고 싶은 시간에 맞춰 알람을 맞춰 보세요.",
+      "한 번 설정하면 여러 번 알려 줘요. 일어나면 남은 알림을 한 번에 끝낼 수 있어요.",
+      "짧게, 길게, 연속으로 울리는 진동. 평소와 다른 느낌이 잠에서 깨는 계기가 되도록 했어요.",
+      "간단한 계산을 풀고 알람을 멈춰요. 머리와 손을 움직이며 잠에서 깰 계기를 만들어 보세요.",
+      "기다리는 동안 화면은 어둡게. 소리나 빛을 켜고 낮잠이나 아이 재우기에 사용할 수도 있어요."
+    ]
   },
   "es": {
     "name": "Siesta y Alerta",
@@ -1043,7 +1078,14 @@
     ],
     "ringingCaption": "Es la hora de tu alarma",
     "nightCaption": "Pantalla nocturna",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "Elige dentro de 30 minutos o una hora concreta. Ajusta la alarma al descanso que necesitas.",
+      "Configura una vez y recibe varios avisos. Cancela los que quedan cuando te hayas levantado.",
+      "Pulsos cortos, largos y ráfagas cambian la sensación habitual de una notificación: una señal para despertar.",
+      "Resuelve un pequeño cálculo para parar la alarma. Usar la cabeza y las manos puede ayudarte a despertar.",
+      "Atenúa la pantalla mientras descansas. Añade sonido o luz para la siesta o para acostar a tu hijo."
+    ]
   },
   "pt-BR": {
     "name": "Não pegue no sono",
@@ -1213,7 +1255,14 @@
     ],
     "ringingCaption": "Está na hora do seu alarme",
     "nightCaption": "Tela noturna",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "Escolha daqui a 30 minutos ou um horário específico. Ajuste o alarme ao tempo que quer descansar.",
+      "Configure uma vez e receba vários alertas. Encerre os que restam quando se levantar.",
+      "Pulsos curtos, longos e sequências rápidas fogem das notificações habituais: um sinal para acordar.",
+      "Resolva um pequeno cálculo para parar o alarme. Usar a cabeça e as mãos pode ajudar você a despertar.",
+      "Deixe a tela escura enquanto descansa. Use sons ou luz para cochilar ou colocar seu filho para dormir."
+    ]
   },
   "fr": {
     "name": "Restez éveillé",
@@ -1383,7 +1432,14 @@
     ],
     "ringingCaption": "C’est l’heure de votre alarme",
     "nightCaption": "Écran Nuit",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "Dans 30 minutes ou à une heure précise : réglez l’alarme selon le temps que vous souhaitez vous reposer.",
+      "Un seul réglage pour plusieurs rappels. Terminez les rappels restants une fois levé.",
+      "Impulsions courtes, longues ou répétées : une sensation différente des notifications habituelles, pour vous aider à émerger.",
+      "Résolvez un petit calcul pour arrêter l’alarme. Faire travailler la tête et les mains peut vous aider à émerger.",
+      "Tamisez l’écran pendant le repos. Ajoutez des sons ou de la lumière pour la sieste ou le coucher de votre enfant."
+    ]
   },
   "de": {
     "name": "Nickerchen & Wachbleiben",
@@ -1553,7 +1609,14 @@
     ],
     "ringingCaption": "Es ist Zeit für deinen Wecker",
     "nightCaption": "Nachtbildschirm",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "In 30 Minuten oder zu einer festen Uhrzeit: Stelle den Alarm passend zu deiner Ruhepause ein.",
+      "Einmal einstellen, mehrmals erinnert werden. Beende die übrigen Hinweise, sobald du aufgestanden bist.",
+      "Kurze, lange und schnelle Impulse fühlen sich anders an als übliche Meldungen – als Anstoß zum Aufwachen.",
+      "Löse eine kleine Rechenaufgabe, um den Alarm zu stoppen. Kopf und Hände einzusetzen kann dir beim Wachwerden helfen.",
+      "Dimme den Bildschirm beim Ausruhen. Klänge oder Licht begleiten dein Nickerchen oder die Einschlafbegleitung."
+    ]
   },
   "it": {
     "name": "Resta sveglio",
@@ -1723,7 +1786,14 @@
     ],
     "ringingCaption": "È l’ora della tua sveglia",
     "nightCaption": "Schermata notturna",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "Tra 30 minuti o a un’ora precisa: imposta la sveglia in base al tempo che vuoi riposare.",
+      "Una sola impostazione per più avvisi. Termina quelli rimasti quando ti sei alzato.",
+      "Impulsi brevi, lunghi e rapidi danno una sensazione diversa dalle solite notifiche: uno stimolo per svegliarti.",
+      "Risolvi un piccolo calcolo per fermare la sveglia. Usare la testa e le mani può aiutarti a svegliarti.",
+      "Abbassa la luminosità mentre riposi. Aggiungi suoni o luce per un riposino o per addormentare il tuo bambino."
+    ]
   },
   "nl": {
     "name": "Blijf wakker",
@@ -1893,7 +1963,14 @@
     ],
     "ringingCaption": "Het is tijd voor je wekker",
     "nightCaption": "Nachtscherm",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "Over 30 minuten of op een vaste tijd: stel het alarm in op de rust die je wilt nemen.",
+      "Stel één keer in en krijg meerdere meldingen. Beëindig de rest wanneer je bent opgestaan.",
+      "Korte, lange en snelle pulsen voelen anders dan je dagelijkse meldingen: een seintje om wakker te worden.",
+      "Los een kleine som op om het alarm te stoppen. Je hoofd en handen gebruiken kan je helpen wakker te worden.",
+      "Dim het scherm terwijl je rust. Zet geluid of licht aan voor een dutje of bij het naar bed brengen van je kind."
+    ]
   },
   "ru": {
     "name": "Не усни",
@@ -2063,7 +2140,14 @@
     ],
     "ringingCaption": "Время будильника",
     "nightCaption": "Ночной экран",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "Через 30 минут или в определённое время — настройте будильник под свой отдых.",
+      "Одна настройка — несколько сигналов. Когда встанете, завершите оставшиеся одной командой.",
+      "Короткие, длинные и быстрые импульсы отличаются от обычных уведомлений — как повод проснуться.",
+      "Решите небольшой пример, чтобы остановить будильник. Работа головой и руками может помочь проснуться.",
+      "Приглушите экран на время отдыха. Включите звук или свет для короткого сна или укладывания ребёнка."
+    ]
   },
   "uk": {
     "name": "Не засинай",
@@ -2233,7 +2317,14 @@
     ],
     "ringingCaption": "Час будильника",
     "nightCaption": "Нічний екран",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "Через 30 хвилин або в певний час — налаштуйте будильник під свій відпочинок.",
+      "Одне налаштування — кілька сигналів. Коли встанете, завершіть решту однією дією.",
+      "Короткі, довгі та швидкі імпульси відрізняються від звичних сповіщень — як привід прокинутися.",
+      "Розв’яжіть невеликий приклад, щоб зупинити будильник. Робота головою й руками може допомогти прокинутися.",
+      "Приглушіть екран на час відпочинку. Увімкніть звук чи світло для короткого сну або вкладання дитини."
+    ]
   },
   "pl": {
     "name": "Nie zaśnij",
@@ -2403,7 +2494,14 @@
     ],
     "ringingCaption": "Czas na pobudkę",
     "nightCaption": "Ekran nocny",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "Za 30 minut lub o wybranej godzinie — ustaw budzik zgodnie z tym, jak długo chcesz odpocząć.",
+      "Ustaw raz i otrzymaj kilka alertów. Gdy wstaniesz, zakończ pozostałe jednym działaniem.",
+      "Krótkie, długie i szybkie impulsy różnią się od zwykłych powiadomień — to sygnał, by się obudzić.",
+      "Rozwiąż proste działanie, aby zatrzymać budzik. Użycie głowy i rąk może pomóc się obudzić.",
+      "Przyciemnij ekran na czas odpoczynku. Dodaj dźwięk lub światło na drzemkę albo podczas usypiania dziecka."
+    ]
   },
   "tr": {
     "name": "Uyanık Kal",
@@ -2573,7 +2671,14 @@
     ],
     "ringingCaption": "Alarm zamanı geldi",
     "nightCaption": "Gece ekranı",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "30 dakika sonrası ya da belirli bir saat: alarmı dinlenmek istediğin süreye göre ayarla.",
+      "Bir kez kur, birkaç kez hatırlatsın. Kalkınca kalan uyarıları birlikte bitir.",
+      "Kısa, uzun ve hızlı titreşimler günlük bildirimlerden farklı hissettirir; uyanmak için bir işaret olur.",
+      "Alarmı durdurmak için küçük bir hesap yap. Zihnini ve ellerini kullanmak uyanmana yardımcı olabilir.",
+      "Dinlenirken ekranı karart. Şekerleme veya çocuğunu uyutma sırasında istersen ses ya da ışık da aç."
+    ]
   },
   "ar": {
     "name": "تنبيه الغفوة",
@@ -2743,7 +2848,14 @@
     ],
     "ringingCaption": "حان وقت المنبّه",
     "nightCaption": "الشاشة الليلية",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "بعد 30 دقيقة أو في وقت محدد: اضبط المنبه حسب المدة التي تريد أن ترتاح فيها.",
+      "إعداد واحد لعدة تنبيهات. وعندما تنهض، أنهِ التنبيهات المتبقية معًا.",
+      "نبضات قصيرة وطويلة ومتتابعة تختلف عن إشعاراتك المعتادة، لتكون إشارة تساعدك على الاستيقاظ.",
+      "حل مسألة حسابية بسيطة لإيقاف المنبه. استخدام الذهن واليدين قد يساعدك على الاستيقاظ.",
+      "خفّف إضاءة الشاشة أثناء الراحة. أضف صوتًا أو ضوءًا للقيلولة أو أثناء تنويم طفلك."
+    ]
   },
   "hi": {
     "name": "झपकी से बचें",
@@ -2913,7 +3025,14 @@
     ],
     "ringingCaption": "अलार्म का समय हो गया",
     "nightCaption": "नाइट स्क्रीन",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "30 मिनट बाद या किसी तय समय पर—जितनी देर आराम करना चाहते हैं, उसके अनुसार अलार्म लगाएँ।",
+      "एक बार सेट करें और कई सूचनाएँ पाएँ। उठने पर बाकी सूचनाएँ एक साथ समाप्त कर सकते हैं।",
+      "छोटे, लंबे और लगातार कंपन रोज़ की सूचनाओं से अलग महसूस होते हैं—जागने के लिए एक संकेत।",
+      "अलार्म रोकने के लिए छोटा-सा हिसाब हल करें। दिमाग और हाथों का इस्तेमाल जागने में मदद कर सकता है।",
+      "आराम के दौरान स्क्रीन की रोशनी कम रखें। झपकी या बच्चे को सुलाते समय ध्वनि या प्रकाश भी चालू कर सकते हैं।"
+    ]
   },
   "id": {
     "name": "Cegah Ketiduran",
@@ -3083,7 +3202,14 @@
     ],
     "ringingCaption": "Waktunya alarm Anda",
     "nightCaption": "Layar Malam",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "30 menit lagi atau pada jam tertentu: atur alarm sesuai waktu istirahat yang Anda inginkan.",
+      "Atur sekali untuk beberapa pengingat. Akhiri semua yang tersisa setelah Anda bangun.",
+      "Getaran pendek, panjang, dan beruntun terasa berbeda dari notifikasi biasa—sebagai isyarat untuk bangun.",
+      "Selesaikan hitungan sederhana untuk menghentikan alarm. Menggunakan pikiran dan tangan dapat membantu Anda terjaga.",
+      "Redupkan layar saat beristirahat. Tambahkan suara atau cahaya untuk tidur singkat atau menidurkan anak."
+    ]
   },
   "vi": {
     "name": "Đừng ngủ quên",
@@ -3253,7 +3379,14 @@
     ],
     "ringingCaption": "Đến giờ báo thức",
     "nightCaption": "Màn hình Ban đêm",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "Sau 30 phút hoặc vào một giờ cụ thể: đặt báo thức theo khoảng thời gian bạn muốn nghỉ.",
+      "Cài một lần để được nhắc nhiều lần. Khi đã dậy, bạn có thể kết thúc tất cả lần nhắc còn lại.",
+      "Rung ngắn, dài và liên tiếp tạo cảm giác khác thông báo hằng ngày—một dấu hiệu giúp bạn tỉnh dậy.",
+      "Giải một phép tính nhỏ để dừng báo thức. Vận động trí óc và đôi tay có thể giúp bạn tỉnh dậy.",
+      "Giảm sáng màn hình khi nghỉ ngơi. Có thể thêm âm thanh hoặc ánh sáng khi ngủ ngắn hay ru con ngủ."
+    ]
   },
   "th": {
     "name": "กันเผลอหลับ",
@@ -3423,6 +3556,13 @@
     ],
     "ringingCaption": "ถึงเวลาปลุกแล้ว",
     "nightCaption": "หน้าจอกลางคืน",
-    "legalLang": "en"
+    "legalLang": "en",
+    "carouselCaptions": [
+      "อีก 30 นาทีหรือเวลาที่กำหนด ตั้งปลุกให้ตรงกับช่วงเวลาที่อยากพักได้",
+      "ตั้งครั้งเดียวเพื่อรับการเตือนหลายครั้ง เมื่อลุกแล้วก็จบการเตือนที่เหลือพร้อมกันได้",
+      "การสั่นสั้น ยาว และต่อเนื่องให้ความรู้สึกต่างจากการแจ้งเตือนทั่วไป เป็นสัญญาณช่วยให้ตื่น",
+      "แก้โจทย์คำนวณสั้น ๆ เพื่อหยุดปลุก การใช้ความคิดและมืออาจช่วยให้ตื่นตัวขึ้น",
+      "หรี่หน้าจอระหว่างพัก จะเปิดเสียงหรือแสงเพิ่มตอนงีบหรือกล่อมลูกนอนก็ได้"
+    ]
   }
 }
