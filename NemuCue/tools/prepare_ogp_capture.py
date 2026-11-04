@@ -17,9 +17,17 @@ html{scroll-behavior:auto!important}body{width:1200px;height:800px;overflow:hidd
 html[lang=ja] .hero h1{font-size:78px!important}
 html:lang(ar) .hero h1,html:lang(hi) .hero h1,html:lang(th) .hero h1{letter-spacing:normal!important;line-height:1.5!important}
 '''
+COPY_INSET = {
+ 'ja': 40, 'en': 24, 'zh-Hans': 44, 'zh-Hant': 44, 'ko': 44,
+ 'es': 28, 'pt-BR': 24, 'fr': 24, 'de': 20, 'it': 28, 'nl': 24,
+ 'ru': 20, 'uk': 20, 'pl': 28, 'tr': 28, 'ar': 28, 'hi': 32,
+ 'id': 28, 'vi': 28, 'th': 32
+}
 for locale in json.loads((root/'content/locales.json').read_text()):
  lang=locale['tag'];s=(root/lang/'index.html').read_text()
  s=re.sub(r'<script src="[^"]+" defer></script>','',s)
- s=s.replace('</head>',f'<style>{css}</style></head>')
+ offset = -COPY_INSET[lang] if locale['direction'] == 'rtl' else COPY_INSET[lang]
+ adjustment = f'.hero .hero-copy{{transform:translateX({offset}px)}}'
+ s=s.replace('</head>',f'<style>{css}{adjustment}</style></head>')
  (folder/(lang+'.html')).write_text(s)
 print('Prepared capture pages from the actual 20 LP KV sections.')
