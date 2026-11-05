@@ -181,3 +181,6 @@ triplelift.com, 14705-EB, RESELLER
 
 # Liftoff Monetize (2026-11-05)
 vungle.com, 6aebf213a315ae46c89a3e5a, DIRECT, c107d686becd2d77
+
+# InMobi Exchange (2026-11-05)
+inmobi.com, 1028d069ca3c4a30968059a0cfab80cb, DIRECT, 83e75a7ae333ca9d
