@@ -178,3 +178,6 @@ themediagrid.com, B8N9YH, RESELLER, 35d5010d7789b49d
 themediagrid.com, FALINO, RESELLER, 9fac4a4a87c2a44f
 themediagrid.com, JVHG38, RESELLER, 9fac4a4a87c2a44f
 triplelift.com, 14705-EB, RESELLER
+
+# Liftoff Monetize (2026-11-05)
+vungle.com, 6aebf213a315ae46c89a3e5a, DIRECT, c107d686becd2d77
