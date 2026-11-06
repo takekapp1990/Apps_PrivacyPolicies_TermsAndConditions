@@ -41,7 +41,7 @@ for locale in LOCALES:
 <html lang="{lang}" dir="{locale['direction']}">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, follow"><meta name="theme-color" content="#f7f2e9">
+  <meta name="theme-color" content="#f7f2e9">
   <title>{esc(c['title'])}</title><meta name="description" content="{esc(c['description'])}">
   <link rel="canonical" href="https://takekapp.com/NemuCue/{lang}/index.html">
   {alternates}

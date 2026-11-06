@@ -26,20 +26,15 @@ Originals in the Flutter repository:
 Mapping: `01` alarm, `02` vibration, `03` ringing, `04` math, `05` sequence, `06` light, `07` night.
 The screenshot input files may be updated independently; compare against the shipping app before replacing these assets.
 
-## Release readiness
+## Publication (2026-11-07)
 
-The LP includes localized official App Store and Google Play badges in the hero and download sections. At the owner's request, store links are enabled ahead of public availability; store pages may return an error until release. The LP retains `noindex, follow` for now.
+The app has been released. The LP App Store and Google Play links both returned HTTP 200 and resolved to NemuCue listings on 2026-11-07. The localized LPs are indexable and included in the site sitemap. The shared `/NemuCue/` language router retains `noindex, follow` so search results use the language-specific canonical URLs. The homepage already links to NemuCue and both stores.
 
 - App Store: `https://apps.apple.com/jp/app/id6827425453` (English page uses `/us/`).
 - Google Play: `https://play.google.com/store/apps/details?id=com.takekapp1990.nemucue` with the page language in `hl`.
-- Badge assets are shared with the other app LPs in `commonImages/badgeiOSAppStore/` and `commonImages/badgeAndroid/`.
+- Badge assets are shared with other app LPs in `commonImages/badgeiOSAppStore/` and `commonImages/badgeAndroid/`.
 
-When public availability is confirmed for each store:
-
-1. Verify that the configured store links resolve to this app.
-2. Confirm availability independently for each platform before adding any release announcement.
-3. Remove `noindex` from the LPs and add the canonical URLs to the website sitemap. Legal/support indexing policy is separate.
-4. Verify the screenshots and repeat-alarm description against the released build.
+After an LP update, regenerate the localized pages, update the 20 NemuCue canonical URLs in the site sitemap, run the checks below, and confirm the published pages and store links. Compare screenshots and the repeat-alarm description with the released build before changing those claims.
 
 ## Preview
 
