@@ -32,36 +32,59 @@
     <nav aria-label="ページ内メニュー"><a href="#games">ゲーム紹介</a><a href="#discover">漢字の楽しみ</a><a href="#faq">よくある質問</a><a class="nav-cta" href="#download">ダウンロード</a></nav>
   </header>
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero challenge-hero" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <h1 id="hero-title"><span>難読漢字に</span><span class="accent">挑戦！</span></h1>
-          <p class="hero-lead">クイズも、記憶ゲームも。<br>好きな遊び方で腕試し！</p>
+          <p class="hero-eyebrow"><span aria-hidden="true">✦</span> 読めそうで、読めない。</p>
+          <h1 id="hero-title"><span>難読漢字に</span><span class="accent hero-title-pop">挑戦！<i aria-hidden="true">✧</i></span></h1>
+          <p class="hero-lead">選んで、覚えて、答えて。<br>好きな遊び方で腕試し！</p>
           <div class="stores"><a id="ios-badge" href="https://apps.apple.com/jp/app/id6757838084" target="_blank" rel="noopener noreferrer"><img src="/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" width="162" height="54"></a><a id="android-badge" href="https://play.google.com/store/apps/details?id=com.KanjiMemoryAwaPop.takekapp1990.prod&amp;hl=ja" target="_blank" rel="noopener noreferrer"><img src="/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで手に入れよう" width="184" height="71"></a></div>
           <p class="download-note">基本無料・広告あり・アプリ内課金あり</p>
         </div>
-        <figure class="hero-visual"><div class="phone hero-phone"><img src="../images/marketing/quiz.webp" alt="土筆の読みを4つの選択肢から選ぶ、読み4択のゲーム画面" width="660" height="1434" fetchpriority="high"></div><figcaption>読み4択のゲーム画面</figcaption></figure>
+        <div class="challenge-scene">
+          <span class="word-bubble bubble-tsukushi" aria-hidden="true">土筆</span>
+          <span class="word-bubble bubble-fugu" aria-hidden="true">河豚</span>
+          <span class="scene-spark" aria-hidden="true">✦</span>
+          <div class="challenge-card" data-challenge>
+            <div class="challenge-top"><span class="challenge-sticker">まずは1問！</span><span class="challenge-position" data-question-position>1 / 3</span></div>
+            <p class="challenge-prompt">この漢字、なんて読む？</p>
+            <p class="challenge-word" data-challenge-word>海月</p>
+            <div class="challenge-options" role="group" aria-label="海月の読みを選ぶ" data-challenge-options>
+              <button type="button" data-choice="くらげ">くらげ</button><button type="button" data-choice="なまこ">なまこ</button><button type="button" data-choice="ひとで">ひとで</button><button type="button" data-choice="いそぎんちゃく">いそぎんちゃく</button>
+            </div>
+            <p class="challenge-feedback" data-challenge-feedback role="status">どれだと思う？ 選んでみよう。</p>
+            <div class="challenge-bottom"><span>Webで遊べる体験問題</span><button type="button" data-challenge-next>次の漢字 <span aria-hidden="true">→</span></button></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="try-section wrap" aria-labelledby="try-title">
-      <div class="mini-quiz" data-quiz><div class="quiz-prompt"><h2 id="try-title">読めるかな？</h2><p class="mini-kanji" data-word>海月</p></div><div class="quiz-controls"><button class="quiz-answer" data-reveal type="button" aria-expanded="false" aria-controls="quiz-reading">読みを見る</button><p id="quiz-reading" class="mini-reading" data-reading aria-live="polite"></p><button class="text-button" data-next type="button" aria-label="次の漢字へ">次の漢字 →</button></div></div>
-    </section>
-
-    <section class="games-section" id="games"><div class="wrap">
-      <div class="section-heading"><h2>選べる6つのゲーム</h2><p>気になる遊び方から、挑戦しよう。</p></div>
-      <div class="games-grid">
-        <article class="game-card"><span class="game-mark" aria-hidden="true">四</span><div><h3>読み4択</h3><p>4つから正しい読みを選ぼう。</p></div></article>
-        <article class="game-card"><span class="game-mark" aria-hidden="true">読</span><div><h3>読み入力</h3><p>選択肢なしで読みを答えよう。</p></div></article>
-        <article class="game-card"><span class="game-mark" aria-hidden="true">時</span><div><h3>読みサバイバル</h3><p>時間内に答えて、スコアに挑戦。</p></div></article>
-        <article class="game-card"><span class="game-mark" aria-hidden="true">□</span><div><h3>穴あき漢字</h3><p>空欄に入る漢字を見分けよう。</p></div></article>
-        <article class="game-card"><span class="game-mark" aria-hidden="true">想</span><div><h3>暗記カード</h3><p>覚えた読みを思い出そう。</p></div></article>
-        <article class="game-card"><span class="game-mark bubble-mark" aria-hidden="true">泡</span><div><h3>あわあわポン</h3><p>覚えて答える、短期記憶ゲーム。</p></div></article>
+    <section class="games-section game-showcase" id="games" aria-labelledby="games-title"><div class="wrap">
+      <div class="showcase-heading"><div><p class="section-kicker">遊び方は、ひとつじゃない。</p><h2 id="games-title">次は、どれで挑む？</h2></div><span class="game-count">選べる <strong>6</strong> ゲーム</span></div>
+      <div class="showcase-layout" data-game-showcase>
+        <div class="game-tabs" role="tablist" aria-label="紹介するゲームを選ぶ">
+          <button id="game-tab-choice" class="game-tab" type="button" role="tab" aria-selected="true" aria-controls="game-panel-choice" data-game-tab="choice"><span class="tab-symbol" aria-hidden="true">四</span><span><strong>読み4択</strong><small>選んで、腕試し。</small></span><span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button id="game-tab-memory" class="game-tab" type="button" role="tab" aria-selected="false" aria-controls="game-panel-memory" tabindex="-1" data-game-tab="memory"><span class="tab-symbol" aria-hidden="true">泡</span><span><strong>あわあわポン</strong><small>覚えて、答えて！</small></span><span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button id="game-tab-survival" class="game-tab" type="button" role="tab" aria-selected="false" aria-controls="game-panel-survival" tabindex="-1" data-game-tab="survival"><span class="tab-symbol" aria-hidden="true">時</span><span><strong>読みサバイバル</strong><small>時間とライフで勝負。</small></span><span class="tab-arrow" aria-hidden="true">↗</span></button>
+        </div>
+        <div class="game-panels">
+          <article class="game-panel" id="game-panel-choice" role="tabpanel" aria-labelledby="game-tab-choice" tabindex="0">
+            <div class="panel-copy"><span class="panel-tag">ひらめいたら、タップ！</span><h3>4つの中から、<br>正しい読みを。</h3><p>4つの選択肢から、<br>正しい読みを選ぼう。</p><div class="play-steps"><span>選ぶ</span><i aria-hidden="true">→</i><span>答え合わせ</span></div></div>
+            <figure class="game-screen"><span class="screen-bubble" aria-hidden="true">読めるかな？</span><a href="../images/marketing/quiz.webp" target="_blank" rel="noopener noreferrer" aria-label="読み4択の実画面を拡大する"><img src="../images/marketing/quiz.webp" alt="土筆の読みを4択で答える実際のアプリ画面" width="660" height="1434"></a><figcaption>アプリの実画面</figcaption></figure>
+          </article>
+          <article class="game-panel" id="game-panel-memory" role="tabpanel" aria-labelledby="game-tab-memory" tabindex="0" hidden>
+            <div class="panel-copy"><span class="panel-tag">知ってるだけじゃ、終わらない。</span><h3>さっきの読み、<br>覚えてる？</h3><p>漢字と読みを覚えて、<br>あとから答えよう。</p><div class="play-steps"><span>覚える</span><i aria-hidden="true">→</i><span>思い出す</span></div></div>
+            <figure class="game-screen"><span class="screen-bubble" aria-hidden="true">記憶に挑戦！</span><a href="../images/marketing/memory.webp" target="_blank" rel="noopener noreferrer" aria-label="あわあわポンの実画面を拡大する"><img src="../images/marketing/memory.webp" alt="覚えた海月の読みを思い出して答える実際のアプリ画面" width="660" height="1434" loading="lazy"></a><figcaption>アプリの実画面</figcaption></figure>
+          </article>
+          <article class="game-panel" id="game-panel-survival" role="tabpanel" aria-labelledby="game-tab-survival" tabindex="0" hidden>
+            <div class="panel-copy"><span class="panel-tag">まだまだ、いける！</span><h3>時間とライフで、<br>どこまで読める？</h3><p>次々出てくる漢字に挑戦。<br>目指せ 自己ベスト！</p><div class="play-steps"><span>答える</span><i aria-hidden="true">→</i><span>記録に挑む</span></div></div>
+            <figure class="game-screen"><span class="screen-bubble" aria-hidden="true">限界まで挑戦！</span><a href="../images/marketing/survival.png" target="_blank" rel="noopener noreferrer" aria-label="読みサバイバルの実画面を拡大する"><img src="../images/marketing/survival.png" alt="制限時間とライフを確認しながら漢字の読みを答える実際のアプリ画面" width="1320" height="2868" loading="lazy"></a><figcaption>アプリの実画面</figcaption></figure>
+          </article>
+        </div>
       </div>
+      <div class="more-games"><span>こんな遊び方も！</span><ul><li>読み入力</li><li>穴あき漢字</li><li>暗記カード</li></ul></div>
       <p class="section-note">学習状況により、使えるゲーム・出題範囲が異なります。</p>
     </div></section>
-
-    <section class="memory-section feature-row wrap"><div class="memory-visual"><div class="phone compact-phone"><img src="../images/marketing/memory.webp" loading="lazy" alt="海月の読みを思い出して答える、記憶ゲームの出題画面" width="660" height="1434"></div></div><div class="feature-copy"><h2>覚えて、答えて！<br><span class="accent">短期記憶に挑戦！</span></h2><p>はじめに漢字と読みを覚えて、<br>あとから出る問題に答えよう。</p></div></section>
 
     <section class="discover-section" id="discover"><div class="wrap discover-grid"><div class="feature-copy"><h2>意味や由来も、<br>知るとおもしろい。</h2><p>気になる言葉は漢字帳へ。解説のある語では、意味や由来も見られます。お気に入りに残して、あとから見返すことも。</p></div><div class="detail-visual"><img class="screen-card" src="../images/marketing/detail.webp" loading="lazy" alt="海月の読み、意味、由来を表示した漢字帳の画面" width="660" height="1434"></div></div></section>
 
