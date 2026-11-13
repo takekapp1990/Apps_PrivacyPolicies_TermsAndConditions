@@ -1,0 +1,319 @@
+{
+  "ui": {
+    "ja": {
+      "skip": "本文へ移動",
+      "nav": "サイトナビゲーション",
+      "own": "アプリ紹介",
+      "more": "他のアプリ",
+      "heading": "毎日に、もうひとつの楽しみを。",
+      "intro": "TakeKAppの他のアプリも見つけてみませんか。",
+      "all": "すべてのアプリを見る",
+      "cta": "詳しく見る",
+      "terms": "利用規約",
+      "privacy": "プライバシーポリシー",
+      "legal_nav": "規約とポリシー",
+      "english": "英語の紹介ページ"
+    },
+    "en": {
+      "skip": "Skip to content",
+      "nav": "Site navigation",
+      "own": "About this app",
+      "more": "More apps",
+      "heading": "A little more fun, every day.",
+      "intro": "Discover more apps by TakeKApp, for time together or a quiet moment to yourself.",
+      "all": "Explore all apps",
+      "cta": "Learn more",
+      "terms": "Terms of Use",
+      "privacy": "Privacy Policy",
+      "legal_nav": "Legal pages",
+      "english": "App page in English"
+    },
+    "ko": {
+      "skip": "본문으로 이동",
+      "nav": "사이트 탐색",
+      "own": "앱 소개",
+      "more": "다른 앱",
+      "heading": "일상에 즐거움을 더하는 앱",
+      "intro": "함께 즐기거나 혼자 여유롭게 사용할 수 있는 TakeKApp의 다른 앱도 만나보세요.",
+      "all": "모든 앱 보기",
+      "cta": "자세히 보기",
+      "terms": "이용약관",
+      "privacy": "개인정보 처리방침",
+      "legal_nav": "약관 및 정책",
+      "english": "영어 앱 소개 페이지"
+    },
+    "zh-Hans": {
+      "skip": "跳至正文",
+      "nav": "网站导航",
+      "own": "应用介绍",
+      "more": "其他应用",
+      "heading": "为每一天增添一点乐趣",
+      "intro": "探索 TakeKApp 的其他应用，与亲友共享乐趣，也享受自己的时光。",
+      "all": "查看所有应用",
+      "cta": "了解详情",
+      "terms": "使用条款",
+      "privacy": "隐私政策",
+      "legal_nav": "条款与政策",
+      "english": "英文应用介绍页面"
+    },
+    "zh-Hant": {
+      "skip": "跳至內文",
+      "nav": "網站導覽",
+      "own": "應用程式介紹",
+      "more": "其他應用程式",
+      "heading": "為每一天增添一點樂趣",
+      "intro": "探索 TakeKApp 的其他應用程式，與親友共享樂趣，也享受自己的時光。",
+      "all": "查看所有應用程式",
+      "cta": "了解詳情",
+      "terms": "使用條款",
+      "privacy": "隱私權政策",
+      "legal_nav": "條款與政策",
+      "english": "英文應用程式介紹頁面"
+    }
+  },
+  "apps": {
+    "SharedDice": {
+      "icon": "/SharedDice/images/icon_512512_app_store.png",
+      "category": "games",
+      "copy": {
+        "ja": {
+          "name": "多機能サイコロ",
+          "description": "通信したり、出た目の記録をグラフで見返せるサイコロアプリ。"
+        },
+        "en": {
+          "name": "Smart Dice",
+          "description": "Roll dice together and explore your roll history with charts."
+        },
+        "ko": {
+          "name": "스마트 주사위",
+          "description": "함께 주사위를 굴리고 결과 기록을 그래프로 확인하세요."
+        },
+        "zh-Hans": {
+          "name": "智能骰子",
+          "description": "一起掷骰子，用图表查看掷骰记录。"
+        },
+        "zh-Hant": {
+          "name": "智慧骰子",
+          "description": "一起擲骰子，用圖表查看擲骰紀錄。"
+        }
+      }
+    },
+    "FunTopics": {
+      "icon": "/FunTopics/images/512.png",
+      "category": "games",
+      "copy": {
+        "ja": {
+          "name": "楽しい話題",
+          "description": "友人や家族との会話に、ランダムな話題を。"
+        },
+        "en": {
+          "name": "Fun Topics",
+          "description": "Discover random conversation topics to enjoy with friends and family."
+        },
+        "ko": {
+          "name": "재미있는 대화 주제",
+          "description": "친구나 가족과 나눌 대화 주제를 무작위로 만나보세요."
+        },
+        "zh-Hans": {
+          "name": "有趣的话题",
+          "description": "随机发现话题，与朋友和家人畅聊。"
+        },
+        "zh-Hant": {
+          "name": "有趣的話題",
+          "description": "隨機探索話題，與朋友和家人暢聊。"
+        }
+      }
+    },
+    "AwaAwaPon": {
+      "icon": "/AwaAwaPon/images/awaawapon_app_icon_10241024_ios_big.png",
+      "category": "games",
+      "copy": {
+        "ja": {
+          "name": "あわあわポン",
+          "description": "かわいいキャラと気軽に遊べる、短い記憶・集中ゲーム。"
+        },
+        "en": {
+          "name": "Awa Pop",
+          "description": "Play bite-sized memory and focus games with lovable characters."
+        }
+      }
+    },
+    "NumberPlaceHint": {
+      "icon": "/NumberPlaceHint/images/app_icon/number_place_hint_app_icon_10241024_ios.png",
+      "category": "games",
+      "copy": {
+        "ja": {
+          "name": "ナンプレのヒント",
+          "description": "行き詰まったナンプレを、解き方がわかるヒントと一緒に。"
+        },
+        "en": {
+          "name": "Sudoku Hint",
+          "description": "Get logical hints and learn why a number fits when your Sudoku has you stuck."
+        },
+        "ko": {
+          "name": "스도쿠 힌트",
+          "description": "스도쿠가 막힐 때 논리적인 힌트로 풀이 방법을 배워보세요."
+        },
+        "zh-Hans": {
+          "name": "数独提示",
+          "description": "数独遇到难题时，用逻辑提示学习解题方法。"
+        },
+        "zh-Hant": {
+          "name": "數獨提示",
+          "description": "數獨遇到難題時，用邏輯提示學習解題方法。"
+        }
+      }
+    },
+    "FlagMemoryAwaAwaPon": {
+      "icon": "/FlagMemoryAwaAwaPon/images/lp/app-icon.webp",
+      "category": "family",
+      "copy": {
+        "ja": {
+          "name": "国旗の暗記 あわあわポン",
+          "description": "国旗や首都を、毎日の学習やゲームで覚えよう。"
+        },
+        "en": {
+          "name": "Flag Quiz Awa Pop",
+          "description": "Learn flags and capitals through daily practice and games."
+        },
+        "ko": {
+          "name": "국기 암기 퀴즈 아와아와팡",
+          "description": "매일 학습과 게임으로 국기와 수도를 배워보세요."
+        },
+        "zh-Hans": {
+          "name": "国旗记忆测验 Awa Pop",
+          "description": "通过每日练习和游戏学习国旗与首都。"
+        },
+        "zh-Hant": {
+          "name": "國旗記憶測驗・Awa Pop",
+          "description": "透過每日練習與遊戲學習國旗與首都。"
+        }
+      }
+    },
+    "MemoWinkAlbum": {
+      "icon": "/MemoWinkAlbum/images/app_icon/pop_photo_gallery_app_icon_ios.png",
+      "category": "family",
+      "copy": {
+        "ja": {
+          "name": "まほうアルバム",
+          "description": "写真に触れて楽しむ、家族で使えるアルバム。"
+        },
+        "en": {
+          "name": "MemoWink Album",
+          "description": "Enjoy your photos together with playful effects at every touch."
+        },
+        "ko": {
+          "name": "마법앨범",
+          "description": "터치할 때마다 즐거운 효과와 함께 가족사진을 감상하세요."
+        },
+        "zh-Hans": {
+          "name": "魔法相册",
+          "description": "轻触照片，和家人一起享受有趣的互动效果。"
+        },
+        "zh-Hant": {
+          "name": "魔法相冊",
+          "description": "輕觸照片，和家人一起享受有趣的互動效果。"
+        }
+      }
+    },
+    "VersaMemo": {
+      "icon": "/VersaMemo/images/app_icon.png",
+      "category": "productivity",
+      "copy": {
+        "ja": {
+          "name": "VersaMemo",
+          "description": "文章から始めて、必要な機能をあとから足せるメモ。"
+        },
+        "en": {
+          "name": "VersaMemo",
+          "description": "Start with text and add images, audio, tables or checklists as you need them."
+        }
+      }
+    },
+    "PostDrafts": {
+      "icon": "/PostDrafts/images/app_icon/post_drafts_app_icon_1024_1024_ios.png",
+      "category": "productivity",
+      "copy": {
+        "ja": {
+          "name": "Post Drafts",
+          "description": "SNS投稿の下書きと文字数・ハッシュタグをまとめて管理。"
+        },
+        "en": {
+          "name": "Post Drafts",
+          "description": "Organize social post drafts, character counts and hashtags."
+        }
+      }
+    },
+    "MyDreams100": {
+      "icon": "/MyDreams100/images/app_icon/my_dreams_100_app_icon_1024_1024_2.png",
+      "category": "productivity",
+      "copy": {
+        "ja": {
+          "name": "やりたいこと100",
+          "description": "やりたいことを書き出して、目標から達成まで記録。"
+        },
+        "en": {
+          "name": "My Dreams 100",
+          "description": "Write down what you want to do and track your progress toward each goal."
+        }
+      }
+    },
+    "NemuCue": {
+      "icon": "/NemuCue/images/app_icon.png",
+      "category": "productivity",
+      "copy": {
+        "ja": {
+          "name": "寝落ち防止",
+          "description": "変化する振動と複数回のお知らせで、起きるきっかけを。"
+        },
+        "en": {
+          "name": "Nap & Stay Awake",
+          "description": "An alarm with changing vibration patterns and multiple reminders."
+        }
+      }
+    }
+  },
+  "profiles": {
+    "SharedDice": "games",
+    "FunTopics": "games",
+    "AwaAwaPon": "games",
+    "NumberPlaceHint": "games",
+    "FlagMemoryAwaAwaPon": "family",
+    "MemoWinkAlbum": "family",
+    "TimesTablesMemoryAwaAwaPon": "family",
+    "KanjiAwaAwaPon": "family",
+    "Meiro25MojiQuiz": "games",
+    "LearningStatistics": "games",
+    "GoodLuckMaker": "productivity",
+    "MyDreams100": "productivity",
+    "PostDrafts": "productivity",
+    "Tificat": "productivity",
+    "VersaMemo": "productivity",
+    "NemuCue": "productivity",
+    "LoanManagement": "productivity"
+  },
+  "recommendations": {
+    "games": [
+      "SharedDice",
+      "FunTopics",
+      "AwaAwaPon",
+      "NumberPlaceHint",
+      "FlagMemoryAwaAwaPon",
+      "MemoWinkAlbum"
+    ],
+    "family": [
+      "MemoWinkAlbum",
+      "FlagMemoryAwaAwaPon",
+      "NumberPlaceHint",
+      "SharedDice",
+      "AwaAwaPon"
+    ],
+    "productivity": [
+      "VersaMemo",
+      "PostDrafts",
+      "MyDreams100",
+      "NemuCue",
+      "MemoWinkAlbum"
+    ]
+  }
+}

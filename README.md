@@ -281,3 +281,21 @@ A collection of handy web tools. Various tools to streamline your daily tasks.
 便利なWebツール集。日常の作業を効率化する様々なツールを提供しています。
 
 * [Open Web Tools / Webツールを開く](https://handytools.takekapp.com)
+
+## 規約ページの共通ナビゲーション・他アプリ紹介
+
+既存の利用規約・プライバシーポリシーに、ホームへの案内と他アプリの紹介カードを静的HTMLで追加しています。規約本文は翻訳せず、日英・韓国語・簡体字・繁体字の既存ページを対象にします。転送専用ページ、legacy文書、公開前のPartyAmidaは対象外です。
+
+```sh
+python3 scripts/build_app_discovery.py
+python3 scripts/build_app_discovery.py --check
+```
+
+- 文言・アプリ紹介・推薦順: `scripts/app_discovery.json`
+- 共通デザイン: `css/legal_navigation.css`
+- クリック計測: `js/cross_app_analytics.js`（既存の`gtag`がある本番ページのみ。新たなGAタグは追加しません）
+- アプリを絞って確認: `python3 scripts/build_app_discovery.py --apps SharedDice FunTopics`
+
+紹介先は同じ言語の実在するLPを優先し、英語に切り替わる場合は明記します。自分自身のアプリは推薦せず、アプリの用途に応じて3件を選びます。既存の独自デザインがあるページは、そのヘッダー・本文・フッターを維持して共通部品を追加します。
+
+HTML内の`takekapp-discovery:*`コメントで囲まれた部分は生成物です。文言変更はJSONを編集して再生成してください。アプリ側の生成処理やコピーで規約HTMLを更新した後にも、このコマンドを再実行します。`--check`は生成内容・リンク先・重複ID・自分自身の推薦を検証し、ファイルは変更しません。生成やローカル確認では公開されません。

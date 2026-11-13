@@ -250,7 +250,9 @@
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
 
-            gtag('config', 'G-0VCS46ZTHC');
+            if (['takekapp.com', 'www.takekapp.com'].includes(window.location.hostname)) {
+                gtag('config', 'G-0VCS46ZTHC');
+            }
         </script>
         <style>
             :root {
@@ -2264,9 +2266,20 @@
         <script>
             // 言語設定を取得
             function getPreferredLanguage() {
-                const savedLang = localStorage.getItem('preferred-language');
-                if (savedLang) {
-                    return savedLang;
+                // Links from legal pages explicitly preserve their display language.
+                const requestedLang = new URLSearchParams(window.location.search).get('lang');
+                const supportedLangs = new Set([
+                    'ja', 'en', 'ar', 'bn', 'da', 'es', 'ko', 'zh_CN', 'zh_TW',
+                    'de', 'fr', 'id', 'nl', 'no', 'pl', 'th', 'pt', 'ru', 'sw',
+                    'tr', 'uk', 'vi', 'hi', 'it'
+                ]);
+                if (supportedLangs.has(requestedLang)) return requestedLang;
+
+                try {
+                    const savedLang = localStorage.getItem('preferred-language');
+                    if (supportedLangs.has(savedLang)) return savedLang;
+                } catch (error) {
+                    // Language selection also works when browser storage is disabled.
                 }
 
                 const browserLang = navigator.language || navigator.userLanguage;
@@ -2376,7 +2389,11 @@
                 }
 
                 // 言語設定を保存
-                localStorage.setItem('preferred-language', lang);
+                try {
+                    localStorage.setItem('preferred-language', lang);
+                } catch (error) {
+                    // Rendering does not depend on storage being available.
+                }
 
                 // HTMLのlang属性を更新
                 document.documentElement.lang = lang;
