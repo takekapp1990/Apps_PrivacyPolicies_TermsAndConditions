@@ -1,861 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>難読漢字 あわあわポン - 楽しく学ぶ漢字クイズゲーム</title>
-        <link rel="icon" href="../favicon.ico">
-        <!-- OGP & Twitter Card -->
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="難読漢字 あわあわポン - 楽しく学ぶ漢字クイズゲーム">
-        <meta property="og:description" content="難読漢字を楽しく覚えよう！記憶力バトルゲームで漢字の知識を身につけよう！今すぐダウンロード！">
-        <meta property="og:image"
-            content="https://takekapp.com/KanjiAwaAwaPon/images/awaawapon_kanji_app_icon_10241024_ios.png">
-        <meta property="og:url" content="https://takekapp.com/KanjiAwaAwaPon/ja/landing_page_ja.html">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="難読漢字 あわあわポン - 楽しく学ぶ漢字クイズゲーム">
-        <meta name="twitter:description" content="難読漢字を楽しく覚えよう！記憶力バトルゲームで漢字の知識を身につけよう！今すぐダウンロード！">
-        <meta name="twitter:image"
-            content="https://takekapp.com/KanjiAwaAwaPon/images/awaawapon_kanji_app_icon_10241024_ios.png">
-        <meta name="twitter:site" content="@takekapp">
-        <!-- Favicon -->
-        <link rel="icon" type="image/png"
-            href="https://takekapp.com/KanjiAwaAwaPon/images/awaawapon_kanji_app_icon_10241024_ios.png">
-        <link rel="apple-touch-icon"
-            href="https://takekapp.com/KanjiAwaAwaPon/images/awaawapon_kanji_app_icon_10241024_ios.png">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-0VCS46ZTHC');
-        </script>
-        <style>
-            :root {
-                --primary-color: #FF6B9D;
-                --secondary-color: #4ECDC4;
-                --accent-color: #FFE66D;
-                --dark-color: #2C3E50;
-                --light-color: #F8F9FA;
-            }
-
-            body {
-                font-family: 'Helvetica Neue', Arial, sans-serif;
-                line-height: 1.6;
-                color: var(--dark-color);
-            }
-
-            .hero-section {
-                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-                color: white;
-                padding: 5rem 0 4rem 0;
-                position: relative;
-                overflow: hidden;
-                z-index: 1;
-            }
-
-            .hero-section::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-                animation: float 6s ease-in-out infinite;
-                z-index: 0;
-                pointer-events: none;
-            }
-
-            @keyframes float {
-
-                0%,
-                100% {
-                    transform: translateY(0px);
-                }
-
-                50% {
-                    transform: translateY(-20px);
-                }
-            }
-
-            .app-icon-large {
-                width: 120px;
-                height: 120px;
-                border-radius: 25px;
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            }
-
-            .feature-card {
-                background: white;
-                border-radius: 20px;
-                padding: 2rem;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease;
-                margin-bottom: 2rem;
-            }
-
-            .feature-card:hover {
-                transform: translateY(-5px);
-            }
-
-            .feature-icon {
-                width: 60px;
-                height: 60px;
-                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
-            }
-
-            .cta-section {
-                background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-                padding: 4rem 0;
-                color: white;
-            }
-
-            .store-badge {
-                height: 50px;
-                margin: 0.5rem;
-                transition: transform 0.3s ease;
-            }
-
-            .store-badge:hover {
-                transform: scale(1.05);
-            }
-
-            .navbar {
-                background-color: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
-            }
-
-            .btn-primary {
-                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-                border: none;
-                padding: 0.75rem 2rem;
-                border-radius: 25px;
-                font-weight: 600;
-                transition: transform 0.3s ease;
-            }
-
-            .btn-primary:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            }
-
-            .navbar-icon {
-                height: 30px;
-                border-radius: 6px;
-            }
-
-            @media (max-width: 768px) {
-                .store-links-container {
-                    gap: 0.5rem !important;
-                }
-            }
-
-            .rules-section {
-                background: var(--light-color);
-                padding: 4rem 0;
-            }
-
-            .screenshots-container {
-                overflow-x: auto;
-                overflow-y: hidden;
-                padding: 1rem 0;
-                margin: 2rem 0;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: thin;
-                scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
-            }
-
-            .screenshots-container::-webkit-scrollbar {
-                height: 8px;
-            }
-
-            .screenshots-container::-webkit-scrollbar-track {
-                background: transparent;
-            }
-
-            .screenshots-container::-webkit-scrollbar-thumb {
-                background-color: rgba(0, 0, 0, 0.3);
-                border-radius: 4px;
-            }
-
-            .screenshots-wrapper {
-                display: flex;
-                gap: 1rem;
-                padding: 0.5rem;
-            }
-
-            .screenshot-item {
-                flex: 0 0 auto;
-                width: 300px;
-                border-radius: 15px;
-                overflow: hidden;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease;
-            }
-
-            .screenshot-item:hover {
-                transform: scale(1.05);
-            }
-
-            .screenshot-item img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-
-            @media (max-width: 768px) {
-                .screenshot-item {
-                    width: 250px;
-                }
-            }
-
-            .recommend-card {
-                background: white;
-                border-radius: 15px;
-                padding: 1.5rem;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                height: 100%;
-                text-align: center;
-            }
-
-            .recommend-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            }
-
-            .recommend-icon {
-                font-size: 2.5rem;
-                margin-bottom: 1rem;
-                color: var(--primary-color);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 0.5rem;
-            }
-
-            .scene-card {
-                background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(78, 205, 196, 0.1));
-                border-radius: 20px;
-                padding: 2rem;
-                text-align: center;
-                transition: transform 0.3s ease;
-                height: 100%;
-                border: 2px solid transparent;
-            }
-
-            .scene-card:hover {
-                transform: translateY(-5px);
-                border-color: var(--primary-color);
-            }
-
-            .scene-icon-inline {
-                font-size: 2rem;
-                margin-right: 0.5rem;
-                vertical-align: middle;
-            }
-
-            .faq-section {
-                background: var(--light-color);
-                padding: 4rem 0;
-            }
-
-            .accordion-item {
-                border: none;
-                margin-bottom: 1rem;
-                border-radius: 15px;
-                overflow: hidden;
-                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            }
-
-            .accordion-button {
-                background: white;
-                color: var(--primary-color);
-                font-weight: 600;
-                border: none;
-                box-shadow: none;
-            }
-
-            .accordion-button:not(.collapsed) {
-                background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(78, 205, 196, 0.1));
-                color: var(--primary-color);
-            }
-
-            .accordion-button:focus {
-                box-shadow: none;
-                border-color: transparent;
-            }
-
-            @media (max-width: 768px) {
-                .py-5 {
-                    padding-top: 2rem !important;
-                    padding-bottom: 2rem !important;
-                }
-
-                .rules-section {
-                    padding: 2rem 0 !important;
-                }
-
-                .faq-section {
-                    padding: 2rem 0 !important;
-                }
-
-                .cta-section {
-                    padding: 2rem 0 !important;
-                }
-
-                .hero-section {
-                    padding: 5rem 0 2rem 0 !important;
-                }
-
-                .store-badge {
-                    display: block !important;
-                }
-
-                .display-5 {
-                    font-size: 1.8rem !important;
-                }
-
-                .lead {
-                    font-size: 1rem !important;
-                }
-
-                .recommend-card {
-                    padding: 1rem !important;
-                }
-
-                .recommend-icon {
-                    font-size: 2rem !important;
-                }
-
-                #recommend .col-md-6.col-lg-4 {
-                    width: 50% !important;
-                    flex: 0 0 50% !important;
-                }
-
-                #features {
-                    display: none !important;
-                }
-
-                .recommend-card h5 {
-                    font-size: 0.9rem !important;
-                }
-
-                .recommend-card-mobile-hide {
-                    display: none !important;
-                }
-
-                #usage-scenes .row.g-4>.col-md-6.col-lg-4:nth-child(n+4) {
-                    display: none !important;
-                }
-
-                .scene-card {
-                    padding: 1rem !important;
-                }
-
-                .scene-header-mobile {
-                    margin-bottom: 0.3rem !important;
-                }
-
-                .scene-header-mobile h4 {
-                    margin-bottom: 0 !important;
-                    font-size: 1rem !important;
-                    line-height: 1.4;
-                }
-
-                .scene-icon-inline {
-                    font-size: 1.5rem !important;
-                    margin-right: 0.3rem !important;
-                }
-
-                .scene-card p {
-                    font-size: 0.9rem !important;
-                    margin-bottom: 0 !important;
-                    margin-top: 0 !important;
-                    padding-top: 0.3rem !important;
-                }
-
-                #usage-scenes h2.mb-5 {
-                    margin-bottom: 2rem !important;
-                }
-            }
-        </style>
-    <meta name="description" content="難読漢字を楽しく覚えよう！記憶力バトルゲームで漢字の知識を身につけよう！。">
-    <link rel="canonical" href="https://takekapp.com/KanjiAwaAwaPon/ja/landing_page_ja.html">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "name": "難読漢字 あわあわポン",
-  "url": "https://takekapp.com/KanjiAwaAwaPon/ja/landing_page_ja.html",
-  "description": "難読漢字を楽しく覚えよう！記憶力バトルゲームで漢字の知識を身につけよう！。",
-  "applicationCategory": "GameApplication",
-  "operatingSystem": "Android, iOS",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "JPY"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "TakeKApp",
-    "url": "https://takekapp.com/"
-  }
-}
-    </script>
-    <script defer src="/js/app_store_analytics.js"></script>
-    <link rel="stylesheet" href="/css/site_navigation.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>難読漢字 あわあわポン｜漢字クイズと記憶ゲームで腕試し</title>
+  <meta name="description" content="読めそうで読めない難読漢字に挑戦！読み4択・読み入力・泡の記憶ゲームなど、いろんな遊び方で腕試し。意味や由来、自己ベスト、バッジや段位も楽しめる漢字クイズアプリ。">
+  <link rel="canonical" href="https://takekapp.com/KanjiAwaAwaPon/ja/landing_page_ja.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="難読漢字に挑戦！｜難読漢字 あわあわポン">
+  <meta property="og:description" content="覚えて、答えて！短期記憶にも挑戦。いろんな漢字ゲームで、自分の読みを腕試ししよう。">
+  <meta property="og:url" content="https://takekapp.com/KanjiAwaAwaPon/ja/landing_page_ja.html">
+  <meta property="og:image" content="https://takekapp.com/KanjiAwaAwaPon/images/marketing/feature_graphic.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="難読漢字に挑戦！">
+  <meta name="twitter:description" content="読み4択、読み入力、泡の記憶ゲーム。いろんな遊び方で、漢字の読みを腕試し。">
+  <meta name="twitter:image" content="https://takekapp.com/KanjiAwaAwaPon/images/marketing/feature_graphic.png">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../images/awaawapon_kanji_app_icon_10241024_ios.png">
+  <link rel="stylesheet" href="../marketing.css">
+  <script defer src="../marketing.js"></script>
+  <script defer src="/js/app_store_analytics.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VCS46ZTHC"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-0VCS46ZTHC');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"難読漢字 あわあわポン","applicationCategory":"GameApplication","operatingSystem":"iOS, Android","inLanguage":"ja","url":"https://takekapp.com/KanjiAwaAwaPon/ja/landing_page_ja.html","image":"https://takekapp.com/KanjiAwaAwaPon/images/awaawapon_kanji_app_icon_10241024_ios.png","description":"いろいろなゲームで難読漢字の読みに挑戦。漢字帳、自己ベスト、バッジや段位も楽しめる漢字クイズアプリ。","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"}}</script>
 </head>
+<body>
+  <a class="skip" href="#main">本文へ</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="難読漢字 あわあわポン トップ"><img src="../images/awaawapon_kanji_app_icon_10241024_ios.png" alt="" width="40" height="40"><span>難読漢字<small>あわあわポン</small></span></a>
+    <nav aria-label="ページ内メニュー"><a href="#games">ゲーム紹介</a><a href="#discover">漢字の楽しみ</a><a href="#faq">よくある質問</a><a class="nav-cta" href="#download">ダウンロード</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title"><span>難読漢字に</span><span class="accent">挑戦！</span></h1>
+          <p class="hero-lead">クイズも、記憶ゲームも。<br>好きな遊び方で腕試し！</p>
+          <div class="stores"><a id="ios-badge" href="https://apps.apple.com/jp/app/id6757838084" target="_blank" rel="noopener noreferrer"><img src="/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" width="162" height="54"></a><a id="android-badge" href="https://play.google.com/store/apps/details?id=com.KanjiMemoryAwaPop.takekapp1990.prod&amp;hl=ja" target="_blank" rel="noopener noreferrer"><img src="/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで手に入れよう" width="184" height="71"></a></div>
+          <p class="download-note">基本無料・広告あり・アプリ内課金あり</p>
+        </div>
+        <figure class="hero-visual"><div class="phone hero-phone"><img src="../images/marketing/quiz.webp" alt="土筆の読みを4つの選択肢から選ぶ、読み4択のゲーム画面" width="660" height="1434" fetchpriority="high"></div><figcaption>読み4択のゲーム画面</figcaption></figure>
+      </div>
+    </section>
 
-    <body>
-        <!-- ナビゲーションバー -->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-            <div class="container">
-                <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
-                    <img src="https://takekapp.com/KanjiAwaAwaPon/images/awaawapon_kanji_app_icon_10241024_ios.png"
-                        alt="難読漢字 あわあわポン アイコン" class="navbar-icon me-2" decoding="async" width="1024" height="1024">
-                    難読漢字 あわあわポン
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#features">特徴</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#recommend">おすすめ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#download">ダウンロード</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <section class="try-section wrap" aria-labelledby="try-title">
+      <div class="mini-quiz" data-quiz><div class="quiz-prompt"><h2 id="try-title">読めるかな？</h2><p class="mini-kanji" data-word>海月</p></div><div class="quiz-controls"><button class="quiz-answer" data-reveal type="button" aria-expanded="false" aria-controls="quiz-reading">読みを見る</button><p id="quiz-reading" class="mini-reading" data-reading aria-live="polite"></p><button class="text-button" data-next type="button" aria-label="次の漢字へ">次の漢字 →</button></div></div>
+    </section>
 
-        <!-- ヒーローセクション -->
-        <section class="hero-section">
-            <div class="container text-center">
-                <img src="https://takekapp.com/KanjiAwaAwaPon/images/awaawapon_kanji_app_icon_10241024_ios.png"
-                    class="app-icon-large mb-4" alt="難読漢字 あわあわポン" decoding="async" loading="lazy" width="1024" height="1024">
-                <h1 class="display-4 fw-bold mb-3">難読漢字<br class="d-md-none"> あわあわポン</h1>
-                <h2 class="h3 mb-4">楽しく学ぶ！<br>漢字クイズゲーム</h2>
-                <p class="lead mb-4">難読漢字を楽しく覚えよう！記憶力バトルゲームで漢字の知識を身につけよう！</p>
-                <div class="d-flex justify-content-center gap-3 flex-wrap store-links-container mb-3">
-                    <a href="https://play.google.com/store/apps/details?id=com.KanjiMemoryAwaPop.takekapp1990.prod"
-                        target="_blank" class="store-badge" id="android-badge">
-                        <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
-                            alt="Google Playで手に入れよう" height="50" decoding="async" loading="lazy">
-                    </a>
-                    <a href="https://apps.apple.com/us/app/%E9%9B%A3%E8%AA%AD%E6%BC%A2%E5%AD%97%E3%82%AF%E3%82%A4%E3%82%BA-%E3%81%82%E3%82%8F%E3%81%82%E3%82%8F%E3%83%9D%E3%83%B3/id6757838084"
-                        target="_blank" class="store-badge" id="ios-badge">
-                        <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
-                            alt="App Storeからダウンロード" height="50" decoding="async" loading="lazy">
-                    </a>
-                </div>
-            </div>
-        </section>
+    <section class="games-section" id="games"><div class="wrap">
+      <div class="section-heading"><h2>選べる6つのゲーム</h2><p>気になる遊び方から、挑戦しよう。</p></div>
+      <div class="games-grid">
+        <article class="game-card"><span class="game-mark" aria-hidden="true">四</span><div><h3>読み4択</h3><p>4つから正しい読みを選ぼう。</p></div></article>
+        <article class="game-card"><span class="game-mark" aria-hidden="true">読</span><div><h3>読み入力</h3><p>選択肢なしで読みを答えよう。</p></div></article>
+        <article class="game-card"><span class="game-mark" aria-hidden="true">時</span><div><h3>読みサバイバル</h3><p>時間内に答えて、スコアに挑戦。</p></div></article>
+        <article class="game-card"><span class="game-mark" aria-hidden="true">□</span><div><h3>穴あき漢字</h3><p>空欄に入る漢字を見分けよう。</p></div></article>
+        <article class="game-card"><span class="game-mark" aria-hidden="true">想</span><div><h3>暗記カード</h3><p>覚えた読みを思い出そう。</p></div></article>
+        <article class="game-card"><span class="game-mark bubble-mark" aria-hidden="true">泡</span><div><h3>あわあわポン</h3><p>覚えて答える、短期記憶ゲーム。</p></div></article>
+      </div>
+      <p class="section-note">学習状況により、使えるゲーム・出題範囲が異なります。</p>
+    </div></section>
 
-        <!-- ルール説明セクション -->
-        <section class="rules-section">
-            <div class="container">
-                <div class="text-center mb-4">
-                    <h2 class="display-5 fw-bold mb-3">ルールは簡単！</h2>
-                    <p class="lead fs-4">出てくる漢字をその場で覚えて、その読み方を答えるだけ！</p>
-                </div>
-                <div class="row justify-content-center mb-4">
-                    <div class="col-lg-12">
-                        <div class="screenshots-container">
-                            <div class="screenshots-wrapper">
-                                <div class="screenshot-item">
-                                    <picture>
-                                        <source srcset="../images/screen_shots/ja/screenshot_01.avif" type="image/avif">
-                                        <img src="../images/screen_shots/ja/screenshot_01.png"
-                                            alt="難読漢字 あわあわポン スクリーンショット1" width="660" height="1434" decoding="async" loading="lazy">
-                                    </picture>
-                                </div>
-                                <div class="screenshot-item">
-                                    <img src="https://takekapp.com/KanjiAwaAwaPon/images/screen_shots/ja/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202026-01-15%20at%2023.10.47.png"
-                                        alt="難読漢字 あわあわポン スクリーンショット2" decoding="async" loading="lazy" width="1320" height="2868">
-                                </div>
-                                <div class="screenshot-item">
-                                    <img src="https://takekapp.com/KanjiAwaAwaPon/images/screen_shots/ja/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202026-01-15%20at%2023.10.54.png"
-                                        alt="難読漢字 あわあわポン スクリーンショット3" decoding="async" loading="lazy" width="1320" height="2868">
-                                </div>
-                                <div class="screenshot-item">
-                                    <img src="https://takekapp.com/KanjiAwaAwaPon/images/screen_shots/ja/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202026-01-15%20at%2023.10.59.png"
-                                        alt="難読漢字 あわあわポン スクリーンショット4" decoding="async" loading="lazy" width="1320" height="2868">
-                                </div>
-                                <div class="screenshot-item">
-                                    <img src="https://takekapp.com/KanjiAwaAwaPon/images/screen_shots/ja/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202026-01-15%20at%2023.11.03.png"
-                                        alt="難読漢字 あわあわポン スクリーンショット5" decoding="async" loading="lazy" width="1320" height="2868">
-                                </div>
-                                <div class="screenshot-item">
-                                    <img src="https://takekapp.com/KanjiAwaAwaPon/images/screen_shots/ja/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202026-01-15%20at%2023.11.17.png"
-                                        alt="難読漢字 あわあわポン スクリーンショット6" decoding="async" loading="lazy" width="1320" height="2868">
-                                </div>
-                                <div class="screenshot-item">
-                                    <img src="https://takekapp.com/KanjiAwaAwaPon/images/screen_shots/ja/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202026-01-15%20at%2023.11.30.png"
-                                        alt="難読漢字 あわあわポン スクリーンショット7" decoding="async" loading="lazy" width="1320" height="2868">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="memory-section feature-row wrap"><div class="memory-visual"><div class="phone compact-phone"><img src="../images/marketing/memory.webp" loading="lazy" alt="海月の読みを思い出して答える、記憶ゲームの出題画面" width="660" height="1434"></div></div><div class="feature-copy"><h2>覚えて、答えて！<br><span class="accent">短期記憶に挑戦！</span></h2><p>はじめに漢字と読みを覚えて、<br>あとから出る問題に答えよう。</p></div></section>
 
-        <!-- こんな人におすすめ！ -->
-        <section id="recommend" class="py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center mb-5">こんな人におすすめ！</h2>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="recommend-card">
-                            <div class="recommend-icon">
-                                <i class="bi bi-mortarboard-fill"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2">漢字の勉強をしている学生</h5>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 recommend-card-mobile-hide">
-                        <div class="recommend-card">
-                            <div class="recommend-icon">
-                                <i class="bi bi-book"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2">難読漢字に興味がある人</h5>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="recommend-card">
-                            <div class="recommend-icon">
-                                <i class="bi bi-heart-pulse-fill"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2">記憶力を楽しく鍛えたい人</h5>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="recommend-card">
-                            <div class="recommend-icon">
-                                <i class="bi bi-people-fill"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2">家族や友達と一緒に学びたい人</h5>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 recommend-card-mobile-hide">
-                        <div class="recommend-card">
-                            <div class="recommend-icon">
-                                <i class="bi bi-trophy-fill"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2">ランキングで競いたい人</h5>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="recommend-card">
-                            <div class="recommend-icon">
-                                <i class="bi bi-emoji-laughing-fill"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2">ゲーム感覚で知識を身につけたい人</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="discover-section" id="discover"><div class="wrap discover-grid"><div class="feature-copy"><h2>意味や由来も、<br>知るとおもしろい。</h2><p>気になる言葉は漢字帳へ。解説のある語では、意味や由来も見られます。お気に入りに残して、あとから見返すことも。</p></div><div class="detail-visual"><img class="screen-card" src="../images/marketing/detail.webp" loading="lazy" alt="海月の読み、意味、由来を表示した漢字帳の画面" width="660" height="1434"></div></div></section>
 
-        <!-- 特徴セクション -->
-        <section id="features" class="py-5">
-            <div class="container">
-                <h2 class="text-center mb-5">ゲームの特徴</h2>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="feature-card text-center">
-                            <div class="feature-icon mx-auto">
-                                <i class="bi bi-type"></i>
-                            </div>
-                            <h4>難読漢字を学習</h4>
-                            <p>様々な難読漢字を楽しく覚えることができます。カテゴリ別や難易度別に学習できます。</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="feature-card text-center">
-                            <div class="feature-icon mx-auto">
-                                <i class="bi bi-brain"></i>
-                            </div>
-                            <h4>記憶力トレーニング</h4>
-                            <p>出てくる漢字をその場で覚えて、その読み方を答えるシンプルなルールで、記憶力を楽しく鍛えることができます。</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="feature-card text-center">
-                            <div class="feature-icon mx-auto">
-                                <i class="bi bi-trophy"></i>
-                            </div>
-                            <h4>ランキング機能</h4>
-                            <p>月間オンラインランキングで全国のプレイヤーと競えます。自分の歴代スコアも確認可能！</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="progress-section wrap" aria-labelledby="progress-title">
+      <div class="progress-head"><h2 id="progress-title">挑戦の記録</h2><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="前の画面" aria-controls="progress-gallery">←</button><span data-gallery-position aria-live="polite">1 / 3</span><button type="button" data-gallery-next aria-label="次の画面" aria-controls="progress-gallery">→</button></div></div>
+      <p class="section-intro">自己ベストやバッジ、グラフで振り返ろう。</p>
+      <div class="progress-grid" id="progress-gallery" data-gallery tabindex="0" role="region" aria-label="記録・バッジ・分析の画面">
+        <article class="progress-card"><h3>記録</h3><a class="progress-image" href="../images/marketing/records.webp" target="_blank" rel="noopener noreferrer" aria-label="記録画面を拡大する"><img src="../images/marketing/records.webp" loading="lazy" alt="段位と回答の記録。数値はサンプルです" width="660" height="1434"></a><p>目指せ 自己ベスト！</p></article>
+        <article class="progress-card"><h3>バッジ</h3><a class="progress-image" href="../images/marketing/badges.webp" target="_blank" rel="noopener noreferrer" aria-label="バッジ画面を拡大する"><img src="../images/marketing/badges.webp" loading="lazy" alt="取得したバッジの一覧。取得状況はサンプルです" width="660" height="1434"></a><p>集めて、次の段位へ。</p></article>
+        <article class="progress-card"><h3>分析</h3><a class="progress-image" href="../images/marketing/analysis.webp" target="_blank" rel="noopener noreferrer" aria-label="分析画面を拡大する"><img src="../images/marketing/analysis.webp" loading="lazy" alt="回答の記録と推移のグラフ。数値はサンプルです" width="660" height="1434"></a><p>得意も苦手も、ひと目で。</p></article>
+      </div>
+      <p class="section-note">記録・成績・バッジは撮影用のサンプルです。</p>
+    </section>
 
-        <!-- 利用シーン -->
-        <section id="usage-scenes" class="py-5">
-            <div class="container">
-                <h2 class="text-center mb-5">あなたはどう遊ぶ？</h2>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="scene-card">
-                            <div class="scene-header-mobile">
-                                <h4 class="fw-bold mb-3"><span class="scene-icon-inline">📱</span>通勤・通学の3分間に</h4>
-                            </div>
-                            <p class="mb-0">電車やバスでの移動時間に、サクッと漢字クイズ。スキマ時間の学習に最適です。</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="scene-card">
-                            <div class="scene-header-mobile">
-                                <h4 class="fw-bold mb-3"><span class="scene-icon-inline">🏠</span>家族団らんのひと時に</h4>
-                            </div>
-                            <p class="mb-0">親子で一緒に漢字を覚えたり、クイズ形式で楽しめます。世代を超えて楽しめる学習ツールです。</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="scene-card">
-                            <div class="scene-header-mobile">
-                                <h4 class="fw-bold mb-3"><span class="scene-icon-inline">📚</span>勉強の合間に</h4>
-                            </div>
-                            <p class="mb-0">勉強の合間のリフレッシュに。ゲーム感覚で漢字の知識を身につけましょう。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="daily-section wrap"><h2>すきま時間に、今日の5問。</h2><p>毎日のクイズと復習を、自分のペースで。</p></section>
 
-        <!-- Q&A セクション -->
-        <section class="faq-section">
-            <div class="container">
-                <h2 class="text-center mb-5">よくある質問</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="accordion" id="faqAccordion">
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#faq1">
-                                        <i class="bi bi-question-circle-fill me-2"></i>無料で遊べますか？
-                                    </button>
-                                </h3>
-                                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        はい、基本機能は完全無料でお楽しみいただけます。広告が表示されますが、基本機能は無料でお楽しみいただけます。
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#faq2">
-                                        <i class="bi bi-question-circle-fill me-2"></i>何歳から遊べますか？
-                                    </button>
-                                </h3>
-                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        ルールがシンプルなので、小さなお子様からシニアの方まで、幅広い年齢層の方に楽しんでいただけます。家族で一緒に遊ぶことも可能です。
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#faq3">
-                                        <i class="bi bi-question-circle-fill me-2"></i>どのくらいの漢字が収録されていますか？
-                                    </button>
-                                </h3>
-                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        様々な難読漢字を収録しています。カテゴリ別や難易度別に学習できるので、自分のペースで進められます。
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="plus-section wrap"><div><span class="plus-badge">任意の有料プラン</span><h2>Study Plus</h2></div><ul><li>会員期間中は広告なし</li><li>ゲーム・追加学習の回数制限なし</li><li>90日の分析・苦手な読みの復習</li></ul><p class="section-note">料金・更新条件・無料体験の対象条件はアプリ内でご確認ください。</p></section>
 
-        <!-- ダウンロードセクション（CTA） -->
-        <section id="download" class="cta-section">
-            <div class="container text-center">
-                <h2 class="mb-4">今すぐダウンロードして、漢字の知識を身につけよう！</h2>
-                <p class="lead mb-4">楽しく学んで、難読漢字マスターになろう！</p>
-                <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <a href="https://play.google.com/store/apps/details?id=com.KanjiMemoryAwaPop.takekapp1990.prod"
-                        target="_blank" class="store-badge" id="android-badge-cta">
-                        <img src="https://takekapp.com/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png"
-                            alt="Google Playで手に入れよう" height="60" decoding="async" loading="lazy">
-                    </a>
-                    <a href="https://apps.apple.com/us/app/%E9%9B%A3%E8%AA%AD%E6%BC%A2%E5%AD%97%E3%82%AF%E3%82%A4%E3%82%BA-%E3%81%82%E3%82%8F%E3%81%82%E3%82%8F%E3%83%9D%E3%83%B3/id6757838084"
-                        target="_blank" class="store-badge" id="ios-badge-cta">
-                        <img src="https://takekapp.com/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
-                            alt="App Storeからダウンロード" height="60" decoding="async" loading="lazy">
-                    </a>
-                </div>
-            </div>
-        </section>
+    <section class="faq-section wrap" id="faq"><h2>よくある質問</h2>
+      <details><summary>無料で遊べますか？</summary><p>基本の学習・漢字帳・記録は無料です。広告の表示やゲーム回数などの上限があります。有料のStudy Plusも選べます。</p></details>
+      <details><summary>文字を大きくできますか？</summary><p>メニューの「文字の大きさ」から、標準・大きめ・特大を選べます。</p></details>
+      <details><summary>どんなジャンルの漢字が出ますか？</summary><p>生き物、魚へん、植物、食べ物、地名、駅名、苗字、熟語などを収録しています。</p></details>
+      <details><summary>以前の記憶ゲームも遊べますか？</summary><p>はい。ゲームタブの「あわあわポン」から遊べます。</p></details>
+    </section>
 
-        <!-- フッター -->
-        <footer class="bg-dark text-white py-4">
-            <div class="container text-center">
-                <p>&copy; 2025 takekapp1990. All rights reserved.</p>
-                <div class="mt-3">
-                    <a href="https://takekapp.com/KanjiAwaAwaPon/ja/terms_and_conditions_ja.html"
-                        class="text-white me-3">利用規約</a>
-                    <a href="https://takekapp.com/KanjiAwaAwaPon/ja/privacy_policy_ja.html"
-                        class="text-white">プライバシーポリシー</a>
-                </div>
-            </div>
-        </footer>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        <!-- OS検出スクリプト -->
-        <script>
-            (function () {
-                function detectOS() {
-                    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-                    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                        return 'ios';
-                    }
-                    if (/android/i.test(userAgent)) {
-                        return 'android';
-                    }
-                    return 'other';
-                }
-
-                const os = detectOS();
-                const androidBadge = document.getElementById('android-badge');
-                const iosBadge = document.getElementById('ios-badge');
-                const androidBadgeCta = document.getElementById('android-badge-cta');
-                const iosBadgeCta = document.getElementById('ios-badge-cta');
-
-                // モバイル表示では両方のバッジを表示（OS検出による非表示は行わない）
-                // デスクトップ表示では両方のバッジを表示
-            })();
-        </script>
-
-        <!-- Google Analytics イベント追跡 -->
-        <script>
-            (function () {
-                const hasVisited = localStorage.getItem('ga_has_visited');
-                if (!hasVisited) {
-                    gtag('event', 'first_visit', {
-                        'event_category': 'engagement',
-                        'event_label': 'first_visit'
-                    });
-                    localStorage.setItem('ga_has_visited', 'true');
-                }
-            })();
-
-            (function () {
-                const scrollThresholds = [25, 50, 75, 100];
-                const trackedThresholds = new Set();
-
-                function trackScrollDepth() {
-                    const windowHeight = window.innerHeight;
-                    const documentHeight = document.documentElement.scrollHeight;
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    const scrollPercent = Math.round((scrollTop / (documentHeight - windowHeight)) * 100);
-
-                    scrollThresholds.forEach(threshold => {
-                        if (scrollPercent >= threshold && !trackedThresholds.has(threshold)) {
-                            trackedThresholds.add(threshold);
-                            gtag('event', 'scroll', {
-                                'event_category': 'engagement',
-                                'event_label': 'scroll_depth_' + threshold + 'percent',
-                                'value': threshold
-                            });
-                        }
-                    });
-                }
-
-                let scrollTimeout;
-                window.addEventListener('scroll', function () {
-                    if (scrollTimeout) {
-                        clearTimeout(scrollTimeout);
-                    }
-                    scrollTimeout = setTimeout(trackScrollDepth, 100);
-                }, { passive: true });
-            })();
-
-            (function () {
-                function isExternalLink(url) {
-                    if (!url) return false;
-                    try {
-                        const linkUrl = new URL(url, window.location.origin);
-                        return linkUrl.hostname !== window.location.hostname;
-                    } catch (e) {
-                        return false;
-                    }
-                }
-
-                function isAppStoreLink(url) {
-                    if (!url) return false;
-                    return url.includes('apps.apple.com') ||
-                        url.includes('play.google.com') ||
-                        url.includes('app-store') ||
-                        url.includes('google-play');
-                }
-
-                function trackLinkClick(event) {
-                    const link = event.currentTarget;
-                    const url = link.href;
-
-                    if (isAppStoreLink(url)) {
-                        gtag('event', 'click', {
-                            'event_category': 'outbound',
-                            'event_label': 'app_store_link',
-                            'link_url': url,
-                            'link_text': link.textContent.trim() || link.title || 'App Store Link'
-                        });
-                    } else if (isExternalLink(url)) {
-                        gtag('event', 'click', {
-                            'event_category': 'outbound',
-                            'event_label': 'external_link',
-                            'link_url': url,
-                            'link_text': link.textContent.trim() || link.title || 'External Link'
-                        });
-                    }
-                }
-
-                document.addEventListener('DOMContentLoaded', function () {
-                    const links = document.querySelectorAll('a[href]');
-                    links.forEach(link => {
-                        const url = link.getAttribute('href');
-                        if (isExternalLink(url) || isAppStoreLink(url)) {
-                            link.addEventListener('click', trackLinkClick);
-                        }
-                    });
-                });
-            })();
-        </script>
-    <nav class="takekapp-site-nav" data-takekapp-site-nav aria-label="TakeKApp">
-        <a href="/">TakeKApp Apps</a>
-        <a href="/blog/">Development Blog</a>
-    </nav>
+    <section class="download-section" id="download"><div class="wrap"><h2>さっそく腕試し！</h2><p>難読漢字 あわあわポン</p><div class="stores"><a id="ios-badge-cta" href="https://apps.apple.com/jp/app/id6757838084" target="_blank" rel="noopener noreferrer"><img src="/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeからダウンロード" width="162" height="54"></a><a id="android-badge-cta" href="https://play.google.com/store/apps/details?id=com.KanjiMemoryAwaPop.takekapp1990.prod&amp;hl=ja" target="_blank" rel="noopener noreferrer"><img src="/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで手に入れよう" width="184" height="71"></a></div><p class="download-note">基本無料・広告あり・アプリ内課金あり</p></div></section>
+  </main>
+  <footer class="wrap"><a href="https://takekapp.com/">TakeKApp</a><div><a href="terms_and_conditions_ja.html">利用規約</a><a href="privacy_policy_ja.html">プライバシーポリシー</a></div><small>© 2026 TakeKApp</small></footer>
 </body>
-
 </html>
