@@ -1,15 +1,26 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, follow"><title>Amida Maker | Support &amp; Legal</title><link rel="stylesheet" href="styles.css"><link rel="icon" href="images/app_icon.png">
-<script>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Amida Maker</title><link rel="stylesheet" href="marketing.css"><link rel="icon" href="images/app_icon.png"><script>
 (() => {
+  const available = new Set(["ja", "en", "ko", "zh_Hant", "zh_Hans", "th", "id", "vi", "pt_BR", "ms", "fr"]);
+  const match = (value) => {
+    const parts = value.toLowerCase().replace(/_/g, '-').split('-');
+    const language = parts[0];
+    if (language === 'zh') {
+      if (parts.includes('hant')) return 'zh_Hant';
+      if (parts.includes('hans')) return 'zh_Hans';
+      return parts.some(part => ['tw', 'hk', 'mo'].includes(part)) ? 'zh_Hant' : 'zh_Hans';
+    }
+    if (language === 'pt') return 'pt_BR';
+    if (language === 'in') return 'id';
+    return language;
+  };
   const languages = navigator.languages && navigator.languages.length
     ? navigator.languages : [navigator.language || 'en'];
-  const language = languages.map(value => value.toLowerCase().split(/[-_]/)[0])
-    .find(value => ['ja', 'en', 'ko'].includes(value)) || 'en';
-  const destination = new URL('./' + language + '/support.html', window.location.href);
+  const locale = languages.map(match).find(value => available.has(value)) || 'en';
+  const destination = new URL('./' + locale + '/landing_page_' + locale + '.html', window.location.href);
   destination.search = window.location.search;
   destination.hash = window.location.hash;
   window.location.replace(destination.href);
 })();
 </script></head>
-<body><main class="language-home"><img src="images/app_icon.png" alt="" width="72" height="72"><p class="eyebrow">TakeKApp</p><h1>Amida Maker</h1><p>Support &amp; Legal / サポート・規約 / 지원·약관</p><nav aria-label="Language"><ul><li><a class="quick-link" href="ja/support.html" lang="ja">日本語<span aria-hidden="true">↗</span></a></li><li><a class="quick-link" href="en/support.html" lang="en">English<span aria-hidden="true">↗</span></a></li><li><a class="quick-link" href="ko/support.html" lang="ko">한국어<span aria-hidden="true">↗</span></a></li></ul></nav></main></body></html>
+<body><main class="language-index content"><img src="images/app_icon.png" width="84" height="84" alt=""><h1>Amida Maker</h1><ul><li><a href="ja/landing_page_ja.html" lang="ja">日本語</a></li><li><a href="en/landing_page_en.html" lang="en">English</a></li><li><a href="ko/landing_page_ko.html" lang="ko">한국어</a></li><li><a href="zh_Hant/landing_page_zh_Hant.html" lang="zh-Hant">繁體中文</a></li><li><a href="zh_Hans/landing_page_zh_Hans.html" lang="zh-Hans">简体中文</a></li><li><a href="th/landing_page_th.html" lang="th">ไทย</a></li><li><a href="id/landing_page_id.html" lang="id">Bahasa Indonesia</a></li><li><a href="vi/landing_page_vi.html" lang="vi">Tiếng Việt</a></li><li><a href="pt_BR/landing_page_pt_BR.html" lang="pt-BR">Português (Brasil)</a></li><li><a href="ms/landing_page_ms.html" lang="ms">Bahasa Melayu</a></li><li><a href="fr/landing_page_fr.html" lang="fr">Français</a></li></ul></main></body></html>

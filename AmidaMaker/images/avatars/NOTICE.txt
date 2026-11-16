@@ -1,0 +1,5 @@
+Noto Emoji artwork
+Copyright 2013 Google, Inc. All Rights Reserved.
+Source: https://github.com/googlefonts/noto-emoji/tree/22e564626297b4df0a40570ad81d6c05cc7c38bd
+Unmodified 128px PNG image resources; Apache License 2.0 as specified in the upstream README and svg/LICENSE.
+The upstream font license is retained separately; no Noto font is bundled.
