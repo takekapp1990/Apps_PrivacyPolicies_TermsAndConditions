@@ -13,7 +13,6 @@
       "you want to do.": "quieres hacer.",
       "A weekend away. A recipe to try. A life you’re curious about.": "Ese lugar que quieres visitar. Esos pequeños planes del día a día.",
       "Keep your wishes on cards you’ll want to open again.": "Guárdalos en tus tarjetas favoritas y empieza a ilusionarte.",
-      "Screens show sample content from the redesigned app.": "Las pantallas muestran ejemplos de la nueva versión, con la interfaz en inglés.",
       "Some designs shown require a purchase.": "Algunos diseños requieren una compra. La app también está disponible en español.",
       "Before a hundred, start with one.": "Antes de llegar a cien, empieza por uno.",
       "A list you’ll want": "Una lista que apetece",
@@ -99,7 +98,8 @@
       "A room illustration and a personal note about the future": "Una ilustración de una habitación y una nota personal sobre el futuro",
       "A monthly album with an achieved wish, photos and notes": "Un álbum mensual con un deseo cumplido, fotos y notas",
       "An optional shared achievement with congratulations and an add-to-my-list action": "Un logro compartido con opciones para felicitar y añadirlo a tu lista"
-    }
+    },
+    "screen_language_notice": "Las pantallas muestran la interfaz en inglés."
   },
   "ko": {
     "text": {
@@ -115,7 +115,6 @@
       "you want to do.": "적어 보세요.",
       "A weekend away. A recipe to try. A life you’re curious about.": "언젠가 가고 싶은 곳도, 일상의 작은 즐거움도.",
       "Keep your wishes on cards you’ll want to open again.": "마음에 드는 카드에 담아, 설레는 계획을 만들어 보세요.",
-      "Screens show sample content from the redesigned app.": "새롭게 바뀐 앱의 예시 화면이며, 화면 속 언어는 영어입니다.",
       "Some designs shown require a purchase.": "일부 디자인은 유료입니다. 앱은 한국어로도 사용할 수 있습니다.",
       "Before a hundred, start with one.": "처음부터 100개가 아니어도 괜찮아요.",
       "A list you’ll want": "보기만 해도",
@@ -201,7 +200,8 @@
       "A room illustration and a personal note about the future": "방 일러스트와 앞으로의 나에 대한 생각을 남기는 화면",
       "A monthly album with an achieved wish, photos and notes": "달성한 일과 사진, 메모를 모아 보는 월별 앨범",
       "An optional shared achievement with congratulations and an add-to-my-list action": "달성 기록을 축하하거나 내 목록에 추가할 수 있는 커뮤니티 화면"
-    }
+    },
+    "screen_language_notice": "화면 속 언어는 영어입니다."
   },
   "pt": {
     "text": {
@@ -217,7 +217,6 @@
       "you want to do.": "queres fazer.",
       "A weekend away. A recipe to try. A life you’re curious about.": "Aquele lugar que queres visitar. Os pequenos prazeres do dia a dia.",
       "Keep your wishes on cards you’ll want to open again.": "Guarda-os nos teus cartões favoritos e começa a fazer planos.",
-      "Screens show sample content from the redesigned app.": "Os ecrãs mostram exemplos da nova versão, com a interface em inglês.",
       "Some designs shown require a purchase.": "Alguns designs são pagos. A aplicação também está disponível em português.",
       "Before a hundred, start with one.": "Antes de chegar a cem, começa por um.",
       "A list you’ll want": "Uma lista que apetece",
@@ -303,7 +302,8 @@
       "A room illustration and a personal note about the future": "Uma ilustração de uma divisão e uma nota pessoal sobre o futuro",
       "A monthly album with an achieved wish, photos and notes": "Um álbum mensal com um desejo realizado, fotografias e notas",
       "An optional shared achievement with congratulations and an add-to-my-list action": "Uma conquista partilhada com opções para dar os parabéns e adicionar à lista"
-    }
+    },
+    "screen_language_notice": "Os ecrãs mostram a interface em inglês."
   },
   "pt_BR": {
     "text": {
@@ -319,7 +319,6 @@
       "you want to do.": "você quer fazer.",
       "A weekend away. A recipe to try. A life you’re curious about.": "Aquele lugar que você quer conhecer. As pequenas alegrias do dia a dia.",
       "Keep your wishes on cards you’ll want to open again.": "Guarde tudo nos seus cartões favoritos e anime-se com o que vem pela frente.",
-      "Screens show sample content from the redesigned app.": "As telas mostram exemplos da nova versão, com a interface em inglês.",
       "Some designs shown require a purchase.": "Alguns designs são pagos. O app também está disponível em português do Brasil.",
       "Before a hundred, start with one.": "Antes de chegar a cem, comece por um.",
       "A list you’ll want": "Uma lista que dá vontade",
@@ -405,7 +404,8 @@
       "A room illustration and a personal note about the future": "Uma ilustração de um cômodo e uma nota pessoal sobre o futuro",
       "A monthly album with an achieved wish, photos and notes": "Um álbum mensal com um desejo realizado, fotos e notas",
       "An optional shared achievement with congratulations and an add-to-my-list action": "Uma conquista compartilhada com opções para dar os parabéns e adicionar à lista"
-    }
+    },
+    "screen_language_notice": "As telas mostram a interface em inglês."
   },
   "zh": {
     "text": {
@@ -421,7 +421,6 @@
       "you want to do.": "寫下來。",
       "A weekend away. A recipe to try. A life you’re curious about.": "有一天想去的地方，還有日常的小小期待。",
       "Keep your wishes on cards you’ll want to open again.": "把它們留在喜歡的卡片上，一起期待實現的那一天。",
-      "Screens show sample content from the redesigned app.": "畫面為新版應用的示範內容，介面語言為英文。",
       "Some designs shown require a purchase.": "部分設計需付費。應用也提供繁體中文介面。",
       "Before a hundred, start with one.": "不用一口氣寫滿100個，先從一個開始。",
       "A list you’ll want": "看著喜歡的清單，",
@@ -507,6 +506,7 @@
       "A room illustration and a personal note about the future": "房間插畫與對未來自己的想法",
       "A monthly album with an achieved wish, photos and notes": "按月份回顧達成的心願、照片與筆記",
       "An optional shared achievement with congratulations and an add-to-my-list action": "可為達成記錄送上祝賀，或將點子加入自己清單的社群畫面"
-    }
+    },
+    "screen_language_notice": "畫面中的介面語言為英文。"
   }
 }

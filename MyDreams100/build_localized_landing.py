@@ -42,6 +42,9 @@ def wire_common(html, loc):
         data = json.loads(m[1]); data['inLanguage'] = TAGS
         return '<script type="application/ld+json">'+json.dumps(data,ensure_ascii=False)+'</script>'
     html = re.sub(r'<script type="application/ld\+json">(.*?)</script>', schema, html, flags=re.S)
+    if loc['code'] in TRANSLATIONS:
+        notice = TRANSLATIONS[loc['code']]['screen_language_notice']
+        html = html.replace('<figcaption>', '<figcaption>'+escape(notice)+'<br>', 1)
     if loc['code'] not in ('ja', 'zh'):
         html = re.sub(r'(<p class="lead">.*?<br>)\s*', r'\1 ', html)
     version = hashlib.sha256((ROOT / 'landing.css').read_bytes()).hexdigest()[:12]
