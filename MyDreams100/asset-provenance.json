@@ -1030,6 +1030,34 @@
       "sha256": "34685db3a09db09c58ba7d9018153c30cfba4e51f561026378090bf783394a55",
       "capture_type": "Official localized store badge; unchanged",
       "sample_entries": false
+    },
+    {
+      "asset": "badges/apple-de.svg",
+      "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/de-de?size=250x83",
+      "sha256": "4f2967e1f642dd16eec36ac4022f07b7a881cab6301a13be3a4ccfcd3206a614",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
+    },
+    {
+      "asset": "badges/google-de.png",
+      "source": "https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png",
+      "sha256": "6760aac0db8d24da21f4fd803a06c6ef26c8849e0bd623420973a5666fd3a4c4",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
+    },
+    {
+      "asset": "badges/apple-it.svg",
+      "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/it-it?size=250x83",
+      "sha256": "ec8e9566058da3382fc0c8b8a8532a342e3587be801fee42e110f8fd707cee0b",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
+    },
+    {
+      "asset": "badges/google-it.png",
+      "source": "https://play.google.com/intl/en_us/badges/static/images/badges/it_badge_web_generic.png",
+      "sha256": "d2b0cbfe2924e82a023c7760a872c5a388c7335c76df907f3ea35cd5423ff94d",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
     }
   ],
   "screenshot_status": "Fresh Japanese and English native Simulator captures, delivered as proportional JPEG derivatives at 780px and 390px width. Native originals and capture.json remain untouched under output/raw. Actual app widgets use in-memory sample records; community is an offline fixture. No screenshot content was redrawn, removed or retouched. LP uses cropped CSS presentation windows.",

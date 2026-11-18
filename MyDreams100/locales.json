@@ -1,5 +1,17 @@
 [
   {
+    "code": "de",
+    "tag": "de",
+    "label": "Deutsch",
+    "short": "DE",
+    "og": "de_DE",
+    "country": "de",
+    "play": "de",
+    "currency": "EUR",
+    "language": "Sprache",
+    "name": "My Dreams 100"
+  },
+  {
     "code": "en",
     "tag": "en",
     "label": "English",
@@ -21,6 +33,18 @@
     "play": "es",
     "currency": "EUR",
     "language": "Idioma",
+    "name": "My Dreams 100"
+  },
+  {
+    "code": "it",
+    "tag": "it",
+    "label": "Italiano",
+    "short": "IT",
+    "og": "it_IT",
+    "country": "it",
+    "play": "it",
+    "currency": "EUR",
+    "language": "Lingua",
     "name": "My Dreams 100"
   },
   {

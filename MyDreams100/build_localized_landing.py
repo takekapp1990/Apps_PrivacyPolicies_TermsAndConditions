@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build five localized LPs from current English markup and wire seven-language navigation.
+"""Build localized LPs from current English markup and update language navigation.
 
 Japanese/English body copy is edited in its own HTML. Missing translation text fails
 explicitly when the English template changes. App-side files are never written.
@@ -124,4 +124,4 @@ for code,translation in TRANSLATIONS.items():
     path = ROOT / code / f'landing_page_{code}.html';path.parent.mkdir(exist_ok=True);path.write_text(html)
 for code in ('ja','en'):
     path = ROOT / code / f'landing_page_{code}.html';path.write_text(wire_common(path.read_text(),BY_CODE[code]))
-print('Built 5 localized pages; updated navigation and alternate URLs for all 7 locales.')
+print(f'Built {len(TRANSLATIONS)} localized pages; updated navigation and alternate URLs for all {len(LOCALES)} locales.')
