@@ -470,7 +470,7 @@
   </url>
   <url>
     <loc>https://takekapp.com/MyDreams100/en/landing_page_en.html</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
   </url>
   <url>
     <loc>https://takekapp.com/MyDreams100/en/privacy_policy_en.html</loc>
@@ -482,7 +482,7 @@
   </url>
   <url>
     <loc>https://takekapp.com/MyDreams100/ja/landing_page_ja.html</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
   </url>
   <url>
     <loc>https://takekapp.com/MyDreams100/ja/privacy_policy_ja.html</loc>
@@ -1799,5 +1799,25 @@
   <url>
     <loc>https://takekapp.com/NumberPlaceHint/zh_TW/learn/locked-candidates.html</loc>
     <lastmod>2026-10-21</lastmod>
+  </url>
+  <url>
+    <loc>https://takekapp.com/MyDreams100/es/landing_page_es.html</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://takekapp.com/MyDreams100/ko/landing_page_ko.html</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://takekapp.com/MyDreams100/pt/landing_page_pt.html</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://takekapp.com/MyDreams100/pt_BR/landing_page_pt_BR.html</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://takekapp.com/MyDreams100/zh/landing_page_zh.html</loc>
+    <lastmod>2026-11-18</lastmod>
   </url>
 </urlset>

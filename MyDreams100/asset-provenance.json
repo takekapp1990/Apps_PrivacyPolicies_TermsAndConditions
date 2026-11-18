@@ -1,0 +1,1104 @@
+{
+  "date": "2026-11-16",
+  "assets": [
+    {
+      "asset": "bouquet.png",
+      "source": "assets/images/app/my_dreams_100_app_icon_1024_1024_2.png",
+      "sha256": "7f1f02e4541d94bfb1241774ff8a6e592c60c7a7c2376d18bbf0517b02de08de",
+      "capture_type": "Existing app or official badge asset",
+      "sample_entries": false,
+      "language_note": null,
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "asset": "designs/flowers.jpg",
+      "source": "assets/images/dream_cards/flower_letters/cosmos.jpg",
+      "sha256": "8073fc729a14c3a416f39b18618496b1153cc40845c7d8123ac4880bede93d1d",
+      "capture_type": "Existing app or official badge asset",
+      "sample_entries": false,
+      "language_note": null,
+      "width": 900,
+      "height": 600
+    },
+    {
+      "asset": "designs/forest.jpg",
+      "source": "assets/images/dream_cards/forest_journal/pressed-leaves.jpg",
+      "sha256": "2974d88fc6def36ae07077c87020a252e114f2dec44b159566347454485f8f0a",
+      "capture_type": "Existing app or official badge asset",
+      "sample_entries": false,
+      "language_note": null,
+      "width": 960,
+      "height": 640
+    },
+    {
+      "asset": "designs/cafe.jpg",
+      "source": "assets/images/dream_cards/cafe_notebook/cup-sketch.jpg",
+      "sha256": "11629b540f56f03ac67d032a5723e34b3d43625b5de41cbaf0f5763e5bdcd6ad",
+      "capture_type": "Existing app or official badge asset",
+      "sample_entries": false,
+      "language_note": null,
+      "width": 960,
+      "height": 640
+    },
+    {
+      "asset": "badges/google-ja.png",
+      "source": "/Users/takekei0913/Develop/gitHubPagesForAppInfo/PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_Japanese.png",
+      "sha256": "6685eb728a9301b54900d352d3bdea6139bc5a05f1964d1cefc5113d65886f3d",
+      "capture_type": "Existing app or official badge asset",
+      "sample_entries": false,
+      "language_note": null,
+      "width": 270,
+      "height": 80
+    },
+    {
+      "asset": "badges/apple-ja.svg",
+      "source": "/Users/takekei0913/Develop/gitHubPagesForAppInfo/PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg",
+      "sha256": "988fe0a48015c5a56dac88172487a1f5cda96340b34d80fd94312d02e9f67865",
+      "capture_type": "Existing app or official badge asset",
+      "sample_entries": false,
+      "language_note": null,
+      "width": 108.85157,
+      "height": 40.0
+    },
+    {
+      "asset": "badges/google-en.png",
+      "source": "/Users/takekei0913/Develop/gitHubPagesForAppInfo/PrivacyPolicies_TermsAndConditions/commonImages/badgeAndroid/GetItOnGooglePlay_Badge_Web_color_English.png",
+      "sha256": "faa29e49e7d6df027fde006b0e7ba588bc55028f44a81a699f8e2c53dd26b2f7",
+      "capture_type": "Existing app or official badge asset",
+      "sample_entries": false,
+      "language_note": null,
+      "width": 270,
+      "height": 80
+    },
+    {
+      "asset": "badges/apple-en.svg",
+      "source": "/Users/takekei0913/Develop/gitHubPagesForAppInfo/PrivacyPolicies_TermsAndConditions/commonImages/badgeiOSAppStore/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg",
+      "sha256": "a26fc5b38380272c92e9019a2eb8b45542a66814b3e2b203772db8904b9fb99f",
+      "capture_type": "Existing app or official badge asset",
+      "sample_entries": false,
+      "language_note": null,
+      "width": 119.66407,
+      "height": 40.0
+    },
+    {
+      "asset": "screens/home-ja.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/ja/slot_01.png",
+      "source_sha256": "86c2347bc33a379457458400e385491d494e9488e69db83377a0ce8c919fa52a",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "fea782012afedf45e922c6d558d79b26ed351f537dc051e584c3140aa89d21b0",
+      "width": 780,
+      "height": 1696,
+      "bytes": 319414,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized ja UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "home",
+        "locale": "ja",
+        "revision": 2,
+        "widget": "DreamListScreen",
+        "route": "/dream-list",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 780,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/home-ja-390.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/ja/slot_01.png",
+      "source_sha256": "86c2347bc33a379457458400e385491d494e9488e69db83377a0ce8c919fa52a",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "a084e35741866e4de581ecf2b58209bf3a1905697bccba20ea5ccd6a2230542c",
+      "width": 390,
+      "height": 848,
+      "bytes": 104784,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized ja UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "home",
+        "locale": "ja",
+        "revision": 2,
+        "widget": "DreamListScreen",
+        "route": "/dream-list",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 390,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/questions-ja.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/ja/slot_02.png",
+      "source_sha256": "2e0bff9e44cae10b051c8590d80933af71a0b2303ad3dfa35a02d7b1da418afb",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "3c4c0191682697ac76221acb2ecd469367dda469e04782f668223693e3c3991d",
+      "width": 780,
+      "height": 1696,
+      "bytes": 136777,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized ja UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "questions",
+        "locale": "ja",
+        "revision": 3,
+        "widget": "DreamGoalsScreen (questionBased)",
+        "route": "/dream-goals",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 780,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/questions-ja-390.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/ja/slot_02.png",
+      "source_sha256": "2e0bff9e44cae10b051c8590d80933af71a0b2303ad3dfa35a02d7b1da418afb",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "131a46d37eebecb74d4857cd615059dd4014bdcbe07e3a7c5279d804f1892ba4",
+      "width": 390,
+      "height": 848,
+      "bytes": 49907,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized ja UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "questions",
+        "locale": "ja",
+        "revision": 3,
+        "widget": "DreamGoalsScreen (questionBased)",
+        "route": "/dream-goals",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 390,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/future-ja.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/ja/slot_05.png",
+      "source_sha256": "f9cc251d3b1a8453ec762e127348c8243cd4be03a58e7cae139c405edf53f01d",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "53cf8184593307cc4efc79c92ac160982aabb57ba27cf62549bac6f86df5d3aa",
+      "width": 780,
+      "height": 1696,
+      "bytes": 236549,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized ja UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "future",
+        "locale": "ja",
+        "revision": 6,
+        "widget": "FutureSelfScreen",
+        "route": "/future-self",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 780,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/future-ja-390.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/ja/slot_05.png",
+      "source_sha256": "f9cc251d3b1a8453ec762e127348c8243cd4be03a58e7cae139c405edf53f01d",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "67e7a92270487646fd920584979c4e01a89f152aff9640ad3934f0cc0ab725c1",
+      "width": 390,
+      "height": 848,
+      "bytes": 80232,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized ja UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "future",
+        "locale": "ja",
+        "revision": 6,
+        "widget": "FutureSelfScreen",
+        "route": "/future-self",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 390,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/album-ja.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/ja/slot_06.png",
+      "source_sha256": "8bc835a9754bd18376fd57da0c8ac7a7bc519afa781eac6d627bb06dc4857cd7",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "449cf28d3470f3982b4aad9b718ad150ba7ca3b24ad95efc1a35be8f2ce6ad41",
+      "width": 780,
+      "height": 1696,
+      "bytes": 171111,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized ja UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "album",
+        "locale": "ja",
+        "revision": 7,
+        "widget": "MonthlyReflectionScreen",
+        "route": "/monthly-album",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 780,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/album-ja-390.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/ja/slot_06.png",
+      "source_sha256": "8bc835a9754bd18376fd57da0c8ac7a7bc519afa781eac6d627bb06dc4857cd7",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "a55f990f1183f6743d6d37a638d524bee5d547aa3142f5fca7df0a49ae771357",
+      "width": 390,
+      "height": 848,
+      "bytes": 57999,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized ja UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "album",
+        "locale": "ja",
+        "revision": 7,
+        "widget": "MonthlyReflectionScreen",
+        "route": "/monthly-album",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 390,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/community-ja.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/ja/slot_07.png",
+      "source_sha256": "84c7bbb6567fbdf56f0ffa4762e1bbccc60cc21dfcce7bb41eb45d63902e7a5b",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "61a2490c843ceebec1818c961fe530550a478bc3ec96b4a921b199fe4dea63b9",
+      "width": 780,
+      "height": 1696,
+      "bytes": 173932,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized ja UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "community",
+        "locale": "ja",
+        "revision": 8,
+        "widget": "CommunityScreenLayout + CommunityFeedFilters + CommunityDreamCard (offline fixtures)",
+        "route": "/capture-community",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 780,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/community-ja-390.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/ja/slot_07.png",
+      "source_sha256": "84c7bbb6567fbdf56f0ffa4762e1bbccc60cc21dfcce7bb41eb45d63902e7a5b",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "0cfe614e679cef622da8b6aebed0bf91a826e33f63905bd1cf4d1dd83eec8d2b",
+      "width": 390,
+      "height": 848,
+      "bytes": 66624,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized ja UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "community",
+        "locale": "ja",
+        "revision": 8,
+        "widget": "CommunityScreenLayout + CommunityFeedFilters + CommunityDreamCard (offline fixtures)",
+        "route": "/capture-community",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 390,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/home-en.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/en/slot_01.png",
+      "source_sha256": "f5dd7091305955c22d43fdfa16fdb5ac4648dcd9f67289c9bcceed42476a4e9a",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "d530a760479884bca9bea0d22886e3069481e29a7019693c270bb43ccb2c7902",
+      "width": 780,
+      "height": 1696,
+      "bytes": 294063,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized en UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "home",
+        "locale": "en",
+        "revision": 9,
+        "widget": "DreamListScreen",
+        "route": "/dream-list",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 780,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/home-en-390.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/en/slot_01.png",
+      "source_sha256": "f5dd7091305955c22d43fdfa16fdb5ac4648dcd9f67289c9bcceed42476a4e9a",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "f1b22dc908a53636b2054b1a8fa1e287ee75189d6c2f027994af7559d820f369",
+      "width": 390,
+      "height": 848,
+      "bytes": 93456,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized en UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "home",
+        "locale": "en",
+        "revision": 9,
+        "widget": "DreamListScreen",
+        "route": "/dream-list",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 390,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/questions-en.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/en/slot_02.png",
+      "source_sha256": "a271b374733a9ce48281549beae86a823af356b8241d0d493c8e62ed9b25d4de",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "c495e21dfbe910247c21c9477d170fdb3defd943b13fa852441b0b3165a0a163",
+      "width": 780,
+      "height": 1696,
+      "bytes": 142551,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized en UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "questions",
+        "locale": "en",
+        "revision": 10,
+        "widget": "DreamGoalsScreen (questionBased)",
+        "route": "/dream-goals",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 780,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/questions-en-390.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/en/slot_02.png",
+      "source_sha256": "a271b374733a9ce48281549beae86a823af356b8241d0d493c8e62ed9b25d4de",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "68e648105332bd53717311b2638c031aaa73621d3256ec74f40948f9a0430c22",
+      "width": 390,
+      "height": 848,
+      "bytes": 51039,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized en UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "questions",
+        "locale": "en",
+        "revision": 10,
+        "widget": "DreamGoalsScreen (questionBased)",
+        "route": "/dream-goals",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 390,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/future-en.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/en/slot_05.png",
+      "source_sha256": "c7caf43d1bd31f277b6d0166d652eadd94a91193e0f4ee1108f67c482accce43",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "cb48d60718e7870c7f58d254f72f08c01090645c7dab0a7ce335b00c818b3104",
+      "width": 780,
+      "height": 1696,
+      "bytes": 233722,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized en UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "future",
+        "locale": "en",
+        "revision": 13,
+        "widget": "FutureSelfScreen",
+        "route": "/future-self",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 780,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/future-en-390.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/en/slot_05.png",
+      "source_sha256": "c7caf43d1bd31f277b6d0166d652eadd94a91193e0f4ee1108f67c482accce43",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "2a1373a9786a7943c4278851dfa48bc5f385ef33f24f4366b8a4bb9f8b613b53",
+      "width": 390,
+      "height": 848,
+      "bytes": 79375,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized en UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "future",
+        "locale": "en",
+        "revision": 13,
+        "widget": "FutureSelfScreen",
+        "route": "/future-self",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 390,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/album-en.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/en/slot_06.png",
+      "source_sha256": "de9010f3d1c0b219ac6b82ae10974cdad8b056c6683fb842a76bab320e7dc909",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "eb379ef77882ad3102dc93f123b6eeb2cc4c4eeb3c84a3af06fef473406c5979",
+      "width": 780,
+      "height": 1696,
+      "bytes": 177569,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized en UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "album",
+        "locale": "en",
+        "revision": 14,
+        "widget": "MonthlyReflectionScreen",
+        "route": "/monthly-album",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 780,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/album-en-390.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/en/slot_06.png",
+      "source_sha256": "de9010f3d1c0b219ac6b82ae10974cdad8b056c6683fb842a76bab320e7dc909",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "e164844b3e17ef1c81d9e1f36a7ae6a609668f3fc89c93f2bb623ceca3083df9",
+      "width": 390,
+      "height": 848,
+      "bytes": 58924,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized en UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "album",
+        "locale": "en",
+        "revision": 14,
+        "widget": "MonthlyReflectionScreen",
+        "route": "/monthly-album",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 390,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/community-en.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/en/slot_07.png",
+      "source_sha256": "ab544697f2fec4e4072064fc5f2c8571216d6f7dee4846e0b78ddfc26f00257a",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "c23c73ebf8716ac2b6b0c3a045a789b318666b385c30b413e4e5fc7ad6efff5d",
+      "width": 780,
+      "height": 1696,
+      "bytes": 166623,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized en UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "community",
+        "locale": "en",
+        "revision": 15,
+        "widget": "CommunityScreenLayout + CommunityFeedFilters + CommunityDreamCard (offline fixtures)",
+        "route": "/capture-community",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 780,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "screens/community-en-390.jpg",
+      "source": "output/marketing_release/raw/ios/iPhone/en/slot_07.png",
+      "source_sha256": "ab544697f2fec4e4072064fc5f2c8571216d6f7dee4846e0b78ddfc26f00257a",
+      "source_pixels": [
+        1206,
+        2622
+      ],
+      "sha256": "c7ebb7ae6c6c9b43b8f1371de7fd3334f465524ab8dde5a6a0600de8775e4dee",
+      "width": 390,
+      "height": 848,
+      "bytes": 63105,
+      "capture_type": "JPEG derivative of native Simulator capture",
+      "sample_entries": true,
+      "language_note": "Localized en UI and sample text",
+      "device_name": "Dreams-Ads-Resume-QA-20261116",
+      "proof": {
+        "scene": "community",
+        "locale": "en",
+        "revision": 15,
+        "widget": "CommunityScreenLayout + CommunityFeedFilters + CommunityDreamCard (offline fixtures)",
+        "route": "/capture-community",
+        "sample_records": true,
+        "network_feed": false,
+        "preferences": "in-memory",
+        "paid_design_preview": true,
+        "sample_month": "2026-11",
+        "logical_size": {
+          "width": 402.0,
+          "height": 874.0
+        }
+      },
+      "caption_composed": false,
+      "conversion": {
+        "tool": "macOS sips",
+        "format": "JPEG",
+        "quality": 88,
+        "resize_width": 390,
+        "crop": false,
+        "proportional_resize": true,
+        "lossy_encoding": true,
+        "semantic_content_changed": false
+      }
+    },
+    {
+      "asset": "badges/apple-es.svg",
+      "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/es-es?size=250x83",
+      "sha256": "e4d7c2c1606454536482735c96b933b04ea86a2e72701b3319ae1f3a369b0479",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
+    },
+    {
+      "asset": "badges/google-es.png",
+      "source": "https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png",
+      "sha256": "de3f8a494fd6d672e53a700d081e5a2fe37bb480d6848610a1e6c8beb5ba4724",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
+    },
+    {
+      "asset": "badges/apple-ko.svg",
+      "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ko-kr?size=250x83",
+      "sha256": "fc82d5344d0f2919a7ae697e677fc9c62872f1ee47bd70e24a581245423de9c1",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
+    },
+    {
+      "asset": "badges/google-ko.png",
+      "source": "https://play.google.com/intl/en_us/badges/static/images/badges/ko_badge_web_generic.png",
+      "sha256": "40b67d92fb4162ae7470efe7849481c1f3f978472ada95f306878cd1a8b6707d",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
+    },
+    {
+      "asset": "badges/apple-pt.svg",
+      "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-pt?size=250x83",
+      "sha256": "d23b8044168dc3fda1e5c468281cd8c746b528bb3a6039ff40ec81a30823a9d9",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
+    },
+    {
+      "asset": "badges/google-pt.png",
+      "source": "https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png",
+      "sha256": "e1ad5e03f636d94b05448c1f156e39b012b9e1d772b730d9e27d066695531a6b",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
+    },
+    {
+      "asset": "badges/apple-pt_BR.svg",
+      "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-br?size=250x83",
+      "sha256": "0e9291a9c654e479762b75b51dd94a150af6fab76390a79cb2218cdc8f6cc893",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
+    },
+    {
+      "asset": "badges/google-pt_BR.png",
+      "source": "https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png",
+      "sha256": "e1ad5e03f636d94b05448c1f156e39b012b9e1d772b730d9e27d066695531a6b",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
+    },
+    {
+      "asset": "badges/apple-zh.svg",
+      "source": "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/zh-tw?size=250x83",
+      "sha256": "0371becc5be192db830e225aabc55ee94d270c0810e453fd40842a12f24d8e80",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
+    },
+    {
+      "asset": "badges/google-zh.png",
+      "source": "https://play.google.com/intl/en_us/badges/static/images/badges/zh-tw_badge_web_generic.png",
+      "sha256": "34685db3a09db09c58ba7d9018153c30cfba4e51f561026378090bf783394a55",
+      "capture_type": "Official localized store badge; unchanged",
+      "sample_entries": false
+    }
+  ],
+  "screenshot_status": "Fresh Japanese and English native Simulator captures, delivered as proportional JPEG derivatives at 780px and 390px width. Native originals and capture.json remain untouched under output/raw. Actual app widgets use in-memory sample records; community is an offline fixture. No screenshot content was redrawn, removed or retouched. LP uses cropped CSS presentation windows.",
+  "source_scope": "Existing app LP draft imported to the public-source checkout. App checkout is read-only. Original captures are preserved. Only MyDreams100 landing pages and their assets are edited here.",
+  "visual_review": {
+    "date_jst": "2026-11-16",
+    "selected_images": [
+      "screens/home-ja.png",
+      "screens/questions-ja.png",
+      "screens/future-ja.png",
+      "screens/album-ja.png",
+      "screens/community-ja.png",
+      "screens/home-en.png",
+      "screens/questions-en.png",
+      "screens/future-en.png",
+      "screens/album-en.png",
+      "screens/community-en.png"
+    ],
+    "copy_alignment_changes": [
+      "Question quotation and image alt text now match the guided-writing screen.",
+      "Future image alt text now describes the visible room illustration.",
+      "English-page notice about Japanese screenshots removed; example-entry disclosure retained."
+    ],
+    "remaining": "Browser responsive layout review is performed by parent separately.",
+    "derivatives": {
+      "reviewed": [
+        "screens/home-ja.jpg",
+        "screens/questions-en.jpg",
+        "screens/future-ja.jpg",
+        "screens/community-en-390.jpg"
+      ],
+      "result": "Text and artwork remain legible in representative 780px and 390px JPEGs. No content/cropping differences observed beyond proportional resampling and lossy compression. Browser responsive layout is reviewed separately by the parent."
+    }
+  },
+  "optimization": {
+    "format": "JPEG",
+    "reason": "Local WebP encoder unavailable; native JPEG encoding requires no install.",
+    "original_bytes_10_captures": 13879876,
+    "derived_bytes_780": 2052311,
+    "derived_bytes_390": 705445,
+    "originals_preserved": true,
+    "responsive_widths": [
+      780,
+      390
+    ],
+    "original_duplicate_pngs_removed_from_lp": [
+      "images/screens/home-ja.png",
+      "images/screens/questions-ja.png",
+      "images/screens/future-ja.png",
+      "images/screens/album-ja.png",
+      "images/screens/community-ja.png",
+      "images/screens/home-en.png",
+      "images/screens/questions-en.png",
+      "images/screens/future-en.png",
+      "images/screens/album-en.png",
+      "images/screens/community-en.png"
+    ]
+  },
+  "source_project": "/Users/takekei0913/Develop/flutterWork/my_dreams_100",
+  "imported_from": "marketing/landing/MyDreams100",
+  "imported_date_jst": "2026-11-17",
+  "fonts": [
+    {
+      "asset": "fonts/shippori-mincho-500-lp.ttf",
+      "source": "https://fonts.google.com/specimen/Shippori+Mincho",
+      "weight": 500,
+      "subset": "Japanese LP headings and quotation",
+      "license": "fonts/shipporimincho-OFL.txt",
+      "sha256": "1bee02de611b784cf9bf33937a7bad7558a7eea13dc01b7857d743ae2776bc61"
+    }
+  ]
+}

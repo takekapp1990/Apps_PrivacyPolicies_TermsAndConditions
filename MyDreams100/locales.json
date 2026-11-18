@@ -1,0 +1,86 @@
+[
+  {
+    "code": "en",
+    "tag": "en",
+    "label": "English",
+    "short": "EN",
+    "og": "en_US",
+    "country": "us",
+    "play": "en",
+    "currency": "USD",
+    "language": "Language",
+    "name": "My Dreams 100"
+  },
+  {
+    "code": "es",
+    "tag": "es",
+    "label": "Español",
+    "short": "ES",
+    "og": "es_ES",
+    "country": "es",
+    "play": "es",
+    "currency": "EUR",
+    "language": "Idioma",
+    "name": "My Dreams 100"
+  },
+  {
+    "code": "ja",
+    "tag": "ja",
+    "label": "日本語",
+    "short": "日本語",
+    "og": "ja_JP",
+    "country": "jp",
+    "play": "ja",
+    "currency": "JPY",
+    "language": "言語",
+    "name": "やりたいこと100"
+  },
+  {
+    "code": "ko",
+    "tag": "ko",
+    "label": "한국어",
+    "short": "한국어",
+    "og": "ko_KR",
+    "country": "kr",
+    "play": "ko",
+    "currency": "KRW",
+    "language": "언어",
+    "name": "My Dreams 100"
+  },
+  {
+    "code": "pt",
+    "tag": "pt-PT",
+    "label": "Português (Portugal)",
+    "short": "PT",
+    "og": "pt_PT",
+    "country": "pt",
+    "play": "pt_PT",
+    "currency": "EUR",
+    "language": "Idioma",
+    "name": "My Dreams 100"
+  },
+  {
+    "code": "pt_BR",
+    "tag": "pt-BR",
+    "label": "Português (Brasil)",
+    "short": "PT-BR",
+    "og": "pt_BR",
+    "country": "br",
+    "play": "pt_BR",
+    "currency": "BRL",
+    "language": "Idioma",
+    "name": "My Dreams 100"
+  },
+  {
+    "code": "zh",
+    "tag": "zh-Hant",
+    "label": "繁體中文",
+    "short": "繁體中文",
+    "og": "zh_TW",
+    "country": "tw",
+    "play": "zh_TW",
+    "currency": "TWD",
+    "language": "語言",
+    "name": "我的100個心願"
+  }
+]
