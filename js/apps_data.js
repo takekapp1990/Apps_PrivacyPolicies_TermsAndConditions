@@ -270,7 +270,7 @@ const appsData = [
     },
     {
         id: 'MyDreams100',
-        icon: 'https://takekapp.com/MyDreams100/images/app_icon/my_dreams_100_app_icon_1024_1024_2.png',
+        icon: 'https://takekapp.com/MyDreams100/images/bouquet.png',
         android: 'https://play.google.com/store/apps/details?id=com.mydreams100.takekapp1990.prod',
         ios: 'https://apps.apple.com/jp/app/%E3%82%84%E3%82%8A%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8100/id6751042472',
         locales: {
@@ -283,6 +283,42 @@ const appsData = [
                 title: 'My Dreams 100',
                 description: 'An app that helps you write down 100 things you want to do and supports your dream realization. From goal setting to achievement management.',
                 lp: 'https://takekapp.com/MyDreams100/en/landing_page_en.html'
+            },
+            de: {
+                title: 'My Dreams 100',
+                description: 'Sammle deine Wünsche auf Karten, die dir gefallen. Halte kleine Schritte und erreichte Ziele mit Fotos und Notizen fest.',
+                lp: 'https://takekapp.com/MyDreams100/de/landing_page_de.html',
+                ios: 'https://apps.apple.com/de/app/id6751042472'
+            },
+            es: {
+                title: 'My Dreams 100',
+                description: 'Guarda lo que quieres hacer en tus tarjetas favoritas y recuerda tus pequeños pasos y logros con fotos y notas.',
+                lp: 'https://takekapp.com/MyDreams100/es/landing_page_es.html',
+                ios: 'https://apps.apple.com/es/app/id6751042472'
+            },
+            it: {
+                title: 'My Dreams 100',
+                description: 'Raccogli i tuoi desideri sulle tue schede preferite e ricorda i piccoli passi e i traguardi con foto e note.',
+                lp: 'https://takekapp.com/MyDreams100/it/landing_page_it.html',
+                ios: 'https://apps.apple.com/it/app/id6751042472'
+            },
+            ko: {
+                title: 'My Dreams 100',
+                description: '하고 싶은 일을 좋아하는 카드에 담고, 작은 시도와 성취를 사진과 메모로 남겨 보세요.',
+                lp: 'https://takekapp.com/MyDreams100/ko/landing_page_ko.html',
+                ios: 'https://apps.apple.com/kr/app/id6751042472'
+            },
+            pt: {
+                title: 'My Dreams 100',
+                description: 'Guarde seus desejos em cartões de que goste e relembre pequenos passos e conquistas com fotos e notas.',
+                lp: 'https://takekapp.com/MyDreams100/pt_BR/landing_page_pt_BR.html',
+                ios: 'https://apps.apple.com/br/app/id6751042472'
+            },
+            zh_TW: {
+                title: '我的100個心願',
+                description: '把想做的事寫在喜歡的卡片上，用照片和筆記記錄每一小步，回顧實現心願的過程。',
+                lp: 'https://takekapp.com/MyDreams100/zh/landing_page_zh.html',
+                ios: 'https://apps.apple.com/tw/app/id6751042472'
             }
         }
     },
@@ -368,6 +404,74 @@ const appsData = [
                 title: 'MemoWink Album',
                 description: 'Magic happens with every touch. A photo app safe for kids. Look back on your photos and increase family bonding time.',
                 lp: 'https://takekapp.com/MemoWinkAlbum/en/landing_page_en.html'
+            }
+        }
+    },
+    {
+        id: 'AmidaMaker',
+        icon: 'https://takekapp.com/AmidaMaker/images/app_icon.png',
+        android: 'https://play.google.com/store/apps/details?id=com.amidaKuji.takekapp1990.prod',
+        ios: 'https://apps.apple.com/app/id6830528233',
+        locales: {
+            ja: {
+                title: 'あみだくじメーカー',
+                description: 'あみだくじで順番決め、ルーレットで候補選び、グループ分けでチーム作成。',
+                lp: 'https://takekapp.com/AmidaMaker/ja/landing_page_ja.html',
+                ios: 'https://apps.apple.com/jp/app/id6830528233?l=ja'
+            },
+            en: {
+                title: 'Amida Maker: Random Picker',
+                description: 'Ladder draws, roulette and team splits in one app.',
+                lp: 'https://takekapp.com/AmidaMaker/en/landing_page_en.html',
+                ios: 'https://apps.apple.com/us/app/id6830528233?l=en-US'
+            },
+            zh_CN: {
+                title: '画鬼脚抽签・转盘・分组',
+                description: '画鬼脚、转盘、分组，一个 App 就搞定。',
+                lp: 'https://takekapp.com/AmidaMaker/zh_Hans/landing_page_zh_Hans.html',
+                ios: 'https://apps.apple.com/cn/app/id6830528233?l=zh-Hans'
+            },
+            zh_TW: {
+                title: '畫鬼腳抽籤・轉盤・分組',
+                description: '畫鬼腳、轉盤、分組，一個 App 就搞定。',
+                lp: 'https://takekapp.com/AmidaMaker/zh_Hant/landing_page_zh_Hant.html',
+                ios: 'https://apps.apple.com/tw/app/id6830528233?l=zh-Hant'
+            },
+            ko: {
+                title: '사다리타기 메이커: 룰렛·조 나누기',
+                description: '사다리타기, 룰렛, 조 나누기를 하나의 앱에서.',
+                lp: 'https://takekapp.com/AmidaMaker/ko/landing_page_ko.html',
+                ios: 'https://apps.apple.com/kr/app/id6830528233?l=ko'
+            },
+            fr: {
+                title: 'Amida : Roue et Groupes',
+                description: 'Tirage en échelle, roue et répartition en équipes dans une seule appli.',
+                lp: 'https://takekapp.com/AmidaMaker/fr/landing_page_fr.html',
+                ios: 'https://apps.apple.com/fr/app/id6830528233?l=fr-FR'
+            },
+            id: {
+                title: 'Amida: Roda Undian & Kelompok',
+                description: 'Undian tangga, roda undian, dan pembagian tim dalam satu aplikasi.',
+                lp: 'https://takekapp.com/AmidaMaker/id/landing_page_id.html',
+                ios: 'https://apps.apple.com/id/app/id6830528233?l=id'
+            },
+            pt: {
+                title: 'Amida: Roleta e Grupos',
+                description: 'Sorteio de escada, roleta e divisão de equipes em um só app.',
+                lp: 'https://takekapp.com/AmidaMaker/pt_BR/landing_page_pt_BR.html',
+                ios: 'https://apps.apple.com/br/app/id6830528233?l=pt-BR'
+            },
+            th: {
+                title: 'อามิดะ วงล้อ แบ่งกลุ่ม',
+                description: 'จับสลากอามิดะ หมุนวงล้อ และแบ่งทีมได้ในแอปเดียว',
+                lp: 'https://takekapp.com/AmidaMaker/th/landing_page_th.html',
+                ios: 'https://apps.apple.com/th/app/id6830528233?l=th'
+            },
+            vi: {
+                title: 'Amida: Vòng quay & Chia nhóm',
+                description: 'Bốc thăm Amida, vòng quay và chia đội trong một ứng dụng.',
+                lp: 'https://takekapp.com/AmidaMaker/vi/landing_page_vi.html',
+                ios: 'https://apps.apple.com/vn/app/id6830528233?l=vi'
             }
         }
     }
