@@ -37,6 +37,9 @@ def wire_common(html, loc):
     html = re.sub(r'  <meta property="og:locale:alternate"[^>]+>\n', '', html)
     og = ''.join(f'  <meta property="og:locale:alternate" content="{other["og"]}">\n' for other in LOCALES if other['code'] != loc['code'])
     html = re.sub(r'(  <meta property="og:locale"[^>]+>\n)', lambda m: m[0]+og, html)
+    share_image = f'https://takekapp.com/MyDreams100/images/ogp/{loc["code"]}.jpg'
+    html = re.sub(r'(<meta (?:property="og:image"|name="twitter:image") content=")[^"]+("[^>]*>)',
+                  lambda m: m[1] + share_image + m[2], html)
     html = re.sub(r'<details class="language-switcher">.*?</details>|<a class="language"[^>]*>.*?</a>', lambda _: language_menu(loc), html, flags=re.S)
     def schema(m):
         data = json.loads(m[1]); data['inLanguage'] = TAGS
@@ -75,7 +78,7 @@ class Localize(HTMLParser):
             if key in ('og:title', 'twitter:title'): attrs['content'] = title
             if key == 'og:locale': attrs['content'] = self.loc['og']
             if key == 'og:url': attrs['content'] = page_url(self.loc)
-            if key == 'og:image:alt': attrs['content'] = self.loc['name']
+            if key in ('og:image:alt', 'twitter:image:alt'): attrs['content'] = self.loc['name']
         if tag == 'link' and attrs.get('rel') == 'canonical': attrs['href'] = page_url(self.loc)
         for name in ('alt', 'aria-label'):
             value = attrs.get(name)
